@@ -20,82 +20,110 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "MediaLive" :: String
-
 
 -- | Creates a new channel
 createChannel :: forall eff. CreateChannelRequest -> Aff (exception :: EXCEPTION | eff) CreateChannelResponse
-createChannel = Request.request serviceName "createChannel" 
+createChannel = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "createChannel"
 
 
 -- | Create an input
 createInput :: forall eff. CreateInputRequest -> Aff (exception :: EXCEPTION | eff) CreateInputResponse
-createInput = Request.request serviceName "createInput" 
+createInput = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "createInput"
 
 
 -- | Creates a Input Security Group
 createInputSecurityGroup :: forall eff. CreateInputSecurityGroupRequest -> Aff (exception :: EXCEPTION | eff) CreateInputSecurityGroupResponse
-createInputSecurityGroup = Request.request serviceName "createInputSecurityGroup" 
+createInputSecurityGroup = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "createInputSecurityGroup"
 
 
 -- | Starts deletion of channel. The associated outputs are also deleted.
 deleteChannel :: forall eff. DeleteChannelRequest -> Aff (exception :: EXCEPTION | eff) DeleteChannelResponse
-deleteChannel = Request.request serviceName "deleteChannel" 
+deleteChannel = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "deleteChannel"
 
 
 -- | Deletes the input end point
 deleteInput :: forall eff. DeleteInputRequest -> Aff (exception :: EXCEPTION | eff) DeleteInputResponse
-deleteInput = Request.request serviceName "deleteInput" 
+deleteInput = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "deleteInput"
 
 
 -- | Deletes an Input Security Group
 deleteInputSecurityGroup :: forall eff. DeleteInputSecurityGroupRequest -> Aff (exception :: EXCEPTION | eff) DeleteInputSecurityGroupResponse
-deleteInputSecurityGroup = Request.request serviceName "deleteInputSecurityGroup" 
+deleteInputSecurityGroup = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "deleteInputSecurityGroup"
 
 
 -- | Gets details about a channel
 describeChannel :: forall eff. DescribeChannelRequest -> Aff (exception :: EXCEPTION | eff) DescribeChannelResponse
-describeChannel = Request.request serviceName "describeChannel" 
+describeChannel = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "describeChannel"
 
 
 -- | Produces details about an input
 describeInput :: forall eff. DescribeInputRequest -> Aff (exception :: EXCEPTION | eff) DescribeInputResponse
-describeInput = Request.request serviceName "describeInput" 
+describeInput = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "describeInput"
 
 
 -- | Produces a summary of an Input Security Group
 describeInputSecurityGroup :: forall eff. DescribeInputSecurityGroupRequest -> Aff (exception :: EXCEPTION | eff) DescribeInputSecurityGroupResponse
-describeInputSecurityGroup = Request.request serviceName "describeInputSecurityGroup" 
+describeInputSecurityGroup = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "describeInputSecurityGroup"
 
 
 -- | Produces list of channels that have been created
 listChannels :: forall eff. ListChannelsRequest -> Aff (exception :: EXCEPTION | eff) ListChannelsResponse
-listChannels = Request.request serviceName "listChannels" 
+listChannels = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "listChannels"
 
 
 -- | Produces a list of Input Security Groups for an account
 listInputSecurityGroups :: forall eff. ListInputSecurityGroupsRequest -> Aff (exception :: EXCEPTION | eff) ListInputSecurityGroupsResponse
-listInputSecurityGroups = Request.request serviceName "listInputSecurityGroups" 
+listInputSecurityGroups = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "listInputSecurityGroups"
 
 
 -- | Produces list of inputs that have been created
 listInputs :: forall eff. ListInputsRequest -> Aff (exception :: EXCEPTION | eff) ListInputsResponse
-listInputs = Request.request serviceName "listInputs" 
+listInputs = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "listInputs"
 
 
 -- | Starts an existing channel
 startChannel :: forall eff. StartChannelRequest -> Aff (exception :: EXCEPTION | eff) StartChannelResponse
-startChannel = Request.request serviceName "startChannel" 
+startChannel = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "startChannel"
 
 
 -- | Stops a running channel
 stopChannel :: forall eff. StopChannelRequest -> Aff (exception :: EXCEPTION | eff) StopChannelResponse
-stopChannel = Request.request serviceName "stopChannel" 
+stopChannel = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "stopChannel"
 
 
 -- | Updates a channel.
 updateChannel :: forall eff. UpdateChannelRequest -> Aff (exception :: EXCEPTION | eff) UpdateChannelResponse
-updateChannel = Request.request serviceName "updateChannel" 
+updateChannel = Request.request service method  where
+    service = Request.ServiceName "MediaLive"
+    method = Request.MethodName "updateChannel"
 
 
 -- | Placeholder documentation for AacCodingMode
@@ -291,7 +319,7 @@ newtype Ac3Settings = Ac3Settings
   { "Bitrate" :: NullOrUndefined.NullOrUndefined (Number)
   , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Ac3BitstreamMode)
   , "CodingMode" :: NullOrUndefined.NullOrUndefined (Ac3CodingMode)
-  , "Dialnorm" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Dialnorm" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max31')
   , "DrcProfile" :: NullOrUndefined.NullOrUndefined (Ac3DrcProfile)
   , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Ac3LfeFilter)
   , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Ac3MetadataControl)
@@ -311,7 +339,7 @@ newAc3Settings  = Ac3Settings { "Bitrate": (NullOrUndefined Nothing), "Bitstream
 
 -- | Constructs Ac3Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAc3Settings' :: ( { "Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Ac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Ac3CodingMode) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (Int) , "DrcProfile" :: NullOrUndefined.NullOrUndefined (Ac3DrcProfile) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Ac3LfeFilter) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Ac3MetadataControl) } -> {"Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Ac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Ac3CodingMode) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (Int) , "DrcProfile" :: NullOrUndefined.NullOrUndefined (Ac3DrcProfile) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Ac3LfeFilter) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Ac3MetadataControl) } ) -> Ac3Settings
+newAc3Settings' :: ( { "Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Ac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Ac3CodingMode) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max31') , "DrcProfile" :: NullOrUndefined.NullOrUndefined (Ac3DrcProfile) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Ac3LfeFilter) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Ac3MetadataControl) } -> {"Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Ac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Ac3CodingMode) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max31') , "DrcProfile" :: NullOrUndefined.NullOrUndefined (Ac3DrcProfile) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Ac3LfeFilter) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Ac3MetadataControl) } ) -> Ac3Settings
 newAc3Settings'  customize = (Ac3Settings <<< customize) { "Bitrate": (NullOrUndefined Nothing), "BitstreamMode": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "Dialnorm": (NullOrUndefined Nothing), "DrcProfile": (NullOrUndefined Nothing), "LfeFilter": (NullOrUndefined Nothing), "MetadataControl": (NullOrUndefined Nothing) }
 
 
@@ -379,8 +407,8 @@ newArchiveContainerSettings'  customize = (ArchiveContainerSettings <<< customiz
 
 -- | Placeholder documentation for ArchiveGroupSettings
 newtype ArchiveGroupSettings = ArchiveGroupSettings 
-  { "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef)
-  , "RolloverInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Destination" :: (OutputLocationRef)
+  , "RolloverInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   }
 derive instance newtypeArchiveGroupSettings :: Newtype ArchiveGroupSettings _
 derive instance repGenericArchiveGroupSettings :: Generic ArchiveGroupSettings _
@@ -392,19 +420,19 @@ instance encodeArchiveGroupSettings :: Encode ArchiveGroupSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs ArchiveGroupSettings from required parameters
-newArchiveGroupSettings :: ArchiveGroupSettings
-newArchiveGroupSettings  = ArchiveGroupSettings { "Destination": (NullOrUndefined Nothing), "RolloverInterval": (NullOrUndefined Nothing) }
+newArchiveGroupSettings :: OutputLocationRef -> ArchiveGroupSettings
+newArchiveGroupSettings _Destination = ArchiveGroupSettings { "Destination": _Destination, "RolloverInterval": (NullOrUndefined Nothing) }
 
 -- | Constructs ArchiveGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArchiveGroupSettings' :: ( { "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "RolloverInterval" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "RolloverInterval" :: NullOrUndefined.NullOrUndefined (Int) } ) -> ArchiveGroupSettings
-newArchiveGroupSettings'  customize = (ArchiveGroupSettings <<< customize) { "Destination": (NullOrUndefined Nothing), "RolloverInterval": (NullOrUndefined Nothing) }
+newArchiveGroupSettings' :: OutputLocationRef -> ( { "Destination" :: (OutputLocationRef) , "RolloverInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin1') } -> {"Destination" :: (OutputLocationRef) , "RolloverInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin1') } ) -> ArchiveGroupSettings
+newArchiveGroupSettings' _Destination customize = (ArchiveGroupSettings <<< customize) { "Destination": _Destination, "RolloverInterval": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for ArchiveOutputSettings
 newtype ArchiveOutputSettings = ArchiveOutputSettings 
-  { "ContainerSettings" :: NullOrUndefined.NullOrUndefined (ArchiveContainerSettings)
+  { "ContainerSettings" :: (ArchiveContainerSettings)
   , "Extension" :: NullOrUndefined.NullOrUndefined (String)
   , "NameModifier" :: NullOrUndefined.NullOrUndefined (String)
   }
@@ -418,13 +446,13 @@ instance encodeArchiveOutputSettings :: Encode ArchiveOutputSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs ArchiveOutputSettings from required parameters
-newArchiveOutputSettings :: ArchiveOutputSettings
-newArchiveOutputSettings  = ArchiveOutputSettings { "ContainerSettings": (NullOrUndefined Nothing), "Extension": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing) }
+newArchiveOutputSettings :: ArchiveContainerSettings -> ArchiveOutputSettings
+newArchiveOutputSettings _ContainerSettings = ArchiveOutputSettings { "ContainerSettings": _ContainerSettings, "Extension": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing) }
 
 -- | Constructs ArchiveOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArchiveOutputSettings' :: ( { "ContainerSettings" :: NullOrUndefined.NullOrUndefined (ArchiveContainerSettings) , "Extension" :: NullOrUndefined.NullOrUndefined (String) , "NameModifier" :: NullOrUndefined.NullOrUndefined (String) } -> {"ContainerSettings" :: NullOrUndefined.NullOrUndefined (ArchiveContainerSettings) , "Extension" :: NullOrUndefined.NullOrUndefined (String) , "NameModifier" :: NullOrUndefined.NullOrUndefined (String) } ) -> ArchiveOutputSettings
-newArchiveOutputSettings'  customize = (ArchiveOutputSettings <<< customize) { "ContainerSettings": (NullOrUndefined Nothing), "Extension": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing) }
+newArchiveOutputSettings' :: ArchiveContainerSettings -> ( { "ContainerSettings" :: (ArchiveContainerSettings) , "Extension" :: NullOrUndefined.NullOrUndefined (String) , "NameModifier" :: NullOrUndefined.NullOrUndefined (String) } -> {"ContainerSettings" :: (ArchiveContainerSettings) , "Extension" :: NullOrUndefined.NullOrUndefined (String) , "NameModifier" :: NullOrUndefined.NullOrUndefined (String) } ) -> ArchiveOutputSettings
+newArchiveOutputSettings' _ContainerSettings customize = (ArchiveOutputSettings <<< customize) { "ContainerSettings": _ContainerSettings, "Extension": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing) }
 
 
 
@@ -456,8 +484,8 @@ instance encodeAribSourceSettings :: Encode AribSourceSettings where
 
 -- | Placeholder documentation for AudioChannelMapping
 newtype AudioChannelMapping = AudioChannelMapping 
-  { "InputChannelLevels" :: NullOrUndefined.NullOrUndefined (ListOfInputChannelLevel)
-  , "OutputChannel" :: NullOrUndefined.NullOrUndefined (Int)
+  { "InputChannelLevels" :: (ListOfInputChannelLevel')
+  , "OutputChannel" :: (IntegerMin0Max7')
   }
 derive instance newtypeAudioChannelMapping :: Newtype AudioChannelMapping _
 derive instance repGenericAudioChannelMapping :: Generic AudioChannelMapping _
@@ -469,13 +497,13 @@ instance encodeAudioChannelMapping :: Encode AudioChannelMapping where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs AudioChannelMapping from required parameters
-newAudioChannelMapping :: AudioChannelMapping
-newAudioChannelMapping  = AudioChannelMapping { "InputChannelLevels": (NullOrUndefined Nothing), "OutputChannel": (NullOrUndefined Nothing) }
+newAudioChannelMapping :: ListOfInputChannelLevel' -> IntegerMin0Max7' -> AudioChannelMapping
+newAudioChannelMapping _InputChannelLevels _OutputChannel = AudioChannelMapping { "InputChannelLevels": _InputChannelLevels, "OutputChannel": _OutputChannel }
 
 -- | Constructs AudioChannelMapping's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioChannelMapping' :: ( { "InputChannelLevels" :: NullOrUndefined.NullOrUndefined (ListOfInputChannelLevel) , "OutputChannel" :: NullOrUndefined.NullOrUndefined (Int) } -> {"InputChannelLevels" :: NullOrUndefined.NullOrUndefined (ListOfInputChannelLevel) , "OutputChannel" :: NullOrUndefined.NullOrUndefined (Int) } ) -> AudioChannelMapping
-newAudioChannelMapping'  customize = (AudioChannelMapping <<< customize) { "InputChannelLevels": (NullOrUndefined Nothing), "OutputChannel": (NullOrUndefined Nothing) }
+newAudioChannelMapping' :: ListOfInputChannelLevel' -> IntegerMin0Max7' -> ( { "InputChannelLevels" :: (ListOfInputChannelLevel') , "OutputChannel" :: (IntegerMin0Max7') } -> {"InputChannelLevels" :: (ListOfInputChannelLevel') , "OutputChannel" :: (IntegerMin0Max7') } ) -> AudioChannelMapping
+newAudioChannelMapping' _InputChannelLevels _OutputChannel customize = (AudioChannelMapping <<< customize) { "InputChannelLevels": _InputChannelLevels, "OutputChannel": _OutputChannel }
 
 
 
@@ -510,13 +538,13 @@ newAudioCodecSettings'  customize = (AudioCodecSettings <<< customize) { "AacSet
 -- | Placeholder documentation for AudioDescription
 newtype AudioDescription = AudioDescription 
   { "AudioNormalizationSettings" :: NullOrUndefined.NullOrUndefined (AudioNormalizationSettings)
-  , "AudioSelectorName" :: NullOrUndefined.NullOrUndefined (String)
+  , "AudioSelectorName" :: (String)
   , "AudioType" :: NullOrUndefined.NullOrUndefined (AudioType)
   , "AudioTypeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionAudioTypeControl)
   , "CodecSettings" :: NullOrUndefined.NullOrUndefined (AudioCodecSettings)
-  , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String)
+  , "LanguageCode" :: NullOrUndefined.NullOrUndefined (StringMin3Max3')
   , "LanguageCodeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionLanguageCodeControl)
-  , "Name" :: NullOrUndefined.NullOrUndefined (String)
+  , "Name" :: (String)
   , "RemixSettings" :: NullOrUndefined.NullOrUndefined (RemixSettings)
   , "StreamName" :: NullOrUndefined.NullOrUndefined (String)
   }
@@ -530,13 +558,13 @@ instance encodeAudioDescription :: Encode AudioDescription where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs AudioDescription from required parameters
-newAudioDescription :: AudioDescription
-newAudioDescription  = AudioDescription { "AudioNormalizationSettings": (NullOrUndefined Nothing), "AudioSelectorName": (NullOrUndefined Nothing), "AudioType": (NullOrUndefined Nothing), "AudioTypeControl": (NullOrUndefined Nothing), "CodecSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageCodeControl": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RemixSettings": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
+newAudioDescription :: String -> String -> AudioDescription
+newAudioDescription _AudioSelectorName _Name = AudioDescription { "AudioSelectorName": _AudioSelectorName, "Name": _Name, "AudioNormalizationSettings": (NullOrUndefined Nothing), "AudioType": (NullOrUndefined Nothing), "AudioTypeControl": (NullOrUndefined Nothing), "CodecSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageCodeControl": (NullOrUndefined Nothing), "RemixSettings": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
 
 -- | Constructs AudioDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioDescription' :: ( { "AudioNormalizationSettings" :: NullOrUndefined.NullOrUndefined (AudioNormalizationSettings) , "AudioSelectorName" :: NullOrUndefined.NullOrUndefined (String) , "AudioType" :: NullOrUndefined.NullOrUndefined (AudioType) , "AudioTypeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionAudioTypeControl) , "CodecSettings" :: NullOrUndefined.NullOrUndefined (AudioCodecSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageCodeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionLanguageCodeControl) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RemixSettings" :: NullOrUndefined.NullOrUndefined (RemixSettings) , "StreamName" :: NullOrUndefined.NullOrUndefined (String) } -> {"AudioNormalizationSettings" :: NullOrUndefined.NullOrUndefined (AudioNormalizationSettings) , "AudioSelectorName" :: NullOrUndefined.NullOrUndefined (String) , "AudioType" :: NullOrUndefined.NullOrUndefined (AudioType) , "AudioTypeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionAudioTypeControl) , "CodecSettings" :: NullOrUndefined.NullOrUndefined (AudioCodecSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageCodeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionLanguageCodeControl) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RemixSettings" :: NullOrUndefined.NullOrUndefined (RemixSettings) , "StreamName" :: NullOrUndefined.NullOrUndefined (String) } ) -> AudioDescription
-newAudioDescription'  customize = (AudioDescription <<< customize) { "AudioNormalizationSettings": (NullOrUndefined Nothing), "AudioSelectorName": (NullOrUndefined Nothing), "AudioType": (NullOrUndefined Nothing), "AudioTypeControl": (NullOrUndefined Nothing), "CodecSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageCodeControl": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RemixSettings": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
+newAudioDescription' :: String -> String -> ( { "AudioNormalizationSettings" :: NullOrUndefined.NullOrUndefined (AudioNormalizationSettings) , "AudioSelectorName" :: (String) , "AudioType" :: NullOrUndefined.NullOrUndefined (AudioType) , "AudioTypeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionAudioTypeControl) , "CodecSettings" :: NullOrUndefined.NullOrUndefined (AudioCodecSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (StringMin3Max3') , "LanguageCodeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionLanguageCodeControl) , "Name" :: (String) , "RemixSettings" :: NullOrUndefined.NullOrUndefined (RemixSettings) , "StreamName" :: NullOrUndefined.NullOrUndefined (String) } -> {"AudioNormalizationSettings" :: NullOrUndefined.NullOrUndefined (AudioNormalizationSettings) , "AudioSelectorName" :: (String) , "AudioType" :: NullOrUndefined.NullOrUndefined (AudioType) , "AudioTypeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionAudioTypeControl) , "CodecSettings" :: NullOrUndefined.NullOrUndefined (AudioCodecSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (StringMin3Max3') , "LanguageCodeControl" :: NullOrUndefined.NullOrUndefined (AudioDescriptionLanguageCodeControl) , "Name" :: (String) , "RemixSettings" :: NullOrUndefined.NullOrUndefined (RemixSettings) , "StreamName" :: NullOrUndefined.NullOrUndefined (String) } ) -> AudioDescription
+newAudioDescription' _AudioSelectorName _Name customize = (AudioDescription <<< customize) { "AudioSelectorName": _AudioSelectorName, "Name": _Name, "AudioNormalizationSettings": (NullOrUndefined Nothing), "AudioType": (NullOrUndefined Nothing), "AudioTypeControl": (NullOrUndefined Nothing), "CodecSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageCodeControl": (NullOrUndefined Nothing), "RemixSettings": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
 
 
 
@@ -568,7 +596,7 @@ instance encodeAudioDescriptionLanguageCodeControl :: Encode AudioDescriptionLan
 
 -- | Placeholder documentation for AudioLanguageSelection
 newtype AudioLanguageSelection = AudioLanguageSelection 
-  { "LanguageCode" :: NullOrUndefined.NullOrUndefined (String)
+  { "LanguageCode" :: (String)
   , "LanguageSelectionPolicy" :: NullOrUndefined.NullOrUndefined (AudioLanguageSelectionPolicy)
   }
 derive instance newtypeAudioLanguageSelection :: Newtype AudioLanguageSelection _
@@ -581,13 +609,13 @@ instance encodeAudioLanguageSelection :: Encode AudioLanguageSelection where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs AudioLanguageSelection from required parameters
-newAudioLanguageSelection :: AudioLanguageSelection
-newAudioLanguageSelection  = AudioLanguageSelection { "LanguageCode": (NullOrUndefined Nothing), "LanguageSelectionPolicy": (NullOrUndefined Nothing) }
+newAudioLanguageSelection :: String -> AudioLanguageSelection
+newAudioLanguageSelection _LanguageCode = AudioLanguageSelection { "LanguageCode": _LanguageCode, "LanguageSelectionPolicy": (NullOrUndefined Nothing) }
 
 -- | Constructs AudioLanguageSelection's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioLanguageSelection' :: ( { "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageSelectionPolicy" :: NullOrUndefined.NullOrUndefined (AudioLanguageSelectionPolicy) } -> {"LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageSelectionPolicy" :: NullOrUndefined.NullOrUndefined (AudioLanguageSelectionPolicy) } ) -> AudioLanguageSelection
-newAudioLanguageSelection'  customize = (AudioLanguageSelection <<< customize) { "LanguageCode": (NullOrUndefined Nothing), "LanguageSelectionPolicy": (NullOrUndefined Nothing) }
+newAudioLanguageSelection' :: String -> ( { "LanguageCode" :: (String) , "LanguageSelectionPolicy" :: NullOrUndefined.NullOrUndefined (AudioLanguageSelectionPolicy) } -> {"LanguageCode" :: (String) , "LanguageSelectionPolicy" :: NullOrUndefined.NullOrUndefined (AudioLanguageSelectionPolicy) } ) -> AudioLanguageSelection
+newAudioLanguageSelection' _LanguageCode customize = (AudioLanguageSelection <<< customize) { "LanguageCode": _LanguageCode, "LanguageSelectionPolicy": (NullOrUndefined Nothing) }
 
 
 
@@ -634,7 +662,7 @@ instance encodeAudioNormalizationAlgorithmControl :: Encode AudioNormalizationAl
 newtype AudioNormalizationSettings = AudioNormalizationSettings 
   { "Algorithm" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithm)
   , "AlgorithmControl" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithmControl)
-  , "TargetLkfs" :: NullOrUndefined.NullOrUndefined (Number)
+  , "TargetLkfs" :: NullOrUndefined.NullOrUndefined (DoubleMinNegative59Max0')
   }
 derive instance newtypeAudioNormalizationSettings :: Newtype AudioNormalizationSettings _
 derive instance repGenericAudioNormalizationSettings :: Generic AudioNormalizationSettings _
@@ -651,7 +679,7 @@ newAudioNormalizationSettings  = AudioNormalizationSettings { "Algorithm": (Null
 
 -- | Constructs AudioNormalizationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioNormalizationSettings' :: ( { "Algorithm" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithm) , "AlgorithmControl" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: NullOrUndefined.NullOrUndefined (Number) } -> {"Algorithm" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithm) , "AlgorithmControl" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: NullOrUndefined.NullOrUndefined (Number) } ) -> AudioNormalizationSettings
+newAudioNormalizationSettings' :: ( { "Algorithm" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithm) , "AlgorithmControl" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: NullOrUndefined.NullOrUndefined (DoubleMinNegative59Max0') } -> {"Algorithm" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithm) , "AlgorithmControl" :: NullOrUndefined.NullOrUndefined (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: NullOrUndefined.NullOrUndefined (DoubleMinNegative59Max0') } ) -> AudioNormalizationSettings
 newAudioNormalizationSettings'  customize = (AudioNormalizationSettings <<< customize) { "Algorithm": (NullOrUndefined Nothing), "AlgorithmControl": (NullOrUndefined Nothing), "TargetLkfs": (NullOrUndefined Nothing) }
 
 
@@ -697,7 +725,7 @@ instance encodeAudioOnlyHlsTrackType :: Encode AudioOnlyHlsTrackType where
 
 -- | Placeholder documentation for AudioPidSelection
 newtype AudioPidSelection = AudioPidSelection 
-  { "Pid" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Pid" :: (IntegerMin0Max8191')
   }
 derive instance newtypeAudioPidSelection :: Newtype AudioPidSelection _
 derive instance repGenericAudioPidSelection :: Generic AudioPidSelection _
@@ -709,19 +737,19 @@ instance encodeAudioPidSelection :: Encode AudioPidSelection where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs AudioPidSelection from required parameters
-newAudioPidSelection :: AudioPidSelection
-newAudioPidSelection  = AudioPidSelection { "Pid": (NullOrUndefined Nothing) }
+newAudioPidSelection :: IntegerMin0Max8191' -> AudioPidSelection
+newAudioPidSelection _Pid = AudioPidSelection { "Pid": _Pid }
 
 -- | Constructs AudioPidSelection's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioPidSelection' :: ( { "Pid" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Pid" :: NullOrUndefined.NullOrUndefined (Int) } ) -> AudioPidSelection
-newAudioPidSelection'  customize = (AudioPidSelection <<< customize) { "Pid": (NullOrUndefined Nothing) }
+newAudioPidSelection' :: IntegerMin0Max8191' -> ( { "Pid" :: (IntegerMin0Max8191') } -> {"Pid" :: (IntegerMin0Max8191') } ) -> AudioPidSelection
+newAudioPidSelection' _Pid customize = (AudioPidSelection <<< customize) { "Pid": _Pid }
 
 
 
 -- | Placeholder documentation for AudioSelector
 newtype AudioSelector = AudioSelector 
-  { "Name" :: NullOrUndefined.NullOrUndefined (String)
+  { "Name" :: (String)
   , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (AudioSelectorSettings)
   }
 derive instance newtypeAudioSelector :: Newtype AudioSelector _
@@ -734,13 +762,13 @@ instance encodeAudioSelector :: Encode AudioSelector where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs AudioSelector from required parameters
-newAudioSelector :: AudioSelector
-newAudioSelector  = AudioSelector { "Name": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newAudioSelector :: String -> AudioSelector
+newAudioSelector _Name = AudioSelector { "Name": _Name, "SelectorSettings": (NullOrUndefined Nothing) }
 
 -- | Constructs AudioSelector's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioSelector' :: ( { "Name" :: NullOrUndefined.NullOrUndefined (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (AudioSelectorSettings) } -> {"Name" :: NullOrUndefined.NullOrUndefined (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (AudioSelectorSettings) } ) -> AudioSelector
-newAudioSelector'  customize = (AudioSelector <<< customize) { "Name": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newAudioSelector' :: String -> ( { "Name" :: (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (AudioSelectorSettings) } -> {"Name" :: (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (AudioSelectorSettings) } ) -> AudioSelector
+newAudioSelector' _Name customize = (AudioSelector <<< customize) { "Name": _Name, "SelectorSettings": (NullOrUndefined Nothing) }
 
 
 
@@ -922,7 +950,7 @@ newtype BlackoutSlate = BlackoutSlate
   { "BlackoutSlateImage" :: NullOrUndefined.NullOrUndefined (InputLocation)
   , "NetworkEndBlackout" :: NullOrUndefined.NullOrUndefined (BlackoutSlateNetworkEndBlackout)
   , "NetworkEndBlackoutImage" :: NullOrUndefined.NullOrUndefined (InputLocation)
-  , "NetworkId" :: NullOrUndefined.NullOrUndefined (String)
+  , "NetworkId" :: NullOrUndefined.NullOrUndefined (StringMin34Max34')
   , "State" :: NullOrUndefined.NullOrUndefined (BlackoutSlateState)
   }
 derive instance newtypeBlackoutSlate :: Newtype BlackoutSlate _
@@ -940,7 +968,7 @@ newBlackoutSlate  = BlackoutSlate { "BlackoutSlateImage": (NullOrUndefined Nothi
 
 -- | Constructs BlackoutSlate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBlackoutSlate' :: ( { "BlackoutSlateImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkEndBlackout" :: NullOrUndefined.NullOrUndefined (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkId" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (BlackoutSlateState) } -> {"BlackoutSlateImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkEndBlackout" :: NullOrUndefined.NullOrUndefined (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkId" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (BlackoutSlateState) } ) -> BlackoutSlate
+newBlackoutSlate' :: ( { "BlackoutSlateImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkEndBlackout" :: NullOrUndefined.NullOrUndefined (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkId" :: NullOrUndefined.NullOrUndefined (StringMin34Max34') , "State" :: NullOrUndefined.NullOrUndefined (BlackoutSlateState) } -> {"BlackoutSlateImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkEndBlackout" :: NullOrUndefined.NullOrUndefined (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: NullOrUndefined.NullOrUndefined (InputLocation) , "NetworkId" :: NullOrUndefined.NullOrUndefined (StringMin34Max34') , "State" :: NullOrUndefined.NullOrUndefined (BlackoutSlateState) } ) -> BlackoutSlate
 newBlackoutSlate'  customize = (BlackoutSlate <<< customize) { "BlackoutSlateImage": (NullOrUndefined Nothing), "NetworkEndBlackout": (NullOrUndefined Nothing), "NetworkEndBlackoutImage": (NullOrUndefined Nothing), "NetworkId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
 
 
@@ -1001,21 +1029,21 @@ instance encodeBurnInBackgroundColor :: Encode BurnInBackgroundColor where
 newtype BurnInDestinationSettings = BurnInDestinationSettings 
   { "Alignment" :: NullOrUndefined.NullOrUndefined (BurnInAlignment)
   , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (BurnInBackgroundColor)
-  , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (Int)
+  , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255')
   , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation)
   , "FontColor" :: NullOrUndefined.NullOrUndefined (BurnInFontColor)
-  , "FontOpacity" :: NullOrUndefined.NullOrUndefined (Int)
-  , "FontResolution" :: NullOrUndefined.NullOrUndefined (Int)
+  , "FontOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255')
+  , "FontResolution" :: NullOrUndefined.NullOrUndefined (IntegerMin96Max600')
   , "FontSize" :: NullOrUndefined.NullOrUndefined (String)
   , "OutlineColor" :: NullOrUndefined.NullOrUndefined (BurnInOutlineColor)
-  , "OutlineSize" :: NullOrUndefined.NullOrUndefined (Int)
+  , "OutlineSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10')
   , "ShadowColor" :: NullOrUndefined.NullOrUndefined (BurnInShadowColor)
-  , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (Int)
+  , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255')
   , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int)
   , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int)
   , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (BurnInTeletextGridControl)
-  , "XPosition" :: NullOrUndefined.NullOrUndefined (Int)
-  , "YPosition" :: NullOrUndefined.NullOrUndefined (Int)
+  , "XPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "YPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   }
 derive instance newtypeBurnInDestinationSettings :: Newtype BurnInDestinationSettings _
 derive instance repGenericBurnInDestinationSettings :: Generic BurnInDestinationSettings _
@@ -1032,7 +1060,7 @@ newBurnInDestinationSettings  = BurnInDestinationSettings { "Alignment": (NullOr
 
 -- | Constructs BurnInDestinationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBurnInDestinationSettings' :: ( { "Alignment" :: NullOrUndefined.NullOrUndefined (BurnInAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (BurnInBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (BurnInFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "FontResolution" :: NullOrUndefined.NullOrUndefined (Int) , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (BurnInOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowColor" :: NullOrUndefined.NullOrUndefined (BurnInShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (BurnInTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (Int) , "YPosition" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Alignment" :: NullOrUndefined.NullOrUndefined (BurnInAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (BurnInBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (BurnInFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "FontResolution" :: NullOrUndefined.NullOrUndefined (Int) , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (BurnInOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowColor" :: NullOrUndefined.NullOrUndefined (BurnInShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (BurnInTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (Int) , "YPosition" :: NullOrUndefined.NullOrUndefined (Int) } ) -> BurnInDestinationSettings
+newBurnInDestinationSettings' :: ( { "Alignment" :: NullOrUndefined.NullOrUndefined (BurnInAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (BurnInBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (BurnInFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined.NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (BurnInOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined.NullOrUndefined (BurnInShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (BurnInTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } -> {"Alignment" :: NullOrUndefined.NullOrUndefined (BurnInAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (BurnInBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (BurnInFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined.NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (BurnInOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined.NullOrUndefined (BurnInShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (BurnInTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } ) -> BurnInDestinationSettings
 newBurnInDestinationSettings'  customize = (BurnInDestinationSettings <<< customize) { "Alignment": (NullOrUndefined Nothing), "BackgroundColor": (NullOrUndefined Nothing), "BackgroundOpacity": (NullOrUndefined Nothing), "Font": (NullOrUndefined Nothing), "FontColor": (NullOrUndefined Nothing), "FontOpacity": (NullOrUndefined Nothing), "FontResolution": (NullOrUndefined Nothing), "FontSize": (NullOrUndefined Nothing), "OutlineColor": (NullOrUndefined Nothing), "OutlineSize": (NullOrUndefined Nothing), "ShadowColor": (NullOrUndefined Nothing), "ShadowOpacity": (NullOrUndefined Nothing), "ShadowXOffset": (NullOrUndefined Nothing), "ShadowYOffset": (NullOrUndefined Nothing), "TeletextGridControl": (NullOrUndefined Nothing), "XPosition": (NullOrUndefined Nothing), "YPosition": (NullOrUndefined Nothing) }
 
 
@@ -1091,11 +1119,11 @@ instance encodeBurnInTeletextGridControl :: Encode BurnInTeletextGridControl whe
 
 -- | Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 newtype CaptionDescription = CaptionDescription 
-  { "CaptionSelectorName" :: NullOrUndefined.NullOrUndefined (String)
+  { "CaptionSelectorName" :: (String)
   , "DestinationSettings" :: NullOrUndefined.NullOrUndefined (CaptionDestinationSettings)
   , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String)
   , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String)
-  , "Name" :: NullOrUndefined.NullOrUndefined (String)
+  , "Name" :: (String)
   }
 derive instance newtypeCaptionDescription :: Newtype CaptionDescription _
 derive instance repGenericCaptionDescription :: Generic CaptionDescription _
@@ -1107,13 +1135,13 @@ instance encodeCaptionDescription :: Encode CaptionDescription where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs CaptionDescription from required parameters
-newCaptionDescription :: CaptionDescription
-newCaptionDescription  = CaptionDescription { "CaptionSelectorName": (NullOrUndefined Nothing), "DestinationSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCaptionDescription :: String -> String -> CaptionDescription
+newCaptionDescription _CaptionSelectorName _Name = CaptionDescription { "CaptionSelectorName": _CaptionSelectorName, "Name": _Name, "DestinationSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing) }
 
 -- | Constructs CaptionDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaptionDescription' :: ( { "CaptionSelectorName" :: NullOrUndefined.NullOrUndefined (String) , "DestinationSettings" :: NullOrUndefined.NullOrUndefined (CaptionDestinationSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) } -> {"CaptionSelectorName" :: NullOrUndefined.NullOrUndefined (String) , "DestinationSettings" :: NullOrUndefined.NullOrUndefined (CaptionDestinationSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) } ) -> CaptionDescription
-newCaptionDescription'  customize = (CaptionDescription <<< customize) { "CaptionSelectorName": (NullOrUndefined Nothing), "DestinationSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCaptionDescription' :: String -> String -> ( { "CaptionSelectorName" :: (String) , "DestinationSettings" :: NullOrUndefined.NullOrUndefined (CaptionDestinationSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: (String) } -> {"CaptionSelectorName" :: (String) , "DestinationSettings" :: NullOrUndefined.NullOrUndefined (CaptionDestinationSettings) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: (String) } ) -> CaptionDescription
+newCaptionDescription' _CaptionSelectorName _Name customize = (CaptionDescription <<< customize) { "CaptionSelectorName": _CaptionSelectorName, "Name": _Name, "DestinationSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing) }
 
 
 
@@ -1153,9 +1181,9 @@ newCaptionDestinationSettings'  customize = (CaptionDestinationSettings <<< cust
 
 -- | Maps a caption channel to an ISO 693-2 language code (http://www.loc.gov/standards/iso639-2), with an optional description.
 newtype CaptionLanguageMapping = CaptionLanguageMapping 
-  { "CaptionChannel" :: NullOrUndefined.NullOrUndefined (Int)
-  , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String)
-  , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String)
+  { "CaptionChannel" :: (IntegerMin1Max4')
+  , "LanguageCode" :: (StringMin3Max3')
+  , "LanguageDescription" :: (StringMin1')
   }
 derive instance newtypeCaptionLanguageMapping :: Newtype CaptionLanguageMapping _
 derive instance repGenericCaptionLanguageMapping :: Generic CaptionLanguageMapping _
@@ -1167,20 +1195,20 @@ instance encodeCaptionLanguageMapping :: Encode CaptionLanguageMapping where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs CaptionLanguageMapping from required parameters
-newCaptionLanguageMapping :: CaptionLanguageMapping
-newCaptionLanguageMapping  = CaptionLanguageMapping { "CaptionChannel": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing) }
+newCaptionLanguageMapping :: IntegerMin1Max4' -> StringMin3Max3' -> StringMin1' -> CaptionLanguageMapping
+newCaptionLanguageMapping _CaptionChannel _LanguageCode _LanguageDescription = CaptionLanguageMapping { "CaptionChannel": _CaptionChannel, "LanguageCode": _LanguageCode, "LanguageDescription": _LanguageDescription }
 
 -- | Constructs CaptionLanguageMapping's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaptionLanguageMapping' :: ( { "CaptionChannel" :: NullOrUndefined.NullOrUndefined (Int) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String) } -> {"CaptionChannel" :: NullOrUndefined.NullOrUndefined (Int) , "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined.NullOrUndefined (String) } ) -> CaptionLanguageMapping
-newCaptionLanguageMapping'  customize = (CaptionLanguageMapping <<< customize) { "CaptionChannel": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing) }
+newCaptionLanguageMapping' :: IntegerMin1Max4' -> StringMin3Max3' -> StringMin1' -> ( { "CaptionChannel" :: (IntegerMin1Max4') , "LanguageCode" :: (StringMin3Max3') , "LanguageDescription" :: (StringMin1') } -> {"CaptionChannel" :: (IntegerMin1Max4') , "LanguageCode" :: (StringMin3Max3') , "LanguageDescription" :: (StringMin1') } ) -> CaptionLanguageMapping
+newCaptionLanguageMapping' _CaptionChannel _LanguageCode _LanguageDescription customize = (CaptionLanguageMapping <<< customize) { "CaptionChannel": _CaptionChannel, "LanguageCode": _LanguageCode, "LanguageDescription": _LanguageDescription }
 
 
 
 -- | Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 newtype CaptionSelector = CaptionSelector 
   { "LanguageCode" :: NullOrUndefined.NullOrUndefined (String)
-  , "Name" :: NullOrUndefined.NullOrUndefined (String)
+  , "Name" :: (String)
   , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (CaptionSelectorSettings)
   }
 derive instance newtypeCaptionSelector :: Newtype CaptionSelector _
@@ -1193,13 +1221,13 @@ instance encodeCaptionSelector :: Encode CaptionSelector where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs CaptionSelector from required parameters
-newCaptionSelector :: CaptionSelector
-newCaptionSelector  = CaptionSelector { "LanguageCode": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newCaptionSelector :: String -> CaptionSelector
+newCaptionSelector _Name = CaptionSelector { "Name": _Name, "LanguageCode": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
 
 -- | Constructs CaptionSelector's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaptionSelector' :: ( { "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (CaptionSelectorSettings) } -> {"LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (CaptionSelectorSettings) } ) -> CaptionSelector
-newCaptionSelector'  customize = (CaptionSelector <<< customize) { "LanguageCode": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newCaptionSelector' :: String -> ( { "LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (CaptionSelectorSettings) } -> {"LanguageCode" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: (String) , "SelectorSettings" :: NullOrUndefined.NullOrUndefined (CaptionSelectorSettings) } ) -> CaptionSelector
+newCaptionSelector' _Name customize = (CaptionSelector <<< customize) { "Name": _Name, "LanguageCode": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
 
 
 
@@ -1235,11 +1263,11 @@ newCaptionSelectorSettings'  customize = (CaptionSelectorSettings <<< customize)
 -- | Placeholder documentation for Channel
 newtype Channel = Channel 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
-  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint)
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
+  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int)
@@ -1261,7 +1289,7 @@ newChannel  = Channel { "Arn": (NullOrUndefined Nothing), "Destinations": (NullO
 
 -- | Constructs Channel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannel' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> Channel
+newChannel' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> Channel
 newChannel'  customize = (Channel <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
 
 
@@ -1269,7 +1297,7 @@ newChannel'  customize = (Channel <<< customize) { "Arn": (NullOrUndefined Nothi
 -- | Placeholder documentation for ChannelConfigurationValidationError
 newtype ChannelConfigurationValidationError = ChannelConfigurationValidationError 
   { "Message" :: NullOrUndefined.NullOrUndefined (String)
-  , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError)
+  , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError')
   }
 derive instance newtypeChannelConfigurationValidationError :: Newtype ChannelConfigurationValidationError _
 derive instance repGenericChannelConfigurationValidationError :: Generic ChannelConfigurationValidationError _
@@ -1286,7 +1314,7 @@ newChannelConfigurationValidationError  = ChannelConfigurationValidationError { 
 
 -- | Constructs ChannelConfigurationValidationError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelConfigurationValidationError' :: ( { "Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError) } -> {"Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError) } ) -> ChannelConfigurationValidationError
+newChannelConfigurationValidationError' :: ( { "Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError') } -> {"Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError') } ) -> ChannelConfigurationValidationError
 newChannelConfigurationValidationError'  customize = (ChannelConfigurationValidationError <<< customize) { "Message": (NullOrUndefined Nothing), "ValidationErrors": (NullOrUndefined Nothing) }
 
 
@@ -1331,10 +1359,10 @@ instance encodeChannelState :: Encode ChannelState where
 -- | Placeholder documentation for ChannelSummary
 newtype ChannelSummary = ChannelSummary 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
-  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint)
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
+  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint')
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int)
@@ -1356,7 +1384,7 @@ newChannelSummary  = ChannelSummary { "Arn": (NullOrUndefined Nothing), "Destina
 
 -- | Constructs ChannelSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelSummary' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> ChannelSummary
+newChannelSummary' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> ChannelSummary
 newChannelSummary'  customize = (ChannelSummary <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
 
 
@@ -1387,9 +1415,9 @@ newConflictException'  customize = (ConflictException <<< customize) { "Message"
 
 -- | Placeholder documentation for CreateChannel
 newtype CreateChannel = CreateChannel 
-  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
+  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "RequestId" :: NullOrUndefined.NullOrUndefined (String)
@@ -1411,16 +1439,16 @@ newCreateChannel  = CreateChannel { "Destinations": (NullOrUndefined Nothing), "
 
 -- | Constructs CreateChannel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannel' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> CreateChannel
+newCreateChannel' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> CreateChannel
 newCreateChannel'  customize = (CreateChannel <<< customize) { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Reserved": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
 
 
 
 -- | A request to create a channel
 newtype CreateChannelRequest = CreateChannelRequest 
-  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
+  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "RequestId" :: NullOrUndefined.NullOrUndefined (String)
@@ -1442,7 +1470,7 @@ newCreateChannelRequest  = CreateChannelRequest { "Destinations": (NullOrUndefin
 
 -- | Constructs CreateChannelRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannelRequest' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> CreateChannelRequest
+newCreateChannelRequest' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Reserved" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> CreateChannelRequest
 newCreateChannelRequest'  customize = (CreateChannelRequest <<< customize) { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Reserved": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
 
 
@@ -1497,11 +1525,11 @@ newCreateChannelResultModel'  customize = (CreateChannelResultModel <<< customiz
 
 -- | Placeholder documentation for CreateInput
 newtype CreateInput = CreateInput 
-  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest)
-  , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string)
+  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest')
+  , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string')
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "RequestId" :: NullOrUndefined.NullOrUndefined (String)
-  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest)
+  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest')
   , "Type" :: NullOrUndefined.NullOrUndefined (InputType)
   }
 derive instance newtypeCreateInput :: Newtype CreateInput _
@@ -1519,18 +1547,18 @@ newCreateInput  = CreateInput { "Destinations": (NullOrUndefined Nothing), "Inpu
 
 -- | Constructs CreateInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInput' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest) , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest) , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> CreateInput
+newCreateInput' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> CreateInput
 newCreateInput'  customize = (CreateInput <<< customize) { "Destinations": (NullOrUndefined Nothing), "InputSecurityGroups": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
 
 
 
 -- | The name of the input
 newtype CreateInputRequest = CreateInputRequest 
-  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest)
-  , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string)
+  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest')
+  , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string')
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "RequestId" :: NullOrUndefined.NullOrUndefined (String)
-  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest)
+  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest')
   , "Type" :: NullOrUndefined.NullOrUndefined (InputType)
   }
 derive instance newtypeCreateInputRequest :: Newtype CreateInputRequest _
@@ -1548,7 +1576,7 @@ newCreateInputRequest  = CreateInputRequest { "Destinations": (NullOrUndefined N
 
 -- | Constructs CreateInputRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputRequest' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest) , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest) , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> CreateInputRequest
+newCreateInputRequest' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RequestId" :: NullOrUndefined.NullOrUndefined (String) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> CreateInputRequest
 newCreateInputRequest'  customize = (CreateInputRequest <<< customize) { "Destinations": (NullOrUndefined Nothing), "InputSecurityGroups": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
 
 
@@ -1603,7 +1631,7 @@ newCreateInputResultModel'  customize = (CreateInputResultModel <<< customize) {
 
 -- | The IPv4 CIDRs to whitelist for this Input Security Group
 newtype CreateInputSecurityGroupRequest = CreateInputSecurityGroupRequest 
-  { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr)
+  { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr')
   }
 derive instance newtypeCreateInputSecurityGroupRequest :: Newtype CreateInputSecurityGroupRequest _
 derive instance repGenericCreateInputSecurityGroupRequest :: Generic CreateInputSecurityGroupRequest _
@@ -1620,7 +1648,7 @@ newCreateInputSecurityGroupRequest  = CreateInputSecurityGroupRequest { "Whiteli
 
 -- | Constructs CreateInputSecurityGroupRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputSecurityGroupRequest' :: ( { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr) } -> {"WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr) } ) -> CreateInputSecurityGroupRequest
+newCreateInputSecurityGroupRequest' :: ( { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr') } -> {"WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr') } ) -> CreateInputSecurityGroupRequest
 newCreateInputSecurityGroupRequest'  customize = (CreateInputSecurityGroupRequest <<< customize) { "WhitelistRules": (NullOrUndefined Nothing) }
 
 
@@ -1700,11 +1728,11 @@ newDeleteChannelRequest' _ChannelId customize = (DeleteChannelRequest <<< custom
 -- | Placeholder documentation for DeleteChannelResponse
 newtype DeleteChannelResponse = DeleteChannelResponse 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
-  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint)
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
+  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int)
@@ -1726,7 +1754,7 @@ newDeleteChannelResponse  = DeleteChannelResponse { "Arn": (NullOrUndefined Noth
 
 -- | Constructs DeleteChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> DeleteChannelResponse
+newDeleteChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> DeleteChannelResponse
 newDeleteChannelResponse'  customize = (DeleteChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
 
 
@@ -1832,11 +1860,11 @@ newDescribeChannelRequest' _ChannelId customize = (DescribeChannelRequest <<< cu
 -- | Placeholder documentation for DescribeChannelResponse
 newtype DescribeChannelResponse = DescribeChannelResponse 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
-  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint)
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
+  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int)
@@ -1858,7 +1886,7 @@ newDescribeChannelResponse  = DescribeChannelResponse { "Arn": (NullOrUndefined 
 
 -- | Constructs DescribeChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> DescribeChannelResponse
+newDescribeChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> DescribeChannelResponse
 newDescribeChannelResponse'  customize = (DescribeChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
 
 
@@ -1890,12 +1918,12 @@ newDescribeInputRequest' _InputId customize = (DescribeInputRequest <<< customiz
 -- | Placeholder documentation for DescribeInputResponse
 newtype DescribeInputResponse = DescribeInputResponse 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination)
+  , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string')
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination')
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
-  , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string)
-  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource)
+  , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string')
+  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource')
   , "State" :: NullOrUndefined.NullOrUndefined (InputState)
   , "Type" :: NullOrUndefined.NullOrUndefined (InputType)
   }
@@ -1914,7 +1942,7 @@ newDescribeInputResponse  = DescribeInputResponse { "Arn": (NullOrUndefined Noth
 
 -- | Constructs DescribeInputResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInputResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource) , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource) , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> DescribeInputResponse
+newDescribeInputResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> DescribeInputResponse
 newDescribeInputResponse'  customize = (DescribeInputResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "AttachedChannels": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
 
 
@@ -1947,7 +1975,7 @@ newDescribeInputSecurityGroupRequest' _InputSecurityGroupId customize = (Describ
 newtype DescribeInputSecurityGroupResponse = DescribeInputSecurityGroupResponse 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule)
+  , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule')
   }
 derive instance newtypeDescribeInputSecurityGroupResponse :: Newtype DescribeInputSecurityGroupResponse _
 derive instance repGenericDescribeInputSecurityGroupResponse :: Generic DescribeInputSecurityGroupResponse _
@@ -1964,16 +1992,16 @@ newDescribeInputSecurityGroupResponse  = DescribeInputSecurityGroupResponse { "A
 
 -- | Constructs DescribeInputSecurityGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInputSecurityGroupResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule) } ) -> DescribeInputSecurityGroupResponse
+newDescribeInputSecurityGroupResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule') } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule') } ) -> DescribeInputSecurityGroupResponse
 newDescribeInputSecurityGroupResponse'  customize = (DescribeInputSecurityGroupResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "WhitelistRules": (NullOrUndefined Nothing) }
 
 
 
 -- | DVB Network Information Table (NIT)
 newtype DvbNitSettings = DvbNitSettings 
-  { "NetworkId" :: NullOrUndefined.NullOrUndefined (Int)
-  , "NetworkName" :: NullOrUndefined.NullOrUndefined (String)
-  , "RepInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  { "NetworkId" :: (IntegerMin0Max65536')
+  , "NetworkName" :: (StringMin1Max256')
+  , "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin25Max10000')
   }
 derive instance newtypeDvbNitSettings :: Newtype DvbNitSettings _
 derive instance repGenericDvbNitSettings :: Generic DvbNitSettings _
@@ -1985,13 +2013,13 @@ instance encodeDvbNitSettings :: Encode DvbNitSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs DvbNitSettings from required parameters
-newDvbNitSettings :: DvbNitSettings
-newDvbNitSettings  = DvbNitSettings { "NetworkId": (NullOrUndefined Nothing), "NetworkName": (NullOrUndefined Nothing), "RepInterval": (NullOrUndefined Nothing) }
+newDvbNitSettings :: IntegerMin0Max65536' -> StringMin1Max256' -> DvbNitSettings
+newDvbNitSettings _NetworkId _NetworkName = DvbNitSettings { "NetworkId": _NetworkId, "NetworkName": _NetworkName, "RepInterval": (NullOrUndefined Nothing) }
 
 -- | Constructs DvbNitSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbNitSettings' :: ( { "NetworkId" :: NullOrUndefined.NullOrUndefined (Int) , "NetworkName" :: NullOrUndefined.NullOrUndefined (String) , "RepInterval" :: NullOrUndefined.NullOrUndefined (Int) } -> {"NetworkId" :: NullOrUndefined.NullOrUndefined (Int) , "NetworkName" :: NullOrUndefined.NullOrUndefined (String) , "RepInterval" :: NullOrUndefined.NullOrUndefined (Int) } ) -> DvbNitSettings
-newDvbNitSettings'  customize = (DvbNitSettings <<< customize) { "NetworkId": (NullOrUndefined Nothing), "NetworkName": (NullOrUndefined Nothing), "RepInterval": (NullOrUndefined Nothing) }
+newDvbNitSettings' :: IntegerMin0Max65536' -> StringMin1Max256' -> ( { "NetworkId" :: (IntegerMin0Max65536') , "NetworkName" :: (StringMin1Max256') , "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin25Max10000') } -> {"NetworkId" :: (IntegerMin0Max65536') , "NetworkName" :: (StringMin1Max256') , "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin25Max10000') } ) -> DvbNitSettings
+newDvbNitSettings' _NetworkId _NetworkName customize = (DvbNitSettings <<< customize) { "NetworkId": _NetworkId, "NetworkName": _NetworkName, "RepInterval": (NullOrUndefined Nothing) }
 
 
 
@@ -2011,9 +2039,9 @@ instance encodeDvbSdtOutputSdt :: Encode DvbSdtOutputSdt where
 -- | DVB Service Description Table (SDT)
 newtype DvbSdtSettings = DvbSdtSettings 
   { "OutputSdt" :: NullOrUndefined.NullOrUndefined (DvbSdtOutputSdt)
-  , "RepInterval" :: NullOrUndefined.NullOrUndefined (Int)
-  , "ServiceName" :: NullOrUndefined.NullOrUndefined (String)
-  , "ServiceProviderName" :: NullOrUndefined.NullOrUndefined (String)
+  , "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin25Max2000')
+  , "ServiceName" :: NullOrUndefined.NullOrUndefined (StringMin1Max256')
+  , "ServiceProviderName" :: NullOrUndefined.NullOrUndefined (StringMin1Max256')
   }
 derive instance newtypeDvbSdtSettings :: Newtype DvbSdtSettings _
 derive instance repGenericDvbSdtSettings :: Generic DvbSdtSettings _
@@ -2030,7 +2058,7 @@ newDvbSdtSettings  = DvbSdtSettings { "OutputSdt": (NullOrUndefined Nothing), "R
 
 -- | Constructs DvbSdtSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbSdtSettings' :: ( { "OutputSdt" :: NullOrUndefined.NullOrUndefined (DvbSdtOutputSdt) , "RepInterval" :: NullOrUndefined.NullOrUndefined (Int) , "ServiceName" :: NullOrUndefined.NullOrUndefined (String) , "ServiceProviderName" :: NullOrUndefined.NullOrUndefined (String) } -> {"OutputSdt" :: NullOrUndefined.NullOrUndefined (DvbSdtOutputSdt) , "RepInterval" :: NullOrUndefined.NullOrUndefined (Int) , "ServiceName" :: NullOrUndefined.NullOrUndefined (String) , "ServiceProviderName" :: NullOrUndefined.NullOrUndefined (String) } ) -> DvbSdtSettings
+newDvbSdtSettings' :: ( { "OutputSdt" :: NullOrUndefined.NullOrUndefined (DvbSdtOutputSdt) , "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin25Max2000') , "ServiceName" :: NullOrUndefined.NullOrUndefined (StringMin1Max256') , "ServiceProviderName" :: NullOrUndefined.NullOrUndefined (StringMin1Max256') } -> {"OutputSdt" :: NullOrUndefined.NullOrUndefined (DvbSdtOutputSdt) , "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin25Max2000') , "ServiceName" :: NullOrUndefined.NullOrUndefined (StringMin1Max256') , "ServiceProviderName" :: NullOrUndefined.NullOrUndefined (StringMin1Max256') } ) -> DvbSdtSettings
 newDvbSdtSettings'  customize = (DvbSdtSettings <<< customize) { "OutputSdt": (NullOrUndefined Nothing), "RepInterval": (NullOrUndefined Nothing), "ServiceName": (NullOrUndefined Nothing), "ServiceProviderName": (NullOrUndefined Nothing) }
 
 
@@ -2091,21 +2119,21 @@ instance encodeDvbSubDestinationOutlineColor :: Encode DvbSubDestinationOutlineC
 newtype DvbSubDestinationSettings = DvbSubDestinationSettings 
   { "Alignment" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationAlignment)
   , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationBackgroundColor)
-  , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (Int)
+  , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255')
   , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation)
   , "FontColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationFontColor)
-  , "FontOpacity" :: NullOrUndefined.NullOrUndefined (Int)
-  , "FontResolution" :: NullOrUndefined.NullOrUndefined (Int)
+  , "FontOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255')
+  , "FontResolution" :: NullOrUndefined.NullOrUndefined (IntegerMin96Max600')
   , "FontSize" :: NullOrUndefined.NullOrUndefined (String)
   , "OutlineColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationOutlineColor)
-  , "OutlineSize" :: NullOrUndefined.NullOrUndefined (Int)
+  , "OutlineSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10')
   , "ShadowColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationShadowColor)
-  , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (Int)
+  , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255')
   , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int)
   , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int)
   , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationTeletextGridControl)
-  , "XPosition" :: NullOrUndefined.NullOrUndefined (Int)
-  , "YPosition" :: NullOrUndefined.NullOrUndefined (Int)
+  , "XPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "YPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   }
 derive instance newtypeDvbSubDestinationSettings :: Newtype DvbSubDestinationSettings _
 derive instance repGenericDvbSubDestinationSettings :: Generic DvbSubDestinationSettings _
@@ -2122,7 +2150,7 @@ newDvbSubDestinationSettings  = DvbSubDestinationSettings { "Alignment": (NullOr
 
 -- | Constructs DvbSubDestinationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbSubDestinationSettings' :: ( { "Alignment" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "FontResolution" :: NullOrUndefined.NullOrUndefined (Int) , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (Int) , "YPosition" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Alignment" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "FontResolution" :: NullOrUndefined.NullOrUndefined (Int) , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (Int) , "YPosition" :: NullOrUndefined.NullOrUndefined (Int) } ) -> DvbSubDestinationSettings
+newDvbSubDestinationSettings' :: ( { "Alignment" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined.NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } -> {"Alignment" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationAlignment) , "BackgroundColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined.NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationFontColor) , "FontOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined.NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined.NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationOutlineColor) , "OutlineSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationShadowColor) , "ShadowOpacity" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined.NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined.NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined.NullOrUndefined (DvbSubDestinationTeletextGridControl) , "XPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } ) -> DvbSubDestinationSettings
 newDvbSubDestinationSettings'  customize = (DvbSubDestinationSettings <<< customize) { "Alignment": (NullOrUndefined Nothing), "BackgroundColor": (NullOrUndefined Nothing), "BackgroundOpacity": (NullOrUndefined Nothing), "Font": (NullOrUndefined Nothing), "FontColor": (NullOrUndefined Nothing), "FontOpacity": (NullOrUndefined Nothing), "FontResolution": (NullOrUndefined Nothing), "FontSize": (NullOrUndefined Nothing), "OutlineColor": (NullOrUndefined Nothing), "OutlineSize": (NullOrUndefined Nothing), "ShadowColor": (NullOrUndefined Nothing), "ShadowOpacity": (NullOrUndefined Nothing), "ShadowXOffset": (NullOrUndefined Nothing), "ShadowYOffset": (NullOrUndefined Nothing), "TeletextGridControl": (NullOrUndefined Nothing), "XPosition": (NullOrUndefined Nothing), "YPosition": (NullOrUndefined Nothing) }
 
 
@@ -2155,7 +2183,7 @@ instance encodeDvbSubDestinationTeletextGridControl :: Encode DvbSubDestinationT
 
 -- | Placeholder documentation for DvbSubSourceSettings
 newtype DvbSubSourceSettings = DvbSubSourceSettings 
-  { "Pid" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   }
 derive instance newtypeDvbSubSourceSettings :: Newtype DvbSubSourceSettings _
 derive instance repGenericDvbSubSourceSettings :: Generic DvbSubSourceSettings _
@@ -2172,14 +2200,14 @@ newDvbSubSourceSettings  = DvbSubSourceSettings { "Pid": (NullOrUndefined Nothin
 
 -- | Constructs DvbSubSourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbSubSourceSettings' :: ( { "Pid" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Pid" :: NullOrUndefined.NullOrUndefined (Int) } ) -> DvbSubSourceSettings
+newDvbSubSourceSettings' :: ( { "Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin1') } -> {"Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin1') } ) -> DvbSubSourceSettings
 newDvbSubSourceSettings'  customize = (DvbSubSourceSettings <<< customize) { "Pid": (NullOrUndefined Nothing) }
 
 
 
 -- | DVB Time and Date Table (SDT)
 newtype DvbTdtSettings = DvbTdtSettings 
-  { "RepInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  { "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin1000Max30000')
   }
 derive instance newtypeDvbTdtSettings :: Newtype DvbTdtSettings _
 derive instance repGenericDvbTdtSettings :: Generic DvbTdtSettings _
@@ -2196,7 +2224,7 @@ newDvbTdtSettings  = DvbTdtSettings { "RepInterval": (NullOrUndefined Nothing) }
 
 -- | Constructs DvbTdtSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbTdtSettings' :: ( { "RepInterval" :: NullOrUndefined.NullOrUndefined (Int) } -> {"RepInterval" :: NullOrUndefined.NullOrUndefined (Int) } ) -> DvbTdtSettings
+newDvbTdtSettings' :: ( { "RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin1000Max30000') } -> {"RepInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin1000Max30000') } ) -> DvbTdtSettings
 newDvbTdtSettings'  customize = (DvbTdtSettings <<< customize) { "RepInterval": (NullOrUndefined Nothing) }
 
 
@@ -2351,7 +2379,7 @@ newtype Eac3Settings = Eac3Settings
   , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Eac3BitstreamMode)
   , "CodingMode" :: NullOrUndefined.NullOrUndefined (Eac3CodingMode)
   , "DcFilter" :: NullOrUndefined.NullOrUndefined (Eac3DcFilter)
-  , "Dialnorm" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Dialnorm" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max31')
   , "DrcLine" :: NullOrUndefined.NullOrUndefined (Eac3DrcLine)
   , "DrcRf" :: NullOrUndefined.NullOrUndefined (Eac3DrcRf)
   , "LfeControl" :: NullOrUndefined.NullOrUndefined (Eac3LfeControl)
@@ -2382,7 +2410,7 @@ newEac3Settings  = Eac3Settings { "AttenuationControl": (NullOrUndefined Nothing
 
 -- | Constructs Eac3Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEac3Settings' :: ( { "AttenuationControl" :: NullOrUndefined.NullOrUndefined (Eac3AttenuationControl) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Eac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Eac3CodingMode) , "DcFilter" :: NullOrUndefined.NullOrUndefined (Eac3DcFilter) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (Int) , "DrcLine" :: NullOrUndefined.NullOrUndefined (Eac3DrcLine) , "DrcRf" :: NullOrUndefined.NullOrUndefined (Eac3DrcRf) , "LfeControl" :: NullOrUndefined.NullOrUndefined (Eac3LfeControl) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Eac3LfeFilter) , "LoRoCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LoRoSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Eac3MetadataControl) , "PassthroughControl" :: NullOrUndefined.NullOrUndefined (Eac3PassthroughControl) , "PhaseControl" :: NullOrUndefined.NullOrUndefined (Eac3PhaseControl) , "StereoDownmix" :: NullOrUndefined.NullOrUndefined (Eac3StereoDownmix) , "SurroundExMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundExMode) , "SurroundMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundMode) } -> {"AttenuationControl" :: NullOrUndefined.NullOrUndefined (Eac3AttenuationControl) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Eac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Eac3CodingMode) , "DcFilter" :: NullOrUndefined.NullOrUndefined (Eac3DcFilter) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (Int) , "DrcLine" :: NullOrUndefined.NullOrUndefined (Eac3DrcLine) , "DrcRf" :: NullOrUndefined.NullOrUndefined (Eac3DrcRf) , "LfeControl" :: NullOrUndefined.NullOrUndefined (Eac3LfeControl) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Eac3LfeFilter) , "LoRoCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LoRoSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Eac3MetadataControl) , "PassthroughControl" :: NullOrUndefined.NullOrUndefined (Eac3PassthroughControl) , "PhaseControl" :: NullOrUndefined.NullOrUndefined (Eac3PhaseControl) , "StereoDownmix" :: NullOrUndefined.NullOrUndefined (Eac3StereoDownmix) , "SurroundExMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundExMode) , "SurroundMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundMode) } ) -> Eac3Settings
+newEac3Settings' :: ( { "AttenuationControl" :: NullOrUndefined.NullOrUndefined (Eac3AttenuationControl) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Eac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Eac3CodingMode) , "DcFilter" :: NullOrUndefined.NullOrUndefined (Eac3DcFilter) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max31') , "DrcLine" :: NullOrUndefined.NullOrUndefined (Eac3DrcLine) , "DrcRf" :: NullOrUndefined.NullOrUndefined (Eac3DrcRf) , "LfeControl" :: NullOrUndefined.NullOrUndefined (Eac3LfeControl) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Eac3LfeFilter) , "LoRoCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LoRoSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Eac3MetadataControl) , "PassthroughControl" :: NullOrUndefined.NullOrUndefined (Eac3PassthroughControl) , "PhaseControl" :: NullOrUndefined.NullOrUndefined (Eac3PhaseControl) , "StereoDownmix" :: NullOrUndefined.NullOrUndefined (Eac3StereoDownmix) , "SurroundExMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundExMode) , "SurroundMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundMode) } -> {"AttenuationControl" :: NullOrUndefined.NullOrUndefined (Eac3AttenuationControl) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined.NullOrUndefined (Eac3BitstreamMode) , "CodingMode" :: NullOrUndefined.NullOrUndefined (Eac3CodingMode) , "DcFilter" :: NullOrUndefined.NullOrUndefined (Eac3DcFilter) , "Dialnorm" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max31') , "DrcLine" :: NullOrUndefined.NullOrUndefined (Eac3DrcLine) , "DrcRf" :: NullOrUndefined.NullOrUndefined (Eac3DrcRf) , "LfeControl" :: NullOrUndefined.NullOrUndefined (Eac3LfeControl) , "LfeFilter" :: NullOrUndefined.NullOrUndefined (Eac3LfeFilter) , "LoRoCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LoRoSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtCenterMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "LtRtSurroundMixLevel" :: NullOrUndefined.NullOrUndefined (Number) , "MetadataControl" :: NullOrUndefined.NullOrUndefined (Eac3MetadataControl) , "PassthroughControl" :: NullOrUndefined.NullOrUndefined (Eac3PassthroughControl) , "PhaseControl" :: NullOrUndefined.NullOrUndefined (Eac3PhaseControl) , "StereoDownmix" :: NullOrUndefined.NullOrUndefined (Eac3StereoDownmix) , "SurroundExMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundExMode) , "SurroundMode" :: NullOrUndefined.NullOrUndefined (Eac3SurroundMode) } ) -> Eac3Settings
 newEac3Settings'  customize = (Eac3Settings <<< customize) { "AttenuationControl": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BitstreamMode": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "DcFilter": (NullOrUndefined Nothing), "Dialnorm": (NullOrUndefined Nothing), "DrcLine": (NullOrUndefined Nothing), "DrcRf": (NullOrUndefined Nothing), "LfeControl": (NullOrUndefined Nothing), "LfeFilter": (NullOrUndefined Nothing), "LoRoCenterMixLevel": (NullOrUndefined Nothing), "LoRoSurroundMixLevel": (NullOrUndefined Nothing), "LtRtCenterMixLevel": (NullOrUndefined Nothing), "LtRtSurroundMixLevel": (NullOrUndefined Nothing), "MetadataControl": (NullOrUndefined Nothing), "PassthroughControl": (NullOrUndefined Nothing), "PhaseControl": (NullOrUndefined Nothing), "StereoDownmix": (NullOrUndefined Nothing), "SurroundExMode": (NullOrUndefined Nothing), "SurroundMode": (NullOrUndefined Nothing) }
 
 
@@ -2482,8 +2510,8 @@ instance encodeEmbeddedScte20Detection :: Encode EmbeddedScte20Detection where
 newtype EmbeddedSourceSettings = EmbeddedSourceSettings 
   { "Convert608To708" :: NullOrUndefined.NullOrUndefined (EmbeddedConvert608To708)
   , "Scte20Detection" :: NullOrUndefined.NullOrUndefined (EmbeddedScte20Detection)
-  , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (Int)
-  , "Source608TrackNumber" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max4')
+  , "Source608TrackNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max5')
   }
 derive instance newtypeEmbeddedSourceSettings :: Newtype EmbeddedSourceSettings _
 derive instance repGenericEmbeddedSourceSettings :: Generic EmbeddedSourceSettings _
@@ -2500,7 +2528,7 @@ newEmbeddedSourceSettings  = EmbeddedSourceSettings { "Convert608To708": (NullOr
 
 -- | Constructs EmbeddedSourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEmbeddedSourceSettings' :: ( { "Convert608To708" :: NullOrUndefined.NullOrUndefined (EmbeddedConvert608To708) , "Scte20Detection" :: NullOrUndefined.NullOrUndefined (EmbeddedScte20Detection) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (Int) , "Source608TrackNumber" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Convert608To708" :: NullOrUndefined.NullOrUndefined (EmbeddedConvert608To708) , "Scte20Detection" :: NullOrUndefined.NullOrUndefined (EmbeddedScte20Detection) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (Int) , "Source608TrackNumber" :: NullOrUndefined.NullOrUndefined (Int) } ) -> EmbeddedSourceSettings
+newEmbeddedSourceSettings' :: ( { "Convert608To708" :: NullOrUndefined.NullOrUndefined (EmbeddedConvert608To708) , "Scte20Detection" :: NullOrUndefined.NullOrUndefined (EmbeddedScte20Detection) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max4') , "Source608TrackNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max5') } -> {"Convert608To708" :: NullOrUndefined.NullOrUndefined (EmbeddedConvert608To708) , "Scte20Detection" :: NullOrUndefined.NullOrUndefined (EmbeddedScte20Detection) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max4') , "Source608TrackNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max5') } ) -> EmbeddedSourceSettings
 newEmbeddedSourceSettings'  customize = (EmbeddedSourceSettings <<< customize) { "Convert608To708": (NullOrUndefined Nothing), "Scte20Detection": (NullOrUndefined Nothing), "Source608ChannelNumber": (NullOrUndefined Nothing), "Source608TrackNumber": (NullOrUndefined Nothing) }
 
 
@@ -2520,15 +2548,15 @@ instance encodeEmpty :: Encode Empty where
 
 -- | Placeholder documentation for EncoderSettings
 newtype EncoderSettings = EncoderSettings 
-  { "AudioDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfAudioDescription)
+  { "AudioDescriptions" :: (ListOfAudioDescription')
   , "AvailBlanking" :: NullOrUndefined.NullOrUndefined (AvailBlanking)
   , "AvailConfiguration" :: NullOrUndefined.NullOrUndefined (AvailConfiguration)
   , "BlackoutSlate" :: NullOrUndefined.NullOrUndefined (BlackoutSlate)
-  , "CaptionDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfCaptionDescription)
+  , "CaptionDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfCaptionDescription')
   , "GlobalConfiguration" :: NullOrUndefined.NullOrUndefined (GlobalConfiguration)
-  , "OutputGroups" :: NullOrUndefined.NullOrUndefined (ListOfOutputGroup)
-  , "TimecodeConfig" :: NullOrUndefined.NullOrUndefined (TimecodeConfig)
-  , "VideoDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfVideoDescription)
+  , "OutputGroups" :: (ListOfOutputGroup')
+  , "TimecodeConfig" :: (TimecodeConfig)
+  , "VideoDescriptions" :: (ListOfVideoDescription')
   }
 derive instance newtypeEncoderSettings :: Newtype EncoderSettings _
 derive instance repGenericEncoderSettings :: Generic EncoderSettings _
@@ -2540,13 +2568,13 @@ instance encodeEncoderSettings :: Encode EncoderSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs EncoderSettings from required parameters
-newEncoderSettings :: EncoderSettings
-newEncoderSettings  = EncoderSettings { "AudioDescriptions": (NullOrUndefined Nothing), "AvailBlanking": (NullOrUndefined Nothing), "AvailConfiguration": (NullOrUndefined Nothing), "BlackoutSlate": (NullOrUndefined Nothing), "CaptionDescriptions": (NullOrUndefined Nothing), "GlobalConfiguration": (NullOrUndefined Nothing), "OutputGroups": (NullOrUndefined Nothing), "TimecodeConfig": (NullOrUndefined Nothing), "VideoDescriptions": (NullOrUndefined Nothing) }
+newEncoderSettings :: ListOfAudioDescription' -> ListOfOutputGroup' -> TimecodeConfig -> ListOfVideoDescription' -> EncoderSettings
+newEncoderSettings _AudioDescriptions _OutputGroups _TimecodeConfig _VideoDescriptions = EncoderSettings { "AudioDescriptions": _AudioDescriptions, "OutputGroups": _OutputGroups, "TimecodeConfig": _TimecodeConfig, "VideoDescriptions": _VideoDescriptions, "AvailBlanking": (NullOrUndefined Nothing), "AvailConfiguration": (NullOrUndefined Nothing), "BlackoutSlate": (NullOrUndefined Nothing), "CaptionDescriptions": (NullOrUndefined Nothing), "GlobalConfiguration": (NullOrUndefined Nothing) }
 
 -- | Constructs EncoderSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEncoderSettings' :: ( { "AudioDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfAudioDescription) , "AvailBlanking" :: NullOrUndefined.NullOrUndefined (AvailBlanking) , "AvailConfiguration" :: NullOrUndefined.NullOrUndefined (AvailConfiguration) , "BlackoutSlate" :: NullOrUndefined.NullOrUndefined (BlackoutSlate) , "CaptionDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfCaptionDescription) , "GlobalConfiguration" :: NullOrUndefined.NullOrUndefined (GlobalConfiguration) , "OutputGroups" :: NullOrUndefined.NullOrUndefined (ListOfOutputGroup) , "TimecodeConfig" :: NullOrUndefined.NullOrUndefined (TimecodeConfig) , "VideoDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfVideoDescription) } -> {"AudioDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfAudioDescription) , "AvailBlanking" :: NullOrUndefined.NullOrUndefined (AvailBlanking) , "AvailConfiguration" :: NullOrUndefined.NullOrUndefined (AvailConfiguration) , "BlackoutSlate" :: NullOrUndefined.NullOrUndefined (BlackoutSlate) , "CaptionDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfCaptionDescription) , "GlobalConfiguration" :: NullOrUndefined.NullOrUndefined (GlobalConfiguration) , "OutputGroups" :: NullOrUndefined.NullOrUndefined (ListOfOutputGroup) , "TimecodeConfig" :: NullOrUndefined.NullOrUndefined (TimecodeConfig) , "VideoDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfVideoDescription) } ) -> EncoderSettings
-newEncoderSettings'  customize = (EncoderSettings <<< customize) { "AudioDescriptions": (NullOrUndefined Nothing), "AvailBlanking": (NullOrUndefined Nothing), "AvailConfiguration": (NullOrUndefined Nothing), "BlackoutSlate": (NullOrUndefined Nothing), "CaptionDescriptions": (NullOrUndefined Nothing), "GlobalConfiguration": (NullOrUndefined Nothing), "OutputGroups": (NullOrUndefined Nothing), "TimecodeConfig": (NullOrUndefined Nothing), "VideoDescriptions": (NullOrUndefined Nothing) }
+newEncoderSettings' :: ListOfAudioDescription' -> ListOfOutputGroup' -> TimecodeConfig -> ListOfVideoDescription' -> ( { "AudioDescriptions" :: (ListOfAudioDescription') , "AvailBlanking" :: NullOrUndefined.NullOrUndefined (AvailBlanking) , "AvailConfiguration" :: NullOrUndefined.NullOrUndefined (AvailConfiguration) , "BlackoutSlate" :: NullOrUndefined.NullOrUndefined (BlackoutSlate) , "CaptionDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfCaptionDescription') , "GlobalConfiguration" :: NullOrUndefined.NullOrUndefined (GlobalConfiguration) , "OutputGroups" :: (ListOfOutputGroup') , "TimecodeConfig" :: (TimecodeConfig) , "VideoDescriptions" :: (ListOfVideoDescription') } -> {"AudioDescriptions" :: (ListOfAudioDescription') , "AvailBlanking" :: NullOrUndefined.NullOrUndefined (AvailBlanking) , "AvailConfiguration" :: NullOrUndefined.NullOrUndefined (AvailConfiguration) , "BlackoutSlate" :: NullOrUndefined.NullOrUndefined (BlackoutSlate) , "CaptionDescriptions" :: NullOrUndefined.NullOrUndefined (ListOfCaptionDescription') , "GlobalConfiguration" :: NullOrUndefined.NullOrUndefined (GlobalConfiguration) , "OutputGroups" :: (ListOfOutputGroup') , "TimecodeConfig" :: (TimecodeConfig) , "VideoDescriptions" :: (ListOfVideoDescription') } ) -> EncoderSettings
+newEncoderSettings' _AudioDescriptions _OutputGroups _TimecodeConfig _VideoDescriptions customize = (EncoderSettings <<< customize) { "AudioDescriptions": _AudioDescriptions, "OutputGroups": _OutputGroups, "TimecodeConfig": _TimecodeConfig, "VideoDescriptions": _VideoDescriptions, "AvailBlanking": (NullOrUndefined Nothing), "AvailConfiguration": (NullOrUndefined Nothing), "BlackoutSlate": (NullOrUndefined Nothing), "CaptionDescriptions": (NullOrUndefined Nothing), "GlobalConfiguration": (NullOrUndefined Nothing) }
 
 
 
@@ -2565,9 +2593,9 @@ instance encodeFecOutputIncludeFec :: Encode FecOutputIncludeFec where
 
 -- | Placeholder documentation for FecOutputSettings
 newtype FecOutputSettings = FecOutputSettings 
-  { "ColumnDepth" :: NullOrUndefined.NullOrUndefined (Int)
+  { "ColumnDepth" :: NullOrUndefined.NullOrUndefined (IntegerMin4Max20')
   , "IncludeFec" :: NullOrUndefined.NullOrUndefined (FecOutputIncludeFec)
-  , "RowLength" :: NullOrUndefined.NullOrUndefined (Int)
+  , "RowLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max20')
   }
 derive instance newtypeFecOutputSettings :: Newtype FecOutputSettings _
 derive instance repGenericFecOutputSettings :: Generic FecOutputSettings _
@@ -2584,7 +2612,7 @@ newFecOutputSettings  = FecOutputSettings { "ColumnDepth": (NullOrUndefined Noth
 
 -- | Constructs FecOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFecOutputSettings' :: ( { "ColumnDepth" :: NullOrUndefined.NullOrUndefined (Int) , "IncludeFec" :: NullOrUndefined.NullOrUndefined (FecOutputIncludeFec) , "RowLength" :: NullOrUndefined.NullOrUndefined (Int) } -> {"ColumnDepth" :: NullOrUndefined.NullOrUndefined (Int) , "IncludeFec" :: NullOrUndefined.NullOrUndefined (FecOutputIncludeFec) , "RowLength" :: NullOrUndefined.NullOrUndefined (Int) } ) -> FecOutputSettings
+newFecOutputSettings' :: ( { "ColumnDepth" :: NullOrUndefined.NullOrUndefined (IntegerMin4Max20') , "IncludeFec" :: NullOrUndefined.NullOrUndefined (FecOutputIncludeFec) , "RowLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max20') } -> {"ColumnDepth" :: NullOrUndefined.NullOrUndefined (IntegerMin4Max20') , "IncludeFec" :: NullOrUndefined.NullOrUndefined (FecOutputIncludeFec) , "RowLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max20') } ) -> FecOutputSettings
 newFecOutputSettings'  customize = (FecOutputSettings <<< customize) { "ColumnDepth": (NullOrUndefined Nothing), "IncludeFec": (NullOrUndefined Nothing), "RowLength": (NullOrUndefined Nothing) }
 
 
@@ -2652,7 +2680,7 @@ newGatewayTimeoutException'  customize = (GatewayTimeoutException <<< customize)
 
 -- | Placeholder documentation for GlobalConfiguration
 newtype GlobalConfiguration = GlobalConfiguration 
-  { "InitialAudioGain" :: NullOrUndefined.NullOrUndefined (Int)
+  { "InitialAudioGain" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative60Max60')
   , "InputEndAction" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationInputEndAction)
   , "InputLossBehavior" :: NullOrUndefined.NullOrUndefined (InputLossBehavior)
   , "OutputTimingSource" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationOutputTimingSource)
@@ -2673,7 +2701,7 @@ newGlobalConfiguration  = GlobalConfiguration { "InitialAudioGain": (NullOrUndef
 
 -- | Constructs GlobalConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGlobalConfiguration' :: ( { "InitialAudioGain" :: NullOrUndefined.NullOrUndefined (Int) , "InputEndAction" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: NullOrUndefined.NullOrUndefined (InputLossBehavior) , "OutputTimingSource" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationLowFramerateInputs) } -> {"InitialAudioGain" :: NullOrUndefined.NullOrUndefined (Int) , "InputEndAction" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: NullOrUndefined.NullOrUndefined (InputLossBehavior) , "OutputTimingSource" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationLowFramerateInputs) } ) -> GlobalConfiguration
+newGlobalConfiguration' :: ( { "InitialAudioGain" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative60Max60') , "InputEndAction" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: NullOrUndefined.NullOrUndefined (InputLossBehavior) , "OutputTimingSource" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationLowFramerateInputs) } -> {"InitialAudioGain" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative60Max60') , "InputEndAction" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: NullOrUndefined.NullOrUndefined (InputLossBehavior) , "OutputTimingSource" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: NullOrUndefined.NullOrUndefined (GlobalConfigurationLowFramerateInputs) } ) -> GlobalConfiguration
 newGlobalConfiguration'  customize = (GlobalConfiguration <<< customize) { "InitialAudioGain": (NullOrUndefined Nothing), "InputEndAction": (NullOrUndefined Nothing), "InputLossBehavior": (NullOrUndefined Nothing), "OutputTimingSource": (NullOrUndefined Nothing), "SupportLowFramerateInputs": (NullOrUndefined Nothing) }
 
 
@@ -2903,9 +2931,9 @@ instance encodeH264SceneChangeDetect :: Encode H264SceneChangeDetect where
 newtype H264Settings = H264Settings 
   { "AdaptiveQuantization" :: NullOrUndefined.NullOrUndefined (H264AdaptiveQuantization)
   , "AfdSignaling" :: NullOrUndefined.NullOrUndefined (AfdSignaling)
-  , "Bitrate" :: NullOrUndefined.NullOrUndefined (Int)
-  , "BufFillPct" :: NullOrUndefined.NullOrUndefined (Int)
-  , "BufSize" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Bitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin1000')
+  , "BufFillPct" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max100')
+  , "BufSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   , "ColorMetadata" :: NullOrUndefined.NullOrUndefined (H264ColorMetadata)
   , "EntropyEncoding" :: NullOrUndefined.NullOrUndefined (H264EntropyEncoding)
   , "FixedAfd" :: NullOrUndefined.NullOrUndefined (FixedAfd)
@@ -2914,24 +2942,24 @@ newtype H264Settings = H264Settings
   , "FramerateDenominator" :: NullOrUndefined.NullOrUndefined (Int)
   , "FramerateNumerator" :: NullOrUndefined.NullOrUndefined (Int)
   , "GopBReference" :: NullOrUndefined.NullOrUndefined (H264GopBReference)
-  , "GopClosedCadence" :: NullOrUndefined.NullOrUndefined (Int)
-  , "GopNumBFrames" :: NullOrUndefined.NullOrUndefined (Int)
-  , "GopSize" :: NullOrUndefined.NullOrUndefined (Number)
+  , "GopClosedCadence" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "GopNumBFrames" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max7')
+  , "GopSize" :: NullOrUndefined.NullOrUndefined (DoubleMin1')
   , "GopSizeUnits" :: NullOrUndefined.NullOrUndefined (H264GopSizeUnits)
   , "Level" :: NullOrUndefined.NullOrUndefined (H264Level)
   , "LookAheadRateControl" :: NullOrUndefined.NullOrUndefined (H264LookAheadRateControl)
-  , "MaxBitrate" :: NullOrUndefined.NullOrUndefined (Int)
-  , "MinIInterval" :: NullOrUndefined.NullOrUndefined (Int)
-  , "NumRefFrames" :: NullOrUndefined.NullOrUndefined (Int)
+  , "MaxBitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin1000')
+  , "MinIInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max30')
+  , "NumRefFrames" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max6')
   , "ParControl" :: NullOrUndefined.NullOrUndefined (H264ParControl)
-  , "ParDenominator" :: NullOrUndefined.NullOrUndefined (Int)
+  , "ParDenominator" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   , "ParNumerator" :: NullOrUndefined.NullOrUndefined (Int)
   , "Profile" :: NullOrUndefined.NullOrUndefined (H264Profile)
   , "RateControlMode" :: NullOrUndefined.NullOrUndefined (H264RateControlMode)
   , "ScanType" :: NullOrUndefined.NullOrUndefined (H264ScanType)
   , "SceneChangeDetect" :: NullOrUndefined.NullOrUndefined (H264SceneChangeDetect)
-  , "Slices" :: NullOrUndefined.NullOrUndefined (Int)
-  , "Softness" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Slices" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max32')
+  , "Softness" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max128')
   , "SpatialAq" :: NullOrUndefined.NullOrUndefined (H264SpatialAq)
   , "Syntax" :: NullOrUndefined.NullOrUndefined (H264Syntax)
   , "TemporalAq" :: NullOrUndefined.NullOrUndefined (H264TemporalAq)
@@ -2952,7 +2980,7 @@ newH264Settings  = H264Settings { "AdaptiveQuantization": (NullOrUndefined Nothi
 
 -- | Constructs H264Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newH264Settings' :: ( { "AdaptiveQuantization" :: NullOrUndefined.NullOrUndefined (H264AdaptiveQuantization) , "AfdSignaling" :: NullOrUndefined.NullOrUndefined (AfdSignaling) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Int) , "BufFillPct" :: NullOrUndefined.NullOrUndefined (Int) , "BufSize" :: NullOrUndefined.NullOrUndefined (Int) , "ColorMetadata" :: NullOrUndefined.NullOrUndefined (H264ColorMetadata) , "EntropyEncoding" :: NullOrUndefined.NullOrUndefined (H264EntropyEncoding) , "FixedAfd" :: NullOrUndefined.NullOrUndefined (FixedAfd) , "FlickerAq" :: NullOrUndefined.NullOrUndefined (H264FlickerAq) , "FramerateControl" :: NullOrUndefined.NullOrUndefined (H264FramerateControl) , "FramerateDenominator" :: NullOrUndefined.NullOrUndefined (Int) , "FramerateNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "GopBReference" :: NullOrUndefined.NullOrUndefined (H264GopBReference) , "GopClosedCadence" :: NullOrUndefined.NullOrUndefined (Int) , "GopNumBFrames" :: NullOrUndefined.NullOrUndefined (Int) , "GopSize" :: NullOrUndefined.NullOrUndefined (Number) , "GopSizeUnits" :: NullOrUndefined.NullOrUndefined (H264GopSizeUnits) , "Level" :: NullOrUndefined.NullOrUndefined (H264Level) , "LookAheadRateControl" :: NullOrUndefined.NullOrUndefined (H264LookAheadRateControl) , "MaxBitrate" :: NullOrUndefined.NullOrUndefined (Int) , "MinIInterval" :: NullOrUndefined.NullOrUndefined (Int) , "NumRefFrames" :: NullOrUndefined.NullOrUndefined (Int) , "ParControl" :: NullOrUndefined.NullOrUndefined (H264ParControl) , "ParDenominator" :: NullOrUndefined.NullOrUndefined (Int) , "ParNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "Profile" :: NullOrUndefined.NullOrUndefined (H264Profile) , "RateControlMode" :: NullOrUndefined.NullOrUndefined (H264RateControlMode) , "ScanType" :: NullOrUndefined.NullOrUndefined (H264ScanType) , "SceneChangeDetect" :: NullOrUndefined.NullOrUndefined (H264SceneChangeDetect) , "Slices" :: NullOrUndefined.NullOrUndefined (Int) , "Softness" :: NullOrUndefined.NullOrUndefined (Int) , "SpatialAq" :: NullOrUndefined.NullOrUndefined (H264SpatialAq) , "Syntax" :: NullOrUndefined.NullOrUndefined (H264Syntax) , "TemporalAq" :: NullOrUndefined.NullOrUndefined (H264TemporalAq) , "TimecodeInsertion" :: NullOrUndefined.NullOrUndefined (H264TimecodeInsertionBehavior) } -> {"AdaptiveQuantization" :: NullOrUndefined.NullOrUndefined (H264AdaptiveQuantization) , "AfdSignaling" :: NullOrUndefined.NullOrUndefined (AfdSignaling) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Int) , "BufFillPct" :: NullOrUndefined.NullOrUndefined (Int) , "BufSize" :: NullOrUndefined.NullOrUndefined (Int) , "ColorMetadata" :: NullOrUndefined.NullOrUndefined (H264ColorMetadata) , "EntropyEncoding" :: NullOrUndefined.NullOrUndefined (H264EntropyEncoding) , "FixedAfd" :: NullOrUndefined.NullOrUndefined (FixedAfd) , "FlickerAq" :: NullOrUndefined.NullOrUndefined (H264FlickerAq) , "FramerateControl" :: NullOrUndefined.NullOrUndefined (H264FramerateControl) , "FramerateDenominator" :: NullOrUndefined.NullOrUndefined (Int) , "FramerateNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "GopBReference" :: NullOrUndefined.NullOrUndefined (H264GopBReference) , "GopClosedCadence" :: NullOrUndefined.NullOrUndefined (Int) , "GopNumBFrames" :: NullOrUndefined.NullOrUndefined (Int) , "GopSize" :: NullOrUndefined.NullOrUndefined (Number) , "GopSizeUnits" :: NullOrUndefined.NullOrUndefined (H264GopSizeUnits) , "Level" :: NullOrUndefined.NullOrUndefined (H264Level) , "LookAheadRateControl" :: NullOrUndefined.NullOrUndefined (H264LookAheadRateControl) , "MaxBitrate" :: NullOrUndefined.NullOrUndefined (Int) , "MinIInterval" :: NullOrUndefined.NullOrUndefined (Int) , "NumRefFrames" :: NullOrUndefined.NullOrUndefined (Int) , "ParControl" :: NullOrUndefined.NullOrUndefined (H264ParControl) , "ParDenominator" :: NullOrUndefined.NullOrUndefined (Int) , "ParNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "Profile" :: NullOrUndefined.NullOrUndefined (H264Profile) , "RateControlMode" :: NullOrUndefined.NullOrUndefined (H264RateControlMode) , "ScanType" :: NullOrUndefined.NullOrUndefined (H264ScanType) , "SceneChangeDetect" :: NullOrUndefined.NullOrUndefined (H264SceneChangeDetect) , "Slices" :: NullOrUndefined.NullOrUndefined (Int) , "Softness" :: NullOrUndefined.NullOrUndefined (Int) , "SpatialAq" :: NullOrUndefined.NullOrUndefined (H264SpatialAq) , "Syntax" :: NullOrUndefined.NullOrUndefined (H264Syntax) , "TemporalAq" :: NullOrUndefined.NullOrUndefined (H264TemporalAq) , "TimecodeInsertion" :: NullOrUndefined.NullOrUndefined (H264TimecodeInsertionBehavior) } ) -> H264Settings
+newH264Settings' :: ( { "AdaptiveQuantization" :: NullOrUndefined.NullOrUndefined (H264AdaptiveQuantization) , "AfdSignaling" :: NullOrUndefined.NullOrUndefined (AfdSignaling) , "Bitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin1000') , "BufFillPct" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max100') , "BufSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "ColorMetadata" :: NullOrUndefined.NullOrUndefined (H264ColorMetadata) , "EntropyEncoding" :: NullOrUndefined.NullOrUndefined (H264EntropyEncoding) , "FixedAfd" :: NullOrUndefined.NullOrUndefined (FixedAfd) , "FlickerAq" :: NullOrUndefined.NullOrUndefined (H264FlickerAq) , "FramerateControl" :: NullOrUndefined.NullOrUndefined (H264FramerateControl) , "FramerateDenominator" :: NullOrUndefined.NullOrUndefined (Int) , "FramerateNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "GopBReference" :: NullOrUndefined.NullOrUndefined (H264GopBReference) , "GopClosedCadence" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "GopNumBFrames" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max7') , "GopSize" :: NullOrUndefined.NullOrUndefined (DoubleMin1') , "GopSizeUnits" :: NullOrUndefined.NullOrUndefined (H264GopSizeUnits) , "Level" :: NullOrUndefined.NullOrUndefined (H264Level) , "LookAheadRateControl" :: NullOrUndefined.NullOrUndefined (H264LookAheadRateControl) , "MaxBitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin1000') , "MinIInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max30') , "NumRefFrames" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max6') , "ParControl" :: NullOrUndefined.NullOrUndefined (H264ParControl) , "ParDenominator" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "ParNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "Profile" :: NullOrUndefined.NullOrUndefined (H264Profile) , "RateControlMode" :: NullOrUndefined.NullOrUndefined (H264RateControlMode) , "ScanType" :: NullOrUndefined.NullOrUndefined (H264ScanType) , "SceneChangeDetect" :: NullOrUndefined.NullOrUndefined (H264SceneChangeDetect) , "Slices" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max32') , "Softness" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max128') , "SpatialAq" :: NullOrUndefined.NullOrUndefined (H264SpatialAq) , "Syntax" :: NullOrUndefined.NullOrUndefined (H264Syntax) , "TemporalAq" :: NullOrUndefined.NullOrUndefined (H264TemporalAq) , "TimecodeInsertion" :: NullOrUndefined.NullOrUndefined (H264TimecodeInsertionBehavior) } -> {"AdaptiveQuantization" :: NullOrUndefined.NullOrUndefined (H264AdaptiveQuantization) , "AfdSignaling" :: NullOrUndefined.NullOrUndefined (AfdSignaling) , "Bitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin1000') , "BufFillPct" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max100') , "BufSize" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "ColorMetadata" :: NullOrUndefined.NullOrUndefined (H264ColorMetadata) , "EntropyEncoding" :: NullOrUndefined.NullOrUndefined (H264EntropyEncoding) , "FixedAfd" :: NullOrUndefined.NullOrUndefined (FixedAfd) , "FlickerAq" :: NullOrUndefined.NullOrUndefined (H264FlickerAq) , "FramerateControl" :: NullOrUndefined.NullOrUndefined (H264FramerateControl) , "FramerateDenominator" :: NullOrUndefined.NullOrUndefined (Int) , "FramerateNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "GopBReference" :: NullOrUndefined.NullOrUndefined (H264GopBReference) , "GopClosedCadence" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "GopNumBFrames" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max7') , "GopSize" :: NullOrUndefined.NullOrUndefined (DoubleMin1') , "GopSizeUnits" :: NullOrUndefined.NullOrUndefined (H264GopSizeUnits) , "Level" :: NullOrUndefined.NullOrUndefined (H264Level) , "LookAheadRateControl" :: NullOrUndefined.NullOrUndefined (H264LookAheadRateControl) , "MaxBitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin1000') , "MinIInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max30') , "NumRefFrames" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max6') , "ParControl" :: NullOrUndefined.NullOrUndefined (H264ParControl) , "ParDenominator" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "ParNumerator" :: NullOrUndefined.NullOrUndefined (Int) , "Profile" :: NullOrUndefined.NullOrUndefined (H264Profile) , "RateControlMode" :: NullOrUndefined.NullOrUndefined (H264RateControlMode) , "ScanType" :: NullOrUndefined.NullOrUndefined (H264ScanType) , "SceneChangeDetect" :: NullOrUndefined.NullOrUndefined (H264SceneChangeDetect) , "Slices" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max32') , "Softness" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max128') , "SpatialAq" :: NullOrUndefined.NullOrUndefined (H264SpatialAq) , "Syntax" :: NullOrUndefined.NullOrUndefined (H264Syntax) , "TemporalAq" :: NullOrUndefined.NullOrUndefined (H264TemporalAq) , "TimecodeInsertion" :: NullOrUndefined.NullOrUndefined (H264TimecodeInsertionBehavior) } ) -> H264Settings
 newH264Settings'  customize = (H264Settings <<< customize) { "AdaptiveQuantization": (NullOrUndefined Nothing), "AfdSignaling": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BufFillPct": (NullOrUndefined Nothing), "BufSize": (NullOrUndefined Nothing), "ColorMetadata": (NullOrUndefined Nothing), "EntropyEncoding": (NullOrUndefined Nothing), "FixedAfd": (NullOrUndefined Nothing), "FlickerAq": (NullOrUndefined Nothing), "FramerateControl": (NullOrUndefined Nothing), "FramerateDenominator": (NullOrUndefined Nothing), "FramerateNumerator": (NullOrUndefined Nothing), "GopBReference": (NullOrUndefined Nothing), "GopClosedCadence": (NullOrUndefined Nothing), "GopNumBFrames": (NullOrUndefined Nothing), "GopSize": (NullOrUndefined Nothing), "GopSizeUnits": (NullOrUndefined Nothing), "Level": (NullOrUndefined Nothing), "LookAheadRateControl": (NullOrUndefined Nothing), "MaxBitrate": (NullOrUndefined Nothing), "MinIInterval": (NullOrUndefined Nothing), "NumRefFrames": (NullOrUndefined Nothing), "ParControl": (NullOrUndefined Nothing), "ParDenominator": (NullOrUndefined Nothing), "ParNumerator": (NullOrUndefined Nothing), "Profile": (NullOrUndefined Nothing), "RateControlMode": (NullOrUndefined Nothing), "ScanType": (NullOrUndefined Nothing), "SceneChangeDetect": (NullOrUndefined Nothing), "Slices": (NullOrUndefined Nothing), "Softness": (NullOrUndefined Nothing), "SpatialAq": (NullOrUndefined Nothing), "Syntax": (NullOrUndefined Nothing), "TemporalAq": (NullOrUndefined Nothing), "TimecodeInsertion": (NullOrUndefined Nothing) }
 
 
@@ -3037,11 +3065,11 @@ instance encodeHlsAkamaiHttpTransferMode :: Encode HlsAkamaiHttpTransferMode whe
 
 -- | Placeholder documentation for HlsAkamaiSettings
 newtype HlsAkamaiSettings = HlsAkamaiSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int)
-  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int)
+  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600')
   , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsAkamaiHttpTransferMode)
-  , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int)
-  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int)
+  , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15')
   , "Salt" :: NullOrUndefined.NullOrUndefined (String)
   , "Token" :: NullOrUndefined.NullOrUndefined (String)
   }
@@ -3060,17 +3088,17 @@ newHlsAkamaiSettings  = HlsAkamaiSettings { "ConnectionRetryInterval": (NullOrUn
 
 -- | Constructs HlsAkamaiSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsAkamaiSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsAkamaiHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) , "Salt" :: NullOrUndefined.NullOrUndefined (String) , "Token" :: NullOrUndefined.NullOrUndefined (String) } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsAkamaiHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) , "Salt" :: NullOrUndefined.NullOrUndefined (String) , "Token" :: NullOrUndefined.NullOrUndefined (String) } ) -> HlsAkamaiSettings
+newHlsAkamaiSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsAkamaiHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') , "Salt" :: NullOrUndefined.NullOrUndefined (String) , "Token" :: NullOrUndefined.NullOrUndefined (String) } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsAkamaiHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') , "Salt" :: NullOrUndefined.NullOrUndefined (String) , "Token" :: NullOrUndefined.NullOrUndefined (String) } ) -> HlsAkamaiSettings
 newHlsAkamaiSettings'  customize = (HlsAkamaiSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "HttpTransferMode": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "Salt": (NullOrUndefined Nothing), "Token": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for HlsBasicPutSettings
 newtype HlsBasicPutSettings = HlsBasicPutSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int)
-  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int)
-  , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int)
-  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int)
+  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600')
+  , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15')
   }
 derive instance newtypeHlsBasicPutSettings :: Newtype HlsBasicPutSettings _
 derive instance repGenericHlsBasicPutSettings :: Generic HlsBasicPutSettings _
@@ -3087,7 +3115,7 @@ newHlsBasicPutSettings  = HlsBasicPutSettings { "ConnectionRetryInterval": (Null
 
 -- | Constructs HlsBasicPutSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsBasicPutSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) } ) -> HlsBasicPutSettings
+newHlsBasicPutSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') } ) -> HlsBasicPutSettings
 newHlsBasicPutSettings'  customize = (HlsBasicPutSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
 
 
@@ -3186,40 +3214,40 @@ instance encodeHlsEncryptionType :: Encode HlsEncryptionType where
 
 -- | Placeholder documentation for HlsGroupSettings
 newtype HlsGroupSettings = HlsGroupSettings 
-  { "AdMarkers" :: NullOrUndefined.NullOrUndefined (ListOfHlsAdMarkers)
+  { "AdMarkers" :: NullOrUndefined.NullOrUndefined (ListOfHlsAdMarkers')
   , "BaseUrlContent" :: NullOrUndefined.NullOrUndefined (String)
   , "BaseUrlManifest" :: NullOrUndefined.NullOrUndefined (String)
-  , "CaptionLanguageMappings" :: NullOrUndefined.NullOrUndefined (ListOfCaptionLanguageMapping)
+  , "CaptionLanguageMappings" :: NullOrUndefined.NullOrUndefined (ListOfCaptionLanguageMapping')
   , "CaptionLanguageSetting" :: NullOrUndefined.NullOrUndefined (HlsCaptionLanguageSetting)
   , "ClientCache" :: NullOrUndefined.NullOrUndefined (HlsClientCache)
   , "CodecSpecification" :: NullOrUndefined.NullOrUndefined (HlsCodecSpecification)
-  , "ConstantIv" :: NullOrUndefined.NullOrUndefined (String)
-  , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef)
+  , "ConstantIv" :: NullOrUndefined.NullOrUndefined (StringMin32Max32')
+  , "Destination" :: (OutputLocationRef)
   , "DirectoryStructure" :: NullOrUndefined.NullOrUndefined (HlsDirectoryStructure)
   , "EncryptionType" :: NullOrUndefined.NullOrUndefined (HlsEncryptionType)
   , "HlsCdnSettings" :: NullOrUndefined.NullOrUndefined (HlsCdnSettings)
-  , "IndexNSegments" :: NullOrUndefined.NullOrUndefined (Int)
+  , "IndexNSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin3')
   , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForHlsOut)
   , "IvInManifest" :: NullOrUndefined.NullOrUndefined (HlsIvInManifest)
   , "IvSource" :: NullOrUndefined.NullOrUndefined (HlsIvSource)
-  , "KeepSegments" :: NullOrUndefined.NullOrUndefined (Int)
+  , "KeepSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   , "KeyFormat" :: NullOrUndefined.NullOrUndefined (String)
   , "KeyFormatVersions" :: NullOrUndefined.NullOrUndefined (String)
   , "KeyProviderSettings" :: NullOrUndefined.NullOrUndefined (KeyProviderSettings)
   , "ManifestCompression" :: NullOrUndefined.NullOrUndefined (HlsManifestCompression)
   , "ManifestDurationFormat" :: NullOrUndefined.NullOrUndefined (HlsManifestDurationFormat)
-  , "MinSegmentLength" :: NullOrUndefined.NullOrUndefined (Int)
+  , "MinSegmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   , "Mode" :: NullOrUndefined.NullOrUndefined (HlsMode)
   , "OutputSelection" :: NullOrUndefined.NullOrUndefined (HlsOutputSelection)
   , "ProgramDateTime" :: NullOrUndefined.NullOrUndefined (HlsProgramDateTime)
-  , "ProgramDateTimePeriod" :: NullOrUndefined.NullOrUndefined (Int)
-  , "SegmentLength" :: NullOrUndefined.NullOrUndefined (Int)
+  , "ProgramDateTimePeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max3600')
+  , "SegmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (HlsSegmentationMode)
-  , "SegmentsPerSubdirectory" :: NullOrUndefined.NullOrUndefined (Int)
+  , "SegmentsPerSubdirectory" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   , "StreamInfResolution" :: NullOrUndefined.NullOrUndefined (HlsStreamInfResolution)
   , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (HlsTimedMetadataId3Frame)
-  , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (Int)
-  , "TimestampDeltaMilliseconds" :: NullOrUndefined.NullOrUndefined (Int)
+  , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "TimestampDeltaMilliseconds" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   , "TsFileMode" :: NullOrUndefined.NullOrUndefined (HlsTsFileMode)
   }
 derive instance newtypeHlsGroupSettings :: Newtype HlsGroupSettings _
@@ -3232,22 +3260,22 @@ instance encodeHlsGroupSettings :: Encode HlsGroupSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs HlsGroupSettings from required parameters
-newHlsGroupSettings :: HlsGroupSettings
-newHlsGroupSettings  = HlsGroupSettings { "AdMarkers": (NullOrUndefined Nothing), "BaseUrlContent": (NullOrUndefined Nothing), "BaseUrlManifest": (NullOrUndefined Nothing), "CaptionLanguageMappings": (NullOrUndefined Nothing), "CaptionLanguageSetting": (NullOrUndefined Nothing), "ClientCache": (NullOrUndefined Nothing), "CodecSpecification": (NullOrUndefined Nothing), "ConstantIv": (NullOrUndefined Nothing), "Destination": (NullOrUndefined Nothing), "DirectoryStructure": (NullOrUndefined Nothing), "EncryptionType": (NullOrUndefined Nothing), "HlsCdnSettings": (NullOrUndefined Nothing), "IndexNSegments": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "IvInManifest": (NullOrUndefined Nothing), "IvSource": (NullOrUndefined Nothing), "KeepSegments": (NullOrUndefined Nothing), "KeyFormat": (NullOrUndefined Nothing), "KeyFormatVersions": (NullOrUndefined Nothing), "KeyProviderSettings": (NullOrUndefined Nothing), "ManifestCompression": (NullOrUndefined Nothing), "ManifestDurationFormat": (NullOrUndefined Nothing), "MinSegmentLength": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "OutputSelection": (NullOrUndefined Nothing), "ProgramDateTime": (NullOrUndefined Nothing), "ProgramDateTimePeriod": (NullOrUndefined Nothing), "SegmentLength": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SegmentsPerSubdirectory": (NullOrUndefined Nothing), "StreamInfResolution": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing), "TimestampDeltaMilliseconds": (NullOrUndefined Nothing), "TsFileMode": (NullOrUndefined Nothing) }
+newHlsGroupSettings :: OutputLocationRef -> HlsGroupSettings
+newHlsGroupSettings _Destination = HlsGroupSettings { "Destination": _Destination, "AdMarkers": (NullOrUndefined Nothing), "BaseUrlContent": (NullOrUndefined Nothing), "BaseUrlManifest": (NullOrUndefined Nothing), "CaptionLanguageMappings": (NullOrUndefined Nothing), "CaptionLanguageSetting": (NullOrUndefined Nothing), "ClientCache": (NullOrUndefined Nothing), "CodecSpecification": (NullOrUndefined Nothing), "ConstantIv": (NullOrUndefined Nothing), "DirectoryStructure": (NullOrUndefined Nothing), "EncryptionType": (NullOrUndefined Nothing), "HlsCdnSettings": (NullOrUndefined Nothing), "IndexNSegments": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "IvInManifest": (NullOrUndefined Nothing), "IvSource": (NullOrUndefined Nothing), "KeepSegments": (NullOrUndefined Nothing), "KeyFormat": (NullOrUndefined Nothing), "KeyFormatVersions": (NullOrUndefined Nothing), "KeyProviderSettings": (NullOrUndefined Nothing), "ManifestCompression": (NullOrUndefined Nothing), "ManifestDurationFormat": (NullOrUndefined Nothing), "MinSegmentLength": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "OutputSelection": (NullOrUndefined Nothing), "ProgramDateTime": (NullOrUndefined Nothing), "ProgramDateTimePeriod": (NullOrUndefined Nothing), "SegmentLength": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SegmentsPerSubdirectory": (NullOrUndefined Nothing), "StreamInfResolution": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing), "TimestampDeltaMilliseconds": (NullOrUndefined Nothing), "TsFileMode": (NullOrUndefined Nothing) }
 
 -- | Constructs HlsGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsGroupSettings' :: ( { "AdMarkers" :: NullOrUndefined.NullOrUndefined (ListOfHlsAdMarkers) , "BaseUrlContent" :: NullOrUndefined.NullOrUndefined (String) , "BaseUrlManifest" :: NullOrUndefined.NullOrUndefined (String) , "CaptionLanguageMappings" :: NullOrUndefined.NullOrUndefined (ListOfCaptionLanguageMapping) , "CaptionLanguageSetting" :: NullOrUndefined.NullOrUndefined (HlsCaptionLanguageSetting) , "ClientCache" :: NullOrUndefined.NullOrUndefined (HlsClientCache) , "CodecSpecification" :: NullOrUndefined.NullOrUndefined (HlsCodecSpecification) , "ConstantIv" :: NullOrUndefined.NullOrUndefined (String) , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "DirectoryStructure" :: NullOrUndefined.NullOrUndefined (HlsDirectoryStructure) , "EncryptionType" :: NullOrUndefined.NullOrUndefined (HlsEncryptionType) , "HlsCdnSettings" :: NullOrUndefined.NullOrUndefined (HlsCdnSettings) , "IndexNSegments" :: NullOrUndefined.NullOrUndefined (Int) , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForHlsOut) , "IvInManifest" :: NullOrUndefined.NullOrUndefined (HlsIvInManifest) , "IvSource" :: NullOrUndefined.NullOrUndefined (HlsIvSource) , "KeepSegments" :: NullOrUndefined.NullOrUndefined (Int) , "KeyFormat" :: NullOrUndefined.NullOrUndefined (String) , "KeyFormatVersions" :: NullOrUndefined.NullOrUndefined (String) , "KeyProviderSettings" :: NullOrUndefined.NullOrUndefined (KeyProviderSettings) , "ManifestCompression" :: NullOrUndefined.NullOrUndefined (HlsManifestCompression) , "ManifestDurationFormat" :: NullOrUndefined.NullOrUndefined (HlsManifestDurationFormat) , "MinSegmentLength" :: NullOrUndefined.NullOrUndefined (Int) , "Mode" :: NullOrUndefined.NullOrUndefined (HlsMode) , "OutputSelection" :: NullOrUndefined.NullOrUndefined (HlsOutputSelection) , "ProgramDateTime" :: NullOrUndefined.NullOrUndefined (HlsProgramDateTime) , "ProgramDateTimePeriod" :: NullOrUndefined.NullOrUndefined (Int) , "SegmentLength" :: NullOrUndefined.NullOrUndefined (Int) , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: NullOrUndefined.NullOrUndefined (Int) , "StreamInfResolution" :: NullOrUndefined.NullOrUndefined (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (Int) , "TimestampDeltaMilliseconds" :: NullOrUndefined.NullOrUndefined (Int) , "TsFileMode" :: NullOrUndefined.NullOrUndefined (HlsTsFileMode) } -> {"AdMarkers" :: NullOrUndefined.NullOrUndefined (ListOfHlsAdMarkers) , "BaseUrlContent" :: NullOrUndefined.NullOrUndefined (String) , "BaseUrlManifest" :: NullOrUndefined.NullOrUndefined (String) , "CaptionLanguageMappings" :: NullOrUndefined.NullOrUndefined (ListOfCaptionLanguageMapping) , "CaptionLanguageSetting" :: NullOrUndefined.NullOrUndefined (HlsCaptionLanguageSetting) , "ClientCache" :: NullOrUndefined.NullOrUndefined (HlsClientCache) , "CodecSpecification" :: NullOrUndefined.NullOrUndefined (HlsCodecSpecification) , "ConstantIv" :: NullOrUndefined.NullOrUndefined (String) , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "DirectoryStructure" :: NullOrUndefined.NullOrUndefined (HlsDirectoryStructure) , "EncryptionType" :: NullOrUndefined.NullOrUndefined (HlsEncryptionType) , "HlsCdnSettings" :: NullOrUndefined.NullOrUndefined (HlsCdnSettings) , "IndexNSegments" :: NullOrUndefined.NullOrUndefined (Int) , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForHlsOut) , "IvInManifest" :: NullOrUndefined.NullOrUndefined (HlsIvInManifest) , "IvSource" :: NullOrUndefined.NullOrUndefined (HlsIvSource) , "KeepSegments" :: NullOrUndefined.NullOrUndefined (Int) , "KeyFormat" :: NullOrUndefined.NullOrUndefined (String) , "KeyFormatVersions" :: NullOrUndefined.NullOrUndefined (String) , "KeyProviderSettings" :: NullOrUndefined.NullOrUndefined (KeyProviderSettings) , "ManifestCompression" :: NullOrUndefined.NullOrUndefined (HlsManifestCompression) , "ManifestDurationFormat" :: NullOrUndefined.NullOrUndefined (HlsManifestDurationFormat) , "MinSegmentLength" :: NullOrUndefined.NullOrUndefined (Int) , "Mode" :: NullOrUndefined.NullOrUndefined (HlsMode) , "OutputSelection" :: NullOrUndefined.NullOrUndefined (HlsOutputSelection) , "ProgramDateTime" :: NullOrUndefined.NullOrUndefined (HlsProgramDateTime) , "ProgramDateTimePeriod" :: NullOrUndefined.NullOrUndefined (Int) , "SegmentLength" :: NullOrUndefined.NullOrUndefined (Int) , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: NullOrUndefined.NullOrUndefined (Int) , "StreamInfResolution" :: NullOrUndefined.NullOrUndefined (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (Int) , "TimestampDeltaMilliseconds" :: NullOrUndefined.NullOrUndefined (Int) , "TsFileMode" :: NullOrUndefined.NullOrUndefined (HlsTsFileMode) } ) -> HlsGroupSettings
-newHlsGroupSettings'  customize = (HlsGroupSettings <<< customize) { "AdMarkers": (NullOrUndefined Nothing), "BaseUrlContent": (NullOrUndefined Nothing), "BaseUrlManifest": (NullOrUndefined Nothing), "CaptionLanguageMappings": (NullOrUndefined Nothing), "CaptionLanguageSetting": (NullOrUndefined Nothing), "ClientCache": (NullOrUndefined Nothing), "CodecSpecification": (NullOrUndefined Nothing), "ConstantIv": (NullOrUndefined Nothing), "Destination": (NullOrUndefined Nothing), "DirectoryStructure": (NullOrUndefined Nothing), "EncryptionType": (NullOrUndefined Nothing), "HlsCdnSettings": (NullOrUndefined Nothing), "IndexNSegments": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "IvInManifest": (NullOrUndefined Nothing), "IvSource": (NullOrUndefined Nothing), "KeepSegments": (NullOrUndefined Nothing), "KeyFormat": (NullOrUndefined Nothing), "KeyFormatVersions": (NullOrUndefined Nothing), "KeyProviderSettings": (NullOrUndefined Nothing), "ManifestCompression": (NullOrUndefined Nothing), "ManifestDurationFormat": (NullOrUndefined Nothing), "MinSegmentLength": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "OutputSelection": (NullOrUndefined Nothing), "ProgramDateTime": (NullOrUndefined Nothing), "ProgramDateTimePeriod": (NullOrUndefined Nothing), "SegmentLength": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SegmentsPerSubdirectory": (NullOrUndefined Nothing), "StreamInfResolution": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing), "TimestampDeltaMilliseconds": (NullOrUndefined Nothing), "TsFileMode": (NullOrUndefined Nothing) }
+newHlsGroupSettings' :: OutputLocationRef -> ( { "AdMarkers" :: NullOrUndefined.NullOrUndefined (ListOfHlsAdMarkers') , "BaseUrlContent" :: NullOrUndefined.NullOrUndefined (String) , "BaseUrlManifest" :: NullOrUndefined.NullOrUndefined (String) , "CaptionLanguageMappings" :: NullOrUndefined.NullOrUndefined (ListOfCaptionLanguageMapping') , "CaptionLanguageSetting" :: NullOrUndefined.NullOrUndefined (HlsCaptionLanguageSetting) , "ClientCache" :: NullOrUndefined.NullOrUndefined (HlsClientCache) , "CodecSpecification" :: NullOrUndefined.NullOrUndefined (HlsCodecSpecification) , "ConstantIv" :: NullOrUndefined.NullOrUndefined (StringMin32Max32') , "Destination" :: (OutputLocationRef) , "DirectoryStructure" :: NullOrUndefined.NullOrUndefined (HlsDirectoryStructure) , "EncryptionType" :: NullOrUndefined.NullOrUndefined (HlsEncryptionType) , "HlsCdnSettings" :: NullOrUndefined.NullOrUndefined (HlsCdnSettings) , "IndexNSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin3') , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForHlsOut) , "IvInManifest" :: NullOrUndefined.NullOrUndefined (HlsIvInManifest) , "IvSource" :: NullOrUndefined.NullOrUndefined (HlsIvSource) , "KeepSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "KeyFormat" :: NullOrUndefined.NullOrUndefined (String) , "KeyFormatVersions" :: NullOrUndefined.NullOrUndefined (String) , "KeyProviderSettings" :: NullOrUndefined.NullOrUndefined (KeyProviderSettings) , "ManifestCompression" :: NullOrUndefined.NullOrUndefined (HlsManifestCompression) , "ManifestDurationFormat" :: NullOrUndefined.NullOrUndefined (HlsManifestDurationFormat) , "MinSegmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "Mode" :: NullOrUndefined.NullOrUndefined (HlsMode) , "OutputSelection" :: NullOrUndefined.NullOrUndefined (HlsOutputSelection) , "ProgramDateTime" :: NullOrUndefined.NullOrUndefined (HlsProgramDateTime) , "ProgramDateTimePeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max3600') , "SegmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "StreamInfResolution" :: NullOrUndefined.NullOrUndefined (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "TimestampDeltaMilliseconds" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "TsFileMode" :: NullOrUndefined.NullOrUndefined (HlsTsFileMode) } -> {"AdMarkers" :: NullOrUndefined.NullOrUndefined (ListOfHlsAdMarkers') , "BaseUrlContent" :: NullOrUndefined.NullOrUndefined (String) , "BaseUrlManifest" :: NullOrUndefined.NullOrUndefined (String) , "CaptionLanguageMappings" :: NullOrUndefined.NullOrUndefined (ListOfCaptionLanguageMapping') , "CaptionLanguageSetting" :: NullOrUndefined.NullOrUndefined (HlsCaptionLanguageSetting) , "ClientCache" :: NullOrUndefined.NullOrUndefined (HlsClientCache) , "CodecSpecification" :: NullOrUndefined.NullOrUndefined (HlsCodecSpecification) , "ConstantIv" :: NullOrUndefined.NullOrUndefined (StringMin32Max32') , "Destination" :: (OutputLocationRef) , "DirectoryStructure" :: NullOrUndefined.NullOrUndefined (HlsDirectoryStructure) , "EncryptionType" :: NullOrUndefined.NullOrUndefined (HlsEncryptionType) , "HlsCdnSettings" :: NullOrUndefined.NullOrUndefined (HlsCdnSettings) , "IndexNSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin3') , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForHlsOut) , "IvInManifest" :: NullOrUndefined.NullOrUndefined (HlsIvInManifest) , "IvSource" :: NullOrUndefined.NullOrUndefined (HlsIvSource) , "KeepSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "KeyFormat" :: NullOrUndefined.NullOrUndefined (String) , "KeyFormatVersions" :: NullOrUndefined.NullOrUndefined (String) , "KeyProviderSettings" :: NullOrUndefined.NullOrUndefined (KeyProviderSettings) , "ManifestCompression" :: NullOrUndefined.NullOrUndefined (HlsManifestCompression) , "ManifestDurationFormat" :: NullOrUndefined.NullOrUndefined (HlsManifestDurationFormat) , "MinSegmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "Mode" :: NullOrUndefined.NullOrUndefined (HlsMode) , "OutputSelection" :: NullOrUndefined.NullOrUndefined (HlsOutputSelection) , "ProgramDateTime" :: NullOrUndefined.NullOrUndefined (HlsProgramDateTime) , "ProgramDateTimePeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max3600') , "SegmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "StreamInfResolution" :: NullOrUndefined.NullOrUndefined (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "TimestampDeltaMilliseconds" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "TsFileMode" :: NullOrUndefined.NullOrUndefined (HlsTsFileMode) } ) -> HlsGroupSettings
+newHlsGroupSettings' _Destination customize = (HlsGroupSettings <<< customize) { "Destination": _Destination, "AdMarkers": (NullOrUndefined Nothing), "BaseUrlContent": (NullOrUndefined Nothing), "BaseUrlManifest": (NullOrUndefined Nothing), "CaptionLanguageMappings": (NullOrUndefined Nothing), "CaptionLanguageSetting": (NullOrUndefined Nothing), "ClientCache": (NullOrUndefined Nothing), "CodecSpecification": (NullOrUndefined Nothing), "ConstantIv": (NullOrUndefined Nothing), "DirectoryStructure": (NullOrUndefined Nothing), "EncryptionType": (NullOrUndefined Nothing), "HlsCdnSettings": (NullOrUndefined Nothing), "IndexNSegments": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "IvInManifest": (NullOrUndefined Nothing), "IvSource": (NullOrUndefined Nothing), "KeepSegments": (NullOrUndefined Nothing), "KeyFormat": (NullOrUndefined Nothing), "KeyFormatVersions": (NullOrUndefined Nothing), "KeyProviderSettings": (NullOrUndefined Nothing), "ManifestCompression": (NullOrUndefined Nothing), "ManifestDurationFormat": (NullOrUndefined Nothing), "MinSegmentLength": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "OutputSelection": (NullOrUndefined Nothing), "ProgramDateTime": (NullOrUndefined Nothing), "ProgramDateTimePeriod": (NullOrUndefined Nothing), "SegmentLength": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SegmentsPerSubdirectory": (NullOrUndefined Nothing), "StreamInfResolution": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing), "TimestampDeltaMilliseconds": (NullOrUndefined Nothing), "TsFileMode": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for HlsInputSettings
 newtype HlsInputSettings = HlsInputSettings 
-  { "Bandwidth" :: NullOrUndefined.NullOrUndefined (Int)
-  , "BufferSegments" :: NullOrUndefined.NullOrUndefined (Int)
-  , "Retries" :: NullOrUndefined.NullOrUndefined (Int)
-  , "RetryInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Bandwidth" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "BufferSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "Retries" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "RetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   }
 derive instance newtypeHlsInputSettings :: Newtype HlsInputSettings _
 derive instance repGenericHlsInputSettings :: Generic HlsInputSettings _
@@ -3264,7 +3292,7 @@ newHlsInputSettings  = HlsInputSettings { "Bandwidth": (NullOrUndefined Nothing)
 
 -- | Constructs HlsInputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsInputSettings' :: ( { "Bandwidth" :: NullOrUndefined.NullOrUndefined (Int) , "BufferSegments" :: NullOrUndefined.NullOrUndefined (Int) , "Retries" :: NullOrUndefined.NullOrUndefined (Int) , "RetryInterval" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Bandwidth" :: NullOrUndefined.NullOrUndefined (Int) , "BufferSegments" :: NullOrUndefined.NullOrUndefined (Int) , "Retries" :: NullOrUndefined.NullOrUndefined (Int) , "RetryInterval" :: NullOrUndefined.NullOrUndefined (Int) } ) -> HlsInputSettings
+newHlsInputSettings' :: ( { "Bandwidth" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "BufferSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "Retries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } -> {"Bandwidth" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "BufferSegments" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "Retries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } ) -> HlsInputSettings
 newHlsInputSettings'  customize = (HlsInputSettings <<< customize) { "Bandwidth": (NullOrUndefined Nothing), "BufferSegments": (NullOrUndefined Nothing), "Retries": (NullOrUndefined Nothing), "RetryInterval": (NullOrUndefined Nothing) }
 
 
@@ -3323,11 +3351,11 @@ instance encodeHlsManifestDurationFormat :: Encode HlsManifestDurationFormat whe
 
 -- | Placeholder documentation for HlsMediaStoreSettings
 newtype HlsMediaStoreSettings = HlsMediaStoreSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int)
-  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int)
+  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600')
   , "MediaStoreStorageClass" :: NullOrUndefined.NullOrUndefined (HlsMediaStoreStorageClass)
-  , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int)
-  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int)
+  , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15')
   }
 derive instance newtypeHlsMediaStoreSettings :: Newtype HlsMediaStoreSettings _
 derive instance repGenericHlsMediaStoreSettings :: Generic HlsMediaStoreSettings _
@@ -3344,7 +3372,7 @@ newHlsMediaStoreSettings  = HlsMediaStoreSettings { "ConnectionRetryInterval": (
 
 -- | Constructs HlsMediaStoreSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsMediaStoreSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "MediaStoreStorageClass" :: NullOrUndefined.NullOrUndefined (HlsMediaStoreStorageClass) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "MediaStoreStorageClass" :: NullOrUndefined.NullOrUndefined (HlsMediaStoreStorageClass) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) } ) -> HlsMediaStoreSettings
+newHlsMediaStoreSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "MediaStoreStorageClass" :: NullOrUndefined.NullOrUndefined (HlsMediaStoreStorageClass) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "MediaStoreStorageClass" :: NullOrUndefined.NullOrUndefined (HlsMediaStoreStorageClass) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') } ) -> HlsMediaStoreSettings
 newHlsMediaStoreSettings'  customize = (HlsMediaStoreSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "MediaStoreStorageClass": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
 
 
@@ -3390,8 +3418,8 @@ instance encodeHlsOutputSelection :: Encode HlsOutputSelection where
 
 -- | Placeholder documentation for HlsOutputSettings
 newtype HlsOutputSettings = HlsOutputSettings 
-  { "HlsSettings" :: NullOrUndefined.NullOrUndefined (HlsSettings)
-  , "NameModifier" :: NullOrUndefined.NullOrUndefined (String)
+  { "HlsSettings" :: (HlsSettings)
+  , "NameModifier" :: NullOrUndefined.NullOrUndefined (StringMin1')
   , "SegmentModifier" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeHlsOutputSettings :: Newtype HlsOutputSettings _
@@ -3404,13 +3432,13 @@ instance encodeHlsOutputSettings :: Encode HlsOutputSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs HlsOutputSettings from required parameters
-newHlsOutputSettings :: HlsOutputSettings
-newHlsOutputSettings  = HlsOutputSettings { "HlsSettings": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing), "SegmentModifier": (NullOrUndefined Nothing) }
+newHlsOutputSettings :: HlsSettings -> HlsOutputSettings
+newHlsOutputSettings _HlsSettings = HlsOutputSettings { "HlsSettings": _HlsSettings, "NameModifier": (NullOrUndefined Nothing), "SegmentModifier": (NullOrUndefined Nothing) }
 
 -- | Constructs HlsOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsOutputSettings' :: ( { "HlsSettings" :: NullOrUndefined.NullOrUndefined (HlsSettings) , "NameModifier" :: NullOrUndefined.NullOrUndefined (String) , "SegmentModifier" :: NullOrUndefined.NullOrUndefined (String) } -> {"HlsSettings" :: NullOrUndefined.NullOrUndefined (HlsSettings) , "NameModifier" :: NullOrUndefined.NullOrUndefined (String) , "SegmentModifier" :: NullOrUndefined.NullOrUndefined (String) } ) -> HlsOutputSettings
-newHlsOutputSettings'  customize = (HlsOutputSettings <<< customize) { "HlsSettings": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing), "SegmentModifier": (NullOrUndefined Nothing) }
+newHlsOutputSettings' :: HlsSettings -> ( { "HlsSettings" :: (HlsSettings) , "NameModifier" :: NullOrUndefined.NullOrUndefined (StringMin1') , "SegmentModifier" :: NullOrUndefined.NullOrUndefined (String) } -> {"HlsSettings" :: (HlsSettings) , "NameModifier" :: NullOrUndefined.NullOrUndefined (StringMin1') , "SegmentModifier" :: NullOrUndefined.NullOrUndefined (String) } ) -> HlsOutputSettings
+newHlsOutputSettings' _HlsSettings customize = (HlsOutputSettings <<< customize) { "HlsSettings": _HlsSettings, "NameModifier": (NullOrUndefined Nothing), "SegmentModifier": (NullOrUndefined Nothing) }
 
 
 
@@ -3519,11 +3547,11 @@ instance encodeHlsWebdavHttpTransferMode :: Encode HlsWebdavHttpTransferMode whe
 
 -- | Placeholder documentation for HlsWebdavSettings
 newtype HlsWebdavSettings = HlsWebdavSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int)
-  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int)
+  { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600')
   , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsWebdavHttpTransferMode)
-  , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int)
-  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int)
+  , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15')
   }
 derive instance newtypeHlsWebdavSettings :: Newtype HlsWebdavSettings _
 derive instance repGenericHlsWebdavSettings :: Generic HlsWebdavSettings _
@@ -3540,7 +3568,7 @@ newHlsWebdavSettings  = HlsWebdavSettings { "ConnectionRetryInterval": (NullOrUn
 
 -- | Constructs HlsWebdavSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsWebdavSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsWebdavHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsWebdavHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) } ) -> HlsWebdavSettings
+newHlsWebdavSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsWebdavHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined.NullOrUndefined (HlsWebdavHttpTransferMode) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max15') } ) -> HlsWebdavSettings
 newHlsWebdavSettings'  customize = (HlsWebdavSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "HttpTransferMode": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
 
 
@@ -3548,12 +3576,12 @@ newHlsWebdavSettings'  customize = (HlsWebdavSettings <<< customize) { "Connecti
 -- | Placeholder documentation for Input
 newtype Input = Input 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination)
+  , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string')
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination')
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
-  , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string)
-  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource)
+  , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string')
+  , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource')
   , "State" :: NullOrUndefined.NullOrUndefined (InputState)
   , "Type" :: NullOrUndefined.NullOrUndefined (InputType)
   }
@@ -3572,7 +3600,7 @@ newInput  = Input { "Arn": (NullOrUndefined Nothing), "AttachedChannels": (NullO
 
 -- | Constructs Input's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInput' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource) , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource) , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> Input
+newInput' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined.NullOrUndefined (String) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined.NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined.NullOrUndefined (InputState) , "Type" :: NullOrUndefined.NullOrUndefined (InputType) } ) -> Input
 newInput'  customize = (Input <<< customize) { "Arn": (NullOrUndefined Nothing), "AttachedChannels": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
 
 
@@ -3604,8 +3632,8 @@ newInputAttachment'  customize = (InputAttachment <<< customize) { "InputId": (N
 
 -- | Placeholder documentation for InputChannelLevel
 newtype InputChannelLevel = InputChannelLevel 
-  { "Gain" :: NullOrUndefined.NullOrUndefined (Int)
-  , "InputChannel" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Gain" :: (IntegerMinNegative60Max6')
+  , "InputChannel" :: (IntegerMin0Max15')
   }
 derive instance newtypeInputChannelLevel :: Newtype InputChannelLevel _
 derive instance repGenericInputChannelLevel :: Generic InputChannelLevel _
@@ -3617,13 +3645,13 @@ instance encodeInputChannelLevel :: Encode InputChannelLevel where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs InputChannelLevel from required parameters
-newInputChannelLevel :: InputChannelLevel
-newInputChannelLevel  = InputChannelLevel { "Gain": (NullOrUndefined Nothing), "InputChannel": (NullOrUndefined Nothing) }
+newInputChannelLevel :: IntegerMinNegative60Max6' -> IntegerMin0Max15' -> InputChannelLevel
+newInputChannelLevel _Gain _InputChannel = InputChannelLevel { "Gain": _Gain, "InputChannel": _InputChannel }
 
 -- | Constructs InputChannelLevel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputChannelLevel' :: ( { "Gain" :: NullOrUndefined.NullOrUndefined (Int) , "InputChannel" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Gain" :: NullOrUndefined.NullOrUndefined (Int) , "InputChannel" :: NullOrUndefined.NullOrUndefined (Int) } ) -> InputChannelLevel
-newInputChannelLevel'  customize = (InputChannelLevel <<< customize) { "Gain": (NullOrUndefined Nothing), "InputChannel": (NullOrUndefined Nothing) }
+newInputChannelLevel' :: IntegerMinNegative60Max6' -> IntegerMin0Max15' -> ( { "Gain" :: (IntegerMinNegative60Max6') , "InputChannel" :: (IntegerMin0Max15') } -> {"Gain" :: (IntegerMinNegative60Max6') , "InputChannel" :: (IntegerMin0Max15') } ) -> InputChannelLevel
+newInputChannelLevel' _Gain _InputChannel customize = (InputChannelLevel <<< customize) { "Gain": _Gain, "InputChannel": _InputChannel }
 
 
 
@@ -3732,7 +3760,7 @@ instance encodeInputFilter :: Encode InputFilter where
 -- | Placeholder documentation for InputLocation
 newtype InputLocation = InputLocation 
   { "PasswordParam" :: NullOrUndefined.NullOrUndefined (String)
-  , "Uri" :: NullOrUndefined.NullOrUndefined (String)
+  , "Uri" :: (String)
   , "Username" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeInputLocation :: Newtype InputLocation _
@@ -3745,13 +3773,13 @@ instance encodeInputLocation :: Encode InputLocation where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs InputLocation from required parameters
-newInputLocation :: InputLocation
-newInputLocation  = InputLocation { "PasswordParam": (NullOrUndefined Nothing), "Uri": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputLocation :: String -> InputLocation
+newInputLocation _Uri = InputLocation { "Uri": _Uri, "PasswordParam": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
 
 -- | Constructs InputLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputLocation' :: ( { "PasswordParam" :: NullOrUndefined.NullOrUndefined (String) , "Uri" :: NullOrUndefined.NullOrUndefined (String) , "Username" :: NullOrUndefined.NullOrUndefined (String) } -> {"PasswordParam" :: NullOrUndefined.NullOrUndefined (String) , "Uri" :: NullOrUndefined.NullOrUndefined (String) , "Username" :: NullOrUndefined.NullOrUndefined (String) } ) -> InputLocation
-newInputLocation'  customize = (InputLocation <<< customize) { "PasswordParam": (NullOrUndefined Nothing), "Uri": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputLocation' :: String -> ( { "PasswordParam" :: NullOrUndefined.NullOrUndefined (String) , "Uri" :: (String) , "Username" :: NullOrUndefined.NullOrUndefined (String) } -> {"PasswordParam" :: NullOrUndefined.NullOrUndefined (String) , "Uri" :: (String) , "Username" :: NullOrUndefined.NullOrUndefined (String) } ) -> InputLocation
+newInputLocation' _Uri customize = (InputLocation <<< customize) { "Uri": _Uri, "PasswordParam": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
 
 
 
@@ -3796,11 +3824,11 @@ instance encodeInputLossActionForUdpOut :: Encode InputLossActionForUdpOut where
 
 -- | Placeholder documentation for InputLossBehavior
 newtype InputLossBehavior = InputLossBehavior 
-  { "BlackFrameMsec" :: NullOrUndefined.NullOrUndefined (Int)
-  , "InputLossImageColor" :: NullOrUndefined.NullOrUndefined (String)
+  { "BlackFrameMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000000')
+  , "InputLossImageColor" :: NullOrUndefined.NullOrUndefined (StringMin6Max6')
   , "InputLossImageSlate" :: NullOrUndefined.NullOrUndefined (InputLocation)
   , "InputLossImageType" :: NullOrUndefined.NullOrUndefined (InputLossImageType)
-  , "RepeatFrameMsec" :: NullOrUndefined.NullOrUndefined (Int)
+  , "RepeatFrameMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000000')
   }
 derive instance newtypeInputLossBehavior :: Newtype InputLossBehavior _
 derive instance repGenericInputLossBehavior :: Generic InputLossBehavior _
@@ -3817,7 +3845,7 @@ newInputLossBehavior  = InputLossBehavior { "BlackFrameMsec": (NullOrUndefined N
 
 -- | Constructs InputLossBehavior's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputLossBehavior' :: ( { "BlackFrameMsec" :: NullOrUndefined.NullOrUndefined (Int) , "InputLossImageColor" :: NullOrUndefined.NullOrUndefined (String) , "InputLossImageSlate" :: NullOrUndefined.NullOrUndefined (InputLocation) , "InputLossImageType" :: NullOrUndefined.NullOrUndefined (InputLossImageType) , "RepeatFrameMsec" :: NullOrUndefined.NullOrUndefined (Int) } -> {"BlackFrameMsec" :: NullOrUndefined.NullOrUndefined (Int) , "InputLossImageColor" :: NullOrUndefined.NullOrUndefined (String) , "InputLossImageSlate" :: NullOrUndefined.NullOrUndefined (InputLocation) , "InputLossImageType" :: NullOrUndefined.NullOrUndefined (InputLossImageType) , "RepeatFrameMsec" :: NullOrUndefined.NullOrUndefined (Int) } ) -> InputLossBehavior
+newInputLossBehavior' :: ( { "BlackFrameMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000000') , "InputLossImageColor" :: NullOrUndefined.NullOrUndefined (StringMin6Max6') , "InputLossImageSlate" :: NullOrUndefined.NullOrUndefined (InputLocation) , "InputLossImageType" :: NullOrUndefined.NullOrUndefined (InputLossImageType) , "RepeatFrameMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000000') } -> {"BlackFrameMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000000') , "InputLossImageColor" :: NullOrUndefined.NullOrUndefined (StringMin6Max6') , "InputLossImageSlate" :: NullOrUndefined.NullOrUndefined (InputLocation) , "InputLossImageType" :: NullOrUndefined.NullOrUndefined (InputLossImageType) , "RepeatFrameMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000000') } ) -> InputLossBehavior
 newInputLossBehavior'  customize = (InputLossBehavior <<< customize) { "BlackFrameMsec": (NullOrUndefined Nothing), "InputLossImageColor": (NullOrUndefined Nothing), "InputLossImageSlate": (NullOrUndefined Nothing), "InputLossImageType": (NullOrUndefined Nothing), "RepeatFrameMsec": (NullOrUndefined Nothing) }
 
 
@@ -3866,7 +3894,7 @@ instance encodeInputResolution :: Encode InputResolution where
 newtype InputSecurityGroup = InputSecurityGroup 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule)
+  , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule')
   }
 derive instance newtypeInputSecurityGroup :: Newtype InputSecurityGroup _
 derive instance repGenericInputSecurityGroup :: Generic InputSecurityGroup _
@@ -3883,14 +3911,14 @@ newInputSecurityGroup  = InputSecurityGroup { "Arn": (NullOrUndefined Nothing), 
 
 -- | Constructs InputSecurityGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSecurityGroup' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule) } ) -> InputSecurityGroup
+newInputSecurityGroup' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule') } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRule') } ) -> InputSecurityGroup
 newInputSecurityGroup'  customize = (InputSecurityGroup <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "WhitelistRules": (NullOrUndefined Nothing) }
 
 
 
 -- | Request of IPv4 CIDR addresses to whitelist in a security group.
 newtype InputSecurityGroupWhitelistRequest = InputSecurityGroupWhitelistRequest 
-  { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr)
+  { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr')
   }
 derive instance newtypeInputSecurityGroupWhitelistRequest :: Newtype InputSecurityGroupWhitelistRequest _
 derive instance repGenericInputSecurityGroupWhitelistRequest :: Generic InputSecurityGroupWhitelistRequest _
@@ -3907,18 +3935,18 @@ newInputSecurityGroupWhitelistRequest  = InputSecurityGroupWhitelistRequest { "W
 
 -- | Constructs InputSecurityGroupWhitelistRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSecurityGroupWhitelistRequest' :: ( { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr) } -> {"WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr) } ) -> InputSecurityGroupWhitelistRequest
+newInputSecurityGroupWhitelistRequest' :: ( { "WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr') } -> {"WhitelistRules" :: NullOrUndefined.NullOrUndefined (ListOfInputWhitelistRuleCidr') } ) -> InputSecurityGroupWhitelistRequest
 newInputSecurityGroupWhitelistRequest'  customize = (InputSecurityGroupWhitelistRequest <<< customize) { "WhitelistRules": (NullOrUndefined Nothing) }
 
 
 
 -- | Live Event input parameters. There can be multiple inputs in a single Live Event.
 newtype InputSettings = InputSettings 
-  { "AudioSelectors" :: NullOrUndefined.NullOrUndefined (ListOfAudioSelector)
-  , "CaptionSelectors" :: NullOrUndefined.NullOrUndefined (ListOfCaptionSelector)
+  { "AudioSelectors" :: NullOrUndefined.NullOrUndefined (ListOfAudioSelector')
+  , "CaptionSelectors" :: NullOrUndefined.NullOrUndefined (ListOfCaptionSelector')
   , "DeblockFilter" :: NullOrUndefined.NullOrUndefined (InputDeblockFilter)
   , "DenoiseFilter" :: NullOrUndefined.NullOrUndefined (InputDenoiseFilter)
-  , "FilterStrength" :: NullOrUndefined.NullOrUndefined (Int)
+  , "FilterStrength" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max5')
   , "InputFilter" :: NullOrUndefined.NullOrUndefined (InputFilter)
   , "NetworkInputSettings" :: NullOrUndefined.NullOrUndefined (NetworkInputSettings)
   , "SourceEndBehavior" :: NullOrUndefined.NullOrUndefined (InputSourceEndBehavior)
@@ -3939,7 +3967,7 @@ newInputSettings  = InputSettings { "AudioSelectors": (NullOrUndefined Nothing),
 
 -- | Constructs InputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSettings' :: ( { "AudioSelectors" :: NullOrUndefined.NullOrUndefined (ListOfAudioSelector) , "CaptionSelectors" :: NullOrUndefined.NullOrUndefined (ListOfCaptionSelector) , "DeblockFilter" :: NullOrUndefined.NullOrUndefined (InputDeblockFilter) , "DenoiseFilter" :: NullOrUndefined.NullOrUndefined (InputDenoiseFilter) , "FilterStrength" :: NullOrUndefined.NullOrUndefined (Int) , "InputFilter" :: NullOrUndefined.NullOrUndefined (InputFilter) , "NetworkInputSettings" :: NullOrUndefined.NullOrUndefined (NetworkInputSettings) , "SourceEndBehavior" :: NullOrUndefined.NullOrUndefined (InputSourceEndBehavior) , "VideoSelector" :: NullOrUndefined.NullOrUndefined (VideoSelector) } -> {"AudioSelectors" :: NullOrUndefined.NullOrUndefined (ListOfAudioSelector) , "CaptionSelectors" :: NullOrUndefined.NullOrUndefined (ListOfCaptionSelector) , "DeblockFilter" :: NullOrUndefined.NullOrUndefined (InputDeblockFilter) , "DenoiseFilter" :: NullOrUndefined.NullOrUndefined (InputDenoiseFilter) , "FilterStrength" :: NullOrUndefined.NullOrUndefined (Int) , "InputFilter" :: NullOrUndefined.NullOrUndefined (InputFilter) , "NetworkInputSettings" :: NullOrUndefined.NullOrUndefined (NetworkInputSettings) , "SourceEndBehavior" :: NullOrUndefined.NullOrUndefined (InputSourceEndBehavior) , "VideoSelector" :: NullOrUndefined.NullOrUndefined (VideoSelector) } ) -> InputSettings
+newInputSettings' :: ( { "AudioSelectors" :: NullOrUndefined.NullOrUndefined (ListOfAudioSelector') , "CaptionSelectors" :: NullOrUndefined.NullOrUndefined (ListOfCaptionSelector') , "DeblockFilter" :: NullOrUndefined.NullOrUndefined (InputDeblockFilter) , "DenoiseFilter" :: NullOrUndefined.NullOrUndefined (InputDenoiseFilter) , "FilterStrength" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max5') , "InputFilter" :: NullOrUndefined.NullOrUndefined (InputFilter) , "NetworkInputSettings" :: NullOrUndefined.NullOrUndefined (NetworkInputSettings) , "SourceEndBehavior" :: NullOrUndefined.NullOrUndefined (InputSourceEndBehavior) , "VideoSelector" :: NullOrUndefined.NullOrUndefined (VideoSelector) } -> {"AudioSelectors" :: NullOrUndefined.NullOrUndefined (ListOfAudioSelector') , "CaptionSelectors" :: NullOrUndefined.NullOrUndefined (ListOfCaptionSelector') , "DeblockFilter" :: NullOrUndefined.NullOrUndefined (InputDeblockFilter) , "DenoiseFilter" :: NullOrUndefined.NullOrUndefined (InputDenoiseFilter) , "FilterStrength" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max5') , "InputFilter" :: NullOrUndefined.NullOrUndefined (InputFilter) , "NetworkInputSettings" :: NullOrUndefined.NullOrUndefined (NetworkInputSettings) , "SourceEndBehavior" :: NullOrUndefined.NullOrUndefined (InputSourceEndBehavior) , "VideoSelector" :: NullOrUndefined.NullOrUndefined (VideoSelector) } ) -> InputSettings
 newInputSettings'  customize = (InputSettings <<< customize) { "AudioSelectors": (NullOrUndefined Nothing), "CaptionSelectors": (NullOrUndefined Nothing), "DeblockFilter": (NullOrUndefined Nothing), "DenoiseFilter": (NullOrUndefined Nothing), "FilterStrength": (NullOrUndefined Nothing), "InputFilter": (NullOrUndefined Nothing), "NetworkInputSettings": (NullOrUndefined Nothing), "SourceEndBehavior": (NullOrUndefined Nothing), "VideoSelector": (NullOrUndefined Nothing) }
 
 
@@ -4256,7 +4284,7 @@ newListChannelsRequest'  customize = (ListChannelsRequest <<< customize) { "MaxR
 
 -- | Placeholder documentation for ListChannelsResponse
 newtype ListChannelsResponse = ListChannelsResponse 
-  { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary)
+  { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary')
   , "NextToken" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeListChannelsResponse :: Newtype ListChannelsResponse _
@@ -4274,14 +4302,14 @@ newListChannelsResponse  = ListChannelsResponse { "Channels": (NullOrUndefined N
 
 -- | Constructs ListChannelsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListChannelsResponse' :: ( { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListChannelsResponse
+newListChannelsResponse' :: ( { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListChannelsResponse
 newListChannelsResponse'  customize = (ListChannelsResponse <<< customize) { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for ListChannelsResultModel
 newtype ListChannelsResultModel = ListChannelsResultModel 
-  { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary)
+  { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary')
   , "NextToken" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeListChannelsResultModel :: Newtype ListChannelsResultModel _
@@ -4299,7 +4327,7 @@ newListChannelsResultModel  = ListChannelsResultModel { "Channels": (NullOrUndef
 
 -- | Constructs ListChannelsResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListChannelsResultModel' :: ( { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListChannelsResultModel
+newListChannelsResultModel' :: ( { "Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined.NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListChannelsResultModel
 newListChannelsResultModel'  customize = (ListChannelsResultModel <<< customize) { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
 
 
@@ -4331,7 +4359,7 @@ newListInputSecurityGroupsRequest'  customize = (ListInputSecurityGroupsRequest 
 
 -- | Placeholder documentation for ListInputSecurityGroupsResponse
 newtype ListInputSecurityGroupsResponse = ListInputSecurityGroupsResponse 
-  { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup)
+  { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup')
   , "NextToken" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeListInputSecurityGroupsResponse :: Newtype ListInputSecurityGroupsResponse _
@@ -4349,14 +4377,14 @@ newListInputSecurityGroupsResponse  = ListInputSecurityGroupsResponse { "InputSe
 
 -- | Constructs ListInputSecurityGroupsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputSecurityGroupsResponse' :: ( { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputSecurityGroupsResponse
+newListInputSecurityGroupsResponse' :: ( { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputSecurityGroupsResponse
 newListInputSecurityGroupsResponse'  customize = (ListInputSecurityGroupsResponse <<< customize) { "InputSecurityGroups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
 
 
 
 -- | Result of input security group list request
 newtype ListInputSecurityGroupsResultModel = ListInputSecurityGroupsResultModel 
-  { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup)
+  { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup')
   , "NextToken" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeListInputSecurityGroupsResultModel :: Newtype ListInputSecurityGroupsResultModel _
@@ -4374,7 +4402,7 @@ newListInputSecurityGroupsResultModel  = ListInputSecurityGroupsResultModel { "I
 
 -- | Constructs ListInputSecurityGroupsResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputSecurityGroupsResultModel' :: ( { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputSecurityGroupsResultModel
+newListInputSecurityGroupsResultModel' :: ( { "InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"InputSecurityGroups" :: NullOrUndefined.NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputSecurityGroupsResultModel
 newListInputSecurityGroupsResultModel'  customize = (ListInputSecurityGroupsResultModel <<< customize) { "InputSecurityGroups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
 
 
@@ -4406,7 +4434,7 @@ newListInputsRequest'  customize = (ListInputsRequest <<< customize) { "MaxResul
 
 -- | Placeholder documentation for ListInputsResponse
 newtype ListInputsResponse = ListInputsResponse 
-  { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput)
+  { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput')
   , "NextToken" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeListInputsResponse :: Newtype ListInputsResponse _
@@ -4424,14 +4452,14 @@ newListInputsResponse  = ListInputsResponse { "Inputs": (NullOrUndefined Nothing
 
 -- | Constructs ListInputsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputsResponse' :: ( { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputsResponse
+newListInputsResponse' :: ( { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputsResponse
 newListInputsResponse'  customize = (ListInputsResponse <<< customize) { "Inputs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for ListInputsResultModel
 newtype ListInputsResultModel = ListInputsResultModel 
-  { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput)
+  { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput')
   , "NextToken" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeListInputsResultModel :: Newtype ListInputsResultModel _
@@ -4449,346 +4477,8 @@ newListInputsResultModel  = ListInputsResultModel { "Inputs": (NullOrUndefined N
 
 -- | Constructs ListInputsResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputsResultModel' :: ( { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput) , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputsResultModel
+newListInputsResultModel' :: ( { "Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } -> {"Inputs" :: NullOrUndefined.NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined.NullOrUndefined (String) } ) -> ListInputsResultModel
 newListInputsResultModel'  customize = (ListInputsResultModel <<< customize) { "Inputs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
-
-
-
--- | Placeholder documentation for ListOfAudioChannelMapping
-newtype ListOfAudioChannelMapping = ListOfAudioChannelMapping (Array AudioChannelMapping)
-derive instance newtypeListOfAudioChannelMapping :: Newtype ListOfAudioChannelMapping _
-derive instance repGenericListOfAudioChannelMapping :: Generic ListOfAudioChannelMapping _
-instance showListOfAudioChannelMapping :: Show ListOfAudioChannelMapping where
-  show = genericShow
-instance decodeListOfAudioChannelMapping :: Decode ListOfAudioChannelMapping where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfAudioChannelMapping :: Encode ListOfAudioChannelMapping where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfAudioDescription
-newtype ListOfAudioDescription = ListOfAudioDescription (Array AudioDescription)
-derive instance newtypeListOfAudioDescription :: Newtype ListOfAudioDescription _
-derive instance repGenericListOfAudioDescription :: Generic ListOfAudioDescription _
-instance showListOfAudioDescription :: Show ListOfAudioDescription where
-  show = genericShow
-instance decodeListOfAudioDescription :: Decode ListOfAudioDescription where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfAudioDescription :: Encode ListOfAudioDescription where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfAudioSelector
-newtype ListOfAudioSelector = ListOfAudioSelector (Array AudioSelector)
-derive instance newtypeListOfAudioSelector :: Newtype ListOfAudioSelector _
-derive instance repGenericListOfAudioSelector :: Generic ListOfAudioSelector _
-instance showListOfAudioSelector :: Show ListOfAudioSelector where
-  show = genericShow
-instance decodeListOfAudioSelector :: Decode ListOfAudioSelector where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfAudioSelector :: Encode ListOfAudioSelector where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfCaptionDescription
-newtype ListOfCaptionDescription = ListOfCaptionDescription (Array CaptionDescription)
-derive instance newtypeListOfCaptionDescription :: Newtype ListOfCaptionDescription _
-derive instance repGenericListOfCaptionDescription :: Generic ListOfCaptionDescription _
-instance showListOfCaptionDescription :: Show ListOfCaptionDescription where
-  show = genericShow
-instance decodeListOfCaptionDescription :: Decode ListOfCaptionDescription where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfCaptionDescription :: Encode ListOfCaptionDescription where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfCaptionLanguageMapping
-newtype ListOfCaptionLanguageMapping = ListOfCaptionLanguageMapping (Array CaptionLanguageMapping)
-derive instance newtypeListOfCaptionLanguageMapping :: Newtype ListOfCaptionLanguageMapping _
-derive instance repGenericListOfCaptionLanguageMapping :: Generic ListOfCaptionLanguageMapping _
-instance showListOfCaptionLanguageMapping :: Show ListOfCaptionLanguageMapping where
-  show = genericShow
-instance decodeListOfCaptionLanguageMapping :: Decode ListOfCaptionLanguageMapping where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfCaptionLanguageMapping :: Encode ListOfCaptionLanguageMapping where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfCaptionSelector
-newtype ListOfCaptionSelector = ListOfCaptionSelector (Array CaptionSelector)
-derive instance newtypeListOfCaptionSelector :: Newtype ListOfCaptionSelector _
-derive instance repGenericListOfCaptionSelector :: Generic ListOfCaptionSelector _
-instance showListOfCaptionSelector :: Show ListOfCaptionSelector where
-  show = genericShow
-instance decodeListOfCaptionSelector :: Decode ListOfCaptionSelector where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfCaptionSelector :: Encode ListOfCaptionSelector where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfChannelEgressEndpoint
-newtype ListOfChannelEgressEndpoint = ListOfChannelEgressEndpoint (Array ChannelEgressEndpoint)
-derive instance newtypeListOfChannelEgressEndpoint :: Newtype ListOfChannelEgressEndpoint _
-derive instance repGenericListOfChannelEgressEndpoint :: Generic ListOfChannelEgressEndpoint _
-instance showListOfChannelEgressEndpoint :: Show ListOfChannelEgressEndpoint where
-  show = genericShow
-instance decodeListOfChannelEgressEndpoint :: Decode ListOfChannelEgressEndpoint where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfChannelEgressEndpoint :: Encode ListOfChannelEgressEndpoint where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfChannelSummary
-newtype ListOfChannelSummary = ListOfChannelSummary (Array ChannelSummary)
-derive instance newtypeListOfChannelSummary :: Newtype ListOfChannelSummary _
-derive instance repGenericListOfChannelSummary :: Generic ListOfChannelSummary _
-instance showListOfChannelSummary :: Show ListOfChannelSummary where
-  show = genericShow
-instance decodeListOfChannelSummary :: Decode ListOfChannelSummary where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfChannelSummary :: Encode ListOfChannelSummary where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfHlsAdMarkers
-newtype ListOfHlsAdMarkers = ListOfHlsAdMarkers (Array HlsAdMarkers)
-derive instance newtypeListOfHlsAdMarkers :: Newtype ListOfHlsAdMarkers _
-derive instance repGenericListOfHlsAdMarkers :: Generic ListOfHlsAdMarkers _
-instance showListOfHlsAdMarkers :: Show ListOfHlsAdMarkers where
-  show = genericShow
-instance decodeListOfHlsAdMarkers :: Decode ListOfHlsAdMarkers where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfHlsAdMarkers :: Encode ListOfHlsAdMarkers where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInput
-newtype ListOfInput = ListOfInput (Array Input)
-derive instance newtypeListOfInput :: Newtype ListOfInput _
-derive instance repGenericListOfInput :: Generic ListOfInput _
-instance showListOfInput :: Show ListOfInput where
-  show = genericShow
-instance decodeListOfInput :: Decode ListOfInput where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInput :: Encode ListOfInput where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputAttachment
-newtype ListOfInputAttachment = ListOfInputAttachment (Array InputAttachment)
-derive instance newtypeListOfInputAttachment :: Newtype ListOfInputAttachment _
-derive instance repGenericListOfInputAttachment :: Generic ListOfInputAttachment _
-instance showListOfInputAttachment :: Show ListOfInputAttachment where
-  show = genericShow
-instance decodeListOfInputAttachment :: Decode ListOfInputAttachment where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputAttachment :: Encode ListOfInputAttachment where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputChannelLevel
-newtype ListOfInputChannelLevel = ListOfInputChannelLevel (Array InputChannelLevel)
-derive instance newtypeListOfInputChannelLevel :: Newtype ListOfInputChannelLevel _
-derive instance repGenericListOfInputChannelLevel :: Generic ListOfInputChannelLevel _
-instance showListOfInputChannelLevel :: Show ListOfInputChannelLevel where
-  show = genericShow
-instance decodeListOfInputChannelLevel :: Decode ListOfInputChannelLevel where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputChannelLevel :: Encode ListOfInputChannelLevel where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputDestination
-newtype ListOfInputDestination = ListOfInputDestination (Array InputDestination)
-derive instance newtypeListOfInputDestination :: Newtype ListOfInputDestination _
-derive instance repGenericListOfInputDestination :: Generic ListOfInputDestination _
-instance showListOfInputDestination :: Show ListOfInputDestination where
-  show = genericShow
-instance decodeListOfInputDestination :: Decode ListOfInputDestination where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputDestination :: Encode ListOfInputDestination where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputDestinationRequest
-newtype ListOfInputDestinationRequest = ListOfInputDestinationRequest (Array InputDestinationRequest)
-derive instance newtypeListOfInputDestinationRequest :: Newtype ListOfInputDestinationRequest _
-derive instance repGenericListOfInputDestinationRequest :: Generic ListOfInputDestinationRequest _
-instance showListOfInputDestinationRequest :: Show ListOfInputDestinationRequest where
-  show = genericShow
-instance decodeListOfInputDestinationRequest :: Decode ListOfInputDestinationRequest where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputDestinationRequest :: Encode ListOfInputDestinationRequest where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputSecurityGroup
-newtype ListOfInputSecurityGroup = ListOfInputSecurityGroup (Array InputSecurityGroup)
-derive instance newtypeListOfInputSecurityGroup :: Newtype ListOfInputSecurityGroup _
-derive instance repGenericListOfInputSecurityGroup :: Generic ListOfInputSecurityGroup _
-instance showListOfInputSecurityGroup :: Show ListOfInputSecurityGroup where
-  show = genericShow
-instance decodeListOfInputSecurityGroup :: Decode ListOfInputSecurityGroup where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputSecurityGroup :: Encode ListOfInputSecurityGroup where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputSource
-newtype ListOfInputSource = ListOfInputSource (Array InputSource)
-derive instance newtypeListOfInputSource :: Newtype ListOfInputSource _
-derive instance repGenericListOfInputSource :: Generic ListOfInputSource _
-instance showListOfInputSource :: Show ListOfInputSource where
-  show = genericShow
-instance decodeListOfInputSource :: Decode ListOfInputSource where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputSource :: Encode ListOfInputSource where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputSourceRequest
-newtype ListOfInputSourceRequest = ListOfInputSourceRequest (Array InputSourceRequest)
-derive instance newtypeListOfInputSourceRequest :: Newtype ListOfInputSourceRequest _
-derive instance repGenericListOfInputSourceRequest :: Generic ListOfInputSourceRequest _
-instance showListOfInputSourceRequest :: Show ListOfInputSourceRequest where
-  show = genericShow
-instance decodeListOfInputSourceRequest :: Decode ListOfInputSourceRequest where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputSourceRequest :: Encode ListOfInputSourceRequest where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputWhitelistRule
-newtype ListOfInputWhitelistRule = ListOfInputWhitelistRule (Array InputWhitelistRule)
-derive instance newtypeListOfInputWhitelistRule :: Newtype ListOfInputWhitelistRule _
-derive instance repGenericListOfInputWhitelistRule :: Generic ListOfInputWhitelistRule _
-instance showListOfInputWhitelistRule :: Show ListOfInputWhitelistRule where
-  show = genericShow
-instance decodeListOfInputWhitelistRule :: Decode ListOfInputWhitelistRule where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputWhitelistRule :: Encode ListOfInputWhitelistRule where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfInputWhitelistRuleCidr
-newtype ListOfInputWhitelistRuleCidr = ListOfInputWhitelistRuleCidr (Array InputWhitelistRuleCidr)
-derive instance newtypeListOfInputWhitelistRuleCidr :: Newtype ListOfInputWhitelistRuleCidr _
-derive instance repGenericListOfInputWhitelistRuleCidr :: Generic ListOfInputWhitelistRuleCidr _
-instance showListOfInputWhitelistRuleCidr :: Show ListOfInputWhitelistRuleCidr where
-  show = genericShow
-instance decodeListOfInputWhitelistRuleCidr :: Decode ListOfInputWhitelistRuleCidr where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfInputWhitelistRuleCidr :: Encode ListOfInputWhitelistRuleCidr where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfOutput
-newtype ListOfOutput = ListOfOutput (Array Output)
-derive instance newtypeListOfOutput :: Newtype ListOfOutput _
-derive instance repGenericListOfOutput :: Generic ListOfOutput _
-instance showListOfOutput :: Show ListOfOutput where
-  show = genericShow
-instance decodeListOfOutput :: Decode ListOfOutput where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfOutput :: Encode ListOfOutput where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfOutputDestination
-newtype ListOfOutputDestination = ListOfOutputDestination (Array OutputDestination)
-derive instance newtypeListOfOutputDestination :: Newtype ListOfOutputDestination _
-derive instance repGenericListOfOutputDestination :: Generic ListOfOutputDestination _
-instance showListOfOutputDestination :: Show ListOfOutputDestination where
-  show = genericShow
-instance decodeListOfOutputDestination :: Decode ListOfOutputDestination where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfOutputDestination :: Encode ListOfOutputDestination where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfOutputDestinationSettings
-newtype ListOfOutputDestinationSettings = ListOfOutputDestinationSettings (Array OutputDestinationSettings)
-derive instance newtypeListOfOutputDestinationSettings :: Newtype ListOfOutputDestinationSettings _
-derive instance repGenericListOfOutputDestinationSettings :: Generic ListOfOutputDestinationSettings _
-instance showListOfOutputDestinationSettings :: Show ListOfOutputDestinationSettings where
-  show = genericShow
-instance decodeListOfOutputDestinationSettings :: Decode ListOfOutputDestinationSettings where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfOutputDestinationSettings :: Encode ListOfOutputDestinationSettings where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfOutputGroup
-newtype ListOfOutputGroup = ListOfOutputGroup (Array OutputGroup)
-derive instance newtypeListOfOutputGroup :: Newtype ListOfOutputGroup _
-derive instance repGenericListOfOutputGroup :: Generic ListOfOutputGroup _
-instance showListOfOutputGroup :: Show ListOfOutputGroup where
-  show = genericShow
-instance decodeListOfOutputGroup :: Decode ListOfOutputGroup where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfOutputGroup :: Encode ListOfOutputGroup where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfValidationError
-newtype ListOfValidationError = ListOfValidationError (Array ValidationError)
-derive instance newtypeListOfValidationError :: Newtype ListOfValidationError _
-derive instance repGenericListOfValidationError :: Generic ListOfValidationError _
-instance showListOfValidationError :: Show ListOfValidationError where
-  show = genericShow
-instance decodeListOfValidationError :: Decode ListOfValidationError where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfValidationError :: Encode ListOfValidationError where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOfVideoDescription
-newtype ListOfVideoDescription = ListOfVideoDescription (Array VideoDescription)
-derive instance newtypeListOfVideoDescription :: Newtype ListOfVideoDescription _
-derive instance repGenericListOfVideoDescription :: Generic ListOfVideoDescription _
-instance showListOfVideoDescription :: Show ListOfVideoDescription where
-  show = genericShow
-instance decodeListOfVideoDescription :: Decode ListOfVideoDescription where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOfVideoDescription :: Encode ListOfVideoDescription where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
-
-
-
--- | Placeholder documentation for ListOf__string
-newtype ListOf__string = ListOf__string (Array String)
-derive instance newtypeListOf__string :: Newtype ListOf__string _
-derive instance repGenericListOf__string :: Generic ListOf__string _
-instance showListOf__string :: Show ListOf__string where
-  show = genericShow
-instance decodeListOf__string :: Decode ListOf__string where
-  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
-instance encodeListOf__string :: Encode ListOf__string where
-  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 
 
@@ -5020,10 +4710,10 @@ newtype M2tsSettings = M2tsSettings
   , "AribCaptionsPid" :: NullOrUndefined.NullOrUndefined (String)
   , "AribCaptionsPidControl" :: NullOrUndefined.NullOrUndefined (M2tsAribCaptionsPidControl)
   , "AudioBufferModel" :: NullOrUndefined.NullOrUndefined (M2tsAudioBufferModel)
-  , "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (Int)
+  , "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   , "AudioPids" :: NullOrUndefined.NullOrUndefined (String)
   , "AudioStreamType" :: NullOrUndefined.NullOrUndefined (M2tsAudioStreamType)
-  , "Bitrate" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Bitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   , "BufferModel" :: NullOrUndefined.NullOrUndefined (M2tsBufferModel)
   , "CcDescriptor" :: NullOrUndefined.NullOrUndefined (M2tsCcDescriptor)
   , "DvbNitSettings" :: NullOrUndefined.NullOrUndefined (DvbNitSettings)
@@ -5033,33 +4723,33 @@ newtype M2tsSettings = M2tsSettings
   , "DvbTeletextPid" :: NullOrUndefined.NullOrUndefined (String)
   , "Ebif" :: NullOrUndefined.NullOrUndefined (M2tsEbifControl)
   , "EbpAudioInterval" :: NullOrUndefined.NullOrUndefined (M2tsAudioInterval)
-  , "EbpLookaheadMs" :: NullOrUndefined.NullOrUndefined (Int)
+  , "EbpLookaheadMs" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000')
   , "EbpPlacement" :: NullOrUndefined.NullOrUndefined (M2tsEbpPlacement)
   , "EcmPid" :: NullOrUndefined.NullOrUndefined (String)
   , "EsRateInPes" :: NullOrUndefined.NullOrUndefined (M2tsEsRateInPes)
   , "EtvPlatformPid" :: NullOrUndefined.NullOrUndefined (String)
   , "EtvSignalPid" :: NullOrUndefined.NullOrUndefined (String)
-  , "FragmentTime" :: NullOrUndefined.NullOrUndefined (Number)
+  , "FragmentTime" :: NullOrUndefined.NullOrUndefined (DoubleMin0')
   , "Klv" :: NullOrUndefined.NullOrUndefined (M2tsKlv)
   , "KlvDataPids" :: NullOrUndefined.NullOrUndefined (String)
-  , "NullPacketBitrate" :: NullOrUndefined.NullOrUndefined (Number)
-  , "PatInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  , "NullPacketBitrate" :: NullOrUndefined.NullOrUndefined (DoubleMin0')
+  , "PatInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000')
   , "PcrControl" :: NullOrUndefined.NullOrUndefined (M2tsPcrControl)
-  , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (Int)
+  , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max500')
   , "PcrPid" :: NullOrUndefined.NullOrUndefined (String)
-  , "PmtInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  , "PmtInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000')
   , "PmtPid" :: NullOrUndefined.NullOrUndefined (String)
-  , "ProgramNum" :: NullOrUndefined.NullOrUndefined (Int)
+  , "ProgramNum" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535')
   , "RateMode" :: NullOrUndefined.NullOrUndefined (M2tsRateMode)
   , "Scte27Pids" :: NullOrUndefined.NullOrUndefined (String)
   , "Scte35Control" :: NullOrUndefined.NullOrUndefined (M2tsScte35Control)
   , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String)
   , "SegmentationMarkers" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationMarkers)
   , "SegmentationStyle" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationStyle)
-  , "SegmentationTime" :: NullOrUndefined.NullOrUndefined (Number)
+  , "SegmentationTime" :: NullOrUndefined.NullOrUndefined (DoubleMin1')
   , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M2tsTimedMetadataBehavior)
   , "TimedMetadataPid" :: NullOrUndefined.NullOrUndefined (String)
-  , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (Int)
+  , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535')
   , "VideoPid" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeM2tsSettings :: Newtype M2tsSettings _
@@ -5077,7 +4767,7 @@ newM2tsSettings  = M2tsSettings { "AbsentInputAudioBehavior": (NullOrUndefined N
 
 -- | Constructs M2tsSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newM2tsSettings' :: ( { "AbsentInputAudioBehavior" :: NullOrUndefined.NullOrUndefined (M2tsAbsentInputAudioBehavior) , "Arib" :: NullOrUndefined.NullOrUndefined (M2tsArib) , "AribCaptionsPid" :: NullOrUndefined.NullOrUndefined (String) , "AribCaptionsPidControl" :: NullOrUndefined.NullOrUndefined (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: NullOrUndefined.NullOrUndefined (M2tsAudioBufferModel) , "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (Int) , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "AudioStreamType" :: NullOrUndefined.NullOrUndefined (M2tsAudioStreamType) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Int) , "BufferModel" :: NullOrUndefined.NullOrUndefined (M2tsBufferModel) , "CcDescriptor" :: NullOrUndefined.NullOrUndefined (M2tsCcDescriptor) , "DvbNitSettings" :: NullOrUndefined.NullOrUndefined (DvbNitSettings) , "DvbSdtSettings" :: NullOrUndefined.NullOrUndefined (DvbSdtSettings) , "DvbSubPids" :: NullOrUndefined.NullOrUndefined (String) , "DvbTdtSettings" :: NullOrUndefined.NullOrUndefined (DvbTdtSettings) , "DvbTeletextPid" :: NullOrUndefined.NullOrUndefined (String) , "Ebif" :: NullOrUndefined.NullOrUndefined (M2tsEbifControl) , "EbpAudioInterval" :: NullOrUndefined.NullOrUndefined (M2tsAudioInterval) , "EbpLookaheadMs" :: NullOrUndefined.NullOrUndefined (Int) , "EbpPlacement" :: NullOrUndefined.NullOrUndefined (M2tsEbpPlacement) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "EsRateInPes" :: NullOrUndefined.NullOrUndefined (M2tsEsRateInPes) , "EtvPlatformPid" :: NullOrUndefined.NullOrUndefined (String) , "EtvSignalPid" :: NullOrUndefined.NullOrUndefined (String) , "FragmentTime" :: NullOrUndefined.NullOrUndefined (Number) , "Klv" :: NullOrUndefined.NullOrUndefined (M2tsKlv) , "KlvDataPids" :: NullOrUndefined.NullOrUndefined (String) , "NullPacketBitrate" :: NullOrUndefined.NullOrUndefined (Number) , "PatInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PcrControl" :: NullOrUndefined.NullOrUndefined (M2tsPcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (Int) , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (Int) , "RateMode" :: NullOrUndefined.NullOrUndefined (M2tsRateMode) , "Scte27Pids" :: NullOrUndefined.NullOrUndefined (String) , "Scte35Control" :: NullOrUndefined.NullOrUndefined (M2tsScte35Control) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "SegmentationMarkers" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationMarkers) , "SegmentationStyle" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationStyle) , "SegmentationTime" :: NullOrUndefined.NullOrUndefined (Number) , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: NullOrUndefined.NullOrUndefined (String) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (Int) , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } -> {"AbsentInputAudioBehavior" :: NullOrUndefined.NullOrUndefined (M2tsAbsentInputAudioBehavior) , "Arib" :: NullOrUndefined.NullOrUndefined (M2tsArib) , "AribCaptionsPid" :: NullOrUndefined.NullOrUndefined (String) , "AribCaptionsPidControl" :: NullOrUndefined.NullOrUndefined (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: NullOrUndefined.NullOrUndefined (M2tsAudioBufferModel) , "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (Int) , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "AudioStreamType" :: NullOrUndefined.NullOrUndefined (M2tsAudioStreamType) , "Bitrate" :: NullOrUndefined.NullOrUndefined (Int) , "BufferModel" :: NullOrUndefined.NullOrUndefined (M2tsBufferModel) , "CcDescriptor" :: NullOrUndefined.NullOrUndefined (M2tsCcDescriptor) , "DvbNitSettings" :: NullOrUndefined.NullOrUndefined (DvbNitSettings) , "DvbSdtSettings" :: NullOrUndefined.NullOrUndefined (DvbSdtSettings) , "DvbSubPids" :: NullOrUndefined.NullOrUndefined (String) , "DvbTdtSettings" :: NullOrUndefined.NullOrUndefined (DvbTdtSettings) , "DvbTeletextPid" :: NullOrUndefined.NullOrUndefined (String) , "Ebif" :: NullOrUndefined.NullOrUndefined (M2tsEbifControl) , "EbpAudioInterval" :: NullOrUndefined.NullOrUndefined (M2tsAudioInterval) , "EbpLookaheadMs" :: NullOrUndefined.NullOrUndefined (Int) , "EbpPlacement" :: NullOrUndefined.NullOrUndefined (M2tsEbpPlacement) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "EsRateInPes" :: NullOrUndefined.NullOrUndefined (M2tsEsRateInPes) , "EtvPlatformPid" :: NullOrUndefined.NullOrUndefined (String) , "EtvSignalPid" :: NullOrUndefined.NullOrUndefined (String) , "FragmentTime" :: NullOrUndefined.NullOrUndefined (Number) , "Klv" :: NullOrUndefined.NullOrUndefined (M2tsKlv) , "KlvDataPids" :: NullOrUndefined.NullOrUndefined (String) , "NullPacketBitrate" :: NullOrUndefined.NullOrUndefined (Number) , "PatInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PcrControl" :: NullOrUndefined.NullOrUndefined (M2tsPcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (Int) , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (Int) , "RateMode" :: NullOrUndefined.NullOrUndefined (M2tsRateMode) , "Scte27Pids" :: NullOrUndefined.NullOrUndefined (String) , "Scte35Control" :: NullOrUndefined.NullOrUndefined (M2tsScte35Control) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "SegmentationMarkers" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationMarkers) , "SegmentationStyle" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationStyle) , "SegmentationTime" :: NullOrUndefined.NullOrUndefined (Number) , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: NullOrUndefined.NullOrUndefined (String) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (Int) , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } ) -> M2tsSettings
+newM2tsSettings' :: ( { "AbsentInputAudioBehavior" :: NullOrUndefined.NullOrUndefined (M2tsAbsentInputAudioBehavior) , "Arib" :: NullOrUndefined.NullOrUndefined (M2tsArib) , "AribCaptionsPid" :: NullOrUndefined.NullOrUndefined (String) , "AribCaptionsPidControl" :: NullOrUndefined.NullOrUndefined (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: NullOrUndefined.NullOrUndefined (M2tsAudioBufferModel) , "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "AudioStreamType" :: NullOrUndefined.NullOrUndefined (M2tsAudioStreamType) , "Bitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "BufferModel" :: NullOrUndefined.NullOrUndefined (M2tsBufferModel) , "CcDescriptor" :: NullOrUndefined.NullOrUndefined (M2tsCcDescriptor) , "DvbNitSettings" :: NullOrUndefined.NullOrUndefined (DvbNitSettings) , "DvbSdtSettings" :: NullOrUndefined.NullOrUndefined (DvbSdtSettings) , "DvbSubPids" :: NullOrUndefined.NullOrUndefined (String) , "DvbTdtSettings" :: NullOrUndefined.NullOrUndefined (DvbTdtSettings) , "DvbTeletextPid" :: NullOrUndefined.NullOrUndefined (String) , "Ebif" :: NullOrUndefined.NullOrUndefined (M2tsEbifControl) , "EbpAudioInterval" :: NullOrUndefined.NullOrUndefined (M2tsAudioInterval) , "EbpLookaheadMs" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000') , "EbpPlacement" :: NullOrUndefined.NullOrUndefined (M2tsEbpPlacement) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "EsRateInPes" :: NullOrUndefined.NullOrUndefined (M2tsEsRateInPes) , "EtvPlatformPid" :: NullOrUndefined.NullOrUndefined (String) , "EtvSignalPid" :: NullOrUndefined.NullOrUndefined (String) , "FragmentTime" :: NullOrUndefined.NullOrUndefined (DoubleMin0') , "Klv" :: NullOrUndefined.NullOrUndefined (M2tsKlv) , "KlvDataPids" :: NullOrUndefined.NullOrUndefined (String) , "NullPacketBitrate" :: NullOrUndefined.NullOrUndefined (DoubleMin0') , "PatInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined.NullOrUndefined (M2tsPcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "RateMode" :: NullOrUndefined.NullOrUndefined (M2tsRateMode) , "Scte27Pids" :: NullOrUndefined.NullOrUndefined (String) , "Scte35Control" :: NullOrUndefined.NullOrUndefined (M2tsScte35Control) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "SegmentationMarkers" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationMarkers) , "SegmentationStyle" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationStyle) , "SegmentationTime" :: NullOrUndefined.NullOrUndefined (DoubleMin1') , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: NullOrUndefined.NullOrUndefined (String) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } -> {"AbsentInputAudioBehavior" :: NullOrUndefined.NullOrUndefined (M2tsAbsentInputAudioBehavior) , "Arib" :: NullOrUndefined.NullOrUndefined (M2tsArib) , "AribCaptionsPid" :: NullOrUndefined.NullOrUndefined (String) , "AribCaptionsPidControl" :: NullOrUndefined.NullOrUndefined (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: NullOrUndefined.NullOrUndefined (M2tsAudioBufferModel) , "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "AudioStreamType" :: NullOrUndefined.NullOrUndefined (M2tsAudioStreamType) , "Bitrate" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "BufferModel" :: NullOrUndefined.NullOrUndefined (M2tsBufferModel) , "CcDescriptor" :: NullOrUndefined.NullOrUndefined (M2tsCcDescriptor) , "DvbNitSettings" :: NullOrUndefined.NullOrUndefined (DvbNitSettings) , "DvbSdtSettings" :: NullOrUndefined.NullOrUndefined (DvbSdtSettings) , "DvbSubPids" :: NullOrUndefined.NullOrUndefined (String) , "DvbTdtSettings" :: NullOrUndefined.NullOrUndefined (DvbTdtSettings) , "DvbTeletextPid" :: NullOrUndefined.NullOrUndefined (String) , "Ebif" :: NullOrUndefined.NullOrUndefined (M2tsEbifControl) , "EbpAudioInterval" :: NullOrUndefined.NullOrUndefined (M2tsAudioInterval) , "EbpLookaheadMs" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000') , "EbpPlacement" :: NullOrUndefined.NullOrUndefined (M2tsEbpPlacement) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "EsRateInPes" :: NullOrUndefined.NullOrUndefined (M2tsEsRateInPes) , "EtvPlatformPid" :: NullOrUndefined.NullOrUndefined (String) , "EtvSignalPid" :: NullOrUndefined.NullOrUndefined (String) , "FragmentTime" :: NullOrUndefined.NullOrUndefined (DoubleMin0') , "Klv" :: NullOrUndefined.NullOrUndefined (M2tsKlv) , "KlvDataPids" :: NullOrUndefined.NullOrUndefined (String) , "NullPacketBitrate" :: NullOrUndefined.NullOrUndefined (DoubleMin0') , "PatInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined.NullOrUndefined (M2tsPcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "RateMode" :: NullOrUndefined.NullOrUndefined (M2tsRateMode) , "Scte27Pids" :: NullOrUndefined.NullOrUndefined (String) , "Scte35Control" :: NullOrUndefined.NullOrUndefined (M2tsScte35Control) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "SegmentationMarkers" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationMarkers) , "SegmentationStyle" :: NullOrUndefined.NullOrUndefined (M2tsSegmentationStyle) , "SegmentationTime" :: NullOrUndefined.NullOrUndefined (DoubleMin1') , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: NullOrUndefined.NullOrUndefined (String) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } ) -> M2tsSettings
 newM2tsSettings'  customize = (M2tsSettings <<< customize) { "AbsentInputAudioBehavior": (NullOrUndefined Nothing), "Arib": (NullOrUndefined Nothing), "AribCaptionsPid": (NullOrUndefined Nothing), "AribCaptionsPidControl": (NullOrUndefined Nothing), "AudioBufferModel": (NullOrUndefined Nothing), "AudioFramesPerPes": (NullOrUndefined Nothing), "AudioPids": (NullOrUndefined Nothing), "AudioStreamType": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BufferModel": (NullOrUndefined Nothing), "CcDescriptor": (NullOrUndefined Nothing), "DvbNitSettings": (NullOrUndefined Nothing), "DvbSdtSettings": (NullOrUndefined Nothing), "DvbSubPids": (NullOrUndefined Nothing), "DvbTdtSettings": (NullOrUndefined Nothing), "DvbTeletextPid": (NullOrUndefined Nothing), "Ebif": (NullOrUndefined Nothing), "EbpAudioInterval": (NullOrUndefined Nothing), "EbpLookaheadMs": (NullOrUndefined Nothing), "EbpPlacement": (NullOrUndefined Nothing), "EcmPid": (NullOrUndefined Nothing), "EsRateInPes": (NullOrUndefined Nothing), "EtvPlatformPid": (NullOrUndefined Nothing), "EtvSignalPid": (NullOrUndefined Nothing), "FragmentTime": (NullOrUndefined Nothing), "Klv": (NullOrUndefined Nothing), "KlvDataPids": (NullOrUndefined Nothing), "NullPacketBitrate": (NullOrUndefined Nothing), "PatInterval": (NullOrUndefined Nothing), "PcrControl": (NullOrUndefined Nothing), "PcrPeriod": (NullOrUndefined Nothing), "PcrPid": (NullOrUndefined Nothing), "PmtInterval": (NullOrUndefined Nothing), "PmtPid": (NullOrUndefined Nothing), "ProgramNum": (NullOrUndefined Nothing), "RateMode": (NullOrUndefined Nothing), "Scte27Pids": (NullOrUndefined Nothing), "Scte35Control": (NullOrUndefined Nothing), "Scte35Pid": (NullOrUndefined Nothing), "SegmentationMarkers": (NullOrUndefined Nothing), "SegmentationStyle": (NullOrUndefined Nothing), "SegmentationTime": (NullOrUndefined Nothing), "TimedMetadataBehavior": (NullOrUndefined Nothing), "TimedMetadataPid": (NullOrUndefined Nothing), "TransportStreamId": (NullOrUndefined Nothing), "VideoPid": (NullOrUndefined Nothing) }
 
 
@@ -5123,20 +4813,20 @@ instance encodeM3u8Scte35Behavior :: Encode M3u8Scte35Behavior where
 
 -- | Settings information for the .m3u8 container
 newtype M3u8Settings = M3u8Settings 
-  { "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (Int)
+  { "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   , "AudioPids" :: NullOrUndefined.NullOrUndefined (String)
   , "EcmPid" :: NullOrUndefined.NullOrUndefined (String)
-  , "PatInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  , "PatInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000')
   , "PcrControl" :: NullOrUndefined.NullOrUndefined (M3u8PcrControl)
-  , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (Int)
+  , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max500')
   , "PcrPid" :: NullOrUndefined.NullOrUndefined (String)
-  , "PmtInterval" :: NullOrUndefined.NullOrUndefined (Int)
+  , "PmtInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000')
   , "PmtPid" :: NullOrUndefined.NullOrUndefined (String)
-  , "ProgramNum" :: NullOrUndefined.NullOrUndefined (Int)
+  , "ProgramNum" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535')
   , "Scte35Behavior" :: NullOrUndefined.NullOrUndefined (M3u8Scte35Behavior)
   , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String)
   , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M3u8TimedMetadataBehavior)
-  , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (Int)
+  , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535')
   , "VideoPid" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeM3u8Settings :: Newtype M3u8Settings _
@@ -5154,7 +4844,7 @@ newM3u8Settings  = M3u8Settings { "AudioFramesPerPes": (NullOrUndefined Nothing)
 
 -- | Constructs M3u8Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newM3u8Settings' :: ( { "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (Int) , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "PatInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PcrControl" :: NullOrUndefined.NullOrUndefined (M3u8PcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (Int) , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (Int) , "Scte35Behavior" :: NullOrUndefined.NullOrUndefined (M3u8Scte35Behavior) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M3u8TimedMetadataBehavior) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (Int) , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } -> {"AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (Int) , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "PatInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PcrControl" :: NullOrUndefined.NullOrUndefined (M3u8PcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (Int) , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (Int) , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (Int) , "Scte35Behavior" :: NullOrUndefined.NullOrUndefined (M3u8Scte35Behavior) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M3u8TimedMetadataBehavior) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (Int) , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } ) -> M3u8Settings
+newM3u8Settings' :: ( { "AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "PatInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined.NullOrUndefined (M3u8PcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "Scte35Behavior" :: NullOrUndefined.NullOrUndefined (M3u8Scte35Behavior) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M3u8TimedMetadataBehavior) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } -> {"AudioFramesPerPes" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined.NullOrUndefined (String) , "EcmPid" :: NullOrUndefined.NullOrUndefined (String) , "PatInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined.NullOrUndefined (M3u8PcrControl) , "PcrPeriod" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined.NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined.NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "Scte35Behavior" :: NullOrUndefined.NullOrUndefined (M3u8Scte35Behavior) , "Scte35Pid" :: NullOrUndefined.NullOrUndefined (String) , "TimedMetadataBehavior" :: NullOrUndefined.NullOrUndefined (M3u8TimedMetadataBehavior) , "TransportStreamId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined.NullOrUndefined (String) } ) -> M3u8Settings
 newM3u8Settings'  customize = (M3u8Settings <<< customize) { "AudioFramesPerPes": (NullOrUndefined Nothing), "AudioPids": (NullOrUndefined Nothing), "EcmPid": (NullOrUndefined Nothing), "PatInterval": (NullOrUndefined Nothing), "PcrControl": (NullOrUndefined Nothing), "PcrPeriod": (NullOrUndefined Nothing), "PcrPid": (NullOrUndefined Nothing), "PmtInterval": (NullOrUndefined Nothing), "PmtPid": (NullOrUndefined Nothing), "ProgramNum": (NullOrUndefined Nothing), "Scte35Behavior": (NullOrUndefined Nothing), "Scte35Pid": (NullOrUndefined Nothing), "TimedMetadataBehavior": (NullOrUndefined Nothing), "TransportStreamId": (NullOrUndefined Nothing), "VideoPid": (NullOrUndefined Nothing) }
 
 
@@ -5229,18 +4919,18 @@ newtype MsSmoothGroupSettings = MsSmoothGroupSettings
   { "AcquisitionPointId" :: NullOrUndefined.NullOrUndefined (String)
   , "AudioOnlyTimecodeControl" :: NullOrUndefined.NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl)
   , "CertificateMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupCertificateMode)
-  , "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int)
-  , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef)
+  , "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "Destination" :: (OutputLocationRef)
   , "EventId" :: NullOrUndefined.NullOrUndefined (String)
   , "EventIdMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventIdMode)
   , "EventStopBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventStopBehavior)
-  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int)
-  , "FragmentLength" :: NullOrUndefined.NullOrUndefined (Int)
+  , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "FragmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForMsSmoothOut)
-  , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int)
-  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int)
+  , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
+  , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupSegmentationMode)
-  , "SendDelayMs" :: NullOrUndefined.NullOrUndefined (Int)
+  , "SendDelayMs" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000')
   , "SparseTrackType" :: NullOrUndefined.NullOrUndefined (SmoothGroupSparseTrackType)
   , "StreamManifestBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupStreamManifestBehavior)
   , "TimestampOffset" :: NullOrUndefined.NullOrUndefined (String)
@@ -5256,13 +4946,13 @@ instance encodeMsSmoothGroupSettings :: Encode MsSmoothGroupSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs MsSmoothGroupSettings from required parameters
-newMsSmoothGroupSettings :: MsSmoothGroupSettings
-newMsSmoothGroupSettings  = MsSmoothGroupSettings { "AcquisitionPointId": (NullOrUndefined Nothing), "AudioOnlyTimecodeControl": (NullOrUndefined Nothing), "CertificateMode": (NullOrUndefined Nothing), "ConnectionRetryInterval": (NullOrUndefined Nothing), "Destination": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "EventIdMode": (NullOrUndefined Nothing), "EventStopBehavior": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "FragmentLength": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SendDelayMs": (NullOrUndefined Nothing), "SparseTrackType": (NullOrUndefined Nothing), "StreamManifestBehavior": (NullOrUndefined Nothing), "TimestampOffset": (NullOrUndefined Nothing), "TimestampOffsetMode": (NullOrUndefined Nothing) }
+newMsSmoothGroupSettings :: OutputLocationRef -> MsSmoothGroupSettings
+newMsSmoothGroupSettings _Destination = MsSmoothGroupSettings { "Destination": _Destination, "AcquisitionPointId": (NullOrUndefined Nothing), "AudioOnlyTimecodeControl": (NullOrUndefined Nothing), "CertificateMode": (NullOrUndefined Nothing), "ConnectionRetryInterval": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "EventIdMode": (NullOrUndefined Nothing), "EventStopBehavior": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "FragmentLength": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SendDelayMs": (NullOrUndefined Nothing), "SparseTrackType": (NullOrUndefined Nothing), "StreamManifestBehavior": (NullOrUndefined Nothing), "TimestampOffset": (NullOrUndefined Nothing), "TimestampOffsetMode": (NullOrUndefined Nothing) }
 
 -- | Constructs MsSmoothGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMsSmoothGroupSettings' :: ( { "AcquisitionPointId" :: NullOrUndefined.NullOrUndefined (String) , "AudioOnlyTimecodeControl" :: NullOrUndefined.NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "EventId" :: NullOrUndefined.NullOrUndefined (String) , "EventIdMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventIdMode) , "EventStopBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "FragmentLength" :: NullOrUndefined.NullOrUndefined (Int) , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForMsSmoothOut) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupSegmentationMode) , "SendDelayMs" :: NullOrUndefined.NullOrUndefined (Int) , "SparseTrackType" :: NullOrUndefined.NullOrUndefined (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: NullOrUndefined.NullOrUndefined (String) , "TimestampOffsetMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupTimestampOffsetMode) } -> {"AcquisitionPointId" :: NullOrUndefined.NullOrUndefined (String) , "AudioOnlyTimecodeControl" :: NullOrUndefined.NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (Int) , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "EventId" :: NullOrUndefined.NullOrUndefined (String) , "EventIdMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventIdMode) , "EventStopBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (Int) , "FragmentLength" :: NullOrUndefined.NullOrUndefined (Int) , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForMsSmoothOut) , "NumRetries" :: NullOrUndefined.NullOrUndefined (Int) , "RestartDelay" :: NullOrUndefined.NullOrUndefined (Int) , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupSegmentationMode) , "SendDelayMs" :: NullOrUndefined.NullOrUndefined (Int) , "SparseTrackType" :: NullOrUndefined.NullOrUndefined (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: NullOrUndefined.NullOrUndefined (String) , "TimestampOffsetMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupTimestampOffsetMode) } ) -> MsSmoothGroupSettings
-newMsSmoothGroupSettings'  customize = (MsSmoothGroupSettings <<< customize) { "AcquisitionPointId": (NullOrUndefined Nothing), "AudioOnlyTimecodeControl": (NullOrUndefined Nothing), "CertificateMode": (NullOrUndefined Nothing), "ConnectionRetryInterval": (NullOrUndefined Nothing), "Destination": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "EventIdMode": (NullOrUndefined Nothing), "EventStopBehavior": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "FragmentLength": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SendDelayMs": (NullOrUndefined Nothing), "SparseTrackType": (NullOrUndefined Nothing), "StreamManifestBehavior": (NullOrUndefined Nothing), "TimestampOffset": (NullOrUndefined Nothing), "TimestampOffsetMode": (NullOrUndefined Nothing) }
+newMsSmoothGroupSettings' :: OutputLocationRef -> ( { "AcquisitionPointId" :: NullOrUndefined.NullOrUndefined (String) , "AudioOnlyTimecodeControl" :: NullOrUndefined.NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "Destination" :: (OutputLocationRef) , "EventId" :: NullOrUndefined.NullOrUndefined (String) , "EventIdMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventIdMode) , "EventStopBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FragmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForMsSmoothOut) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupSegmentationMode) , "SendDelayMs" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000') , "SparseTrackType" :: NullOrUndefined.NullOrUndefined (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: NullOrUndefined.NullOrUndefined (String) , "TimestampOffsetMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupTimestampOffsetMode) } -> {"AcquisitionPointId" :: NullOrUndefined.NullOrUndefined (String) , "AudioOnlyTimecodeControl" :: NullOrUndefined.NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "Destination" :: (OutputLocationRef) , "EventId" :: NullOrUndefined.NullOrUndefined (String) , "EventIdMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventIdMode) , "EventStopBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "FragmentLength" :: NullOrUndefined.NullOrUndefined (IntegerMin1') , "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForMsSmoothOut) , "NumRetries" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined.NullOrUndefined (IntegerMin0') , "SegmentationMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupSegmentationMode) , "SendDelayMs" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000') , "SparseTrackType" :: NullOrUndefined.NullOrUndefined (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: NullOrUndefined.NullOrUndefined (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: NullOrUndefined.NullOrUndefined (String) , "TimestampOffsetMode" :: NullOrUndefined.NullOrUndefined (SmoothGroupTimestampOffsetMode) } ) -> MsSmoothGroupSettings
+newMsSmoothGroupSettings' _Destination customize = (MsSmoothGroupSettings <<< customize) { "Destination": _Destination, "AcquisitionPointId": (NullOrUndefined Nothing), "AudioOnlyTimecodeControl": (NullOrUndefined Nothing), "CertificateMode": (NullOrUndefined Nothing), "ConnectionRetryInterval": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "EventIdMode": (NullOrUndefined Nothing), "EventStopBehavior": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "FragmentLength": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SendDelayMs": (NullOrUndefined Nothing), "SparseTrackType": (NullOrUndefined Nothing), "StreamManifestBehavior": (NullOrUndefined Nothing), "TimestampOffset": (NullOrUndefined Nothing), "TimestampOffsetMode": (NullOrUndefined Nothing) }
 
 
 
@@ -5354,10 +5044,10 @@ newNotFoundException'  customize = (NotFoundException <<< customize) { "Message"
 
 -- | Output settings. There can be multiple outputs within a group.
 newtype Output = Output 
-  { "AudioDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string)
-  , "CaptionDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string)
-  , "OutputName" :: NullOrUndefined.NullOrUndefined (String)
-  , "OutputSettings" :: NullOrUndefined.NullOrUndefined (OutputSettings)
+  { "AudioDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string')
+  , "CaptionDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string')
+  , "OutputName" :: NullOrUndefined.NullOrUndefined (StringMin1Max255')
+  , "OutputSettings" :: (OutputSettings)
   , "VideoDescriptionName" :: NullOrUndefined.NullOrUndefined (String)
   }
 derive instance newtypeOutput :: Newtype Output _
@@ -5370,20 +5060,20 @@ instance encodeOutput :: Encode Output where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs Output from required parameters
-newOutput :: Output
-newOutput  = Output { "AudioDescriptionNames": (NullOrUndefined Nothing), "CaptionDescriptionNames": (NullOrUndefined Nothing), "OutputName": (NullOrUndefined Nothing), "OutputSettings": (NullOrUndefined Nothing), "VideoDescriptionName": (NullOrUndefined Nothing) }
+newOutput :: OutputSettings -> Output
+newOutput _OutputSettings = Output { "OutputSettings": _OutputSettings, "AudioDescriptionNames": (NullOrUndefined Nothing), "CaptionDescriptionNames": (NullOrUndefined Nothing), "OutputName": (NullOrUndefined Nothing), "VideoDescriptionName": (NullOrUndefined Nothing) }
 
 -- | Constructs Output's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutput' :: ( { "AudioDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "CaptionDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "OutputName" :: NullOrUndefined.NullOrUndefined (String) , "OutputSettings" :: NullOrUndefined.NullOrUndefined (OutputSettings) , "VideoDescriptionName" :: NullOrUndefined.NullOrUndefined (String) } -> {"AudioDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "CaptionDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string) , "OutputName" :: NullOrUndefined.NullOrUndefined (String) , "OutputSettings" :: NullOrUndefined.NullOrUndefined (OutputSettings) , "VideoDescriptionName" :: NullOrUndefined.NullOrUndefined (String) } ) -> Output
-newOutput'  customize = (Output <<< customize) { "AudioDescriptionNames": (NullOrUndefined Nothing), "CaptionDescriptionNames": (NullOrUndefined Nothing), "OutputName": (NullOrUndefined Nothing), "OutputSettings": (NullOrUndefined Nothing), "VideoDescriptionName": (NullOrUndefined Nothing) }
+newOutput' :: OutputSettings -> ( { "AudioDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "CaptionDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "OutputName" :: NullOrUndefined.NullOrUndefined (StringMin1Max255') , "OutputSettings" :: (OutputSettings) , "VideoDescriptionName" :: NullOrUndefined.NullOrUndefined (String) } -> {"AudioDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "CaptionDescriptionNames" :: NullOrUndefined.NullOrUndefined (ListOf__string') , "OutputName" :: NullOrUndefined.NullOrUndefined (StringMin1Max255') , "OutputSettings" :: (OutputSettings) , "VideoDescriptionName" :: NullOrUndefined.NullOrUndefined (String) } ) -> Output
+newOutput' _OutputSettings customize = (Output <<< customize) { "OutputSettings": _OutputSettings, "AudioDescriptionNames": (NullOrUndefined Nothing), "CaptionDescriptionNames": (NullOrUndefined Nothing), "OutputName": (NullOrUndefined Nothing), "VideoDescriptionName": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for OutputDestination
 newtype OutputDestination = OutputDestination 
   { "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "Settings" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestinationSettings)
+  , "Settings" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestinationSettings')
   }
 derive instance newtypeOutputDestination :: Newtype OutputDestination _
 derive instance repGenericOutputDestination :: Generic OutputDestination _
@@ -5400,7 +5090,7 @@ newOutputDestination  = OutputDestination { "Id": (NullOrUndefined Nothing), "Se
 
 -- | Constructs OutputDestination's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputDestination' :: ( { "Id" :: NullOrUndefined.NullOrUndefined (String) , "Settings" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestinationSettings) } -> {"Id" :: NullOrUndefined.NullOrUndefined (String) , "Settings" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestinationSettings) } ) -> OutputDestination
+newOutputDestination' :: ( { "Id" :: NullOrUndefined.NullOrUndefined (String) , "Settings" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestinationSettings') } -> {"Id" :: NullOrUndefined.NullOrUndefined (String) , "Settings" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestinationSettings') } ) -> OutputDestination
 newOutputDestination'  customize = (OutputDestination <<< customize) { "Id": (NullOrUndefined Nothing), "Settings": (NullOrUndefined Nothing) }
 
 
@@ -5433,9 +5123,9 @@ newOutputDestinationSettings'  customize = (OutputDestinationSettings <<< custom
 
 -- | Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 newtype OutputGroup = OutputGroup 
-  { "Name" :: NullOrUndefined.NullOrUndefined (String)
-  , "OutputGroupSettings" :: NullOrUndefined.NullOrUndefined (OutputGroupSettings)
-  , "Outputs" :: NullOrUndefined.NullOrUndefined (ListOfOutput)
+  { "Name" :: NullOrUndefined.NullOrUndefined (StringMax32')
+  , "OutputGroupSettings" :: (OutputGroupSettings)
+  , "Outputs" :: (ListOfOutput')
   }
 derive instance newtypeOutputGroup :: Newtype OutputGroup _
 derive instance repGenericOutputGroup :: Generic OutputGroup _
@@ -5447,13 +5137,13 @@ instance encodeOutputGroup :: Encode OutputGroup where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs OutputGroup from required parameters
-newOutputGroup :: OutputGroup
-newOutputGroup  = OutputGroup { "Name": (NullOrUndefined Nothing), "OutputGroupSettings": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing) }
+newOutputGroup :: OutputGroupSettings -> ListOfOutput' -> OutputGroup
+newOutputGroup _OutputGroupSettings _Outputs = OutputGroup { "OutputGroupSettings": _OutputGroupSettings, "Outputs": _Outputs, "Name": (NullOrUndefined Nothing) }
 
 -- | Constructs OutputGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputGroup' :: ( { "Name" :: NullOrUndefined.NullOrUndefined (String) , "OutputGroupSettings" :: NullOrUndefined.NullOrUndefined (OutputGroupSettings) , "Outputs" :: NullOrUndefined.NullOrUndefined (ListOfOutput) } -> {"Name" :: NullOrUndefined.NullOrUndefined (String) , "OutputGroupSettings" :: NullOrUndefined.NullOrUndefined (OutputGroupSettings) , "Outputs" :: NullOrUndefined.NullOrUndefined (ListOfOutput) } ) -> OutputGroup
-newOutputGroup'  customize = (OutputGroup <<< customize) { "Name": (NullOrUndefined Nothing), "OutputGroupSettings": (NullOrUndefined Nothing), "Outputs": (NullOrUndefined Nothing) }
+newOutputGroup' :: OutputGroupSettings -> ListOfOutput' -> ( { "Name" :: NullOrUndefined.NullOrUndefined (StringMax32') , "OutputGroupSettings" :: (OutputGroupSettings) , "Outputs" :: (ListOfOutput') } -> {"Name" :: NullOrUndefined.NullOrUndefined (StringMax32') , "OutputGroupSettings" :: (OutputGroupSettings) , "Outputs" :: (ListOfOutput') } ) -> OutputGroup
+newOutputGroup' _OutputGroupSettings _Outputs customize = (OutputGroup <<< customize) { "OutputGroupSettings": _OutputGroupSettings, "Outputs": _Outputs, "Name": (NullOrUndefined Nothing) }
 
 
 
@@ -5550,9 +5240,9 @@ instance encodePassThroughSettings :: Encode PassThroughSettings where
 
 -- | Placeholder documentation for RemixSettings
 newtype RemixSettings = RemixSettings 
-  { "ChannelMappings" :: NullOrUndefined.NullOrUndefined (ListOfAudioChannelMapping)
-  , "ChannelsIn" :: NullOrUndefined.NullOrUndefined (Int)
-  , "ChannelsOut" :: NullOrUndefined.NullOrUndefined (Int)
+  { "ChannelMappings" :: (ListOfAudioChannelMapping')
+  , "ChannelsIn" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max16')
+  , "ChannelsOut" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max8')
   }
 derive instance newtypeRemixSettings :: Newtype RemixSettings _
 derive instance repGenericRemixSettings :: Generic RemixSettings _
@@ -5564,13 +5254,13 @@ instance encodeRemixSettings :: Encode RemixSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs RemixSettings from required parameters
-newRemixSettings :: RemixSettings
-newRemixSettings  = RemixSettings { "ChannelMappings": (NullOrUndefined Nothing), "ChannelsIn": (NullOrUndefined Nothing), "ChannelsOut": (NullOrUndefined Nothing) }
+newRemixSettings :: ListOfAudioChannelMapping' -> RemixSettings
+newRemixSettings _ChannelMappings = RemixSettings { "ChannelMappings": _ChannelMappings, "ChannelsIn": (NullOrUndefined Nothing), "ChannelsOut": (NullOrUndefined Nothing) }
 
 -- | Constructs RemixSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRemixSettings' :: ( { "ChannelMappings" :: NullOrUndefined.NullOrUndefined (ListOfAudioChannelMapping) , "ChannelsIn" :: NullOrUndefined.NullOrUndefined (Int) , "ChannelsOut" :: NullOrUndefined.NullOrUndefined (Int) } -> {"ChannelMappings" :: NullOrUndefined.NullOrUndefined (ListOfAudioChannelMapping) , "ChannelsIn" :: NullOrUndefined.NullOrUndefined (Int) , "ChannelsOut" :: NullOrUndefined.NullOrUndefined (Int) } ) -> RemixSettings
-newRemixSettings'  customize = (RemixSettings <<< customize) { "ChannelMappings": (NullOrUndefined Nothing), "ChannelsIn": (NullOrUndefined Nothing), "ChannelsOut": (NullOrUndefined Nothing) }
+newRemixSettings' :: ListOfAudioChannelMapping' -> ( { "ChannelMappings" :: (ListOfAudioChannelMapping') , "ChannelsIn" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max16') , "ChannelsOut" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max8') } -> {"ChannelMappings" :: (ListOfAudioChannelMapping') , "ChannelsIn" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max16') , "ChannelsOut" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max8') } ) -> RemixSettings
+newRemixSettings' _ChannelMappings customize = (RemixSettings <<< customize) { "ChannelMappings": _ChannelMappings, "ChannelsIn": (NullOrUndefined Nothing), "ChannelsOut": (NullOrUndefined Nothing) }
 
 
 
@@ -5651,7 +5341,7 @@ instance encodeScte20PlusEmbeddedDestinationSettings :: Encode Scte20PlusEmbedde
 -- | Placeholder documentation for Scte20SourceSettings
 newtype Scte20SourceSettings = Scte20SourceSettings 
   { "Convert608To708" :: NullOrUndefined.NullOrUndefined (Scte20Convert608To708)
-  , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max4')
   }
 derive instance newtypeScte20SourceSettings :: Newtype Scte20SourceSettings _
 derive instance repGenericScte20SourceSettings :: Generic Scte20SourceSettings _
@@ -5668,7 +5358,7 @@ newScte20SourceSettings  = Scte20SourceSettings { "Convert608To708": (NullOrUnde
 
 -- | Constructs Scte20SourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte20SourceSettings' :: ( { "Convert608To708" :: NullOrUndefined.NullOrUndefined (Scte20Convert608To708) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Convert608To708" :: NullOrUndefined.NullOrUndefined (Scte20Convert608To708) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (Int) } ) -> Scte20SourceSettings
+newScte20SourceSettings' :: ( { "Convert608To708" :: NullOrUndefined.NullOrUndefined (Scte20Convert608To708) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max4') } -> {"Convert608To708" :: NullOrUndefined.NullOrUndefined (Scte20Convert608To708) , "Source608ChannelNumber" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max4') } ) -> Scte20SourceSettings
 newScte20SourceSettings'  customize = (Scte20SourceSettings <<< customize) { "Convert608To708": (NullOrUndefined Nothing), "Source608ChannelNumber": (NullOrUndefined Nothing) }
 
 
@@ -5688,7 +5378,7 @@ instance encodeScte27DestinationSettings :: Encode Scte27DestinationSettings whe
 
 -- | Placeholder documentation for Scte27SourceSettings
 newtype Scte27SourceSettings = Scte27SourceSettings 
-  { "Pid" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin1')
   }
 derive instance newtypeScte27SourceSettings :: Newtype Scte27SourceSettings _
 derive instance repGenericScte27SourceSettings :: Generic Scte27SourceSettings _
@@ -5705,7 +5395,7 @@ newScte27SourceSettings  = Scte27SourceSettings { "Pid": (NullOrUndefined Nothin
 
 -- | Constructs Scte27SourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte27SourceSettings' :: ( { "Pid" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Pid" :: NullOrUndefined.NullOrUndefined (Int) } ) -> Scte27SourceSettings
+newScte27SourceSettings' :: ( { "Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin1') } -> {"Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin1') } ) -> Scte27SourceSettings
 newScte27SourceSettings'  customize = (Scte27SourceSettings <<< customize) { "Pid": (NullOrUndefined Nothing) }
 
 
@@ -5738,7 +5428,7 @@ instance encodeScte35AposWebDeliveryAllowedBehavior :: Encode Scte35AposWebDeliv
 
 -- | Placeholder documentation for Scte35SpliceInsert
 newtype Scte35SpliceInsert = Scte35SpliceInsert 
-  { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (Int)
+  { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative1000Max1000')
   , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior)
   , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior)
   }
@@ -5757,7 +5447,7 @@ newScte35SpliceInsert  = Scte35SpliceInsert { "AdAvailOffset": (NullOrUndefined 
 
 -- | Constructs Scte35SpliceInsert's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte35SpliceInsert' :: ( { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (Int) , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: NullOrUndefined.NullOrUndefined (Int) , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) } ) -> Scte35SpliceInsert
+newScte35SpliceInsert' :: ( { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) } ) -> Scte35SpliceInsert
 newScte35SpliceInsert'  customize = (Scte35SpliceInsert <<< customize) { "AdAvailOffset": (NullOrUndefined Nothing), "NoRegionalBlackoutFlag": (NullOrUndefined Nothing), "WebDeliveryAllowedFlag": (NullOrUndefined Nothing) }
 
 
@@ -5790,7 +5480,7 @@ instance encodeScte35SpliceInsertWebDeliveryAllowedBehavior :: Encode Scte35Spli
 
 -- | Placeholder documentation for Scte35TimeSignalApos
 newtype Scte35TimeSignalApos = Scte35TimeSignalApos 
-  { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (Int)
+  { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative1000Max1000')
   , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior)
   , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior)
   }
@@ -5809,7 +5499,7 @@ newScte35TimeSignalApos  = Scte35TimeSignalApos { "AdAvailOffset": (NullOrUndefi
 
 -- | Constructs Scte35TimeSignalApos's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte35TimeSignalApos' :: ( { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (Int) , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: NullOrUndefined.NullOrUndefined (Int) , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) } ) -> Scte35TimeSignalApos
+newScte35TimeSignalApos' :: ( { "AdAvailOffset" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: NullOrUndefined.NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined.NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) } ) -> Scte35TimeSignalApos
 newScte35TimeSignalApos'  customize = (Scte35TimeSignalApos <<< customize) { "AdAvailOffset": (NullOrUndefined Nothing), "NoRegionalBlackoutFlag": (NullOrUndefined Nothing), "WebDeliveryAllowedFlag": (NullOrUndefined Nothing) }
 
 
@@ -5934,7 +5624,7 @@ instance encodeSmpteTtDestinationSettings :: Encode SmpteTtDestinationSettings w
 -- | Placeholder documentation for StandardHlsSettings
 newtype StandardHlsSettings = StandardHlsSettings 
   { "AudioRenditionSets" :: NullOrUndefined.NullOrUndefined (String)
-  , "M3u8Settings" :: NullOrUndefined.NullOrUndefined (M3u8Settings)
+  , "M3u8Settings" :: (M3u8Settings)
   }
 derive instance newtypeStandardHlsSettings :: Newtype StandardHlsSettings _
 derive instance repGenericStandardHlsSettings :: Generic StandardHlsSettings _
@@ -5946,13 +5636,13 @@ instance encodeStandardHlsSettings :: Encode StandardHlsSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs StandardHlsSettings from required parameters
-newStandardHlsSettings :: StandardHlsSettings
-newStandardHlsSettings  = StandardHlsSettings { "AudioRenditionSets": (NullOrUndefined Nothing), "M3u8Settings": (NullOrUndefined Nothing) }
+newStandardHlsSettings :: M3u8Settings -> StandardHlsSettings
+newStandardHlsSettings _M3u8Settings = StandardHlsSettings { "M3u8Settings": _M3u8Settings, "AudioRenditionSets": (NullOrUndefined Nothing) }
 
 -- | Constructs StandardHlsSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStandardHlsSettings' :: ( { "AudioRenditionSets" :: NullOrUndefined.NullOrUndefined (String) , "M3u8Settings" :: NullOrUndefined.NullOrUndefined (M3u8Settings) } -> {"AudioRenditionSets" :: NullOrUndefined.NullOrUndefined (String) , "M3u8Settings" :: NullOrUndefined.NullOrUndefined (M3u8Settings) } ) -> StandardHlsSettings
-newStandardHlsSettings'  customize = (StandardHlsSettings <<< customize) { "AudioRenditionSets": (NullOrUndefined Nothing), "M3u8Settings": (NullOrUndefined Nothing) }
+newStandardHlsSettings' :: M3u8Settings -> ( { "AudioRenditionSets" :: NullOrUndefined.NullOrUndefined (String) , "M3u8Settings" :: (M3u8Settings) } -> {"AudioRenditionSets" :: NullOrUndefined.NullOrUndefined (String) , "M3u8Settings" :: (M3u8Settings) } ) -> StandardHlsSettings
+newStandardHlsSettings' _M3u8Settings customize = (StandardHlsSettings <<< customize) { "M3u8Settings": _M3u8Settings, "AudioRenditionSets": (NullOrUndefined Nothing) }
 
 
 
@@ -5983,11 +5673,11 @@ newStartChannelRequest' _ChannelId customize = (StartChannelRequest <<< customiz
 -- | Placeholder documentation for StartChannelResponse
 newtype StartChannelResponse = StartChannelResponse 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
-  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint)
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
+  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int)
@@ -6009,7 +5699,7 @@ newStartChannelResponse  = StartChannelResponse { "Arn": (NullOrUndefined Nothin
 
 -- | Constructs StartChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> StartChannelResponse
+newStartChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> StartChannelResponse
 newStartChannelResponse'  customize = (StartChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
 
 
@@ -6017,7 +5707,7 @@ newStartChannelResponse'  customize = (StartChannelResponse <<< customize) { "Ar
 -- | Placeholder documentation for StaticKeySettings
 newtype StaticKeySettings = StaticKeySettings 
   { "KeyProviderServer" :: NullOrUndefined.NullOrUndefined (InputLocation)
-  , "StaticKeyValue" :: NullOrUndefined.NullOrUndefined (String)
+  , "StaticKeyValue" :: (StringMin32Max32')
   }
 derive instance newtypeStaticKeySettings :: Newtype StaticKeySettings _
 derive instance repGenericStaticKeySettings :: Generic StaticKeySettings _
@@ -6029,13 +5719,13 @@ instance encodeStaticKeySettings :: Encode StaticKeySettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs StaticKeySettings from required parameters
-newStaticKeySettings :: StaticKeySettings
-newStaticKeySettings  = StaticKeySettings { "KeyProviderServer": (NullOrUndefined Nothing), "StaticKeyValue": (NullOrUndefined Nothing) }
+newStaticKeySettings :: StringMin32Max32' -> StaticKeySettings
+newStaticKeySettings _StaticKeyValue = StaticKeySettings { "StaticKeyValue": _StaticKeyValue, "KeyProviderServer": (NullOrUndefined Nothing) }
 
 -- | Constructs StaticKeySettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStaticKeySettings' :: ( { "KeyProviderServer" :: NullOrUndefined.NullOrUndefined (InputLocation) , "StaticKeyValue" :: NullOrUndefined.NullOrUndefined (String) } -> {"KeyProviderServer" :: NullOrUndefined.NullOrUndefined (InputLocation) , "StaticKeyValue" :: NullOrUndefined.NullOrUndefined (String) } ) -> StaticKeySettings
-newStaticKeySettings'  customize = (StaticKeySettings <<< customize) { "KeyProviderServer": (NullOrUndefined Nothing), "StaticKeyValue": (NullOrUndefined Nothing) }
+newStaticKeySettings' :: StringMin32Max32' -> ( { "KeyProviderServer" :: NullOrUndefined.NullOrUndefined (InputLocation) , "StaticKeyValue" :: (StringMin32Max32') } -> {"KeyProviderServer" :: NullOrUndefined.NullOrUndefined (InputLocation) , "StaticKeyValue" :: (StringMin32Max32') } ) -> StaticKeySettings
+newStaticKeySettings' _StaticKeyValue customize = (StaticKeySettings <<< customize) { "StaticKeyValue": _StaticKeyValue, "KeyProviderServer": (NullOrUndefined Nothing) }
 
 
 
@@ -6066,11 +5756,11 @@ newStopChannelRequest' _ChannelId customize = (StopChannelRequest <<< customize)
 -- | Placeholder documentation for StopChannelResponse
 newtype StopChannelResponse = StopChannelResponse 
   { "Arn" :: NullOrUndefined.NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
-  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint)
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
+  , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
   , "Id" :: NullOrUndefined.NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment)
+  , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment')
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
   , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int)
@@ -6092,7 +5782,7 @@ newStopChannelResponse  = StopChannelResponse { "Arn": (NullOrUndefined Nothing)
 
 -- | Constructs StopChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> StopChannelResponse
+newStopChannelResponse' :: ( { "Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined.NullOrUndefined (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined.NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined.NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined.NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined.NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) , "State" :: NullOrUndefined.NullOrUndefined (ChannelState) } ) -> StopChannelResponse
 newStopChannelResponse'  customize = (StopChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
 
 
@@ -6136,8 +5826,8 @@ newTeletextSourceSettings'  customize = (TeletextSourceSettings <<< customize) {
 
 -- | Placeholder documentation for TimecodeConfig
 newtype TimecodeConfig = TimecodeConfig 
-  { "Source" :: NullOrUndefined.NullOrUndefined (TimecodeConfigSource)
-  , "SyncThreshold" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Source" :: (TimecodeConfigSource)
+  , "SyncThreshold" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max1000000')
   }
 derive instance newtypeTimecodeConfig :: Newtype TimecodeConfig _
 derive instance repGenericTimecodeConfig :: Generic TimecodeConfig _
@@ -6149,13 +5839,13 @@ instance encodeTimecodeConfig :: Encode TimecodeConfig where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs TimecodeConfig from required parameters
-newTimecodeConfig :: TimecodeConfig
-newTimecodeConfig  = TimecodeConfig { "Source": (NullOrUndefined Nothing), "SyncThreshold": (NullOrUndefined Nothing) }
+newTimecodeConfig :: TimecodeConfigSource -> TimecodeConfig
+newTimecodeConfig _Source = TimecodeConfig { "Source": _Source, "SyncThreshold": (NullOrUndefined Nothing) }
 
 -- | Constructs TimecodeConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimecodeConfig' :: ( { "Source" :: NullOrUndefined.NullOrUndefined (TimecodeConfigSource) , "SyncThreshold" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Source" :: NullOrUndefined.NullOrUndefined (TimecodeConfigSource) , "SyncThreshold" :: NullOrUndefined.NullOrUndefined (Int) } ) -> TimecodeConfig
-newTimecodeConfig'  customize = (TimecodeConfig <<< customize) { "Source": (NullOrUndefined Nothing), "SyncThreshold": (NullOrUndefined Nothing) }
+newTimecodeConfig' :: TimecodeConfigSource -> ( { "Source" :: (TimecodeConfigSource) , "SyncThreshold" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max1000000') } -> {"Source" :: (TimecodeConfigSource) , "SyncThreshold" :: NullOrUndefined.NullOrUndefined (IntegerMin1Max1000000') } ) -> TimecodeConfig
+newTimecodeConfig' _Source customize = (TimecodeConfig <<< customize) { "Source": _Source, "SyncThreshold": (NullOrUndefined Nothing) }
 
 
 
@@ -6261,7 +5951,7 @@ newUdpContainerSettings'  customize = (UdpContainerSettings <<< customize) { "M2
 newtype UdpGroupSettings = UdpGroupSettings 
   { "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForUdpOut)
   , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (UdpTimedMetadataId3Frame)
-  , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (Int)
+  , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (IntegerMin0')
   }
 derive instance newtypeUdpGroupSettings :: Newtype UdpGroupSettings _
 derive instance repGenericUdpGroupSettings :: Generic UdpGroupSettings _
@@ -6278,16 +5968,16 @@ newUdpGroupSettings  = UdpGroupSettings { "InputLossAction": (NullOrUndefined No
 
 -- | Constructs UdpGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUdpGroupSettings' :: ( { "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (Int) } -> {"InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (Int) } ) -> UdpGroupSettings
+newUdpGroupSettings' :: ( { "InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } -> {"InputLossAction" :: NullOrUndefined.NullOrUndefined (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: NullOrUndefined.NullOrUndefined (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined.NullOrUndefined (IntegerMin0') } ) -> UdpGroupSettings
 newUdpGroupSettings'  customize = (UdpGroupSettings <<< customize) { "InputLossAction": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for UdpOutputSettings
 newtype UdpOutputSettings = UdpOutputSettings 
-  { "BufferMsec" :: NullOrUndefined.NullOrUndefined (Int)
-  , "ContainerSettings" :: NullOrUndefined.NullOrUndefined (UdpContainerSettings)
-  , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef)
+  { "BufferMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000')
+  , "ContainerSettings" :: (UdpContainerSettings)
+  , "Destination" :: (OutputLocationRef)
   , "FecOutputSettings" :: NullOrUndefined.NullOrUndefined (FecOutputSettings)
   }
 derive instance newtypeUdpOutputSettings :: Newtype UdpOutputSettings _
@@ -6300,13 +5990,13 @@ instance encodeUdpOutputSettings :: Encode UdpOutputSettings where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs UdpOutputSettings from required parameters
-newUdpOutputSettings :: UdpOutputSettings
-newUdpOutputSettings  = UdpOutputSettings { "BufferMsec": (NullOrUndefined Nothing), "ContainerSettings": (NullOrUndefined Nothing), "Destination": (NullOrUndefined Nothing), "FecOutputSettings": (NullOrUndefined Nothing) }
+newUdpOutputSettings :: UdpContainerSettings -> OutputLocationRef -> UdpOutputSettings
+newUdpOutputSettings _ContainerSettings _Destination = UdpOutputSettings { "ContainerSettings": _ContainerSettings, "Destination": _Destination, "BufferMsec": (NullOrUndefined Nothing), "FecOutputSettings": (NullOrUndefined Nothing) }
 
 -- | Constructs UdpOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUdpOutputSettings' :: ( { "BufferMsec" :: NullOrUndefined.NullOrUndefined (Int) , "ContainerSettings" :: NullOrUndefined.NullOrUndefined (UdpContainerSettings) , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "FecOutputSettings" :: NullOrUndefined.NullOrUndefined (FecOutputSettings) } -> {"BufferMsec" :: NullOrUndefined.NullOrUndefined (Int) , "ContainerSettings" :: NullOrUndefined.NullOrUndefined (UdpContainerSettings) , "Destination" :: NullOrUndefined.NullOrUndefined (OutputLocationRef) , "FecOutputSettings" :: NullOrUndefined.NullOrUndefined (FecOutputSettings) } ) -> UdpOutputSettings
-newUdpOutputSettings'  customize = (UdpOutputSettings <<< customize) { "BufferMsec": (NullOrUndefined Nothing), "ContainerSettings": (NullOrUndefined Nothing), "Destination": (NullOrUndefined Nothing), "FecOutputSettings": (NullOrUndefined Nothing) }
+newUdpOutputSettings' :: UdpContainerSettings -> OutputLocationRef -> ( { "BufferMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000') , "ContainerSettings" :: (UdpContainerSettings) , "Destination" :: (OutputLocationRef) , "FecOutputSettings" :: NullOrUndefined.NullOrUndefined (FecOutputSettings) } -> {"BufferMsec" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max10000') , "ContainerSettings" :: (UdpContainerSettings) , "Destination" :: (OutputLocationRef) , "FecOutputSettings" :: NullOrUndefined.NullOrUndefined (FecOutputSettings) } ) -> UdpOutputSettings
+newUdpOutputSettings' _ContainerSettings _Destination customize = (UdpOutputSettings <<< customize) { "ContainerSettings": _ContainerSettings, "Destination": _Destination, "BufferMsec": (NullOrUndefined Nothing), "FecOutputSettings": (NullOrUndefined Nothing) }
 
 
 
@@ -6326,7 +6016,7 @@ instance encodeUdpTimedMetadataId3Frame :: Encode UdpTimedMetadataId3Frame where
 -- | Placeholder documentation for UnprocessableEntityException
 newtype UnprocessableEntityException = UnprocessableEntityException 
   { "Message" :: NullOrUndefined.NullOrUndefined (String)
-  , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError)
+  , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError')
   }
 derive instance newtypeUnprocessableEntityException :: Newtype UnprocessableEntityException _
 derive instance repGenericUnprocessableEntityException :: Generic UnprocessableEntityException _
@@ -6343,14 +6033,14 @@ newUnprocessableEntityException  = UnprocessableEntityException { "Message": (Nu
 
 -- | Constructs UnprocessableEntityException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnprocessableEntityException' :: ( { "Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError) } -> {"Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError) } ) -> UnprocessableEntityException
+newUnprocessableEntityException' :: ( { "Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError') } -> {"Message" :: NullOrUndefined.NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined.NullOrUndefined (ListOfValidationError') } ) -> UnprocessableEntityException
 newUnprocessableEntityException'  customize = (UnprocessableEntityException <<< customize) { "Message": (NullOrUndefined Nothing), "ValidationErrors": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for UpdateChannel
 newtype UpdateChannel = UpdateChannel 
-  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
+  { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
@@ -6371,7 +6061,7 @@ newUpdateChannel  = UpdateChannel { "Destinations": (NullOrUndefined Nothing), "
 
 -- | Constructs UpdateChannel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannel' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> UpdateChannel
+newUpdateChannel' :: ( { "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> UpdateChannel
 newUpdateChannel'  customize = (UpdateChannel <<< customize) { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
 
 
@@ -6379,7 +6069,7 @@ newUpdateChannel'  customize = (UpdateChannel <<< customize) { "Destinations": (
 -- | A request to update a channel.
 newtype UpdateChannelRequest = UpdateChannelRequest 
   { "ChannelId" :: (String)
-  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination)
+  , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination')
   , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings)
   , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification)
   , "Name" :: NullOrUndefined.NullOrUndefined (String)
@@ -6400,7 +6090,7 @@ newUpdateChannelRequest _ChannelId = UpdateChannelRequest { "ChannelId": _Channe
 
 -- | Constructs UpdateChannelRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannelRequest' :: String -> ( { "ChannelId" :: (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"ChannelId" :: (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination) , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> UpdateChannelRequest
+newUpdateChannelRequest' :: String -> ( { "ChannelId" :: (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } -> {"ChannelId" :: (String) , "Destinations" :: NullOrUndefined.NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined.NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined.NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RoleArn" :: NullOrUndefined.NullOrUndefined (String) } ) -> UpdateChannelRequest
 newUpdateChannelRequest' _ChannelId customize = (UpdateChannelRequest <<< customize) { "ChannelId": _ChannelId, "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
 
 
@@ -6506,10 +6196,10 @@ newVideoCodecSettings'  customize = (VideoCodecSettings <<< customize) { "H264Se
 newtype VideoDescription = VideoDescription 
   { "CodecSettings" :: NullOrUndefined.NullOrUndefined (VideoCodecSettings)
   , "Height" :: NullOrUndefined.NullOrUndefined (Int)
-  , "Name" :: NullOrUndefined.NullOrUndefined (String)
+  , "Name" :: (String)
   , "RespondToAfd" :: NullOrUndefined.NullOrUndefined (VideoDescriptionRespondToAfd)
   , "ScalingBehavior" :: NullOrUndefined.NullOrUndefined (VideoDescriptionScalingBehavior)
-  , "Sharpness" :: NullOrUndefined.NullOrUndefined (Int)
+  , "Sharpness" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max100')
   , "Width" :: NullOrUndefined.NullOrUndefined (Int)
   }
 derive instance newtypeVideoDescription :: Newtype VideoDescription _
@@ -6522,13 +6212,13 @@ instance encodeVideoDescription :: Encode VideoDescription where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
 -- | Constructs VideoDescription from required parameters
-newVideoDescription :: VideoDescription
-newVideoDescription  = VideoDescription { "CodecSettings": (NullOrUndefined Nothing), "Height": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RespondToAfd": (NullOrUndefined Nothing), "ScalingBehavior": (NullOrUndefined Nothing), "Sharpness": (NullOrUndefined Nothing), "Width": (NullOrUndefined Nothing) }
+newVideoDescription :: String -> VideoDescription
+newVideoDescription _Name = VideoDescription { "Name": _Name, "CodecSettings": (NullOrUndefined Nothing), "Height": (NullOrUndefined Nothing), "RespondToAfd": (NullOrUndefined Nothing), "ScalingBehavior": (NullOrUndefined Nothing), "Sharpness": (NullOrUndefined Nothing), "Width": (NullOrUndefined Nothing) }
 
 -- | Constructs VideoDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoDescription' :: ( { "CodecSettings" :: NullOrUndefined.NullOrUndefined (VideoCodecSettings) , "Height" :: NullOrUndefined.NullOrUndefined (Int) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RespondToAfd" :: NullOrUndefined.NullOrUndefined (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: NullOrUndefined.NullOrUndefined (VideoDescriptionScalingBehavior) , "Sharpness" :: NullOrUndefined.NullOrUndefined (Int) , "Width" :: NullOrUndefined.NullOrUndefined (Int) } -> {"CodecSettings" :: NullOrUndefined.NullOrUndefined (VideoCodecSettings) , "Height" :: NullOrUndefined.NullOrUndefined (Int) , "Name" :: NullOrUndefined.NullOrUndefined (String) , "RespondToAfd" :: NullOrUndefined.NullOrUndefined (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: NullOrUndefined.NullOrUndefined (VideoDescriptionScalingBehavior) , "Sharpness" :: NullOrUndefined.NullOrUndefined (Int) , "Width" :: NullOrUndefined.NullOrUndefined (Int) } ) -> VideoDescription
-newVideoDescription'  customize = (VideoDescription <<< customize) { "CodecSettings": (NullOrUndefined Nothing), "Height": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RespondToAfd": (NullOrUndefined Nothing), "ScalingBehavior": (NullOrUndefined Nothing), "Sharpness": (NullOrUndefined Nothing), "Width": (NullOrUndefined Nothing) }
+newVideoDescription' :: String -> ( { "CodecSettings" :: NullOrUndefined.NullOrUndefined (VideoCodecSettings) , "Height" :: NullOrUndefined.NullOrUndefined (Int) , "Name" :: (String) , "RespondToAfd" :: NullOrUndefined.NullOrUndefined (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: NullOrUndefined.NullOrUndefined (VideoDescriptionScalingBehavior) , "Sharpness" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max100') , "Width" :: NullOrUndefined.NullOrUndefined (Int) } -> {"CodecSettings" :: NullOrUndefined.NullOrUndefined (VideoCodecSettings) , "Height" :: NullOrUndefined.NullOrUndefined (Int) , "Name" :: (String) , "RespondToAfd" :: NullOrUndefined.NullOrUndefined (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: NullOrUndefined.NullOrUndefined (VideoDescriptionScalingBehavior) , "Sharpness" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max100') , "Width" :: NullOrUndefined.NullOrUndefined (Int) } ) -> VideoDescription
+newVideoDescription' _Name customize = (VideoDescription <<< customize) { "Name": _Name, "CodecSettings": (NullOrUndefined Nothing), "Height": (NullOrUndefined Nothing), "RespondToAfd": (NullOrUndefined Nothing), "ScalingBehavior": (NullOrUndefined Nothing), "Sharpness": (NullOrUndefined Nothing), "Width": (NullOrUndefined Nothing) }
 
 
 
@@ -6612,7 +6302,7 @@ instance encodeVideoSelectorColorSpaceUsage :: Encode VideoSelectorColorSpaceUsa
 
 -- | Placeholder documentation for VideoSelectorPid
 newtype VideoSelectorPid = VideoSelectorPid 
-  { "Pid" :: NullOrUndefined.NullOrUndefined (Int)
+  { "Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max8191')
   }
 derive instance newtypeVideoSelectorPid :: Newtype VideoSelectorPid _
 derive instance repGenericVideoSelectorPid :: Generic VideoSelectorPid _
@@ -6629,14 +6319,14 @@ newVideoSelectorPid  = VideoSelectorPid { "Pid": (NullOrUndefined Nothing) }
 
 -- | Constructs VideoSelectorPid's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoSelectorPid' :: ( { "Pid" :: NullOrUndefined.NullOrUndefined (Int) } -> {"Pid" :: NullOrUndefined.NullOrUndefined (Int) } ) -> VideoSelectorPid
+newVideoSelectorPid' :: ( { "Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max8191') } -> {"Pid" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max8191') } ) -> VideoSelectorPid
 newVideoSelectorPid'  customize = (VideoSelectorPid <<< customize) { "Pid": (NullOrUndefined Nothing) }
 
 
 
 -- | Placeholder documentation for VideoSelectorProgramId
 newtype VideoSelectorProgramId = VideoSelectorProgramId 
-  { "ProgramId" :: NullOrUndefined.NullOrUndefined (Int)
+  { "ProgramId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65536')
   }
 derive instance newtypeVideoSelectorProgramId :: Newtype VideoSelectorProgramId _
 derive instance repGenericVideoSelectorProgramId :: Generic VideoSelectorProgramId _
@@ -6653,7 +6343,7 @@ newVideoSelectorProgramId  = VideoSelectorProgramId { "ProgramId": (NullOrUndefi
 
 -- | Constructs VideoSelectorProgramId's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoSelectorProgramId' :: ( { "ProgramId" :: NullOrUndefined.NullOrUndefined (Int) } -> {"ProgramId" :: NullOrUndefined.NullOrUndefined (Int) } ) -> VideoSelectorProgramId
+newVideoSelectorProgramId' :: ( { "ProgramId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65536') } -> {"ProgramId" :: NullOrUndefined.NullOrUndefined (IntegerMin0Max65536') } ) -> VideoSelectorProgramId
 newVideoSelectorProgramId'  customize = (VideoSelectorProgramId <<< customize) { "ProgramId": (NullOrUndefined Nothing) }
 
 
@@ -6692,5 +6382,967 @@ instance showWebvttDestinationSettings :: Show WebvttDestinationSettings where
 instance decodeWebvttDestinationSettings :: Decode WebvttDestinationSettings where
   decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
 instance encodeWebvttDestinationSettings :: Encode WebvttDestinationSettings where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __doubleMin0
+newtype DoubleMin0' = DoubleMin0' Number
+derive instance newtypeDoubleMin0' :: Newtype DoubleMin0' _
+derive instance repGenericDoubleMin0' :: Generic DoubleMin0' _
+instance showDoubleMin0' :: Show DoubleMin0' where
+  show = genericShow
+instance decodeDoubleMin0' :: Decode DoubleMin0' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeDoubleMin0' :: Encode DoubleMin0' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __doubleMin1
+newtype DoubleMin1' = DoubleMin1' Number
+derive instance newtypeDoubleMin1' :: Newtype DoubleMin1' _
+derive instance repGenericDoubleMin1' :: Generic DoubleMin1' _
+instance showDoubleMin1' :: Show DoubleMin1' where
+  show = genericShow
+instance decodeDoubleMin1' :: Decode DoubleMin1' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeDoubleMin1' :: Encode DoubleMin1' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __doubleMinNegative59Max0
+newtype DoubleMinNegative59Max0' = DoubleMinNegative59Max0' Number
+derive instance newtypeDoubleMinNegative59Max0' :: Newtype DoubleMinNegative59Max0' _
+derive instance repGenericDoubleMinNegative59Max0' :: Generic DoubleMinNegative59Max0' _
+instance showDoubleMinNegative59Max0' :: Show DoubleMinNegative59Max0' where
+  show = genericShow
+instance decodeDoubleMinNegative59Max0' :: Decode DoubleMinNegative59Max0' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeDoubleMinNegative59Max0' :: Encode DoubleMinNegative59Max0' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0
+newtype IntegerMin0' = IntegerMin0' Int
+derive instance newtypeIntegerMin0' :: Newtype IntegerMin0' _
+derive instance repGenericIntegerMin0' :: Generic IntegerMin0' _
+instance showIntegerMin0' :: Show IntegerMin0' where
+  show = genericShow
+instance decodeIntegerMin0' :: Decode IntegerMin0' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0' :: Encode IntegerMin0' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max10
+newtype IntegerMin0Max10' = IntegerMin0Max10' Int
+derive instance newtypeIntegerMin0Max10' :: Newtype IntegerMin0Max10' _
+derive instance repGenericIntegerMin0Max10' :: Generic IntegerMin0Max10' _
+instance showIntegerMin0Max10' :: Show IntegerMin0Max10' where
+  show = genericShow
+instance decodeIntegerMin0Max10' :: Decode IntegerMin0Max10' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max10' :: Encode IntegerMin0Max10' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max100
+newtype IntegerMin0Max100' = IntegerMin0Max100' Int
+derive instance newtypeIntegerMin0Max100' :: Newtype IntegerMin0Max100' _
+derive instance repGenericIntegerMin0Max100' :: Generic IntegerMin0Max100' _
+instance showIntegerMin0Max100' :: Show IntegerMin0Max100' where
+  show = genericShow
+instance decodeIntegerMin0Max100' :: Decode IntegerMin0Max100' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max100' :: Encode IntegerMin0Max100' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max1000
+newtype IntegerMin0Max1000' = IntegerMin0Max1000' Int
+derive instance newtypeIntegerMin0Max1000' :: Newtype IntegerMin0Max1000' _
+derive instance repGenericIntegerMin0Max1000' :: Generic IntegerMin0Max1000' _
+instance showIntegerMin0Max1000' :: Show IntegerMin0Max1000' where
+  show = genericShow
+instance decodeIntegerMin0Max1000' :: Decode IntegerMin0Max1000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max1000' :: Encode IntegerMin0Max1000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max10000
+newtype IntegerMin0Max10000' = IntegerMin0Max10000' Int
+derive instance newtypeIntegerMin0Max10000' :: Newtype IntegerMin0Max10000' _
+derive instance repGenericIntegerMin0Max10000' :: Generic IntegerMin0Max10000' _
+instance showIntegerMin0Max10000' :: Show IntegerMin0Max10000' where
+  show = genericShow
+instance decodeIntegerMin0Max10000' :: Decode IntegerMin0Max10000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max10000' :: Encode IntegerMin0Max10000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max1000000
+newtype IntegerMin0Max1000000' = IntegerMin0Max1000000' Int
+derive instance newtypeIntegerMin0Max1000000' :: Newtype IntegerMin0Max1000000' _
+derive instance repGenericIntegerMin0Max1000000' :: Generic IntegerMin0Max1000000' _
+instance showIntegerMin0Max1000000' :: Show IntegerMin0Max1000000' where
+  show = genericShow
+instance decodeIntegerMin0Max1000000' :: Decode IntegerMin0Max1000000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max1000000' :: Encode IntegerMin0Max1000000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max128
+newtype IntegerMin0Max128' = IntegerMin0Max128' Int
+derive instance newtypeIntegerMin0Max128' :: Newtype IntegerMin0Max128' _
+derive instance repGenericIntegerMin0Max128' :: Generic IntegerMin0Max128' _
+instance showIntegerMin0Max128' :: Show IntegerMin0Max128' where
+  show = genericShow
+instance decodeIntegerMin0Max128' :: Decode IntegerMin0Max128' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max128' :: Encode IntegerMin0Max128' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max15
+newtype IntegerMin0Max15' = IntegerMin0Max15' Int
+derive instance newtypeIntegerMin0Max15' :: Newtype IntegerMin0Max15' _
+derive instance repGenericIntegerMin0Max15' :: Generic IntegerMin0Max15' _
+instance showIntegerMin0Max15' :: Show IntegerMin0Max15' where
+  show = genericShow
+instance decodeIntegerMin0Max15' :: Decode IntegerMin0Max15' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max15' :: Encode IntegerMin0Max15' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max255
+newtype IntegerMin0Max255' = IntegerMin0Max255' Int
+derive instance newtypeIntegerMin0Max255' :: Newtype IntegerMin0Max255' _
+derive instance repGenericIntegerMin0Max255' :: Generic IntegerMin0Max255' _
+instance showIntegerMin0Max255' :: Show IntegerMin0Max255' where
+  show = genericShow
+instance decodeIntegerMin0Max255' :: Decode IntegerMin0Max255' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max255' :: Encode IntegerMin0Max255' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max30
+newtype IntegerMin0Max30' = IntegerMin0Max30' Int
+derive instance newtypeIntegerMin0Max30' :: Newtype IntegerMin0Max30' _
+derive instance repGenericIntegerMin0Max30' :: Generic IntegerMin0Max30' _
+instance showIntegerMin0Max30' :: Show IntegerMin0Max30' where
+  show = genericShow
+instance decodeIntegerMin0Max30' :: Decode IntegerMin0Max30' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max30' :: Encode IntegerMin0Max30' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max3600
+newtype IntegerMin0Max3600' = IntegerMin0Max3600' Int
+derive instance newtypeIntegerMin0Max3600' :: Newtype IntegerMin0Max3600' _
+derive instance repGenericIntegerMin0Max3600' :: Generic IntegerMin0Max3600' _
+instance showIntegerMin0Max3600' :: Show IntegerMin0Max3600' where
+  show = genericShow
+instance decodeIntegerMin0Max3600' :: Decode IntegerMin0Max3600' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max3600' :: Encode IntegerMin0Max3600' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max500
+newtype IntegerMin0Max500' = IntegerMin0Max500' Int
+derive instance newtypeIntegerMin0Max500' :: Newtype IntegerMin0Max500' _
+derive instance repGenericIntegerMin0Max500' :: Generic IntegerMin0Max500' _
+instance showIntegerMin0Max500' :: Show IntegerMin0Max500' where
+  show = genericShow
+instance decodeIntegerMin0Max500' :: Decode IntegerMin0Max500' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max500' :: Encode IntegerMin0Max500' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max600
+newtype IntegerMin0Max600' = IntegerMin0Max600' Int
+derive instance newtypeIntegerMin0Max600' :: Newtype IntegerMin0Max600' _
+derive instance repGenericIntegerMin0Max600' :: Generic IntegerMin0Max600' _
+instance showIntegerMin0Max600' :: Show IntegerMin0Max600' where
+  show = genericShow
+instance decodeIntegerMin0Max600' :: Decode IntegerMin0Max600' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max600' :: Encode IntegerMin0Max600' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max65535
+newtype IntegerMin0Max65535' = IntegerMin0Max65535' Int
+derive instance newtypeIntegerMin0Max65535' :: Newtype IntegerMin0Max65535' _
+derive instance repGenericIntegerMin0Max65535' :: Generic IntegerMin0Max65535' _
+instance showIntegerMin0Max65535' :: Show IntegerMin0Max65535' where
+  show = genericShow
+instance decodeIntegerMin0Max65535' :: Decode IntegerMin0Max65535' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max65535' :: Encode IntegerMin0Max65535' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max65536
+newtype IntegerMin0Max65536' = IntegerMin0Max65536' Int
+derive instance newtypeIntegerMin0Max65536' :: Newtype IntegerMin0Max65536' _
+derive instance repGenericIntegerMin0Max65536' :: Generic IntegerMin0Max65536' _
+instance showIntegerMin0Max65536' :: Show IntegerMin0Max65536' where
+  show = genericShow
+instance decodeIntegerMin0Max65536' :: Decode IntegerMin0Max65536' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max65536' :: Encode IntegerMin0Max65536' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max7
+newtype IntegerMin0Max7' = IntegerMin0Max7' Int
+derive instance newtypeIntegerMin0Max7' :: Newtype IntegerMin0Max7' _
+derive instance repGenericIntegerMin0Max7' :: Generic IntegerMin0Max7' _
+instance showIntegerMin0Max7' :: Show IntegerMin0Max7' where
+  show = genericShow
+instance decodeIntegerMin0Max7' :: Decode IntegerMin0Max7' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max7' :: Encode IntegerMin0Max7' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin0Max8191
+newtype IntegerMin0Max8191' = IntegerMin0Max8191' Int
+derive instance newtypeIntegerMin0Max8191' :: Newtype IntegerMin0Max8191' _
+derive instance repGenericIntegerMin0Max8191' :: Generic IntegerMin0Max8191' _
+instance showIntegerMin0Max8191' :: Show IntegerMin0Max8191' where
+  show = genericShow
+instance decodeIntegerMin0Max8191' :: Decode IntegerMin0Max8191' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin0Max8191' :: Encode IntegerMin0Max8191' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1
+newtype IntegerMin1' = IntegerMin1' Int
+derive instance newtypeIntegerMin1' :: Newtype IntegerMin1' _
+derive instance repGenericIntegerMin1' :: Generic IntegerMin1' _
+instance showIntegerMin1' :: Show IntegerMin1' where
+  show = genericShow
+instance decodeIntegerMin1' :: Decode IntegerMin1' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1' :: Encode IntegerMin1' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1000
+newtype IntegerMin1000' = IntegerMin1000' Int
+derive instance newtypeIntegerMin1000' :: Newtype IntegerMin1000' _
+derive instance repGenericIntegerMin1000' :: Generic IntegerMin1000' _
+instance showIntegerMin1000' :: Show IntegerMin1000' where
+  show = genericShow
+instance decodeIntegerMin1000' :: Decode IntegerMin1000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1000' :: Encode IntegerMin1000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1000Max30000
+newtype IntegerMin1000Max30000' = IntegerMin1000Max30000' Int
+derive instance newtypeIntegerMin1000Max30000' :: Newtype IntegerMin1000Max30000' _
+derive instance repGenericIntegerMin1000Max30000' :: Generic IntegerMin1000Max30000' _
+instance showIntegerMin1000Max30000' :: Show IntegerMin1000Max30000' where
+  show = genericShow
+instance decodeIntegerMin1000Max30000' :: Decode IntegerMin1000Max30000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1000Max30000' :: Encode IntegerMin1000Max30000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max1000000
+newtype IntegerMin1Max1000000' = IntegerMin1Max1000000' Int
+derive instance newtypeIntegerMin1Max1000000' :: Newtype IntegerMin1Max1000000' _
+derive instance repGenericIntegerMin1Max1000000' :: Generic IntegerMin1Max1000000' _
+instance showIntegerMin1Max1000000' :: Show IntegerMin1Max1000000' where
+  show = genericShow
+instance decodeIntegerMin1Max1000000' :: Decode IntegerMin1Max1000000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max1000000' :: Encode IntegerMin1Max1000000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max16
+newtype IntegerMin1Max16' = IntegerMin1Max16' Int
+derive instance newtypeIntegerMin1Max16' :: Newtype IntegerMin1Max16' _
+derive instance repGenericIntegerMin1Max16' :: Generic IntegerMin1Max16' _
+instance showIntegerMin1Max16' :: Show IntegerMin1Max16' where
+  show = genericShow
+instance decodeIntegerMin1Max16' :: Decode IntegerMin1Max16' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max16' :: Encode IntegerMin1Max16' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max20
+newtype IntegerMin1Max20' = IntegerMin1Max20' Int
+derive instance newtypeIntegerMin1Max20' :: Newtype IntegerMin1Max20' _
+derive instance repGenericIntegerMin1Max20' :: Generic IntegerMin1Max20' _
+instance showIntegerMin1Max20' :: Show IntegerMin1Max20' where
+  show = genericShow
+instance decodeIntegerMin1Max20' :: Decode IntegerMin1Max20' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max20' :: Encode IntegerMin1Max20' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max31
+newtype IntegerMin1Max31' = IntegerMin1Max31' Int
+derive instance newtypeIntegerMin1Max31' :: Newtype IntegerMin1Max31' _
+derive instance repGenericIntegerMin1Max31' :: Generic IntegerMin1Max31' _
+instance showIntegerMin1Max31' :: Show IntegerMin1Max31' where
+  show = genericShow
+instance decodeIntegerMin1Max31' :: Decode IntegerMin1Max31' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max31' :: Encode IntegerMin1Max31' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max32
+newtype IntegerMin1Max32' = IntegerMin1Max32' Int
+derive instance newtypeIntegerMin1Max32' :: Newtype IntegerMin1Max32' _
+derive instance repGenericIntegerMin1Max32' :: Generic IntegerMin1Max32' _
+instance showIntegerMin1Max32' :: Show IntegerMin1Max32' where
+  show = genericShow
+instance decodeIntegerMin1Max32' :: Decode IntegerMin1Max32' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max32' :: Encode IntegerMin1Max32' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max4
+newtype IntegerMin1Max4' = IntegerMin1Max4' Int
+derive instance newtypeIntegerMin1Max4' :: Newtype IntegerMin1Max4' _
+derive instance repGenericIntegerMin1Max4' :: Generic IntegerMin1Max4' _
+instance showIntegerMin1Max4' :: Show IntegerMin1Max4' where
+  show = genericShow
+instance decodeIntegerMin1Max4' :: Decode IntegerMin1Max4' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max4' :: Encode IntegerMin1Max4' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max5
+newtype IntegerMin1Max5' = IntegerMin1Max5' Int
+derive instance newtypeIntegerMin1Max5' :: Newtype IntegerMin1Max5' _
+derive instance repGenericIntegerMin1Max5' :: Generic IntegerMin1Max5' _
+instance showIntegerMin1Max5' :: Show IntegerMin1Max5' where
+  show = genericShow
+instance decodeIntegerMin1Max5' :: Decode IntegerMin1Max5' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max5' :: Encode IntegerMin1Max5' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max6
+newtype IntegerMin1Max6' = IntegerMin1Max6' Int
+derive instance newtypeIntegerMin1Max6' :: Newtype IntegerMin1Max6' _
+derive instance repGenericIntegerMin1Max6' :: Generic IntegerMin1Max6' _
+instance showIntegerMin1Max6' :: Show IntegerMin1Max6' where
+  show = genericShow
+instance decodeIntegerMin1Max6' :: Decode IntegerMin1Max6' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max6' :: Encode IntegerMin1Max6' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin1Max8
+newtype IntegerMin1Max8' = IntegerMin1Max8' Int
+derive instance newtypeIntegerMin1Max8' :: Newtype IntegerMin1Max8' _
+derive instance repGenericIntegerMin1Max8' :: Generic IntegerMin1Max8' _
+instance showIntegerMin1Max8' :: Show IntegerMin1Max8' where
+  show = genericShow
+instance decodeIntegerMin1Max8' :: Decode IntegerMin1Max8' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin1Max8' :: Encode IntegerMin1Max8' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin25Max10000
+newtype IntegerMin25Max10000' = IntegerMin25Max10000' Int
+derive instance newtypeIntegerMin25Max10000' :: Newtype IntegerMin25Max10000' _
+derive instance repGenericIntegerMin25Max10000' :: Generic IntegerMin25Max10000' _
+instance showIntegerMin25Max10000' :: Show IntegerMin25Max10000' where
+  show = genericShow
+instance decodeIntegerMin25Max10000' :: Decode IntegerMin25Max10000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin25Max10000' :: Encode IntegerMin25Max10000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin25Max2000
+newtype IntegerMin25Max2000' = IntegerMin25Max2000' Int
+derive instance newtypeIntegerMin25Max2000' :: Newtype IntegerMin25Max2000' _
+derive instance repGenericIntegerMin25Max2000' :: Generic IntegerMin25Max2000' _
+instance showIntegerMin25Max2000' :: Show IntegerMin25Max2000' where
+  show = genericShow
+instance decodeIntegerMin25Max2000' :: Decode IntegerMin25Max2000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin25Max2000' :: Encode IntegerMin25Max2000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin3
+newtype IntegerMin3' = IntegerMin3' Int
+derive instance newtypeIntegerMin3' :: Newtype IntegerMin3' _
+derive instance repGenericIntegerMin3' :: Generic IntegerMin3' _
+instance showIntegerMin3' :: Show IntegerMin3' where
+  show = genericShow
+instance decodeIntegerMin3' :: Decode IntegerMin3' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin3' :: Encode IntegerMin3' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin4Max20
+newtype IntegerMin4Max20' = IntegerMin4Max20' Int
+derive instance newtypeIntegerMin4Max20' :: Newtype IntegerMin4Max20' _
+derive instance repGenericIntegerMin4Max20' :: Generic IntegerMin4Max20' _
+instance showIntegerMin4Max20' :: Show IntegerMin4Max20' where
+  show = genericShow
+instance decodeIntegerMin4Max20' :: Decode IntegerMin4Max20' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin4Max20' :: Encode IntegerMin4Max20' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMin96Max600
+newtype IntegerMin96Max600' = IntegerMin96Max600' Int
+derive instance newtypeIntegerMin96Max600' :: Newtype IntegerMin96Max600' _
+derive instance repGenericIntegerMin96Max600' :: Generic IntegerMin96Max600' _
+instance showIntegerMin96Max600' :: Show IntegerMin96Max600' where
+  show = genericShow
+instance decodeIntegerMin96Max600' :: Decode IntegerMin96Max600' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMin96Max600' :: Encode IntegerMin96Max600' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMinNegative1000Max1000
+newtype IntegerMinNegative1000Max1000' = IntegerMinNegative1000Max1000' Int
+derive instance newtypeIntegerMinNegative1000Max1000' :: Newtype IntegerMinNegative1000Max1000' _
+derive instance repGenericIntegerMinNegative1000Max1000' :: Generic IntegerMinNegative1000Max1000' _
+instance showIntegerMinNegative1000Max1000' :: Show IntegerMinNegative1000Max1000' where
+  show = genericShow
+instance decodeIntegerMinNegative1000Max1000' :: Decode IntegerMinNegative1000Max1000' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMinNegative1000Max1000' :: Encode IntegerMinNegative1000Max1000' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMinNegative60Max6
+newtype IntegerMinNegative60Max6' = IntegerMinNegative60Max6' Int
+derive instance newtypeIntegerMinNegative60Max6' :: Newtype IntegerMinNegative60Max6' _
+derive instance repGenericIntegerMinNegative60Max6' :: Generic IntegerMinNegative60Max6' _
+instance showIntegerMinNegative60Max6' :: Show IntegerMinNegative60Max6' where
+  show = genericShow
+instance decodeIntegerMinNegative60Max6' :: Decode IntegerMinNegative60Max6' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMinNegative60Max6' :: Encode IntegerMinNegative60Max6' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __integerMinNegative60Max60
+newtype IntegerMinNegative60Max60' = IntegerMinNegative60Max60' Int
+derive instance newtypeIntegerMinNegative60Max60' :: Newtype IntegerMinNegative60Max60' _
+derive instance repGenericIntegerMinNegative60Max60' :: Generic IntegerMinNegative60Max60' _
+instance showIntegerMinNegative60Max60' :: Show IntegerMinNegative60Max60' where
+  show = genericShow
+instance decodeIntegerMinNegative60Max60' :: Decode IntegerMinNegative60Max60' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeIntegerMinNegative60Max60' :: Encode IntegerMinNegative60Max60' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfAudioChannelMapping
+newtype ListOfAudioChannelMapping' = ListOfAudioChannelMapping' (Array AudioChannelMapping)
+derive instance newtypeListOfAudioChannelMapping' :: Newtype ListOfAudioChannelMapping' _
+derive instance repGenericListOfAudioChannelMapping' :: Generic ListOfAudioChannelMapping' _
+instance showListOfAudioChannelMapping' :: Show ListOfAudioChannelMapping' where
+  show = genericShow
+instance decodeListOfAudioChannelMapping' :: Decode ListOfAudioChannelMapping' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfAudioChannelMapping' :: Encode ListOfAudioChannelMapping' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfAudioDescription
+newtype ListOfAudioDescription' = ListOfAudioDescription' (Array AudioDescription)
+derive instance newtypeListOfAudioDescription' :: Newtype ListOfAudioDescription' _
+derive instance repGenericListOfAudioDescription' :: Generic ListOfAudioDescription' _
+instance showListOfAudioDescription' :: Show ListOfAudioDescription' where
+  show = genericShow
+instance decodeListOfAudioDescription' :: Decode ListOfAudioDescription' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfAudioDescription' :: Encode ListOfAudioDescription' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfAudioSelector
+newtype ListOfAudioSelector' = ListOfAudioSelector' (Array AudioSelector)
+derive instance newtypeListOfAudioSelector' :: Newtype ListOfAudioSelector' _
+derive instance repGenericListOfAudioSelector' :: Generic ListOfAudioSelector' _
+instance showListOfAudioSelector' :: Show ListOfAudioSelector' where
+  show = genericShow
+instance decodeListOfAudioSelector' :: Decode ListOfAudioSelector' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfAudioSelector' :: Encode ListOfAudioSelector' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfCaptionDescription
+newtype ListOfCaptionDescription' = ListOfCaptionDescription' (Array CaptionDescription)
+derive instance newtypeListOfCaptionDescription' :: Newtype ListOfCaptionDescription' _
+derive instance repGenericListOfCaptionDescription' :: Generic ListOfCaptionDescription' _
+instance showListOfCaptionDescription' :: Show ListOfCaptionDescription' where
+  show = genericShow
+instance decodeListOfCaptionDescription' :: Decode ListOfCaptionDescription' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfCaptionDescription' :: Encode ListOfCaptionDescription' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfCaptionLanguageMapping
+newtype ListOfCaptionLanguageMapping' = ListOfCaptionLanguageMapping' (Array CaptionLanguageMapping)
+derive instance newtypeListOfCaptionLanguageMapping' :: Newtype ListOfCaptionLanguageMapping' _
+derive instance repGenericListOfCaptionLanguageMapping' :: Generic ListOfCaptionLanguageMapping' _
+instance showListOfCaptionLanguageMapping' :: Show ListOfCaptionLanguageMapping' where
+  show = genericShow
+instance decodeListOfCaptionLanguageMapping' :: Decode ListOfCaptionLanguageMapping' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfCaptionLanguageMapping' :: Encode ListOfCaptionLanguageMapping' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfCaptionSelector
+newtype ListOfCaptionSelector' = ListOfCaptionSelector' (Array CaptionSelector)
+derive instance newtypeListOfCaptionSelector' :: Newtype ListOfCaptionSelector' _
+derive instance repGenericListOfCaptionSelector' :: Generic ListOfCaptionSelector' _
+instance showListOfCaptionSelector' :: Show ListOfCaptionSelector' where
+  show = genericShow
+instance decodeListOfCaptionSelector' :: Decode ListOfCaptionSelector' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfCaptionSelector' :: Encode ListOfCaptionSelector' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfChannelEgressEndpoint
+newtype ListOfChannelEgressEndpoint' = ListOfChannelEgressEndpoint' (Array ChannelEgressEndpoint)
+derive instance newtypeListOfChannelEgressEndpoint' :: Newtype ListOfChannelEgressEndpoint' _
+derive instance repGenericListOfChannelEgressEndpoint' :: Generic ListOfChannelEgressEndpoint' _
+instance showListOfChannelEgressEndpoint' :: Show ListOfChannelEgressEndpoint' where
+  show = genericShow
+instance decodeListOfChannelEgressEndpoint' :: Decode ListOfChannelEgressEndpoint' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfChannelEgressEndpoint' :: Encode ListOfChannelEgressEndpoint' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfChannelSummary
+newtype ListOfChannelSummary' = ListOfChannelSummary' (Array ChannelSummary)
+derive instance newtypeListOfChannelSummary' :: Newtype ListOfChannelSummary' _
+derive instance repGenericListOfChannelSummary' :: Generic ListOfChannelSummary' _
+instance showListOfChannelSummary' :: Show ListOfChannelSummary' where
+  show = genericShow
+instance decodeListOfChannelSummary' :: Decode ListOfChannelSummary' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfChannelSummary' :: Encode ListOfChannelSummary' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfHlsAdMarkers
+newtype ListOfHlsAdMarkers' = ListOfHlsAdMarkers' (Array HlsAdMarkers)
+derive instance newtypeListOfHlsAdMarkers' :: Newtype ListOfHlsAdMarkers' _
+derive instance repGenericListOfHlsAdMarkers' :: Generic ListOfHlsAdMarkers' _
+instance showListOfHlsAdMarkers' :: Show ListOfHlsAdMarkers' where
+  show = genericShow
+instance decodeListOfHlsAdMarkers' :: Decode ListOfHlsAdMarkers' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfHlsAdMarkers' :: Encode ListOfHlsAdMarkers' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInput
+newtype ListOfInput' = ListOfInput' (Array Input)
+derive instance newtypeListOfInput' :: Newtype ListOfInput' _
+derive instance repGenericListOfInput' :: Generic ListOfInput' _
+instance showListOfInput' :: Show ListOfInput' where
+  show = genericShow
+instance decodeListOfInput' :: Decode ListOfInput' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInput' :: Encode ListOfInput' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputAttachment
+newtype ListOfInputAttachment' = ListOfInputAttachment' (Array InputAttachment)
+derive instance newtypeListOfInputAttachment' :: Newtype ListOfInputAttachment' _
+derive instance repGenericListOfInputAttachment' :: Generic ListOfInputAttachment' _
+instance showListOfInputAttachment' :: Show ListOfInputAttachment' where
+  show = genericShow
+instance decodeListOfInputAttachment' :: Decode ListOfInputAttachment' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputAttachment' :: Encode ListOfInputAttachment' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputChannelLevel
+newtype ListOfInputChannelLevel' = ListOfInputChannelLevel' (Array InputChannelLevel)
+derive instance newtypeListOfInputChannelLevel' :: Newtype ListOfInputChannelLevel' _
+derive instance repGenericListOfInputChannelLevel' :: Generic ListOfInputChannelLevel' _
+instance showListOfInputChannelLevel' :: Show ListOfInputChannelLevel' where
+  show = genericShow
+instance decodeListOfInputChannelLevel' :: Decode ListOfInputChannelLevel' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputChannelLevel' :: Encode ListOfInputChannelLevel' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputDestination
+newtype ListOfInputDestination' = ListOfInputDestination' (Array InputDestination)
+derive instance newtypeListOfInputDestination' :: Newtype ListOfInputDestination' _
+derive instance repGenericListOfInputDestination' :: Generic ListOfInputDestination' _
+instance showListOfInputDestination' :: Show ListOfInputDestination' where
+  show = genericShow
+instance decodeListOfInputDestination' :: Decode ListOfInputDestination' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputDestination' :: Encode ListOfInputDestination' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputDestinationRequest
+newtype ListOfInputDestinationRequest' = ListOfInputDestinationRequest' (Array InputDestinationRequest)
+derive instance newtypeListOfInputDestinationRequest' :: Newtype ListOfInputDestinationRequest' _
+derive instance repGenericListOfInputDestinationRequest' :: Generic ListOfInputDestinationRequest' _
+instance showListOfInputDestinationRequest' :: Show ListOfInputDestinationRequest' where
+  show = genericShow
+instance decodeListOfInputDestinationRequest' :: Decode ListOfInputDestinationRequest' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputDestinationRequest' :: Encode ListOfInputDestinationRequest' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputSecurityGroup
+newtype ListOfInputSecurityGroup' = ListOfInputSecurityGroup' (Array InputSecurityGroup)
+derive instance newtypeListOfInputSecurityGroup' :: Newtype ListOfInputSecurityGroup' _
+derive instance repGenericListOfInputSecurityGroup' :: Generic ListOfInputSecurityGroup' _
+instance showListOfInputSecurityGroup' :: Show ListOfInputSecurityGroup' where
+  show = genericShow
+instance decodeListOfInputSecurityGroup' :: Decode ListOfInputSecurityGroup' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputSecurityGroup' :: Encode ListOfInputSecurityGroup' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputSource
+newtype ListOfInputSource' = ListOfInputSource' (Array InputSource)
+derive instance newtypeListOfInputSource' :: Newtype ListOfInputSource' _
+derive instance repGenericListOfInputSource' :: Generic ListOfInputSource' _
+instance showListOfInputSource' :: Show ListOfInputSource' where
+  show = genericShow
+instance decodeListOfInputSource' :: Decode ListOfInputSource' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputSource' :: Encode ListOfInputSource' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputSourceRequest
+newtype ListOfInputSourceRequest' = ListOfInputSourceRequest' (Array InputSourceRequest)
+derive instance newtypeListOfInputSourceRequest' :: Newtype ListOfInputSourceRequest' _
+derive instance repGenericListOfInputSourceRequest' :: Generic ListOfInputSourceRequest' _
+instance showListOfInputSourceRequest' :: Show ListOfInputSourceRequest' where
+  show = genericShow
+instance decodeListOfInputSourceRequest' :: Decode ListOfInputSourceRequest' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputSourceRequest' :: Encode ListOfInputSourceRequest' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputWhitelistRule
+newtype ListOfInputWhitelistRule' = ListOfInputWhitelistRule' (Array InputWhitelistRule)
+derive instance newtypeListOfInputWhitelistRule' :: Newtype ListOfInputWhitelistRule' _
+derive instance repGenericListOfInputWhitelistRule' :: Generic ListOfInputWhitelistRule' _
+instance showListOfInputWhitelistRule' :: Show ListOfInputWhitelistRule' where
+  show = genericShow
+instance decodeListOfInputWhitelistRule' :: Decode ListOfInputWhitelistRule' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputWhitelistRule' :: Encode ListOfInputWhitelistRule' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfInputWhitelistRuleCidr
+newtype ListOfInputWhitelistRuleCidr' = ListOfInputWhitelistRuleCidr' (Array InputWhitelistRuleCidr)
+derive instance newtypeListOfInputWhitelistRuleCidr' :: Newtype ListOfInputWhitelistRuleCidr' _
+derive instance repGenericListOfInputWhitelistRuleCidr' :: Generic ListOfInputWhitelistRuleCidr' _
+instance showListOfInputWhitelistRuleCidr' :: Show ListOfInputWhitelistRuleCidr' where
+  show = genericShow
+instance decodeListOfInputWhitelistRuleCidr' :: Decode ListOfInputWhitelistRuleCidr' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfInputWhitelistRuleCidr' :: Encode ListOfInputWhitelistRuleCidr' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfOutput
+newtype ListOfOutput' = ListOfOutput' (Array Output)
+derive instance newtypeListOfOutput' :: Newtype ListOfOutput' _
+derive instance repGenericListOfOutput' :: Generic ListOfOutput' _
+instance showListOfOutput' :: Show ListOfOutput' where
+  show = genericShow
+instance decodeListOfOutput' :: Decode ListOfOutput' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfOutput' :: Encode ListOfOutput' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfOutputDestination
+newtype ListOfOutputDestination' = ListOfOutputDestination' (Array OutputDestination)
+derive instance newtypeListOfOutputDestination' :: Newtype ListOfOutputDestination' _
+derive instance repGenericListOfOutputDestination' :: Generic ListOfOutputDestination' _
+instance showListOfOutputDestination' :: Show ListOfOutputDestination' where
+  show = genericShow
+instance decodeListOfOutputDestination' :: Decode ListOfOutputDestination' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfOutputDestination' :: Encode ListOfOutputDestination' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfOutputDestinationSettings
+newtype ListOfOutputDestinationSettings' = ListOfOutputDestinationSettings' (Array OutputDestinationSettings)
+derive instance newtypeListOfOutputDestinationSettings' :: Newtype ListOfOutputDestinationSettings' _
+derive instance repGenericListOfOutputDestinationSettings' :: Generic ListOfOutputDestinationSettings' _
+instance showListOfOutputDestinationSettings' :: Show ListOfOutputDestinationSettings' where
+  show = genericShow
+instance decodeListOfOutputDestinationSettings' :: Decode ListOfOutputDestinationSettings' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfOutputDestinationSettings' :: Encode ListOfOutputDestinationSettings' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfOutputGroup
+newtype ListOfOutputGroup' = ListOfOutputGroup' (Array OutputGroup)
+derive instance newtypeListOfOutputGroup' :: Newtype ListOfOutputGroup' _
+derive instance repGenericListOfOutputGroup' :: Generic ListOfOutputGroup' _
+instance showListOfOutputGroup' :: Show ListOfOutputGroup' where
+  show = genericShow
+instance decodeListOfOutputGroup' :: Decode ListOfOutputGroup' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfOutputGroup' :: Encode ListOfOutputGroup' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfValidationError
+newtype ListOfValidationError' = ListOfValidationError' (Array ValidationError)
+derive instance newtypeListOfValidationError' :: Newtype ListOfValidationError' _
+derive instance repGenericListOfValidationError' :: Generic ListOfValidationError' _
+instance showListOfValidationError' :: Show ListOfValidationError' where
+  show = genericShow
+instance decodeListOfValidationError' :: Decode ListOfValidationError' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfValidationError' :: Encode ListOfValidationError' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOfVideoDescription
+newtype ListOfVideoDescription' = ListOfVideoDescription' (Array VideoDescription)
+derive instance newtypeListOfVideoDescription' :: Newtype ListOfVideoDescription' _
+derive instance repGenericListOfVideoDescription' :: Generic ListOfVideoDescription' _
+instance showListOfVideoDescription' :: Show ListOfVideoDescription' where
+  show = genericShow
+instance decodeListOfVideoDescription' :: Decode ListOfVideoDescription' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOfVideoDescription' :: Encode ListOfVideoDescription' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __listOf__string
+newtype ListOf__string' = ListOf__string' (Array String)
+derive instance newtypeListOf__string' :: Newtype ListOf__string' _
+derive instance repGenericListOf__string' :: Generic ListOf__string' _
+instance showListOf__string' :: Show ListOf__string' where
+  show = genericShow
+instance decodeListOf__string' :: Decode ListOf__string' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeListOf__string' :: Encode ListOf__string' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMax32
+newtype StringMax32' = StringMax32' String
+derive instance newtypeStringMax32' :: Newtype StringMax32' _
+derive instance repGenericStringMax32' :: Generic StringMax32' _
+instance showStringMax32' :: Show StringMax32' where
+  show = genericShow
+instance decodeStringMax32' :: Decode StringMax32' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMax32' :: Encode StringMax32' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMin1
+newtype StringMin1' = StringMin1' String
+derive instance newtypeStringMin1' :: Newtype StringMin1' _
+derive instance repGenericStringMin1' :: Generic StringMin1' _
+instance showStringMin1' :: Show StringMin1' where
+  show = genericShow
+instance decodeStringMin1' :: Decode StringMin1' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMin1' :: Encode StringMin1' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMin1Max255
+newtype StringMin1Max255' = StringMin1Max255' String
+derive instance newtypeStringMin1Max255' :: Newtype StringMin1Max255' _
+derive instance repGenericStringMin1Max255' :: Generic StringMin1Max255' _
+instance showStringMin1Max255' :: Show StringMin1Max255' where
+  show = genericShow
+instance decodeStringMin1Max255' :: Decode StringMin1Max255' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMin1Max255' :: Encode StringMin1Max255' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMin1Max256
+newtype StringMin1Max256' = StringMin1Max256' String
+derive instance newtypeStringMin1Max256' :: Newtype StringMin1Max256' _
+derive instance repGenericStringMin1Max256' :: Generic StringMin1Max256' _
+instance showStringMin1Max256' :: Show StringMin1Max256' where
+  show = genericShow
+instance decodeStringMin1Max256' :: Decode StringMin1Max256' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMin1Max256' :: Encode StringMin1Max256' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMin32Max32
+newtype StringMin32Max32' = StringMin32Max32' String
+derive instance newtypeStringMin32Max32' :: Newtype StringMin32Max32' _
+derive instance repGenericStringMin32Max32' :: Generic StringMin32Max32' _
+instance showStringMin32Max32' :: Show StringMin32Max32' where
+  show = genericShow
+instance decodeStringMin32Max32' :: Decode StringMin32Max32' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMin32Max32' :: Encode StringMin32Max32' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMin34Max34
+newtype StringMin34Max34' = StringMin34Max34' String
+derive instance newtypeStringMin34Max34' :: Newtype StringMin34Max34' _
+derive instance repGenericStringMin34Max34' :: Generic StringMin34Max34' _
+instance showStringMin34Max34' :: Show StringMin34Max34' where
+  show = genericShow
+instance decodeStringMin34Max34' :: Decode StringMin34Max34' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMin34Max34' :: Encode StringMin34Max34' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMin3Max3
+newtype StringMin3Max3' = StringMin3Max3' String
+derive instance newtypeStringMin3Max3' :: Newtype StringMin3Max3' _
+derive instance repGenericStringMin3Max3' :: Generic StringMin3Max3' _
+instance showStringMin3Max3' :: Show StringMin3Max3' where
+  show = genericShow
+instance decodeStringMin3Max3' :: Decode StringMin3Max3' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMin3Max3' :: Encode StringMin3Max3' where
+  encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
+
+
+
+-- | Placeholder documentation for __stringMin6Max6
+newtype StringMin6Max6' = StringMin6Max6' String
+derive instance newtypeStringMin6Max6' :: Newtype StringMin6Max6' _
+derive instance repGenericStringMin6Max6' :: Generic StringMin6Max6' _
+instance showStringMin6Max6' :: Show StringMin6Max6' where
+  show = genericShow
+instance decodeStringMin6Max6' :: Decode StringMin6Max6' where
+  decode = genericDecode $ defaultOptions { unwrapSingleConstructors = true }
+instance encodeStringMin6Max6' :: Encode StringMin6Max6' where
   encode = genericEncode $ defaultOptions { unwrapSingleConstructors = true }
 
