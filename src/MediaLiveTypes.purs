@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -70,15 +69,15 @@ instance encodeAacRawFormat :: Encode AacRawFormat where encode = genericEncode 
 
 -- | Placeholder documentation for AacSettings
 newtype AacSettings = AacSettings 
-  { "Bitrate" :: NullOrUndefined (Number)
-  , "CodingMode" :: NullOrUndefined (AacCodingMode)
-  , "InputType" :: NullOrUndefined (AacInputType)
-  , "Profile" :: NullOrUndefined (AacProfile)
-  , "RateControlMode" :: NullOrUndefined (AacRateControlMode)
-  , "RawFormat" :: NullOrUndefined (AacRawFormat)
-  , "SampleRate" :: NullOrUndefined (Number)
-  , "Spec" :: NullOrUndefined (AacSpec)
-  , "VbrQuality" :: NullOrUndefined (AacVbrQuality)
+  { "Bitrate" :: Maybe (Number)
+  , "CodingMode" :: Maybe (AacCodingMode)
+  , "InputType" :: Maybe (AacInputType)
+  , "Profile" :: Maybe (AacProfile)
+  , "RateControlMode" :: Maybe (AacRateControlMode)
+  , "RawFormat" :: Maybe (AacRawFormat)
+  , "SampleRate" :: Maybe (Number)
+  , "Spec" :: Maybe (AacSpec)
+  , "VbrQuality" :: Maybe (AacVbrQuality)
   }
 derive instance newtypeAacSettings :: Newtype AacSettings _
 derive instance repGenericAacSettings :: Generic AacSettings _
@@ -88,12 +87,12 @@ instance encodeAacSettings :: Encode AacSettings where encode = genericEncode op
 
 -- | Constructs AacSettings from required parameters
 newAacSettings :: AacSettings
-newAacSettings  = AacSettings { "Bitrate": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "InputType": (NullOrUndefined Nothing), "Profile": (NullOrUndefined Nothing), "RateControlMode": (NullOrUndefined Nothing), "RawFormat": (NullOrUndefined Nothing), "SampleRate": (NullOrUndefined Nothing), "Spec": (NullOrUndefined Nothing), "VbrQuality": (NullOrUndefined Nothing) }
+newAacSettings  = AacSettings { "Bitrate": Nothing, "CodingMode": Nothing, "InputType": Nothing, "Profile": Nothing, "RateControlMode": Nothing, "RawFormat": Nothing, "SampleRate": Nothing, "Spec": Nothing, "VbrQuality": Nothing }
 
 -- | Constructs AacSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAacSettings' :: ( { "Bitrate" :: NullOrUndefined (Number) , "CodingMode" :: NullOrUndefined (AacCodingMode) , "InputType" :: NullOrUndefined (AacInputType) , "Profile" :: NullOrUndefined (AacProfile) , "RateControlMode" :: NullOrUndefined (AacRateControlMode) , "RawFormat" :: NullOrUndefined (AacRawFormat) , "SampleRate" :: NullOrUndefined (Number) , "Spec" :: NullOrUndefined (AacSpec) , "VbrQuality" :: NullOrUndefined (AacVbrQuality) } -> {"Bitrate" :: NullOrUndefined (Number) , "CodingMode" :: NullOrUndefined (AacCodingMode) , "InputType" :: NullOrUndefined (AacInputType) , "Profile" :: NullOrUndefined (AacProfile) , "RateControlMode" :: NullOrUndefined (AacRateControlMode) , "RawFormat" :: NullOrUndefined (AacRawFormat) , "SampleRate" :: NullOrUndefined (Number) , "Spec" :: NullOrUndefined (AacSpec) , "VbrQuality" :: NullOrUndefined (AacVbrQuality) } ) -> AacSettings
-newAacSettings'  customize = (AacSettings <<< customize) { "Bitrate": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "InputType": (NullOrUndefined Nothing), "Profile": (NullOrUndefined Nothing), "RateControlMode": (NullOrUndefined Nothing), "RawFormat": (NullOrUndefined Nothing), "SampleRate": (NullOrUndefined Nothing), "Spec": (NullOrUndefined Nothing), "VbrQuality": (NullOrUndefined Nothing) }
+newAacSettings' :: ( { "Bitrate" :: Maybe (Number) , "CodingMode" :: Maybe (AacCodingMode) , "InputType" :: Maybe (AacInputType) , "Profile" :: Maybe (AacProfile) , "RateControlMode" :: Maybe (AacRateControlMode) , "RawFormat" :: Maybe (AacRawFormat) , "SampleRate" :: Maybe (Number) , "Spec" :: Maybe (AacSpec) , "VbrQuality" :: Maybe (AacVbrQuality) } -> {"Bitrate" :: Maybe (Number) , "CodingMode" :: Maybe (AacCodingMode) , "InputType" :: Maybe (AacInputType) , "Profile" :: Maybe (AacProfile) , "RateControlMode" :: Maybe (AacRateControlMode) , "RawFormat" :: Maybe (AacRawFormat) , "SampleRate" :: Maybe (Number) , "Spec" :: Maybe (AacSpec) , "VbrQuality" :: Maybe (AacVbrQuality) } ) -> AacSettings
+newAacSettings'  customize = (AacSettings <<< customize) { "Bitrate": Nothing, "CodingMode": Nothing, "InputType": Nothing, "Profile": Nothing, "RateControlMode": Nothing, "RawFormat": Nothing, "SampleRate": Nothing, "Spec": Nothing, "VbrQuality": Nothing }
 
 
 
@@ -169,13 +168,13 @@ instance encodeAc3MetadataControl :: Encode Ac3MetadataControl where encode = ge
 
 -- | Placeholder documentation for Ac3Settings
 newtype Ac3Settings = Ac3Settings 
-  { "Bitrate" :: NullOrUndefined (Number)
-  , "BitstreamMode" :: NullOrUndefined (Ac3BitstreamMode)
-  , "CodingMode" :: NullOrUndefined (Ac3CodingMode)
-  , "Dialnorm" :: NullOrUndefined (IntegerMin1Max31')
-  , "DrcProfile" :: NullOrUndefined (Ac3DrcProfile)
-  , "LfeFilter" :: NullOrUndefined (Ac3LfeFilter)
-  , "MetadataControl" :: NullOrUndefined (Ac3MetadataControl)
+  { "Bitrate" :: Maybe (Number)
+  , "BitstreamMode" :: Maybe (Ac3BitstreamMode)
+  , "CodingMode" :: Maybe (Ac3CodingMode)
+  , "Dialnorm" :: Maybe (IntegerMin1Max31')
+  , "DrcProfile" :: Maybe (Ac3DrcProfile)
+  , "LfeFilter" :: Maybe (Ac3LfeFilter)
+  , "MetadataControl" :: Maybe (Ac3MetadataControl)
   }
 derive instance newtypeAc3Settings :: Newtype Ac3Settings _
 derive instance repGenericAc3Settings :: Generic Ac3Settings _
@@ -185,18 +184,18 @@ instance encodeAc3Settings :: Encode Ac3Settings where encode = genericEncode op
 
 -- | Constructs Ac3Settings from required parameters
 newAc3Settings :: Ac3Settings
-newAc3Settings  = Ac3Settings { "Bitrate": (NullOrUndefined Nothing), "BitstreamMode": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "Dialnorm": (NullOrUndefined Nothing), "DrcProfile": (NullOrUndefined Nothing), "LfeFilter": (NullOrUndefined Nothing), "MetadataControl": (NullOrUndefined Nothing) }
+newAc3Settings  = Ac3Settings { "Bitrate": Nothing, "BitstreamMode": Nothing, "CodingMode": Nothing, "Dialnorm": Nothing, "DrcProfile": Nothing, "LfeFilter": Nothing, "MetadataControl": Nothing }
 
 -- | Constructs Ac3Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAc3Settings' :: ( { "Bitrate" :: NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined (Ac3BitstreamMode) , "CodingMode" :: NullOrUndefined (Ac3CodingMode) , "Dialnorm" :: NullOrUndefined (IntegerMin1Max31') , "DrcProfile" :: NullOrUndefined (Ac3DrcProfile) , "LfeFilter" :: NullOrUndefined (Ac3LfeFilter) , "MetadataControl" :: NullOrUndefined (Ac3MetadataControl) } -> {"Bitrate" :: NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined (Ac3BitstreamMode) , "CodingMode" :: NullOrUndefined (Ac3CodingMode) , "Dialnorm" :: NullOrUndefined (IntegerMin1Max31') , "DrcProfile" :: NullOrUndefined (Ac3DrcProfile) , "LfeFilter" :: NullOrUndefined (Ac3LfeFilter) , "MetadataControl" :: NullOrUndefined (Ac3MetadataControl) } ) -> Ac3Settings
-newAc3Settings'  customize = (Ac3Settings <<< customize) { "Bitrate": (NullOrUndefined Nothing), "BitstreamMode": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "Dialnorm": (NullOrUndefined Nothing), "DrcProfile": (NullOrUndefined Nothing), "LfeFilter": (NullOrUndefined Nothing), "MetadataControl": (NullOrUndefined Nothing) }
+newAc3Settings' :: ( { "Bitrate" :: Maybe (Number) , "BitstreamMode" :: Maybe (Ac3BitstreamMode) , "CodingMode" :: Maybe (Ac3CodingMode) , "Dialnorm" :: Maybe (IntegerMin1Max31') , "DrcProfile" :: Maybe (Ac3DrcProfile) , "LfeFilter" :: Maybe (Ac3LfeFilter) , "MetadataControl" :: Maybe (Ac3MetadataControl) } -> {"Bitrate" :: Maybe (Number) , "BitstreamMode" :: Maybe (Ac3BitstreamMode) , "CodingMode" :: Maybe (Ac3CodingMode) , "Dialnorm" :: Maybe (IntegerMin1Max31') , "DrcProfile" :: Maybe (Ac3DrcProfile) , "LfeFilter" :: Maybe (Ac3LfeFilter) , "MetadataControl" :: Maybe (Ac3MetadataControl) } ) -> Ac3Settings
+newAc3Settings'  customize = (Ac3Settings <<< customize) { "Bitrate": Nothing, "BitstreamMode": Nothing, "CodingMode": Nothing, "Dialnorm": Nothing, "DrcProfile": Nothing, "LfeFilter": Nothing, "MetadataControl": Nothing }
 
 
 
 -- | Placeholder documentation for AccessDenied
 newtype AccessDenied = AccessDenied 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeAccessDenied :: Newtype AccessDenied _
 derive instance repGenericAccessDenied :: Generic AccessDenied _
@@ -206,12 +205,12 @@ instance encodeAccessDenied :: Encode AccessDenied where encode = genericEncode 
 
 -- | Constructs AccessDenied from required parameters
 newAccessDenied :: AccessDenied
-newAccessDenied  = AccessDenied { "Message": (NullOrUndefined Nothing) }
+newAccessDenied  = AccessDenied { "Message": Nothing }
 
 -- | Constructs AccessDenied's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccessDenied' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> AccessDenied
-newAccessDenied'  customize = (AccessDenied <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAccessDenied' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> AccessDenied
+newAccessDenied'  customize = (AccessDenied <<< customize) { "Message": Nothing }
 
 
 
@@ -227,7 +226,7 @@ instance encodeAfdSignaling :: Encode AfdSignaling where encode = genericEncode 
 
 -- | Placeholder documentation for ArchiveContainerSettings
 newtype ArchiveContainerSettings = ArchiveContainerSettings 
-  { "M2tsSettings" :: NullOrUndefined (M2tsSettings)
+  { "M2tsSettings" :: Maybe (M2tsSettings)
   }
 derive instance newtypeArchiveContainerSettings :: Newtype ArchiveContainerSettings _
 derive instance repGenericArchiveContainerSettings :: Generic ArchiveContainerSettings _
@@ -237,19 +236,19 @@ instance encodeArchiveContainerSettings :: Encode ArchiveContainerSettings where
 
 -- | Constructs ArchiveContainerSettings from required parameters
 newArchiveContainerSettings :: ArchiveContainerSettings
-newArchiveContainerSettings  = ArchiveContainerSettings { "M2tsSettings": (NullOrUndefined Nothing) }
+newArchiveContainerSettings  = ArchiveContainerSettings { "M2tsSettings": Nothing }
 
 -- | Constructs ArchiveContainerSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArchiveContainerSettings' :: ( { "M2tsSettings" :: NullOrUndefined (M2tsSettings) } -> {"M2tsSettings" :: NullOrUndefined (M2tsSettings) } ) -> ArchiveContainerSettings
-newArchiveContainerSettings'  customize = (ArchiveContainerSettings <<< customize) { "M2tsSettings": (NullOrUndefined Nothing) }
+newArchiveContainerSettings' :: ( { "M2tsSettings" :: Maybe (M2tsSettings) } -> {"M2tsSettings" :: Maybe (M2tsSettings) } ) -> ArchiveContainerSettings
+newArchiveContainerSettings'  customize = (ArchiveContainerSettings <<< customize) { "M2tsSettings": Nothing }
 
 
 
 -- | Placeholder documentation for ArchiveGroupSettings
 newtype ArchiveGroupSettings = ArchiveGroupSettings 
   { "Destination" :: (OutputLocationRef)
-  , "RolloverInterval" :: NullOrUndefined (IntegerMin1')
+  , "RolloverInterval" :: Maybe (IntegerMin1')
   }
 derive instance newtypeArchiveGroupSettings :: Newtype ArchiveGroupSettings _
 derive instance repGenericArchiveGroupSettings :: Generic ArchiveGroupSettings _
@@ -259,20 +258,20 @@ instance encodeArchiveGroupSettings :: Encode ArchiveGroupSettings where encode 
 
 -- | Constructs ArchiveGroupSettings from required parameters
 newArchiveGroupSettings :: OutputLocationRef -> ArchiveGroupSettings
-newArchiveGroupSettings _Destination = ArchiveGroupSettings { "Destination": _Destination, "RolloverInterval": (NullOrUndefined Nothing) }
+newArchiveGroupSettings _Destination = ArchiveGroupSettings { "Destination": _Destination, "RolloverInterval": Nothing }
 
 -- | Constructs ArchiveGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArchiveGroupSettings' :: OutputLocationRef -> ( { "Destination" :: (OutputLocationRef) , "RolloverInterval" :: NullOrUndefined (IntegerMin1') } -> {"Destination" :: (OutputLocationRef) , "RolloverInterval" :: NullOrUndefined (IntegerMin1') } ) -> ArchiveGroupSettings
-newArchiveGroupSettings' _Destination customize = (ArchiveGroupSettings <<< customize) { "Destination": _Destination, "RolloverInterval": (NullOrUndefined Nothing) }
+newArchiveGroupSettings' :: OutputLocationRef -> ( { "Destination" :: (OutputLocationRef) , "RolloverInterval" :: Maybe (IntegerMin1') } -> {"Destination" :: (OutputLocationRef) , "RolloverInterval" :: Maybe (IntegerMin1') } ) -> ArchiveGroupSettings
+newArchiveGroupSettings' _Destination customize = (ArchiveGroupSettings <<< customize) { "Destination": _Destination, "RolloverInterval": Nothing }
 
 
 
 -- | Placeholder documentation for ArchiveOutputSettings
 newtype ArchiveOutputSettings = ArchiveOutputSettings 
   { "ContainerSettings" :: (ArchiveContainerSettings)
-  , "Extension" :: NullOrUndefined (String)
-  , "NameModifier" :: NullOrUndefined (String)
+  , "Extension" :: Maybe (String)
+  , "NameModifier" :: Maybe (String)
   }
 derive instance newtypeArchiveOutputSettings :: Newtype ArchiveOutputSettings _
 derive instance repGenericArchiveOutputSettings :: Generic ArchiveOutputSettings _
@@ -282,12 +281,12 @@ instance encodeArchiveOutputSettings :: Encode ArchiveOutputSettings where encod
 
 -- | Constructs ArchiveOutputSettings from required parameters
 newArchiveOutputSettings :: ArchiveContainerSettings -> ArchiveOutputSettings
-newArchiveOutputSettings _ContainerSettings = ArchiveOutputSettings { "ContainerSettings": _ContainerSettings, "Extension": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing) }
+newArchiveOutputSettings _ContainerSettings = ArchiveOutputSettings { "ContainerSettings": _ContainerSettings, "Extension": Nothing, "NameModifier": Nothing }
 
 -- | Constructs ArchiveOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newArchiveOutputSettings' :: ArchiveContainerSettings -> ( { "ContainerSettings" :: (ArchiveContainerSettings) , "Extension" :: NullOrUndefined (String) , "NameModifier" :: NullOrUndefined (String) } -> {"ContainerSettings" :: (ArchiveContainerSettings) , "Extension" :: NullOrUndefined (String) , "NameModifier" :: NullOrUndefined (String) } ) -> ArchiveOutputSettings
-newArchiveOutputSettings' _ContainerSettings customize = (ArchiveOutputSettings <<< customize) { "ContainerSettings": _ContainerSettings, "Extension": (NullOrUndefined Nothing), "NameModifier": (NullOrUndefined Nothing) }
+newArchiveOutputSettings' :: ArchiveContainerSettings -> ( { "ContainerSettings" :: (ArchiveContainerSettings) , "Extension" :: Maybe (String) , "NameModifier" :: Maybe (String) } -> {"ContainerSettings" :: (ArchiveContainerSettings) , "Extension" :: Maybe (String) , "NameModifier" :: Maybe (String) } ) -> ArchiveOutputSettings
+newArchiveOutputSettings' _ContainerSettings customize = (ArchiveOutputSettings <<< customize) { "ContainerSettings": _ContainerSettings, "Extension": Nothing, "NameModifier": Nothing }
 
 
 
@@ -335,11 +334,11 @@ newAudioChannelMapping' _InputChannelLevels _OutputChannel customize = (AudioCha
 
 -- | Placeholder documentation for AudioCodecSettings
 newtype AudioCodecSettings = AudioCodecSettings 
-  { "AacSettings" :: NullOrUndefined (AacSettings)
-  , "Ac3Settings" :: NullOrUndefined (Ac3Settings)
-  , "Eac3Settings" :: NullOrUndefined (Eac3Settings)
-  , "Mp2Settings" :: NullOrUndefined (Mp2Settings)
-  , "PassThroughSettings" :: NullOrUndefined (PassThroughSettings)
+  { "AacSettings" :: Maybe (AacSettings)
+  , "Ac3Settings" :: Maybe (Ac3Settings)
+  , "Eac3Settings" :: Maybe (Eac3Settings)
+  , "Mp2Settings" :: Maybe (Mp2Settings)
+  , "PassThroughSettings" :: Maybe (PassThroughSettings)
   }
 derive instance newtypeAudioCodecSettings :: Newtype AudioCodecSettings _
 derive instance repGenericAudioCodecSettings :: Generic AudioCodecSettings _
@@ -349,27 +348,27 @@ instance encodeAudioCodecSettings :: Encode AudioCodecSettings where encode = ge
 
 -- | Constructs AudioCodecSettings from required parameters
 newAudioCodecSettings :: AudioCodecSettings
-newAudioCodecSettings  = AudioCodecSettings { "AacSettings": (NullOrUndefined Nothing), "Ac3Settings": (NullOrUndefined Nothing), "Eac3Settings": (NullOrUndefined Nothing), "Mp2Settings": (NullOrUndefined Nothing), "PassThroughSettings": (NullOrUndefined Nothing) }
+newAudioCodecSettings  = AudioCodecSettings { "AacSettings": Nothing, "Ac3Settings": Nothing, "Eac3Settings": Nothing, "Mp2Settings": Nothing, "PassThroughSettings": Nothing }
 
 -- | Constructs AudioCodecSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioCodecSettings' :: ( { "AacSettings" :: NullOrUndefined (AacSettings) , "Ac3Settings" :: NullOrUndefined (Ac3Settings) , "Eac3Settings" :: NullOrUndefined (Eac3Settings) , "Mp2Settings" :: NullOrUndefined (Mp2Settings) , "PassThroughSettings" :: NullOrUndefined (PassThroughSettings) } -> {"AacSettings" :: NullOrUndefined (AacSettings) , "Ac3Settings" :: NullOrUndefined (Ac3Settings) , "Eac3Settings" :: NullOrUndefined (Eac3Settings) , "Mp2Settings" :: NullOrUndefined (Mp2Settings) , "PassThroughSettings" :: NullOrUndefined (PassThroughSettings) } ) -> AudioCodecSettings
-newAudioCodecSettings'  customize = (AudioCodecSettings <<< customize) { "AacSettings": (NullOrUndefined Nothing), "Ac3Settings": (NullOrUndefined Nothing), "Eac3Settings": (NullOrUndefined Nothing), "Mp2Settings": (NullOrUndefined Nothing), "PassThroughSettings": (NullOrUndefined Nothing) }
+newAudioCodecSettings' :: ( { "AacSettings" :: Maybe (AacSettings) , "Ac3Settings" :: Maybe (Ac3Settings) , "Eac3Settings" :: Maybe (Eac3Settings) , "Mp2Settings" :: Maybe (Mp2Settings) , "PassThroughSettings" :: Maybe (PassThroughSettings) } -> {"AacSettings" :: Maybe (AacSettings) , "Ac3Settings" :: Maybe (Ac3Settings) , "Eac3Settings" :: Maybe (Eac3Settings) , "Mp2Settings" :: Maybe (Mp2Settings) , "PassThroughSettings" :: Maybe (PassThroughSettings) } ) -> AudioCodecSettings
+newAudioCodecSettings'  customize = (AudioCodecSettings <<< customize) { "AacSettings": Nothing, "Ac3Settings": Nothing, "Eac3Settings": Nothing, "Mp2Settings": Nothing, "PassThroughSettings": Nothing }
 
 
 
 -- | Placeholder documentation for AudioDescription
 newtype AudioDescription = AudioDescription 
-  { "AudioNormalizationSettings" :: NullOrUndefined (AudioNormalizationSettings)
+  { "AudioNormalizationSettings" :: Maybe (AudioNormalizationSettings)
   , "AudioSelectorName" :: (String)
-  , "AudioType" :: NullOrUndefined (AudioType)
-  , "AudioTypeControl" :: NullOrUndefined (AudioDescriptionAudioTypeControl)
-  , "CodecSettings" :: NullOrUndefined (AudioCodecSettings)
-  , "LanguageCode" :: NullOrUndefined (StringMin3Max3')
-  , "LanguageCodeControl" :: NullOrUndefined (AudioDescriptionLanguageCodeControl)
+  , "AudioType" :: Maybe (AudioType)
+  , "AudioTypeControl" :: Maybe (AudioDescriptionAudioTypeControl)
+  , "CodecSettings" :: Maybe (AudioCodecSettings)
+  , "LanguageCode" :: Maybe (StringMin3Max3')
+  , "LanguageCodeControl" :: Maybe (AudioDescriptionLanguageCodeControl)
   , "Name" :: (String)
-  , "RemixSettings" :: NullOrUndefined (RemixSettings)
-  , "StreamName" :: NullOrUndefined (String)
+  , "RemixSettings" :: Maybe (RemixSettings)
+  , "StreamName" :: Maybe (String)
   }
 derive instance newtypeAudioDescription :: Newtype AudioDescription _
 derive instance repGenericAudioDescription :: Generic AudioDescription _
@@ -379,12 +378,12 @@ instance encodeAudioDescription :: Encode AudioDescription where encode = generi
 
 -- | Constructs AudioDescription from required parameters
 newAudioDescription :: String -> String -> AudioDescription
-newAudioDescription _AudioSelectorName _Name = AudioDescription { "AudioSelectorName": _AudioSelectorName, "Name": _Name, "AudioNormalizationSettings": (NullOrUndefined Nothing), "AudioType": (NullOrUndefined Nothing), "AudioTypeControl": (NullOrUndefined Nothing), "CodecSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageCodeControl": (NullOrUndefined Nothing), "RemixSettings": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
+newAudioDescription _AudioSelectorName _Name = AudioDescription { "AudioSelectorName": _AudioSelectorName, "Name": _Name, "AudioNormalizationSettings": Nothing, "AudioType": Nothing, "AudioTypeControl": Nothing, "CodecSettings": Nothing, "LanguageCode": Nothing, "LanguageCodeControl": Nothing, "RemixSettings": Nothing, "StreamName": Nothing }
 
 -- | Constructs AudioDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioDescription' :: String -> String -> ( { "AudioNormalizationSettings" :: NullOrUndefined (AudioNormalizationSettings) , "AudioSelectorName" :: (String) , "AudioType" :: NullOrUndefined (AudioType) , "AudioTypeControl" :: NullOrUndefined (AudioDescriptionAudioTypeControl) , "CodecSettings" :: NullOrUndefined (AudioCodecSettings) , "LanguageCode" :: NullOrUndefined (StringMin3Max3') , "LanguageCodeControl" :: NullOrUndefined (AudioDescriptionLanguageCodeControl) , "Name" :: (String) , "RemixSettings" :: NullOrUndefined (RemixSettings) , "StreamName" :: NullOrUndefined (String) } -> {"AudioNormalizationSettings" :: NullOrUndefined (AudioNormalizationSettings) , "AudioSelectorName" :: (String) , "AudioType" :: NullOrUndefined (AudioType) , "AudioTypeControl" :: NullOrUndefined (AudioDescriptionAudioTypeControl) , "CodecSettings" :: NullOrUndefined (AudioCodecSettings) , "LanguageCode" :: NullOrUndefined (StringMin3Max3') , "LanguageCodeControl" :: NullOrUndefined (AudioDescriptionLanguageCodeControl) , "Name" :: (String) , "RemixSettings" :: NullOrUndefined (RemixSettings) , "StreamName" :: NullOrUndefined (String) } ) -> AudioDescription
-newAudioDescription' _AudioSelectorName _Name customize = (AudioDescription <<< customize) { "AudioSelectorName": _AudioSelectorName, "Name": _Name, "AudioNormalizationSettings": (NullOrUndefined Nothing), "AudioType": (NullOrUndefined Nothing), "AudioTypeControl": (NullOrUndefined Nothing), "CodecSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageCodeControl": (NullOrUndefined Nothing), "RemixSettings": (NullOrUndefined Nothing), "StreamName": (NullOrUndefined Nothing) }
+newAudioDescription' :: String -> String -> ( { "AudioNormalizationSettings" :: Maybe (AudioNormalizationSettings) , "AudioSelectorName" :: (String) , "AudioType" :: Maybe (AudioType) , "AudioTypeControl" :: Maybe (AudioDescriptionAudioTypeControl) , "CodecSettings" :: Maybe (AudioCodecSettings) , "LanguageCode" :: Maybe (StringMin3Max3') , "LanguageCodeControl" :: Maybe (AudioDescriptionLanguageCodeControl) , "Name" :: (String) , "RemixSettings" :: Maybe (RemixSettings) , "StreamName" :: Maybe (String) } -> {"AudioNormalizationSettings" :: Maybe (AudioNormalizationSettings) , "AudioSelectorName" :: (String) , "AudioType" :: Maybe (AudioType) , "AudioTypeControl" :: Maybe (AudioDescriptionAudioTypeControl) , "CodecSettings" :: Maybe (AudioCodecSettings) , "LanguageCode" :: Maybe (StringMin3Max3') , "LanguageCodeControl" :: Maybe (AudioDescriptionLanguageCodeControl) , "Name" :: (String) , "RemixSettings" :: Maybe (RemixSettings) , "StreamName" :: Maybe (String) } ) -> AudioDescription
+newAudioDescription' _AudioSelectorName _Name customize = (AudioDescription <<< customize) { "AudioSelectorName": _AudioSelectorName, "Name": _Name, "AudioNormalizationSettings": Nothing, "AudioType": Nothing, "AudioTypeControl": Nothing, "CodecSettings": Nothing, "LanguageCode": Nothing, "LanguageCodeControl": Nothing, "RemixSettings": Nothing, "StreamName": Nothing }
 
 
 
@@ -411,7 +410,7 @@ instance encodeAudioDescriptionLanguageCodeControl :: Encode AudioDescriptionLan
 -- | Placeholder documentation for AudioLanguageSelection
 newtype AudioLanguageSelection = AudioLanguageSelection 
   { "LanguageCode" :: (String)
-  , "LanguageSelectionPolicy" :: NullOrUndefined (AudioLanguageSelectionPolicy)
+  , "LanguageSelectionPolicy" :: Maybe (AudioLanguageSelectionPolicy)
   }
 derive instance newtypeAudioLanguageSelection :: Newtype AudioLanguageSelection _
 derive instance repGenericAudioLanguageSelection :: Generic AudioLanguageSelection _
@@ -421,12 +420,12 @@ instance encodeAudioLanguageSelection :: Encode AudioLanguageSelection where enc
 
 -- | Constructs AudioLanguageSelection from required parameters
 newAudioLanguageSelection :: String -> AudioLanguageSelection
-newAudioLanguageSelection _LanguageCode = AudioLanguageSelection { "LanguageCode": _LanguageCode, "LanguageSelectionPolicy": (NullOrUndefined Nothing) }
+newAudioLanguageSelection _LanguageCode = AudioLanguageSelection { "LanguageCode": _LanguageCode, "LanguageSelectionPolicy": Nothing }
 
 -- | Constructs AudioLanguageSelection's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioLanguageSelection' :: String -> ( { "LanguageCode" :: (String) , "LanguageSelectionPolicy" :: NullOrUndefined (AudioLanguageSelectionPolicy) } -> {"LanguageCode" :: (String) , "LanguageSelectionPolicy" :: NullOrUndefined (AudioLanguageSelectionPolicy) } ) -> AudioLanguageSelection
-newAudioLanguageSelection' _LanguageCode customize = (AudioLanguageSelection <<< customize) { "LanguageCode": _LanguageCode, "LanguageSelectionPolicy": (NullOrUndefined Nothing) }
+newAudioLanguageSelection' :: String -> ( { "LanguageCode" :: (String) , "LanguageSelectionPolicy" :: Maybe (AudioLanguageSelectionPolicy) } -> {"LanguageCode" :: (String) , "LanguageSelectionPolicy" :: Maybe (AudioLanguageSelectionPolicy) } ) -> AudioLanguageSelection
+newAudioLanguageSelection' _LanguageCode customize = (AudioLanguageSelection <<< customize) { "LanguageCode": _LanguageCode, "LanguageSelectionPolicy": Nothing }
 
 
 
@@ -462,9 +461,9 @@ instance encodeAudioNormalizationAlgorithmControl :: Encode AudioNormalizationAl
 
 -- | Placeholder documentation for AudioNormalizationSettings
 newtype AudioNormalizationSettings = AudioNormalizationSettings 
-  { "Algorithm" :: NullOrUndefined (AudioNormalizationAlgorithm)
-  , "AlgorithmControl" :: NullOrUndefined (AudioNormalizationAlgorithmControl)
-  , "TargetLkfs" :: NullOrUndefined (DoubleMinNegative59Max0')
+  { "Algorithm" :: Maybe (AudioNormalizationAlgorithm)
+  , "AlgorithmControl" :: Maybe (AudioNormalizationAlgorithmControl)
+  , "TargetLkfs" :: Maybe (DoubleMinNegative59Max0')
   }
 derive instance newtypeAudioNormalizationSettings :: Newtype AudioNormalizationSettings _
 derive instance repGenericAudioNormalizationSettings :: Generic AudioNormalizationSettings _
@@ -474,20 +473,20 @@ instance encodeAudioNormalizationSettings :: Encode AudioNormalizationSettings w
 
 -- | Constructs AudioNormalizationSettings from required parameters
 newAudioNormalizationSettings :: AudioNormalizationSettings
-newAudioNormalizationSettings  = AudioNormalizationSettings { "Algorithm": (NullOrUndefined Nothing), "AlgorithmControl": (NullOrUndefined Nothing), "TargetLkfs": (NullOrUndefined Nothing) }
+newAudioNormalizationSettings  = AudioNormalizationSettings { "Algorithm": Nothing, "AlgorithmControl": Nothing, "TargetLkfs": Nothing }
 
 -- | Constructs AudioNormalizationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioNormalizationSettings' :: ( { "Algorithm" :: NullOrUndefined (AudioNormalizationAlgorithm) , "AlgorithmControl" :: NullOrUndefined (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: NullOrUndefined (DoubleMinNegative59Max0') } -> {"Algorithm" :: NullOrUndefined (AudioNormalizationAlgorithm) , "AlgorithmControl" :: NullOrUndefined (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: NullOrUndefined (DoubleMinNegative59Max0') } ) -> AudioNormalizationSettings
-newAudioNormalizationSettings'  customize = (AudioNormalizationSettings <<< customize) { "Algorithm": (NullOrUndefined Nothing), "AlgorithmControl": (NullOrUndefined Nothing), "TargetLkfs": (NullOrUndefined Nothing) }
+newAudioNormalizationSettings' :: ( { "Algorithm" :: Maybe (AudioNormalizationAlgorithm) , "AlgorithmControl" :: Maybe (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: Maybe (DoubleMinNegative59Max0') } -> {"Algorithm" :: Maybe (AudioNormalizationAlgorithm) , "AlgorithmControl" :: Maybe (AudioNormalizationAlgorithmControl) , "TargetLkfs" :: Maybe (DoubleMinNegative59Max0') } ) -> AudioNormalizationSettings
+newAudioNormalizationSettings'  customize = (AudioNormalizationSettings <<< customize) { "Algorithm": Nothing, "AlgorithmControl": Nothing, "TargetLkfs": Nothing }
 
 
 
 -- | Placeholder documentation for AudioOnlyHlsSettings
 newtype AudioOnlyHlsSettings = AudioOnlyHlsSettings 
-  { "AudioGroupId" :: NullOrUndefined (String)
-  , "AudioOnlyImage" :: NullOrUndefined (InputLocation)
-  , "AudioTrackType" :: NullOrUndefined (AudioOnlyHlsTrackType)
+  { "AudioGroupId" :: Maybe (String)
+  , "AudioOnlyImage" :: Maybe (InputLocation)
+  , "AudioTrackType" :: Maybe (AudioOnlyHlsTrackType)
   }
 derive instance newtypeAudioOnlyHlsSettings :: Newtype AudioOnlyHlsSettings _
 derive instance repGenericAudioOnlyHlsSettings :: Generic AudioOnlyHlsSettings _
@@ -497,12 +496,12 @@ instance encodeAudioOnlyHlsSettings :: Encode AudioOnlyHlsSettings where encode 
 
 -- | Constructs AudioOnlyHlsSettings from required parameters
 newAudioOnlyHlsSettings :: AudioOnlyHlsSettings
-newAudioOnlyHlsSettings  = AudioOnlyHlsSettings { "AudioGroupId": (NullOrUndefined Nothing), "AudioOnlyImage": (NullOrUndefined Nothing), "AudioTrackType": (NullOrUndefined Nothing) }
+newAudioOnlyHlsSettings  = AudioOnlyHlsSettings { "AudioGroupId": Nothing, "AudioOnlyImage": Nothing, "AudioTrackType": Nothing }
 
 -- | Constructs AudioOnlyHlsSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioOnlyHlsSettings' :: ( { "AudioGroupId" :: NullOrUndefined (String) , "AudioOnlyImage" :: NullOrUndefined (InputLocation) , "AudioTrackType" :: NullOrUndefined (AudioOnlyHlsTrackType) } -> {"AudioGroupId" :: NullOrUndefined (String) , "AudioOnlyImage" :: NullOrUndefined (InputLocation) , "AudioTrackType" :: NullOrUndefined (AudioOnlyHlsTrackType) } ) -> AudioOnlyHlsSettings
-newAudioOnlyHlsSettings'  customize = (AudioOnlyHlsSettings <<< customize) { "AudioGroupId": (NullOrUndefined Nothing), "AudioOnlyImage": (NullOrUndefined Nothing), "AudioTrackType": (NullOrUndefined Nothing) }
+newAudioOnlyHlsSettings' :: ( { "AudioGroupId" :: Maybe (String) , "AudioOnlyImage" :: Maybe (InputLocation) , "AudioTrackType" :: Maybe (AudioOnlyHlsTrackType) } -> {"AudioGroupId" :: Maybe (String) , "AudioOnlyImage" :: Maybe (InputLocation) , "AudioTrackType" :: Maybe (AudioOnlyHlsTrackType) } ) -> AudioOnlyHlsSettings
+newAudioOnlyHlsSettings'  customize = (AudioOnlyHlsSettings <<< customize) { "AudioGroupId": Nothing, "AudioOnlyImage": Nothing, "AudioTrackType": Nothing }
 
 
 
@@ -540,7 +539,7 @@ newAudioPidSelection' _Pid customize = (AudioPidSelection <<< customize) { "Pid"
 -- | Placeholder documentation for AudioSelector
 newtype AudioSelector = AudioSelector 
   { "Name" :: (String)
-  , "SelectorSettings" :: NullOrUndefined (AudioSelectorSettings)
+  , "SelectorSettings" :: Maybe (AudioSelectorSettings)
   }
 derive instance newtypeAudioSelector :: Newtype AudioSelector _
 derive instance repGenericAudioSelector :: Generic AudioSelector _
@@ -550,19 +549,19 @@ instance encodeAudioSelector :: Encode AudioSelector where encode = genericEncod
 
 -- | Constructs AudioSelector from required parameters
 newAudioSelector :: String -> AudioSelector
-newAudioSelector _Name = AudioSelector { "Name": _Name, "SelectorSettings": (NullOrUndefined Nothing) }
+newAudioSelector _Name = AudioSelector { "Name": _Name, "SelectorSettings": Nothing }
 
 -- | Constructs AudioSelector's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioSelector' :: String -> ( { "Name" :: (String) , "SelectorSettings" :: NullOrUndefined (AudioSelectorSettings) } -> {"Name" :: (String) , "SelectorSettings" :: NullOrUndefined (AudioSelectorSettings) } ) -> AudioSelector
-newAudioSelector' _Name customize = (AudioSelector <<< customize) { "Name": _Name, "SelectorSettings": (NullOrUndefined Nothing) }
+newAudioSelector' :: String -> ( { "Name" :: (String) , "SelectorSettings" :: Maybe (AudioSelectorSettings) } -> {"Name" :: (String) , "SelectorSettings" :: Maybe (AudioSelectorSettings) } ) -> AudioSelector
+newAudioSelector' _Name customize = (AudioSelector <<< customize) { "Name": _Name, "SelectorSettings": Nothing }
 
 
 
 -- | Placeholder documentation for AudioSelectorSettings
 newtype AudioSelectorSettings = AudioSelectorSettings 
-  { "AudioLanguageSelection" :: NullOrUndefined (AudioLanguageSelection)
-  , "AudioPidSelection" :: NullOrUndefined (AudioPidSelection)
+  { "AudioLanguageSelection" :: Maybe (AudioLanguageSelection)
+  , "AudioPidSelection" :: Maybe (AudioPidSelection)
   }
 derive instance newtypeAudioSelectorSettings :: Newtype AudioSelectorSettings _
 derive instance repGenericAudioSelectorSettings :: Generic AudioSelectorSettings _
@@ -572,12 +571,12 @@ instance encodeAudioSelectorSettings :: Encode AudioSelectorSettings where encod
 
 -- | Constructs AudioSelectorSettings from required parameters
 newAudioSelectorSettings :: AudioSelectorSettings
-newAudioSelectorSettings  = AudioSelectorSettings { "AudioLanguageSelection": (NullOrUndefined Nothing), "AudioPidSelection": (NullOrUndefined Nothing) }
+newAudioSelectorSettings  = AudioSelectorSettings { "AudioLanguageSelection": Nothing, "AudioPidSelection": Nothing }
 
 -- | Constructs AudioSelectorSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAudioSelectorSettings' :: ( { "AudioLanguageSelection" :: NullOrUndefined (AudioLanguageSelection) , "AudioPidSelection" :: NullOrUndefined (AudioPidSelection) } -> {"AudioLanguageSelection" :: NullOrUndefined (AudioLanguageSelection) , "AudioPidSelection" :: NullOrUndefined (AudioPidSelection) } ) -> AudioSelectorSettings
-newAudioSelectorSettings'  customize = (AudioSelectorSettings <<< customize) { "AudioLanguageSelection": (NullOrUndefined Nothing), "AudioPidSelection": (NullOrUndefined Nothing) }
+newAudioSelectorSettings' :: ( { "AudioLanguageSelection" :: Maybe (AudioLanguageSelection) , "AudioPidSelection" :: Maybe (AudioPidSelection) } -> {"AudioLanguageSelection" :: Maybe (AudioLanguageSelection) , "AudioPidSelection" :: Maybe (AudioPidSelection) } ) -> AudioSelectorSettings
+newAudioSelectorSettings'  customize = (AudioSelectorSettings <<< customize) { "AudioLanguageSelection": Nothing, "AudioPidSelection": Nothing }
 
 
 
@@ -593,8 +592,8 @@ instance encodeAudioType :: Encode AudioType where encode = genericEncode option
 
 -- | Placeholder documentation for AvailBlanking
 newtype AvailBlanking = AvailBlanking 
-  { "AvailBlankingImage" :: NullOrUndefined (InputLocation)
-  , "State" :: NullOrUndefined (AvailBlankingState)
+  { "AvailBlankingImage" :: Maybe (InputLocation)
+  , "State" :: Maybe (AvailBlankingState)
   }
 derive instance newtypeAvailBlanking :: Newtype AvailBlanking _
 derive instance repGenericAvailBlanking :: Generic AvailBlanking _
@@ -604,12 +603,12 @@ instance encodeAvailBlanking :: Encode AvailBlanking where encode = genericEncod
 
 -- | Constructs AvailBlanking from required parameters
 newAvailBlanking :: AvailBlanking
-newAvailBlanking  = AvailBlanking { "AvailBlankingImage": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newAvailBlanking  = AvailBlanking { "AvailBlankingImage": Nothing, "State": Nothing }
 
 -- | Constructs AvailBlanking's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAvailBlanking' :: ( { "AvailBlankingImage" :: NullOrUndefined (InputLocation) , "State" :: NullOrUndefined (AvailBlankingState) } -> {"AvailBlankingImage" :: NullOrUndefined (InputLocation) , "State" :: NullOrUndefined (AvailBlankingState) } ) -> AvailBlanking
-newAvailBlanking'  customize = (AvailBlanking <<< customize) { "AvailBlankingImage": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newAvailBlanking' :: ( { "AvailBlankingImage" :: Maybe (InputLocation) , "State" :: Maybe (AvailBlankingState) } -> {"AvailBlankingImage" :: Maybe (InputLocation) , "State" :: Maybe (AvailBlankingState) } ) -> AvailBlanking
+newAvailBlanking'  customize = (AvailBlanking <<< customize) { "AvailBlankingImage": Nothing, "State": Nothing }
 
 
 
@@ -625,7 +624,7 @@ instance encodeAvailBlankingState :: Encode AvailBlankingState where encode = ge
 
 -- | Placeholder documentation for AvailConfiguration
 newtype AvailConfiguration = AvailConfiguration 
-  { "AvailSettings" :: NullOrUndefined (AvailSettings)
+  { "AvailSettings" :: Maybe (AvailSettings)
   }
 derive instance newtypeAvailConfiguration :: Newtype AvailConfiguration _
 derive instance repGenericAvailConfiguration :: Generic AvailConfiguration _
@@ -635,19 +634,19 @@ instance encodeAvailConfiguration :: Encode AvailConfiguration where encode = ge
 
 -- | Constructs AvailConfiguration from required parameters
 newAvailConfiguration :: AvailConfiguration
-newAvailConfiguration  = AvailConfiguration { "AvailSettings": (NullOrUndefined Nothing) }
+newAvailConfiguration  = AvailConfiguration { "AvailSettings": Nothing }
 
 -- | Constructs AvailConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAvailConfiguration' :: ( { "AvailSettings" :: NullOrUndefined (AvailSettings) } -> {"AvailSettings" :: NullOrUndefined (AvailSettings) } ) -> AvailConfiguration
-newAvailConfiguration'  customize = (AvailConfiguration <<< customize) { "AvailSettings": (NullOrUndefined Nothing) }
+newAvailConfiguration' :: ( { "AvailSettings" :: Maybe (AvailSettings) } -> {"AvailSettings" :: Maybe (AvailSettings) } ) -> AvailConfiguration
+newAvailConfiguration'  customize = (AvailConfiguration <<< customize) { "AvailSettings": Nothing }
 
 
 
 -- | Placeholder documentation for AvailSettings
 newtype AvailSettings = AvailSettings 
-  { "Scte35SpliceInsert" :: NullOrUndefined (Scte35SpliceInsert)
-  , "Scte35TimeSignalApos" :: NullOrUndefined (Scte35TimeSignalApos)
+  { "Scte35SpliceInsert" :: Maybe (Scte35SpliceInsert)
+  , "Scte35TimeSignalApos" :: Maybe (Scte35TimeSignalApos)
   }
 derive instance newtypeAvailSettings :: Newtype AvailSettings _
 derive instance repGenericAvailSettings :: Generic AvailSettings _
@@ -657,18 +656,18 @@ instance encodeAvailSettings :: Encode AvailSettings where encode = genericEncod
 
 -- | Constructs AvailSettings from required parameters
 newAvailSettings :: AvailSettings
-newAvailSettings  = AvailSettings { "Scte35SpliceInsert": (NullOrUndefined Nothing), "Scte35TimeSignalApos": (NullOrUndefined Nothing) }
+newAvailSettings  = AvailSettings { "Scte35SpliceInsert": Nothing, "Scte35TimeSignalApos": Nothing }
 
 -- | Constructs AvailSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAvailSettings' :: ( { "Scte35SpliceInsert" :: NullOrUndefined (Scte35SpliceInsert) , "Scte35TimeSignalApos" :: NullOrUndefined (Scte35TimeSignalApos) } -> {"Scte35SpliceInsert" :: NullOrUndefined (Scte35SpliceInsert) , "Scte35TimeSignalApos" :: NullOrUndefined (Scte35TimeSignalApos) } ) -> AvailSettings
-newAvailSettings'  customize = (AvailSettings <<< customize) { "Scte35SpliceInsert": (NullOrUndefined Nothing), "Scte35TimeSignalApos": (NullOrUndefined Nothing) }
+newAvailSettings' :: ( { "Scte35SpliceInsert" :: Maybe (Scte35SpliceInsert) , "Scte35TimeSignalApos" :: Maybe (Scte35TimeSignalApos) } -> {"Scte35SpliceInsert" :: Maybe (Scte35SpliceInsert) , "Scte35TimeSignalApos" :: Maybe (Scte35TimeSignalApos) } ) -> AvailSettings
+newAvailSettings'  customize = (AvailSettings <<< customize) { "Scte35SpliceInsert": Nothing, "Scte35TimeSignalApos": Nothing }
 
 
 
 -- | Placeholder documentation for BadGatewayException
 newtype BadGatewayException = BadGatewayException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeBadGatewayException :: Newtype BadGatewayException _
 derive instance repGenericBadGatewayException :: Generic BadGatewayException _
@@ -678,18 +677,18 @@ instance encodeBadGatewayException :: Encode BadGatewayException where encode = 
 
 -- | Constructs BadGatewayException from required parameters
 newBadGatewayException :: BadGatewayException
-newBadGatewayException  = BadGatewayException { "Message": (NullOrUndefined Nothing) }
+newBadGatewayException  = BadGatewayException { "Message": Nothing }
 
 -- | Constructs BadGatewayException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBadGatewayException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> BadGatewayException
-newBadGatewayException'  customize = (BadGatewayException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newBadGatewayException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> BadGatewayException
+newBadGatewayException'  customize = (BadGatewayException <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for BadRequestException
 newtype BadRequestException = BadRequestException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeBadRequestException :: Newtype BadRequestException _
 derive instance repGenericBadRequestException :: Generic BadRequestException _
@@ -699,22 +698,22 @@ instance encodeBadRequestException :: Encode BadRequestException where encode = 
 
 -- | Constructs BadRequestException from required parameters
 newBadRequestException :: BadRequestException
-newBadRequestException  = BadRequestException { "Message": (NullOrUndefined Nothing) }
+newBadRequestException  = BadRequestException { "Message": Nothing }
 
 -- | Constructs BadRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBadRequestException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> BadRequestException
-newBadRequestException'  customize = (BadRequestException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newBadRequestException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> BadRequestException
+newBadRequestException'  customize = (BadRequestException <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for BlackoutSlate
 newtype BlackoutSlate = BlackoutSlate 
-  { "BlackoutSlateImage" :: NullOrUndefined (InputLocation)
-  , "NetworkEndBlackout" :: NullOrUndefined (BlackoutSlateNetworkEndBlackout)
-  , "NetworkEndBlackoutImage" :: NullOrUndefined (InputLocation)
-  , "NetworkId" :: NullOrUndefined (StringMin34Max34')
-  , "State" :: NullOrUndefined (BlackoutSlateState)
+  { "BlackoutSlateImage" :: Maybe (InputLocation)
+  , "NetworkEndBlackout" :: Maybe (BlackoutSlateNetworkEndBlackout)
+  , "NetworkEndBlackoutImage" :: Maybe (InputLocation)
+  , "NetworkId" :: Maybe (StringMin34Max34')
+  , "State" :: Maybe (BlackoutSlateState)
   }
 derive instance newtypeBlackoutSlate :: Newtype BlackoutSlate _
 derive instance repGenericBlackoutSlate :: Generic BlackoutSlate _
@@ -724,12 +723,12 @@ instance encodeBlackoutSlate :: Encode BlackoutSlate where encode = genericEncod
 
 -- | Constructs BlackoutSlate from required parameters
 newBlackoutSlate :: BlackoutSlate
-newBlackoutSlate  = BlackoutSlate { "BlackoutSlateImage": (NullOrUndefined Nothing), "NetworkEndBlackout": (NullOrUndefined Nothing), "NetworkEndBlackoutImage": (NullOrUndefined Nothing), "NetworkId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newBlackoutSlate  = BlackoutSlate { "BlackoutSlateImage": Nothing, "NetworkEndBlackout": Nothing, "NetworkEndBlackoutImage": Nothing, "NetworkId": Nothing, "State": Nothing }
 
 -- | Constructs BlackoutSlate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBlackoutSlate' :: ( { "BlackoutSlateImage" :: NullOrUndefined (InputLocation) , "NetworkEndBlackout" :: NullOrUndefined (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: NullOrUndefined (InputLocation) , "NetworkId" :: NullOrUndefined (StringMin34Max34') , "State" :: NullOrUndefined (BlackoutSlateState) } -> {"BlackoutSlateImage" :: NullOrUndefined (InputLocation) , "NetworkEndBlackout" :: NullOrUndefined (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: NullOrUndefined (InputLocation) , "NetworkId" :: NullOrUndefined (StringMin34Max34') , "State" :: NullOrUndefined (BlackoutSlateState) } ) -> BlackoutSlate
-newBlackoutSlate'  customize = (BlackoutSlate <<< customize) { "BlackoutSlateImage": (NullOrUndefined Nothing), "NetworkEndBlackout": (NullOrUndefined Nothing), "NetworkEndBlackoutImage": (NullOrUndefined Nothing), "NetworkId": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newBlackoutSlate' :: ( { "BlackoutSlateImage" :: Maybe (InputLocation) , "NetworkEndBlackout" :: Maybe (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: Maybe (InputLocation) , "NetworkId" :: Maybe (StringMin34Max34') , "State" :: Maybe (BlackoutSlateState) } -> {"BlackoutSlateImage" :: Maybe (InputLocation) , "NetworkEndBlackout" :: Maybe (BlackoutSlateNetworkEndBlackout) , "NetworkEndBlackoutImage" :: Maybe (InputLocation) , "NetworkId" :: Maybe (StringMin34Max34') , "State" :: Maybe (BlackoutSlateState) } ) -> BlackoutSlate
+newBlackoutSlate'  customize = (BlackoutSlate <<< customize) { "BlackoutSlateImage": Nothing, "NetworkEndBlackout": Nothing, "NetworkEndBlackoutImage": Nothing, "NetworkId": Nothing, "State": Nothing }
 
 
 
@@ -775,23 +774,23 @@ instance encodeBurnInBackgroundColor :: Encode BurnInBackgroundColor where encod
 
 -- | Placeholder documentation for BurnInDestinationSettings
 newtype BurnInDestinationSettings = BurnInDestinationSettings 
-  { "Alignment" :: NullOrUndefined (BurnInAlignment)
-  , "BackgroundColor" :: NullOrUndefined (BurnInBackgroundColor)
-  , "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255')
-  , "Font" :: NullOrUndefined (InputLocation)
-  , "FontColor" :: NullOrUndefined (BurnInFontColor)
-  , "FontOpacity" :: NullOrUndefined (IntegerMin0Max255')
-  , "FontResolution" :: NullOrUndefined (IntegerMin96Max600')
-  , "FontSize" :: NullOrUndefined (String)
-  , "OutlineColor" :: NullOrUndefined (BurnInOutlineColor)
-  , "OutlineSize" :: NullOrUndefined (IntegerMin0Max10')
-  , "ShadowColor" :: NullOrUndefined (BurnInShadowColor)
-  , "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255')
-  , "ShadowXOffset" :: NullOrUndefined (Int)
-  , "ShadowYOffset" :: NullOrUndefined (Int)
-  , "TeletextGridControl" :: NullOrUndefined (BurnInTeletextGridControl)
-  , "XPosition" :: NullOrUndefined (IntegerMin0')
-  , "YPosition" :: NullOrUndefined (IntegerMin0')
+  { "Alignment" :: Maybe (BurnInAlignment)
+  , "BackgroundColor" :: Maybe (BurnInBackgroundColor)
+  , "BackgroundOpacity" :: Maybe (IntegerMin0Max255')
+  , "Font" :: Maybe (InputLocation)
+  , "FontColor" :: Maybe (BurnInFontColor)
+  , "FontOpacity" :: Maybe (IntegerMin0Max255')
+  , "FontResolution" :: Maybe (IntegerMin96Max600')
+  , "FontSize" :: Maybe (String)
+  , "OutlineColor" :: Maybe (BurnInOutlineColor)
+  , "OutlineSize" :: Maybe (IntegerMin0Max10')
+  , "ShadowColor" :: Maybe (BurnInShadowColor)
+  , "ShadowOpacity" :: Maybe (IntegerMin0Max255')
+  , "ShadowXOffset" :: Maybe (Int)
+  , "ShadowYOffset" :: Maybe (Int)
+  , "TeletextGridControl" :: Maybe (BurnInTeletextGridControl)
+  , "XPosition" :: Maybe (IntegerMin0')
+  , "YPosition" :: Maybe (IntegerMin0')
   }
 derive instance newtypeBurnInDestinationSettings :: Newtype BurnInDestinationSettings _
 derive instance repGenericBurnInDestinationSettings :: Generic BurnInDestinationSettings _
@@ -801,12 +800,12 @@ instance encodeBurnInDestinationSettings :: Encode BurnInDestinationSettings whe
 
 -- | Constructs BurnInDestinationSettings from required parameters
 newBurnInDestinationSettings :: BurnInDestinationSettings
-newBurnInDestinationSettings  = BurnInDestinationSettings { "Alignment": (NullOrUndefined Nothing), "BackgroundColor": (NullOrUndefined Nothing), "BackgroundOpacity": (NullOrUndefined Nothing), "Font": (NullOrUndefined Nothing), "FontColor": (NullOrUndefined Nothing), "FontOpacity": (NullOrUndefined Nothing), "FontResolution": (NullOrUndefined Nothing), "FontSize": (NullOrUndefined Nothing), "OutlineColor": (NullOrUndefined Nothing), "OutlineSize": (NullOrUndefined Nothing), "ShadowColor": (NullOrUndefined Nothing), "ShadowOpacity": (NullOrUndefined Nothing), "ShadowXOffset": (NullOrUndefined Nothing), "ShadowYOffset": (NullOrUndefined Nothing), "TeletextGridControl": (NullOrUndefined Nothing), "XPosition": (NullOrUndefined Nothing), "YPosition": (NullOrUndefined Nothing) }
+newBurnInDestinationSettings  = BurnInDestinationSettings { "Alignment": Nothing, "BackgroundColor": Nothing, "BackgroundOpacity": Nothing, "Font": Nothing, "FontColor": Nothing, "FontOpacity": Nothing, "FontResolution": Nothing, "FontSize": Nothing, "OutlineColor": Nothing, "OutlineSize": Nothing, "ShadowColor": Nothing, "ShadowOpacity": Nothing, "ShadowXOffset": Nothing, "ShadowYOffset": Nothing, "TeletextGridControl": Nothing, "XPosition": Nothing, "YPosition": Nothing }
 
 -- | Constructs BurnInDestinationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBurnInDestinationSettings' :: ( { "Alignment" :: NullOrUndefined (BurnInAlignment) , "BackgroundColor" :: NullOrUndefined (BurnInBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined (BurnInFontColor) , "FontOpacity" :: NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined (BurnInOutlineColor) , "OutlineSize" :: NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined (BurnInShadowColor) , "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined (BurnInTeletextGridControl) , "XPosition" :: NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined (IntegerMin0') } -> {"Alignment" :: NullOrUndefined (BurnInAlignment) , "BackgroundColor" :: NullOrUndefined (BurnInBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined (BurnInFontColor) , "FontOpacity" :: NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined (BurnInOutlineColor) , "OutlineSize" :: NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined (BurnInShadowColor) , "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined (BurnInTeletextGridControl) , "XPosition" :: NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined (IntegerMin0') } ) -> BurnInDestinationSettings
-newBurnInDestinationSettings'  customize = (BurnInDestinationSettings <<< customize) { "Alignment": (NullOrUndefined Nothing), "BackgroundColor": (NullOrUndefined Nothing), "BackgroundOpacity": (NullOrUndefined Nothing), "Font": (NullOrUndefined Nothing), "FontColor": (NullOrUndefined Nothing), "FontOpacity": (NullOrUndefined Nothing), "FontResolution": (NullOrUndefined Nothing), "FontSize": (NullOrUndefined Nothing), "OutlineColor": (NullOrUndefined Nothing), "OutlineSize": (NullOrUndefined Nothing), "ShadowColor": (NullOrUndefined Nothing), "ShadowOpacity": (NullOrUndefined Nothing), "ShadowXOffset": (NullOrUndefined Nothing), "ShadowYOffset": (NullOrUndefined Nothing), "TeletextGridControl": (NullOrUndefined Nothing), "XPosition": (NullOrUndefined Nothing), "YPosition": (NullOrUndefined Nothing) }
+newBurnInDestinationSettings' :: ( { "Alignment" :: Maybe (BurnInAlignment) , "BackgroundColor" :: Maybe (BurnInBackgroundColor) , "BackgroundOpacity" :: Maybe (IntegerMin0Max255') , "Font" :: Maybe (InputLocation) , "FontColor" :: Maybe (BurnInFontColor) , "FontOpacity" :: Maybe (IntegerMin0Max255') , "FontResolution" :: Maybe (IntegerMin96Max600') , "FontSize" :: Maybe (String) , "OutlineColor" :: Maybe (BurnInOutlineColor) , "OutlineSize" :: Maybe (IntegerMin0Max10') , "ShadowColor" :: Maybe (BurnInShadowColor) , "ShadowOpacity" :: Maybe (IntegerMin0Max255') , "ShadowXOffset" :: Maybe (Int) , "ShadowYOffset" :: Maybe (Int) , "TeletextGridControl" :: Maybe (BurnInTeletextGridControl) , "XPosition" :: Maybe (IntegerMin0') , "YPosition" :: Maybe (IntegerMin0') } -> {"Alignment" :: Maybe (BurnInAlignment) , "BackgroundColor" :: Maybe (BurnInBackgroundColor) , "BackgroundOpacity" :: Maybe (IntegerMin0Max255') , "Font" :: Maybe (InputLocation) , "FontColor" :: Maybe (BurnInFontColor) , "FontOpacity" :: Maybe (IntegerMin0Max255') , "FontResolution" :: Maybe (IntegerMin96Max600') , "FontSize" :: Maybe (String) , "OutlineColor" :: Maybe (BurnInOutlineColor) , "OutlineSize" :: Maybe (IntegerMin0Max10') , "ShadowColor" :: Maybe (BurnInShadowColor) , "ShadowOpacity" :: Maybe (IntegerMin0Max255') , "ShadowXOffset" :: Maybe (Int) , "ShadowYOffset" :: Maybe (Int) , "TeletextGridControl" :: Maybe (BurnInTeletextGridControl) , "XPosition" :: Maybe (IntegerMin0') , "YPosition" :: Maybe (IntegerMin0') } ) -> BurnInDestinationSettings
+newBurnInDestinationSettings'  customize = (BurnInDestinationSettings <<< customize) { "Alignment": Nothing, "BackgroundColor": Nothing, "BackgroundOpacity": Nothing, "Font": Nothing, "FontColor": Nothing, "FontOpacity": Nothing, "FontResolution": Nothing, "FontSize": Nothing, "OutlineColor": Nothing, "OutlineSize": Nothing, "ShadowColor": Nothing, "ShadowOpacity": Nothing, "ShadowXOffset": Nothing, "ShadowYOffset": Nothing, "TeletextGridControl": Nothing, "XPosition": Nothing, "YPosition": Nothing }
 
 
 
@@ -853,9 +852,9 @@ instance encodeBurnInTeletextGridControl :: Encode BurnInTeletextGridControl whe
 -- | Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 newtype CaptionDescription = CaptionDescription 
   { "CaptionSelectorName" :: (String)
-  , "DestinationSettings" :: NullOrUndefined (CaptionDestinationSettings)
-  , "LanguageCode" :: NullOrUndefined (String)
-  , "LanguageDescription" :: NullOrUndefined (String)
+  , "DestinationSettings" :: Maybe (CaptionDestinationSettings)
+  , "LanguageCode" :: Maybe (String)
+  , "LanguageDescription" :: Maybe (String)
   , "Name" :: (String)
   }
 derive instance newtypeCaptionDescription :: Newtype CaptionDescription _
@@ -866,28 +865,28 @@ instance encodeCaptionDescription :: Encode CaptionDescription where encode = ge
 
 -- | Constructs CaptionDescription from required parameters
 newCaptionDescription :: String -> String -> CaptionDescription
-newCaptionDescription _CaptionSelectorName _Name = CaptionDescription { "CaptionSelectorName": _CaptionSelectorName, "Name": _Name, "DestinationSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing) }
+newCaptionDescription _CaptionSelectorName _Name = CaptionDescription { "CaptionSelectorName": _CaptionSelectorName, "Name": _Name, "DestinationSettings": Nothing, "LanguageCode": Nothing, "LanguageDescription": Nothing }
 
 -- | Constructs CaptionDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaptionDescription' :: String -> String -> ( { "CaptionSelectorName" :: (String) , "DestinationSettings" :: NullOrUndefined (CaptionDestinationSettings) , "LanguageCode" :: NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined (String) , "Name" :: (String) } -> {"CaptionSelectorName" :: (String) , "DestinationSettings" :: NullOrUndefined (CaptionDestinationSettings) , "LanguageCode" :: NullOrUndefined (String) , "LanguageDescription" :: NullOrUndefined (String) , "Name" :: (String) } ) -> CaptionDescription
-newCaptionDescription' _CaptionSelectorName _Name customize = (CaptionDescription <<< customize) { "CaptionSelectorName": _CaptionSelectorName, "Name": _Name, "DestinationSettings": (NullOrUndefined Nothing), "LanguageCode": (NullOrUndefined Nothing), "LanguageDescription": (NullOrUndefined Nothing) }
+newCaptionDescription' :: String -> String -> ( { "CaptionSelectorName" :: (String) , "DestinationSettings" :: Maybe (CaptionDestinationSettings) , "LanguageCode" :: Maybe (String) , "LanguageDescription" :: Maybe (String) , "Name" :: (String) } -> {"CaptionSelectorName" :: (String) , "DestinationSettings" :: Maybe (CaptionDestinationSettings) , "LanguageCode" :: Maybe (String) , "LanguageDescription" :: Maybe (String) , "Name" :: (String) } ) -> CaptionDescription
+newCaptionDescription' _CaptionSelectorName _Name customize = (CaptionDescription <<< customize) { "CaptionSelectorName": _CaptionSelectorName, "Name": _Name, "DestinationSettings": Nothing, "LanguageCode": Nothing, "LanguageDescription": Nothing }
 
 
 
 -- | Placeholder documentation for CaptionDestinationSettings
 newtype CaptionDestinationSettings = CaptionDestinationSettings 
-  { "AribDestinationSettings" :: NullOrUndefined (AribDestinationSettings)
-  , "BurnInDestinationSettings" :: NullOrUndefined (BurnInDestinationSettings)
-  , "DvbSubDestinationSettings" :: NullOrUndefined (DvbSubDestinationSettings)
-  , "EmbeddedDestinationSettings" :: NullOrUndefined (EmbeddedDestinationSettings)
-  , "EmbeddedPlusScte20DestinationSettings" :: NullOrUndefined (EmbeddedPlusScte20DestinationSettings)
-  , "Scte20PlusEmbeddedDestinationSettings" :: NullOrUndefined (Scte20PlusEmbeddedDestinationSettings)
-  , "Scte27DestinationSettings" :: NullOrUndefined (Scte27DestinationSettings)
-  , "SmpteTtDestinationSettings" :: NullOrUndefined (SmpteTtDestinationSettings)
-  , "TeletextDestinationSettings" :: NullOrUndefined (TeletextDestinationSettings)
-  , "TtmlDestinationSettings" :: NullOrUndefined (TtmlDestinationSettings)
-  , "WebvttDestinationSettings" :: NullOrUndefined (WebvttDestinationSettings)
+  { "AribDestinationSettings" :: Maybe (AribDestinationSettings)
+  , "BurnInDestinationSettings" :: Maybe (BurnInDestinationSettings)
+  , "DvbSubDestinationSettings" :: Maybe (DvbSubDestinationSettings)
+  , "EmbeddedDestinationSettings" :: Maybe (EmbeddedDestinationSettings)
+  , "EmbeddedPlusScte20DestinationSettings" :: Maybe (EmbeddedPlusScte20DestinationSettings)
+  , "Scte20PlusEmbeddedDestinationSettings" :: Maybe (Scte20PlusEmbeddedDestinationSettings)
+  , "Scte27DestinationSettings" :: Maybe (Scte27DestinationSettings)
+  , "SmpteTtDestinationSettings" :: Maybe (SmpteTtDestinationSettings)
+  , "TeletextDestinationSettings" :: Maybe (TeletextDestinationSettings)
+  , "TtmlDestinationSettings" :: Maybe (TtmlDestinationSettings)
+  , "WebvttDestinationSettings" :: Maybe (WebvttDestinationSettings)
   }
 derive instance newtypeCaptionDestinationSettings :: Newtype CaptionDestinationSettings _
 derive instance repGenericCaptionDestinationSettings :: Generic CaptionDestinationSettings _
@@ -897,12 +896,12 @@ instance encodeCaptionDestinationSettings :: Encode CaptionDestinationSettings w
 
 -- | Constructs CaptionDestinationSettings from required parameters
 newCaptionDestinationSettings :: CaptionDestinationSettings
-newCaptionDestinationSettings  = CaptionDestinationSettings { "AribDestinationSettings": (NullOrUndefined Nothing), "BurnInDestinationSettings": (NullOrUndefined Nothing), "DvbSubDestinationSettings": (NullOrUndefined Nothing), "EmbeddedDestinationSettings": (NullOrUndefined Nothing), "EmbeddedPlusScte20DestinationSettings": (NullOrUndefined Nothing), "Scte20PlusEmbeddedDestinationSettings": (NullOrUndefined Nothing), "Scte27DestinationSettings": (NullOrUndefined Nothing), "SmpteTtDestinationSettings": (NullOrUndefined Nothing), "TeletextDestinationSettings": (NullOrUndefined Nothing), "TtmlDestinationSettings": (NullOrUndefined Nothing), "WebvttDestinationSettings": (NullOrUndefined Nothing) }
+newCaptionDestinationSettings  = CaptionDestinationSettings { "AribDestinationSettings": Nothing, "BurnInDestinationSettings": Nothing, "DvbSubDestinationSettings": Nothing, "EmbeddedDestinationSettings": Nothing, "EmbeddedPlusScte20DestinationSettings": Nothing, "Scte20PlusEmbeddedDestinationSettings": Nothing, "Scte27DestinationSettings": Nothing, "SmpteTtDestinationSettings": Nothing, "TeletextDestinationSettings": Nothing, "TtmlDestinationSettings": Nothing, "WebvttDestinationSettings": Nothing }
 
 -- | Constructs CaptionDestinationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaptionDestinationSettings' :: ( { "AribDestinationSettings" :: NullOrUndefined (AribDestinationSettings) , "BurnInDestinationSettings" :: NullOrUndefined (BurnInDestinationSettings) , "DvbSubDestinationSettings" :: NullOrUndefined (DvbSubDestinationSettings) , "EmbeddedDestinationSettings" :: NullOrUndefined (EmbeddedDestinationSettings) , "EmbeddedPlusScte20DestinationSettings" :: NullOrUndefined (EmbeddedPlusScte20DestinationSettings) , "Scte20PlusEmbeddedDestinationSettings" :: NullOrUndefined (Scte20PlusEmbeddedDestinationSettings) , "Scte27DestinationSettings" :: NullOrUndefined (Scte27DestinationSettings) , "SmpteTtDestinationSettings" :: NullOrUndefined (SmpteTtDestinationSettings) , "TeletextDestinationSettings" :: NullOrUndefined (TeletextDestinationSettings) , "TtmlDestinationSettings" :: NullOrUndefined (TtmlDestinationSettings) , "WebvttDestinationSettings" :: NullOrUndefined (WebvttDestinationSettings) } -> {"AribDestinationSettings" :: NullOrUndefined (AribDestinationSettings) , "BurnInDestinationSettings" :: NullOrUndefined (BurnInDestinationSettings) , "DvbSubDestinationSettings" :: NullOrUndefined (DvbSubDestinationSettings) , "EmbeddedDestinationSettings" :: NullOrUndefined (EmbeddedDestinationSettings) , "EmbeddedPlusScte20DestinationSettings" :: NullOrUndefined (EmbeddedPlusScte20DestinationSettings) , "Scte20PlusEmbeddedDestinationSettings" :: NullOrUndefined (Scte20PlusEmbeddedDestinationSettings) , "Scte27DestinationSettings" :: NullOrUndefined (Scte27DestinationSettings) , "SmpteTtDestinationSettings" :: NullOrUndefined (SmpteTtDestinationSettings) , "TeletextDestinationSettings" :: NullOrUndefined (TeletextDestinationSettings) , "TtmlDestinationSettings" :: NullOrUndefined (TtmlDestinationSettings) , "WebvttDestinationSettings" :: NullOrUndefined (WebvttDestinationSettings) } ) -> CaptionDestinationSettings
-newCaptionDestinationSettings'  customize = (CaptionDestinationSettings <<< customize) { "AribDestinationSettings": (NullOrUndefined Nothing), "BurnInDestinationSettings": (NullOrUndefined Nothing), "DvbSubDestinationSettings": (NullOrUndefined Nothing), "EmbeddedDestinationSettings": (NullOrUndefined Nothing), "EmbeddedPlusScte20DestinationSettings": (NullOrUndefined Nothing), "Scte20PlusEmbeddedDestinationSettings": (NullOrUndefined Nothing), "Scte27DestinationSettings": (NullOrUndefined Nothing), "SmpteTtDestinationSettings": (NullOrUndefined Nothing), "TeletextDestinationSettings": (NullOrUndefined Nothing), "TtmlDestinationSettings": (NullOrUndefined Nothing), "WebvttDestinationSettings": (NullOrUndefined Nothing) }
+newCaptionDestinationSettings' :: ( { "AribDestinationSettings" :: Maybe (AribDestinationSettings) , "BurnInDestinationSettings" :: Maybe (BurnInDestinationSettings) , "DvbSubDestinationSettings" :: Maybe (DvbSubDestinationSettings) , "EmbeddedDestinationSettings" :: Maybe (EmbeddedDestinationSettings) , "EmbeddedPlusScte20DestinationSettings" :: Maybe (EmbeddedPlusScte20DestinationSettings) , "Scte20PlusEmbeddedDestinationSettings" :: Maybe (Scte20PlusEmbeddedDestinationSettings) , "Scte27DestinationSettings" :: Maybe (Scte27DestinationSettings) , "SmpteTtDestinationSettings" :: Maybe (SmpteTtDestinationSettings) , "TeletextDestinationSettings" :: Maybe (TeletextDestinationSettings) , "TtmlDestinationSettings" :: Maybe (TtmlDestinationSettings) , "WebvttDestinationSettings" :: Maybe (WebvttDestinationSettings) } -> {"AribDestinationSettings" :: Maybe (AribDestinationSettings) , "BurnInDestinationSettings" :: Maybe (BurnInDestinationSettings) , "DvbSubDestinationSettings" :: Maybe (DvbSubDestinationSettings) , "EmbeddedDestinationSettings" :: Maybe (EmbeddedDestinationSettings) , "EmbeddedPlusScte20DestinationSettings" :: Maybe (EmbeddedPlusScte20DestinationSettings) , "Scte20PlusEmbeddedDestinationSettings" :: Maybe (Scte20PlusEmbeddedDestinationSettings) , "Scte27DestinationSettings" :: Maybe (Scte27DestinationSettings) , "SmpteTtDestinationSettings" :: Maybe (SmpteTtDestinationSettings) , "TeletextDestinationSettings" :: Maybe (TeletextDestinationSettings) , "TtmlDestinationSettings" :: Maybe (TtmlDestinationSettings) , "WebvttDestinationSettings" :: Maybe (WebvttDestinationSettings) } ) -> CaptionDestinationSettings
+newCaptionDestinationSettings'  customize = (CaptionDestinationSettings <<< customize) { "AribDestinationSettings": Nothing, "BurnInDestinationSettings": Nothing, "DvbSubDestinationSettings": Nothing, "EmbeddedDestinationSettings": Nothing, "EmbeddedPlusScte20DestinationSettings": Nothing, "Scte20PlusEmbeddedDestinationSettings": Nothing, "Scte27DestinationSettings": Nothing, "SmpteTtDestinationSettings": Nothing, "TeletextDestinationSettings": Nothing, "TtmlDestinationSettings": Nothing, "WebvttDestinationSettings": Nothing }
 
 
 
@@ -931,9 +930,9 @@ newCaptionLanguageMapping' _CaptionChannel _LanguageCode _LanguageDescription cu
 
 -- | Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 newtype CaptionSelector = CaptionSelector 
-  { "LanguageCode" :: NullOrUndefined (String)
+  { "LanguageCode" :: Maybe (String)
   , "Name" :: (String)
-  , "SelectorSettings" :: NullOrUndefined (CaptionSelectorSettings)
+  , "SelectorSettings" :: Maybe (CaptionSelectorSettings)
   }
 derive instance newtypeCaptionSelector :: Newtype CaptionSelector _
 derive instance repGenericCaptionSelector :: Generic CaptionSelector _
@@ -943,23 +942,23 @@ instance encodeCaptionSelector :: Encode CaptionSelector where encode = genericE
 
 -- | Constructs CaptionSelector from required parameters
 newCaptionSelector :: String -> CaptionSelector
-newCaptionSelector _Name = CaptionSelector { "Name": _Name, "LanguageCode": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newCaptionSelector _Name = CaptionSelector { "Name": _Name, "LanguageCode": Nothing, "SelectorSettings": Nothing }
 
 -- | Constructs CaptionSelector's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaptionSelector' :: String -> ( { "LanguageCode" :: NullOrUndefined (String) , "Name" :: (String) , "SelectorSettings" :: NullOrUndefined (CaptionSelectorSettings) } -> {"LanguageCode" :: NullOrUndefined (String) , "Name" :: (String) , "SelectorSettings" :: NullOrUndefined (CaptionSelectorSettings) } ) -> CaptionSelector
-newCaptionSelector' _Name customize = (CaptionSelector <<< customize) { "Name": _Name, "LanguageCode": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newCaptionSelector' :: String -> ( { "LanguageCode" :: Maybe (String) , "Name" :: (String) , "SelectorSettings" :: Maybe (CaptionSelectorSettings) } -> {"LanguageCode" :: Maybe (String) , "Name" :: (String) , "SelectorSettings" :: Maybe (CaptionSelectorSettings) } ) -> CaptionSelector
+newCaptionSelector' _Name customize = (CaptionSelector <<< customize) { "Name": _Name, "LanguageCode": Nothing, "SelectorSettings": Nothing }
 
 
 
 -- | Placeholder documentation for CaptionSelectorSettings
 newtype CaptionSelectorSettings = CaptionSelectorSettings 
-  { "AribSourceSettings" :: NullOrUndefined (AribSourceSettings)
-  , "DvbSubSourceSettings" :: NullOrUndefined (DvbSubSourceSettings)
-  , "EmbeddedSourceSettings" :: NullOrUndefined (EmbeddedSourceSettings)
-  , "Scte20SourceSettings" :: NullOrUndefined (Scte20SourceSettings)
-  , "Scte27SourceSettings" :: NullOrUndefined (Scte27SourceSettings)
-  , "TeletextSourceSettings" :: NullOrUndefined (TeletextSourceSettings)
+  { "AribSourceSettings" :: Maybe (AribSourceSettings)
+  , "DvbSubSourceSettings" :: Maybe (DvbSubSourceSettings)
+  , "EmbeddedSourceSettings" :: Maybe (EmbeddedSourceSettings)
+  , "Scte20SourceSettings" :: Maybe (Scte20SourceSettings)
+  , "Scte27SourceSettings" :: Maybe (Scte27SourceSettings)
+  , "TeletextSourceSettings" :: Maybe (TeletextSourceSettings)
   }
 derive instance newtypeCaptionSelectorSettings :: Newtype CaptionSelectorSettings _
 derive instance repGenericCaptionSelectorSettings :: Generic CaptionSelectorSettings _
@@ -969,28 +968,28 @@ instance encodeCaptionSelectorSettings :: Encode CaptionSelectorSettings where e
 
 -- | Constructs CaptionSelectorSettings from required parameters
 newCaptionSelectorSettings :: CaptionSelectorSettings
-newCaptionSelectorSettings  = CaptionSelectorSettings { "AribSourceSettings": (NullOrUndefined Nothing), "DvbSubSourceSettings": (NullOrUndefined Nothing), "EmbeddedSourceSettings": (NullOrUndefined Nothing), "Scte20SourceSettings": (NullOrUndefined Nothing), "Scte27SourceSettings": (NullOrUndefined Nothing), "TeletextSourceSettings": (NullOrUndefined Nothing) }
+newCaptionSelectorSettings  = CaptionSelectorSettings { "AribSourceSettings": Nothing, "DvbSubSourceSettings": Nothing, "EmbeddedSourceSettings": Nothing, "Scte20SourceSettings": Nothing, "Scte27SourceSettings": Nothing, "TeletextSourceSettings": Nothing }
 
 -- | Constructs CaptionSelectorSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCaptionSelectorSettings' :: ( { "AribSourceSettings" :: NullOrUndefined (AribSourceSettings) , "DvbSubSourceSettings" :: NullOrUndefined (DvbSubSourceSettings) , "EmbeddedSourceSettings" :: NullOrUndefined (EmbeddedSourceSettings) , "Scte20SourceSettings" :: NullOrUndefined (Scte20SourceSettings) , "Scte27SourceSettings" :: NullOrUndefined (Scte27SourceSettings) , "TeletextSourceSettings" :: NullOrUndefined (TeletextSourceSettings) } -> {"AribSourceSettings" :: NullOrUndefined (AribSourceSettings) , "DvbSubSourceSettings" :: NullOrUndefined (DvbSubSourceSettings) , "EmbeddedSourceSettings" :: NullOrUndefined (EmbeddedSourceSettings) , "Scte20SourceSettings" :: NullOrUndefined (Scte20SourceSettings) , "Scte27SourceSettings" :: NullOrUndefined (Scte27SourceSettings) , "TeletextSourceSettings" :: NullOrUndefined (TeletextSourceSettings) } ) -> CaptionSelectorSettings
-newCaptionSelectorSettings'  customize = (CaptionSelectorSettings <<< customize) { "AribSourceSettings": (NullOrUndefined Nothing), "DvbSubSourceSettings": (NullOrUndefined Nothing), "EmbeddedSourceSettings": (NullOrUndefined Nothing), "Scte20SourceSettings": (NullOrUndefined Nothing), "Scte27SourceSettings": (NullOrUndefined Nothing), "TeletextSourceSettings": (NullOrUndefined Nothing) }
+newCaptionSelectorSettings' :: ( { "AribSourceSettings" :: Maybe (AribSourceSettings) , "DvbSubSourceSettings" :: Maybe (DvbSubSourceSettings) , "EmbeddedSourceSettings" :: Maybe (EmbeddedSourceSettings) , "Scte20SourceSettings" :: Maybe (Scte20SourceSettings) , "Scte27SourceSettings" :: Maybe (Scte27SourceSettings) , "TeletextSourceSettings" :: Maybe (TeletextSourceSettings) } -> {"AribSourceSettings" :: Maybe (AribSourceSettings) , "DvbSubSourceSettings" :: Maybe (DvbSubSourceSettings) , "EmbeddedSourceSettings" :: Maybe (EmbeddedSourceSettings) , "Scte20SourceSettings" :: Maybe (Scte20SourceSettings) , "Scte27SourceSettings" :: Maybe (Scte27SourceSettings) , "TeletextSourceSettings" :: Maybe (TeletextSourceSettings) } ) -> CaptionSelectorSettings
+newCaptionSelectorSettings'  customize = (CaptionSelectorSettings <<< customize) { "AribSourceSettings": Nothing, "DvbSubSourceSettings": Nothing, "EmbeddedSourceSettings": Nothing, "Scte20SourceSettings": Nothing, "Scte27SourceSettings": Nothing, "TeletextSourceSettings": Nothing }
 
 
 
 -- | Placeholder documentation for Channel
 newtype Channel = Channel 
-  { "Arn" :: NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "Id" :: NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "PipelinesRunningCount" :: NullOrUndefined (Int)
-  , "RoleArn" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (ChannelState)
+  { "Arn" :: Maybe (String)
+  , "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "Id" :: Maybe (String)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "PipelinesRunningCount" :: Maybe (Int)
+  , "RoleArn" :: Maybe (String)
+  , "State" :: Maybe (ChannelState)
   }
 derive instance newtypeChannel :: Newtype Channel _
 derive instance repGenericChannel :: Generic Channel _
@@ -1000,19 +999,19 @@ instance encodeChannel :: Encode Channel where encode = genericEncode options
 
 -- | Constructs Channel from required parameters
 newChannel :: Channel
-newChannel  = Channel { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newChannel  = Channel { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 -- | Constructs Channel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannel' :: ( { "Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } ) -> Channel
-newChannel'  customize = (Channel <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newChannel' :: ( { "Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } -> {"Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } ) -> Channel
+newChannel'  customize = (Channel <<< customize) { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 
 
 -- | Placeholder documentation for ChannelConfigurationValidationError
 newtype ChannelConfigurationValidationError = ChannelConfigurationValidationError 
-  { "Message" :: NullOrUndefined (String)
-  , "ValidationErrors" :: NullOrUndefined (ListOfValidationError')
+  { "Message" :: Maybe (String)
+  , "ValidationErrors" :: Maybe (ListOfValidationError')
   }
 derive instance newtypeChannelConfigurationValidationError :: Newtype ChannelConfigurationValidationError _
 derive instance repGenericChannelConfigurationValidationError :: Generic ChannelConfigurationValidationError _
@@ -1022,18 +1021,18 @@ instance encodeChannelConfigurationValidationError :: Encode ChannelConfiguratio
 
 -- | Constructs ChannelConfigurationValidationError from required parameters
 newChannelConfigurationValidationError :: ChannelConfigurationValidationError
-newChannelConfigurationValidationError  = ChannelConfigurationValidationError { "Message": (NullOrUndefined Nothing), "ValidationErrors": (NullOrUndefined Nothing) }
+newChannelConfigurationValidationError  = ChannelConfigurationValidationError { "Message": Nothing, "ValidationErrors": Nothing }
 
 -- | Constructs ChannelConfigurationValidationError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelConfigurationValidationError' :: ( { "Message" :: NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined (ListOfValidationError') } -> {"Message" :: NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined (ListOfValidationError') } ) -> ChannelConfigurationValidationError
-newChannelConfigurationValidationError'  customize = (ChannelConfigurationValidationError <<< customize) { "Message": (NullOrUndefined Nothing), "ValidationErrors": (NullOrUndefined Nothing) }
+newChannelConfigurationValidationError' :: ( { "Message" :: Maybe (String) , "ValidationErrors" :: Maybe (ListOfValidationError') } -> {"Message" :: Maybe (String) , "ValidationErrors" :: Maybe (ListOfValidationError') } ) -> ChannelConfigurationValidationError
+newChannelConfigurationValidationError'  customize = (ChannelConfigurationValidationError <<< customize) { "Message": Nothing, "ValidationErrors": Nothing }
 
 
 
 -- | Placeholder documentation for ChannelEgressEndpoint
 newtype ChannelEgressEndpoint = ChannelEgressEndpoint 
-  { "SourceIp" :: NullOrUndefined (String)
+  { "SourceIp" :: Maybe (String)
   }
 derive instance newtypeChannelEgressEndpoint :: Newtype ChannelEgressEndpoint _
 derive instance repGenericChannelEgressEndpoint :: Generic ChannelEgressEndpoint _
@@ -1043,12 +1042,12 @@ instance encodeChannelEgressEndpoint :: Encode ChannelEgressEndpoint where encod
 
 -- | Constructs ChannelEgressEndpoint from required parameters
 newChannelEgressEndpoint :: ChannelEgressEndpoint
-newChannelEgressEndpoint  = ChannelEgressEndpoint { "SourceIp": (NullOrUndefined Nothing) }
+newChannelEgressEndpoint  = ChannelEgressEndpoint { "SourceIp": Nothing }
 
 -- | Constructs ChannelEgressEndpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelEgressEndpoint' :: ( { "SourceIp" :: NullOrUndefined (String) } -> {"SourceIp" :: NullOrUndefined (String) } ) -> ChannelEgressEndpoint
-newChannelEgressEndpoint'  customize = (ChannelEgressEndpoint <<< customize) { "SourceIp": (NullOrUndefined Nothing) }
+newChannelEgressEndpoint' :: ( { "SourceIp" :: Maybe (String) } -> {"SourceIp" :: Maybe (String) } ) -> ChannelEgressEndpoint
+newChannelEgressEndpoint'  customize = (ChannelEgressEndpoint <<< customize) { "SourceIp": Nothing }
 
 
 
@@ -1064,16 +1063,16 @@ instance encodeChannelState :: Encode ChannelState where encode = genericEncode 
 
 -- | Placeholder documentation for ChannelSummary
 newtype ChannelSummary = ChannelSummary 
-  { "Arn" :: NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint')
-  , "Id" :: NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "PipelinesRunningCount" :: NullOrUndefined (Int)
-  , "RoleArn" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (ChannelState)
+  { "Arn" :: Maybe (String)
+  , "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint')
+  , "Id" :: Maybe (String)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "PipelinesRunningCount" :: Maybe (Int)
+  , "RoleArn" :: Maybe (String)
+  , "State" :: Maybe (ChannelState)
   }
 derive instance newtypeChannelSummary :: Newtype ChannelSummary _
 derive instance repGenericChannelSummary :: Generic ChannelSummary _
@@ -1083,18 +1082,18 @@ instance encodeChannelSummary :: Encode ChannelSummary where encode = genericEnc
 
 -- | Constructs ChannelSummary from required parameters
 newChannelSummary :: ChannelSummary
-newChannelSummary  = ChannelSummary { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newChannelSummary  = ChannelSummary { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 -- | Constructs ChannelSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newChannelSummary' :: ( { "Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } ) -> ChannelSummary
-newChannelSummary'  customize = (ChannelSummary <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newChannelSummary' :: ( { "Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } -> {"Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } ) -> ChannelSummary
+newChannelSummary'  customize = (ChannelSummary <<< customize) { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 
 
 -- | Placeholder documentation for ConflictException
 newtype ConflictException = ConflictException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeConflictException :: Newtype ConflictException _
 derive instance repGenericConflictException :: Generic ConflictException _
@@ -1104,25 +1103,25 @@ instance encodeConflictException :: Encode ConflictException where encode = gene
 
 -- | Constructs ConflictException from required parameters
 newConflictException :: ConflictException
-newConflictException  = ConflictException { "Message": (NullOrUndefined Nothing) }
+newConflictException  = ConflictException { "Message": Nothing }
 
 -- | Constructs ConflictException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConflictException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ConflictException
-newConflictException'  customize = (ConflictException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newConflictException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ConflictException
+newConflictException'  customize = (ConflictException <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for CreateChannel
 newtype CreateChannel = CreateChannel 
-  { "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "RequestId" :: NullOrUndefined (String)
-  , "Reserved" :: NullOrUndefined (String)
-  , "RoleArn" :: NullOrUndefined (String)
+  { "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "RequestId" :: Maybe (String)
+  , "Reserved" :: Maybe (String)
+  , "RoleArn" :: Maybe (String)
   }
 derive instance newtypeCreateChannel :: Newtype CreateChannel _
 derive instance repGenericCreateChannel :: Generic CreateChannel _
@@ -1132,25 +1131,25 @@ instance encodeCreateChannel :: Encode CreateChannel where encode = genericEncod
 
 -- | Constructs CreateChannel from required parameters
 newCreateChannel :: CreateChannel
-newCreateChannel  = CreateChannel { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Reserved": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newCreateChannel  = CreateChannel { "Destinations": Nothing, "EncoderSettings": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RequestId": Nothing, "Reserved": Nothing, "RoleArn": Nothing }
 
 -- | Constructs CreateChannel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannel' :: ( { "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Reserved" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Reserved" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } ) -> CreateChannel
-newCreateChannel'  customize = (CreateChannel <<< customize) { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Reserved": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newCreateChannel' :: ( { "Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Reserved" :: Maybe (String) , "RoleArn" :: Maybe (String) } -> {"Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Reserved" :: Maybe (String) , "RoleArn" :: Maybe (String) } ) -> CreateChannel
+newCreateChannel'  customize = (CreateChannel <<< customize) { "Destinations": Nothing, "EncoderSettings": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RequestId": Nothing, "Reserved": Nothing, "RoleArn": Nothing }
 
 
 
 -- | A request to create a channel
 newtype CreateChannelRequest = CreateChannelRequest 
-  { "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "RequestId" :: NullOrUndefined (String)
-  , "Reserved" :: NullOrUndefined (String)
-  , "RoleArn" :: NullOrUndefined (String)
+  { "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "RequestId" :: Maybe (String)
+  , "Reserved" :: Maybe (String)
+  , "RoleArn" :: Maybe (String)
   }
 derive instance newtypeCreateChannelRequest :: Newtype CreateChannelRequest _
 derive instance repGenericCreateChannelRequest :: Generic CreateChannelRequest _
@@ -1160,18 +1159,18 @@ instance encodeCreateChannelRequest :: Encode CreateChannelRequest where encode 
 
 -- | Constructs CreateChannelRequest from required parameters
 newCreateChannelRequest :: CreateChannelRequest
-newCreateChannelRequest  = CreateChannelRequest { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Reserved": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newCreateChannelRequest  = CreateChannelRequest { "Destinations": Nothing, "EncoderSettings": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RequestId": Nothing, "Reserved": Nothing, "RoleArn": Nothing }
 
 -- | Constructs CreateChannelRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannelRequest' :: ( { "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Reserved" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Reserved" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } ) -> CreateChannelRequest
-newCreateChannelRequest'  customize = (CreateChannelRequest <<< customize) { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Reserved": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newCreateChannelRequest' :: ( { "Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Reserved" :: Maybe (String) , "RoleArn" :: Maybe (String) } -> {"Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Reserved" :: Maybe (String) , "RoleArn" :: Maybe (String) } ) -> CreateChannelRequest
+newCreateChannelRequest'  customize = (CreateChannelRequest <<< customize) { "Destinations": Nothing, "EncoderSettings": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RequestId": Nothing, "Reserved": Nothing, "RoleArn": Nothing }
 
 
 
 -- | Placeholder documentation for CreateChannelResponse
 newtype CreateChannelResponse = CreateChannelResponse 
-  { "Channel" :: NullOrUndefined (Channel)
+  { "Channel" :: Maybe (Channel)
   }
 derive instance newtypeCreateChannelResponse :: Newtype CreateChannelResponse _
 derive instance repGenericCreateChannelResponse :: Generic CreateChannelResponse _
@@ -1181,18 +1180,18 @@ instance encodeCreateChannelResponse :: Encode CreateChannelResponse where encod
 
 -- | Constructs CreateChannelResponse from required parameters
 newCreateChannelResponse :: CreateChannelResponse
-newCreateChannelResponse  = CreateChannelResponse { "Channel": (NullOrUndefined Nothing) }
+newCreateChannelResponse  = CreateChannelResponse { "Channel": Nothing }
 
 -- | Constructs CreateChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannelResponse' :: ( { "Channel" :: NullOrUndefined (Channel) } -> {"Channel" :: NullOrUndefined (Channel) } ) -> CreateChannelResponse
-newCreateChannelResponse'  customize = (CreateChannelResponse <<< customize) { "Channel": (NullOrUndefined Nothing) }
+newCreateChannelResponse' :: ( { "Channel" :: Maybe (Channel) } -> {"Channel" :: Maybe (Channel) } ) -> CreateChannelResponse
+newCreateChannelResponse'  customize = (CreateChannelResponse <<< customize) { "Channel": Nothing }
 
 
 
 -- | Placeholder documentation for CreateChannelResultModel
 newtype CreateChannelResultModel = CreateChannelResultModel 
-  { "Channel" :: NullOrUndefined (Channel)
+  { "Channel" :: Maybe (Channel)
   }
 derive instance newtypeCreateChannelResultModel :: Newtype CreateChannelResultModel _
 derive instance repGenericCreateChannelResultModel :: Generic CreateChannelResultModel _
@@ -1202,23 +1201,23 @@ instance encodeCreateChannelResultModel :: Encode CreateChannelResultModel where
 
 -- | Constructs CreateChannelResultModel from required parameters
 newCreateChannelResultModel :: CreateChannelResultModel
-newCreateChannelResultModel  = CreateChannelResultModel { "Channel": (NullOrUndefined Nothing) }
+newCreateChannelResultModel  = CreateChannelResultModel { "Channel": Nothing }
 
 -- | Constructs CreateChannelResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateChannelResultModel' :: ( { "Channel" :: NullOrUndefined (Channel) } -> {"Channel" :: NullOrUndefined (Channel) } ) -> CreateChannelResultModel
-newCreateChannelResultModel'  customize = (CreateChannelResultModel <<< customize) { "Channel": (NullOrUndefined Nothing) }
+newCreateChannelResultModel' :: ( { "Channel" :: Maybe (Channel) } -> {"Channel" :: Maybe (Channel) } ) -> CreateChannelResultModel
+newCreateChannelResultModel'  customize = (CreateChannelResultModel <<< customize) { "Channel": Nothing }
 
 
 
 -- | Placeholder documentation for CreateInput
 newtype CreateInput = CreateInput 
-  { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest')
-  , "InputSecurityGroups" :: NullOrUndefined (ListOf__string')
-  , "Name" :: NullOrUndefined (String)
-  , "RequestId" :: NullOrUndefined (String)
-  , "Sources" :: NullOrUndefined (ListOfInputSourceRequest')
-  , "Type" :: NullOrUndefined (InputType)
+  { "Destinations" :: Maybe (ListOfInputDestinationRequest')
+  , "InputSecurityGroups" :: Maybe (ListOf__string')
+  , "Name" :: Maybe (String)
+  , "RequestId" :: Maybe (String)
+  , "Sources" :: Maybe (ListOfInputSourceRequest')
+  , "Type" :: Maybe (InputType)
   }
 derive instance newtypeCreateInput :: Newtype CreateInput _
 derive instance repGenericCreateInput :: Generic CreateInput _
@@ -1228,23 +1227,23 @@ instance encodeCreateInput :: Encode CreateInput where encode = genericEncode op
 
 -- | Constructs CreateInput from required parameters
 newCreateInput :: CreateInput
-newCreateInput  = CreateInput { "Destinations": (NullOrUndefined Nothing), "InputSecurityGroups": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCreateInput  = CreateInput { "Destinations": Nothing, "InputSecurityGroups": Nothing, "Name": Nothing, "RequestId": Nothing, "Sources": Nothing, "Type": Nothing }
 
 -- | Constructs CreateInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInput' :: ( { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Sources" :: NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined (InputType) } -> {"Destinations" :: NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Sources" :: NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined (InputType) } ) -> CreateInput
-newCreateInput'  customize = (CreateInput <<< customize) { "Destinations": (NullOrUndefined Nothing), "InputSecurityGroups": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCreateInput' :: ( { "Destinations" :: Maybe (ListOfInputDestinationRequest') , "InputSecurityGroups" :: Maybe (ListOf__string') , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Sources" :: Maybe (ListOfInputSourceRequest') , "Type" :: Maybe (InputType) } -> {"Destinations" :: Maybe (ListOfInputDestinationRequest') , "InputSecurityGroups" :: Maybe (ListOf__string') , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Sources" :: Maybe (ListOfInputSourceRequest') , "Type" :: Maybe (InputType) } ) -> CreateInput
+newCreateInput'  customize = (CreateInput <<< customize) { "Destinations": Nothing, "InputSecurityGroups": Nothing, "Name": Nothing, "RequestId": Nothing, "Sources": Nothing, "Type": Nothing }
 
 
 
 -- | The name of the input
 newtype CreateInputRequest = CreateInputRequest 
-  { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest')
-  , "InputSecurityGroups" :: NullOrUndefined (ListOf__string')
-  , "Name" :: NullOrUndefined (String)
-  , "RequestId" :: NullOrUndefined (String)
-  , "Sources" :: NullOrUndefined (ListOfInputSourceRequest')
-  , "Type" :: NullOrUndefined (InputType)
+  { "Destinations" :: Maybe (ListOfInputDestinationRequest')
+  , "InputSecurityGroups" :: Maybe (ListOf__string')
+  , "Name" :: Maybe (String)
+  , "RequestId" :: Maybe (String)
+  , "Sources" :: Maybe (ListOfInputSourceRequest')
+  , "Type" :: Maybe (InputType)
   }
 derive instance newtypeCreateInputRequest :: Newtype CreateInputRequest _
 derive instance repGenericCreateInputRequest :: Generic CreateInputRequest _
@@ -1254,18 +1253,18 @@ instance encodeCreateInputRequest :: Encode CreateInputRequest where encode = ge
 
 -- | Constructs CreateInputRequest from required parameters
 newCreateInputRequest :: CreateInputRequest
-newCreateInputRequest  = CreateInputRequest { "Destinations": (NullOrUndefined Nothing), "InputSecurityGroups": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCreateInputRequest  = CreateInputRequest { "Destinations": Nothing, "InputSecurityGroups": Nothing, "Name": Nothing, "RequestId": Nothing, "Sources": Nothing, "Type": Nothing }
 
 -- | Constructs CreateInputRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputRequest' :: ( { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Sources" :: NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined (InputType) } -> {"Destinations" :: NullOrUndefined (ListOfInputDestinationRequest') , "InputSecurityGroups" :: NullOrUndefined (ListOf__string') , "Name" :: NullOrUndefined (String) , "RequestId" :: NullOrUndefined (String) , "Sources" :: NullOrUndefined (ListOfInputSourceRequest') , "Type" :: NullOrUndefined (InputType) } ) -> CreateInputRequest
-newCreateInputRequest'  customize = (CreateInputRequest <<< customize) { "Destinations": (NullOrUndefined Nothing), "InputSecurityGroups": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RequestId": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCreateInputRequest' :: ( { "Destinations" :: Maybe (ListOfInputDestinationRequest') , "InputSecurityGroups" :: Maybe (ListOf__string') , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Sources" :: Maybe (ListOfInputSourceRequest') , "Type" :: Maybe (InputType) } -> {"Destinations" :: Maybe (ListOfInputDestinationRequest') , "InputSecurityGroups" :: Maybe (ListOf__string') , "Name" :: Maybe (String) , "RequestId" :: Maybe (String) , "Sources" :: Maybe (ListOfInputSourceRequest') , "Type" :: Maybe (InputType) } ) -> CreateInputRequest
+newCreateInputRequest'  customize = (CreateInputRequest <<< customize) { "Destinations": Nothing, "InputSecurityGroups": Nothing, "Name": Nothing, "RequestId": Nothing, "Sources": Nothing, "Type": Nothing }
 
 
 
 -- | Placeholder documentation for CreateInputResponse
 newtype CreateInputResponse = CreateInputResponse 
-  { "Input" :: NullOrUndefined (Input)
+  { "Input" :: Maybe (Input)
   }
 derive instance newtypeCreateInputResponse :: Newtype CreateInputResponse _
 derive instance repGenericCreateInputResponse :: Generic CreateInputResponse _
@@ -1275,18 +1274,18 @@ instance encodeCreateInputResponse :: Encode CreateInputResponse where encode = 
 
 -- | Constructs CreateInputResponse from required parameters
 newCreateInputResponse :: CreateInputResponse
-newCreateInputResponse  = CreateInputResponse { "Input": (NullOrUndefined Nothing) }
+newCreateInputResponse  = CreateInputResponse { "Input": Nothing }
 
 -- | Constructs CreateInputResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputResponse' :: ( { "Input" :: NullOrUndefined (Input) } -> {"Input" :: NullOrUndefined (Input) } ) -> CreateInputResponse
-newCreateInputResponse'  customize = (CreateInputResponse <<< customize) { "Input": (NullOrUndefined Nothing) }
+newCreateInputResponse' :: ( { "Input" :: Maybe (Input) } -> {"Input" :: Maybe (Input) } ) -> CreateInputResponse
+newCreateInputResponse'  customize = (CreateInputResponse <<< customize) { "Input": Nothing }
 
 
 
 -- | Placeholder documentation for CreateInputResultModel
 newtype CreateInputResultModel = CreateInputResultModel 
-  { "Input" :: NullOrUndefined (Input)
+  { "Input" :: Maybe (Input)
   }
 derive instance newtypeCreateInputResultModel :: Newtype CreateInputResultModel _
 derive instance repGenericCreateInputResultModel :: Generic CreateInputResultModel _
@@ -1296,18 +1295,18 @@ instance encodeCreateInputResultModel :: Encode CreateInputResultModel where enc
 
 -- | Constructs CreateInputResultModel from required parameters
 newCreateInputResultModel :: CreateInputResultModel
-newCreateInputResultModel  = CreateInputResultModel { "Input": (NullOrUndefined Nothing) }
+newCreateInputResultModel  = CreateInputResultModel { "Input": Nothing }
 
 -- | Constructs CreateInputResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputResultModel' :: ( { "Input" :: NullOrUndefined (Input) } -> {"Input" :: NullOrUndefined (Input) } ) -> CreateInputResultModel
-newCreateInputResultModel'  customize = (CreateInputResultModel <<< customize) { "Input": (NullOrUndefined Nothing) }
+newCreateInputResultModel' :: ( { "Input" :: Maybe (Input) } -> {"Input" :: Maybe (Input) } ) -> CreateInputResultModel
+newCreateInputResultModel'  customize = (CreateInputResultModel <<< customize) { "Input": Nothing }
 
 
 
 -- | The IPv4 CIDRs to whitelist for this Input Security Group
 newtype CreateInputSecurityGroupRequest = CreateInputSecurityGroupRequest 
-  { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr')
+  { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr')
   }
 derive instance newtypeCreateInputSecurityGroupRequest :: Newtype CreateInputSecurityGroupRequest _
 derive instance repGenericCreateInputSecurityGroupRequest :: Generic CreateInputSecurityGroupRequest _
@@ -1317,18 +1316,18 @@ instance encodeCreateInputSecurityGroupRequest :: Encode CreateInputSecurityGrou
 
 -- | Constructs CreateInputSecurityGroupRequest from required parameters
 newCreateInputSecurityGroupRequest :: CreateInputSecurityGroupRequest
-newCreateInputSecurityGroupRequest  = CreateInputSecurityGroupRequest { "WhitelistRules": (NullOrUndefined Nothing) }
+newCreateInputSecurityGroupRequest  = CreateInputSecurityGroupRequest { "WhitelistRules": Nothing }
 
 -- | Constructs CreateInputSecurityGroupRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputSecurityGroupRequest' :: ( { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') } -> {"WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') } ) -> CreateInputSecurityGroupRequest
-newCreateInputSecurityGroupRequest'  customize = (CreateInputSecurityGroupRequest <<< customize) { "WhitelistRules": (NullOrUndefined Nothing) }
+newCreateInputSecurityGroupRequest' :: ( { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') } -> {"WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') } ) -> CreateInputSecurityGroupRequest
+newCreateInputSecurityGroupRequest'  customize = (CreateInputSecurityGroupRequest <<< customize) { "WhitelistRules": Nothing }
 
 
 
 -- | Placeholder documentation for CreateInputSecurityGroupResponse
 newtype CreateInputSecurityGroupResponse = CreateInputSecurityGroupResponse 
-  { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup)
+  { "SecurityGroup" :: Maybe (InputSecurityGroup)
   }
 derive instance newtypeCreateInputSecurityGroupResponse :: Newtype CreateInputSecurityGroupResponse _
 derive instance repGenericCreateInputSecurityGroupResponse :: Generic CreateInputSecurityGroupResponse _
@@ -1338,18 +1337,18 @@ instance encodeCreateInputSecurityGroupResponse :: Encode CreateInputSecurityGro
 
 -- | Constructs CreateInputSecurityGroupResponse from required parameters
 newCreateInputSecurityGroupResponse :: CreateInputSecurityGroupResponse
-newCreateInputSecurityGroupResponse  = CreateInputSecurityGroupResponse { "SecurityGroup": (NullOrUndefined Nothing) }
+newCreateInputSecurityGroupResponse  = CreateInputSecurityGroupResponse { "SecurityGroup": Nothing }
 
 -- | Constructs CreateInputSecurityGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputSecurityGroupResponse' :: ( { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) } -> {"SecurityGroup" :: NullOrUndefined (InputSecurityGroup) } ) -> CreateInputSecurityGroupResponse
-newCreateInputSecurityGroupResponse'  customize = (CreateInputSecurityGroupResponse <<< customize) { "SecurityGroup": (NullOrUndefined Nothing) }
+newCreateInputSecurityGroupResponse' :: ( { "SecurityGroup" :: Maybe (InputSecurityGroup) } -> {"SecurityGroup" :: Maybe (InputSecurityGroup) } ) -> CreateInputSecurityGroupResponse
+newCreateInputSecurityGroupResponse'  customize = (CreateInputSecurityGroupResponse <<< customize) { "SecurityGroup": Nothing }
 
 
 
 -- | Placeholder documentation for CreateInputSecurityGroupResultModel
 newtype CreateInputSecurityGroupResultModel = CreateInputSecurityGroupResultModel 
-  { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup)
+  { "SecurityGroup" :: Maybe (InputSecurityGroup)
   }
 derive instance newtypeCreateInputSecurityGroupResultModel :: Newtype CreateInputSecurityGroupResultModel _
 derive instance repGenericCreateInputSecurityGroupResultModel :: Generic CreateInputSecurityGroupResultModel _
@@ -1359,12 +1358,12 @@ instance encodeCreateInputSecurityGroupResultModel :: Encode CreateInputSecurity
 
 -- | Constructs CreateInputSecurityGroupResultModel from required parameters
 newCreateInputSecurityGroupResultModel :: CreateInputSecurityGroupResultModel
-newCreateInputSecurityGroupResultModel  = CreateInputSecurityGroupResultModel { "SecurityGroup": (NullOrUndefined Nothing) }
+newCreateInputSecurityGroupResultModel  = CreateInputSecurityGroupResultModel { "SecurityGroup": Nothing }
 
 -- | Constructs CreateInputSecurityGroupResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateInputSecurityGroupResultModel' :: ( { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) } -> {"SecurityGroup" :: NullOrUndefined (InputSecurityGroup) } ) -> CreateInputSecurityGroupResultModel
-newCreateInputSecurityGroupResultModel'  customize = (CreateInputSecurityGroupResultModel <<< customize) { "SecurityGroup": (NullOrUndefined Nothing) }
+newCreateInputSecurityGroupResultModel' :: ( { "SecurityGroup" :: Maybe (InputSecurityGroup) } -> {"SecurityGroup" :: Maybe (InputSecurityGroup) } ) -> CreateInputSecurityGroupResultModel
+newCreateInputSecurityGroupResultModel'  customize = (CreateInputSecurityGroupResultModel <<< customize) { "SecurityGroup": Nothing }
 
 
 
@@ -1391,17 +1390,17 @@ newDeleteChannelRequest' _ChannelId customize = (DeleteChannelRequest <<< custom
 
 -- | Placeholder documentation for DeleteChannelResponse
 newtype DeleteChannelResponse = DeleteChannelResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "Id" :: NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "PipelinesRunningCount" :: NullOrUndefined (Int)
-  , "RoleArn" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (ChannelState)
+  { "Arn" :: Maybe (String)
+  , "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "Id" :: Maybe (String)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "PipelinesRunningCount" :: Maybe (Int)
+  , "RoleArn" :: Maybe (String)
+  , "State" :: Maybe (ChannelState)
   }
 derive instance newtypeDeleteChannelResponse :: Newtype DeleteChannelResponse _
 derive instance repGenericDeleteChannelResponse :: Generic DeleteChannelResponse _
@@ -1411,12 +1410,12 @@ instance encodeDeleteChannelResponse :: Encode DeleteChannelResponse where encod
 
 -- | Constructs DeleteChannelResponse from required parameters
 newDeleteChannelResponse :: DeleteChannelResponse
-newDeleteChannelResponse  = DeleteChannelResponse { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDeleteChannelResponse  = DeleteChannelResponse { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 -- | Constructs DeleteChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteChannelResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } ) -> DeleteChannelResponse
-newDeleteChannelResponse'  customize = (DeleteChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDeleteChannelResponse' :: ( { "Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } -> {"Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } ) -> DeleteChannelResponse
+newDeleteChannelResponse'  customize = (DeleteChannelResponse <<< customize) { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 
 
@@ -1505,17 +1504,17 @@ newDescribeChannelRequest' _ChannelId customize = (DescribeChannelRequest <<< cu
 
 -- | Placeholder documentation for DescribeChannelResponse
 newtype DescribeChannelResponse = DescribeChannelResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "Id" :: NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "PipelinesRunningCount" :: NullOrUndefined (Int)
-  , "RoleArn" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (ChannelState)
+  { "Arn" :: Maybe (String)
+  , "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "Id" :: Maybe (String)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "PipelinesRunningCount" :: Maybe (Int)
+  , "RoleArn" :: Maybe (String)
+  , "State" :: Maybe (ChannelState)
   }
 derive instance newtypeDescribeChannelResponse :: Newtype DescribeChannelResponse _
 derive instance repGenericDescribeChannelResponse :: Generic DescribeChannelResponse _
@@ -1525,12 +1524,12 @@ instance encodeDescribeChannelResponse :: Encode DescribeChannelResponse where e
 
 -- | Constructs DescribeChannelResponse from required parameters
 newDescribeChannelResponse :: DescribeChannelResponse
-newDescribeChannelResponse  = DescribeChannelResponse { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeChannelResponse  = DescribeChannelResponse { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 -- | Constructs DescribeChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeChannelResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } ) -> DescribeChannelResponse
-newDescribeChannelResponse'  customize = (DescribeChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newDescribeChannelResponse' :: ( { "Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } -> {"Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } ) -> DescribeChannelResponse
+newDescribeChannelResponse'  customize = (DescribeChannelResponse <<< customize) { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 
 
@@ -1557,15 +1556,15 @@ newDescribeInputRequest' _InputId customize = (DescribeInputRequest <<< customiz
 
 -- | Placeholder documentation for DescribeInputResponse
 newtype DescribeInputResponse = DescribeInputResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "AttachedChannels" :: NullOrUndefined (ListOf__string')
-  , "Destinations" :: NullOrUndefined (ListOfInputDestination')
-  , "Id" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "SecurityGroups" :: NullOrUndefined (ListOf__string')
-  , "Sources" :: NullOrUndefined (ListOfInputSource')
-  , "State" :: NullOrUndefined (InputState)
-  , "Type" :: NullOrUndefined (InputType)
+  { "Arn" :: Maybe (String)
+  , "AttachedChannels" :: Maybe (ListOf__string')
+  , "Destinations" :: Maybe (ListOfInputDestination')
+  , "Id" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "SecurityGroups" :: Maybe (ListOf__string')
+  , "Sources" :: Maybe (ListOfInputSource')
+  , "State" :: Maybe (InputState)
+  , "Type" :: Maybe (InputType)
   }
 derive instance newtypeDescribeInputResponse :: Newtype DescribeInputResponse _
 derive instance repGenericDescribeInputResponse :: Generic DescribeInputResponse _
@@ -1575,12 +1574,12 @@ instance encodeDescribeInputResponse :: Encode DescribeInputResponse where encod
 
 -- | Constructs DescribeInputResponse from required parameters
 newDescribeInputResponse :: DescribeInputResponse
-newDescribeInputResponse  = DescribeInputResponse { "Arn": (NullOrUndefined Nothing), "AttachedChannels": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDescribeInputResponse  = DescribeInputResponse { "Arn": Nothing, "AttachedChannels": Nothing, "Destinations": Nothing, "Id": Nothing, "Name": Nothing, "SecurityGroups": Nothing, "Sources": Nothing, "State": Nothing, "Type": Nothing }
 
 -- | Constructs DescribeInputResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInputResponse' :: ( { "Arn" :: NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined (InputState) , "Type" :: NullOrUndefined (InputType) } -> {"Arn" :: NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined (InputState) , "Type" :: NullOrUndefined (InputType) } ) -> DescribeInputResponse
-newDescribeInputResponse'  customize = (DescribeInputResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "AttachedChannels": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newDescribeInputResponse' :: ( { "Arn" :: Maybe (String) , "AttachedChannels" :: Maybe (ListOf__string') , "Destinations" :: Maybe (ListOfInputDestination') , "Id" :: Maybe (String) , "Name" :: Maybe (String) , "SecurityGroups" :: Maybe (ListOf__string') , "Sources" :: Maybe (ListOfInputSource') , "State" :: Maybe (InputState) , "Type" :: Maybe (InputType) } -> {"Arn" :: Maybe (String) , "AttachedChannels" :: Maybe (ListOf__string') , "Destinations" :: Maybe (ListOfInputDestination') , "Id" :: Maybe (String) , "Name" :: Maybe (String) , "SecurityGroups" :: Maybe (ListOf__string') , "Sources" :: Maybe (ListOfInputSource') , "State" :: Maybe (InputState) , "Type" :: Maybe (InputType) } ) -> DescribeInputResponse
+newDescribeInputResponse'  customize = (DescribeInputResponse <<< customize) { "Arn": Nothing, "AttachedChannels": Nothing, "Destinations": Nothing, "Id": Nothing, "Name": Nothing, "SecurityGroups": Nothing, "Sources": Nothing, "State": Nothing, "Type": Nothing }
 
 
 
@@ -1607,9 +1606,9 @@ newDescribeInputSecurityGroupRequest' _InputSecurityGroupId customize = (Describ
 
 -- | Placeholder documentation for DescribeInputSecurityGroupResponse
 newtype DescribeInputSecurityGroupResponse = DescribeInputSecurityGroupResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule')
+  { "Arn" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "WhitelistRules" :: Maybe (ListOfInputWhitelistRule')
   }
 derive instance newtypeDescribeInputSecurityGroupResponse :: Newtype DescribeInputSecurityGroupResponse _
 derive instance repGenericDescribeInputSecurityGroupResponse :: Generic DescribeInputSecurityGroupResponse _
@@ -1619,12 +1618,12 @@ instance encodeDescribeInputSecurityGroupResponse :: Encode DescribeInputSecurit
 
 -- | Constructs DescribeInputSecurityGroupResponse from required parameters
 newDescribeInputSecurityGroupResponse :: DescribeInputSecurityGroupResponse
-newDescribeInputSecurityGroupResponse  = DescribeInputSecurityGroupResponse { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "WhitelistRules": (NullOrUndefined Nothing) }
+newDescribeInputSecurityGroupResponse  = DescribeInputSecurityGroupResponse { "Arn": Nothing, "Id": Nothing, "WhitelistRules": Nothing }
 
 -- | Constructs DescribeInputSecurityGroupResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeInputSecurityGroupResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') } -> {"Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') } ) -> DescribeInputSecurityGroupResponse
-newDescribeInputSecurityGroupResponse'  customize = (DescribeInputSecurityGroupResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "WhitelistRules": (NullOrUndefined Nothing) }
+newDescribeInputSecurityGroupResponse' :: ( { "Arn" :: Maybe (String) , "Id" :: Maybe (String) , "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') } -> {"Arn" :: Maybe (String) , "Id" :: Maybe (String) , "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') } ) -> DescribeInputSecurityGroupResponse
+newDescribeInputSecurityGroupResponse'  customize = (DescribeInputSecurityGroupResponse <<< customize) { "Arn": Nothing, "Id": Nothing, "WhitelistRules": Nothing }
 
 
 
@@ -1632,7 +1631,7 @@ newDescribeInputSecurityGroupResponse'  customize = (DescribeInputSecurityGroupR
 newtype DvbNitSettings = DvbNitSettings 
   { "NetworkId" :: (IntegerMin0Max65536')
   , "NetworkName" :: (StringMin1Max256')
-  , "RepInterval" :: NullOrUndefined (IntegerMin25Max10000')
+  , "RepInterval" :: Maybe (IntegerMin25Max10000')
   }
 derive instance newtypeDvbNitSettings :: Newtype DvbNitSettings _
 derive instance repGenericDvbNitSettings :: Generic DvbNitSettings _
@@ -1642,12 +1641,12 @@ instance encodeDvbNitSettings :: Encode DvbNitSettings where encode = genericEnc
 
 -- | Constructs DvbNitSettings from required parameters
 newDvbNitSettings :: IntegerMin0Max65536' -> StringMin1Max256' -> DvbNitSettings
-newDvbNitSettings _NetworkId _NetworkName = DvbNitSettings { "NetworkId": _NetworkId, "NetworkName": _NetworkName, "RepInterval": (NullOrUndefined Nothing) }
+newDvbNitSettings _NetworkId _NetworkName = DvbNitSettings { "NetworkId": _NetworkId, "NetworkName": _NetworkName, "RepInterval": Nothing }
 
 -- | Constructs DvbNitSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbNitSettings' :: IntegerMin0Max65536' -> StringMin1Max256' -> ( { "NetworkId" :: (IntegerMin0Max65536') , "NetworkName" :: (StringMin1Max256') , "RepInterval" :: NullOrUndefined (IntegerMin25Max10000') } -> {"NetworkId" :: (IntegerMin0Max65536') , "NetworkName" :: (StringMin1Max256') , "RepInterval" :: NullOrUndefined (IntegerMin25Max10000') } ) -> DvbNitSettings
-newDvbNitSettings' _NetworkId _NetworkName customize = (DvbNitSettings <<< customize) { "NetworkId": _NetworkId, "NetworkName": _NetworkName, "RepInterval": (NullOrUndefined Nothing) }
+newDvbNitSettings' :: IntegerMin0Max65536' -> StringMin1Max256' -> ( { "NetworkId" :: (IntegerMin0Max65536') , "NetworkName" :: (StringMin1Max256') , "RepInterval" :: Maybe (IntegerMin25Max10000') } -> {"NetworkId" :: (IntegerMin0Max65536') , "NetworkName" :: (StringMin1Max256') , "RepInterval" :: Maybe (IntegerMin25Max10000') } ) -> DvbNitSettings
+newDvbNitSettings' _NetworkId _NetworkName customize = (DvbNitSettings <<< customize) { "NetworkId": _NetworkId, "NetworkName": _NetworkName, "RepInterval": Nothing }
 
 
 
@@ -1663,10 +1662,10 @@ instance encodeDvbSdtOutputSdt :: Encode DvbSdtOutputSdt where encode = genericE
 
 -- | DVB Service Description Table (SDT)
 newtype DvbSdtSettings = DvbSdtSettings 
-  { "OutputSdt" :: NullOrUndefined (DvbSdtOutputSdt)
-  , "RepInterval" :: NullOrUndefined (IntegerMin25Max2000')
-  , "ServiceName" :: NullOrUndefined (StringMin1Max256')
-  , "ServiceProviderName" :: NullOrUndefined (StringMin1Max256')
+  { "OutputSdt" :: Maybe (DvbSdtOutputSdt)
+  , "RepInterval" :: Maybe (IntegerMin25Max2000')
+  , "ServiceName" :: Maybe (StringMin1Max256')
+  , "ServiceProviderName" :: Maybe (StringMin1Max256')
   }
 derive instance newtypeDvbSdtSettings :: Newtype DvbSdtSettings _
 derive instance repGenericDvbSdtSettings :: Generic DvbSdtSettings _
@@ -1676,12 +1675,12 @@ instance encodeDvbSdtSettings :: Encode DvbSdtSettings where encode = genericEnc
 
 -- | Constructs DvbSdtSettings from required parameters
 newDvbSdtSettings :: DvbSdtSettings
-newDvbSdtSettings  = DvbSdtSettings { "OutputSdt": (NullOrUndefined Nothing), "RepInterval": (NullOrUndefined Nothing), "ServiceName": (NullOrUndefined Nothing), "ServiceProviderName": (NullOrUndefined Nothing) }
+newDvbSdtSettings  = DvbSdtSettings { "OutputSdt": Nothing, "RepInterval": Nothing, "ServiceName": Nothing, "ServiceProviderName": Nothing }
 
 -- | Constructs DvbSdtSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbSdtSettings' :: ( { "OutputSdt" :: NullOrUndefined (DvbSdtOutputSdt) , "RepInterval" :: NullOrUndefined (IntegerMin25Max2000') , "ServiceName" :: NullOrUndefined (StringMin1Max256') , "ServiceProviderName" :: NullOrUndefined (StringMin1Max256') } -> {"OutputSdt" :: NullOrUndefined (DvbSdtOutputSdt) , "RepInterval" :: NullOrUndefined (IntegerMin25Max2000') , "ServiceName" :: NullOrUndefined (StringMin1Max256') , "ServiceProviderName" :: NullOrUndefined (StringMin1Max256') } ) -> DvbSdtSettings
-newDvbSdtSettings'  customize = (DvbSdtSettings <<< customize) { "OutputSdt": (NullOrUndefined Nothing), "RepInterval": (NullOrUndefined Nothing), "ServiceName": (NullOrUndefined Nothing), "ServiceProviderName": (NullOrUndefined Nothing) }
+newDvbSdtSettings' :: ( { "OutputSdt" :: Maybe (DvbSdtOutputSdt) , "RepInterval" :: Maybe (IntegerMin25Max2000') , "ServiceName" :: Maybe (StringMin1Max256') , "ServiceProviderName" :: Maybe (StringMin1Max256') } -> {"OutputSdt" :: Maybe (DvbSdtOutputSdt) , "RepInterval" :: Maybe (IntegerMin25Max2000') , "ServiceName" :: Maybe (StringMin1Max256') , "ServiceProviderName" :: Maybe (StringMin1Max256') } ) -> DvbSdtSettings
+newDvbSdtSettings'  customize = (DvbSdtSettings <<< customize) { "OutputSdt": Nothing, "RepInterval": Nothing, "ServiceName": Nothing, "ServiceProviderName": Nothing }
 
 
 
@@ -1727,23 +1726,23 @@ instance encodeDvbSubDestinationOutlineColor :: Encode DvbSubDestinationOutlineC
 
 -- | Placeholder documentation for DvbSubDestinationSettings
 newtype DvbSubDestinationSettings = DvbSubDestinationSettings 
-  { "Alignment" :: NullOrUndefined (DvbSubDestinationAlignment)
-  , "BackgroundColor" :: NullOrUndefined (DvbSubDestinationBackgroundColor)
-  , "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255')
-  , "Font" :: NullOrUndefined (InputLocation)
-  , "FontColor" :: NullOrUndefined (DvbSubDestinationFontColor)
-  , "FontOpacity" :: NullOrUndefined (IntegerMin0Max255')
-  , "FontResolution" :: NullOrUndefined (IntegerMin96Max600')
-  , "FontSize" :: NullOrUndefined (String)
-  , "OutlineColor" :: NullOrUndefined (DvbSubDestinationOutlineColor)
-  , "OutlineSize" :: NullOrUndefined (IntegerMin0Max10')
-  , "ShadowColor" :: NullOrUndefined (DvbSubDestinationShadowColor)
-  , "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255')
-  , "ShadowXOffset" :: NullOrUndefined (Int)
-  , "ShadowYOffset" :: NullOrUndefined (Int)
-  , "TeletextGridControl" :: NullOrUndefined (DvbSubDestinationTeletextGridControl)
-  , "XPosition" :: NullOrUndefined (IntegerMin0')
-  , "YPosition" :: NullOrUndefined (IntegerMin0')
+  { "Alignment" :: Maybe (DvbSubDestinationAlignment)
+  , "BackgroundColor" :: Maybe (DvbSubDestinationBackgroundColor)
+  , "BackgroundOpacity" :: Maybe (IntegerMin0Max255')
+  , "Font" :: Maybe (InputLocation)
+  , "FontColor" :: Maybe (DvbSubDestinationFontColor)
+  , "FontOpacity" :: Maybe (IntegerMin0Max255')
+  , "FontResolution" :: Maybe (IntegerMin96Max600')
+  , "FontSize" :: Maybe (String)
+  , "OutlineColor" :: Maybe (DvbSubDestinationOutlineColor)
+  , "OutlineSize" :: Maybe (IntegerMin0Max10')
+  , "ShadowColor" :: Maybe (DvbSubDestinationShadowColor)
+  , "ShadowOpacity" :: Maybe (IntegerMin0Max255')
+  , "ShadowXOffset" :: Maybe (Int)
+  , "ShadowYOffset" :: Maybe (Int)
+  , "TeletextGridControl" :: Maybe (DvbSubDestinationTeletextGridControl)
+  , "XPosition" :: Maybe (IntegerMin0')
+  , "YPosition" :: Maybe (IntegerMin0')
   }
 derive instance newtypeDvbSubDestinationSettings :: Newtype DvbSubDestinationSettings _
 derive instance repGenericDvbSubDestinationSettings :: Generic DvbSubDestinationSettings _
@@ -1753,12 +1752,12 @@ instance encodeDvbSubDestinationSettings :: Encode DvbSubDestinationSettings whe
 
 -- | Constructs DvbSubDestinationSettings from required parameters
 newDvbSubDestinationSettings :: DvbSubDestinationSettings
-newDvbSubDestinationSettings  = DvbSubDestinationSettings { "Alignment": (NullOrUndefined Nothing), "BackgroundColor": (NullOrUndefined Nothing), "BackgroundOpacity": (NullOrUndefined Nothing), "Font": (NullOrUndefined Nothing), "FontColor": (NullOrUndefined Nothing), "FontOpacity": (NullOrUndefined Nothing), "FontResolution": (NullOrUndefined Nothing), "FontSize": (NullOrUndefined Nothing), "OutlineColor": (NullOrUndefined Nothing), "OutlineSize": (NullOrUndefined Nothing), "ShadowColor": (NullOrUndefined Nothing), "ShadowOpacity": (NullOrUndefined Nothing), "ShadowXOffset": (NullOrUndefined Nothing), "ShadowYOffset": (NullOrUndefined Nothing), "TeletextGridControl": (NullOrUndefined Nothing), "XPosition": (NullOrUndefined Nothing), "YPosition": (NullOrUndefined Nothing) }
+newDvbSubDestinationSettings  = DvbSubDestinationSettings { "Alignment": Nothing, "BackgroundColor": Nothing, "BackgroundOpacity": Nothing, "Font": Nothing, "FontColor": Nothing, "FontOpacity": Nothing, "FontResolution": Nothing, "FontSize": Nothing, "OutlineColor": Nothing, "OutlineSize": Nothing, "ShadowColor": Nothing, "ShadowOpacity": Nothing, "ShadowXOffset": Nothing, "ShadowYOffset": Nothing, "TeletextGridControl": Nothing, "XPosition": Nothing, "YPosition": Nothing }
 
 -- | Constructs DvbSubDestinationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbSubDestinationSettings' :: ( { "Alignment" :: NullOrUndefined (DvbSubDestinationAlignment) , "BackgroundColor" :: NullOrUndefined (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined (DvbSubDestinationFontColor) , "FontOpacity" :: NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined (DvbSubDestinationOutlineColor) , "OutlineSize" :: NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined (DvbSubDestinationShadowColor) , "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined (DvbSubDestinationTeletextGridControl) , "XPosition" :: NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined (IntegerMin0') } -> {"Alignment" :: NullOrUndefined (DvbSubDestinationAlignment) , "BackgroundColor" :: NullOrUndefined (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255') , "Font" :: NullOrUndefined (InputLocation) , "FontColor" :: NullOrUndefined (DvbSubDestinationFontColor) , "FontOpacity" :: NullOrUndefined (IntegerMin0Max255') , "FontResolution" :: NullOrUndefined (IntegerMin96Max600') , "FontSize" :: NullOrUndefined (String) , "OutlineColor" :: NullOrUndefined (DvbSubDestinationOutlineColor) , "OutlineSize" :: NullOrUndefined (IntegerMin0Max10') , "ShadowColor" :: NullOrUndefined (DvbSubDestinationShadowColor) , "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255') , "ShadowXOffset" :: NullOrUndefined (Int) , "ShadowYOffset" :: NullOrUndefined (Int) , "TeletextGridControl" :: NullOrUndefined (DvbSubDestinationTeletextGridControl) , "XPosition" :: NullOrUndefined (IntegerMin0') , "YPosition" :: NullOrUndefined (IntegerMin0') } ) -> DvbSubDestinationSettings
-newDvbSubDestinationSettings'  customize = (DvbSubDestinationSettings <<< customize) { "Alignment": (NullOrUndefined Nothing), "BackgroundColor": (NullOrUndefined Nothing), "BackgroundOpacity": (NullOrUndefined Nothing), "Font": (NullOrUndefined Nothing), "FontColor": (NullOrUndefined Nothing), "FontOpacity": (NullOrUndefined Nothing), "FontResolution": (NullOrUndefined Nothing), "FontSize": (NullOrUndefined Nothing), "OutlineColor": (NullOrUndefined Nothing), "OutlineSize": (NullOrUndefined Nothing), "ShadowColor": (NullOrUndefined Nothing), "ShadowOpacity": (NullOrUndefined Nothing), "ShadowXOffset": (NullOrUndefined Nothing), "ShadowYOffset": (NullOrUndefined Nothing), "TeletextGridControl": (NullOrUndefined Nothing), "XPosition": (NullOrUndefined Nothing), "YPosition": (NullOrUndefined Nothing) }
+newDvbSubDestinationSettings' :: ( { "Alignment" :: Maybe (DvbSubDestinationAlignment) , "BackgroundColor" :: Maybe (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: Maybe (IntegerMin0Max255') , "Font" :: Maybe (InputLocation) , "FontColor" :: Maybe (DvbSubDestinationFontColor) , "FontOpacity" :: Maybe (IntegerMin0Max255') , "FontResolution" :: Maybe (IntegerMin96Max600') , "FontSize" :: Maybe (String) , "OutlineColor" :: Maybe (DvbSubDestinationOutlineColor) , "OutlineSize" :: Maybe (IntegerMin0Max10') , "ShadowColor" :: Maybe (DvbSubDestinationShadowColor) , "ShadowOpacity" :: Maybe (IntegerMin0Max255') , "ShadowXOffset" :: Maybe (Int) , "ShadowYOffset" :: Maybe (Int) , "TeletextGridControl" :: Maybe (DvbSubDestinationTeletextGridControl) , "XPosition" :: Maybe (IntegerMin0') , "YPosition" :: Maybe (IntegerMin0') } -> {"Alignment" :: Maybe (DvbSubDestinationAlignment) , "BackgroundColor" :: Maybe (DvbSubDestinationBackgroundColor) , "BackgroundOpacity" :: Maybe (IntegerMin0Max255') , "Font" :: Maybe (InputLocation) , "FontColor" :: Maybe (DvbSubDestinationFontColor) , "FontOpacity" :: Maybe (IntegerMin0Max255') , "FontResolution" :: Maybe (IntegerMin96Max600') , "FontSize" :: Maybe (String) , "OutlineColor" :: Maybe (DvbSubDestinationOutlineColor) , "OutlineSize" :: Maybe (IntegerMin0Max10') , "ShadowColor" :: Maybe (DvbSubDestinationShadowColor) , "ShadowOpacity" :: Maybe (IntegerMin0Max255') , "ShadowXOffset" :: Maybe (Int) , "ShadowYOffset" :: Maybe (Int) , "TeletextGridControl" :: Maybe (DvbSubDestinationTeletextGridControl) , "XPosition" :: Maybe (IntegerMin0') , "YPosition" :: Maybe (IntegerMin0') } ) -> DvbSubDestinationSettings
+newDvbSubDestinationSettings'  customize = (DvbSubDestinationSettings <<< customize) { "Alignment": Nothing, "BackgroundColor": Nothing, "BackgroundOpacity": Nothing, "Font": Nothing, "FontColor": Nothing, "FontOpacity": Nothing, "FontResolution": Nothing, "FontSize": Nothing, "OutlineColor": Nothing, "OutlineSize": Nothing, "ShadowColor": Nothing, "ShadowOpacity": Nothing, "ShadowXOffset": Nothing, "ShadowYOffset": Nothing, "TeletextGridControl": Nothing, "XPosition": Nothing, "YPosition": Nothing }
 
 
 
@@ -1784,7 +1783,7 @@ instance encodeDvbSubDestinationTeletextGridControl :: Encode DvbSubDestinationT
 
 -- | Placeholder documentation for DvbSubSourceSettings
 newtype DvbSubSourceSettings = DvbSubSourceSettings 
-  { "Pid" :: NullOrUndefined (IntegerMin1')
+  { "Pid" :: Maybe (IntegerMin1')
   }
 derive instance newtypeDvbSubSourceSettings :: Newtype DvbSubSourceSettings _
 derive instance repGenericDvbSubSourceSettings :: Generic DvbSubSourceSettings _
@@ -1794,18 +1793,18 @@ instance encodeDvbSubSourceSettings :: Encode DvbSubSourceSettings where encode 
 
 -- | Constructs DvbSubSourceSettings from required parameters
 newDvbSubSourceSettings :: DvbSubSourceSettings
-newDvbSubSourceSettings  = DvbSubSourceSettings { "Pid": (NullOrUndefined Nothing) }
+newDvbSubSourceSettings  = DvbSubSourceSettings { "Pid": Nothing }
 
 -- | Constructs DvbSubSourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbSubSourceSettings' :: ( { "Pid" :: NullOrUndefined (IntegerMin1') } -> {"Pid" :: NullOrUndefined (IntegerMin1') } ) -> DvbSubSourceSettings
-newDvbSubSourceSettings'  customize = (DvbSubSourceSettings <<< customize) { "Pid": (NullOrUndefined Nothing) }
+newDvbSubSourceSettings' :: ( { "Pid" :: Maybe (IntegerMin1') } -> {"Pid" :: Maybe (IntegerMin1') } ) -> DvbSubSourceSettings
+newDvbSubSourceSettings'  customize = (DvbSubSourceSettings <<< customize) { "Pid": Nothing }
 
 
 
 -- | DVB Time and Date Table (SDT)
 newtype DvbTdtSettings = DvbTdtSettings 
-  { "RepInterval" :: NullOrUndefined (IntegerMin1000Max30000')
+  { "RepInterval" :: Maybe (IntegerMin1000Max30000')
   }
 derive instance newtypeDvbTdtSettings :: Newtype DvbTdtSettings _
 derive instance repGenericDvbTdtSettings :: Generic DvbTdtSettings _
@@ -1815,12 +1814,12 @@ instance encodeDvbTdtSettings :: Encode DvbTdtSettings where encode = genericEnc
 
 -- | Constructs DvbTdtSettings from required parameters
 newDvbTdtSettings :: DvbTdtSettings
-newDvbTdtSettings  = DvbTdtSettings { "RepInterval": (NullOrUndefined Nothing) }
+newDvbTdtSettings  = DvbTdtSettings { "RepInterval": Nothing }
 
 -- | Constructs DvbTdtSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDvbTdtSettings' :: ( { "RepInterval" :: NullOrUndefined (IntegerMin1000Max30000') } -> {"RepInterval" :: NullOrUndefined (IntegerMin1000Max30000') } ) -> DvbTdtSettings
-newDvbTdtSettings'  customize = (DvbTdtSettings <<< customize) { "RepInterval": (NullOrUndefined Nothing) }
+newDvbTdtSettings' :: ( { "RepInterval" :: Maybe (IntegerMin1000Max30000') } -> {"RepInterval" :: Maybe (IntegerMin1000Max30000') } ) -> DvbTdtSettings
+newDvbTdtSettings'  customize = (DvbTdtSettings <<< customize) { "RepInterval": Nothing }
 
 
 
@@ -1936,26 +1935,26 @@ instance encodeEac3PhaseControl :: Encode Eac3PhaseControl where encode = generi
 
 -- | Placeholder documentation for Eac3Settings
 newtype Eac3Settings = Eac3Settings 
-  { "AttenuationControl" :: NullOrUndefined (Eac3AttenuationControl)
-  , "Bitrate" :: NullOrUndefined (Number)
-  , "BitstreamMode" :: NullOrUndefined (Eac3BitstreamMode)
-  , "CodingMode" :: NullOrUndefined (Eac3CodingMode)
-  , "DcFilter" :: NullOrUndefined (Eac3DcFilter)
-  , "Dialnorm" :: NullOrUndefined (IntegerMin1Max31')
-  , "DrcLine" :: NullOrUndefined (Eac3DrcLine)
-  , "DrcRf" :: NullOrUndefined (Eac3DrcRf)
-  , "LfeControl" :: NullOrUndefined (Eac3LfeControl)
-  , "LfeFilter" :: NullOrUndefined (Eac3LfeFilter)
-  , "LoRoCenterMixLevel" :: NullOrUndefined (Number)
-  , "LoRoSurroundMixLevel" :: NullOrUndefined (Number)
-  , "LtRtCenterMixLevel" :: NullOrUndefined (Number)
-  , "LtRtSurroundMixLevel" :: NullOrUndefined (Number)
-  , "MetadataControl" :: NullOrUndefined (Eac3MetadataControl)
-  , "PassthroughControl" :: NullOrUndefined (Eac3PassthroughControl)
-  , "PhaseControl" :: NullOrUndefined (Eac3PhaseControl)
-  , "StereoDownmix" :: NullOrUndefined (Eac3StereoDownmix)
-  , "SurroundExMode" :: NullOrUndefined (Eac3SurroundExMode)
-  , "SurroundMode" :: NullOrUndefined (Eac3SurroundMode)
+  { "AttenuationControl" :: Maybe (Eac3AttenuationControl)
+  , "Bitrate" :: Maybe (Number)
+  , "BitstreamMode" :: Maybe (Eac3BitstreamMode)
+  , "CodingMode" :: Maybe (Eac3CodingMode)
+  , "DcFilter" :: Maybe (Eac3DcFilter)
+  , "Dialnorm" :: Maybe (IntegerMin1Max31')
+  , "DrcLine" :: Maybe (Eac3DrcLine)
+  , "DrcRf" :: Maybe (Eac3DrcRf)
+  , "LfeControl" :: Maybe (Eac3LfeControl)
+  , "LfeFilter" :: Maybe (Eac3LfeFilter)
+  , "LoRoCenterMixLevel" :: Maybe (Number)
+  , "LoRoSurroundMixLevel" :: Maybe (Number)
+  , "LtRtCenterMixLevel" :: Maybe (Number)
+  , "LtRtSurroundMixLevel" :: Maybe (Number)
+  , "MetadataControl" :: Maybe (Eac3MetadataControl)
+  , "PassthroughControl" :: Maybe (Eac3PassthroughControl)
+  , "PhaseControl" :: Maybe (Eac3PhaseControl)
+  , "StereoDownmix" :: Maybe (Eac3StereoDownmix)
+  , "SurroundExMode" :: Maybe (Eac3SurroundExMode)
+  , "SurroundMode" :: Maybe (Eac3SurroundMode)
   }
 derive instance newtypeEac3Settings :: Newtype Eac3Settings _
 derive instance repGenericEac3Settings :: Generic Eac3Settings _
@@ -1965,12 +1964,12 @@ instance encodeEac3Settings :: Encode Eac3Settings where encode = genericEncode 
 
 -- | Constructs Eac3Settings from required parameters
 newEac3Settings :: Eac3Settings
-newEac3Settings  = Eac3Settings { "AttenuationControl": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BitstreamMode": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "DcFilter": (NullOrUndefined Nothing), "Dialnorm": (NullOrUndefined Nothing), "DrcLine": (NullOrUndefined Nothing), "DrcRf": (NullOrUndefined Nothing), "LfeControl": (NullOrUndefined Nothing), "LfeFilter": (NullOrUndefined Nothing), "LoRoCenterMixLevel": (NullOrUndefined Nothing), "LoRoSurroundMixLevel": (NullOrUndefined Nothing), "LtRtCenterMixLevel": (NullOrUndefined Nothing), "LtRtSurroundMixLevel": (NullOrUndefined Nothing), "MetadataControl": (NullOrUndefined Nothing), "PassthroughControl": (NullOrUndefined Nothing), "PhaseControl": (NullOrUndefined Nothing), "StereoDownmix": (NullOrUndefined Nothing), "SurroundExMode": (NullOrUndefined Nothing), "SurroundMode": (NullOrUndefined Nothing) }
+newEac3Settings  = Eac3Settings { "AttenuationControl": Nothing, "Bitrate": Nothing, "BitstreamMode": Nothing, "CodingMode": Nothing, "DcFilter": Nothing, "Dialnorm": Nothing, "DrcLine": Nothing, "DrcRf": Nothing, "LfeControl": Nothing, "LfeFilter": Nothing, "LoRoCenterMixLevel": Nothing, "LoRoSurroundMixLevel": Nothing, "LtRtCenterMixLevel": Nothing, "LtRtSurroundMixLevel": Nothing, "MetadataControl": Nothing, "PassthroughControl": Nothing, "PhaseControl": Nothing, "StereoDownmix": Nothing, "SurroundExMode": Nothing, "SurroundMode": Nothing }
 
 -- | Constructs Eac3Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEac3Settings' :: ( { "AttenuationControl" :: NullOrUndefined (Eac3AttenuationControl) , "Bitrate" :: NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined (Eac3BitstreamMode) , "CodingMode" :: NullOrUndefined (Eac3CodingMode) , "DcFilter" :: NullOrUndefined (Eac3DcFilter) , "Dialnorm" :: NullOrUndefined (IntegerMin1Max31') , "DrcLine" :: NullOrUndefined (Eac3DrcLine) , "DrcRf" :: NullOrUndefined (Eac3DrcRf) , "LfeControl" :: NullOrUndefined (Eac3LfeControl) , "LfeFilter" :: NullOrUndefined (Eac3LfeFilter) , "LoRoCenterMixLevel" :: NullOrUndefined (Number) , "LoRoSurroundMixLevel" :: NullOrUndefined (Number) , "LtRtCenterMixLevel" :: NullOrUndefined (Number) , "LtRtSurroundMixLevel" :: NullOrUndefined (Number) , "MetadataControl" :: NullOrUndefined (Eac3MetadataControl) , "PassthroughControl" :: NullOrUndefined (Eac3PassthroughControl) , "PhaseControl" :: NullOrUndefined (Eac3PhaseControl) , "StereoDownmix" :: NullOrUndefined (Eac3StereoDownmix) , "SurroundExMode" :: NullOrUndefined (Eac3SurroundExMode) , "SurroundMode" :: NullOrUndefined (Eac3SurroundMode) } -> {"AttenuationControl" :: NullOrUndefined (Eac3AttenuationControl) , "Bitrate" :: NullOrUndefined (Number) , "BitstreamMode" :: NullOrUndefined (Eac3BitstreamMode) , "CodingMode" :: NullOrUndefined (Eac3CodingMode) , "DcFilter" :: NullOrUndefined (Eac3DcFilter) , "Dialnorm" :: NullOrUndefined (IntegerMin1Max31') , "DrcLine" :: NullOrUndefined (Eac3DrcLine) , "DrcRf" :: NullOrUndefined (Eac3DrcRf) , "LfeControl" :: NullOrUndefined (Eac3LfeControl) , "LfeFilter" :: NullOrUndefined (Eac3LfeFilter) , "LoRoCenterMixLevel" :: NullOrUndefined (Number) , "LoRoSurroundMixLevel" :: NullOrUndefined (Number) , "LtRtCenterMixLevel" :: NullOrUndefined (Number) , "LtRtSurroundMixLevel" :: NullOrUndefined (Number) , "MetadataControl" :: NullOrUndefined (Eac3MetadataControl) , "PassthroughControl" :: NullOrUndefined (Eac3PassthroughControl) , "PhaseControl" :: NullOrUndefined (Eac3PhaseControl) , "StereoDownmix" :: NullOrUndefined (Eac3StereoDownmix) , "SurroundExMode" :: NullOrUndefined (Eac3SurroundExMode) , "SurroundMode" :: NullOrUndefined (Eac3SurroundMode) } ) -> Eac3Settings
-newEac3Settings'  customize = (Eac3Settings <<< customize) { "AttenuationControl": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BitstreamMode": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "DcFilter": (NullOrUndefined Nothing), "Dialnorm": (NullOrUndefined Nothing), "DrcLine": (NullOrUndefined Nothing), "DrcRf": (NullOrUndefined Nothing), "LfeControl": (NullOrUndefined Nothing), "LfeFilter": (NullOrUndefined Nothing), "LoRoCenterMixLevel": (NullOrUndefined Nothing), "LoRoSurroundMixLevel": (NullOrUndefined Nothing), "LtRtCenterMixLevel": (NullOrUndefined Nothing), "LtRtSurroundMixLevel": (NullOrUndefined Nothing), "MetadataControl": (NullOrUndefined Nothing), "PassthroughControl": (NullOrUndefined Nothing), "PhaseControl": (NullOrUndefined Nothing), "StereoDownmix": (NullOrUndefined Nothing), "SurroundExMode": (NullOrUndefined Nothing), "SurroundMode": (NullOrUndefined Nothing) }
+newEac3Settings' :: ( { "AttenuationControl" :: Maybe (Eac3AttenuationControl) , "Bitrate" :: Maybe (Number) , "BitstreamMode" :: Maybe (Eac3BitstreamMode) , "CodingMode" :: Maybe (Eac3CodingMode) , "DcFilter" :: Maybe (Eac3DcFilter) , "Dialnorm" :: Maybe (IntegerMin1Max31') , "DrcLine" :: Maybe (Eac3DrcLine) , "DrcRf" :: Maybe (Eac3DrcRf) , "LfeControl" :: Maybe (Eac3LfeControl) , "LfeFilter" :: Maybe (Eac3LfeFilter) , "LoRoCenterMixLevel" :: Maybe (Number) , "LoRoSurroundMixLevel" :: Maybe (Number) , "LtRtCenterMixLevel" :: Maybe (Number) , "LtRtSurroundMixLevel" :: Maybe (Number) , "MetadataControl" :: Maybe (Eac3MetadataControl) , "PassthroughControl" :: Maybe (Eac3PassthroughControl) , "PhaseControl" :: Maybe (Eac3PhaseControl) , "StereoDownmix" :: Maybe (Eac3StereoDownmix) , "SurroundExMode" :: Maybe (Eac3SurroundExMode) , "SurroundMode" :: Maybe (Eac3SurroundMode) } -> {"AttenuationControl" :: Maybe (Eac3AttenuationControl) , "Bitrate" :: Maybe (Number) , "BitstreamMode" :: Maybe (Eac3BitstreamMode) , "CodingMode" :: Maybe (Eac3CodingMode) , "DcFilter" :: Maybe (Eac3DcFilter) , "Dialnorm" :: Maybe (IntegerMin1Max31') , "DrcLine" :: Maybe (Eac3DrcLine) , "DrcRf" :: Maybe (Eac3DrcRf) , "LfeControl" :: Maybe (Eac3LfeControl) , "LfeFilter" :: Maybe (Eac3LfeFilter) , "LoRoCenterMixLevel" :: Maybe (Number) , "LoRoSurroundMixLevel" :: Maybe (Number) , "LtRtCenterMixLevel" :: Maybe (Number) , "LtRtSurroundMixLevel" :: Maybe (Number) , "MetadataControl" :: Maybe (Eac3MetadataControl) , "PassthroughControl" :: Maybe (Eac3PassthroughControl) , "PhaseControl" :: Maybe (Eac3PhaseControl) , "StereoDownmix" :: Maybe (Eac3StereoDownmix) , "SurroundExMode" :: Maybe (Eac3SurroundExMode) , "SurroundMode" :: Maybe (Eac3SurroundMode) } ) -> Eac3Settings
+newEac3Settings'  customize = (Eac3Settings <<< customize) { "AttenuationControl": Nothing, "Bitrate": Nothing, "BitstreamMode": Nothing, "CodingMode": Nothing, "DcFilter": Nothing, "Dialnorm": Nothing, "DrcLine": Nothing, "DrcRf": Nothing, "LfeControl": Nothing, "LfeFilter": Nothing, "LoRoCenterMixLevel": Nothing, "LoRoSurroundMixLevel": Nothing, "LtRtCenterMixLevel": Nothing, "LtRtSurroundMixLevel": Nothing, "MetadataControl": Nothing, "PassthroughControl": Nothing, "PhaseControl": Nothing, "StereoDownmix": Nothing, "SurroundExMode": Nothing, "SurroundMode": Nothing }
 
 
 
@@ -2046,10 +2045,10 @@ instance encodeEmbeddedScte20Detection :: Encode EmbeddedScte20Detection where e
 
 -- | Placeholder documentation for EmbeddedSourceSettings
 newtype EmbeddedSourceSettings = EmbeddedSourceSettings 
-  { "Convert608To708" :: NullOrUndefined (EmbeddedConvert608To708)
-  , "Scte20Detection" :: NullOrUndefined (EmbeddedScte20Detection)
-  , "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4')
-  , "Source608TrackNumber" :: NullOrUndefined (IntegerMin1Max5')
+  { "Convert608To708" :: Maybe (EmbeddedConvert608To708)
+  , "Scte20Detection" :: Maybe (EmbeddedScte20Detection)
+  , "Source608ChannelNumber" :: Maybe (IntegerMin1Max4')
+  , "Source608TrackNumber" :: Maybe (IntegerMin1Max5')
   }
 derive instance newtypeEmbeddedSourceSettings :: Newtype EmbeddedSourceSettings _
 derive instance repGenericEmbeddedSourceSettings :: Generic EmbeddedSourceSettings _
@@ -2059,12 +2058,12 @@ instance encodeEmbeddedSourceSettings :: Encode EmbeddedSourceSettings where enc
 
 -- | Constructs EmbeddedSourceSettings from required parameters
 newEmbeddedSourceSettings :: EmbeddedSourceSettings
-newEmbeddedSourceSettings  = EmbeddedSourceSettings { "Convert608To708": (NullOrUndefined Nothing), "Scte20Detection": (NullOrUndefined Nothing), "Source608ChannelNumber": (NullOrUndefined Nothing), "Source608TrackNumber": (NullOrUndefined Nothing) }
+newEmbeddedSourceSettings  = EmbeddedSourceSettings { "Convert608To708": Nothing, "Scte20Detection": Nothing, "Source608ChannelNumber": Nothing, "Source608TrackNumber": Nothing }
 
 -- | Constructs EmbeddedSourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEmbeddedSourceSettings' :: ( { "Convert608To708" :: NullOrUndefined (EmbeddedConvert608To708) , "Scte20Detection" :: NullOrUndefined (EmbeddedScte20Detection) , "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4') , "Source608TrackNumber" :: NullOrUndefined (IntegerMin1Max5') } -> {"Convert608To708" :: NullOrUndefined (EmbeddedConvert608To708) , "Scte20Detection" :: NullOrUndefined (EmbeddedScte20Detection) , "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4') , "Source608TrackNumber" :: NullOrUndefined (IntegerMin1Max5') } ) -> EmbeddedSourceSettings
-newEmbeddedSourceSettings'  customize = (EmbeddedSourceSettings <<< customize) { "Convert608To708": (NullOrUndefined Nothing), "Scte20Detection": (NullOrUndefined Nothing), "Source608ChannelNumber": (NullOrUndefined Nothing), "Source608TrackNumber": (NullOrUndefined Nothing) }
+newEmbeddedSourceSettings' :: ( { "Convert608To708" :: Maybe (EmbeddedConvert608To708) , "Scte20Detection" :: Maybe (EmbeddedScte20Detection) , "Source608ChannelNumber" :: Maybe (IntegerMin1Max4') , "Source608TrackNumber" :: Maybe (IntegerMin1Max5') } -> {"Convert608To708" :: Maybe (EmbeddedConvert608To708) , "Scte20Detection" :: Maybe (EmbeddedScte20Detection) , "Source608ChannelNumber" :: Maybe (IntegerMin1Max4') , "Source608TrackNumber" :: Maybe (IntegerMin1Max5') } ) -> EmbeddedSourceSettings
+newEmbeddedSourceSettings'  customize = (EmbeddedSourceSettings <<< customize) { "Convert608To708": Nothing, "Scte20Detection": Nothing, "Source608ChannelNumber": Nothing, "Source608TrackNumber": Nothing }
 
 
 
@@ -2081,11 +2080,11 @@ instance encodeEmpty :: Encode Empty where encode = genericEncode options
 -- | Placeholder documentation for EncoderSettings
 newtype EncoderSettings = EncoderSettings 
   { "AudioDescriptions" :: (ListOfAudioDescription')
-  , "AvailBlanking" :: NullOrUndefined (AvailBlanking)
-  , "AvailConfiguration" :: NullOrUndefined (AvailConfiguration)
-  , "BlackoutSlate" :: NullOrUndefined (BlackoutSlate)
-  , "CaptionDescriptions" :: NullOrUndefined (ListOfCaptionDescription')
-  , "GlobalConfiguration" :: NullOrUndefined (GlobalConfiguration)
+  , "AvailBlanking" :: Maybe (AvailBlanking)
+  , "AvailConfiguration" :: Maybe (AvailConfiguration)
+  , "BlackoutSlate" :: Maybe (BlackoutSlate)
+  , "CaptionDescriptions" :: Maybe (ListOfCaptionDescription')
+  , "GlobalConfiguration" :: Maybe (GlobalConfiguration)
   , "OutputGroups" :: (ListOfOutputGroup')
   , "TimecodeConfig" :: (TimecodeConfig)
   , "VideoDescriptions" :: (ListOfVideoDescription')
@@ -2098,12 +2097,12 @@ instance encodeEncoderSettings :: Encode EncoderSettings where encode = genericE
 
 -- | Constructs EncoderSettings from required parameters
 newEncoderSettings :: ListOfAudioDescription' -> ListOfOutputGroup' -> TimecodeConfig -> ListOfVideoDescription' -> EncoderSettings
-newEncoderSettings _AudioDescriptions _OutputGroups _TimecodeConfig _VideoDescriptions = EncoderSettings { "AudioDescriptions": _AudioDescriptions, "OutputGroups": _OutputGroups, "TimecodeConfig": _TimecodeConfig, "VideoDescriptions": _VideoDescriptions, "AvailBlanking": (NullOrUndefined Nothing), "AvailConfiguration": (NullOrUndefined Nothing), "BlackoutSlate": (NullOrUndefined Nothing), "CaptionDescriptions": (NullOrUndefined Nothing), "GlobalConfiguration": (NullOrUndefined Nothing) }
+newEncoderSettings _AudioDescriptions _OutputGroups _TimecodeConfig _VideoDescriptions = EncoderSettings { "AudioDescriptions": _AudioDescriptions, "OutputGroups": _OutputGroups, "TimecodeConfig": _TimecodeConfig, "VideoDescriptions": _VideoDescriptions, "AvailBlanking": Nothing, "AvailConfiguration": Nothing, "BlackoutSlate": Nothing, "CaptionDescriptions": Nothing, "GlobalConfiguration": Nothing }
 
 -- | Constructs EncoderSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEncoderSettings' :: ListOfAudioDescription' -> ListOfOutputGroup' -> TimecodeConfig -> ListOfVideoDescription' -> ( { "AudioDescriptions" :: (ListOfAudioDescription') , "AvailBlanking" :: NullOrUndefined (AvailBlanking) , "AvailConfiguration" :: NullOrUndefined (AvailConfiguration) , "BlackoutSlate" :: NullOrUndefined (BlackoutSlate) , "CaptionDescriptions" :: NullOrUndefined (ListOfCaptionDescription') , "GlobalConfiguration" :: NullOrUndefined (GlobalConfiguration) , "OutputGroups" :: (ListOfOutputGroup') , "TimecodeConfig" :: (TimecodeConfig) , "VideoDescriptions" :: (ListOfVideoDescription') } -> {"AudioDescriptions" :: (ListOfAudioDescription') , "AvailBlanking" :: NullOrUndefined (AvailBlanking) , "AvailConfiguration" :: NullOrUndefined (AvailConfiguration) , "BlackoutSlate" :: NullOrUndefined (BlackoutSlate) , "CaptionDescriptions" :: NullOrUndefined (ListOfCaptionDescription') , "GlobalConfiguration" :: NullOrUndefined (GlobalConfiguration) , "OutputGroups" :: (ListOfOutputGroup') , "TimecodeConfig" :: (TimecodeConfig) , "VideoDescriptions" :: (ListOfVideoDescription') } ) -> EncoderSettings
-newEncoderSettings' _AudioDescriptions _OutputGroups _TimecodeConfig _VideoDescriptions customize = (EncoderSettings <<< customize) { "AudioDescriptions": _AudioDescriptions, "OutputGroups": _OutputGroups, "TimecodeConfig": _TimecodeConfig, "VideoDescriptions": _VideoDescriptions, "AvailBlanking": (NullOrUndefined Nothing), "AvailConfiguration": (NullOrUndefined Nothing), "BlackoutSlate": (NullOrUndefined Nothing), "CaptionDescriptions": (NullOrUndefined Nothing), "GlobalConfiguration": (NullOrUndefined Nothing) }
+newEncoderSettings' :: ListOfAudioDescription' -> ListOfOutputGroup' -> TimecodeConfig -> ListOfVideoDescription' -> ( { "AudioDescriptions" :: (ListOfAudioDescription') , "AvailBlanking" :: Maybe (AvailBlanking) , "AvailConfiguration" :: Maybe (AvailConfiguration) , "BlackoutSlate" :: Maybe (BlackoutSlate) , "CaptionDescriptions" :: Maybe (ListOfCaptionDescription') , "GlobalConfiguration" :: Maybe (GlobalConfiguration) , "OutputGroups" :: (ListOfOutputGroup') , "TimecodeConfig" :: (TimecodeConfig) , "VideoDescriptions" :: (ListOfVideoDescription') } -> {"AudioDescriptions" :: (ListOfAudioDescription') , "AvailBlanking" :: Maybe (AvailBlanking) , "AvailConfiguration" :: Maybe (AvailConfiguration) , "BlackoutSlate" :: Maybe (BlackoutSlate) , "CaptionDescriptions" :: Maybe (ListOfCaptionDescription') , "GlobalConfiguration" :: Maybe (GlobalConfiguration) , "OutputGroups" :: (ListOfOutputGroup') , "TimecodeConfig" :: (TimecodeConfig) , "VideoDescriptions" :: (ListOfVideoDescription') } ) -> EncoderSettings
+newEncoderSettings' _AudioDescriptions _OutputGroups _TimecodeConfig _VideoDescriptions customize = (EncoderSettings <<< customize) { "AudioDescriptions": _AudioDescriptions, "OutputGroups": _OutputGroups, "TimecodeConfig": _TimecodeConfig, "VideoDescriptions": _VideoDescriptions, "AvailBlanking": Nothing, "AvailConfiguration": Nothing, "BlackoutSlate": Nothing, "CaptionDescriptions": Nothing, "GlobalConfiguration": Nothing }
 
 
 
@@ -2119,9 +2118,9 @@ instance encodeFecOutputIncludeFec :: Encode FecOutputIncludeFec where encode = 
 
 -- | Placeholder documentation for FecOutputSettings
 newtype FecOutputSettings = FecOutputSettings 
-  { "ColumnDepth" :: NullOrUndefined (IntegerMin4Max20')
-  , "IncludeFec" :: NullOrUndefined (FecOutputIncludeFec)
-  , "RowLength" :: NullOrUndefined (IntegerMin1Max20')
+  { "ColumnDepth" :: Maybe (IntegerMin4Max20')
+  , "IncludeFec" :: Maybe (FecOutputIncludeFec)
+  , "RowLength" :: Maybe (IntegerMin1Max20')
   }
 derive instance newtypeFecOutputSettings :: Newtype FecOutputSettings _
 derive instance repGenericFecOutputSettings :: Generic FecOutputSettings _
@@ -2131,12 +2130,12 @@ instance encodeFecOutputSettings :: Encode FecOutputSettings where encode = gene
 
 -- | Constructs FecOutputSettings from required parameters
 newFecOutputSettings :: FecOutputSettings
-newFecOutputSettings  = FecOutputSettings { "ColumnDepth": (NullOrUndefined Nothing), "IncludeFec": (NullOrUndefined Nothing), "RowLength": (NullOrUndefined Nothing) }
+newFecOutputSettings  = FecOutputSettings { "ColumnDepth": Nothing, "IncludeFec": Nothing, "RowLength": Nothing }
 
 -- | Constructs FecOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFecOutputSettings' :: ( { "ColumnDepth" :: NullOrUndefined (IntegerMin4Max20') , "IncludeFec" :: NullOrUndefined (FecOutputIncludeFec) , "RowLength" :: NullOrUndefined (IntegerMin1Max20') } -> {"ColumnDepth" :: NullOrUndefined (IntegerMin4Max20') , "IncludeFec" :: NullOrUndefined (FecOutputIncludeFec) , "RowLength" :: NullOrUndefined (IntegerMin1Max20') } ) -> FecOutputSettings
-newFecOutputSettings'  customize = (FecOutputSettings <<< customize) { "ColumnDepth": (NullOrUndefined Nothing), "IncludeFec": (NullOrUndefined Nothing), "RowLength": (NullOrUndefined Nothing) }
+newFecOutputSettings' :: ( { "ColumnDepth" :: Maybe (IntegerMin4Max20') , "IncludeFec" :: Maybe (FecOutputIncludeFec) , "RowLength" :: Maybe (IntegerMin1Max20') } -> {"ColumnDepth" :: Maybe (IntegerMin4Max20') , "IncludeFec" :: Maybe (FecOutputIncludeFec) , "RowLength" :: Maybe (IntegerMin1Max20') } ) -> FecOutputSettings
+newFecOutputSettings'  customize = (FecOutputSettings <<< customize) { "ColumnDepth": Nothing, "IncludeFec": Nothing, "RowLength": Nothing }
 
 
 
@@ -2152,7 +2151,7 @@ instance encodeFixedAfd :: Encode FixedAfd where encode = genericEncode options
 
 -- | Placeholder documentation for ForbiddenException
 newtype ForbiddenException = ForbiddenException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeForbiddenException :: Newtype ForbiddenException _
 derive instance repGenericForbiddenException :: Generic ForbiddenException _
@@ -2162,18 +2161,18 @@ instance encodeForbiddenException :: Encode ForbiddenException where encode = ge
 
 -- | Constructs ForbiddenException from required parameters
 newForbiddenException :: ForbiddenException
-newForbiddenException  = ForbiddenException { "Message": (NullOrUndefined Nothing) }
+newForbiddenException  = ForbiddenException { "Message": Nothing }
 
 -- | Constructs ForbiddenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newForbiddenException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ForbiddenException
-newForbiddenException'  customize = (ForbiddenException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newForbiddenException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ForbiddenException
+newForbiddenException'  customize = (ForbiddenException <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for GatewayTimeoutException
 newtype GatewayTimeoutException = GatewayTimeoutException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeGatewayTimeoutException :: Newtype GatewayTimeoutException _
 derive instance repGenericGatewayTimeoutException :: Generic GatewayTimeoutException _
@@ -2183,22 +2182,22 @@ instance encodeGatewayTimeoutException :: Encode GatewayTimeoutException where e
 
 -- | Constructs GatewayTimeoutException from required parameters
 newGatewayTimeoutException :: GatewayTimeoutException
-newGatewayTimeoutException  = GatewayTimeoutException { "Message": (NullOrUndefined Nothing) }
+newGatewayTimeoutException  = GatewayTimeoutException { "Message": Nothing }
 
 -- | Constructs GatewayTimeoutException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGatewayTimeoutException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> GatewayTimeoutException
-newGatewayTimeoutException'  customize = (GatewayTimeoutException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newGatewayTimeoutException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> GatewayTimeoutException
+newGatewayTimeoutException'  customize = (GatewayTimeoutException <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for GlobalConfiguration
 newtype GlobalConfiguration = GlobalConfiguration 
-  { "InitialAudioGain" :: NullOrUndefined (IntegerMinNegative60Max60')
-  , "InputEndAction" :: NullOrUndefined (GlobalConfigurationInputEndAction)
-  , "InputLossBehavior" :: NullOrUndefined (InputLossBehavior)
-  , "OutputTimingSource" :: NullOrUndefined (GlobalConfigurationOutputTimingSource)
-  , "SupportLowFramerateInputs" :: NullOrUndefined (GlobalConfigurationLowFramerateInputs)
+  { "InitialAudioGain" :: Maybe (IntegerMinNegative60Max60')
+  , "InputEndAction" :: Maybe (GlobalConfigurationInputEndAction)
+  , "InputLossBehavior" :: Maybe (InputLossBehavior)
+  , "OutputTimingSource" :: Maybe (GlobalConfigurationOutputTimingSource)
+  , "SupportLowFramerateInputs" :: Maybe (GlobalConfigurationLowFramerateInputs)
   }
 derive instance newtypeGlobalConfiguration :: Newtype GlobalConfiguration _
 derive instance repGenericGlobalConfiguration :: Generic GlobalConfiguration _
@@ -2208,12 +2207,12 @@ instance encodeGlobalConfiguration :: Encode GlobalConfiguration where encode = 
 
 -- | Constructs GlobalConfiguration from required parameters
 newGlobalConfiguration :: GlobalConfiguration
-newGlobalConfiguration  = GlobalConfiguration { "InitialAudioGain": (NullOrUndefined Nothing), "InputEndAction": (NullOrUndefined Nothing), "InputLossBehavior": (NullOrUndefined Nothing), "OutputTimingSource": (NullOrUndefined Nothing), "SupportLowFramerateInputs": (NullOrUndefined Nothing) }
+newGlobalConfiguration  = GlobalConfiguration { "InitialAudioGain": Nothing, "InputEndAction": Nothing, "InputLossBehavior": Nothing, "OutputTimingSource": Nothing, "SupportLowFramerateInputs": Nothing }
 
 -- | Constructs GlobalConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGlobalConfiguration' :: ( { "InitialAudioGain" :: NullOrUndefined (IntegerMinNegative60Max60') , "InputEndAction" :: NullOrUndefined (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: NullOrUndefined (InputLossBehavior) , "OutputTimingSource" :: NullOrUndefined (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: NullOrUndefined (GlobalConfigurationLowFramerateInputs) } -> {"InitialAudioGain" :: NullOrUndefined (IntegerMinNegative60Max60') , "InputEndAction" :: NullOrUndefined (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: NullOrUndefined (InputLossBehavior) , "OutputTimingSource" :: NullOrUndefined (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: NullOrUndefined (GlobalConfigurationLowFramerateInputs) } ) -> GlobalConfiguration
-newGlobalConfiguration'  customize = (GlobalConfiguration <<< customize) { "InitialAudioGain": (NullOrUndefined Nothing), "InputEndAction": (NullOrUndefined Nothing), "InputLossBehavior": (NullOrUndefined Nothing), "OutputTimingSource": (NullOrUndefined Nothing), "SupportLowFramerateInputs": (NullOrUndefined Nothing) }
+newGlobalConfiguration' :: ( { "InitialAudioGain" :: Maybe (IntegerMinNegative60Max60') , "InputEndAction" :: Maybe (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: Maybe (InputLossBehavior) , "OutputTimingSource" :: Maybe (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: Maybe (GlobalConfigurationLowFramerateInputs) } -> {"InitialAudioGain" :: Maybe (IntegerMinNegative60Max60') , "InputEndAction" :: Maybe (GlobalConfigurationInputEndAction) , "InputLossBehavior" :: Maybe (InputLossBehavior) , "OutputTimingSource" :: Maybe (GlobalConfigurationOutputTimingSource) , "SupportLowFramerateInputs" :: Maybe (GlobalConfigurationLowFramerateInputs) } ) -> GlobalConfiguration
+newGlobalConfiguration'  customize = (GlobalConfiguration <<< customize) { "InitialAudioGain": Nothing, "InputEndAction": Nothing, "InputLossBehavior": Nothing, "OutputTimingSource": Nothing, "SupportLowFramerateInputs": Nothing }
 
 
 
@@ -2389,41 +2388,41 @@ instance encodeH264SceneChangeDetect :: Encode H264SceneChangeDetect where encod
 
 -- | Placeholder documentation for H264Settings
 newtype H264Settings = H264Settings 
-  { "AdaptiveQuantization" :: NullOrUndefined (H264AdaptiveQuantization)
-  , "AfdSignaling" :: NullOrUndefined (AfdSignaling)
-  , "Bitrate" :: NullOrUndefined (IntegerMin1000')
-  , "BufFillPct" :: NullOrUndefined (IntegerMin0Max100')
-  , "BufSize" :: NullOrUndefined (IntegerMin0')
-  , "ColorMetadata" :: NullOrUndefined (H264ColorMetadata)
-  , "EntropyEncoding" :: NullOrUndefined (H264EntropyEncoding)
-  , "FixedAfd" :: NullOrUndefined (FixedAfd)
-  , "FlickerAq" :: NullOrUndefined (H264FlickerAq)
-  , "FramerateControl" :: NullOrUndefined (H264FramerateControl)
-  , "FramerateDenominator" :: NullOrUndefined (Int)
-  , "FramerateNumerator" :: NullOrUndefined (Int)
-  , "GopBReference" :: NullOrUndefined (H264GopBReference)
-  , "GopClosedCadence" :: NullOrUndefined (IntegerMin0')
-  , "GopNumBFrames" :: NullOrUndefined (IntegerMin0Max7')
-  , "GopSize" :: NullOrUndefined (DoubleMin1')
-  , "GopSizeUnits" :: NullOrUndefined (H264GopSizeUnits)
-  , "Level" :: NullOrUndefined (H264Level)
-  , "LookAheadRateControl" :: NullOrUndefined (H264LookAheadRateControl)
-  , "MaxBitrate" :: NullOrUndefined (IntegerMin1000')
-  , "MinIInterval" :: NullOrUndefined (IntegerMin0Max30')
-  , "NumRefFrames" :: NullOrUndefined (IntegerMin1Max6')
-  , "ParControl" :: NullOrUndefined (H264ParControl)
-  , "ParDenominator" :: NullOrUndefined (IntegerMin1')
-  , "ParNumerator" :: NullOrUndefined (Int)
-  , "Profile" :: NullOrUndefined (H264Profile)
-  , "RateControlMode" :: NullOrUndefined (H264RateControlMode)
-  , "ScanType" :: NullOrUndefined (H264ScanType)
-  , "SceneChangeDetect" :: NullOrUndefined (H264SceneChangeDetect)
-  , "Slices" :: NullOrUndefined (IntegerMin1Max32')
-  , "Softness" :: NullOrUndefined (IntegerMin0Max128')
-  , "SpatialAq" :: NullOrUndefined (H264SpatialAq)
-  , "Syntax" :: NullOrUndefined (H264Syntax)
-  , "TemporalAq" :: NullOrUndefined (H264TemporalAq)
-  , "TimecodeInsertion" :: NullOrUndefined (H264TimecodeInsertionBehavior)
+  { "AdaptiveQuantization" :: Maybe (H264AdaptiveQuantization)
+  , "AfdSignaling" :: Maybe (AfdSignaling)
+  , "Bitrate" :: Maybe (IntegerMin1000')
+  , "BufFillPct" :: Maybe (IntegerMin0Max100')
+  , "BufSize" :: Maybe (IntegerMin0')
+  , "ColorMetadata" :: Maybe (H264ColorMetadata)
+  , "EntropyEncoding" :: Maybe (H264EntropyEncoding)
+  , "FixedAfd" :: Maybe (FixedAfd)
+  , "FlickerAq" :: Maybe (H264FlickerAq)
+  , "FramerateControl" :: Maybe (H264FramerateControl)
+  , "FramerateDenominator" :: Maybe (Int)
+  , "FramerateNumerator" :: Maybe (Int)
+  , "GopBReference" :: Maybe (H264GopBReference)
+  , "GopClosedCadence" :: Maybe (IntegerMin0')
+  , "GopNumBFrames" :: Maybe (IntegerMin0Max7')
+  , "GopSize" :: Maybe (DoubleMin1')
+  , "GopSizeUnits" :: Maybe (H264GopSizeUnits)
+  , "Level" :: Maybe (H264Level)
+  , "LookAheadRateControl" :: Maybe (H264LookAheadRateControl)
+  , "MaxBitrate" :: Maybe (IntegerMin1000')
+  , "MinIInterval" :: Maybe (IntegerMin0Max30')
+  , "NumRefFrames" :: Maybe (IntegerMin1Max6')
+  , "ParControl" :: Maybe (H264ParControl)
+  , "ParDenominator" :: Maybe (IntegerMin1')
+  , "ParNumerator" :: Maybe (Int)
+  , "Profile" :: Maybe (H264Profile)
+  , "RateControlMode" :: Maybe (H264RateControlMode)
+  , "ScanType" :: Maybe (H264ScanType)
+  , "SceneChangeDetect" :: Maybe (H264SceneChangeDetect)
+  , "Slices" :: Maybe (IntegerMin1Max32')
+  , "Softness" :: Maybe (IntegerMin0Max128')
+  , "SpatialAq" :: Maybe (H264SpatialAq)
+  , "Syntax" :: Maybe (H264Syntax)
+  , "TemporalAq" :: Maybe (H264TemporalAq)
+  , "TimecodeInsertion" :: Maybe (H264TimecodeInsertionBehavior)
   }
 derive instance newtypeH264Settings :: Newtype H264Settings _
 derive instance repGenericH264Settings :: Generic H264Settings _
@@ -2433,12 +2432,12 @@ instance encodeH264Settings :: Encode H264Settings where encode = genericEncode 
 
 -- | Constructs H264Settings from required parameters
 newH264Settings :: H264Settings
-newH264Settings  = H264Settings { "AdaptiveQuantization": (NullOrUndefined Nothing), "AfdSignaling": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BufFillPct": (NullOrUndefined Nothing), "BufSize": (NullOrUndefined Nothing), "ColorMetadata": (NullOrUndefined Nothing), "EntropyEncoding": (NullOrUndefined Nothing), "FixedAfd": (NullOrUndefined Nothing), "FlickerAq": (NullOrUndefined Nothing), "FramerateControl": (NullOrUndefined Nothing), "FramerateDenominator": (NullOrUndefined Nothing), "FramerateNumerator": (NullOrUndefined Nothing), "GopBReference": (NullOrUndefined Nothing), "GopClosedCadence": (NullOrUndefined Nothing), "GopNumBFrames": (NullOrUndefined Nothing), "GopSize": (NullOrUndefined Nothing), "GopSizeUnits": (NullOrUndefined Nothing), "Level": (NullOrUndefined Nothing), "LookAheadRateControl": (NullOrUndefined Nothing), "MaxBitrate": (NullOrUndefined Nothing), "MinIInterval": (NullOrUndefined Nothing), "NumRefFrames": (NullOrUndefined Nothing), "ParControl": (NullOrUndefined Nothing), "ParDenominator": (NullOrUndefined Nothing), "ParNumerator": (NullOrUndefined Nothing), "Profile": (NullOrUndefined Nothing), "RateControlMode": (NullOrUndefined Nothing), "ScanType": (NullOrUndefined Nothing), "SceneChangeDetect": (NullOrUndefined Nothing), "Slices": (NullOrUndefined Nothing), "Softness": (NullOrUndefined Nothing), "SpatialAq": (NullOrUndefined Nothing), "Syntax": (NullOrUndefined Nothing), "TemporalAq": (NullOrUndefined Nothing), "TimecodeInsertion": (NullOrUndefined Nothing) }
+newH264Settings  = H264Settings { "AdaptiveQuantization": Nothing, "AfdSignaling": Nothing, "Bitrate": Nothing, "BufFillPct": Nothing, "BufSize": Nothing, "ColorMetadata": Nothing, "EntropyEncoding": Nothing, "FixedAfd": Nothing, "FlickerAq": Nothing, "FramerateControl": Nothing, "FramerateDenominator": Nothing, "FramerateNumerator": Nothing, "GopBReference": Nothing, "GopClosedCadence": Nothing, "GopNumBFrames": Nothing, "GopSize": Nothing, "GopSizeUnits": Nothing, "Level": Nothing, "LookAheadRateControl": Nothing, "MaxBitrate": Nothing, "MinIInterval": Nothing, "NumRefFrames": Nothing, "ParControl": Nothing, "ParDenominator": Nothing, "ParNumerator": Nothing, "Profile": Nothing, "RateControlMode": Nothing, "ScanType": Nothing, "SceneChangeDetect": Nothing, "Slices": Nothing, "Softness": Nothing, "SpatialAq": Nothing, "Syntax": Nothing, "TemporalAq": Nothing, "TimecodeInsertion": Nothing }
 
 -- | Constructs H264Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newH264Settings' :: ( { "AdaptiveQuantization" :: NullOrUndefined (H264AdaptiveQuantization) , "AfdSignaling" :: NullOrUndefined (AfdSignaling) , "Bitrate" :: NullOrUndefined (IntegerMin1000') , "BufFillPct" :: NullOrUndefined (IntegerMin0Max100') , "BufSize" :: NullOrUndefined (IntegerMin0') , "ColorMetadata" :: NullOrUndefined (H264ColorMetadata) , "EntropyEncoding" :: NullOrUndefined (H264EntropyEncoding) , "FixedAfd" :: NullOrUndefined (FixedAfd) , "FlickerAq" :: NullOrUndefined (H264FlickerAq) , "FramerateControl" :: NullOrUndefined (H264FramerateControl) , "FramerateDenominator" :: NullOrUndefined (Int) , "FramerateNumerator" :: NullOrUndefined (Int) , "GopBReference" :: NullOrUndefined (H264GopBReference) , "GopClosedCadence" :: NullOrUndefined (IntegerMin0') , "GopNumBFrames" :: NullOrUndefined (IntegerMin0Max7') , "GopSize" :: NullOrUndefined (DoubleMin1') , "GopSizeUnits" :: NullOrUndefined (H264GopSizeUnits) , "Level" :: NullOrUndefined (H264Level) , "LookAheadRateControl" :: NullOrUndefined (H264LookAheadRateControl) , "MaxBitrate" :: NullOrUndefined (IntegerMin1000') , "MinIInterval" :: NullOrUndefined (IntegerMin0Max30') , "NumRefFrames" :: NullOrUndefined (IntegerMin1Max6') , "ParControl" :: NullOrUndefined (H264ParControl) , "ParDenominator" :: NullOrUndefined (IntegerMin1') , "ParNumerator" :: NullOrUndefined (Int) , "Profile" :: NullOrUndefined (H264Profile) , "RateControlMode" :: NullOrUndefined (H264RateControlMode) , "ScanType" :: NullOrUndefined (H264ScanType) , "SceneChangeDetect" :: NullOrUndefined (H264SceneChangeDetect) , "Slices" :: NullOrUndefined (IntegerMin1Max32') , "Softness" :: NullOrUndefined (IntegerMin0Max128') , "SpatialAq" :: NullOrUndefined (H264SpatialAq) , "Syntax" :: NullOrUndefined (H264Syntax) , "TemporalAq" :: NullOrUndefined (H264TemporalAq) , "TimecodeInsertion" :: NullOrUndefined (H264TimecodeInsertionBehavior) } -> {"AdaptiveQuantization" :: NullOrUndefined (H264AdaptiveQuantization) , "AfdSignaling" :: NullOrUndefined (AfdSignaling) , "Bitrate" :: NullOrUndefined (IntegerMin1000') , "BufFillPct" :: NullOrUndefined (IntegerMin0Max100') , "BufSize" :: NullOrUndefined (IntegerMin0') , "ColorMetadata" :: NullOrUndefined (H264ColorMetadata) , "EntropyEncoding" :: NullOrUndefined (H264EntropyEncoding) , "FixedAfd" :: NullOrUndefined (FixedAfd) , "FlickerAq" :: NullOrUndefined (H264FlickerAq) , "FramerateControl" :: NullOrUndefined (H264FramerateControl) , "FramerateDenominator" :: NullOrUndefined (Int) , "FramerateNumerator" :: NullOrUndefined (Int) , "GopBReference" :: NullOrUndefined (H264GopBReference) , "GopClosedCadence" :: NullOrUndefined (IntegerMin0') , "GopNumBFrames" :: NullOrUndefined (IntegerMin0Max7') , "GopSize" :: NullOrUndefined (DoubleMin1') , "GopSizeUnits" :: NullOrUndefined (H264GopSizeUnits) , "Level" :: NullOrUndefined (H264Level) , "LookAheadRateControl" :: NullOrUndefined (H264LookAheadRateControl) , "MaxBitrate" :: NullOrUndefined (IntegerMin1000') , "MinIInterval" :: NullOrUndefined (IntegerMin0Max30') , "NumRefFrames" :: NullOrUndefined (IntegerMin1Max6') , "ParControl" :: NullOrUndefined (H264ParControl) , "ParDenominator" :: NullOrUndefined (IntegerMin1') , "ParNumerator" :: NullOrUndefined (Int) , "Profile" :: NullOrUndefined (H264Profile) , "RateControlMode" :: NullOrUndefined (H264RateControlMode) , "ScanType" :: NullOrUndefined (H264ScanType) , "SceneChangeDetect" :: NullOrUndefined (H264SceneChangeDetect) , "Slices" :: NullOrUndefined (IntegerMin1Max32') , "Softness" :: NullOrUndefined (IntegerMin0Max128') , "SpatialAq" :: NullOrUndefined (H264SpatialAq) , "Syntax" :: NullOrUndefined (H264Syntax) , "TemporalAq" :: NullOrUndefined (H264TemporalAq) , "TimecodeInsertion" :: NullOrUndefined (H264TimecodeInsertionBehavior) } ) -> H264Settings
-newH264Settings'  customize = (H264Settings <<< customize) { "AdaptiveQuantization": (NullOrUndefined Nothing), "AfdSignaling": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BufFillPct": (NullOrUndefined Nothing), "BufSize": (NullOrUndefined Nothing), "ColorMetadata": (NullOrUndefined Nothing), "EntropyEncoding": (NullOrUndefined Nothing), "FixedAfd": (NullOrUndefined Nothing), "FlickerAq": (NullOrUndefined Nothing), "FramerateControl": (NullOrUndefined Nothing), "FramerateDenominator": (NullOrUndefined Nothing), "FramerateNumerator": (NullOrUndefined Nothing), "GopBReference": (NullOrUndefined Nothing), "GopClosedCadence": (NullOrUndefined Nothing), "GopNumBFrames": (NullOrUndefined Nothing), "GopSize": (NullOrUndefined Nothing), "GopSizeUnits": (NullOrUndefined Nothing), "Level": (NullOrUndefined Nothing), "LookAheadRateControl": (NullOrUndefined Nothing), "MaxBitrate": (NullOrUndefined Nothing), "MinIInterval": (NullOrUndefined Nothing), "NumRefFrames": (NullOrUndefined Nothing), "ParControl": (NullOrUndefined Nothing), "ParDenominator": (NullOrUndefined Nothing), "ParNumerator": (NullOrUndefined Nothing), "Profile": (NullOrUndefined Nothing), "RateControlMode": (NullOrUndefined Nothing), "ScanType": (NullOrUndefined Nothing), "SceneChangeDetect": (NullOrUndefined Nothing), "Slices": (NullOrUndefined Nothing), "Softness": (NullOrUndefined Nothing), "SpatialAq": (NullOrUndefined Nothing), "Syntax": (NullOrUndefined Nothing), "TemporalAq": (NullOrUndefined Nothing), "TimecodeInsertion": (NullOrUndefined Nothing) }
+newH264Settings' :: ( { "AdaptiveQuantization" :: Maybe (H264AdaptiveQuantization) , "AfdSignaling" :: Maybe (AfdSignaling) , "Bitrate" :: Maybe (IntegerMin1000') , "BufFillPct" :: Maybe (IntegerMin0Max100') , "BufSize" :: Maybe (IntegerMin0') , "ColorMetadata" :: Maybe (H264ColorMetadata) , "EntropyEncoding" :: Maybe (H264EntropyEncoding) , "FixedAfd" :: Maybe (FixedAfd) , "FlickerAq" :: Maybe (H264FlickerAq) , "FramerateControl" :: Maybe (H264FramerateControl) , "FramerateDenominator" :: Maybe (Int) , "FramerateNumerator" :: Maybe (Int) , "GopBReference" :: Maybe (H264GopBReference) , "GopClosedCadence" :: Maybe (IntegerMin0') , "GopNumBFrames" :: Maybe (IntegerMin0Max7') , "GopSize" :: Maybe (DoubleMin1') , "GopSizeUnits" :: Maybe (H264GopSizeUnits) , "Level" :: Maybe (H264Level) , "LookAheadRateControl" :: Maybe (H264LookAheadRateControl) , "MaxBitrate" :: Maybe (IntegerMin1000') , "MinIInterval" :: Maybe (IntegerMin0Max30') , "NumRefFrames" :: Maybe (IntegerMin1Max6') , "ParControl" :: Maybe (H264ParControl) , "ParDenominator" :: Maybe (IntegerMin1') , "ParNumerator" :: Maybe (Int) , "Profile" :: Maybe (H264Profile) , "RateControlMode" :: Maybe (H264RateControlMode) , "ScanType" :: Maybe (H264ScanType) , "SceneChangeDetect" :: Maybe (H264SceneChangeDetect) , "Slices" :: Maybe (IntegerMin1Max32') , "Softness" :: Maybe (IntegerMin0Max128') , "SpatialAq" :: Maybe (H264SpatialAq) , "Syntax" :: Maybe (H264Syntax) , "TemporalAq" :: Maybe (H264TemporalAq) , "TimecodeInsertion" :: Maybe (H264TimecodeInsertionBehavior) } -> {"AdaptiveQuantization" :: Maybe (H264AdaptiveQuantization) , "AfdSignaling" :: Maybe (AfdSignaling) , "Bitrate" :: Maybe (IntegerMin1000') , "BufFillPct" :: Maybe (IntegerMin0Max100') , "BufSize" :: Maybe (IntegerMin0') , "ColorMetadata" :: Maybe (H264ColorMetadata) , "EntropyEncoding" :: Maybe (H264EntropyEncoding) , "FixedAfd" :: Maybe (FixedAfd) , "FlickerAq" :: Maybe (H264FlickerAq) , "FramerateControl" :: Maybe (H264FramerateControl) , "FramerateDenominator" :: Maybe (Int) , "FramerateNumerator" :: Maybe (Int) , "GopBReference" :: Maybe (H264GopBReference) , "GopClosedCadence" :: Maybe (IntegerMin0') , "GopNumBFrames" :: Maybe (IntegerMin0Max7') , "GopSize" :: Maybe (DoubleMin1') , "GopSizeUnits" :: Maybe (H264GopSizeUnits) , "Level" :: Maybe (H264Level) , "LookAheadRateControl" :: Maybe (H264LookAheadRateControl) , "MaxBitrate" :: Maybe (IntegerMin1000') , "MinIInterval" :: Maybe (IntegerMin0Max30') , "NumRefFrames" :: Maybe (IntegerMin1Max6') , "ParControl" :: Maybe (H264ParControl) , "ParDenominator" :: Maybe (IntegerMin1') , "ParNumerator" :: Maybe (Int) , "Profile" :: Maybe (H264Profile) , "RateControlMode" :: Maybe (H264RateControlMode) , "ScanType" :: Maybe (H264ScanType) , "SceneChangeDetect" :: Maybe (H264SceneChangeDetect) , "Slices" :: Maybe (IntegerMin1Max32') , "Softness" :: Maybe (IntegerMin0Max128') , "SpatialAq" :: Maybe (H264SpatialAq) , "Syntax" :: Maybe (H264Syntax) , "TemporalAq" :: Maybe (H264TemporalAq) , "TimecodeInsertion" :: Maybe (H264TimecodeInsertionBehavior) } ) -> H264Settings
+newH264Settings'  customize = (H264Settings <<< customize) { "AdaptiveQuantization": Nothing, "AfdSignaling": Nothing, "Bitrate": Nothing, "BufFillPct": Nothing, "BufSize": Nothing, "ColorMetadata": Nothing, "EntropyEncoding": Nothing, "FixedAfd": Nothing, "FlickerAq": Nothing, "FramerateControl": Nothing, "FramerateDenominator": Nothing, "FramerateNumerator": Nothing, "GopBReference": Nothing, "GopClosedCadence": Nothing, "GopNumBFrames": Nothing, "GopSize": Nothing, "GopSizeUnits": Nothing, "Level": Nothing, "LookAheadRateControl": Nothing, "MaxBitrate": Nothing, "MinIInterval": Nothing, "NumRefFrames": Nothing, "ParControl": Nothing, "ParDenominator": Nothing, "ParNumerator": Nothing, "Profile": Nothing, "RateControlMode": Nothing, "ScanType": Nothing, "SceneChangeDetect": Nothing, "Slices": Nothing, "Softness": Nothing, "SpatialAq": Nothing, "Syntax": Nothing, "TemporalAq": Nothing, "TimecodeInsertion": Nothing }
 
 
 
@@ -2504,13 +2503,13 @@ instance encodeHlsAkamaiHttpTransferMode :: Encode HlsAkamaiHttpTransferMode whe
 
 -- | Placeholder documentation for HlsAkamaiSettings
 newtype HlsAkamaiSettings = HlsAkamaiSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0')
-  , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600')
-  , "HttpTransferMode" :: NullOrUndefined (HlsAkamaiHttpTransferMode)
-  , "NumRetries" :: NullOrUndefined (IntegerMin0')
-  , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15')
-  , "Salt" :: NullOrUndefined (String)
-  , "Token" :: NullOrUndefined (String)
+  { "ConnectionRetryInterval" :: Maybe (IntegerMin0')
+  , "FilecacheDuration" :: Maybe (IntegerMin0Max600')
+  , "HttpTransferMode" :: Maybe (HlsAkamaiHttpTransferMode)
+  , "NumRetries" :: Maybe (IntegerMin0')
+  , "RestartDelay" :: Maybe (IntegerMin0Max15')
+  , "Salt" :: Maybe (String)
+  , "Token" :: Maybe (String)
   }
 derive instance newtypeHlsAkamaiSettings :: Newtype HlsAkamaiSettings _
 derive instance repGenericHlsAkamaiSettings :: Generic HlsAkamaiSettings _
@@ -2520,21 +2519,21 @@ instance encodeHlsAkamaiSettings :: Encode HlsAkamaiSettings where encode = gene
 
 -- | Constructs HlsAkamaiSettings from required parameters
 newHlsAkamaiSettings :: HlsAkamaiSettings
-newHlsAkamaiSettings  = HlsAkamaiSettings { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "HttpTransferMode": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "Salt": (NullOrUndefined Nothing), "Token": (NullOrUndefined Nothing) }
+newHlsAkamaiSettings  = HlsAkamaiSettings { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "HttpTransferMode": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing, "Salt": Nothing, "Token": Nothing }
 
 -- | Constructs HlsAkamaiSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsAkamaiSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined (HlsAkamaiHttpTransferMode) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') , "Salt" :: NullOrUndefined (String) , "Token" :: NullOrUndefined (String) } -> {"ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined (HlsAkamaiHttpTransferMode) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') , "Salt" :: NullOrUndefined (String) , "Token" :: NullOrUndefined (String) } ) -> HlsAkamaiSettings
-newHlsAkamaiSettings'  customize = (HlsAkamaiSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "HttpTransferMode": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "Salt": (NullOrUndefined Nothing), "Token": (NullOrUndefined Nothing) }
+newHlsAkamaiSettings' :: ( { "ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "HttpTransferMode" :: Maybe (HlsAkamaiHttpTransferMode) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') , "Salt" :: Maybe (String) , "Token" :: Maybe (String) } -> {"ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "HttpTransferMode" :: Maybe (HlsAkamaiHttpTransferMode) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') , "Salt" :: Maybe (String) , "Token" :: Maybe (String) } ) -> HlsAkamaiSettings
+newHlsAkamaiSettings'  customize = (HlsAkamaiSettings <<< customize) { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "HttpTransferMode": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing, "Salt": Nothing, "Token": Nothing }
 
 
 
 -- | Placeholder documentation for HlsBasicPutSettings
 newtype HlsBasicPutSettings = HlsBasicPutSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0')
-  , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600')
-  , "NumRetries" :: NullOrUndefined (IntegerMin0')
-  , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15')
+  { "ConnectionRetryInterval" :: Maybe (IntegerMin0')
+  , "FilecacheDuration" :: Maybe (IntegerMin0Max600')
+  , "NumRetries" :: Maybe (IntegerMin0')
+  , "RestartDelay" :: Maybe (IntegerMin0Max15')
   }
 derive instance newtypeHlsBasicPutSettings :: Newtype HlsBasicPutSettings _
 derive instance repGenericHlsBasicPutSettings :: Generic HlsBasicPutSettings _
@@ -2544,12 +2543,12 @@ instance encodeHlsBasicPutSettings :: Encode HlsBasicPutSettings where encode = 
 
 -- | Constructs HlsBasicPutSettings from required parameters
 newHlsBasicPutSettings :: HlsBasicPutSettings
-newHlsBasicPutSettings  = HlsBasicPutSettings { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
+newHlsBasicPutSettings  = HlsBasicPutSettings { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing }
 
 -- | Constructs HlsBasicPutSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsBasicPutSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } ) -> HlsBasicPutSettings
-newHlsBasicPutSettings'  customize = (HlsBasicPutSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
+newHlsBasicPutSettings' :: ( { "ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') } ) -> HlsBasicPutSettings
+newHlsBasicPutSettings'  customize = (HlsBasicPutSettings <<< customize) { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing }
 
 
 
@@ -2565,10 +2564,10 @@ instance encodeHlsCaptionLanguageSetting :: Encode HlsCaptionLanguageSetting whe
 
 -- | Placeholder documentation for HlsCdnSettings
 newtype HlsCdnSettings = HlsCdnSettings 
-  { "HlsAkamaiSettings" :: NullOrUndefined (HlsAkamaiSettings)
-  , "HlsBasicPutSettings" :: NullOrUndefined (HlsBasicPutSettings)
-  , "HlsMediaStoreSettings" :: NullOrUndefined (HlsMediaStoreSettings)
-  , "HlsWebdavSettings" :: NullOrUndefined (HlsWebdavSettings)
+  { "HlsAkamaiSettings" :: Maybe (HlsAkamaiSettings)
+  , "HlsBasicPutSettings" :: Maybe (HlsBasicPutSettings)
+  , "HlsMediaStoreSettings" :: Maybe (HlsMediaStoreSettings)
+  , "HlsWebdavSettings" :: Maybe (HlsWebdavSettings)
   }
 derive instance newtypeHlsCdnSettings :: Newtype HlsCdnSettings _
 derive instance repGenericHlsCdnSettings :: Generic HlsCdnSettings _
@@ -2578,12 +2577,12 @@ instance encodeHlsCdnSettings :: Encode HlsCdnSettings where encode = genericEnc
 
 -- | Constructs HlsCdnSettings from required parameters
 newHlsCdnSettings :: HlsCdnSettings
-newHlsCdnSettings  = HlsCdnSettings { "HlsAkamaiSettings": (NullOrUndefined Nothing), "HlsBasicPutSettings": (NullOrUndefined Nothing), "HlsMediaStoreSettings": (NullOrUndefined Nothing), "HlsWebdavSettings": (NullOrUndefined Nothing) }
+newHlsCdnSettings  = HlsCdnSettings { "HlsAkamaiSettings": Nothing, "HlsBasicPutSettings": Nothing, "HlsMediaStoreSettings": Nothing, "HlsWebdavSettings": Nothing }
 
 -- | Constructs HlsCdnSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsCdnSettings' :: ( { "HlsAkamaiSettings" :: NullOrUndefined (HlsAkamaiSettings) , "HlsBasicPutSettings" :: NullOrUndefined (HlsBasicPutSettings) , "HlsMediaStoreSettings" :: NullOrUndefined (HlsMediaStoreSettings) , "HlsWebdavSettings" :: NullOrUndefined (HlsWebdavSettings) } -> {"HlsAkamaiSettings" :: NullOrUndefined (HlsAkamaiSettings) , "HlsBasicPutSettings" :: NullOrUndefined (HlsBasicPutSettings) , "HlsMediaStoreSettings" :: NullOrUndefined (HlsMediaStoreSettings) , "HlsWebdavSettings" :: NullOrUndefined (HlsWebdavSettings) } ) -> HlsCdnSettings
-newHlsCdnSettings'  customize = (HlsCdnSettings <<< customize) { "HlsAkamaiSettings": (NullOrUndefined Nothing), "HlsBasicPutSettings": (NullOrUndefined Nothing), "HlsMediaStoreSettings": (NullOrUndefined Nothing), "HlsWebdavSettings": (NullOrUndefined Nothing) }
+newHlsCdnSettings' :: ( { "HlsAkamaiSettings" :: Maybe (HlsAkamaiSettings) , "HlsBasicPutSettings" :: Maybe (HlsBasicPutSettings) , "HlsMediaStoreSettings" :: Maybe (HlsMediaStoreSettings) , "HlsWebdavSettings" :: Maybe (HlsWebdavSettings) } -> {"HlsAkamaiSettings" :: Maybe (HlsAkamaiSettings) , "HlsBasicPutSettings" :: Maybe (HlsBasicPutSettings) , "HlsMediaStoreSettings" :: Maybe (HlsMediaStoreSettings) , "HlsWebdavSettings" :: Maybe (HlsWebdavSettings) } ) -> HlsCdnSettings
+newHlsCdnSettings'  customize = (HlsCdnSettings <<< customize) { "HlsAkamaiSettings": Nothing, "HlsBasicPutSettings": Nothing, "HlsMediaStoreSettings": Nothing, "HlsWebdavSettings": Nothing }
 
 
 
@@ -2629,41 +2628,41 @@ instance encodeHlsEncryptionType :: Encode HlsEncryptionType where encode = gene
 
 -- | Placeholder documentation for HlsGroupSettings
 newtype HlsGroupSettings = HlsGroupSettings 
-  { "AdMarkers" :: NullOrUndefined (ListOfHlsAdMarkers')
-  , "BaseUrlContent" :: NullOrUndefined (String)
-  , "BaseUrlManifest" :: NullOrUndefined (String)
-  , "CaptionLanguageMappings" :: NullOrUndefined (ListOfCaptionLanguageMapping')
-  , "CaptionLanguageSetting" :: NullOrUndefined (HlsCaptionLanguageSetting)
-  , "ClientCache" :: NullOrUndefined (HlsClientCache)
-  , "CodecSpecification" :: NullOrUndefined (HlsCodecSpecification)
-  , "ConstantIv" :: NullOrUndefined (StringMin32Max32')
+  { "AdMarkers" :: Maybe (ListOfHlsAdMarkers')
+  , "BaseUrlContent" :: Maybe (String)
+  , "BaseUrlManifest" :: Maybe (String)
+  , "CaptionLanguageMappings" :: Maybe (ListOfCaptionLanguageMapping')
+  , "CaptionLanguageSetting" :: Maybe (HlsCaptionLanguageSetting)
+  , "ClientCache" :: Maybe (HlsClientCache)
+  , "CodecSpecification" :: Maybe (HlsCodecSpecification)
+  , "ConstantIv" :: Maybe (StringMin32Max32')
   , "Destination" :: (OutputLocationRef)
-  , "DirectoryStructure" :: NullOrUndefined (HlsDirectoryStructure)
-  , "EncryptionType" :: NullOrUndefined (HlsEncryptionType)
-  , "HlsCdnSettings" :: NullOrUndefined (HlsCdnSettings)
-  , "IndexNSegments" :: NullOrUndefined (IntegerMin3')
-  , "InputLossAction" :: NullOrUndefined (InputLossActionForHlsOut)
-  , "IvInManifest" :: NullOrUndefined (HlsIvInManifest)
-  , "IvSource" :: NullOrUndefined (HlsIvSource)
-  , "KeepSegments" :: NullOrUndefined (IntegerMin1')
-  , "KeyFormat" :: NullOrUndefined (String)
-  , "KeyFormatVersions" :: NullOrUndefined (String)
-  , "KeyProviderSettings" :: NullOrUndefined (KeyProviderSettings)
-  , "ManifestCompression" :: NullOrUndefined (HlsManifestCompression)
-  , "ManifestDurationFormat" :: NullOrUndefined (HlsManifestDurationFormat)
-  , "MinSegmentLength" :: NullOrUndefined (IntegerMin0')
-  , "Mode" :: NullOrUndefined (HlsMode)
-  , "OutputSelection" :: NullOrUndefined (HlsOutputSelection)
-  , "ProgramDateTime" :: NullOrUndefined (HlsProgramDateTime)
-  , "ProgramDateTimePeriod" :: NullOrUndefined (IntegerMin0Max3600')
-  , "SegmentLength" :: NullOrUndefined (IntegerMin1')
-  , "SegmentationMode" :: NullOrUndefined (HlsSegmentationMode)
-  , "SegmentsPerSubdirectory" :: NullOrUndefined (IntegerMin1')
-  , "StreamInfResolution" :: NullOrUndefined (HlsStreamInfResolution)
-  , "TimedMetadataId3Frame" :: NullOrUndefined (HlsTimedMetadataId3Frame)
-  , "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0')
-  , "TimestampDeltaMilliseconds" :: NullOrUndefined (IntegerMin0')
-  , "TsFileMode" :: NullOrUndefined (HlsTsFileMode)
+  , "DirectoryStructure" :: Maybe (HlsDirectoryStructure)
+  , "EncryptionType" :: Maybe (HlsEncryptionType)
+  , "HlsCdnSettings" :: Maybe (HlsCdnSettings)
+  , "IndexNSegments" :: Maybe (IntegerMin3')
+  , "InputLossAction" :: Maybe (InputLossActionForHlsOut)
+  , "IvInManifest" :: Maybe (HlsIvInManifest)
+  , "IvSource" :: Maybe (HlsIvSource)
+  , "KeepSegments" :: Maybe (IntegerMin1')
+  , "KeyFormat" :: Maybe (String)
+  , "KeyFormatVersions" :: Maybe (String)
+  , "KeyProviderSettings" :: Maybe (KeyProviderSettings)
+  , "ManifestCompression" :: Maybe (HlsManifestCompression)
+  , "ManifestDurationFormat" :: Maybe (HlsManifestDurationFormat)
+  , "MinSegmentLength" :: Maybe (IntegerMin0')
+  , "Mode" :: Maybe (HlsMode)
+  , "OutputSelection" :: Maybe (HlsOutputSelection)
+  , "ProgramDateTime" :: Maybe (HlsProgramDateTime)
+  , "ProgramDateTimePeriod" :: Maybe (IntegerMin0Max3600')
+  , "SegmentLength" :: Maybe (IntegerMin1')
+  , "SegmentationMode" :: Maybe (HlsSegmentationMode)
+  , "SegmentsPerSubdirectory" :: Maybe (IntegerMin1')
+  , "StreamInfResolution" :: Maybe (HlsStreamInfResolution)
+  , "TimedMetadataId3Frame" :: Maybe (HlsTimedMetadataId3Frame)
+  , "TimedMetadataId3Period" :: Maybe (IntegerMin0')
+  , "TimestampDeltaMilliseconds" :: Maybe (IntegerMin0')
+  , "TsFileMode" :: Maybe (HlsTsFileMode)
   }
 derive instance newtypeHlsGroupSettings :: Newtype HlsGroupSettings _
 derive instance repGenericHlsGroupSettings :: Generic HlsGroupSettings _
@@ -2673,21 +2672,21 @@ instance encodeHlsGroupSettings :: Encode HlsGroupSettings where encode = generi
 
 -- | Constructs HlsGroupSettings from required parameters
 newHlsGroupSettings :: OutputLocationRef -> HlsGroupSettings
-newHlsGroupSettings _Destination = HlsGroupSettings { "Destination": _Destination, "AdMarkers": (NullOrUndefined Nothing), "BaseUrlContent": (NullOrUndefined Nothing), "BaseUrlManifest": (NullOrUndefined Nothing), "CaptionLanguageMappings": (NullOrUndefined Nothing), "CaptionLanguageSetting": (NullOrUndefined Nothing), "ClientCache": (NullOrUndefined Nothing), "CodecSpecification": (NullOrUndefined Nothing), "ConstantIv": (NullOrUndefined Nothing), "DirectoryStructure": (NullOrUndefined Nothing), "EncryptionType": (NullOrUndefined Nothing), "HlsCdnSettings": (NullOrUndefined Nothing), "IndexNSegments": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "IvInManifest": (NullOrUndefined Nothing), "IvSource": (NullOrUndefined Nothing), "KeepSegments": (NullOrUndefined Nothing), "KeyFormat": (NullOrUndefined Nothing), "KeyFormatVersions": (NullOrUndefined Nothing), "KeyProviderSettings": (NullOrUndefined Nothing), "ManifestCompression": (NullOrUndefined Nothing), "ManifestDurationFormat": (NullOrUndefined Nothing), "MinSegmentLength": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "OutputSelection": (NullOrUndefined Nothing), "ProgramDateTime": (NullOrUndefined Nothing), "ProgramDateTimePeriod": (NullOrUndefined Nothing), "SegmentLength": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SegmentsPerSubdirectory": (NullOrUndefined Nothing), "StreamInfResolution": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing), "TimestampDeltaMilliseconds": (NullOrUndefined Nothing), "TsFileMode": (NullOrUndefined Nothing) }
+newHlsGroupSettings _Destination = HlsGroupSettings { "Destination": _Destination, "AdMarkers": Nothing, "BaseUrlContent": Nothing, "BaseUrlManifest": Nothing, "CaptionLanguageMappings": Nothing, "CaptionLanguageSetting": Nothing, "ClientCache": Nothing, "CodecSpecification": Nothing, "ConstantIv": Nothing, "DirectoryStructure": Nothing, "EncryptionType": Nothing, "HlsCdnSettings": Nothing, "IndexNSegments": Nothing, "InputLossAction": Nothing, "IvInManifest": Nothing, "IvSource": Nothing, "KeepSegments": Nothing, "KeyFormat": Nothing, "KeyFormatVersions": Nothing, "KeyProviderSettings": Nothing, "ManifestCompression": Nothing, "ManifestDurationFormat": Nothing, "MinSegmentLength": Nothing, "Mode": Nothing, "OutputSelection": Nothing, "ProgramDateTime": Nothing, "ProgramDateTimePeriod": Nothing, "SegmentLength": Nothing, "SegmentationMode": Nothing, "SegmentsPerSubdirectory": Nothing, "StreamInfResolution": Nothing, "TimedMetadataId3Frame": Nothing, "TimedMetadataId3Period": Nothing, "TimestampDeltaMilliseconds": Nothing, "TsFileMode": Nothing }
 
 -- | Constructs HlsGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsGroupSettings' :: OutputLocationRef -> ( { "AdMarkers" :: NullOrUndefined (ListOfHlsAdMarkers') , "BaseUrlContent" :: NullOrUndefined (String) , "BaseUrlManifest" :: NullOrUndefined (String) , "CaptionLanguageMappings" :: NullOrUndefined (ListOfCaptionLanguageMapping') , "CaptionLanguageSetting" :: NullOrUndefined (HlsCaptionLanguageSetting) , "ClientCache" :: NullOrUndefined (HlsClientCache) , "CodecSpecification" :: NullOrUndefined (HlsCodecSpecification) , "ConstantIv" :: NullOrUndefined (StringMin32Max32') , "Destination" :: (OutputLocationRef) , "DirectoryStructure" :: NullOrUndefined (HlsDirectoryStructure) , "EncryptionType" :: NullOrUndefined (HlsEncryptionType) , "HlsCdnSettings" :: NullOrUndefined (HlsCdnSettings) , "IndexNSegments" :: NullOrUndefined (IntegerMin3') , "InputLossAction" :: NullOrUndefined (InputLossActionForHlsOut) , "IvInManifest" :: NullOrUndefined (HlsIvInManifest) , "IvSource" :: NullOrUndefined (HlsIvSource) , "KeepSegments" :: NullOrUndefined (IntegerMin1') , "KeyFormat" :: NullOrUndefined (String) , "KeyFormatVersions" :: NullOrUndefined (String) , "KeyProviderSettings" :: NullOrUndefined (KeyProviderSettings) , "ManifestCompression" :: NullOrUndefined (HlsManifestCompression) , "ManifestDurationFormat" :: NullOrUndefined (HlsManifestDurationFormat) , "MinSegmentLength" :: NullOrUndefined (IntegerMin0') , "Mode" :: NullOrUndefined (HlsMode) , "OutputSelection" :: NullOrUndefined (HlsOutputSelection) , "ProgramDateTime" :: NullOrUndefined (HlsProgramDateTime) , "ProgramDateTimePeriod" :: NullOrUndefined (IntegerMin0Max3600') , "SegmentLength" :: NullOrUndefined (IntegerMin1') , "SegmentationMode" :: NullOrUndefined (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: NullOrUndefined (IntegerMin1') , "StreamInfResolution" :: NullOrUndefined (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: NullOrUndefined (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0') , "TimestampDeltaMilliseconds" :: NullOrUndefined (IntegerMin0') , "TsFileMode" :: NullOrUndefined (HlsTsFileMode) } -> {"AdMarkers" :: NullOrUndefined (ListOfHlsAdMarkers') , "BaseUrlContent" :: NullOrUndefined (String) , "BaseUrlManifest" :: NullOrUndefined (String) , "CaptionLanguageMappings" :: NullOrUndefined (ListOfCaptionLanguageMapping') , "CaptionLanguageSetting" :: NullOrUndefined (HlsCaptionLanguageSetting) , "ClientCache" :: NullOrUndefined (HlsClientCache) , "CodecSpecification" :: NullOrUndefined (HlsCodecSpecification) , "ConstantIv" :: NullOrUndefined (StringMin32Max32') , "Destination" :: (OutputLocationRef) , "DirectoryStructure" :: NullOrUndefined (HlsDirectoryStructure) , "EncryptionType" :: NullOrUndefined (HlsEncryptionType) , "HlsCdnSettings" :: NullOrUndefined (HlsCdnSettings) , "IndexNSegments" :: NullOrUndefined (IntegerMin3') , "InputLossAction" :: NullOrUndefined (InputLossActionForHlsOut) , "IvInManifest" :: NullOrUndefined (HlsIvInManifest) , "IvSource" :: NullOrUndefined (HlsIvSource) , "KeepSegments" :: NullOrUndefined (IntegerMin1') , "KeyFormat" :: NullOrUndefined (String) , "KeyFormatVersions" :: NullOrUndefined (String) , "KeyProviderSettings" :: NullOrUndefined (KeyProviderSettings) , "ManifestCompression" :: NullOrUndefined (HlsManifestCompression) , "ManifestDurationFormat" :: NullOrUndefined (HlsManifestDurationFormat) , "MinSegmentLength" :: NullOrUndefined (IntegerMin0') , "Mode" :: NullOrUndefined (HlsMode) , "OutputSelection" :: NullOrUndefined (HlsOutputSelection) , "ProgramDateTime" :: NullOrUndefined (HlsProgramDateTime) , "ProgramDateTimePeriod" :: NullOrUndefined (IntegerMin0Max3600') , "SegmentLength" :: NullOrUndefined (IntegerMin1') , "SegmentationMode" :: NullOrUndefined (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: NullOrUndefined (IntegerMin1') , "StreamInfResolution" :: NullOrUndefined (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: NullOrUndefined (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0') , "TimestampDeltaMilliseconds" :: NullOrUndefined (IntegerMin0') , "TsFileMode" :: NullOrUndefined (HlsTsFileMode) } ) -> HlsGroupSettings
-newHlsGroupSettings' _Destination customize = (HlsGroupSettings <<< customize) { "Destination": _Destination, "AdMarkers": (NullOrUndefined Nothing), "BaseUrlContent": (NullOrUndefined Nothing), "BaseUrlManifest": (NullOrUndefined Nothing), "CaptionLanguageMappings": (NullOrUndefined Nothing), "CaptionLanguageSetting": (NullOrUndefined Nothing), "ClientCache": (NullOrUndefined Nothing), "CodecSpecification": (NullOrUndefined Nothing), "ConstantIv": (NullOrUndefined Nothing), "DirectoryStructure": (NullOrUndefined Nothing), "EncryptionType": (NullOrUndefined Nothing), "HlsCdnSettings": (NullOrUndefined Nothing), "IndexNSegments": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "IvInManifest": (NullOrUndefined Nothing), "IvSource": (NullOrUndefined Nothing), "KeepSegments": (NullOrUndefined Nothing), "KeyFormat": (NullOrUndefined Nothing), "KeyFormatVersions": (NullOrUndefined Nothing), "KeyProviderSettings": (NullOrUndefined Nothing), "ManifestCompression": (NullOrUndefined Nothing), "ManifestDurationFormat": (NullOrUndefined Nothing), "MinSegmentLength": (NullOrUndefined Nothing), "Mode": (NullOrUndefined Nothing), "OutputSelection": (NullOrUndefined Nothing), "ProgramDateTime": (NullOrUndefined Nothing), "ProgramDateTimePeriod": (NullOrUndefined Nothing), "SegmentLength": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SegmentsPerSubdirectory": (NullOrUndefined Nothing), "StreamInfResolution": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing), "TimestampDeltaMilliseconds": (NullOrUndefined Nothing), "TsFileMode": (NullOrUndefined Nothing) }
+newHlsGroupSettings' :: OutputLocationRef -> ( { "AdMarkers" :: Maybe (ListOfHlsAdMarkers') , "BaseUrlContent" :: Maybe (String) , "BaseUrlManifest" :: Maybe (String) , "CaptionLanguageMappings" :: Maybe (ListOfCaptionLanguageMapping') , "CaptionLanguageSetting" :: Maybe (HlsCaptionLanguageSetting) , "ClientCache" :: Maybe (HlsClientCache) , "CodecSpecification" :: Maybe (HlsCodecSpecification) , "ConstantIv" :: Maybe (StringMin32Max32') , "Destination" :: (OutputLocationRef) , "DirectoryStructure" :: Maybe (HlsDirectoryStructure) , "EncryptionType" :: Maybe (HlsEncryptionType) , "HlsCdnSettings" :: Maybe (HlsCdnSettings) , "IndexNSegments" :: Maybe (IntegerMin3') , "InputLossAction" :: Maybe (InputLossActionForHlsOut) , "IvInManifest" :: Maybe (HlsIvInManifest) , "IvSource" :: Maybe (HlsIvSource) , "KeepSegments" :: Maybe (IntegerMin1') , "KeyFormat" :: Maybe (String) , "KeyFormatVersions" :: Maybe (String) , "KeyProviderSettings" :: Maybe (KeyProviderSettings) , "ManifestCompression" :: Maybe (HlsManifestCompression) , "ManifestDurationFormat" :: Maybe (HlsManifestDurationFormat) , "MinSegmentLength" :: Maybe (IntegerMin0') , "Mode" :: Maybe (HlsMode) , "OutputSelection" :: Maybe (HlsOutputSelection) , "ProgramDateTime" :: Maybe (HlsProgramDateTime) , "ProgramDateTimePeriod" :: Maybe (IntegerMin0Max3600') , "SegmentLength" :: Maybe (IntegerMin1') , "SegmentationMode" :: Maybe (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: Maybe (IntegerMin1') , "StreamInfResolution" :: Maybe (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: Maybe (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: Maybe (IntegerMin0') , "TimestampDeltaMilliseconds" :: Maybe (IntegerMin0') , "TsFileMode" :: Maybe (HlsTsFileMode) } -> {"AdMarkers" :: Maybe (ListOfHlsAdMarkers') , "BaseUrlContent" :: Maybe (String) , "BaseUrlManifest" :: Maybe (String) , "CaptionLanguageMappings" :: Maybe (ListOfCaptionLanguageMapping') , "CaptionLanguageSetting" :: Maybe (HlsCaptionLanguageSetting) , "ClientCache" :: Maybe (HlsClientCache) , "CodecSpecification" :: Maybe (HlsCodecSpecification) , "ConstantIv" :: Maybe (StringMin32Max32') , "Destination" :: (OutputLocationRef) , "DirectoryStructure" :: Maybe (HlsDirectoryStructure) , "EncryptionType" :: Maybe (HlsEncryptionType) , "HlsCdnSettings" :: Maybe (HlsCdnSettings) , "IndexNSegments" :: Maybe (IntegerMin3') , "InputLossAction" :: Maybe (InputLossActionForHlsOut) , "IvInManifest" :: Maybe (HlsIvInManifest) , "IvSource" :: Maybe (HlsIvSource) , "KeepSegments" :: Maybe (IntegerMin1') , "KeyFormat" :: Maybe (String) , "KeyFormatVersions" :: Maybe (String) , "KeyProviderSettings" :: Maybe (KeyProviderSettings) , "ManifestCompression" :: Maybe (HlsManifestCompression) , "ManifestDurationFormat" :: Maybe (HlsManifestDurationFormat) , "MinSegmentLength" :: Maybe (IntegerMin0') , "Mode" :: Maybe (HlsMode) , "OutputSelection" :: Maybe (HlsOutputSelection) , "ProgramDateTime" :: Maybe (HlsProgramDateTime) , "ProgramDateTimePeriod" :: Maybe (IntegerMin0Max3600') , "SegmentLength" :: Maybe (IntegerMin1') , "SegmentationMode" :: Maybe (HlsSegmentationMode) , "SegmentsPerSubdirectory" :: Maybe (IntegerMin1') , "StreamInfResolution" :: Maybe (HlsStreamInfResolution) , "TimedMetadataId3Frame" :: Maybe (HlsTimedMetadataId3Frame) , "TimedMetadataId3Period" :: Maybe (IntegerMin0') , "TimestampDeltaMilliseconds" :: Maybe (IntegerMin0') , "TsFileMode" :: Maybe (HlsTsFileMode) } ) -> HlsGroupSettings
+newHlsGroupSettings' _Destination customize = (HlsGroupSettings <<< customize) { "Destination": _Destination, "AdMarkers": Nothing, "BaseUrlContent": Nothing, "BaseUrlManifest": Nothing, "CaptionLanguageMappings": Nothing, "CaptionLanguageSetting": Nothing, "ClientCache": Nothing, "CodecSpecification": Nothing, "ConstantIv": Nothing, "DirectoryStructure": Nothing, "EncryptionType": Nothing, "HlsCdnSettings": Nothing, "IndexNSegments": Nothing, "InputLossAction": Nothing, "IvInManifest": Nothing, "IvSource": Nothing, "KeepSegments": Nothing, "KeyFormat": Nothing, "KeyFormatVersions": Nothing, "KeyProviderSettings": Nothing, "ManifestCompression": Nothing, "ManifestDurationFormat": Nothing, "MinSegmentLength": Nothing, "Mode": Nothing, "OutputSelection": Nothing, "ProgramDateTime": Nothing, "ProgramDateTimePeriod": Nothing, "SegmentLength": Nothing, "SegmentationMode": Nothing, "SegmentsPerSubdirectory": Nothing, "StreamInfResolution": Nothing, "TimedMetadataId3Frame": Nothing, "TimedMetadataId3Period": Nothing, "TimestampDeltaMilliseconds": Nothing, "TsFileMode": Nothing }
 
 
 
 -- | Placeholder documentation for HlsInputSettings
 newtype HlsInputSettings = HlsInputSettings 
-  { "Bandwidth" :: NullOrUndefined (IntegerMin0')
-  , "BufferSegments" :: NullOrUndefined (IntegerMin0')
-  , "Retries" :: NullOrUndefined (IntegerMin0')
-  , "RetryInterval" :: NullOrUndefined (IntegerMin0')
+  { "Bandwidth" :: Maybe (IntegerMin0')
+  , "BufferSegments" :: Maybe (IntegerMin0')
+  , "Retries" :: Maybe (IntegerMin0')
+  , "RetryInterval" :: Maybe (IntegerMin0')
   }
 derive instance newtypeHlsInputSettings :: Newtype HlsInputSettings _
 derive instance repGenericHlsInputSettings :: Generic HlsInputSettings _
@@ -2697,12 +2696,12 @@ instance encodeHlsInputSettings :: Encode HlsInputSettings where encode = generi
 
 -- | Constructs HlsInputSettings from required parameters
 newHlsInputSettings :: HlsInputSettings
-newHlsInputSettings  = HlsInputSettings { "Bandwidth": (NullOrUndefined Nothing), "BufferSegments": (NullOrUndefined Nothing), "Retries": (NullOrUndefined Nothing), "RetryInterval": (NullOrUndefined Nothing) }
+newHlsInputSettings  = HlsInputSettings { "Bandwidth": Nothing, "BufferSegments": Nothing, "Retries": Nothing, "RetryInterval": Nothing }
 
 -- | Constructs HlsInputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsInputSettings' :: ( { "Bandwidth" :: NullOrUndefined (IntegerMin0') , "BufferSegments" :: NullOrUndefined (IntegerMin0') , "Retries" :: NullOrUndefined (IntegerMin0') , "RetryInterval" :: NullOrUndefined (IntegerMin0') } -> {"Bandwidth" :: NullOrUndefined (IntegerMin0') , "BufferSegments" :: NullOrUndefined (IntegerMin0') , "Retries" :: NullOrUndefined (IntegerMin0') , "RetryInterval" :: NullOrUndefined (IntegerMin0') } ) -> HlsInputSettings
-newHlsInputSettings'  customize = (HlsInputSettings <<< customize) { "Bandwidth": (NullOrUndefined Nothing), "BufferSegments": (NullOrUndefined Nothing), "Retries": (NullOrUndefined Nothing), "RetryInterval": (NullOrUndefined Nothing) }
+newHlsInputSettings' :: ( { "Bandwidth" :: Maybe (IntegerMin0') , "BufferSegments" :: Maybe (IntegerMin0') , "Retries" :: Maybe (IntegerMin0') , "RetryInterval" :: Maybe (IntegerMin0') } -> {"Bandwidth" :: Maybe (IntegerMin0') , "BufferSegments" :: Maybe (IntegerMin0') , "Retries" :: Maybe (IntegerMin0') , "RetryInterval" :: Maybe (IntegerMin0') } ) -> HlsInputSettings
+newHlsInputSettings'  customize = (HlsInputSettings <<< customize) { "Bandwidth": Nothing, "BufferSegments": Nothing, "Retries": Nothing, "RetryInterval": Nothing }
 
 
 
@@ -2748,11 +2747,11 @@ instance encodeHlsManifestDurationFormat :: Encode HlsManifestDurationFormat whe
 
 -- | Placeholder documentation for HlsMediaStoreSettings
 newtype HlsMediaStoreSettings = HlsMediaStoreSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0')
-  , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600')
-  , "MediaStoreStorageClass" :: NullOrUndefined (HlsMediaStoreStorageClass)
-  , "NumRetries" :: NullOrUndefined (IntegerMin0')
-  , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15')
+  { "ConnectionRetryInterval" :: Maybe (IntegerMin0')
+  , "FilecacheDuration" :: Maybe (IntegerMin0Max600')
+  , "MediaStoreStorageClass" :: Maybe (HlsMediaStoreStorageClass)
+  , "NumRetries" :: Maybe (IntegerMin0')
+  , "RestartDelay" :: Maybe (IntegerMin0Max15')
   }
 derive instance newtypeHlsMediaStoreSettings :: Newtype HlsMediaStoreSettings _
 derive instance repGenericHlsMediaStoreSettings :: Generic HlsMediaStoreSettings _
@@ -2762,12 +2761,12 @@ instance encodeHlsMediaStoreSettings :: Encode HlsMediaStoreSettings where encod
 
 -- | Constructs HlsMediaStoreSettings from required parameters
 newHlsMediaStoreSettings :: HlsMediaStoreSettings
-newHlsMediaStoreSettings  = HlsMediaStoreSettings { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "MediaStoreStorageClass": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
+newHlsMediaStoreSettings  = HlsMediaStoreSettings { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "MediaStoreStorageClass": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing }
 
 -- | Constructs HlsMediaStoreSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsMediaStoreSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "MediaStoreStorageClass" :: NullOrUndefined (HlsMediaStoreStorageClass) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "MediaStoreStorageClass" :: NullOrUndefined (HlsMediaStoreStorageClass) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } ) -> HlsMediaStoreSettings
-newHlsMediaStoreSettings'  customize = (HlsMediaStoreSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "MediaStoreStorageClass": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
+newHlsMediaStoreSettings' :: ( { "ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "MediaStoreStorageClass" :: Maybe (HlsMediaStoreStorageClass) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "MediaStoreStorageClass" :: Maybe (HlsMediaStoreStorageClass) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') } ) -> HlsMediaStoreSettings
+newHlsMediaStoreSettings'  customize = (HlsMediaStoreSettings <<< customize) { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "MediaStoreStorageClass": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing }
 
 
 
@@ -2804,8 +2803,8 @@ instance encodeHlsOutputSelection :: Encode HlsOutputSelection where encode = ge
 -- | Placeholder documentation for HlsOutputSettings
 newtype HlsOutputSettings = HlsOutputSettings 
   { "HlsSettings" :: (HlsSettings)
-  , "NameModifier" :: NullOrUndefined (StringMin1')
-  , "SegmentModifier" :: NullOrUndefined (String)
+  , "NameModifier" :: Maybe (StringMin1')
+  , "SegmentModifier" :: Maybe (String)
   }
 derive instance newtypeHlsOutputSettings :: Newtype HlsOutputSettings _
 derive instance repGenericHlsOutputSettings :: Generic HlsOutputSettings _
@@ -2815,12 +2814,12 @@ instance encodeHlsOutputSettings :: Encode HlsOutputSettings where encode = gene
 
 -- | Constructs HlsOutputSettings from required parameters
 newHlsOutputSettings :: HlsSettings -> HlsOutputSettings
-newHlsOutputSettings _HlsSettings = HlsOutputSettings { "HlsSettings": _HlsSettings, "NameModifier": (NullOrUndefined Nothing), "SegmentModifier": (NullOrUndefined Nothing) }
+newHlsOutputSettings _HlsSettings = HlsOutputSettings { "HlsSettings": _HlsSettings, "NameModifier": Nothing, "SegmentModifier": Nothing }
 
 -- | Constructs HlsOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsOutputSettings' :: HlsSettings -> ( { "HlsSettings" :: (HlsSettings) , "NameModifier" :: NullOrUndefined (StringMin1') , "SegmentModifier" :: NullOrUndefined (String) } -> {"HlsSettings" :: (HlsSettings) , "NameModifier" :: NullOrUndefined (StringMin1') , "SegmentModifier" :: NullOrUndefined (String) } ) -> HlsOutputSettings
-newHlsOutputSettings' _HlsSettings customize = (HlsOutputSettings <<< customize) { "HlsSettings": _HlsSettings, "NameModifier": (NullOrUndefined Nothing), "SegmentModifier": (NullOrUndefined Nothing) }
+newHlsOutputSettings' :: HlsSettings -> ( { "HlsSettings" :: (HlsSettings) , "NameModifier" :: Maybe (StringMin1') , "SegmentModifier" :: Maybe (String) } -> {"HlsSettings" :: (HlsSettings) , "NameModifier" :: Maybe (StringMin1') , "SegmentModifier" :: Maybe (String) } ) -> HlsOutputSettings
+newHlsOutputSettings' _HlsSettings customize = (HlsOutputSettings <<< customize) { "HlsSettings": _HlsSettings, "NameModifier": Nothing, "SegmentModifier": Nothing }
 
 
 
@@ -2846,8 +2845,8 @@ instance encodeHlsSegmentationMode :: Encode HlsSegmentationMode where encode = 
 
 -- | Placeholder documentation for HlsSettings
 newtype HlsSettings = HlsSettings 
-  { "AudioOnlyHlsSettings" :: NullOrUndefined (AudioOnlyHlsSettings)
-  , "StandardHlsSettings" :: NullOrUndefined (StandardHlsSettings)
+  { "AudioOnlyHlsSettings" :: Maybe (AudioOnlyHlsSettings)
+  , "StandardHlsSettings" :: Maybe (StandardHlsSettings)
   }
 derive instance newtypeHlsSettings :: Newtype HlsSettings _
 derive instance repGenericHlsSettings :: Generic HlsSettings _
@@ -2857,12 +2856,12 @@ instance encodeHlsSettings :: Encode HlsSettings where encode = genericEncode op
 
 -- | Constructs HlsSettings from required parameters
 newHlsSettings :: HlsSettings
-newHlsSettings  = HlsSettings { "AudioOnlyHlsSettings": (NullOrUndefined Nothing), "StandardHlsSettings": (NullOrUndefined Nothing) }
+newHlsSettings  = HlsSettings { "AudioOnlyHlsSettings": Nothing, "StandardHlsSettings": Nothing }
 
 -- | Constructs HlsSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsSettings' :: ( { "AudioOnlyHlsSettings" :: NullOrUndefined (AudioOnlyHlsSettings) , "StandardHlsSettings" :: NullOrUndefined (StandardHlsSettings) } -> {"AudioOnlyHlsSettings" :: NullOrUndefined (AudioOnlyHlsSettings) , "StandardHlsSettings" :: NullOrUndefined (StandardHlsSettings) } ) -> HlsSettings
-newHlsSettings'  customize = (HlsSettings <<< customize) { "AudioOnlyHlsSettings": (NullOrUndefined Nothing), "StandardHlsSettings": (NullOrUndefined Nothing) }
+newHlsSettings' :: ( { "AudioOnlyHlsSettings" :: Maybe (AudioOnlyHlsSettings) , "StandardHlsSettings" :: Maybe (StandardHlsSettings) } -> {"AudioOnlyHlsSettings" :: Maybe (AudioOnlyHlsSettings) , "StandardHlsSettings" :: Maybe (StandardHlsSettings) } ) -> HlsSettings
+newHlsSettings'  customize = (HlsSettings <<< customize) { "AudioOnlyHlsSettings": Nothing, "StandardHlsSettings": Nothing }
 
 
 
@@ -2908,11 +2907,11 @@ instance encodeHlsWebdavHttpTransferMode :: Encode HlsWebdavHttpTransferMode whe
 
 -- | Placeholder documentation for HlsWebdavSettings
 newtype HlsWebdavSettings = HlsWebdavSettings 
-  { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0')
-  , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600')
-  , "HttpTransferMode" :: NullOrUndefined (HlsWebdavHttpTransferMode)
-  , "NumRetries" :: NullOrUndefined (IntegerMin0')
-  , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15')
+  { "ConnectionRetryInterval" :: Maybe (IntegerMin0')
+  , "FilecacheDuration" :: Maybe (IntegerMin0Max600')
+  , "HttpTransferMode" :: Maybe (HlsWebdavHttpTransferMode)
+  , "NumRetries" :: Maybe (IntegerMin0')
+  , "RestartDelay" :: Maybe (IntegerMin0Max15')
   }
 derive instance newtypeHlsWebdavSettings :: Newtype HlsWebdavSettings _
 derive instance repGenericHlsWebdavSettings :: Generic HlsWebdavSettings _
@@ -2922,26 +2921,26 @@ instance encodeHlsWebdavSettings :: Encode HlsWebdavSettings where encode = gene
 
 -- | Constructs HlsWebdavSettings from required parameters
 newHlsWebdavSettings :: HlsWebdavSettings
-newHlsWebdavSettings  = HlsWebdavSettings { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "HttpTransferMode": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
+newHlsWebdavSettings  = HlsWebdavSettings { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "HttpTransferMode": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing }
 
 -- | Constructs HlsWebdavSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHlsWebdavSettings' :: ( { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined (HlsWebdavHttpTransferMode) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600') , "HttpTransferMode" :: NullOrUndefined (HlsWebdavHttpTransferMode) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } ) -> HlsWebdavSettings
-newHlsWebdavSettings'  customize = (HlsWebdavSettings <<< customize) { "ConnectionRetryInterval": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "HttpTransferMode": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing) }
+newHlsWebdavSettings' :: ( { "ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "HttpTransferMode" :: Maybe (HlsWebdavHttpTransferMode) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') } -> {"ConnectionRetryInterval" :: Maybe (IntegerMin0') , "FilecacheDuration" :: Maybe (IntegerMin0Max600') , "HttpTransferMode" :: Maybe (HlsWebdavHttpTransferMode) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0Max15') } ) -> HlsWebdavSettings
+newHlsWebdavSettings'  customize = (HlsWebdavSettings <<< customize) { "ConnectionRetryInterval": Nothing, "FilecacheDuration": Nothing, "HttpTransferMode": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing }
 
 
 
 -- | Placeholder documentation for Input
 newtype Input = Input 
-  { "Arn" :: NullOrUndefined (String)
-  , "AttachedChannels" :: NullOrUndefined (ListOf__string')
-  , "Destinations" :: NullOrUndefined (ListOfInputDestination')
-  , "Id" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
-  , "SecurityGroups" :: NullOrUndefined (ListOf__string')
-  , "Sources" :: NullOrUndefined (ListOfInputSource')
-  , "State" :: NullOrUndefined (InputState)
-  , "Type" :: NullOrUndefined (InputType)
+  { "Arn" :: Maybe (String)
+  , "AttachedChannels" :: Maybe (ListOf__string')
+  , "Destinations" :: Maybe (ListOfInputDestination')
+  , "Id" :: Maybe (String)
+  , "Name" :: Maybe (String)
+  , "SecurityGroups" :: Maybe (ListOf__string')
+  , "Sources" :: Maybe (ListOfInputSource')
+  , "State" :: Maybe (InputState)
+  , "Type" :: Maybe (InputType)
   }
 derive instance newtypeInput :: Newtype Input _
 derive instance repGenericInput :: Generic Input _
@@ -2951,19 +2950,19 @@ instance encodeInput :: Encode Input where encode = genericEncode options
 
 -- | Constructs Input from required parameters
 newInput :: Input
-newInput  = Input { "Arn": (NullOrUndefined Nothing), "AttachedChannels": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newInput  = Input { "Arn": Nothing, "AttachedChannels": Nothing, "Destinations": Nothing, "Id": Nothing, "Name": Nothing, "SecurityGroups": Nothing, "Sources": Nothing, "State": Nothing, "Type": Nothing }
 
 -- | Constructs Input's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInput' :: ( { "Arn" :: NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined (InputState) , "Type" :: NullOrUndefined (InputType) } -> {"Arn" :: NullOrUndefined (String) , "AttachedChannels" :: NullOrUndefined (ListOf__string') , "Destinations" :: NullOrUndefined (ListOfInputDestination') , "Id" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) , "SecurityGroups" :: NullOrUndefined (ListOf__string') , "Sources" :: NullOrUndefined (ListOfInputSource') , "State" :: NullOrUndefined (InputState) , "Type" :: NullOrUndefined (InputType) } ) -> Input
-newInput'  customize = (Input <<< customize) { "Arn": (NullOrUndefined Nothing), "AttachedChannels": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "Sources": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newInput' :: ( { "Arn" :: Maybe (String) , "AttachedChannels" :: Maybe (ListOf__string') , "Destinations" :: Maybe (ListOfInputDestination') , "Id" :: Maybe (String) , "Name" :: Maybe (String) , "SecurityGroups" :: Maybe (ListOf__string') , "Sources" :: Maybe (ListOfInputSource') , "State" :: Maybe (InputState) , "Type" :: Maybe (InputType) } -> {"Arn" :: Maybe (String) , "AttachedChannels" :: Maybe (ListOf__string') , "Destinations" :: Maybe (ListOfInputDestination') , "Id" :: Maybe (String) , "Name" :: Maybe (String) , "SecurityGroups" :: Maybe (ListOf__string') , "Sources" :: Maybe (ListOfInputSource') , "State" :: Maybe (InputState) , "Type" :: Maybe (InputType) } ) -> Input
+newInput'  customize = (Input <<< customize) { "Arn": Nothing, "AttachedChannels": Nothing, "Destinations": Nothing, "Id": Nothing, "Name": Nothing, "SecurityGroups": Nothing, "Sources": Nothing, "State": Nothing, "Type": Nothing }
 
 
 
 -- | Placeholder documentation for InputAttachment
 newtype InputAttachment = InputAttachment 
-  { "InputId" :: NullOrUndefined (String)
-  , "InputSettings" :: NullOrUndefined (InputSettings)
+  { "InputId" :: Maybe (String)
+  , "InputSettings" :: Maybe (InputSettings)
   }
 derive instance newtypeInputAttachment :: Newtype InputAttachment _
 derive instance repGenericInputAttachment :: Generic InputAttachment _
@@ -2973,12 +2972,12 @@ instance encodeInputAttachment :: Encode InputAttachment where encode = genericE
 
 -- | Constructs InputAttachment from required parameters
 newInputAttachment :: InputAttachment
-newInputAttachment  = InputAttachment { "InputId": (NullOrUndefined Nothing), "InputSettings": (NullOrUndefined Nothing) }
+newInputAttachment  = InputAttachment { "InputId": Nothing, "InputSettings": Nothing }
 
 -- | Constructs InputAttachment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputAttachment' :: ( { "InputId" :: NullOrUndefined (String) , "InputSettings" :: NullOrUndefined (InputSettings) } -> {"InputId" :: NullOrUndefined (String) , "InputSettings" :: NullOrUndefined (InputSettings) } ) -> InputAttachment
-newInputAttachment'  customize = (InputAttachment <<< customize) { "InputId": (NullOrUndefined Nothing), "InputSettings": (NullOrUndefined Nothing) }
+newInputAttachment' :: ( { "InputId" :: Maybe (String) , "InputSettings" :: Maybe (InputSettings) } -> {"InputId" :: Maybe (String) , "InputSettings" :: Maybe (InputSettings) } ) -> InputAttachment
+newInputAttachment'  customize = (InputAttachment <<< customize) { "InputId": Nothing, "InputSettings": Nothing }
 
 
 
@@ -3036,9 +3035,9 @@ instance encodeInputDenoiseFilter :: Encode InputDenoiseFilter where encode = ge
 
 -- | The settings for a PUSH type input.
 newtype InputDestination = InputDestination 
-  { "Ip" :: NullOrUndefined (String)
-  , "Port" :: NullOrUndefined (String)
-  , "Url" :: NullOrUndefined (String)
+  { "Ip" :: Maybe (String)
+  , "Port" :: Maybe (String)
+  , "Url" :: Maybe (String)
   }
 derive instance newtypeInputDestination :: Newtype InputDestination _
 derive instance repGenericInputDestination :: Generic InputDestination _
@@ -3048,18 +3047,18 @@ instance encodeInputDestination :: Encode InputDestination where encode = generi
 
 -- | Constructs InputDestination from required parameters
 newInputDestination :: InputDestination
-newInputDestination  = InputDestination { "Ip": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing) }
+newInputDestination  = InputDestination { "Ip": Nothing, "Port": Nothing, "Url": Nothing }
 
 -- | Constructs InputDestination's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputDestination' :: ( { "Ip" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) } -> {"Ip" :: NullOrUndefined (String) , "Port" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) } ) -> InputDestination
-newInputDestination'  customize = (InputDestination <<< customize) { "Ip": (NullOrUndefined Nothing), "Port": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing) }
+newInputDestination' :: ( { "Ip" :: Maybe (String) , "Port" :: Maybe (String) , "Url" :: Maybe (String) } -> {"Ip" :: Maybe (String) , "Port" :: Maybe (String) , "Url" :: Maybe (String) } ) -> InputDestination
+newInputDestination'  customize = (InputDestination <<< customize) { "Ip": Nothing, "Port": Nothing, "Url": Nothing }
 
 
 
 -- | Endpoint settings for a PUSH type input.
 newtype InputDestinationRequest = InputDestinationRequest 
-  { "StreamName" :: NullOrUndefined (String)
+  { "StreamName" :: Maybe (String)
   }
 derive instance newtypeInputDestinationRequest :: Newtype InputDestinationRequest _
 derive instance repGenericInputDestinationRequest :: Generic InputDestinationRequest _
@@ -3069,12 +3068,12 @@ instance encodeInputDestinationRequest :: Encode InputDestinationRequest where e
 
 -- | Constructs InputDestinationRequest from required parameters
 newInputDestinationRequest :: InputDestinationRequest
-newInputDestinationRequest  = InputDestinationRequest { "StreamName": (NullOrUndefined Nothing) }
+newInputDestinationRequest  = InputDestinationRequest { "StreamName": Nothing }
 
 -- | Constructs InputDestinationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputDestinationRequest' :: ( { "StreamName" :: NullOrUndefined (String) } -> {"StreamName" :: NullOrUndefined (String) } ) -> InputDestinationRequest
-newInputDestinationRequest'  customize = (InputDestinationRequest <<< customize) { "StreamName": (NullOrUndefined Nothing) }
+newInputDestinationRequest' :: ( { "StreamName" :: Maybe (String) } -> {"StreamName" :: Maybe (String) } ) -> InputDestinationRequest
+newInputDestinationRequest'  customize = (InputDestinationRequest <<< customize) { "StreamName": Nothing }
 
 
 
@@ -3090,9 +3089,9 @@ instance encodeInputFilter :: Encode InputFilter where encode = genericEncode op
 
 -- | Placeholder documentation for InputLocation
 newtype InputLocation = InputLocation 
-  { "PasswordParam" :: NullOrUndefined (String)
+  { "PasswordParam" :: Maybe (String)
   , "Uri" :: (String)
-  , "Username" :: NullOrUndefined (String)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeInputLocation :: Newtype InputLocation _
 derive instance repGenericInputLocation :: Generic InputLocation _
@@ -3102,12 +3101,12 @@ instance encodeInputLocation :: Encode InputLocation where encode = genericEncod
 
 -- | Constructs InputLocation from required parameters
 newInputLocation :: String -> InputLocation
-newInputLocation _Uri = InputLocation { "Uri": _Uri, "PasswordParam": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputLocation _Uri = InputLocation { "Uri": _Uri, "PasswordParam": Nothing, "Username": Nothing }
 
 -- | Constructs InputLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputLocation' :: String -> ( { "PasswordParam" :: NullOrUndefined (String) , "Uri" :: (String) , "Username" :: NullOrUndefined (String) } -> {"PasswordParam" :: NullOrUndefined (String) , "Uri" :: (String) , "Username" :: NullOrUndefined (String) } ) -> InputLocation
-newInputLocation' _Uri customize = (InputLocation <<< customize) { "Uri": _Uri, "PasswordParam": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputLocation' :: String -> ( { "PasswordParam" :: Maybe (String) , "Uri" :: (String) , "Username" :: Maybe (String) } -> {"PasswordParam" :: Maybe (String) , "Uri" :: (String) , "Username" :: Maybe (String) } ) -> InputLocation
+newInputLocation' _Uri customize = (InputLocation <<< customize) { "Uri": _Uri, "PasswordParam": Nothing, "Username": Nothing }
 
 
 
@@ -3143,11 +3142,11 @@ instance encodeInputLossActionForUdpOut :: Encode InputLossActionForUdpOut where
 
 -- | Placeholder documentation for InputLossBehavior
 newtype InputLossBehavior = InputLossBehavior 
-  { "BlackFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000')
-  , "InputLossImageColor" :: NullOrUndefined (StringMin6Max6')
-  , "InputLossImageSlate" :: NullOrUndefined (InputLocation)
-  , "InputLossImageType" :: NullOrUndefined (InputLossImageType)
-  , "RepeatFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000')
+  { "BlackFrameMsec" :: Maybe (IntegerMin0Max1000000')
+  , "InputLossImageColor" :: Maybe (StringMin6Max6')
+  , "InputLossImageSlate" :: Maybe (InputLocation)
+  , "InputLossImageType" :: Maybe (InputLossImageType)
+  , "RepeatFrameMsec" :: Maybe (IntegerMin0Max1000000')
   }
 derive instance newtypeInputLossBehavior :: Newtype InputLossBehavior _
 derive instance repGenericInputLossBehavior :: Generic InputLossBehavior _
@@ -3157,12 +3156,12 @@ instance encodeInputLossBehavior :: Encode InputLossBehavior where encode = gene
 
 -- | Constructs InputLossBehavior from required parameters
 newInputLossBehavior :: InputLossBehavior
-newInputLossBehavior  = InputLossBehavior { "BlackFrameMsec": (NullOrUndefined Nothing), "InputLossImageColor": (NullOrUndefined Nothing), "InputLossImageSlate": (NullOrUndefined Nothing), "InputLossImageType": (NullOrUndefined Nothing), "RepeatFrameMsec": (NullOrUndefined Nothing) }
+newInputLossBehavior  = InputLossBehavior { "BlackFrameMsec": Nothing, "InputLossImageColor": Nothing, "InputLossImageSlate": Nothing, "InputLossImageType": Nothing, "RepeatFrameMsec": Nothing }
 
 -- | Constructs InputLossBehavior's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputLossBehavior' :: ( { "BlackFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000') , "InputLossImageColor" :: NullOrUndefined (StringMin6Max6') , "InputLossImageSlate" :: NullOrUndefined (InputLocation) , "InputLossImageType" :: NullOrUndefined (InputLossImageType) , "RepeatFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000') } -> {"BlackFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000') , "InputLossImageColor" :: NullOrUndefined (StringMin6Max6') , "InputLossImageSlate" :: NullOrUndefined (InputLocation) , "InputLossImageType" :: NullOrUndefined (InputLossImageType) , "RepeatFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000') } ) -> InputLossBehavior
-newInputLossBehavior'  customize = (InputLossBehavior <<< customize) { "BlackFrameMsec": (NullOrUndefined Nothing), "InputLossImageColor": (NullOrUndefined Nothing), "InputLossImageSlate": (NullOrUndefined Nothing), "InputLossImageType": (NullOrUndefined Nothing), "RepeatFrameMsec": (NullOrUndefined Nothing) }
+newInputLossBehavior' :: ( { "BlackFrameMsec" :: Maybe (IntegerMin0Max1000000') , "InputLossImageColor" :: Maybe (StringMin6Max6') , "InputLossImageSlate" :: Maybe (InputLocation) , "InputLossImageType" :: Maybe (InputLossImageType) , "RepeatFrameMsec" :: Maybe (IntegerMin0Max1000000') } -> {"BlackFrameMsec" :: Maybe (IntegerMin0Max1000000') , "InputLossImageColor" :: Maybe (StringMin6Max6') , "InputLossImageSlate" :: Maybe (InputLocation) , "InputLossImageType" :: Maybe (InputLossImageType) , "RepeatFrameMsec" :: Maybe (IntegerMin0Max1000000') } ) -> InputLossBehavior
+newInputLossBehavior'  customize = (InputLossBehavior <<< customize) { "BlackFrameMsec": Nothing, "InputLossImageColor": Nothing, "InputLossImageSlate": Nothing, "InputLossImageType": Nothing, "RepeatFrameMsec": Nothing }
 
 
 
@@ -3199,9 +3198,9 @@ instance encodeInputResolution :: Encode InputResolution where encode = genericE
 
 -- | An Input Security Group
 newtype InputSecurityGroup = InputSecurityGroup 
-  { "Arn" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule')
+  { "Arn" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "WhitelistRules" :: Maybe (ListOfInputWhitelistRule')
   }
 derive instance newtypeInputSecurityGroup :: Newtype InputSecurityGroup _
 derive instance repGenericInputSecurityGroup :: Generic InputSecurityGroup _
@@ -3211,18 +3210,18 @@ instance encodeInputSecurityGroup :: Encode InputSecurityGroup where encode = ge
 
 -- | Constructs InputSecurityGroup from required parameters
 newInputSecurityGroup :: InputSecurityGroup
-newInputSecurityGroup  = InputSecurityGroup { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "WhitelistRules": (NullOrUndefined Nothing) }
+newInputSecurityGroup  = InputSecurityGroup { "Arn": Nothing, "Id": Nothing, "WhitelistRules": Nothing }
 
 -- | Constructs InputSecurityGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSecurityGroup' :: ( { "Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') } -> {"Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') } ) -> InputSecurityGroup
-newInputSecurityGroup'  customize = (InputSecurityGroup <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "WhitelistRules": (NullOrUndefined Nothing) }
+newInputSecurityGroup' :: ( { "Arn" :: Maybe (String) , "Id" :: Maybe (String) , "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') } -> {"Arn" :: Maybe (String) , "Id" :: Maybe (String) , "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') } ) -> InputSecurityGroup
+newInputSecurityGroup'  customize = (InputSecurityGroup <<< customize) { "Arn": Nothing, "Id": Nothing, "WhitelistRules": Nothing }
 
 
 
 -- | Request of IPv4 CIDR addresses to whitelist in a security group.
 newtype InputSecurityGroupWhitelistRequest = InputSecurityGroupWhitelistRequest 
-  { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr')
+  { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr')
   }
 derive instance newtypeInputSecurityGroupWhitelistRequest :: Newtype InputSecurityGroupWhitelistRequest _
 derive instance repGenericInputSecurityGroupWhitelistRequest :: Generic InputSecurityGroupWhitelistRequest _
@@ -3232,26 +3231,26 @@ instance encodeInputSecurityGroupWhitelistRequest :: Encode InputSecurityGroupWh
 
 -- | Constructs InputSecurityGroupWhitelistRequest from required parameters
 newInputSecurityGroupWhitelistRequest :: InputSecurityGroupWhitelistRequest
-newInputSecurityGroupWhitelistRequest  = InputSecurityGroupWhitelistRequest { "WhitelistRules": (NullOrUndefined Nothing) }
+newInputSecurityGroupWhitelistRequest  = InputSecurityGroupWhitelistRequest { "WhitelistRules": Nothing }
 
 -- | Constructs InputSecurityGroupWhitelistRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSecurityGroupWhitelistRequest' :: ( { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') } -> {"WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') } ) -> InputSecurityGroupWhitelistRequest
-newInputSecurityGroupWhitelistRequest'  customize = (InputSecurityGroupWhitelistRequest <<< customize) { "WhitelistRules": (NullOrUndefined Nothing) }
+newInputSecurityGroupWhitelistRequest' :: ( { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') } -> {"WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') } ) -> InputSecurityGroupWhitelistRequest
+newInputSecurityGroupWhitelistRequest'  customize = (InputSecurityGroupWhitelistRequest <<< customize) { "WhitelistRules": Nothing }
 
 
 
 -- | Live Event input parameters. There can be multiple inputs in a single Live Event.
 newtype InputSettings = InputSettings 
-  { "AudioSelectors" :: NullOrUndefined (ListOfAudioSelector')
-  , "CaptionSelectors" :: NullOrUndefined (ListOfCaptionSelector')
-  , "DeblockFilter" :: NullOrUndefined (InputDeblockFilter)
-  , "DenoiseFilter" :: NullOrUndefined (InputDenoiseFilter)
-  , "FilterStrength" :: NullOrUndefined (IntegerMin1Max5')
-  , "InputFilter" :: NullOrUndefined (InputFilter)
-  , "NetworkInputSettings" :: NullOrUndefined (NetworkInputSettings)
-  , "SourceEndBehavior" :: NullOrUndefined (InputSourceEndBehavior)
-  , "VideoSelector" :: NullOrUndefined (VideoSelector)
+  { "AudioSelectors" :: Maybe (ListOfAudioSelector')
+  , "CaptionSelectors" :: Maybe (ListOfCaptionSelector')
+  , "DeblockFilter" :: Maybe (InputDeblockFilter)
+  , "DenoiseFilter" :: Maybe (InputDenoiseFilter)
+  , "FilterStrength" :: Maybe (IntegerMin1Max5')
+  , "InputFilter" :: Maybe (InputFilter)
+  , "NetworkInputSettings" :: Maybe (NetworkInputSettings)
+  , "SourceEndBehavior" :: Maybe (InputSourceEndBehavior)
+  , "VideoSelector" :: Maybe (VideoSelector)
   }
 derive instance newtypeInputSettings :: Newtype InputSettings _
 derive instance repGenericInputSettings :: Generic InputSettings _
@@ -3261,20 +3260,20 @@ instance encodeInputSettings :: Encode InputSettings where encode = genericEncod
 
 -- | Constructs InputSettings from required parameters
 newInputSettings :: InputSettings
-newInputSettings  = InputSettings { "AudioSelectors": (NullOrUndefined Nothing), "CaptionSelectors": (NullOrUndefined Nothing), "DeblockFilter": (NullOrUndefined Nothing), "DenoiseFilter": (NullOrUndefined Nothing), "FilterStrength": (NullOrUndefined Nothing), "InputFilter": (NullOrUndefined Nothing), "NetworkInputSettings": (NullOrUndefined Nothing), "SourceEndBehavior": (NullOrUndefined Nothing), "VideoSelector": (NullOrUndefined Nothing) }
+newInputSettings  = InputSettings { "AudioSelectors": Nothing, "CaptionSelectors": Nothing, "DeblockFilter": Nothing, "DenoiseFilter": Nothing, "FilterStrength": Nothing, "InputFilter": Nothing, "NetworkInputSettings": Nothing, "SourceEndBehavior": Nothing, "VideoSelector": Nothing }
 
 -- | Constructs InputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSettings' :: ( { "AudioSelectors" :: NullOrUndefined (ListOfAudioSelector') , "CaptionSelectors" :: NullOrUndefined (ListOfCaptionSelector') , "DeblockFilter" :: NullOrUndefined (InputDeblockFilter) , "DenoiseFilter" :: NullOrUndefined (InputDenoiseFilter) , "FilterStrength" :: NullOrUndefined (IntegerMin1Max5') , "InputFilter" :: NullOrUndefined (InputFilter) , "NetworkInputSettings" :: NullOrUndefined (NetworkInputSettings) , "SourceEndBehavior" :: NullOrUndefined (InputSourceEndBehavior) , "VideoSelector" :: NullOrUndefined (VideoSelector) } -> {"AudioSelectors" :: NullOrUndefined (ListOfAudioSelector') , "CaptionSelectors" :: NullOrUndefined (ListOfCaptionSelector') , "DeblockFilter" :: NullOrUndefined (InputDeblockFilter) , "DenoiseFilter" :: NullOrUndefined (InputDenoiseFilter) , "FilterStrength" :: NullOrUndefined (IntegerMin1Max5') , "InputFilter" :: NullOrUndefined (InputFilter) , "NetworkInputSettings" :: NullOrUndefined (NetworkInputSettings) , "SourceEndBehavior" :: NullOrUndefined (InputSourceEndBehavior) , "VideoSelector" :: NullOrUndefined (VideoSelector) } ) -> InputSettings
-newInputSettings'  customize = (InputSettings <<< customize) { "AudioSelectors": (NullOrUndefined Nothing), "CaptionSelectors": (NullOrUndefined Nothing), "DeblockFilter": (NullOrUndefined Nothing), "DenoiseFilter": (NullOrUndefined Nothing), "FilterStrength": (NullOrUndefined Nothing), "InputFilter": (NullOrUndefined Nothing), "NetworkInputSettings": (NullOrUndefined Nothing), "SourceEndBehavior": (NullOrUndefined Nothing), "VideoSelector": (NullOrUndefined Nothing) }
+newInputSettings' :: ( { "AudioSelectors" :: Maybe (ListOfAudioSelector') , "CaptionSelectors" :: Maybe (ListOfCaptionSelector') , "DeblockFilter" :: Maybe (InputDeblockFilter) , "DenoiseFilter" :: Maybe (InputDenoiseFilter) , "FilterStrength" :: Maybe (IntegerMin1Max5') , "InputFilter" :: Maybe (InputFilter) , "NetworkInputSettings" :: Maybe (NetworkInputSettings) , "SourceEndBehavior" :: Maybe (InputSourceEndBehavior) , "VideoSelector" :: Maybe (VideoSelector) } -> {"AudioSelectors" :: Maybe (ListOfAudioSelector') , "CaptionSelectors" :: Maybe (ListOfCaptionSelector') , "DeblockFilter" :: Maybe (InputDeblockFilter) , "DenoiseFilter" :: Maybe (InputDenoiseFilter) , "FilterStrength" :: Maybe (IntegerMin1Max5') , "InputFilter" :: Maybe (InputFilter) , "NetworkInputSettings" :: Maybe (NetworkInputSettings) , "SourceEndBehavior" :: Maybe (InputSourceEndBehavior) , "VideoSelector" :: Maybe (VideoSelector) } ) -> InputSettings
+newInputSettings'  customize = (InputSettings <<< customize) { "AudioSelectors": Nothing, "CaptionSelectors": Nothing, "DeblockFilter": Nothing, "DenoiseFilter": Nothing, "FilterStrength": Nothing, "InputFilter": Nothing, "NetworkInputSettings": Nothing, "SourceEndBehavior": Nothing, "VideoSelector": Nothing }
 
 
 
 -- | The settings for a PULL type input.
 newtype InputSource = InputSource 
-  { "PasswordParam" :: NullOrUndefined (String)
-  , "Url" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
+  { "PasswordParam" :: Maybe (String)
+  , "Url" :: Maybe (String)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeInputSource :: Newtype InputSource _
 derive instance repGenericInputSource :: Generic InputSource _
@@ -3284,12 +3283,12 @@ instance encodeInputSource :: Encode InputSource where encode = genericEncode op
 
 -- | Constructs InputSource from required parameters
 newInputSource :: InputSource
-newInputSource  = InputSource { "PasswordParam": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputSource  = InputSource { "PasswordParam": Nothing, "Url": Nothing, "Username": Nothing }
 
 -- | Constructs InputSource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSource' :: ( { "PasswordParam" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } -> {"PasswordParam" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } ) -> InputSource
-newInputSource'  customize = (InputSource <<< customize) { "PasswordParam": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputSource' :: ( { "PasswordParam" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } -> {"PasswordParam" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } ) -> InputSource
+newInputSource'  customize = (InputSource <<< customize) { "PasswordParam": Nothing, "Url": Nothing, "Username": Nothing }
 
 
 
@@ -3305,9 +3304,9 @@ instance encodeInputSourceEndBehavior :: Encode InputSourceEndBehavior where enc
 
 -- | Settings for for a PULL type input.
 newtype InputSourceRequest = InputSourceRequest 
-  { "PasswordParam" :: NullOrUndefined (String)
-  , "Url" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
+  { "PasswordParam" :: Maybe (String)
+  , "Url" :: Maybe (String)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeInputSourceRequest :: Newtype InputSourceRequest _
 derive instance repGenericInputSourceRequest :: Generic InputSourceRequest _
@@ -3317,20 +3316,20 @@ instance encodeInputSourceRequest :: Encode InputSourceRequest where encode = ge
 
 -- | Constructs InputSourceRequest from required parameters
 newInputSourceRequest :: InputSourceRequest
-newInputSourceRequest  = InputSourceRequest { "PasswordParam": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputSourceRequest  = InputSourceRequest { "PasswordParam": Nothing, "Url": Nothing, "Username": Nothing }
 
 -- | Constructs InputSourceRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSourceRequest' :: ( { "PasswordParam" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } -> {"PasswordParam" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } ) -> InputSourceRequest
-newInputSourceRequest'  customize = (InputSourceRequest <<< customize) { "PasswordParam": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newInputSourceRequest' :: ( { "PasswordParam" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } -> {"PasswordParam" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } ) -> InputSourceRequest
+newInputSourceRequest'  customize = (InputSourceRequest <<< customize) { "PasswordParam": Nothing, "Url": Nothing, "Username": Nothing }
 
 
 
 -- | Placeholder documentation for InputSpecification
 newtype InputSpecification = InputSpecification 
-  { "Codec" :: NullOrUndefined (InputCodec)
-  , "MaximumBitrate" :: NullOrUndefined (InputMaximumBitrate)
-  , "Resolution" :: NullOrUndefined (InputResolution)
+  { "Codec" :: Maybe (InputCodec)
+  , "MaximumBitrate" :: Maybe (InputMaximumBitrate)
+  , "Resolution" :: Maybe (InputResolution)
   }
 derive instance newtypeInputSpecification :: Newtype InputSpecification _
 derive instance repGenericInputSpecification :: Generic InputSpecification _
@@ -3340,12 +3339,12 @@ instance encodeInputSpecification :: Encode InputSpecification where encode = ge
 
 -- | Constructs InputSpecification from required parameters
 newInputSpecification :: InputSpecification
-newInputSpecification  = InputSpecification { "Codec": (NullOrUndefined Nothing), "MaximumBitrate": (NullOrUndefined Nothing), "Resolution": (NullOrUndefined Nothing) }
+newInputSpecification  = InputSpecification { "Codec": Nothing, "MaximumBitrate": Nothing, "Resolution": Nothing }
 
 -- | Constructs InputSpecification's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSpecification' :: ( { "Codec" :: NullOrUndefined (InputCodec) , "MaximumBitrate" :: NullOrUndefined (InputMaximumBitrate) , "Resolution" :: NullOrUndefined (InputResolution) } -> {"Codec" :: NullOrUndefined (InputCodec) , "MaximumBitrate" :: NullOrUndefined (InputMaximumBitrate) , "Resolution" :: NullOrUndefined (InputResolution) } ) -> InputSpecification
-newInputSpecification'  customize = (InputSpecification <<< customize) { "Codec": (NullOrUndefined Nothing), "MaximumBitrate": (NullOrUndefined Nothing), "Resolution": (NullOrUndefined Nothing) }
+newInputSpecification' :: ( { "Codec" :: Maybe (InputCodec) , "MaximumBitrate" :: Maybe (InputMaximumBitrate) , "Resolution" :: Maybe (InputResolution) } -> {"Codec" :: Maybe (InputCodec) , "MaximumBitrate" :: Maybe (InputMaximumBitrate) , "Resolution" :: Maybe (InputResolution) } ) -> InputSpecification
+newInputSpecification'  customize = (InputSpecification <<< customize) { "Codec": Nothing, "MaximumBitrate": Nothing, "Resolution": Nothing }
 
 
 
@@ -3371,7 +3370,7 @@ instance encodeInputType :: Encode InputType where encode = genericEncode option
 
 -- | Whitelist rule
 newtype InputWhitelistRule = InputWhitelistRule 
-  { "Cidr" :: NullOrUndefined (String)
+  { "Cidr" :: Maybe (String)
   }
 derive instance newtypeInputWhitelistRule :: Newtype InputWhitelistRule _
 derive instance repGenericInputWhitelistRule :: Generic InputWhitelistRule _
@@ -3381,18 +3380,18 @@ instance encodeInputWhitelistRule :: Encode InputWhitelistRule where encode = ge
 
 -- | Constructs InputWhitelistRule from required parameters
 newInputWhitelistRule :: InputWhitelistRule
-newInputWhitelistRule  = InputWhitelistRule { "Cidr": (NullOrUndefined Nothing) }
+newInputWhitelistRule  = InputWhitelistRule { "Cidr": Nothing }
 
 -- | Constructs InputWhitelistRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputWhitelistRule' :: ( { "Cidr" :: NullOrUndefined (String) } -> {"Cidr" :: NullOrUndefined (String) } ) -> InputWhitelistRule
-newInputWhitelistRule'  customize = (InputWhitelistRule <<< customize) { "Cidr": (NullOrUndefined Nothing) }
+newInputWhitelistRule' :: ( { "Cidr" :: Maybe (String) } -> {"Cidr" :: Maybe (String) } ) -> InputWhitelistRule
+newInputWhitelistRule'  customize = (InputWhitelistRule <<< customize) { "Cidr": Nothing }
 
 
 
 -- | An IPv4 CIDR to whitelist.
 newtype InputWhitelistRuleCidr = InputWhitelistRuleCidr 
-  { "Cidr" :: NullOrUndefined (String)
+  { "Cidr" :: Maybe (String)
   }
 derive instance newtypeInputWhitelistRuleCidr :: Newtype InputWhitelistRuleCidr _
 derive instance repGenericInputWhitelistRuleCidr :: Generic InputWhitelistRuleCidr _
@@ -3402,18 +3401,18 @@ instance encodeInputWhitelistRuleCidr :: Encode InputWhitelistRuleCidr where enc
 
 -- | Constructs InputWhitelistRuleCidr from required parameters
 newInputWhitelistRuleCidr :: InputWhitelistRuleCidr
-newInputWhitelistRuleCidr  = InputWhitelistRuleCidr { "Cidr": (NullOrUndefined Nothing) }
+newInputWhitelistRuleCidr  = InputWhitelistRuleCidr { "Cidr": Nothing }
 
 -- | Constructs InputWhitelistRuleCidr's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputWhitelistRuleCidr' :: ( { "Cidr" :: NullOrUndefined (String) } -> {"Cidr" :: NullOrUndefined (String) } ) -> InputWhitelistRuleCidr
-newInputWhitelistRuleCidr'  customize = (InputWhitelistRuleCidr <<< customize) { "Cidr": (NullOrUndefined Nothing) }
+newInputWhitelistRuleCidr' :: ( { "Cidr" :: Maybe (String) } -> {"Cidr" :: Maybe (String) } ) -> InputWhitelistRuleCidr
+newInputWhitelistRuleCidr'  customize = (InputWhitelistRuleCidr <<< customize) { "Cidr": Nothing }
 
 
 
 -- | Placeholder documentation for InternalServerErrorException
 newtype InternalServerErrorException = InternalServerErrorException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInternalServerErrorException :: Newtype InternalServerErrorException _
 derive instance repGenericInternalServerErrorException :: Generic InternalServerErrorException _
@@ -3423,18 +3422,18 @@ instance encodeInternalServerErrorException :: Encode InternalServerErrorExcepti
 
 -- | Constructs InternalServerErrorException from required parameters
 newInternalServerErrorException :: InternalServerErrorException
-newInternalServerErrorException  = InternalServerErrorException { "Message": (NullOrUndefined Nothing) }
+newInternalServerErrorException  = InternalServerErrorException { "Message": Nothing }
 
 -- | Constructs InternalServerErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServerErrorException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InternalServerErrorException
-newInternalServerErrorException'  customize = (InternalServerErrorException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServerErrorException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InternalServerErrorException
+newInternalServerErrorException'  customize = (InternalServerErrorException <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for InternalServiceError
 newtype InternalServiceError = InternalServiceError 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInternalServiceError :: Newtype InternalServiceError _
 derive instance repGenericInternalServiceError :: Generic InternalServiceError _
@@ -3444,18 +3443,18 @@ instance encodeInternalServiceError :: Encode InternalServiceError where encode 
 
 -- | Constructs InternalServiceError from required parameters
 newInternalServiceError :: InternalServiceError
-newInternalServiceError  = InternalServiceError { "Message": (NullOrUndefined Nothing) }
+newInternalServiceError  = InternalServiceError { "Message": Nothing }
 
 -- | Constructs InternalServiceError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServiceError' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InternalServiceError
-newInternalServiceError'  customize = (InternalServiceError <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServiceError' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InternalServiceError
+newInternalServiceError'  customize = (InternalServiceError <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for InvalidRequest
 newtype InvalidRequest = InvalidRequest 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidRequest :: Newtype InvalidRequest _
 derive instance repGenericInvalidRequest :: Generic InvalidRequest _
@@ -3465,18 +3464,18 @@ instance encodeInvalidRequest :: Encode InvalidRequest where encode = genericEnc
 
 -- | Constructs InvalidRequest from required parameters
 newInvalidRequest :: InvalidRequest
-newInvalidRequest  = InvalidRequest { "Message": (NullOrUndefined Nothing) }
+newInvalidRequest  = InvalidRequest { "Message": Nothing }
 
 -- | Constructs InvalidRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidRequest' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidRequest
-newInvalidRequest'  customize = (InvalidRequest <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidRequest' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidRequest
+newInvalidRequest'  customize = (InvalidRequest <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for KeyProviderSettings
 newtype KeyProviderSettings = KeyProviderSettings 
-  { "StaticKeySettings" :: NullOrUndefined (StaticKeySettings)
+  { "StaticKeySettings" :: Maybe (StaticKeySettings)
   }
 derive instance newtypeKeyProviderSettings :: Newtype KeyProviderSettings _
 derive instance repGenericKeyProviderSettings :: Generic KeyProviderSettings _
@@ -3486,18 +3485,18 @@ instance encodeKeyProviderSettings :: Encode KeyProviderSettings where encode = 
 
 -- | Constructs KeyProviderSettings from required parameters
 newKeyProviderSettings :: KeyProviderSettings
-newKeyProviderSettings  = KeyProviderSettings { "StaticKeySettings": (NullOrUndefined Nothing) }
+newKeyProviderSettings  = KeyProviderSettings { "StaticKeySettings": Nothing }
 
 -- | Constructs KeyProviderSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKeyProviderSettings' :: ( { "StaticKeySettings" :: NullOrUndefined (StaticKeySettings) } -> {"StaticKeySettings" :: NullOrUndefined (StaticKeySettings) } ) -> KeyProviderSettings
-newKeyProviderSettings'  customize = (KeyProviderSettings <<< customize) { "StaticKeySettings": (NullOrUndefined Nothing) }
+newKeyProviderSettings' :: ( { "StaticKeySettings" :: Maybe (StaticKeySettings) } -> {"StaticKeySettings" :: Maybe (StaticKeySettings) } ) -> KeyProviderSettings
+newKeyProviderSettings'  customize = (KeyProviderSettings <<< customize) { "StaticKeySettings": Nothing }
 
 
 
 -- | Placeholder documentation for LimitExceeded
 newtype LimitExceeded = LimitExceeded 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeLimitExceeded :: Newtype LimitExceeded _
 derive instance repGenericLimitExceeded :: Generic LimitExceeded _
@@ -3507,19 +3506,19 @@ instance encodeLimitExceeded :: Encode LimitExceeded where encode = genericEncod
 
 -- | Constructs LimitExceeded from required parameters
 newLimitExceeded :: LimitExceeded
-newLimitExceeded  = LimitExceeded { "Message": (NullOrUndefined Nothing) }
+newLimitExceeded  = LimitExceeded { "Message": Nothing }
 
 -- | Constructs LimitExceeded's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitExceeded' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> LimitExceeded
-newLimitExceeded'  customize = (LimitExceeded <<< customize) { "Message": (NullOrUndefined Nothing) }
+newLimitExceeded' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> LimitExceeded
+newLimitExceeded'  customize = (LimitExceeded <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for ListChannelsRequest
 newtype ListChannelsRequest = ListChannelsRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListChannelsRequest :: Newtype ListChannelsRequest _
 derive instance repGenericListChannelsRequest :: Generic ListChannelsRequest _
@@ -3529,19 +3528,19 @@ instance encodeListChannelsRequest :: Encode ListChannelsRequest where encode = 
 
 -- | Constructs ListChannelsRequest from required parameters
 newListChannelsRequest :: ListChannelsRequest
-newListChannelsRequest  = ListChannelsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsRequest  = ListChannelsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListChannelsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListChannelsRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListChannelsRequest
-newListChannelsRequest'  customize = (ListChannelsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListChannelsRequest
+newListChannelsRequest'  customize = (ListChannelsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | Placeholder documentation for ListChannelsResponse
 newtype ListChannelsResponse = ListChannelsResponse 
-  { "Channels" :: NullOrUndefined (ListOfChannelSummary')
-  , "NextToken" :: NullOrUndefined (String)
+  { "Channels" :: Maybe (ListOfChannelSummary')
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListChannelsResponse :: Newtype ListChannelsResponse _
 derive instance repGenericListChannelsResponse :: Generic ListChannelsResponse _
@@ -3551,19 +3550,19 @@ instance encodeListChannelsResponse :: Encode ListChannelsResponse where encode 
 
 -- | Constructs ListChannelsResponse from required parameters
 newListChannelsResponse :: ListChannelsResponse
-newListChannelsResponse  = ListChannelsResponse { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsResponse  = ListChannelsResponse { "Channels": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListChannelsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListChannelsResponse' :: ( { "Channels" :: NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined (String) } ) -> ListChannelsResponse
-newListChannelsResponse'  customize = (ListChannelsResponse <<< customize) { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsResponse' :: ( { "Channels" :: Maybe (ListOfChannelSummary') , "NextToken" :: Maybe (String) } -> {"Channels" :: Maybe (ListOfChannelSummary') , "NextToken" :: Maybe (String) } ) -> ListChannelsResponse
+newListChannelsResponse'  customize = (ListChannelsResponse <<< customize) { "Channels": Nothing, "NextToken": Nothing }
 
 
 
 -- | Placeholder documentation for ListChannelsResultModel
 newtype ListChannelsResultModel = ListChannelsResultModel 
-  { "Channels" :: NullOrUndefined (ListOfChannelSummary')
-  , "NextToken" :: NullOrUndefined (String)
+  { "Channels" :: Maybe (ListOfChannelSummary')
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListChannelsResultModel :: Newtype ListChannelsResultModel _
 derive instance repGenericListChannelsResultModel :: Generic ListChannelsResultModel _
@@ -3573,19 +3572,19 @@ instance encodeListChannelsResultModel :: Encode ListChannelsResultModel where e
 
 -- | Constructs ListChannelsResultModel from required parameters
 newListChannelsResultModel :: ListChannelsResultModel
-newListChannelsResultModel  = ListChannelsResultModel { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsResultModel  = ListChannelsResultModel { "Channels": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListChannelsResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListChannelsResultModel' :: ( { "Channels" :: NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined (String) } -> {"Channels" :: NullOrUndefined (ListOfChannelSummary') , "NextToken" :: NullOrUndefined (String) } ) -> ListChannelsResultModel
-newListChannelsResultModel'  customize = (ListChannelsResultModel <<< customize) { "Channels": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListChannelsResultModel' :: ( { "Channels" :: Maybe (ListOfChannelSummary') , "NextToken" :: Maybe (String) } -> {"Channels" :: Maybe (ListOfChannelSummary') , "NextToken" :: Maybe (String) } ) -> ListChannelsResultModel
+newListChannelsResultModel'  customize = (ListChannelsResultModel <<< customize) { "Channels": Nothing, "NextToken": Nothing }
 
 
 
 -- | Placeholder documentation for ListInputSecurityGroupsRequest
 newtype ListInputSecurityGroupsRequest = ListInputSecurityGroupsRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListInputSecurityGroupsRequest :: Newtype ListInputSecurityGroupsRequest _
 derive instance repGenericListInputSecurityGroupsRequest :: Generic ListInputSecurityGroupsRequest _
@@ -3595,19 +3594,19 @@ instance encodeListInputSecurityGroupsRequest :: Encode ListInputSecurityGroupsR
 
 -- | Constructs ListInputSecurityGroupsRequest from required parameters
 newListInputSecurityGroupsRequest :: ListInputSecurityGroupsRequest
-newListInputSecurityGroupsRequest  = ListInputSecurityGroupsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputSecurityGroupsRequest  = ListInputSecurityGroupsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListInputSecurityGroupsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputSecurityGroupsRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListInputSecurityGroupsRequest
-newListInputSecurityGroupsRequest'  customize = (ListInputSecurityGroupsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputSecurityGroupsRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListInputSecurityGroupsRequest
+newListInputSecurityGroupsRequest'  customize = (ListInputSecurityGroupsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | Placeholder documentation for ListInputSecurityGroupsResponse
 newtype ListInputSecurityGroupsResponse = ListInputSecurityGroupsResponse 
-  { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup')
-  , "NextToken" :: NullOrUndefined (String)
+  { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup')
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListInputSecurityGroupsResponse :: Newtype ListInputSecurityGroupsResponse _
 derive instance repGenericListInputSecurityGroupsResponse :: Generic ListInputSecurityGroupsResponse _
@@ -3617,19 +3616,19 @@ instance encodeListInputSecurityGroupsResponse :: Encode ListInputSecurityGroups
 
 -- | Constructs ListInputSecurityGroupsResponse from required parameters
 newListInputSecurityGroupsResponse :: ListInputSecurityGroupsResponse
-newListInputSecurityGroupsResponse  = ListInputSecurityGroupsResponse { "InputSecurityGroups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputSecurityGroupsResponse  = ListInputSecurityGroupsResponse { "InputSecurityGroups": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListInputSecurityGroupsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputSecurityGroupsResponse' :: ( { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined (String) } -> {"InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined (String) } ) -> ListInputSecurityGroupsResponse
-newListInputSecurityGroupsResponse'  customize = (ListInputSecurityGroupsResponse <<< customize) { "InputSecurityGroups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputSecurityGroupsResponse' :: ( { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup') , "NextToken" :: Maybe (String) } -> {"InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup') , "NextToken" :: Maybe (String) } ) -> ListInputSecurityGroupsResponse
+newListInputSecurityGroupsResponse'  customize = (ListInputSecurityGroupsResponse <<< customize) { "InputSecurityGroups": Nothing, "NextToken": Nothing }
 
 
 
 -- | Result of input security group list request
 newtype ListInputSecurityGroupsResultModel = ListInputSecurityGroupsResultModel 
-  { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup')
-  , "NextToken" :: NullOrUndefined (String)
+  { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup')
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListInputSecurityGroupsResultModel :: Newtype ListInputSecurityGroupsResultModel _
 derive instance repGenericListInputSecurityGroupsResultModel :: Generic ListInputSecurityGroupsResultModel _
@@ -3639,19 +3638,19 @@ instance encodeListInputSecurityGroupsResultModel :: Encode ListInputSecurityGro
 
 -- | Constructs ListInputSecurityGroupsResultModel from required parameters
 newListInputSecurityGroupsResultModel :: ListInputSecurityGroupsResultModel
-newListInputSecurityGroupsResultModel  = ListInputSecurityGroupsResultModel { "InputSecurityGroups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputSecurityGroupsResultModel  = ListInputSecurityGroupsResultModel { "InputSecurityGroups": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListInputSecurityGroupsResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputSecurityGroupsResultModel' :: ( { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined (String) } -> {"InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup') , "NextToken" :: NullOrUndefined (String) } ) -> ListInputSecurityGroupsResultModel
-newListInputSecurityGroupsResultModel'  customize = (ListInputSecurityGroupsResultModel <<< customize) { "InputSecurityGroups": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputSecurityGroupsResultModel' :: ( { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup') , "NextToken" :: Maybe (String) } -> {"InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup') , "NextToken" :: Maybe (String) } ) -> ListInputSecurityGroupsResultModel
+newListInputSecurityGroupsResultModel'  customize = (ListInputSecurityGroupsResultModel <<< customize) { "InputSecurityGroups": Nothing, "NextToken": Nothing }
 
 
 
 -- | Placeholder documentation for ListInputsRequest
 newtype ListInputsRequest = ListInputsRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListInputsRequest :: Newtype ListInputsRequest _
 derive instance repGenericListInputsRequest :: Generic ListInputsRequest _
@@ -3661,19 +3660,19 @@ instance encodeListInputsRequest :: Encode ListInputsRequest where encode = gene
 
 -- | Constructs ListInputsRequest from required parameters
 newListInputsRequest :: ListInputsRequest
-newListInputsRequest  = ListInputsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputsRequest  = ListInputsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListInputsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputsRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListInputsRequest
-newListInputsRequest'  customize = (ListInputsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputsRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListInputsRequest
+newListInputsRequest'  customize = (ListInputsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 -- | Placeholder documentation for ListInputsResponse
 newtype ListInputsResponse = ListInputsResponse 
-  { "Inputs" :: NullOrUndefined (ListOfInput')
-  , "NextToken" :: NullOrUndefined (String)
+  { "Inputs" :: Maybe (ListOfInput')
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListInputsResponse :: Newtype ListInputsResponse _
 derive instance repGenericListInputsResponse :: Generic ListInputsResponse _
@@ -3683,19 +3682,19 @@ instance encodeListInputsResponse :: Encode ListInputsResponse where encode = ge
 
 -- | Constructs ListInputsResponse from required parameters
 newListInputsResponse :: ListInputsResponse
-newListInputsResponse  = ListInputsResponse { "Inputs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputsResponse  = ListInputsResponse { "Inputs": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListInputsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputsResponse' :: ( { "Inputs" :: NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined (String) } -> {"Inputs" :: NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined (String) } ) -> ListInputsResponse
-newListInputsResponse'  customize = (ListInputsResponse <<< customize) { "Inputs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputsResponse' :: ( { "Inputs" :: Maybe (ListOfInput') , "NextToken" :: Maybe (String) } -> {"Inputs" :: Maybe (ListOfInput') , "NextToken" :: Maybe (String) } ) -> ListInputsResponse
+newListInputsResponse'  customize = (ListInputsResponse <<< customize) { "Inputs": Nothing, "NextToken": Nothing }
 
 
 
 -- | Placeholder documentation for ListInputsResultModel
 newtype ListInputsResultModel = ListInputsResultModel 
-  { "Inputs" :: NullOrUndefined (ListOfInput')
-  , "NextToken" :: NullOrUndefined (String)
+  { "Inputs" :: Maybe (ListOfInput')
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListInputsResultModel :: Newtype ListInputsResultModel _
 derive instance repGenericListInputsResultModel :: Generic ListInputsResultModel _
@@ -3705,12 +3704,12 @@ instance encodeListInputsResultModel :: Encode ListInputsResultModel where encod
 
 -- | Constructs ListInputsResultModel from required parameters
 newListInputsResultModel :: ListInputsResultModel
-newListInputsResultModel  = ListInputsResultModel { "Inputs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputsResultModel  = ListInputsResultModel { "Inputs": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListInputsResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListInputsResultModel' :: ( { "Inputs" :: NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined (String) } -> {"Inputs" :: NullOrUndefined (ListOfInput') , "NextToken" :: NullOrUndefined (String) } ) -> ListInputsResultModel
-newListInputsResultModel'  customize = (ListInputsResultModel <<< customize) { "Inputs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListInputsResultModel' :: ( { "Inputs" :: Maybe (ListOfInput') , "NextToken" :: Maybe (String) } -> {"Inputs" :: Maybe (ListOfInput') , "NextToken" :: Maybe (String) } ) -> ListInputsResultModel
+newListInputsResultModel'  customize = (ListInputsResultModel <<< customize) { "Inputs": Nothing, "NextToken": Nothing }
 
 
 
@@ -3886,52 +3885,52 @@ instance encodeM2tsSegmentationStyle :: Encode M2tsSegmentationStyle where encod
 
 -- | Placeholder documentation for M2tsSettings
 newtype M2tsSettings = M2tsSettings 
-  { "AbsentInputAudioBehavior" :: NullOrUndefined (M2tsAbsentInputAudioBehavior)
-  , "Arib" :: NullOrUndefined (M2tsArib)
-  , "AribCaptionsPid" :: NullOrUndefined (String)
-  , "AribCaptionsPidControl" :: NullOrUndefined (M2tsAribCaptionsPidControl)
-  , "AudioBufferModel" :: NullOrUndefined (M2tsAudioBufferModel)
-  , "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0')
-  , "AudioPids" :: NullOrUndefined (String)
-  , "AudioStreamType" :: NullOrUndefined (M2tsAudioStreamType)
-  , "Bitrate" :: NullOrUndefined (IntegerMin0')
-  , "BufferModel" :: NullOrUndefined (M2tsBufferModel)
-  , "CcDescriptor" :: NullOrUndefined (M2tsCcDescriptor)
-  , "DvbNitSettings" :: NullOrUndefined (DvbNitSettings)
-  , "DvbSdtSettings" :: NullOrUndefined (DvbSdtSettings)
-  , "DvbSubPids" :: NullOrUndefined (String)
-  , "DvbTdtSettings" :: NullOrUndefined (DvbTdtSettings)
-  , "DvbTeletextPid" :: NullOrUndefined (String)
-  , "Ebif" :: NullOrUndefined (M2tsEbifControl)
-  , "EbpAudioInterval" :: NullOrUndefined (M2tsAudioInterval)
-  , "EbpLookaheadMs" :: NullOrUndefined (IntegerMin0Max10000')
-  , "EbpPlacement" :: NullOrUndefined (M2tsEbpPlacement)
-  , "EcmPid" :: NullOrUndefined (String)
-  , "EsRateInPes" :: NullOrUndefined (M2tsEsRateInPes)
-  , "EtvPlatformPid" :: NullOrUndefined (String)
-  , "EtvSignalPid" :: NullOrUndefined (String)
-  , "FragmentTime" :: NullOrUndefined (DoubleMin0')
-  , "Klv" :: NullOrUndefined (M2tsKlv)
-  , "KlvDataPids" :: NullOrUndefined (String)
-  , "NullPacketBitrate" :: NullOrUndefined (DoubleMin0')
-  , "PatInterval" :: NullOrUndefined (IntegerMin0Max1000')
-  , "PcrControl" :: NullOrUndefined (M2tsPcrControl)
-  , "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500')
-  , "PcrPid" :: NullOrUndefined (String)
-  , "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000')
-  , "PmtPid" :: NullOrUndefined (String)
-  , "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535')
-  , "RateMode" :: NullOrUndefined (M2tsRateMode)
-  , "Scte27Pids" :: NullOrUndefined (String)
-  , "Scte35Control" :: NullOrUndefined (M2tsScte35Control)
-  , "Scte35Pid" :: NullOrUndefined (String)
-  , "SegmentationMarkers" :: NullOrUndefined (M2tsSegmentationMarkers)
-  , "SegmentationStyle" :: NullOrUndefined (M2tsSegmentationStyle)
-  , "SegmentationTime" :: NullOrUndefined (DoubleMin1')
-  , "TimedMetadataBehavior" :: NullOrUndefined (M2tsTimedMetadataBehavior)
-  , "TimedMetadataPid" :: NullOrUndefined (String)
-  , "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535')
-  , "VideoPid" :: NullOrUndefined (String)
+  { "AbsentInputAudioBehavior" :: Maybe (M2tsAbsentInputAudioBehavior)
+  , "Arib" :: Maybe (M2tsArib)
+  , "AribCaptionsPid" :: Maybe (String)
+  , "AribCaptionsPidControl" :: Maybe (M2tsAribCaptionsPidControl)
+  , "AudioBufferModel" :: Maybe (M2tsAudioBufferModel)
+  , "AudioFramesPerPes" :: Maybe (IntegerMin0')
+  , "AudioPids" :: Maybe (String)
+  , "AudioStreamType" :: Maybe (M2tsAudioStreamType)
+  , "Bitrate" :: Maybe (IntegerMin0')
+  , "BufferModel" :: Maybe (M2tsBufferModel)
+  , "CcDescriptor" :: Maybe (M2tsCcDescriptor)
+  , "DvbNitSettings" :: Maybe (DvbNitSettings)
+  , "DvbSdtSettings" :: Maybe (DvbSdtSettings)
+  , "DvbSubPids" :: Maybe (String)
+  , "DvbTdtSettings" :: Maybe (DvbTdtSettings)
+  , "DvbTeletextPid" :: Maybe (String)
+  , "Ebif" :: Maybe (M2tsEbifControl)
+  , "EbpAudioInterval" :: Maybe (M2tsAudioInterval)
+  , "EbpLookaheadMs" :: Maybe (IntegerMin0Max10000')
+  , "EbpPlacement" :: Maybe (M2tsEbpPlacement)
+  , "EcmPid" :: Maybe (String)
+  , "EsRateInPes" :: Maybe (M2tsEsRateInPes)
+  , "EtvPlatformPid" :: Maybe (String)
+  , "EtvSignalPid" :: Maybe (String)
+  , "FragmentTime" :: Maybe (DoubleMin0')
+  , "Klv" :: Maybe (M2tsKlv)
+  , "KlvDataPids" :: Maybe (String)
+  , "NullPacketBitrate" :: Maybe (DoubleMin0')
+  , "PatInterval" :: Maybe (IntegerMin0Max1000')
+  , "PcrControl" :: Maybe (M2tsPcrControl)
+  , "PcrPeriod" :: Maybe (IntegerMin0Max500')
+  , "PcrPid" :: Maybe (String)
+  , "PmtInterval" :: Maybe (IntegerMin0Max1000')
+  , "PmtPid" :: Maybe (String)
+  , "ProgramNum" :: Maybe (IntegerMin0Max65535')
+  , "RateMode" :: Maybe (M2tsRateMode)
+  , "Scte27Pids" :: Maybe (String)
+  , "Scte35Control" :: Maybe (M2tsScte35Control)
+  , "Scte35Pid" :: Maybe (String)
+  , "SegmentationMarkers" :: Maybe (M2tsSegmentationMarkers)
+  , "SegmentationStyle" :: Maybe (M2tsSegmentationStyle)
+  , "SegmentationTime" :: Maybe (DoubleMin1')
+  , "TimedMetadataBehavior" :: Maybe (M2tsTimedMetadataBehavior)
+  , "TimedMetadataPid" :: Maybe (String)
+  , "TransportStreamId" :: Maybe (IntegerMin0Max65535')
+  , "VideoPid" :: Maybe (String)
   }
 derive instance newtypeM2tsSettings :: Newtype M2tsSettings _
 derive instance repGenericM2tsSettings :: Generic M2tsSettings _
@@ -3941,12 +3940,12 @@ instance encodeM2tsSettings :: Encode M2tsSettings where encode = genericEncode 
 
 -- | Constructs M2tsSettings from required parameters
 newM2tsSettings :: M2tsSettings
-newM2tsSettings  = M2tsSettings { "AbsentInputAudioBehavior": (NullOrUndefined Nothing), "Arib": (NullOrUndefined Nothing), "AribCaptionsPid": (NullOrUndefined Nothing), "AribCaptionsPidControl": (NullOrUndefined Nothing), "AudioBufferModel": (NullOrUndefined Nothing), "AudioFramesPerPes": (NullOrUndefined Nothing), "AudioPids": (NullOrUndefined Nothing), "AudioStreamType": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BufferModel": (NullOrUndefined Nothing), "CcDescriptor": (NullOrUndefined Nothing), "DvbNitSettings": (NullOrUndefined Nothing), "DvbSdtSettings": (NullOrUndefined Nothing), "DvbSubPids": (NullOrUndefined Nothing), "DvbTdtSettings": (NullOrUndefined Nothing), "DvbTeletextPid": (NullOrUndefined Nothing), "Ebif": (NullOrUndefined Nothing), "EbpAudioInterval": (NullOrUndefined Nothing), "EbpLookaheadMs": (NullOrUndefined Nothing), "EbpPlacement": (NullOrUndefined Nothing), "EcmPid": (NullOrUndefined Nothing), "EsRateInPes": (NullOrUndefined Nothing), "EtvPlatformPid": (NullOrUndefined Nothing), "EtvSignalPid": (NullOrUndefined Nothing), "FragmentTime": (NullOrUndefined Nothing), "Klv": (NullOrUndefined Nothing), "KlvDataPids": (NullOrUndefined Nothing), "NullPacketBitrate": (NullOrUndefined Nothing), "PatInterval": (NullOrUndefined Nothing), "PcrControl": (NullOrUndefined Nothing), "PcrPeriod": (NullOrUndefined Nothing), "PcrPid": (NullOrUndefined Nothing), "PmtInterval": (NullOrUndefined Nothing), "PmtPid": (NullOrUndefined Nothing), "ProgramNum": (NullOrUndefined Nothing), "RateMode": (NullOrUndefined Nothing), "Scte27Pids": (NullOrUndefined Nothing), "Scte35Control": (NullOrUndefined Nothing), "Scte35Pid": (NullOrUndefined Nothing), "SegmentationMarkers": (NullOrUndefined Nothing), "SegmentationStyle": (NullOrUndefined Nothing), "SegmentationTime": (NullOrUndefined Nothing), "TimedMetadataBehavior": (NullOrUndefined Nothing), "TimedMetadataPid": (NullOrUndefined Nothing), "TransportStreamId": (NullOrUndefined Nothing), "VideoPid": (NullOrUndefined Nothing) }
+newM2tsSettings  = M2tsSettings { "AbsentInputAudioBehavior": Nothing, "Arib": Nothing, "AribCaptionsPid": Nothing, "AribCaptionsPidControl": Nothing, "AudioBufferModel": Nothing, "AudioFramesPerPes": Nothing, "AudioPids": Nothing, "AudioStreamType": Nothing, "Bitrate": Nothing, "BufferModel": Nothing, "CcDescriptor": Nothing, "DvbNitSettings": Nothing, "DvbSdtSettings": Nothing, "DvbSubPids": Nothing, "DvbTdtSettings": Nothing, "DvbTeletextPid": Nothing, "Ebif": Nothing, "EbpAudioInterval": Nothing, "EbpLookaheadMs": Nothing, "EbpPlacement": Nothing, "EcmPid": Nothing, "EsRateInPes": Nothing, "EtvPlatformPid": Nothing, "EtvSignalPid": Nothing, "FragmentTime": Nothing, "Klv": Nothing, "KlvDataPids": Nothing, "NullPacketBitrate": Nothing, "PatInterval": Nothing, "PcrControl": Nothing, "PcrPeriod": Nothing, "PcrPid": Nothing, "PmtInterval": Nothing, "PmtPid": Nothing, "ProgramNum": Nothing, "RateMode": Nothing, "Scte27Pids": Nothing, "Scte35Control": Nothing, "Scte35Pid": Nothing, "SegmentationMarkers": Nothing, "SegmentationStyle": Nothing, "SegmentationTime": Nothing, "TimedMetadataBehavior": Nothing, "TimedMetadataPid": Nothing, "TransportStreamId": Nothing, "VideoPid": Nothing }
 
 -- | Constructs M2tsSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newM2tsSettings' :: ( { "AbsentInputAudioBehavior" :: NullOrUndefined (M2tsAbsentInputAudioBehavior) , "Arib" :: NullOrUndefined (M2tsArib) , "AribCaptionsPid" :: NullOrUndefined (String) , "AribCaptionsPidControl" :: NullOrUndefined (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: NullOrUndefined (M2tsAudioBufferModel) , "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined (String) , "AudioStreamType" :: NullOrUndefined (M2tsAudioStreamType) , "Bitrate" :: NullOrUndefined (IntegerMin0') , "BufferModel" :: NullOrUndefined (M2tsBufferModel) , "CcDescriptor" :: NullOrUndefined (M2tsCcDescriptor) , "DvbNitSettings" :: NullOrUndefined (DvbNitSettings) , "DvbSdtSettings" :: NullOrUndefined (DvbSdtSettings) , "DvbSubPids" :: NullOrUndefined (String) , "DvbTdtSettings" :: NullOrUndefined (DvbTdtSettings) , "DvbTeletextPid" :: NullOrUndefined (String) , "Ebif" :: NullOrUndefined (M2tsEbifControl) , "EbpAudioInterval" :: NullOrUndefined (M2tsAudioInterval) , "EbpLookaheadMs" :: NullOrUndefined (IntegerMin0Max10000') , "EbpPlacement" :: NullOrUndefined (M2tsEbpPlacement) , "EcmPid" :: NullOrUndefined (String) , "EsRateInPes" :: NullOrUndefined (M2tsEsRateInPes) , "EtvPlatformPid" :: NullOrUndefined (String) , "EtvSignalPid" :: NullOrUndefined (String) , "FragmentTime" :: NullOrUndefined (DoubleMin0') , "Klv" :: NullOrUndefined (M2tsKlv) , "KlvDataPids" :: NullOrUndefined (String) , "NullPacketBitrate" :: NullOrUndefined (DoubleMin0') , "PatInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined (M2tsPcrControl) , "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535') , "RateMode" :: NullOrUndefined (M2tsRateMode) , "Scte27Pids" :: NullOrUndefined (String) , "Scte35Control" :: NullOrUndefined (M2tsScte35Control) , "Scte35Pid" :: NullOrUndefined (String) , "SegmentationMarkers" :: NullOrUndefined (M2tsSegmentationMarkers) , "SegmentationStyle" :: NullOrUndefined (M2tsSegmentationStyle) , "SegmentationTime" :: NullOrUndefined (DoubleMin1') , "TimedMetadataBehavior" :: NullOrUndefined (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: NullOrUndefined (String) , "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined (String) } -> {"AbsentInputAudioBehavior" :: NullOrUndefined (M2tsAbsentInputAudioBehavior) , "Arib" :: NullOrUndefined (M2tsArib) , "AribCaptionsPid" :: NullOrUndefined (String) , "AribCaptionsPidControl" :: NullOrUndefined (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: NullOrUndefined (M2tsAudioBufferModel) , "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined (String) , "AudioStreamType" :: NullOrUndefined (M2tsAudioStreamType) , "Bitrate" :: NullOrUndefined (IntegerMin0') , "BufferModel" :: NullOrUndefined (M2tsBufferModel) , "CcDescriptor" :: NullOrUndefined (M2tsCcDescriptor) , "DvbNitSettings" :: NullOrUndefined (DvbNitSettings) , "DvbSdtSettings" :: NullOrUndefined (DvbSdtSettings) , "DvbSubPids" :: NullOrUndefined (String) , "DvbTdtSettings" :: NullOrUndefined (DvbTdtSettings) , "DvbTeletextPid" :: NullOrUndefined (String) , "Ebif" :: NullOrUndefined (M2tsEbifControl) , "EbpAudioInterval" :: NullOrUndefined (M2tsAudioInterval) , "EbpLookaheadMs" :: NullOrUndefined (IntegerMin0Max10000') , "EbpPlacement" :: NullOrUndefined (M2tsEbpPlacement) , "EcmPid" :: NullOrUndefined (String) , "EsRateInPes" :: NullOrUndefined (M2tsEsRateInPes) , "EtvPlatformPid" :: NullOrUndefined (String) , "EtvSignalPid" :: NullOrUndefined (String) , "FragmentTime" :: NullOrUndefined (DoubleMin0') , "Klv" :: NullOrUndefined (M2tsKlv) , "KlvDataPids" :: NullOrUndefined (String) , "NullPacketBitrate" :: NullOrUndefined (DoubleMin0') , "PatInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined (M2tsPcrControl) , "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535') , "RateMode" :: NullOrUndefined (M2tsRateMode) , "Scte27Pids" :: NullOrUndefined (String) , "Scte35Control" :: NullOrUndefined (M2tsScte35Control) , "Scte35Pid" :: NullOrUndefined (String) , "SegmentationMarkers" :: NullOrUndefined (M2tsSegmentationMarkers) , "SegmentationStyle" :: NullOrUndefined (M2tsSegmentationStyle) , "SegmentationTime" :: NullOrUndefined (DoubleMin1') , "TimedMetadataBehavior" :: NullOrUndefined (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: NullOrUndefined (String) , "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined (String) } ) -> M2tsSettings
-newM2tsSettings'  customize = (M2tsSettings <<< customize) { "AbsentInputAudioBehavior": (NullOrUndefined Nothing), "Arib": (NullOrUndefined Nothing), "AribCaptionsPid": (NullOrUndefined Nothing), "AribCaptionsPidControl": (NullOrUndefined Nothing), "AudioBufferModel": (NullOrUndefined Nothing), "AudioFramesPerPes": (NullOrUndefined Nothing), "AudioPids": (NullOrUndefined Nothing), "AudioStreamType": (NullOrUndefined Nothing), "Bitrate": (NullOrUndefined Nothing), "BufferModel": (NullOrUndefined Nothing), "CcDescriptor": (NullOrUndefined Nothing), "DvbNitSettings": (NullOrUndefined Nothing), "DvbSdtSettings": (NullOrUndefined Nothing), "DvbSubPids": (NullOrUndefined Nothing), "DvbTdtSettings": (NullOrUndefined Nothing), "DvbTeletextPid": (NullOrUndefined Nothing), "Ebif": (NullOrUndefined Nothing), "EbpAudioInterval": (NullOrUndefined Nothing), "EbpLookaheadMs": (NullOrUndefined Nothing), "EbpPlacement": (NullOrUndefined Nothing), "EcmPid": (NullOrUndefined Nothing), "EsRateInPes": (NullOrUndefined Nothing), "EtvPlatformPid": (NullOrUndefined Nothing), "EtvSignalPid": (NullOrUndefined Nothing), "FragmentTime": (NullOrUndefined Nothing), "Klv": (NullOrUndefined Nothing), "KlvDataPids": (NullOrUndefined Nothing), "NullPacketBitrate": (NullOrUndefined Nothing), "PatInterval": (NullOrUndefined Nothing), "PcrControl": (NullOrUndefined Nothing), "PcrPeriod": (NullOrUndefined Nothing), "PcrPid": (NullOrUndefined Nothing), "PmtInterval": (NullOrUndefined Nothing), "PmtPid": (NullOrUndefined Nothing), "ProgramNum": (NullOrUndefined Nothing), "RateMode": (NullOrUndefined Nothing), "Scte27Pids": (NullOrUndefined Nothing), "Scte35Control": (NullOrUndefined Nothing), "Scte35Pid": (NullOrUndefined Nothing), "SegmentationMarkers": (NullOrUndefined Nothing), "SegmentationStyle": (NullOrUndefined Nothing), "SegmentationTime": (NullOrUndefined Nothing), "TimedMetadataBehavior": (NullOrUndefined Nothing), "TimedMetadataPid": (NullOrUndefined Nothing), "TransportStreamId": (NullOrUndefined Nothing), "VideoPid": (NullOrUndefined Nothing) }
+newM2tsSettings' :: ( { "AbsentInputAudioBehavior" :: Maybe (M2tsAbsentInputAudioBehavior) , "Arib" :: Maybe (M2tsArib) , "AribCaptionsPid" :: Maybe (String) , "AribCaptionsPidControl" :: Maybe (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: Maybe (M2tsAudioBufferModel) , "AudioFramesPerPes" :: Maybe (IntegerMin0') , "AudioPids" :: Maybe (String) , "AudioStreamType" :: Maybe (M2tsAudioStreamType) , "Bitrate" :: Maybe (IntegerMin0') , "BufferModel" :: Maybe (M2tsBufferModel) , "CcDescriptor" :: Maybe (M2tsCcDescriptor) , "DvbNitSettings" :: Maybe (DvbNitSettings) , "DvbSdtSettings" :: Maybe (DvbSdtSettings) , "DvbSubPids" :: Maybe (String) , "DvbTdtSettings" :: Maybe (DvbTdtSettings) , "DvbTeletextPid" :: Maybe (String) , "Ebif" :: Maybe (M2tsEbifControl) , "EbpAudioInterval" :: Maybe (M2tsAudioInterval) , "EbpLookaheadMs" :: Maybe (IntegerMin0Max10000') , "EbpPlacement" :: Maybe (M2tsEbpPlacement) , "EcmPid" :: Maybe (String) , "EsRateInPes" :: Maybe (M2tsEsRateInPes) , "EtvPlatformPid" :: Maybe (String) , "EtvSignalPid" :: Maybe (String) , "FragmentTime" :: Maybe (DoubleMin0') , "Klv" :: Maybe (M2tsKlv) , "KlvDataPids" :: Maybe (String) , "NullPacketBitrate" :: Maybe (DoubleMin0') , "PatInterval" :: Maybe (IntegerMin0Max1000') , "PcrControl" :: Maybe (M2tsPcrControl) , "PcrPeriod" :: Maybe (IntegerMin0Max500') , "PcrPid" :: Maybe (String) , "PmtInterval" :: Maybe (IntegerMin0Max1000') , "PmtPid" :: Maybe (String) , "ProgramNum" :: Maybe (IntegerMin0Max65535') , "RateMode" :: Maybe (M2tsRateMode) , "Scte27Pids" :: Maybe (String) , "Scte35Control" :: Maybe (M2tsScte35Control) , "Scte35Pid" :: Maybe (String) , "SegmentationMarkers" :: Maybe (M2tsSegmentationMarkers) , "SegmentationStyle" :: Maybe (M2tsSegmentationStyle) , "SegmentationTime" :: Maybe (DoubleMin1') , "TimedMetadataBehavior" :: Maybe (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: Maybe (String) , "TransportStreamId" :: Maybe (IntegerMin0Max65535') , "VideoPid" :: Maybe (String) } -> {"AbsentInputAudioBehavior" :: Maybe (M2tsAbsentInputAudioBehavior) , "Arib" :: Maybe (M2tsArib) , "AribCaptionsPid" :: Maybe (String) , "AribCaptionsPidControl" :: Maybe (M2tsAribCaptionsPidControl) , "AudioBufferModel" :: Maybe (M2tsAudioBufferModel) , "AudioFramesPerPes" :: Maybe (IntegerMin0') , "AudioPids" :: Maybe (String) , "AudioStreamType" :: Maybe (M2tsAudioStreamType) , "Bitrate" :: Maybe (IntegerMin0') , "BufferModel" :: Maybe (M2tsBufferModel) , "CcDescriptor" :: Maybe (M2tsCcDescriptor) , "DvbNitSettings" :: Maybe (DvbNitSettings) , "DvbSdtSettings" :: Maybe (DvbSdtSettings) , "DvbSubPids" :: Maybe (String) , "DvbTdtSettings" :: Maybe (DvbTdtSettings) , "DvbTeletextPid" :: Maybe (String) , "Ebif" :: Maybe (M2tsEbifControl) , "EbpAudioInterval" :: Maybe (M2tsAudioInterval) , "EbpLookaheadMs" :: Maybe (IntegerMin0Max10000') , "EbpPlacement" :: Maybe (M2tsEbpPlacement) , "EcmPid" :: Maybe (String) , "EsRateInPes" :: Maybe (M2tsEsRateInPes) , "EtvPlatformPid" :: Maybe (String) , "EtvSignalPid" :: Maybe (String) , "FragmentTime" :: Maybe (DoubleMin0') , "Klv" :: Maybe (M2tsKlv) , "KlvDataPids" :: Maybe (String) , "NullPacketBitrate" :: Maybe (DoubleMin0') , "PatInterval" :: Maybe (IntegerMin0Max1000') , "PcrControl" :: Maybe (M2tsPcrControl) , "PcrPeriod" :: Maybe (IntegerMin0Max500') , "PcrPid" :: Maybe (String) , "PmtInterval" :: Maybe (IntegerMin0Max1000') , "PmtPid" :: Maybe (String) , "ProgramNum" :: Maybe (IntegerMin0Max65535') , "RateMode" :: Maybe (M2tsRateMode) , "Scte27Pids" :: Maybe (String) , "Scte35Control" :: Maybe (M2tsScte35Control) , "Scte35Pid" :: Maybe (String) , "SegmentationMarkers" :: Maybe (M2tsSegmentationMarkers) , "SegmentationStyle" :: Maybe (M2tsSegmentationStyle) , "SegmentationTime" :: Maybe (DoubleMin1') , "TimedMetadataBehavior" :: Maybe (M2tsTimedMetadataBehavior) , "TimedMetadataPid" :: Maybe (String) , "TransportStreamId" :: Maybe (IntegerMin0Max65535') , "VideoPid" :: Maybe (String) } ) -> M2tsSettings
+newM2tsSettings'  customize = (M2tsSettings <<< customize) { "AbsentInputAudioBehavior": Nothing, "Arib": Nothing, "AribCaptionsPid": Nothing, "AribCaptionsPidControl": Nothing, "AudioBufferModel": Nothing, "AudioFramesPerPes": Nothing, "AudioPids": Nothing, "AudioStreamType": Nothing, "Bitrate": Nothing, "BufferModel": Nothing, "CcDescriptor": Nothing, "DvbNitSettings": Nothing, "DvbSdtSettings": Nothing, "DvbSubPids": Nothing, "DvbTdtSettings": Nothing, "DvbTeletextPid": Nothing, "Ebif": Nothing, "EbpAudioInterval": Nothing, "EbpLookaheadMs": Nothing, "EbpPlacement": Nothing, "EcmPid": Nothing, "EsRateInPes": Nothing, "EtvPlatformPid": Nothing, "EtvSignalPid": Nothing, "FragmentTime": Nothing, "Klv": Nothing, "KlvDataPids": Nothing, "NullPacketBitrate": Nothing, "PatInterval": Nothing, "PcrControl": Nothing, "PcrPeriod": Nothing, "PcrPid": Nothing, "PmtInterval": Nothing, "PmtPid": Nothing, "ProgramNum": Nothing, "RateMode": Nothing, "Scte27Pids": Nothing, "Scte35Control": Nothing, "Scte35Pid": Nothing, "SegmentationMarkers": Nothing, "SegmentationStyle": Nothing, "SegmentationTime": Nothing, "TimedMetadataBehavior": Nothing, "TimedMetadataPid": Nothing, "TransportStreamId": Nothing, "VideoPid": Nothing }
 
 
 
@@ -3982,21 +3981,21 @@ instance encodeM3u8Scte35Behavior :: Encode M3u8Scte35Behavior where encode = ge
 
 -- | Settings information for the .m3u8 container
 newtype M3u8Settings = M3u8Settings 
-  { "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0')
-  , "AudioPids" :: NullOrUndefined (String)
-  , "EcmPid" :: NullOrUndefined (String)
-  , "PatInterval" :: NullOrUndefined (IntegerMin0Max1000')
-  , "PcrControl" :: NullOrUndefined (M3u8PcrControl)
-  , "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500')
-  , "PcrPid" :: NullOrUndefined (String)
-  , "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000')
-  , "PmtPid" :: NullOrUndefined (String)
-  , "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535')
-  , "Scte35Behavior" :: NullOrUndefined (M3u8Scte35Behavior)
-  , "Scte35Pid" :: NullOrUndefined (String)
-  , "TimedMetadataBehavior" :: NullOrUndefined (M3u8TimedMetadataBehavior)
-  , "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535')
-  , "VideoPid" :: NullOrUndefined (String)
+  { "AudioFramesPerPes" :: Maybe (IntegerMin0')
+  , "AudioPids" :: Maybe (String)
+  , "EcmPid" :: Maybe (String)
+  , "PatInterval" :: Maybe (IntegerMin0Max1000')
+  , "PcrControl" :: Maybe (M3u8PcrControl)
+  , "PcrPeriod" :: Maybe (IntegerMin0Max500')
+  , "PcrPid" :: Maybe (String)
+  , "PmtInterval" :: Maybe (IntegerMin0Max1000')
+  , "PmtPid" :: Maybe (String)
+  , "ProgramNum" :: Maybe (IntegerMin0Max65535')
+  , "Scte35Behavior" :: Maybe (M3u8Scte35Behavior)
+  , "Scte35Pid" :: Maybe (String)
+  , "TimedMetadataBehavior" :: Maybe (M3u8TimedMetadataBehavior)
+  , "TransportStreamId" :: Maybe (IntegerMin0Max65535')
+  , "VideoPid" :: Maybe (String)
   }
 derive instance newtypeM3u8Settings :: Newtype M3u8Settings _
 derive instance repGenericM3u8Settings :: Generic M3u8Settings _
@@ -4006,12 +4005,12 @@ instance encodeM3u8Settings :: Encode M3u8Settings where encode = genericEncode 
 
 -- | Constructs M3u8Settings from required parameters
 newM3u8Settings :: M3u8Settings
-newM3u8Settings  = M3u8Settings { "AudioFramesPerPes": (NullOrUndefined Nothing), "AudioPids": (NullOrUndefined Nothing), "EcmPid": (NullOrUndefined Nothing), "PatInterval": (NullOrUndefined Nothing), "PcrControl": (NullOrUndefined Nothing), "PcrPeriod": (NullOrUndefined Nothing), "PcrPid": (NullOrUndefined Nothing), "PmtInterval": (NullOrUndefined Nothing), "PmtPid": (NullOrUndefined Nothing), "ProgramNum": (NullOrUndefined Nothing), "Scte35Behavior": (NullOrUndefined Nothing), "Scte35Pid": (NullOrUndefined Nothing), "TimedMetadataBehavior": (NullOrUndefined Nothing), "TransportStreamId": (NullOrUndefined Nothing), "VideoPid": (NullOrUndefined Nothing) }
+newM3u8Settings  = M3u8Settings { "AudioFramesPerPes": Nothing, "AudioPids": Nothing, "EcmPid": Nothing, "PatInterval": Nothing, "PcrControl": Nothing, "PcrPeriod": Nothing, "PcrPid": Nothing, "PmtInterval": Nothing, "PmtPid": Nothing, "ProgramNum": Nothing, "Scte35Behavior": Nothing, "Scte35Pid": Nothing, "TimedMetadataBehavior": Nothing, "TransportStreamId": Nothing, "VideoPid": Nothing }
 
 -- | Constructs M3u8Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newM3u8Settings' :: ( { "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined (String) , "EcmPid" :: NullOrUndefined (String) , "PatInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined (M3u8PcrControl) , "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535') , "Scte35Behavior" :: NullOrUndefined (M3u8Scte35Behavior) , "Scte35Pid" :: NullOrUndefined (String) , "TimedMetadataBehavior" :: NullOrUndefined (M3u8TimedMetadataBehavior) , "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined (String) } -> {"AudioFramesPerPes" :: NullOrUndefined (IntegerMin0') , "AudioPids" :: NullOrUndefined (String) , "EcmPid" :: NullOrUndefined (String) , "PatInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PcrControl" :: NullOrUndefined (M3u8PcrControl) , "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500') , "PcrPid" :: NullOrUndefined (String) , "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000') , "PmtPid" :: NullOrUndefined (String) , "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535') , "Scte35Behavior" :: NullOrUndefined (M3u8Scte35Behavior) , "Scte35Pid" :: NullOrUndefined (String) , "TimedMetadataBehavior" :: NullOrUndefined (M3u8TimedMetadataBehavior) , "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535') , "VideoPid" :: NullOrUndefined (String) } ) -> M3u8Settings
-newM3u8Settings'  customize = (M3u8Settings <<< customize) { "AudioFramesPerPes": (NullOrUndefined Nothing), "AudioPids": (NullOrUndefined Nothing), "EcmPid": (NullOrUndefined Nothing), "PatInterval": (NullOrUndefined Nothing), "PcrControl": (NullOrUndefined Nothing), "PcrPeriod": (NullOrUndefined Nothing), "PcrPid": (NullOrUndefined Nothing), "PmtInterval": (NullOrUndefined Nothing), "PmtPid": (NullOrUndefined Nothing), "ProgramNum": (NullOrUndefined Nothing), "Scte35Behavior": (NullOrUndefined Nothing), "Scte35Pid": (NullOrUndefined Nothing), "TimedMetadataBehavior": (NullOrUndefined Nothing), "TransportStreamId": (NullOrUndefined Nothing), "VideoPid": (NullOrUndefined Nothing) }
+newM3u8Settings' :: ( { "AudioFramesPerPes" :: Maybe (IntegerMin0') , "AudioPids" :: Maybe (String) , "EcmPid" :: Maybe (String) , "PatInterval" :: Maybe (IntegerMin0Max1000') , "PcrControl" :: Maybe (M3u8PcrControl) , "PcrPeriod" :: Maybe (IntegerMin0Max500') , "PcrPid" :: Maybe (String) , "PmtInterval" :: Maybe (IntegerMin0Max1000') , "PmtPid" :: Maybe (String) , "ProgramNum" :: Maybe (IntegerMin0Max65535') , "Scte35Behavior" :: Maybe (M3u8Scte35Behavior) , "Scte35Pid" :: Maybe (String) , "TimedMetadataBehavior" :: Maybe (M3u8TimedMetadataBehavior) , "TransportStreamId" :: Maybe (IntegerMin0Max65535') , "VideoPid" :: Maybe (String) } -> {"AudioFramesPerPes" :: Maybe (IntegerMin0') , "AudioPids" :: Maybe (String) , "EcmPid" :: Maybe (String) , "PatInterval" :: Maybe (IntegerMin0Max1000') , "PcrControl" :: Maybe (M3u8PcrControl) , "PcrPeriod" :: Maybe (IntegerMin0Max500') , "PcrPid" :: Maybe (String) , "PmtInterval" :: Maybe (IntegerMin0Max1000') , "PmtPid" :: Maybe (String) , "ProgramNum" :: Maybe (IntegerMin0Max65535') , "Scte35Behavior" :: Maybe (M3u8Scte35Behavior) , "Scte35Pid" :: Maybe (String) , "TimedMetadataBehavior" :: Maybe (M3u8TimedMetadataBehavior) , "TransportStreamId" :: Maybe (IntegerMin0Max65535') , "VideoPid" :: Maybe (String) } ) -> M3u8Settings
+newM3u8Settings'  customize = (M3u8Settings <<< customize) { "AudioFramesPerPes": Nothing, "AudioPids": Nothing, "EcmPid": Nothing, "PatInterval": Nothing, "PcrControl": Nothing, "PcrPeriod": Nothing, "PcrPid": Nothing, "PmtInterval": Nothing, "PmtPid": Nothing, "ProgramNum": Nothing, "Scte35Behavior": Nothing, "Scte35Pid": Nothing, "TimedMetadataBehavior": Nothing, "TransportStreamId": Nothing, "VideoPid": Nothing }
 
 
 
@@ -4047,9 +4046,9 @@ instance encodeMp2CodingMode :: Encode Mp2CodingMode where encode = genericEncod
 
 -- | Placeholder documentation for Mp2Settings
 newtype Mp2Settings = Mp2Settings 
-  { "Bitrate" :: NullOrUndefined (Number)
-  , "CodingMode" :: NullOrUndefined (Mp2CodingMode)
-  , "SampleRate" :: NullOrUndefined (Number)
+  { "Bitrate" :: Maybe (Number)
+  , "CodingMode" :: Maybe (Mp2CodingMode)
+  , "SampleRate" :: Maybe (Number)
   }
 derive instance newtypeMp2Settings :: Newtype Mp2Settings _
 derive instance repGenericMp2Settings :: Generic Mp2Settings _
@@ -4059,36 +4058,36 @@ instance encodeMp2Settings :: Encode Mp2Settings where encode = genericEncode op
 
 -- | Constructs Mp2Settings from required parameters
 newMp2Settings :: Mp2Settings
-newMp2Settings  = Mp2Settings { "Bitrate": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "SampleRate": (NullOrUndefined Nothing) }
+newMp2Settings  = Mp2Settings { "Bitrate": Nothing, "CodingMode": Nothing, "SampleRate": Nothing }
 
 -- | Constructs Mp2Settings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMp2Settings' :: ( { "Bitrate" :: NullOrUndefined (Number) , "CodingMode" :: NullOrUndefined (Mp2CodingMode) , "SampleRate" :: NullOrUndefined (Number) } -> {"Bitrate" :: NullOrUndefined (Number) , "CodingMode" :: NullOrUndefined (Mp2CodingMode) , "SampleRate" :: NullOrUndefined (Number) } ) -> Mp2Settings
-newMp2Settings'  customize = (Mp2Settings <<< customize) { "Bitrate": (NullOrUndefined Nothing), "CodingMode": (NullOrUndefined Nothing), "SampleRate": (NullOrUndefined Nothing) }
+newMp2Settings' :: ( { "Bitrate" :: Maybe (Number) , "CodingMode" :: Maybe (Mp2CodingMode) , "SampleRate" :: Maybe (Number) } -> {"Bitrate" :: Maybe (Number) , "CodingMode" :: Maybe (Mp2CodingMode) , "SampleRate" :: Maybe (Number) } ) -> Mp2Settings
+newMp2Settings'  customize = (Mp2Settings <<< customize) { "Bitrate": Nothing, "CodingMode": Nothing, "SampleRate": Nothing }
 
 
 
 -- | Placeholder documentation for MsSmoothGroupSettings
 newtype MsSmoothGroupSettings = MsSmoothGroupSettings 
-  { "AcquisitionPointId" :: NullOrUndefined (String)
-  , "AudioOnlyTimecodeControl" :: NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl)
-  , "CertificateMode" :: NullOrUndefined (SmoothGroupCertificateMode)
-  , "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0')
+  { "AcquisitionPointId" :: Maybe (String)
+  , "AudioOnlyTimecodeControl" :: Maybe (SmoothGroupAudioOnlyTimecodeControl)
+  , "CertificateMode" :: Maybe (SmoothGroupCertificateMode)
+  , "ConnectionRetryInterval" :: Maybe (IntegerMin0')
   , "Destination" :: (OutputLocationRef)
-  , "EventId" :: NullOrUndefined (String)
-  , "EventIdMode" :: NullOrUndefined (SmoothGroupEventIdMode)
-  , "EventStopBehavior" :: NullOrUndefined (SmoothGroupEventStopBehavior)
-  , "FilecacheDuration" :: NullOrUndefined (IntegerMin0')
-  , "FragmentLength" :: NullOrUndefined (IntegerMin1')
-  , "InputLossAction" :: NullOrUndefined (InputLossActionForMsSmoothOut)
-  , "NumRetries" :: NullOrUndefined (IntegerMin0')
-  , "RestartDelay" :: NullOrUndefined (IntegerMin0')
-  , "SegmentationMode" :: NullOrUndefined (SmoothGroupSegmentationMode)
-  , "SendDelayMs" :: NullOrUndefined (IntegerMin0Max10000')
-  , "SparseTrackType" :: NullOrUndefined (SmoothGroupSparseTrackType)
-  , "StreamManifestBehavior" :: NullOrUndefined (SmoothGroupStreamManifestBehavior)
-  , "TimestampOffset" :: NullOrUndefined (String)
-  , "TimestampOffsetMode" :: NullOrUndefined (SmoothGroupTimestampOffsetMode)
+  , "EventId" :: Maybe (String)
+  , "EventIdMode" :: Maybe (SmoothGroupEventIdMode)
+  , "EventStopBehavior" :: Maybe (SmoothGroupEventStopBehavior)
+  , "FilecacheDuration" :: Maybe (IntegerMin0')
+  , "FragmentLength" :: Maybe (IntegerMin1')
+  , "InputLossAction" :: Maybe (InputLossActionForMsSmoothOut)
+  , "NumRetries" :: Maybe (IntegerMin0')
+  , "RestartDelay" :: Maybe (IntegerMin0')
+  , "SegmentationMode" :: Maybe (SmoothGroupSegmentationMode)
+  , "SendDelayMs" :: Maybe (IntegerMin0Max10000')
+  , "SparseTrackType" :: Maybe (SmoothGroupSparseTrackType)
+  , "StreamManifestBehavior" :: Maybe (SmoothGroupStreamManifestBehavior)
+  , "TimestampOffset" :: Maybe (String)
+  , "TimestampOffsetMode" :: Maybe (SmoothGroupTimestampOffsetMode)
   }
 derive instance newtypeMsSmoothGroupSettings :: Newtype MsSmoothGroupSettings _
 derive instance repGenericMsSmoothGroupSettings :: Generic MsSmoothGroupSettings _
@@ -4098,18 +4097,18 @@ instance encodeMsSmoothGroupSettings :: Encode MsSmoothGroupSettings where encod
 
 -- | Constructs MsSmoothGroupSettings from required parameters
 newMsSmoothGroupSettings :: OutputLocationRef -> MsSmoothGroupSettings
-newMsSmoothGroupSettings _Destination = MsSmoothGroupSettings { "Destination": _Destination, "AcquisitionPointId": (NullOrUndefined Nothing), "AudioOnlyTimecodeControl": (NullOrUndefined Nothing), "CertificateMode": (NullOrUndefined Nothing), "ConnectionRetryInterval": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "EventIdMode": (NullOrUndefined Nothing), "EventStopBehavior": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "FragmentLength": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SendDelayMs": (NullOrUndefined Nothing), "SparseTrackType": (NullOrUndefined Nothing), "StreamManifestBehavior": (NullOrUndefined Nothing), "TimestampOffset": (NullOrUndefined Nothing), "TimestampOffsetMode": (NullOrUndefined Nothing) }
+newMsSmoothGroupSettings _Destination = MsSmoothGroupSettings { "Destination": _Destination, "AcquisitionPointId": Nothing, "AudioOnlyTimecodeControl": Nothing, "CertificateMode": Nothing, "ConnectionRetryInterval": Nothing, "EventId": Nothing, "EventIdMode": Nothing, "EventStopBehavior": Nothing, "FilecacheDuration": Nothing, "FragmentLength": Nothing, "InputLossAction": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing, "SegmentationMode": Nothing, "SendDelayMs": Nothing, "SparseTrackType": Nothing, "StreamManifestBehavior": Nothing, "TimestampOffset": Nothing, "TimestampOffsetMode": Nothing }
 
 -- | Constructs MsSmoothGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMsSmoothGroupSettings' :: OutputLocationRef -> ( { "AcquisitionPointId" :: NullOrUndefined (String) , "AudioOnlyTimecodeControl" :: NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: NullOrUndefined (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "Destination" :: (OutputLocationRef) , "EventId" :: NullOrUndefined (String) , "EventIdMode" :: NullOrUndefined (SmoothGroupEventIdMode) , "EventStopBehavior" :: NullOrUndefined (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: NullOrUndefined (IntegerMin0') , "FragmentLength" :: NullOrUndefined (IntegerMin1') , "InputLossAction" :: NullOrUndefined (InputLossActionForMsSmoothOut) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0') , "SegmentationMode" :: NullOrUndefined (SmoothGroupSegmentationMode) , "SendDelayMs" :: NullOrUndefined (IntegerMin0Max10000') , "SparseTrackType" :: NullOrUndefined (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: NullOrUndefined (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: NullOrUndefined (String) , "TimestampOffsetMode" :: NullOrUndefined (SmoothGroupTimestampOffsetMode) } -> {"AcquisitionPointId" :: NullOrUndefined (String) , "AudioOnlyTimecodeControl" :: NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: NullOrUndefined (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0') , "Destination" :: (OutputLocationRef) , "EventId" :: NullOrUndefined (String) , "EventIdMode" :: NullOrUndefined (SmoothGroupEventIdMode) , "EventStopBehavior" :: NullOrUndefined (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: NullOrUndefined (IntegerMin0') , "FragmentLength" :: NullOrUndefined (IntegerMin1') , "InputLossAction" :: NullOrUndefined (InputLossActionForMsSmoothOut) , "NumRetries" :: NullOrUndefined (IntegerMin0') , "RestartDelay" :: NullOrUndefined (IntegerMin0') , "SegmentationMode" :: NullOrUndefined (SmoothGroupSegmentationMode) , "SendDelayMs" :: NullOrUndefined (IntegerMin0Max10000') , "SparseTrackType" :: NullOrUndefined (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: NullOrUndefined (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: NullOrUndefined (String) , "TimestampOffsetMode" :: NullOrUndefined (SmoothGroupTimestampOffsetMode) } ) -> MsSmoothGroupSettings
-newMsSmoothGroupSettings' _Destination customize = (MsSmoothGroupSettings <<< customize) { "Destination": _Destination, "AcquisitionPointId": (NullOrUndefined Nothing), "AudioOnlyTimecodeControl": (NullOrUndefined Nothing), "CertificateMode": (NullOrUndefined Nothing), "ConnectionRetryInterval": (NullOrUndefined Nothing), "EventId": (NullOrUndefined Nothing), "EventIdMode": (NullOrUndefined Nothing), "EventStopBehavior": (NullOrUndefined Nothing), "FilecacheDuration": (NullOrUndefined Nothing), "FragmentLength": (NullOrUndefined Nothing), "InputLossAction": (NullOrUndefined Nothing), "NumRetries": (NullOrUndefined Nothing), "RestartDelay": (NullOrUndefined Nothing), "SegmentationMode": (NullOrUndefined Nothing), "SendDelayMs": (NullOrUndefined Nothing), "SparseTrackType": (NullOrUndefined Nothing), "StreamManifestBehavior": (NullOrUndefined Nothing), "TimestampOffset": (NullOrUndefined Nothing), "TimestampOffsetMode": (NullOrUndefined Nothing) }
+newMsSmoothGroupSettings' :: OutputLocationRef -> ( { "AcquisitionPointId" :: Maybe (String) , "AudioOnlyTimecodeControl" :: Maybe (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: Maybe (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: Maybe (IntegerMin0') , "Destination" :: (OutputLocationRef) , "EventId" :: Maybe (String) , "EventIdMode" :: Maybe (SmoothGroupEventIdMode) , "EventStopBehavior" :: Maybe (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: Maybe (IntegerMin0') , "FragmentLength" :: Maybe (IntegerMin1') , "InputLossAction" :: Maybe (InputLossActionForMsSmoothOut) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0') , "SegmentationMode" :: Maybe (SmoothGroupSegmentationMode) , "SendDelayMs" :: Maybe (IntegerMin0Max10000') , "SparseTrackType" :: Maybe (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: Maybe (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: Maybe (String) , "TimestampOffsetMode" :: Maybe (SmoothGroupTimestampOffsetMode) } -> {"AcquisitionPointId" :: Maybe (String) , "AudioOnlyTimecodeControl" :: Maybe (SmoothGroupAudioOnlyTimecodeControl) , "CertificateMode" :: Maybe (SmoothGroupCertificateMode) , "ConnectionRetryInterval" :: Maybe (IntegerMin0') , "Destination" :: (OutputLocationRef) , "EventId" :: Maybe (String) , "EventIdMode" :: Maybe (SmoothGroupEventIdMode) , "EventStopBehavior" :: Maybe (SmoothGroupEventStopBehavior) , "FilecacheDuration" :: Maybe (IntegerMin0') , "FragmentLength" :: Maybe (IntegerMin1') , "InputLossAction" :: Maybe (InputLossActionForMsSmoothOut) , "NumRetries" :: Maybe (IntegerMin0') , "RestartDelay" :: Maybe (IntegerMin0') , "SegmentationMode" :: Maybe (SmoothGroupSegmentationMode) , "SendDelayMs" :: Maybe (IntegerMin0Max10000') , "SparseTrackType" :: Maybe (SmoothGroupSparseTrackType) , "StreamManifestBehavior" :: Maybe (SmoothGroupStreamManifestBehavior) , "TimestampOffset" :: Maybe (String) , "TimestampOffsetMode" :: Maybe (SmoothGroupTimestampOffsetMode) } ) -> MsSmoothGroupSettings
+newMsSmoothGroupSettings' _Destination customize = (MsSmoothGroupSettings <<< customize) { "Destination": _Destination, "AcquisitionPointId": Nothing, "AudioOnlyTimecodeControl": Nothing, "CertificateMode": Nothing, "ConnectionRetryInterval": Nothing, "EventId": Nothing, "EventIdMode": Nothing, "EventStopBehavior": Nothing, "FilecacheDuration": Nothing, "FragmentLength": Nothing, "InputLossAction": Nothing, "NumRetries": Nothing, "RestartDelay": Nothing, "SegmentationMode": Nothing, "SendDelayMs": Nothing, "SparseTrackType": Nothing, "StreamManifestBehavior": Nothing, "TimestampOffset": Nothing, "TimestampOffsetMode": Nothing }
 
 
 
 -- | Placeholder documentation for MsSmoothOutputSettings
 newtype MsSmoothOutputSettings = MsSmoothOutputSettings 
-  { "NameModifier" :: NullOrUndefined (String)
+  { "NameModifier" :: Maybe (String)
   }
 derive instance newtypeMsSmoothOutputSettings :: Newtype MsSmoothOutputSettings _
 derive instance repGenericMsSmoothOutputSettings :: Generic MsSmoothOutputSettings _
@@ -4119,12 +4118,12 @@ instance encodeMsSmoothOutputSettings :: Encode MsSmoothOutputSettings where enc
 
 -- | Constructs MsSmoothOutputSettings from required parameters
 newMsSmoothOutputSettings :: MsSmoothOutputSettings
-newMsSmoothOutputSettings  = MsSmoothOutputSettings { "NameModifier": (NullOrUndefined Nothing) }
+newMsSmoothOutputSettings  = MsSmoothOutputSettings { "NameModifier": Nothing }
 
 -- | Constructs MsSmoothOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMsSmoothOutputSettings' :: ( { "NameModifier" :: NullOrUndefined (String) } -> {"NameModifier" :: NullOrUndefined (String) } ) -> MsSmoothOutputSettings
-newMsSmoothOutputSettings'  customize = (MsSmoothOutputSettings <<< customize) { "NameModifier": (NullOrUndefined Nothing) }
+newMsSmoothOutputSettings' :: ( { "NameModifier" :: Maybe (String) } -> {"NameModifier" :: Maybe (String) } ) -> MsSmoothOutputSettings
+newMsSmoothOutputSettings'  customize = (MsSmoothOutputSettings <<< customize) { "NameModifier": Nothing }
 
 
 
@@ -4140,8 +4139,8 @@ instance encodeNetworkInputServerValidation :: Encode NetworkInputServerValidati
 
 -- | Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection.
 newtype NetworkInputSettings = NetworkInputSettings 
-  { "HlsInputSettings" :: NullOrUndefined (HlsInputSettings)
-  , "ServerValidation" :: NullOrUndefined (NetworkInputServerValidation)
+  { "HlsInputSettings" :: Maybe (HlsInputSettings)
+  , "ServerValidation" :: Maybe (NetworkInputServerValidation)
   }
 derive instance newtypeNetworkInputSettings :: Newtype NetworkInputSettings _
 derive instance repGenericNetworkInputSettings :: Generic NetworkInputSettings _
@@ -4151,18 +4150,18 @@ instance encodeNetworkInputSettings :: Encode NetworkInputSettings where encode 
 
 -- | Constructs NetworkInputSettings from required parameters
 newNetworkInputSettings :: NetworkInputSettings
-newNetworkInputSettings  = NetworkInputSettings { "HlsInputSettings": (NullOrUndefined Nothing), "ServerValidation": (NullOrUndefined Nothing) }
+newNetworkInputSettings  = NetworkInputSettings { "HlsInputSettings": Nothing, "ServerValidation": Nothing }
 
 -- | Constructs NetworkInputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNetworkInputSettings' :: ( { "HlsInputSettings" :: NullOrUndefined (HlsInputSettings) , "ServerValidation" :: NullOrUndefined (NetworkInputServerValidation) } -> {"HlsInputSettings" :: NullOrUndefined (HlsInputSettings) , "ServerValidation" :: NullOrUndefined (NetworkInputServerValidation) } ) -> NetworkInputSettings
-newNetworkInputSettings'  customize = (NetworkInputSettings <<< customize) { "HlsInputSettings": (NullOrUndefined Nothing), "ServerValidation": (NullOrUndefined Nothing) }
+newNetworkInputSettings' :: ( { "HlsInputSettings" :: Maybe (HlsInputSettings) , "ServerValidation" :: Maybe (NetworkInputServerValidation) } -> {"HlsInputSettings" :: Maybe (HlsInputSettings) , "ServerValidation" :: Maybe (NetworkInputServerValidation) } ) -> NetworkInputSettings
+newNetworkInputSettings'  customize = (NetworkInputSettings <<< customize) { "HlsInputSettings": Nothing, "ServerValidation": Nothing }
 
 
 
 -- | Placeholder documentation for NotFoundException
 newtype NotFoundException = NotFoundException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeNotFoundException :: Newtype NotFoundException _
 derive instance repGenericNotFoundException :: Generic NotFoundException _
@@ -4172,22 +4171,22 @@ instance encodeNotFoundException :: Encode NotFoundException where encode = gene
 
 -- | Constructs NotFoundException from required parameters
 newNotFoundException :: NotFoundException
-newNotFoundException  = NotFoundException { "Message": (NullOrUndefined Nothing) }
+newNotFoundException  = NotFoundException { "Message": Nothing }
 
 -- | Constructs NotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotFoundException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> NotFoundException
-newNotFoundException'  customize = (NotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNotFoundException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> NotFoundException
+newNotFoundException'  customize = (NotFoundException <<< customize) { "Message": Nothing }
 
 
 
 -- | Output settings. There can be multiple outputs within a group.
 newtype Output = Output 
-  { "AudioDescriptionNames" :: NullOrUndefined (ListOf__string')
-  , "CaptionDescriptionNames" :: NullOrUndefined (ListOf__string')
-  , "OutputName" :: NullOrUndefined (StringMin1Max255')
+  { "AudioDescriptionNames" :: Maybe (ListOf__string')
+  , "CaptionDescriptionNames" :: Maybe (ListOf__string')
+  , "OutputName" :: Maybe (StringMin1Max255')
   , "OutputSettings" :: (OutputSettings)
-  , "VideoDescriptionName" :: NullOrUndefined (String)
+  , "VideoDescriptionName" :: Maybe (String)
   }
 derive instance newtypeOutput :: Newtype Output _
 derive instance repGenericOutput :: Generic Output _
@@ -4197,19 +4196,19 @@ instance encodeOutput :: Encode Output where encode = genericEncode options
 
 -- | Constructs Output from required parameters
 newOutput :: OutputSettings -> Output
-newOutput _OutputSettings = Output { "OutputSettings": _OutputSettings, "AudioDescriptionNames": (NullOrUndefined Nothing), "CaptionDescriptionNames": (NullOrUndefined Nothing), "OutputName": (NullOrUndefined Nothing), "VideoDescriptionName": (NullOrUndefined Nothing) }
+newOutput _OutputSettings = Output { "OutputSettings": _OutputSettings, "AudioDescriptionNames": Nothing, "CaptionDescriptionNames": Nothing, "OutputName": Nothing, "VideoDescriptionName": Nothing }
 
 -- | Constructs Output's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutput' :: OutputSettings -> ( { "AudioDescriptionNames" :: NullOrUndefined (ListOf__string') , "CaptionDescriptionNames" :: NullOrUndefined (ListOf__string') , "OutputName" :: NullOrUndefined (StringMin1Max255') , "OutputSettings" :: (OutputSettings) , "VideoDescriptionName" :: NullOrUndefined (String) } -> {"AudioDescriptionNames" :: NullOrUndefined (ListOf__string') , "CaptionDescriptionNames" :: NullOrUndefined (ListOf__string') , "OutputName" :: NullOrUndefined (StringMin1Max255') , "OutputSettings" :: (OutputSettings) , "VideoDescriptionName" :: NullOrUndefined (String) } ) -> Output
-newOutput' _OutputSettings customize = (Output <<< customize) { "OutputSettings": _OutputSettings, "AudioDescriptionNames": (NullOrUndefined Nothing), "CaptionDescriptionNames": (NullOrUndefined Nothing), "OutputName": (NullOrUndefined Nothing), "VideoDescriptionName": (NullOrUndefined Nothing) }
+newOutput' :: OutputSettings -> ( { "AudioDescriptionNames" :: Maybe (ListOf__string') , "CaptionDescriptionNames" :: Maybe (ListOf__string') , "OutputName" :: Maybe (StringMin1Max255') , "OutputSettings" :: (OutputSettings) , "VideoDescriptionName" :: Maybe (String) } -> {"AudioDescriptionNames" :: Maybe (ListOf__string') , "CaptionDescriptionNames" :: Maybe (ListOf__string') , "OutputName" :: Maybe (StringMin1Max255') , "OutputSettings" :: (OutputSettings) , "VideoDescriptionName" :: Maybe (String) } ) -> Output
+newOutput' _OutputSettings customize = (Output <<< customize) { "OutputSettings": _OutputSettings, "AudioDescriptionNames": Nothing, "CaptionDescriptionNames": Nothing, "OutputName": Nothing, "VideoDescriptionName": Nothing }
 
 
 
 -- | Placeholder documentation for OutputDestination
 newtype OutputDestination = OutputDestination 
-  { "Id" :: NullOrUndefined (String)
-  , "Settings" :: NullOrUndefined (ListOfOutputDestinationSettings')
+  { "Id" :: Maybe (String)
+  , "Settings" :: Maybe (ListOfOutputDestinationSettings')
   }
 derive instance newtypeOutputDestination :: Newtype OutputDestination _
 derive instance repGenericOutputDestination :: Generic OutputDestination _
@@ -4219,20 +4218,20 @@ instance encodeOutputDestination :: Encode OutputDestination where encode = gene
 
 -- | Constructs OutputDestination from required parameters
 newOutputDestination :: OutputDestination
-newOutputDestination  = OutputDestination { "Id": (NullOrUndefined Nothing), "Settings": (NullOrUndefined Nothing) }
+newOutputDestination  = OutputDestination { "Id": Nothing, "Settings": Nothing }
 
 -- | Constructs OutputDestination's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputDestination' :: ( { "Id" :: NullOrUndefined (String) , "Settings" :: NullOrUndefined (ListOfOutputDestinationSettings') } -> {"Id" :: NullOrUndefined (String) , "Settings" :: NullOrUndefined (ListOfOutputDestinationSettings') } ) -> OutputDestination
-newOutputDestination'  customize = (OutputDestination <<< customize) { "Id": (NullOrUndefined Nothing), "Settings": (NullOrUndefined Nothing) }
+newOutputDestination' :: ( { "Id" :: Maybe (String) , "Settings" :: Maybe (ListOfOutputDestinationSettings') } -> {"Id" :: Maybe (String) , "Settings" :: Maybe (ListOfOutputDestinationSettings') } ) -> OutputDestination
+newOutputDestination'  customize = (OutputDestination <<< customize) { "Id": Nothing, "Settings": Nothing }
 
 
 
 -- | Placeholder documentation for OutputDestinationSettings
 newtype OutputDestinationSettings = OutputDestinationSettings 
-  { "PasswordParam" :: NullOrUndefined (String)
-  , "Url" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
+  { "PasswordParam" :: Maybe (String)
+  , "Url" :: Maybe (String)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeOutputDestinationSettings :: Newtype OutputDestinationSettings _
 derive instance repGenericOutputDestinationSettings :: Generic OutputDestinationSettings _
@@ -4242,18 +4241,18 @@ instance encodeOutputDestinationSettings :: Encode OutputDestinationSettings whe
 
 -- | Constructs OutputDestinationSettings from required parameters
 newOutputDestinationSettings :: OutputDestinationSettings
-newOutputDestinationSettings  = OutputDestinationSettings { "PasswordParam": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newOutputDestinationSettings  = OutputDestinationSettings { "PasswordParam": Nothing, "Url": Nothing, "Username": Nothing }
 
 -- | Constructs OutputDestinationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputDestinationSettings' :: ( { "PasswordParam" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } -> {"PasswordParam" :: NullOrUndefined (String) , "Url" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } ) -> OutputDestinationSettings
-newOutputDestinationSettings'  customize = (OutputDestinationSettings <<< customize) { "PasswordParam": (NullOrUndefined Nothing), "Url": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newOutputDestinationSettings' :: ( { "PasswordParam" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } -> {"PasswordParam" :: Maybe (String) , "Url" :: Maybe (String) , "Username" :: Maybe (String) } ) -> OutputDestinationSettings
+newOutputDestinationSettings'  customize = (OutputDestinationSettings <<< customize) { "PasswordParam": Nothing, "Url": Nothing, "Username": Nothing }
 
 
 
 -- | Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 newtype OutputGroup = OutputGroup 
-  { "Name" :: NullOrUndefined (StringMax32')
+  { "Name" :: Maybe (StringMax32')
   , "OutputGroupSettings" :: (OutputGroupSettings)
   , "Outputs" :: (ListOfOutput')
   }
@@ -4265,21 +4264,21 @@ instance encodeOutputGroup :: Encode OutputGroup where encode = genericEncode op
 
 -- | Constructs OutputGroup from required parameters
 newOutputGroup :: OutputGroupSettings -> ListOfOutput' -> OutputGroup
-newOutputGroup _OutputGroupSettings _Outputs = OutputGroup { "OutputGroupSettings": _OutputGroupSettings, "Outputs": _Outputs, "Name": (NullOrUndefined Nothing) }
+newOutputGroup _OutputGroupSettings _Outputs = OutputGroup { "OutputGroupSettings": _OutputGroupSettings, "Outputs": _Outputs, "Name": Nothing }
 
 -- | Constructs OutputGroup's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputGroup' :: OutputGroupSettings -> ListOfOutput' -> ( { "Name" :: NullOrUndefined (StringMax32') , "OutputGroupSettings" :: (OutputGroupSettings) , "Outputs" :: (ListOfOutput') } -> {"Name" :: NullOrUndefined (StringMax32') , "OutputGroupSettings" :: (OutputGroupSettings) , "Outputs" :: (ListOfOutput') } ) -> OutputGroup
-newOutputGroup' _OutputGroupSettings _Outputs customize = (OutputGroup <<< customize) { "OutputGroupSettings": _OutputGroupSettings, "Outputs": _Outputs, "Name": (NullOrUndefined Nothing) }
+newOutputGroup' :: OutputGroupSettings -> ListOfOutput' -> ( { "Name" :: Maybe (StringMax32') , "OutputGroupSettings" :: (OutputGroupSettings) , "Outputs" :: (ListOfOutput') } -> {"Name" :: Maybe (StringMax32') , "OutputGroupSettings" :: (OutputGroupSettings) , "Outputs" :: (ListOfOutput') } ) -> OutputGroup
+newOutputGroup' _OutputGroupSettings _Outputs customize = (OutputGroup <<< customize) { "OutputGroupSettings": _OutputGroupSettings, "Outputs": _Outputs, "Name": Nothing }
 
 
 
 -- | Placeholder documentation for OutputGroupSettings
 newtype OutputGroupSettings = OutputGroupSettings 
-  { "ArchiveGroupSettings" :: NullOrUndefined (ArchiveGroupSettings)
-  , "HlsGroupSettings" :: NullOrUndefined (HlsGroupSettings)
-  , "MsSmoothGroupSettings" :: NullOrUndefined (MsSmoothGroupSettings)
-  , "UdpGroupSettings" :: NullOrUndefined (UdpGroupSettings)
+  { "ArchiveGroupSettings" :: Maybe (ArchiveGroupSettings)
+  , "HlsGroupSettings" :: Maybe (HlsGroupSettings)
+  , "MsSmoothGroupSettings" :: Maybe (MsSmoothGroupSettings)
+  , "UdpGroupSettings" :: Maybe (UdpGroupSettings)
   }
 derive instance newtypeOutputGroupSettings :: Newtype OutputGroupSettings _
 derive instance repGenericOutputGroupSettings :: Generic OutputGroupSettings _
@@ -4289,18 +4288,18 @@ instance encodeOutputGroupSettings :: Encode OutputGroupSettings where encode = 
 
 -- | Constructs OutputGroupSettings from required parameters
 newOutputGroupSettings :: OutputGroupSettings
-newOutputGroupSettings  = OutputGroupSettings { "ArchiveGroupSettings": (NullOrUndefined Nothing), "HlsGroupSettings": (NullOrUndefined Nothing), "MsSmoothGroupSettings": (NullOrUndefined Nothing), "UdpGroupSettings": (NullOrUndefined Nothing) }
+newOutputGroupSettings  = OutputGroupSettings { "ArchiveGroupSettings": Nothing, "HlsGroupSettings": Nothing, "MsSmoothGroupSettings": Nothing, "UdpGroupSettings": Nothing }
 
 -- | Constructs OutputGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputGroupSettings' :: ( { "ArchiveGroupSettings" :: NullOrUndefined (ArchiveGroupSettings) , "HlsGroupSettings" :: NullOrUndefined (HlsGroupSettings) , "MsSmoothGroupSettings" :: NullOrUndefined (MsSmoothGroupSettings) , "UdpGroupSettings" :: NullOrUndefined (UdpGroupSettings) } -> {"ArchiveGroupSettings" :: NullOrUndefined (ArchiveGroupSettings) , "HlsGroupSettings" :: NullOrUndefined (HlsGroupSettings) , "MsSmoothGroupSettings" :: NullOrUndefined (MsSmoothGroupSettings) , "UdpGroupSettings" :: NullOrUndefined (UdpGroupSettings) } ) -> OutputGroupSettings
-newOutputGroupSettings'  customize = (OutputGroupSettings <<< customize) { "ArchiveGroupSettings": (NullOrUndefined Nothing), "HlsGroupSettings": (NullOrUndefined Nothing), "MsSmoothGroupSettings": (NullOrUndefined Nothing), "UdpGroupSettings": (NullOrUndefined Nothing) }
+newOutputGroupSettings' :: ( { "ArchiveGroupSettings" :: Maybe (ArchiveGroupSettings) , "HlsGroupSettings" :: Maybe (HlsGroupSettings) , "MsSmoothGroupSettings" :: Maybe (MsSmoothGroupSettings) , "UdpGroupSettings" :: Maybe (UdpGroupSettings) } -> {"ArchiveGroupSettings" :: Maybe (ArchiveGroupSettings) , "HlsGroupSettings" :: Maybe (HlsGroupSettings) , "MsSmoothGroupSettings" :: Maybe (MsSmoothGroupSettings) , "UdpGroupSettings" :: Maybe (UdpGroupSettings) } ) -> OutputGroupSettings
+newOutputGroupSettings'  customize = (OutputGroupSettings <<< customize) { "ArchiveGroupSettings": Nothing, "HlsGroupSettings": Nothing, "MsSmoothGroupSettings": Nothing, "UdpGroupSettings": Nothing }
 
 
 
 -- | Reference to an OutputDestination ID defined in the channel
 newtype OutputLocationRef = OutputLocationRef 
-  { "DestinationRefId" :: NullOrUndefined (String)
+  { "DestinationRefId" :: Maybe (String)
   }
 derive instance newtypeOutputLocationRef :: Newtype OutputLocationRef _
 derive instance repGenericOutputLocationRef :: Generic OutputLocationRef _
@@ -4310,21 +4309,21 @@ instance encodeOutputLocationRef :: Encode OutputLocationRef where encode = gene
 
 -- | Constructs OutputLocationRef from required parameters
 newOutputLocationRef :: OutputLocationRef
-newOutputLocationRef  = OutputLocationRef { "DestinationRefId": (NullOrUndefined Nothing) }
+newOutputLocationRef  = OutputLocationRef { "DestinationRefId": Nothing }
 
 -- | Constructs OutputLocationRef's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputLocationRef' :: ( { "DestinationRefId" :: NullOrUndefined (String) } -> {"DestinationRefId" :: NullOrUndefined (String) } ) -> OutputLocationRef
-newOutputLocationRef'  customize = (OutputLocationRef <<< customize) { "DestinationRefId": (NullOrUndefined Nothing) }
+newOutputLocationRef' :: ( { "DestinationRefId" :: Maybe (String) } -> {"DestinationRefId" :: Maybe (String) } ) -> OutputLocationRef
+newOutputLocationRef'  customize = (OutputLocationRef <<< customize) { "DestinationRefId": Nothing }
 
 
 
 -- | Placeholder documentation for OutputSettings
 newtype OutputSettings = OutputSettings 
-  { "ArchiveOutputSettings" :: NullOrUndefined (ArchiveOutputSettings)
-  , "HlsOutputSettings" :: NullOrUndefined (HlsOutputSettings)
-  , "MsSmoothOutputSettings" :: NullOrUndefined (MsSmoothOutputSettings)
-  , "UdpOutputSettings" :: NullOrUndefined (UdpOutputSettings)
+  { "ArchiveOutputSettings" :: Maybe (ArchiveOutputSettings)
+  , "HlsOutputSettings" :: Maybe (HlsOutputSettings)
+  , "MsSmoothOutputSettings" :: Maybe (MsSmoothOutputSettings)
+  , "UdpOutputSettings" :: Maybe (UdpOutputSettings)
   }
 derive instance newtypeOutputSettings :: Newtype OutputSettings _
 derive instance repGenericOutputSettings :: Generic OutputSettings _
@@ -4334,12 +4333,12 @@ instance encodeOutputSettings :: Encode OutputSettings where encode = genericEnc
 
 -- | Constructs OutputSettings from required parameters
 newOutputSettings :: OutputSettings
-newOutputSettings  = OutputSettings { "ArchiveOutputSettings": (NullOrUndefined Nothing), "HlsOutputSettings": (NullOrUndefined Nothing), "MsSmoothOutputSettings": (NullOrUndefined Nothing), "UdpOutputSettings": (NullOrUndefined Nothing) }
+newOutputSettings  = OutputSettings { "ArchiveOutputSettings": Nothing, "HlsOutputSettings": Nothing, "MsSmoothOutputSettings": Nothing, "UdpOutputSettings": Nothing }
 
 -- | Constructs OutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputSettings' :: ( { "ArchiveOutputSettings" :: NullOrUndefined (ArchiveOutputSettings) , "HlsOutputSettings" :: NullOrUndefined (HlsOutputSettings) , "MsSmoothOutputSettings" :: NullOrUndefined (MsSmoothOutputSettings) , "UdpOutputSettings" :: NullOrUndefined (UdpOutputSettings) } -> {"ArchiveOutputSettings" :: NullOrUndefined (ArchiveOutputSettings) , "HlsOutputSettings" :: NullOrUndefined (HlsOutputSettings) , "MsSmoothOutputSettings" :: NullOrUndefined (MsSmoothOutputSettings) , "UdpOutputSettings" :: NullOrUndefined (UdpOutputSettings) } ) -> OutputSettings
-newOutputSettings'  customize = (OutputSettings <<< customize) { "ArchiveOutputSettings": (NullOrUndefined Nothing), "HlsOutputSettings": (NullOrUndefined Nothing), "MsSmoothOutputSettings": (NullOrUndefined Nothing), "UdpOutputSettings": (NullOrUndefined Nothing) }
+newOutputSettings' :: ( { "ArchiveOutputSettings" :: Maybe (ArchiveOutputSettings) , "HlsOutputSettings" :: Maybe (HlsOutputSettings) , "MsSmoothOutputSettings" :: Maybe (MsSmoothOutputSettings) , "UdpOutputSettings" :: Maybe (UdpOutputSettings) } -> {"ArchiveOutputSettings" :: Maybe (ArchiveOutputSettings) , "HlsOutputSettings" :: Maybe (HlsOutputSettings) , "MsSmoothOutputSettings" :: Maybe (MsSmoothOutputSettings) , "UdpOutputSettings" :: Maybe (UdpOutputSettings) } ) -> OutputSettings
+newOutputSettings'  customize = (OutputSettings <<< customize) { "ArchiveOutputSettings": Nothing, "HlsOutputSettings": Nothing, "MsSmoothOutputSettings": Nothing, "UdpOutputSettings": Nothing }
 
 
 
@@ -4356,8 +4355,8 @@ instance encodePassThroughSettings :: Encode PassThroughSettings where encode = 
 -- | Placeholder documentation for RemixSettings
 newtype RemixSettings = RemixSettings 
   { "ChannelMappings" :: (ListOfAudioChannelMapping')
-  , "ChannelsIn" :: NullOrUndefined (IntegerMin1Max16')
-  , "ChannelsOut" :: NullOrUndefined (IntegerMin1Max8')
+  , "ChannelsIn" :: Maybe (IntegerMin1Max16')
+  , "ChannelsOut" :: Maybe (IntegerMin1Max8')
   }
 derive instance newtypeRemixSettings :: Newtype RemixSettings _
 derive instance repGenericRemixSettings :: Generic RemixSettings _
@@ -4367,18 +4366,18 @@ instance encodeRemixSettings :: Encode RemixSettings where encode = genericEncod
 
 -- | Constructs RemixSettings from required parameters
 newRemixSettings :: ListOfAudioChannelMapping' -> RemixSettings
-newRemixSettings _ChannelMappings = RemixSettings { "ChannelMappings": _ChannelMappings, "ChannelsIn": (NullOrUndefined Nothing), "ChannelsOut": (NullOrUndefined Nothing) }
+newRemixSettings _ChannelMappings = RemixSettings { "ChannelMappings": _ChannelMappings, "ChannelsIn": Nothing, "ChannelsOut": Nothing }
 
 -- | Constructs RemixSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRemixSettings' :: ListOfAudioChannelMapping' -> ( { "ChannelMappings" :: (ListOfAudioChannelMapping') , "ChannelsIn" :: NullOrUndefined (IntegerMin1Max16') , "ChannelsOut" :: NullOrUndefined (IntegerMin1Max8') } -> {"ChannelMappings" :: (ListOfAudioChannelMapping') , "ChannelsIn" :: NullOrUndefined (IntegerMin1Max16') , "ChannelsOut" :: NullOrUndefined (IntegerMin1Max8') } ) -> RemixSettings
-newRemixSettings' _ChannelMappings customize = (RemixSettings <<< customize) { "ChannelMappings": _ChannelMappings, "ChannelsIn": (NullOrUndefined Nothing), "ChannelsOut": (NullOrUndefined Nothing) }
+newRemixSettings' :: ListOfAudioChannelMapping' -> ( { "ChannelMappings" :: (ListOfAudioChannelMapping') , "ChannelsIn" :: Maybe (IntegerMin1Max16') , "ChannelsOut" :: Maybe (IntegerMin1Max8') } -> {"ChannelMappings" :: (ListOfAudioChannelMapping') , "ChannelsIn" :: Maybe (IntegerMin1Max16') , "ChannelsOut" :: Maybe (IntegerMin1Max8') } ) -> RemixSettings
+newRemixSettings' _ChannelMappings customize = (RemixSettings <<< customize) { "ChannelMappings": _ChannelMappings, "ChannelsIn": Nothing, "ChannelsOut": Nothing }
 
 
 
 -- | Placeholder documentation for ResourceConflict
 newtype ResourceConflict = ResourceConflict 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeResourceConflict :: Newtype ResourceConflict _
 derive instance repGenericResourceConflict :: Generic ResourceConflict _
@@ -4388,18 +4387,18 @@ instance encodeResourceConflict :: Encode ResourceConflict where encode = generi
 
 -- | Constructs ResourceConflict from required parameters
 newResourceConflict :: ResourceConflict
-newResourceConflict  = ResourceConflict { "Message": (NullOrUndefined Nothing) }
+newResourceConflict  = ResourceConflict { "Message": Nothing }
 
 -- | Constructs ResourceConflict's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceConflict' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ResourceConflict
-newResourceConflict'  customize = (ResourceConflict <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceConflict' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ResourceConflict
+newResourceConflict'  customize = (ResourceConflict <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for ResourceNotFound
 newtype ResourceNotFound = ResourceNotFound 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeResourceNotFound :: Newtype ResourceNotFound _
 derive instance repGenericResourceNotFound :: Generic ResourceNotFound _
@@ -4409,12 +4408,12 @@ instance encodeResourceNotFound :: Encode ResourceNotFound where encode = generi
 
 -- | Constructs ResourceNotFound from required parameters
 newResourceNotFound :: ResourceNotFound
-newResourceNotFound  = ResourceNotFound { "Message": (NullOrUndefined Nothing) }
+newResourceNotFound  = ResourceNotFound { "Message": Nothing }
 
 -- | Constructs ResourceNotFound's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFound' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ResourceNotFound
-newResourceNotFound'  customize = (ResourceNotFound <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceNotFound' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ResourceNotFound
+newResourceNotFound'  customize = (ResourceNotFound <<< customize) { "Message": Nothing }
 
 
 
@@ -4440,8 +4439,8 @@ instance encodeScte20PlusEmbeddedDestinationSettings :: Encode Scte20PlusEmbedde
 
 -- | Placeholder documentation for Scte20SourceSettings
 newtype Scte20SourceSettings = Scte20SourceSettings 
-  { "Convert608To708" :: NullOrUndefined (Scte20Convert608To708)
-  , "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4')
+  { "Convert608To708" :: Maybe (Scte20Convert608To708)
+  , "Source608ChannelNumber" :: Maybe (IntegerMin1Max4')
   }
 derive instance newtypeScte20SourceSettings :: Newtype Scte20SourceSettings _
 derive instance repGenericScte20SourceSettings :: Generic Scte20SourceSettings _
@@ -4451,12 +4450,12 @@ instance encodeScte20SourceSettings :: Encode Scte20SourceSettings where encode 
 
 -- | Constructs Scte20SourceSettings from required parameters
 newScte20SourceSettings :: Scte20SourceSettings
-newScte20SourceSettings  = Scte20SourceSettings { "Convert608To708": (NullOrUndefined Nothing), "Source608ChannelNumber": (NullOrUndefined Nothing) }
+newScte20SourceSettings  = Scte20SourceSettings { "Convert608To708": Nothing, "Source608ChannelNumber": Nothing }
 
 -- | Constructs Scte20SourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte20SourceSettings' :: ( { "Convert608To708" :: NullOrUndefined (Scte20Convert608To708) , "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4') } -> {"Convert608To708" :: NullOrUndefined (Scte20Convert608To708) , "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4') } ) -> Scte20SourceSettings
-newScte20SourceSettings'  customize = (Scte20SourceSettings <<< customize) { "Convert608To708": (NullOrUndefined Nothing), "Source608ChannelNumber": (NullOrUndefined Nothing) }
+newScte20SourceSettings' :: ( { "Convert608To708" :: Maybe (Scte20Convert608To708) , "Source608ChannelNumber" :: Maybe (IntegerMin1Max4') } -> {"Convert608To708" :: Maybe (Scte20Convert608To708) , "Source608ChannelNumber" :: Maybe (IntegerMin1Max4') } ) -> Scte20SourceSettings
+newScte20SourceSettings'  customize = (Scte20SourceSettings <<< customize) { "Convert608To708": Nothing, "Source608ChannelNumber": Nothing }
 
 
 
@@ -4472,7 +4471,7 @@ instance encodeScte27DestinationSettings :: Encode Scte27DestinationSettings whe
 
 -- | Placeholder documentation for Scte27SourceSettings
 newtype Scte27SourceSettings = Scte27SourceSettings 
-  { "Pid" :: NullOrUndefined (IntegerMin1')
+  { "Pid" :: Maybe (IntegerMin1')
   }
 derive instance newtypeScte27SourceSettings :: Newtype Scte27SourceSettings _
 derive instance repGenericScte27SourceSettings :: Generic Scte27SourceSettings _
@@ -4482,12 +4481,12 @@ instance encodeScte27SourceSettings :: Encode Scte27SourceSettings where encode 
 
 -- | Constructs Scte27SourceSettings from required parameters
 newScte27SourceSettings :: Scte27SourceSettings
-newScte27SourceSettings  = Scte27SourceSettings { "Pid": (NullOrUndefined Nothing) }
+newScte27SourceSettings  = Scte27SourceSettings { "Pid": Nothing }
 
 -- | Constructs Scte27SourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte27SourceSettings' :: ( { "Pid" :: NullOrUndefined (IntegerMin1') } -> {"Pid" :: NullOrUndefined (IntegerMin1') } ) -> Scte27SourceSettings
-newScte27SourceSettings'  customize = (Scte27SourceSettings <<< customize) { "Pid": (NullOrUndefined Nothing) }
+newScte27SourceSettings' :: ( { "Pid" :: Maybe (IntegerMin1') } -> {"Pid" :: Maybe (IntegerMin1') } ) -> Scte27SourceSettings
+newScte27SourceSettings'  customize = (Scte27SourceSettings <<< customize) { "Pid": Nothing }
 
 
 
@@ -4513,9 +4512,9 @@ instance encodeScte35AposWebDeliveryAllowedBehavior :: Encode Scte35AposWebDeliv
 
 -- | Placeholder documentation for Scte35SpliceInsert
 newtype Scte35SpliceInsert = Scte35SpliceInsert 
-  { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000')
-  , "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior)
-  , "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior)
+  { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000')
+  , "NoRegionalBlackoutFlag" :: Maybe (Scte35SpliceInsertNoRegionalBlackoutBehavior)
+  , "WebDeliveryAllowedFlag" :: Maybe (Scte35SpliceInsertWebDeliveryAllowedBehavior)
   }
 derive instance newtypeScte35SpliceInsert :: Newtype Scte35SpliceInsert _
 derive instance repGenericScte35SpliceInsert :: Generic Scte35SpliceInsert _
@@ -4525,12 +4524,12 @@ instance encodeScte35SpliceInsert :: Encode Scte35SpliceInsert where encode = ge
 
 -- | Constructs Scte35SpliceInsert from required parameters
 newScte35SpliceInsert :: Scte35SpliceInsert
-newScte35SpliceInsert  = Scte35SpliceInsert { "AdAvailOffset": (NullOrUndefined Nothing), "NoRegionalBlackoutFlag": (NullOrUndefined Nothing), "WebDeliveryAllowedFlag": (NullOrUndefined Nothing) }
+newScte35SpliceInsert  = Scte35SpliceInsert { "AdAvailOffset": Nothing, "NoRegionalBlackoutFlag": Nothing, "WebDeliveryAllowedFlag": Nothing }
 
 -- | Constructs Scte35SpliceInsert's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte35SpliceInsert' :: ( { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) } ) -> Scte35SpliceInsert
-newScte35SpliceInsert'  customize = (Scte35SpliceInsert <<< customize) { "AdAvailOffset": (NullOrUndefined Nothing), "NoRegionalBlackoutFlag": (NullOrUndefined Nothing), "WebDeliveryAllowedFlag": (NullOrUndefined Nothing) }
+newScte35SpliceInsert' :: ( { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: Maybe (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: Maybe (Scte35SpliceInsertWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: Maybe (Scte35SpliceInsertNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: Maybe (Scte35SpliceInsertWebDeliveryAllowedBehavior) } ) -> Scte35SpliceInsert
+newScte35SpliceInsert'  customize = (Scte35SpliceInsert <<< customize) { "AdAvailOffset": Nothing, "NoRegionalBlackoutFlag": Nothing, "WebDeliveryAllowedFlag": Nothing }
 
 
 
@@ -4556,9 +4555,9 @@ instance encodeScte35SpliceInsertWebDeliveryAllowedBehavior :: Encode Scte35Spli
 
 -- | Placeholder documentation for Scte35TimeSignalApos
 newtype Scte35TimeSignalApos = Scte35TimeSignalApos 
-  { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000')
-  , "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior)
-  , "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior)
+  { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000')
+  , "NoRegionalBlackoutFlag" :: Maybe (Scte35AposNoRegionalBlackoutBehavior)
+  , "WebDeliveryAllowedFlag" :: Maybe (Scte35AposWebDeliveryAllowedBehavior)
   }
 derive instance newtypeScte35TimeSignalApos :: Newtype Scte35TimeSignalApos _
 derive instance repGenericScte35TimeSignalApos :: Generic Scte35TimeSignalApos _
@@ -4568,12 +4567,12 @@ instance encodeScte35TimeSignalApos :: Encode Scte35TimeSignalApos where encode 
 
 -- | Constructs Scte35TimeSignalApos from required parameters
 newScte35TimeSignalApos :: Scte35TimeSignalApos
-newScte35TimeSignalApos  = Scte35TimeSignalApos { "AdAvailOffset": (NullOrUndefined Nothing), "NoRegionalBlackoutFlag": (NullOrUndefined Nothing), "WebDeliveryAllowedFlag": (NullOrUndefined Nothing) }
+newScte35TimeSignalApos  = Scte35TimeSignalApos { "AdAvailOffset": Nothing, "NoRegionalBlackoutFlag": Nothing, "WebDeliveryAllowedFlag": Nothing }
 
 -- | Constructs Scte35TimeSignalApos's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newScte35TimeSignalApos' :: ( { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) } ) -> Scte35TimeSignalApos
-newScte35TimeSignalApos'  customize = (Scte35TimeSignalApos <<< customize) { "AdAvailOffset": (NullOrUndefined Nothing), "NoRegionalBlackoutFlag": (NullOrUndefined Nothing), "WebDeliveryAllowedFlag": (NullOrUndefined Nothing) }
+newScte35TimeSignalApos' :: ( { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: Maybe (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: Maybe (Scte35AposWebDeliveryAllowedBehavior) } -> {"AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000') , "NoRegionalBlackoutFlag" :: Maybe (Scte35AposNoRegionalBlackoutBehavior) , "WebDeliveryAllowedFlag" :: Maybe (Scte35AposWebDeliveryAllowedBehavior) } ) -> Scte35TimeSignalApos
+newScte35TimeSignalApos'  customize = (Scte35TimeSignalApos <<< customize) { "AdAvailOffset": Nothing, "NoRegionalBlackoutFlag": Nothing, "WebDeliveryAllowedFlag": Nothing }
 
 
 
@@ -4669,7 +4668,7 @@ instance encodeSmpteTtDestinationSettings :: Encode SmpteTtDestinationSettings w
 
 -- | Placeholder documentation for StandardHlsSettings
 newtype StandardHlsSettings = StandardHlsSettings 
-  { "AudioRenditionSets" :: NullOrUndefined (String)
+  { "AudioRenditionSets" :: Maybe (String)
   , "M3u8Settings" :: (M3u8Settings)
   }
 derive instance newtypeStandardHlsSettings :: Newtype StandardHlsSettings _
@@ -4680,12 +4679,12 @@ instance encodeStandardHlsSettings :: Encode StandardHlsSettings where encode = 
 
 -- | Constructs StandardHlsSettings from required parameters
 newStandardHlsSettings :: M3u8Settings -> StandardHlsSettings
-newStandardHlsSettings _M3u8Settings = StandardHlsSettings { "M3u8Settings": _M3u8Settings, "AudioRenditionSets": (NullOrUndefined Nothing) }
+newStandardHlsSettings _M3u8Settings = StandardHlsSettings { "M3u8Settings": _M3u8Settings, "AudioRenditionSets": Nothing }
 
 -- | Constructs StandardHlsSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStandardHlsSettings' :: M3u8Settings -> ( { "AudioRenditionSets" :: NullOrUndefined (String) , "M3u8Settings" :: (M3u8Settings) } -> {"AudioRenditionSets" :: NullOrUndefined (String) , "M3u8Settings" :: (M3u8Settings) } ) -> StandardHlsSettings
-newStandardHlsSettings' _M3u8Settings customize = (StandardHlsSettings <<< customize) { "M3u8Settings": _M3u8Settings, "AudioRenditionSets": (NullOrUndefined Nothing) }
+newStandardHlsSettings' :: M3u8Settings -> ( { "AudioRenditionSets" :: Maybe (String) , "M3u8Settings" :: (M3u8Settings) } -> {"AudioRenditionSets" :: Maybe (String) , "M3u8Settings" :: (M3u8Settings) } ) -> StandardHlsSettings
+newStandardHlsSettings' _M3u8Settings customize = (StandardHlsSettings <<< customize) { "M3u8Settings": _M3u8Settings, "AudioRenditionSets": Nothing }
 
 
 
@@ -4712,17 +4711,17 @@ newStartChannelRequest' _ChannelId customize = (StartChannelRequest <<< customiz
 
 -- | Placeholder documentation for StartChannelResponse
 newtype StartChannelResponse = StartChannelResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "Id" :: NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "PipelinesRunningCount" :: NullOrUndefined (Int)
-  , "RoleArn" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (ChannelState)
+  { "Arn" :: Maybe (String)
+  , "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "Id" :: Maybe (String)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "PipelinesRunningCount" :: Maybe (Int)
+  , "RoleArn" :: Maybe (String)
+  , "State" :: Maybe (ChannelState)
   }
 derive instance newtypeStartChannelResponse :: Newtype StartChannelResponse _
 derive instance repGenericStartChannelResponse :: Generic StartChannelResponse _
@@ -4732,18 +4731,18 @@ instance encodeStartChannelResponse :: Encode StartChannelResponse where encode 
 
 -- | Constructs StartChannelResponse from required parameters
 newStartChannelResponse :: StartChannelResponse
-newStartChannelResponse  = StartChannelResponse { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newStartChannelResponse  = StartChannelResponse { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 -- | Constructs StartChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartChannelResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } ) -> StartChannelResponse
-newStartChannelResponse'  customize = (StartChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newStartChannelResponse' :: ( { "Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } -> {"Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } ) -> StartChannelResponse
+newStartChannelResponse'  customize = (StartChannelResponse <<< customize) { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 
 
 -- | Placeholder documentation for StaticKeySettings
 newtype StaticKeySettings = StaticKeySettings 
-  { "KeyProviderServer" :: NullOrUndefined (InputLocation)
+  { "KeyProviderServer" :: Maybe (InputLocation)
   , "StaticKeyValue" :: (StringMin32Max32')
   }
 derive instance newtypeStaticKeySettings :: Newtype StaticKeySettings _
@@ -4754,12 +4753,12 @@ instance encodeStaticKeySettings :: Encode StaticKeySettings where encode = gene
 
 -- | Constructs StaticKeySettings from required parameters
 newStaticKeySettings :: StringMin32Max32' -> StaticKeySettings
-newStaticKeySettings _StaticKeyValue = StaticKeySettings { "StaticKeyValue": _StaticKeyValue, "KeyProviderServer": (NullOrUndefined Nothing) }
+newStaticKeySettings _StaticKeyValue = StaticKeySettings { "StaticKeyValue": _StaticKeyValue, "KeyProviderServer": Nothing }
 
 -- | Constructs StaticKeySettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStaticKeySettings' :: StringMin32Max32' -> ( { "KeyProviderServer" :: NullOrUndefined (InputLocation) , "StaticKeyValue" :: (StringMin32Max32') } -> {"KeyProviderServer" :: NullOrUndefined (InputLocation) , "StaticKeyValue" :: (StringMin32Max32') } ) -> StaticKeySettings
-newStaticKeySettings' _StaticKeyValue customize = (StaticKeySettings <<< customize) { "StaticKeyValue": _StaticKeyValue, "KeyProviderServer": (NullOrUndefined Nothing) }
+newStaticKeySettings' :: StringMin32Max32' -> ( { "KeyProviderServer" :: Maybe (InputLocation) , "StaticKeyValue" :: (StringMin32Max32') } -> {"KeyProviderServer" :: Maybe (InputLocation) , "StaticKeyValue" :: (StringMin32Max32') } ) -> StaticKeySettings
+newStaticKeySettings' _StaticKeyValue customize = (StaticKeySettings <<< customize) { "StaticKeyValue": _StaticKeyValue, "KeyProviderServer": Nothing }
 
 
 
@@ -4786,17 +4785,17 @@ newStopChannelRequest' _ChannelId customize = (StopChannelRequest <<< customize)
 
 -- | Placeholder documentation for StopChannelResponse
 newtype StopChannelResponse = StopChannelResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "Id" :: NullOrUndefined (String)
-  , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment')
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "PipelinesRunningCount" :: NullOrUndefined (Int)
-  , "RoleArn" :: NullOrUndefined (String)
-  , "State" :: NullOrUndefined (ChannelState)
+  { "Arn" :: Maybe (String)
+  , "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "Id" :: Maybe (String)
+  , "InputAttachments" :: Maybe (ListOfInputAttachment')
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "PipelinesRunningCount" :: Maybe (Int)
+  , "RoleArn" :: Maybe (String)
+  , "State" :: Maybe (ChannelState)
   }
 derive instance newtypeStopChannelResponse :: Newtype StopChannelResponse _
 derive instance repGenericStopChannelResponse :: Generic StopChannelResponse _
@@ -4806,12 +4805,12 @@ instance encodeStopChannelResponse :: Encode StopChannelResponse where encode = 
 
 -- | Constructs StopChannelResponse from required parameters
 newStopChannelResponse :: StopChannelResponse
-newStopChannelResponse  = StopChannelResponse { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newStopChannelResponse  = StopChannelResponse { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 -- | Constructs StopChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopChannelResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } -> {"Arn" :: NullOrUndefined (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "Id" :: NullOrUndefined (String) , "InputAttachments" :: NullOrUndefined (ListOfInputAttachment') , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "PipelinesRunningCount" :: NullOrUndefined (Int) , "RoleArn" :: NullOrUndefined (String) , "State" :: NullOrUndefined (ChannelState) } ) -> StopChannelResponse
-newStopChannelResponse'  customize = (StopChannelResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Destinations": (NullOrUndefined Nothing), "EgressEndpoints": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InputAttachments": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PipelinesRunningCount": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newStopChannelResponse' :: ( { "Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } -> {"Arn" :: Maybe (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint') , "EncoderSettings" :: Maybe (EncoderSettings) , "Id" :: Maybe (String) , "InputAttachments" :: Maybe (ListOfInputAttachment') , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "PipelinesRunningCount" :: Maybe (Int) , "RoleArn" :: Maybe (String) , "State" :: Maybe (ChannelState) } ) -> StopChannelResponse
+newStopChannelResponse'  customize = (StopChannelResponse <<< customize) { "Arn": Nothing, "Destinations": Nothing, "EgressEndpoints": Nothing, "EncoderSettings": Nothing, "Id": Nothing, "InputAttachments": Nothing, "InputSpecification": Nothing, "Name": Nothing, "PipelinesRunningCount": Nothing, "RoleArn": Nothing, "State": Nothing }
 
 
 
@@ -4827,7 +4826,7 @@ instance encodeTeletextDestinationSettings :: Encode TeletextDestinationSettings
 
 -- | Placeholder documentation for TeletextSourceSettings
 newtype TeletextSourceSettings = TeletextSourceSettings 
-  { "PageNumber" :: NullOrUndefined (String)
+  { "PageNumber" :: Maybe (String)
   }
 derive instance newtypeTeletextSourceSettings :: Newtype TeletextSourceSettings _
 derive instance repGenericTeletextSourceSettings :: Generic TeletextSourceSettings _
@@ -4837,19 +4836,19 @@ instance encodeTeletextSourceSettings :: Encode TeletextSourceSettings where enc
 
 -- | Constructs TeletextSourceSettings from required parameters
 newTeletextSourceSettings :: TeletextSourceSettings
-newTeletextSourceSettings  = TeletextSourceSettings { "PageNumber": (NullOrUndefined Nothing) }
+newTeletextSourceSettings  = TeletextSourceSettings { "PageNumber": Nothing }
 
 -- | Constructs TeletextSourceSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTeletextSourceSettings' :: ( { "PageNumber" :: NullOrUndefined (String) } -> {"PageNumber" :: NullOrUndefined (String) } ) -> TeletextSourceSettings
-newTeletextSourceSettings'  customize = (TeletextSourceSettings <<< customize) { "PageNumber": (NullOrUndefined Nothing) }
+newTeletextSourceSettings' :: ( { "PageNumber" :: Maybe (String) } -> {"PageNumber" :: Maybe (String) } ) -> TeletextSourceSettings
+newTeletextSourceSettings'  customize = (TeletextSourceSettings <<< customize) { "PageNumber": Nothing }
 
 
 
 -- | Placeholder documentation for TimecodeConfig
 newtype TimecodeConfig = TimecodeConfig 
   { "Source" :: (TimecodeConfigSource)
-  , "SyncThreshold" :: NullOrUndefined (IntegerMin1Max1000000')
+  , "SyncThreshold" :: Maybe (IntegerMin1Max1000000')
   }
 derive instance newtypeTimecodeConfig :: Newtype TimecodeConfig _
 derive instance repGenericTimecodeConfig :: Generic TimecodeConfig _
@@ -4859,12 +4858,12 @@ instance encodeTimecodeConfig :: Encode TimecodeConfig where encode = genericEnc
 
 -- | Constructs TimecodeConfig from required parameters
 newTimecodeConfig :: TimecodeConfigSource -> TimecodeConfig
-newTimecodeConfig _Source = TimecodeConfig { "Source": _Source, "SyncThreshold": (NullOrUndefined Nothing) }
+newTimecodeConfig _Source = TimecodeConfig { "Source": _Source, "SyncThreshold": Nothing }
 
 -- | Constructs TimecodeConfig's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTimecodeConfig' :: TimecodeConfigSource -> ( { "Source" :: (TimecodeConfigSource) , "SyncThreshold" :: NullOrUndefined (IntegerMin1Max1000000') } -> {"Source" :: (TimecodeConfigSource) , "SyncThreshold" :: NullOrUndefined (IntegerMin1Max1000000') } ) -> TimecodeConfig
-newTimecodeConfig' _Source customize = (TimecodeConfig <<< customize) { "Source": _Source, "SyncThreshold": (NullOrUndefined Nothing) }
+newTimecodeConfig' :: TimecodeConfigSource -> ( { "Source" :: (TimecodeConfigSource) , "SyncThreshold" :: Maybe (IntegerMin1Max1000000') } -> {"Source" :: (TimecodeConfigSource) , "SyncThreshold" :: Maybe (IntegerMin1Max1000000') } ) -> TimecodeConfig
+newTimecodeConfig' _Source customize = (TimecodeConfig <<< customize) { "Source": _Source, "SyncThreshold": Nothing }
 
 
 
@@ -4880,7 +4879,7 @@ instance encodeTimecodeConfigSource :: Encode TimecodeConfigSource where encode 
 
 -- | Placeholder documentation for TooManyRequestsException
 newtype TooManyRequestsException = TooManyRequestsException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeTooManyRequestsException :: Newtype TooManyRequestsException _
 derive instance repGenericTooManyRequestsException :: Generic TooManyRequestsException _
@@ -4890,18 +4889,18 @@ instance encodeTooManyRequestsException :: Encode TooManyRequestsException where
 
 -- | Constructs TooManyRequestsException from required parameters
 newTooManyRequestsException :: TooManyRequestsException
-newTooManyRequestsException  = TooManyRequestsException { "Message": (NullOrUndefined Nothing) }
+newTooManyRequestsException  = TooManyRequestsException { "Message": Nothing }
 
 -- | Constructs TooManyRequestsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTooManyRequestsException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> TooManyRequestsException
-newTooManyRequestsException'  customize = (TooManyRequestsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newTooManyRequestsException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> TooManyRequestsException
+newTooManyRequestsException'  customize = (TooManyRequestsException <<< customize) { "Message": Nothing }
 
 
 
 -- | Placeholder documentation for TtmlDestinationSettings
 newtype TtmlDestinationSettings = TtmlDestinationSettings 
-  { "StyleControl" :: NullOrUndefined (TtmlDestinationStyleControl)
+  { "StyleControl" :: Maybe (TtmlDestinationStyleControl)
   }
 derive instance newtypeTtmlDestinationSettings :: Newtype TtmlDestinationSettings _
 derive instance repGenericTtmlDestinationSettings :: Generic TtmlDestinationSettings _
@@ -4911,12 +4910,12 @@ instance encodeTtmlDestinationSettings :: Encode TtmlDestinationSettings where e
 
 -- | Constructs TtmlDestinationSettings from required parameters
 newTtmlDestinationSettings :: TtmlDestinationSettings
-newTtmlDestinationSettings  = TtmlDestinationSettings { "StyleControl": (NullOrUndefined Nothing) }
+newTtmlDestinationSettings  = TtmlDestinationSettings { "StyleControl": Nothing }
 
 -- | Constructs TtmlDestinationSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTtmlDestinationSettings' :: ( { "StyleControl" :: NullOrUndefined (TtmlDestinationStyleControl) } -> {"StyleControl" :: NullOrUndefined (TtmlDestinationStyleControl) } ) -> TtmlDestinationSettings
-newTtmlDestinationSettings'  customize = (TtmlDestinationSettings <<< customize) { "StyleControl": (NullOrUndefined Nothing) }
+newTtmlDestinationSettings' :: ( { "StyleControl" :: Maybe (TtmlDestinationStyleControl) } -> {"StyleControl" :: Maybe (TtmlDestinationStyleControl) } ) -> TtmlDestinationSettings
+newTtmlDestinationSettings'  customize = (TtmlDestinationSettings <<< customize) { "StyleControl": Nothing }
 
 
 
@@ -4932,7 +4931,7 @@ instance encodeTtmlDestinationStyleControl :: Encode TtmlDestinationStyleControl
 
 -- | Placeholder documentation for UdpContainerSettings
 newtype UdpContainerSettings = UdpContainerSettings 
-  { "M2tsSettings" :: NullOrUndefined (M2tsSettings)
+  { "M2tsSettings" :: Maybe (M2tsSettings)
   }
 derive instance newtypeUdpContainerSettings :: Newtype UdpContainerSettings _
 derive instance repGenericUdpContainerSettings :: Generic UdpContainerSettings _
@@ -4942,20 +4941,20 @@ instance encodeUdpContainerSettings :: Encode UdpContainerSettings where encode 
 
 -- | Constructs UdpContainerSettings from required parameters
 newUdpContainerSettings :: UdpContainerSettings
-newUdpContainerSettings  = UdpContainerSettings { "M2tsSettings": (NullOrUndefined Nothing) }
+newUdpContainerSettings  = UdpContainerSettings { "M2tsSettings": Nothing }
 
 -- | Constructs UdpContainerSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUdpContainerSettings' :: ( { "M2tsSettings" :: NullOrUndefined (M2tsSettings) } -> {"M2tsSettings" :: NullOrUndefined (M2tsSettings) } ) -> UdpContainerSettings
-newUdpContainerSettings'  customize = (UdpContainerSettings <<< customize) { "M2tsSettings": (NullOrUndefined Nothing) }
+newUdpContainerSettings' :: ( { "M2tsSettings" :: Maybe (M2tsSettings) } -> {"M2tsSettings" :: Maybe (M2tsSettings) } ) -> UdpContainerSettings
+newUdpContainerSettings'  customize = (UdpContainerSettings <<< customize) { "M2tsSettings": Nothing }
 
 
 
 -- | Placeholder documentation for UdpGroupSettings
 newtype UdpGroupSettings = UdpGroupSettings 
-  { "InputLossAction" :: NullOrUndefined (InputLossActionForUdpOut)
-  , "TimedMetadataId3Frame" :: NullOrUndefined (UdpTimedMetadataId3Frame)
-  , "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0')
+  { "InputLossAction" :: Maybe (InputLossActionForUdpOut)
+  , "TimedMetadataId3Frame" :: Maybe (UdpTimedMetadataId3Frame)
+  , "TimedMetadataId3Period" :: Maybe (IntegerMin0')
   }
 derive instance newtypeUdpGroupSettings :: Newtype UdpGroupSettings _
 derive instance repGenericUdpGroupSettings :: Generic UdpGroupSettings _
@@ -4965,21 +4964,21 @@ instance encodeUdpGroupSettings :: Encode UdpGroupSettings where encode = generi
 
 -- | Constructs UdpGroupSettings from required parameters
 newUdpGroupSettings :: UdpGroupSettings
-newUdpGroupSettings  = UdpGroupSettings { "InputLossAction": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing) }
+newUdpGroupSettings  = UdpGroupSettings { "InputLossAction": Nothing, "TimedMetadataId3Frame": Nothing, "TimedMetadataId3Period": Nothing }
 
 -- | Constructs UdpGroupSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUdpGroupSettings' :: ( { "InputLossAction" :: NullOrUndefined (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: NullOrUndefined (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0') } -> {"InputLossAction" :: NullOrUndefined (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: NullOrUndefined (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0') } ) -> UdpGroupSettings
-newUdpGroupSettings'  customize = (UdpGroupSettings <<< customize) { "InputLossAction": (NullOrUndefined Nothing), "TimedMetadataId3Frame": (NullOrUndefined Nothing), "TimedMetadataId3Period": (NullOrUndefined Nothing) }
+newUdpGroupSettings' :: ( { "InputLossAction" :: Maybe (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: Maybe (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: Maybe (IntegerMin0') } -> {"InputLossAction" :: Maybe (InputLossActionForUdpOut) , "TimedMetadataId3Frame" :: Maybe (UdpTimedMetadataId3Frame) , "TimedMetadataId3Period" :: Maybe (IntegerMin0') } ) -> UdpGroupSettings
+newUdpGroupSettings'  customize = (UdpGroupSettings <<< customize) { "InputLossAction": Nothing, "TimedMetadataId3Frame": Nothing, "TimedMetadataId3Period": Nothing }
 
 
 
 -- | Placeholder documentation for UdpOutputSettings
 newtype UdpOutputSettings = UdpOutputSettings 
-  { "BufferMsec" :: NullOrUndefined (IntegerMin0Max10000')
+  { "BufferMsec" :: Maybe (IntegerMin0Max10000')
   , "ContainerSettings" :: (UdpContainerSettings)
   , "Destination" :: (OutputLocationRef)
-  , "FecOutputSettings" :: NullOrUndefined (FecOutputSettings)
+  , "FecOutputSettings" :: Maybe (FecOutputSettings)
   }
 derive instance newtypeUdpOutputSettings :: Newtype UdpOutputSettings _
 derive instance repGenericUdpOutputSettings :: Generic UdpOutputSettings _
@@ -4989,12 +4988,12 @@ instance encodeUdpOutputSettings :: Encode UdpOutputSettings where encode = gene
 
 -- | Constructs UdpOutputSettings from required parameters
 newUdpOutputSettings :: UdpContainerSettings -> OutputLocationRef -> UdpOutputSettings
-newUdpOutputSettings _ContainerSettings _Destination = UdpOutputSettings { "ContainerSettings": _ContainerSettings, "Destination": _Destination, "BufferMsec": (NullOrUndefined Nothing), "FecOutputSettings": (NullOrUndefined Nothing) }
+newUdpOutputSettings _ContainerSettings _Destination = UdpOutputSettings { "ContainerSettings": _ContainerSettings, "Destination": _Destination, "BufferMsec": Nothing, "FecOutputSettings": Nothing }
 
 -- | Constructs UdpOutputSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUdpOutputSettings' :: UdpContainerSettings -> OutputLocationRef -> ( { "BufferMsec" :: NullOrUndefined (IntegerMin0Max10000') , "ContainerSettings" :: (UdpContainerSettings) , "Destination" :: (OutputLocationRef) , "FecOutputSettings" :: NullOrUndefined (FecOutputSettings) } -> {"BufferMsec" :: NullOrUndefined (IntegerMin0Max10000') , "ContainerSettings" :: (UdpContainerSettings) , "Destination" :: (OutputLocationRef) , "FecOutputSettings" :: NullOrUndefined (FecOutputSettings) } ) -> UdpOutputSettings
-newUdpOutputSettings' _ContainerSettings _Destination customize = (UdpOutputSettings <<< customize) { "ContainerSettings": _ContainerSettings, "Destination": _Destination, "BufferMsec": (NullOrUndefined Nothing), "FecOutputSettings": (NullOrUndefined Nothing) }
+newUdpOutputSettings' :: UdpContainerSettings -> OutputLocationRef -> ( { "BufferMsec" :: Maybe (IntegerMin0Max10000') , "ContainerSettings" :: (UdpContainerSettings) , "Destination" :: (OutputLocationRef) , "FecOutputSettings" :: Maybe (FecOutputSettings) } -> {"BufferMsec" :: Maybe (IntegerMin0Max10000') , "ContainerSettings" :: (UdpContainerSettings) , "Destination" :: (OutputLocationRef) , "FecOutputSettings" :: Maybe (FecOutputSettings) } ) -> UdpOutputSettings
+newUdpOutputSettings' _ContainerSettings _Destination customize = (UdpOutputSettings <<< customize) { "ContainerSettings": _ContainerSettings, "Destination": _Destination, "BufferMsec": Nothing, "FecOutputSettings": Nothing }
 
 
 
@@ -5010,8 +5009,8 @@ instance encodeUdpTimedMetadataId3Frame :: Encode UdpTimedMetadataId3Frame where
 
 -- | Placeholder documentation for UnprocessableEntityException
 newtype UnprocessableEntityException = UnprocessableEntityException 
-  { "Message" :: NullOrUndefined (String)
-  , "ValidationErrors" :: NullOrUndefined (ListOfValidationError')
+  { "Message" :: Maybe (String)
+  , "ValidationErrors" :: Maybe (ListOfValidationError')
   }
 derive instance newtypeUnprocessableEntityException :: Newtype UnprocessableEntityException _
 derive instance repGenericUnprocessableEntityException :: Generic UnprocessableEntityException _
@@ -5021,22 +5020,22 @@ instance encodeUnprocessableEntityException :: Encode UnprocessableEntityExcepti
 
 -- | Constructs UnprocessableEntityException from required parameters
 newUnprocessableEntityException :: UnprocessableEntityException
-newUnprocessableEntityException  = UnprocessableEntityException { "Message": (NullOrUndefined Nothing), "ValidationErrors": (NullOrUndefined Nothing) }
+newUnprocessableEntityException  = UnprocessableEntityException { "Message": Nothing, "ValidationErrors": Nothing }
 
 -- | Constructs UnprocessableEntityException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnprocessableEntityException' :: ( { "Message" :: NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined (ListOfValidationError') } -> {"Message" :: NullOrUndefined (String) , "ValidationErrors" :: NullOrUndefined (ListOfValidationError') } ) -> UnprocessableEntityException
-newUnprocessableEntityException'  customize = (UnprocessableEntityException <<< customize) { "Message": (NullOrUndefined Nothing), "ValidationErrors": (NullOrUndefined Nothing) }
+newUnprocessableEntityException' :: ( { "Message" :: Maybe (String) , "ValidationErrors" :: Maybe (ListOfValidationError') } -> {"Message" :: Maybe (String) , "ValidationErrors" :: Maybe (ListOfValidationError') } ) -> UnprocessableEntityException
+newUnprocessableEntityException'  customize = (UnprocessableEntityException <<< customize) { "Message": Nothing, "ValidationErrors": Nothing }
 
 
 
 -- | Placeholder documentation for UpdateChannel
 newtype UpdateChannel = UpdateChannel 
-  { "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "RoleArn" :: NullOrUndefined (String)
+  { "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "RoleArn" :: Maybe (String)
   }
 derive instance newtypeUpdateChannel :: Newtype UpdateChannel _
 derive instance repGenericUpdateChannel :: Generic UpdateChannel _
@@ -5046,23 +5045,23 @@ instance encodeUpdateChannel :: Encode UpdateChannel where encode = genericEncod
 
 -- | Constructs UpdateChannel from required parameters
 newUpdateChannel :: UpdateChannel
-newUpdateChannel  = UpdateChannel { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newUpdateChannel  = UpdateChannel { "Destinations": Nothing, "EncoderSettings": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RoleArn": Nothing }
 
 -- | Constructs UpdateChannel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannel' :: ( { "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } -> {"Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } ) -> UpdateChannel
-newUpdateChannel'  customize = (UpdateChannel <<< customize) { "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newUpdateChannel' :: ( { "Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RoleArn" :: Maybe (String) } -> {"Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RoleArn" :: Maybe (String) } ) -> UpdateChannel
+newUpdateChannel'  customize = (UpdateChannel <<< customize) { "Destinations": Nothing, "EncoderSettings": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RoleArn": Nothing }
 
 
 
 -- | A request to update a channel.
 newtype UpdateChannelRequest = UpdateChannelRequest 
   { "ChannelId" :: (String)
-  , "Destinations" :: NullOrUndefined (ListOfOutputDestination')
-  , "EncoderSettings" :: NullOrUndefined (EncoderSettings)
-  , "InputSpecification" :: NullOrUndefined (InputSpecification)
-  , "Name" :: NullOrUndefined (String)
-  , "RoleArn" :: NullOrUndefined (String)
+  , "Destinations" :: Maybe (ListOfOutputDestination')
+  , "EncoderSettings" :: Maybe (EncoderSettings)
+  , "InputSpecification" :: Maybe (InputSpecification)
+  , "Name" :: Maybe (String)
+  , "RoleArn" :: Maybe (String)
   }
 derive instance newtypeUpdateChannelRequest :: Newtype UpdateChannelRequest _
 derive instance repGenericUpdateChannelRequest :: Generic UpdateChannelRequest _
@@ -5072,18 +5071,18 @@ instance encodeUpdateChannelRequest :: Encode UpdateChannelRequest where encode 
 
 -- | Constructs UpdateChannelRequest from required parameters
 newUpdateChannelRequest :: String -> UpdateChannelRequest
-newUpdateChannelRequest _ChannelId = UpdateChannelRequest { "ChannelId": _ChannelId, "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newUpdateChannelRequest _ChannelId = UpdateChannelRequest { "ChannelId": _ChannelId, "Destinations": Nothing, "EncoderSettings": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RoleArn": Nothing }
 
 -- | Constructs UpdateChannelRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannelRequest' :: String -> ( { "ChannelId" :: (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } -> {"ChannelId" :: (String) , "Destinations" :: NullOrUndefined (ListOfOutputDestination') , "EncoderSettings" :: NullOrUndefined (EncoderSettings) , "InputSpecification" :: NullOrUndefined (InputSpecification) , "Name" :: NullOrUndefined (String) , "RoleArn" :: NullOrUndefined (String) } ) -> UpdateChannelRequest
-newUpdateChannelRequest' _ChannelId customize = (UpdateChannelRequest <<< customize) { "ChannelId": _ChannelId, "Destinations": (NullOrUndefined Nothing), "EncoderSettings": (NullOrUndefined Nothing), "InputSpecification": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing) }
+newUpdateChannelRequest' :: String -> ( { "ChannelId" :: (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RoleArn" :: Maybe (String) } -> {"ChannelId" :: (String) , "Destinations" :: Maybe (ListOfOutputDestination') , "EncoderSettings" :: Maybe (EncoderSettings) , "InputSpecification" :: Maybe (InputSpecification) , "Name" :: Maybe (String) , "RoleArn" :: Maybe (String) } ) -> UpdateChannelRequest
+newUpdateChannelRequest' _ChannelId customize = (UpdateChannelRequest <<< customize) { "ChannelId": _ChannelId, "Destinations": Nothing, "EncoderSettings": Nothing, "InputSpecification": Nothing, "Name": Nothing, "RoleArn": Nothing }
 
 
 
 -- | Placeholder documentation for UpdateChannelResponse
 newtype UpdateChannelResponse = UpdateChannelResponse 
-  { "Channel" :: NullOrUndefined (Channel)
+  { "Channel" :: Maybe (Channel)
   }
 derive instance newtypeUpdateChannelResponse :: Newtype UpdateChannelResponse _
 derive instance repGenericUpdateChannelResponse :: Generic UpdateChannelResponse _
@@ -5093,18 +5092,18 @@ instance encodeUpdateChannelResponse :: Encode UpdateChannelResponse where encod
 
 -- | Constructs UpdateChannelResponse from required parameters
 newUpdateChannelResponse :: UpdateChannelResponse
-newUpdateChannelResponse  = UpdateChannelResponse { "Channel": (NullOrUndefined Nothing) }
+newUpdateChannelResponse  = UpdateChannelResponse { "Channel": Nothing }
 
 -- | Constructs UpdateChannelResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannelResponse' :: ( { "Channel" :: NullOrUndefined (Channel) } -> {"Channel" :: NullOrUndefined (Channel) } ) -> UpdateChannelResponse
-newUpdateChannelResponse'  customize = (UpdateChannelResponse <<< customize) { "Channel": (NullOrUndefined Nothing) }
+newUpdateChannelResponse' :: ( { "Channel" :: Maybe (Channel) } -> {"Channel" :: Maybe (Channel) } ) -> UpdateChannelResponse
+newUpdateChannelResponse'  customize = (UpdateChannelResponse <<< customize) { "Channel": Nothing }
 
 
 
 -- | The updated channel's description.
 newtype UpdateChannelResultModel = UpdateChannelResultModel 
-  { "Channel" :: NullOrUndefined (Channel)
+  { "Channel" :: Maybe (Channel)
   }
 derive instance newtypeUpdateChannelResultModel :: Newtype UpdateChannelResultModel _
 derive instance repGenericUpdateChannelResultModel :: Generic UpdateChannelResultModel _
@@ -5114,19 +5113,19 @@ instance encodeUpdateChannelResultModel :: Encode UpdateChannelResultModel where
 
 -- | Constructs UpdateChannelResultModel from required parameters
 newUpdateChannelResultModel :: UpdateChannelResultModel
-newUpdateChannelResultModel  = UpdateChannelResultModel { "Channel": (NullOrUndefined Nothing) }
+newUpdateChannelResultModel  = UpdateChannelResultModel { "Channel": Nothing }
 
 -- | Constructs UpdateChannelResultModel's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateChannelResultModel' :: ( { "Channel" :: NullOrUndefined (Channel) } -> {"Channel" :: NullOrUndefined (Channel) } ) -> UpdateChannelResultModel
-newUpdateChannelResultModel'  customize = (UpdateChannelResultModel <<< customize) { "Channel": (NullOrUndefined Nothing) }
+newUpdateChannelResultModel' :: ( { "Channel" :: Maybe (Channel) } -> {"Channel" :: Maybe (Channel) } ) -> UpdateChannelResultModel
+newUpdateChannelResultModel'  customize = (UpdateChannelResultModel <<< customize) { "Channel": Nothing }
 
 
 
 -- | Placeholder documentation for ValidationError
 newtype ValidationError = ValidationError 
-  { "ElementPath" :: NullOrUndefined (String)
-  , "ErrorMessage" :: NullOrUndefined (String)
+  { "ElementPath" :: Maybe (String)
+  , "ErrorMessage" :: Maybe (String)
   }
 derive instance newtypeValidationError :: Newtype ValidationError _
 derive instance repGenericValidationError :: Generic ValidationError _
@@ -5136,18 +5135,18 @@ instance encodeValidationError :: Encode ValidationError where encode = genericE
 
 -- | Constructs ValidationError from required parameters
 newValidationError :: ValidationError
-newValidationError  = ValidationError { "ElementPath": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing) }
+newValidationError  = ValidationError { "ElementPath": Nothing, "ErrorMessage": Nothing }
 
 -- | Constructs ValidationError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newValidationError' :: ( { "ElementPath" :: NullOrUndefined (String) , "ErrorMessage" :: NullOrUndefined (String) } -> {"ElementPath" :: NullOrUndefined (String) , "ErrorMessage" :: NullOrUndefined (String) } ) -> ValidationError
-newValidationError'  customize = (ValidationError <<< customize) { "ElementPath": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing) }
+newValidationError' :: ( { "ElementPath" :: Maybe (String) , "ErrorMessage" :: Maybe (String) } -> {"ElementPath" :: Maybe (String) , "ErrorMessage" :: Maybe (String) } ) -> ValidationError
+newValidationError'  customize = (ValidationError <<< customize) { "ElementPath": Nothing, "ErrorMessage": Nothing }
 
 
 
 -- | Placeholder documentation for VideoCodecSettings
 newtype VideoCodecSettings = VideoCodecSettings 
-  { "H264Settings" :: NullOrUndefined (H264Settings)
+  { "H264Settings" :: Maybe (H264Settings)
   }
 derive instance newtypeVideoCodecSettings :: Newtype VideoCodecSettings _
 derive instance repGenericVideoCodecSettings :: Generic VideoCodecSettings _
@@ -5157,24 +5156,24 @@ instance encodeVideoCodecSettings :: Encode VideoCodecSettings where encode = ge
 
 -- | Constructs VideoCodecSettings from required parameters
 newVideoCodecSettings :: VideoCodecSettings
-newVideoCodecSettings  = VideoCodecSettings { "H264Settings": (NullOrUndefined Nothing) }
+newVideoCodecSettings  = VideoCodecSettings { "H264Settings": Nothing }
 
 -- | Constructs VideoCodecSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoCodecSettings' :: ( { "H264Settings" :: NullOrUndefined (H264Settings) } -> {"H264Settings" :: NullOrUndefined (H264Settings) } ) -> VideoCodecSettings
-newVideoCodecSettings'  customize = (VideoCodecSettings <<< customize) { "H264Settings": (NullOrUndefined Nothing) }
+newVideoCodecSettings' :: ( { "H264Settings" :: Maybe (H264Settings) } -> {"H264Settings" :: Maybe (H264Settings) } ) -> VideoCodecSettings
+newVideoCodecSettings'  customize = (VideoCodecSettings <<< customize) { "H264Settings": Nothing }
 
 
 
 -- | Video settings for this stream.
 newtype VideoDescription = VideoDescription 
-  { "CodecSettings" :: NullOrUndefined (VideoCodecSettings)
-  , "Height" :: NullOrUndefined (Int)
+  { "CodecSettings" :: Maybe (VideoCodecSettings)
+  , "Height" :: Maybe (Int)
   , "Name" :: (String)
-  , "RespondToAfd" :: NullOrUndefined (VideoDescriptionRespondToAfd)
-  , "ScalingBehavior" :: NullOrUndefined (VideoDescriptionScalingBehavior)
-  , "Sharpness" :: NullOrUndefined (IntegerMin0Max100')
-  , "Width" :: NullOrUndefined (Int)
+  , "RespondToAfd" :: Maybe (VideoDescriptionRespondToAfd)
+  , "ScalingBehavior" :: Maybe (VideoDescriptionScalingBehavior)
+  , "Sharpness" :: Maybe (IntegerMin0Max100')
+  , "Width" :: Maybe (Int)
   }
 derive instance newtypeVideoDescription :: Newtype VideoDescription _
 derive instance repGenericVideoDescription :: Generic VideoDescription _
@@ -5184,12 +5183,12 @@ instance encodeVideoDescription :: Encode VideoDescription where encode = generi
 
 -- | Constructs VideoDescription from required parameters
 newVideoDescription :: String -> VideoDescription
-newVideoDescription _Name = VideoDescription { "Name": _Name, "CodecSettings": (NullOrUndefined Nothing), "Height": (NullOrUndefined Nothing), "RespondToAfd": (NullOrUndefined Nothing), "ScalingBehavior": (NullOrUndefined Nothing), "Sharpness": (NullOrUndefined Nothing), "Width": (NullOrUndefined Nothing) }
+newVideoDescription _Name = VideoDescription { "Name": _Name, "CodecSettings": Nothing, "Height": Nothing, "RespondToAfd": Nothing, "ScalingBehavior": Nothing, "Sharpness": Nothing, "Width": Nothing }
 
 -- | Constructs VideoDescription's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoDescription' :: String -> ( { "CodecSettings" :: NullOrUndefined (VideoCodecSettings) , "Height" :: NullOrUndefined (Int) , "Name" :: (String) , "RespondToAfd" :: NullOrUndefined (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: NullOrUndefined (VideoDescriptionScalingBehavior) , "Sharpness" :: NullOrUndefined (IntegerMin0Max100') , "Width" :: NullOrUndefined (Int) } -> {"CodecSettings" :: NullOrUndefined (VideoCodecSettings) , "Height" :: NullOrUndefined (Int) , "Name" :: (String) , "RespondToAfd" :: NullOrUndefined (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: NullOrUndefined (VideoDescriptionScalingBehavior) , "Sharpness" :: NullOrUndefined (IntegerMin0Max100') , "Width" :: NullOrUndefined (Int) } ) -> VideoDescription
-newVideoDescription' _Name customize = (VideoDescription <<< customize) { "Name": _Name, "CodecSettings": (NullOrUndefined Nothing), "Height": (NullOrUndefined Nothing), "RespondToAfd": (NullOrUndefined Nothing), "ScalingBehavior": (NullOrUndefined Nothing), "Sharpness": (NullOrUndefined Nothing), "Width": (NullOrUndefined Nothing) }
+newVideoDescription' :: String -> ( { "CodecSettings" :: Maybe (VideoCodecSettings) , "Height" :: Maybe (Int) , "Name" :: (String) , "RespondToAfd" :: Maybe (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: Maybe (VideoDescriptionScalingBehavior) , "Sharpness" :: Maybe (IntegerMin0Max100') , "Width" :: Maybe (Int) } -> {"CodecSettings" :: Maybe (VideoCodecSettings) , "Height" :: Maybe (Int) , "Name" :: (String) , "RespondToAfd" :: Maybe (VideoDescriptionRespondToAfd) , "ScalingBehavior" :: Maybe (VideoDescriptionScalingBehavior) , "Sharpness" :: Maybe (IntegerMin0Max100') , "Width" :: Maybe (Int) } ) -> VideoDescription
+newVideoDescription' _Name customize = (VideoDescription <<< customize) { "Name": _Name, "CodecSettings": Nothing, "Height": Nothing, "RespondToAfd": Nothing, "ScalingBehavior": Nothing, "Sharpness": Nothing, "Width": Nothing }
 
 
 
@@ -5215,9 +5214,9 @@ instance encodeVideoDescriptionScalingBehavior :: Encode VideoDescriptionScaling
 
 -- | Specifies a particular video stream within an input source. An input may have only a single video selector.
 newtype VideoSelector = VideoSelector 
-  { "ColorSpace" :: NullOrUndefined (VideoSelectorColorSpace)
-  , "ColorSpaceUsage" :: NullOrUndefined (VideoSelectorColorSpaceUsage)
-  , "SelectorSettings" :: NullOrUndefined (VideoSelectorSettings)
+  { "ColorSpace" :: Maybe (VideoSelectorColorSpace)
+  , "ColorSpaceUsage" :: Maybe (VideoSelectorColorSpaceUsage)
+  , "SelectorSettings" :: Maybe (VideoSelectorSettings)
   }
 derive instance newtypeVideoSelector :: Newtype VideoSelector _
 derive instance repGenericVideoSelector :: Generic VideoSelector _
@@ -5227,12 +5226,12 @@ instance encodeVideoSelector :: Encode VideoSelector where encode = genericEncod
 
 -- | Constructs VideoSelector from required parameters
 newVideoSelector :: VideoSelector
-newVideoSelector  = VideoSelector { "ColorSpace": (NullOrUndefined Nothing), "ColorSpaceUsage": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newVideoSelector  = VideoSelector { "ColorSpace": Nothing, "ColorSpaceUsage": Nothing, "SelectorSettings": Nothing }
 
 -- | Constructs VideoSelector's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoSelector' :: ( { "ColorSpace" :: NullOrUndefined (VideoSelectorColorSpace) , "ColorSpaceUsage" :: NullOrUndefined (VideoSelectorColorSpaceUsage) , "SelectorSettings" :: NullOrUndefined (VideoSelectorSettings) } -> {"ColorSpace" :: NullOrUndefined (VideoSelectorColorSpace) , "ColorSpaceUsage" :: NullOrUndefined (VideoSelectorColorSpaceUsage) , "SelectorSettings" :: NullOrUndefined (VideoSelectorSettings) } ) -> VideoSelector
-newVideoSelector'  customize = (VideoSelector <<< customize) { "ColorSpace": (NullOrUndefined Nothing), "ColorSpaceUsage": (NullOrUndefined Nothing), "SelectorSettings": (NullOrUndefined Nothing) }
+newVideoSelector' :: ( { "ColorSpace" :: Maybe (VideoSelectorColorSpace) , "ColorSpaceUsage" :: Maybe (VideoSelectorColorSpaceUsage) , "SelectorSettings" :: Maybe (VideoSelectorSettings) } -> {"ColorSpace" :: Maybe (VideoSelectorColorSpace) , "ColorSpaceUsage" :: Maybe (VideoSelectorColorSpaceUsage) , "SelectorSettings" :: Maybe (VideoSelectorSettings) } ) -> VideoSelector
+newVideoSelector'  customize = (VideoSelector <<< customize) { "ColorSpace": Nothing, "ColorSpaceUsage": Nothing, "SelectorSettings": Nothing }
 
 
 
@@ -5258,7 +5257,7 @@ instance encodeVideoSelectorColorSpaceUsage :: Encode VideoSelectorColorSpaceUsa
 
 -- | Placeholder documentation for VideoSelectorPid
 newtype VideoSelectorPid = VideoSelectorPid 
-  { "Pid" :: NullOrUndefined (IntegerMin0Max8191')
+  { "Pid" :: Maybe (IntegerMin0Max8191')
   }
 derive instance newtypeVideoSelectorPid :: Newtype VideoSelectorPid _
 derive instance repGenericVideoSelectorPid :: Generic VideoSelectorPid _
@@ -5268,18 +5267,18 @@ instance encodeVideoSelectorPid :: Encode VideoSelectorPid where encode = generi
 
 -- | Constructs VideoSelectorPid from required parameters
 newVideoSelectorPid :: VideoSelectorPid
-newVideoSelectorPid  = VideoSelectorPid { "Pid": (NullOrUndefined Nothing) }
+newVideoSelectorPid  = VideoSelectorPid { "Pid": Nothing }
 
 -- | Constructs VideoSelectorPid's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoSelectorPid' :: ( { "Pid" :: NullOrUndefined (IntegerMin0Max8191') } -> {"Pid" :: NullOrUndefined (IntegerMin0Max8191') } ) -> VideoSelectorPid
-newVideoSelectorPid'  customize = (VideoSelectorPid <<< customize) { "Pid": (NullOrUndefined Nothing) }
+newVideoSelectorPid' :: ( { "Pid" :: Maybe (IntegerMin0Max8191') } -> {"Pid" :: Maybe (IntegerMin0Max8191') } ) -> VideoSelectorPid
+newVideoSelectorPid'  customize = (VideoSelectorPid <<< customize) { "Pid": Nothing }
 
 
 
 -- | Placeholder documentation for VideoSelectorProgramId
 newtype VideoSelectorProgramId = VideoSelectorProgramId 
-  { "ProgramId" :: NullOrUndefined (IntegerMin0Max65536')
+  { "ProgramId" :: Maybe (IntegerMin0Max65536')
   }
 derive instance newtypeVideoSelectorProgramId :: Newtype VideoSelectorProgramId _
 derive instance repGenericVideoSelectorProgramId :: Generic VideoSelectorProgramId _
@@ -5289,19 +5288,19 @@ instance encodeVideoSelectorProgramId :: Encode VideoSelectorProgramId where enc
 
 -- | Constructs VideoSelectorProgramId from required parameters
 newVideoSelectorProgramId :: VideoSelectorProgramId
-newVideoSelectorProgramId  = VideoSelectorProgramId { "ProgramId": (NullOrUndefined Nothing) }
+newVideoSelectorProgramId  = VideoSelectorProgramId { "ProgramId": Nothing }
 
 -- | Constructs VideoSelectorProgramId's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoSelectorProgramId' :: ( { "ProgramId" :: NullOrUndefined (IntegerMin0Max65536') } -> {"ProgramId" :: NullOrUndefined (IntegerMin0Max65536') } ) -> VideoSelectorProgramId
-newVideoSelectorProgramId'  customize = (VideoSelectorProgramId <<< customize) { "ProgramId": (NullOrUndefined Nothing) }
+newVideoSelectorProgramId' :: ( { "ProgramId" :: Maybe (IntegerMin0Max65536') } -> {"ProgramId" :: Maybe (IntegerMin0Max65536') } ) -> VideoSelectorProgramId
+newVideoSelectorProgramId'  customize = (VideoSelectorProgramId <<< customize) { "ProgramId": Nothing }
 
 
 
 -- | Placeholder documentation for VideoSelectorSettings
 newtype VideoSelectorSettings = VideoSelectorSettings 
-  { "VideoSelectorPid" :: NullOrUndefined (VideoSelectorPid)
-  , "VideoSelectorProgramId" :: NullOrUndefined (VideoSelectorProgramId)
+  { "VideoSelectorPid" :: Maybe (VideoSelectorPid)
+  , "VideoSelectorProgramId" :: Maybe (VideoSelectorProgramId)
   }
 derive instance newtypeVideoSelectorSettings :: Newtype VideoSelectorSettings _
 derive instance repGenericVideoSelectorSettings :: Generic VideoSelectorSettings _
@@ -5311,12 +5310,12 @@ instance encodeVideoSelectorSettings :: Encode VideoSelectorSettings where encod
 
 -- | Constructs VideoSelectorSettings from required parameters
 newVideoSelectorSettings :: VideoSelectorSettings
-newVideoSelectorSettings  = VideoSelectorSettings { "VideoSelectorPid": (NullOrUndefined Nothing), "VideoSelectorProgramId": (NullOrUndefined Nothing) }
+newVideoSelectorSettings  = VideoSelectorSettings { "VideoSelectorPid": Nothing, "VideoSelectorProgramId": Nothing }
 
 -- | Constructs VideoSelectorSettings's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVideoSelectorSettings' :: ( { "VideoSelectorPid" :: NullOrUndefined (VideoSelectorPid) , "VideoSelectorProgramId" :: NullOrUndefined (VideoSelectorProgramId) } -> {"VideoSelectorPid" :: NullOrUndefined (VideoSelectorPid) , "VideoSelectorProgramId" :: NullOrUndefined (VideoSelectorProgramId) } ) -> VideoSelectorSettings
-newVideoSelectorSettings'  customize = (VideoSelectorSettings <<< customize) { "VideoSelectorPid": (NullOrUndefined Nothing), "VideoSelectorProgramId": (NullOrUndefined Nothing) }
+newVideoSelectorSettings' :: ( { "VideoSelectorPid" :: Maybe (VideoSelectorPid) , "VideoSelectorProgramId" :: Maybe (VideoSelectorProgramId) } -> {"VideoSelectorPid" :: Maybe (VideoSelectorPid) , "VideoSelectorProgramId" :: Maybe (VideoSelectorProgramId) } ) -> VideoSelectorSettings
+newVideoSelectorSettings'  customize = (VideoSelectorSettings <<< customize) { "VideoSelectorPid": Nothing, "VideoSelectorProgramId": Nothing }
 
 
 

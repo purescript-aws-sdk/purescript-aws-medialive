@@ -100,7 +100,7 @@ Encode AacRawFormat
 
 ``` purescript
 newtype AacSettings
-  = AacSettings { "Bitrate" :: NullOrUndefined (Number), "CodingMode" :: NullOrUndefined (AacCodingMode), "InputType" :: NullOrUndefined (AacInputType), "Profile" :: NullOrUndefined (AacProfile), "RateControlMode" :: NullOrUndefined (AacRateControlMode), "RawFormat" :: NullOrUndefined (AacRawFormat), "SampleRate" :: NullOrUndefined (Number), "Spec" :: NullOrUndefined (AacSpec), "VbrQuality" :: NullOrUndefined (AacVbrQuality) }
+  = AacSettings { "Bitrate" :: Maybe (Number), "CodingMode" :: Maybe (AacCodingMode), "InputType" :: Maybe (AacInputType), "Profile" :: Maybe (AacProfile), "RateControlMode" :: Maybe (AacRateControlMode), "RawFormat" :: Maybe (AacRawFormat), "SampleRate" :: Maybe (Number), "Spec" :: Maybe (AacSpec), "VbrQuality" :: Maybe (AacVbrQuality) }
 ```
 
 Placeholder documentation for AacSettings
@@ -125,7 +125,7 @@ Constructs AacSettings from required parameters
 #### `newAacSettings'`
 
 ``` purescript
-newAacSettings' :: ({ "Bitrate" :: NullOrUndefined (Number), "CodingMode" :: NullOrUndefined (AacCodingMode), "InputType" :: NullOrUndefined (AacInputType), "Profile" :: NullOrUndefined (AacProfile), "RateControlMode" :: NullOrUndefined (AacRateControlMode), "RawFormat" :: NullOrUndefined (AacRawFormat), "SampleRate" :: NullOrUndefined (Number), "Spec" :: NullOrUndefined (AacSpec), "VbrQuality" :: NullOrUndefined (AacVbrQuality) } -> { "Bitrate" :: NullOrUndefined (Number), "CodingMode" :: NullOrUndefined (AacCodingMode), "InputType" :: NullOrUndefined (AacInputType), "Profile" :: NullOrUndefined (AacProfile), "RateControlMode" :: NullOrUndefined (AacRateControlMode), "RawFormat" :: NullOrUndefined (AacRawFormat), "SampleRate" :: NullOrUndefined (Number), "Spec" :: NullOrUndefined (AacSpec), "VbrQuality" :: NullOrUndefined (AacVbrQuality) }) -> AacSettings
+newAacSettings' :: ({ "Bitrate" :: Maybe (Number), "CodingMode" :: Maybe (AacCodingMode), "InputType" :: Maybe (AacInputType), "Profile" :: Maybe (AacProfile), "RateControlMode" :: Maybe (AacRateControlMode), "RawFormat" :: Maybe (AacRawFormat), "SampleRate" :: Maybe (Number), "Spec" :: Maybe (AacSpec), "VbrQuality" :: Maybe (AacVbrQuality) } -> { "Bitrate" :: Maybe (Number), "CodingMode" :: Maybe (AacCodingMode), "InputType" :: Maybe (AacInputType), "Profile" :: Maybe (AacProfile), "RateControlMode" :: Maybe (AacRateControlMode), "RawFormat" :: Maybe (AacRawFormat), "SampleRate" :: Maybe (Number), "Spec" :: Maybe (AacSpec), "VbrQuality" :: Maybe (AacVbrQuality) }) -> AacSettings
 ```
 
 Constructs AacSettings's fields from required parameters
@@ -260,7 +260,7 @@ Encode Ac3MetadataControl
 
 ``` purescript
 newtype Ac3Settings
-  = Ac3Settings { "Bitrate" :: NullOrUndefined (Number), "BitstreamMode" :: NullOrUndefined (Ac3BitstreamMode), "CodingMode" :: NullOrUndefined (Ac3CodingMode), "Dialnorm" :: NullOrUndefined (IntegerMin1Max31'), "DrcProfile" :: NullOrUndefined (Ac3DrcProfile), "LfeFilter" :: NullOrUndefined (Ac3LfeFilter), "MetadataControl" :: NullOrUndefined (Ac3MetadataControl) }
+  = Ac3Settings { "Bitrate" :: Maybe (Number), "BitstreamMode" :: Maybe (Ac3BitstreamMode), "CodingMode" :: Maybe (Ac3CodingMode), "Dialnorm" :: Maybe (IntegerMin1Max31'), "DrcProfile" :: Maybe (Ac3DrcProfile), "LfeFilter" :: Maybe (Ac3LfeFilter), "MetadataControl" :: Maybe (Ac3MetadataControl) }
 ```
 
 Placeholder documentation for Ac3Settings
@@ -285,7 +285,7 @@ Constructs Ac3Settings from required parameters
 #### `newAc3Settings'`
 
 ``` purescript
-newAc3Settings' :: ({ "Bitrate" :: NullOrUndefined (Number), "BitstreamMode" :: NullOrUndefined (Ac3BitstreamMode), "CodingMode" :: NullOrUndefined (Ac3CodingMode), "Dialnorm" :: NullOrUndefined (IntegerMin1Max31'), "DrcProfile" :: NullOrUndefined (Ac3DrcProfile), "LfeFilter" :: NullOrUndefined (Ac3LfeFilter), "MetadataControl" :: NullOrUndefined (Ac3MetadataControl) } -> { "Bitrate" :: NullOrUndefined (Number), "BitstreamMode" :: NullOrUndefined (Ac3BitstreamMode), "CodingMode" :: NullOrUndefined (Ac3CodingMode), "Dialnorm" :: NullOrUndefined (IntegerMin1Max31'), "DrcProfile" :: NullOrUndefined (Ac3DrcProfile), "LfeFilter" :: NullOrUndefined (Ac3LfeFilter), "MetadataControl" :: NullOrUndefined (Ac3MetadataControl) }) -> Ac3Settings
+newAc3Settings' :: ({ "Bitrate" :: Maybe (Number), "BitstreamMode" :: Maybe (Ac3BitstreamMode), "CodingMode" :: Maybe (Ac3CodingMode), "Dialnorm" :: Maybe (IntegerMin1Max31'), "DrcProfile" :: Maybe (Ac3DrcProfile), "LfeFilter" :: Maybe (Ac3LfeFilter), "MetadataControl" :: Maybe (Ac3MetadataControl) } -> { "Bitrate" :: Maybe (Number), "BitstreamMode" :: Maybe (Ac3BitstreamMode), "CodingMode" :: Maybe (Ac3CodingMode), "Dialnorm" :: Maybe (IntegerMin1Max31'), "DrcProfile" :: Maybe (Ac3DrcProfile), "LfeFilter" :: Maybe (Ac3LfeFilter), "MetadataControl" :: Maybe (Ac3MetadataControl) }) -> Ac3Settings
 ```
 
 Constructs Ac3Settings's fields from required parameters
@@ -294,7 +294,7 @@ Constructs Ac3Settings's fields from required parameters
 
 ``` purescript
 newtype AccessDenied
-  = AccessDenied { "Message" :: NullOrUndefined (String) }
+  = AccessDenied { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for AccessDenied
@@ -319,7 +319,7 @@ Constructs AccessDenied from required parameters
 #### `newAccessDenied'`
 
 ``` purescript
-newAccessDenied' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> AccessDenied
+newAccessDenied' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> AccessDenied
 ```
 
 Constructs AccessDenied's fields from required parameters
@@ -346,7 +346,7 @@ Encode AfdSignaling
 
 ``` purescript
 newtype ArchiveContainerSettings
-  = ArchiveContainerSettings { "M2tsSettings" :: NullOrUndefined (M2tsSettings) }
+  = ArchiveContainerSettings { "M2tsSettings" :: Maybe (M2tsSettings) }
 ```
 
 Placeholder documentation for ArchiveContainerSettings
@@ -371,7 +371,7 @@ Constructs ArchiveContainerSettings from required parameters
 #### `newArchiveContainerSettings'`
 
 ``` purescript
-newArchiveContainerSettings' :: ({ "M2tsSettings" :: NullOrUndefined (M2tsSettings) } -> { "M2tsSettings" :: NullOrUndefined (M2tsSettings) }) -> ArchiveContainerSettings
+newArchiveContainerSettings' :: ({ "M2tsSettings" :: Maybe (M2tsSettings) } -> { "M2tsSettings" :: Maybe (M2tsSettings) }) -> ArchiveContainerSettings
 ```
 
 Constructs ArchiveContainerSettings's fields from required parameters
@@ -380,7 +380,7 @@ Constructs ArchiveContainerSettings's fields from required parameters
 
 ``` purescript
 newtype ArchiveGroupSettings
-  = ArchiveGroupSettings { "Destination" :: OutputLocationRef, "RolloverInterval" :: NullOrUndefined (IntegerMin1') }
+  = ArchiveGroupSettings { "Destination" :: OutputLocationRef, "RolloverInterval" :: Maybe (IntegerMin1') }
 ```
 
 Placeholder documentation for ArchiveGroupSettings
@@ -405,7 +405,7 @@ Constructs ArchiveGroupSettings from required parameters
 #### `newArchiveGroupSettings'`
 
 ``` purescript
-newArchiveGroupSettings' :: OutputLocationRef -> ({ "Destination" :: OutputLocationRef, "RolloverInterval" :: NullOrUndefined (IntegerMin1') } -> { "Destination" :: OutputLocationRef, "RolloverInterval" :: NullOrUndefined (IntegerMin1') }) -> ArchiveGroupSettings
+newArchiveGroupSettings' :: OutputLocationRef -> ({ "Destination" :: OutputLocationRef, "RolloverInterval" :: Maybe (IntegerMin1') } -> { "Destination" :: OutputLocationRef, "RolloverInterval" :: Maybe (IntegerMin1') }) -> ArchiveGroupSettings
 ```
 
 Constructs ArchiveGroupSettings's fields from required parameters
@@ -414,7 +414,7 @@ Constructs ArchiveGroupSettings's fields from required parameters
 
 ``` purescript
 newtype ArchiveOutputSettings
-  = ArchiveOutputSettings { "ContainerSettings" :: ArchiveContainerSettings, "Extension" :: NullOrUndefined (String), "NameModifier" :: NullOrUndefined (String) }
+  = ArchiveOutputSettings { "ContainerSettings" :: ArchiveContainerSettings, "Extension" :: Maybe (String), "NameModifier" :: Maybe (String) }
 ```
 
 Placeholder documentation for ArchiveOutputSettings
@@ -439,7 +439,7 @@ Constructs ArchiveOutputSettings from required parameters
 #### `newArchiveOutputSettings'`
 
 ``` purescript
-newArchiveOutputSettings' :: ArchiveContainerSettings -> ({ "ContainerSettings" :: ArchiveContainerSettings, "Extension" :: NullOrUndefined (String), "NameModifier" :: NullOrUndefined (String) } -> { "ContainerSettings" :: ArchiveContainerSettings, "Extension" :: NullOrUndefined (String), "NameModifier" :: NullOrUndefined (String) }) -> ArchiveOutputSettings
+newArchiveOutputSettings' :: ArchiveContainerSettings -> ({ "ContainerSettings" :: ArchiveContainerSettings, "Extension" :: Maybe (String), "NameModifier" :: Maybe (String) } -> { "ContainerSettings" :: ArchiveContainerSettings, "Extension" :: Maybe (String), "NameModifier" :: Maybe (String) }) -> ArchiveOutputSettings
 ```
 
 Constructs ArchiveOutputSettings's fields from required parameters
@@ -518,7 +518,7 @@ Constructs AudioChannelMapping's fields from required parameters
 
 ``` purescript
 newtype AudioCodecSettings
-  = AudioCodecSettings { "AacSettings" :: NullOrUndefined (AacSettings), "Ac3Settings" :: NullOrUndefined (Ac3Settings), "Eac3Settings" :: NullOrUndefined (Eac3Settings), "Mp2Settings" :: NullOrUndefined (Mp2Settings), "PassThroughSettings" :: NullOrUndefined (PassThroughSettings) }
+  = AudioCodecSettings { "AacSettings" :: Maybe (AacSettings), "Ac3Settings" :: Maybe (Ac3Settings), "Eac3Settings" :: Maybe (Eac3Settings), "Mp2Settings" :: Maybe (Mp2Settings), "PassThroughSettings" :: Maybe (PassThroughSettings) }
 ```
 
 Placeholder documentation for AudioCodecSettings
@@ -543,7 +543,7 @@ Constructs AudioCodecSettings from required parameters
 #### `newAudioCodecSettings'`
 
 ``` purescript
-newAudioCodecSettings' :: ({ "AacSettings" :: NullOrUndefined (AacSettings), "Ac3Settings" :: NullOrUndefined (Ac3Settings), "Eac3Settings" :: NullOrUndefined (Eac3Settings), "Mp2Settings" :: NullOrUndefined (Mp2Settings), "PassThroughSettings" :: NullOrUndefined (PassThroughSettings) } -> { "AacSettings" :: NullOrUndefined (AacSettings), "Ac3Settings" :: NullOrUndefined (Ac3Settings), "Eac3Settings" :: NullOrUndefined (Eac3Settings), "Mp2Settings" :: NullOrUndefined (Mp2Settings), "PassThroughSettings" :: NullOrUndefined (PassThroughSettings) }) -> AudioCodecSettings
+newAudioCodecSettings' :: ({ "AacSettings" :: Maybe (AacSettings), "Ac3Settings" :: Maybe (Ac3Settings), "Eac3Settings" :: Maybe (Eac3Settings), "Mp2Settings" :: Maybe (Mp2Settings), "PassThroughSettings" :: Maybe (PassThroughSettings) } -> { "AacSettings" :: Maybe (AacSettings), "Ac3Settings" :: Maybe (Ac3Settings), "Eac3Settings" :: Maybe (Eac3Settings), "Mp2Settings" :: Maybe (Mp2Settings), "PassThroughSettings" :: Maybe (PassThroughSettings) }) -> AudioCodecSettings
 ```
 
 Constructs AudioCodecSettings's fields from required parameters
@@ -552,7 +552,7 @@ Constructs AudioCodecSettings's fields from required parameters
 
 ``` purescript
 newtype AudioDescription
-  = AudioDescription { "AudioNormalizationSettings" :: NullOrUndefined (AudioNormalizationSettings), "AudioSelectorName" :: String, "AudioType" :: NullOrUndefined (AudioType), "AudioTypeControl" :: NullOrUndefined (AudioDescriptionAudioTypeControl), "CodecSettings" :: NullOrUndefined (AudioCodecSettings), "LanguageCode" :: NullOrUndefined (StringMin3Max3'), "LanguageCodeControl" :: NullOrUndefined (AudioDescriptionLanguageCodeControl), "Name" :: String, "RemixSettings" :: NullOrUndefined (RemixSettings), "StreamName" :: NullOrUndefined (String) }
+  = AudioDescription { "AudioNormalizationSettings" :: Maybe (AudioNormalizationSettings), "AudioSelectorName" :: String, "AudioType" :: Maybe (AudioType), "AudioTypeControl" :: Maybe (AudioDescriptionAudioTypeControl), "CodecSettings" :: Maybe (AudioCodecSettings), "LanguageCode" :: Maybe (StringMin3Max3'), "LanguageCodeControl" :: Maybe (AudioDescriptionLanguageCodeControl), "Name" :: String, "RemixSettings" :: Maybe (RemixSettings), "StreamName" :: Maybe (String) }
 ```
 
 Placeholder documentation for AudioDescription
@@ -577,7 +577,7 @@ Constructs AudioDescription from required parameters
 #### `newAudioDescription'`
 
 ``` purescript
-newAudioDescription' :: String -> String -> ({ "AudioNormalizationSettings" :: NullOrUndefined (AudioNormalizationSettings), "AudioSelectorName" :: String, "AudioType" :: NullOrUndefined (AudioType), "AudioTypeControl" :: NullOrUndefined (AudioDescriptionAudioTypeControl), "CodecSettings" :: NullOrUndefined (AudioCodecSettings), "LanguageCode" :: NullOrUndefined (StringMin3Max3'), "LanguageCodeControl" :: NullOrUndefined (AudioDescriptionLanguageCodeControl), "Name" :: String, "RemixSettings" :: NullOrUndefined (RemixSettings), "StreamName" :: NullOrUndefined (String) } -> { "AudioNormalizationSettings" :: NullOrUndefined (AudioNormalizationSettings), "AudioSelectorName" :: String, "AudioType" :: NullOrUndefined (AudioType), "AudioTypeControl" :: NullOrUndefined (AudioDescriptionAudioTypeControl), "CodecSettings" :: NullOrUndefined (AudioCodecSettings), "LanguageCode" :: NullOrUndefined (StringMin3Max3'), "LanguageCodeControl" :: NullOrUndefined (AudioDescriptionLanguageCodeControl), "Name" :: String, "RemixSettings" :: NullOrUndefined (RemixSettings), "StreamName" :: NullOrUndefined (String) }) -> AudioDescription
+newAudioDescription' :: String -> String -> ({ "AudioNormalizationSettings" :: Maybe (AudioNormalizationSettings), "AudioSelectorName" :: String, "AudioType" :: Maybe (AudioType), "AudioTypeControl" :: Maybe (AudioDescriptionAudioTypeControl), "CodecSettings" :: Maybe (AudioCodecSettings), "LanguageCode" :: Maybe (StringMin3Max3'), "LanguageCodeControl" :: Maybe (AudioDescriptionLanguageCodeControl), "Name" :: String, "RemixSettings" :: Maybe (RemixSettings), "StreamName" :: Maybe (String) } -> { "AudioNormalizationSettings" :: Maybe (AudioNormalizationSettings), "AudioSelectorName" :: String, "AudioType" :: Maybe (AudioType), "AudioTypeControl" :: Maybe (AudioDescriptionAudioTypeControl), "CodecSettings" :: Maybe (AudioCodecSettings), "LanguageCode" :: Maybe (StringMin3Max3'), "LanguageCodeControl" :: Maybe (AudioDescriptionLanguageCodeControl), "Name" :: String, "RemixSettings" :: Maybe (RemixSettings), "StreamName" :: Maybe (String) }) -> AudioDescription
 ```
 
 Constructs AudioDescription's fields from required parameters
@@ -622,7 +622,7 @@ Encode AudioDescriptionLanguageCodeControl
 
 ``` purescript
 newtype AudioLanguageSelection
-  = AudioLanguageSelection { "LanguageCode" :: String, "LanguageSelectionPolicy" :: NullOrUndefined (AudioLanguageSelectionPolicy) }
+  = AudioLanguageSelection { "LanguageCode" :: String, "LanguageSelectionPolicy" :: Maybe (AudioLanguageSelectionPolicy) }
 ```
 
 Placeholder documentation for AudioLanguageSelection
@@ -647,7 +647,7 @@ Constructs AudioLanguageSelection from required parameters
 #### `newAudioLanguageSelection'`
 
 ``` purescript
-newAudioLanguageSelection' :: String -> ({ "LanguageCode" :: String, "LanguageSelectionPolicy" :: NullOrUndefined (AudioLanguageSelectionPolicy) } -> { "LanguageCode" :: String, "LanguageSelectionPolicy" :: NullOrUndefined (AudioLanguageSelectionPolicy) }) -> AudioLanguageSelection
+newAudioLanguageSelection' :: String -> ({ "LanguageCode" :: String, "LanguageSelectionPolicy" :: Maybe (AudioLanguageSelectionPolicy) } -> { "LanguageCode" :: String, "LanguageSelectionPolicy" :: Maybe (AudioLanguageSelectionPolicy) }) -> AudioLanguageSelection
 ```
 
 Constructs AudioLanguageSelection's fields from required parameters
@@ -710,7 +710,7 @@ Encode AudioNormalizationAlgorithmControl
 
 ``` purescript
 newtype AudioNormalizationSettings
-  = AudioNormalizationSettings { "Algorithm" :: NullOrUndefined (AudioNormalizationAlgorithm), "AlgorithmControl" :: NullOrUndefined (AudioNormalizationAlgorithmControl), "TargetLkfs" :: NullOrUndefined (DoubleMinNegative59Max0') }
+  = AudioNormalizationSettings { "Algorithm" :: Maybe (AudioNormalizationAlgorithm), "AlgorithmControl" :: Maybe (AudioNormalizationAlgorithmControl), "TargetLkfs" :: Maybe (DoubleMinNegative59Max0') }
 ```
 
 Placeholder documentation for AudioNormalizationSettings
@@ -735,7 +735,7 @@ Constructs AudioNormalizationSettings from required parameters
 #### `newAudioNormalizationSettings'`
 
 ``` purescript
-newAudioNormalizationSettings' :: ({ "Algorithm" :: NullOrUndefined (AudioNormalizationAlgorithm), "AlgorithmControl" :: NullOrUndefined (AudioNormalizationAlgorithmControl), "TargetLkfs" :: NullOrUndefined (DoubleMinNegative59Max0') } -> { "Algorithm" :: NullOrUndefined (AudioNormalizationAlgorithm), "AlgorithmControl" :: NullOrUndefined (AudioNormalizationAlgorithmControl), "TargetLkfs" :: NullOrUndefined (DoubleMinNegative59Max0') }) -> AudioNormalizationSettings
+newAudioNormalizationSettings' :: ({ "Algorithm" :: Maybe (AudioNormalizationAlgorithm), "AlgorithmControl" :: Maybe (AudioNormalizationAlgorithmControl), "TargetLkfs" :: Maybe (DoubleMinNegative59Max0') } -> { "Algorithm" :: Maybe (AudioNormalizationAlgorithm), "AlgorithmControl" :: Maybe (AudioNormalizationAlgorithmControl), "TargetLkfs" :: Maybe (DoubleMinNegative59Max0') }) -> AudioNormalizationSettings
 ```
 
 Constructs AudioNormalizationSettings's fields from required parameters
@@ -744,7 +744,7 @@ Constructs AudioNormalizationSettings's fields from required parameters
 
 ``` purescript
 newtype AudioOnlyHlsSettings
-  = AudioOnlyHlsSettings { "AudioGroupId" :: NullOrUndefined (String), "AudioOnlyImage" :: NullOrUndefined (InputLocation), "AudioTrackType" :: NullOrUndefined (AudioOnlyHlsTrackType) }
+  = AudioOnlyHlsSettings { "AudioGroupId" :: Maybe (String), "AudioOnlyImage" :: Maybe (InputLocation), "AudioTrackType" :: Maybe (AudioOnlyHlsTrackType) }
 ```
 
 Placeholder documentation for AudioOnlyHlsSettings
@@ -769,7 +769,7 @@ Constructs AudioOnlyHlsSettings from required parameters
 #### `newAudioOnlyHlsSettings'`
 
 ``` purescript
-newAudioOnlyHlsSettings' :: ({ "AudioGroupId" :: NullOrUndefined (String), "AudioOnlyImage" :: NullOrUndefined (InputLocation), "AudioTrackType" :: NullOrUndefined (AudioOnlyHlsTrackType) } -> { "AudioGroupId" :: NullOrUndefined (String), "AudioOnlyImage" :: NullOrUndefined (InputLocation), "AudioTrackType" :: NullOrUndefined (AudioOnlyHlsTrackType) }) -> AudioOnlyHlsSettings
+newAudioOnlyHlsSettings' :: ({ "AudioGroupId" :: Maybe (String), "AudioOnlyImage" :: Maybe (InputLocation), "AudioTrackType" :: Maybe (AudioOnlyHlsTrackType) } -> { "AudioGroupId" :: Maybe (String), "AudioOnlyImage" :: Maybe (InputLocation), "AudioTrackType" :: Maybe (AudioOnlyHlsTrackType) }) -> AudioOnlyHlsSettings
 ```
 
 Constructs AudioOnlyHlsSettings's fields from required parameters
@@ -830,7 +830,7 @@ Constructs AudioPidSelection's fields from required parameters
 
 ``` purescript
 newtype AudioSelector
-  = AudioSelector { "Name" :: String, "SelectorSettings" :: NullOrUndefined (AudioSelectorSettings) }
+  = AudioSelector { "Name" :: String, "SelectorSettings" :: Maybe (AudioSelectorSettings) }
 ```
 
 Placeholder documentation for AudioSelector
@@ -855,7 +855,7 @@ Constructs AudioSelector from required parameters
 #### `newAudioSelector'`
 
 ``` purescript
-newAudioSelector' :: String -> ({ "Name" :: String, "SelectorSettings" :: NullOrUndefined (AudioSelectorSettings) } -> { "Name" :: String, "SelectorSettings" :: NullOrUndefined (AudioSelectorSettings) }) -> AudioSelector
+newAudioSelector' :: String -> ({ "Name" :: String, "SelectorSettings" :: Maybe (AudioSelectorSettings) } -> { "Name" :: String, "SelectorSettings" :: Maybe (AudioSelectorSettings) }) -> AudioSelector
 ```
 
 Constructs AudioSelector's fields from required parameters
@@ -864,7 +864,7 @@ Constructs AudioSelector's fields from required parameters
 
 ``` purescript
 newtype AudioSelectorSettings
-  = AudioSelectorSettings { "AudioLanguageSelection" :: NullOrUndefined (AudioLanguageSelection), "AudioPidSelection" :: NullOrUndefined (AudioPidSelection) }
+  = AudioSelectorSettings { "AudioLanguageSelection" :: Maybe (AudioLanguageSelection), "AudioPidSelection" :: Maybe (AudioPidSelection) }
 ```
 
 Placeholder documentation for AudioSelectorSettings
@@ -889,7 +889,7 @@ Constructs AudioSelectorSettings from required parameters
 #### `newAudioSelectorSettings'`
 
 ``` purescript
-newAudioSelectorSettings' :: ({ "AudioLanguageSelection" :: NullOrUndefined (AudioLanguageSelection), "AudioPidSelection" :: NullOrUndefined (AudioPidSelection) } -> { "AudioLanguageSelection" :: NullOrUndefined (AudioLanguageSelection), "AudioPidSelection" :: NullOrUndefined (AudioPidSelection) }) -> AudioSelectorSettings
+newAudioSelectorSettings' :: ({ "AudioLanguageSelection" :: Maybe (AudioLanguageSelection), "AudioPidSelection" :: Maybe (AudioPidSelection) } -> { "AudioLanguageSelection" :: Maybe (AudioLanguageSelection), "AudioPidSelection" :: Maybe (AudioPidSelection) }) -> AudioSelectorSettings
 ```
 
 Constructs AudioSelectorSettings's fields from required parameters
@@ -916,7 +916,7 @@ Encode AudioType
 
 ``` purescript
 newtype AvailBlanking
-  = AvailBlanking { "AvailBlankingImage" :: NullOrUndefined (InputLocation), "State" :: NullOrUndefined (AvailBlankingState) }
+  = AvailBlanking { "AvailBlankingImage" :: Maybe (InputLocation), "State" :: Maybe (AvailBlankingState) }
 ```
 
 Placeholder documentation for AvailBlanking
@@ -941,7 +941,7 @@ Constructs AvailBlanking from required parameters
 #### `newAvailBlanking'`
 
 ``` purescript
-newAvailBlanking' :: ({ "AvailBlankingImage" :: NullOrUndefined (InputLocation), "State" :: NullOrUndefined (AvailBlankingState) } -> { "AvailBlankingImage" :: NullOrUndefined (InputLocation), "State" :: NullOrUndefined (AvailBlankingState) }) -> AvailBlanking
+newAvailBlanking' :: ({ "AvailBlankingImage" :: Maybe (InputLocation), "State" :: Maybe (AvailBlankingState) } -> { "AvailBlankingImage" :: Maybe (InputLocation), "State" :: Maybe (AvailBlankingState) }) -> AvailBlanking
 ```
 
 Constructs AvailBlanking's fields from required parameters
@@ -968,7 +968,7 @@ Encode AvailBlankingState
 
 ``` purescript
 newtype AvailConfiguration
-  = AvailConfiguration { "AvailSettings" :: NullOrUndefined (AvailSettings) }
+  = AvailConfiguration { "AvailSettings" :: Maybe (AvailSettings) }
 ```
 
 Placeholder documentation for AvailConfiguration
@@ -993,7 +993,7 @@ Constructs AvailConfiguration from required parameters
 #### `newAvailConfiguration'`
 
 ``` purescript
-newAvailConfiguration' :: ({ "AvailSettings" :: NullOrUndefined (AvailSettings) } -> { "AvailSettings" :: NullOrUndefined (AvailSettings) }) -> AvailConfiguration
+newAvailConfiguration' :: ({ "AvailSettings" :: Maybe (AvailSettings) } -> { "AvailSettings" :: Maybe (AvailSettings) }) -> AvailConfiguration
 ```
 
 Constructs AvailConfiguration's fields from required parameters
@@ -1002,7 +1002,7 @@ Constructs AvailConfiguration's fields from required parameters
 
 ``` purescript
 newtype AvailSettings
-  = AvailSettings { "Scte35SpliceInsert" :: NullOrUndefined (Scte35SpliceInsert), "Scte35TimeSignalApos" :: NullOrUndefined (Scte35TimeSignalApos) }
+  = AvailSettings { "Scte35SpliceInsert" :: Maybe (Scte35SpliceInsert), "Scte35TimeSignalApos" :: Maybe (Scte35TimeSignalApos) }
 ```
 
 Placeholder documentation for AvailSettings
@@ -1027,7 +1027,7 @@ Constructs AvailSettings from required parameters
 #### `newAvailSettings'`
 
 ``` purescript
-newAvailSettings' :: ({ "Scte35SpliceInsert" :: NullOrUndefined (Scte35SpliceInsert), "Scte35TimeSignalApos" :: NullOrUndefined (Scte35TimeSignalApos) } -> { "Scte35SpliceInsert" :: NullOrUndefined (Scte35SpliceInsert), "Scte35TimeSignalApos" :: NullOrUndefined (Scte35TimeSignalApos) }) -> AvailSettings
+newAvailSettings' :: ({ "Scte35SpliceInsert" :: Maybe (Scte35SpliceInsert), "Scte35TimeSignalApos" :: Maybe (Scte35TimeSignalApos) } -> { "Scte35SpliceInsert" :: Maybe (Scte35SpliceInsert), "Scte35TimeSignalApos" :: Maybe (Scte35TimeSignalApos) }) -> AvailSettings
 ```
 
 Constructs AvailSettings's fields from required parameters
@@ -1036,7 +1036,7 @@ Constructs AvailSettings's fields from required parameters
 
 ``` purescript
 newtype BadGatewayException
-  = BadGatewayException { "Message" :: NullOrUndefined (String) }
+  = BadGatewayException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for BadGatewayException
@@ -1061,7 +1061,7 @@ Constructs BadGatewayException from required parameters
 #### `newBadGatewayException'`
 
 ``` purescript
-newBadGatewayException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> BadGatewayException
+newBadGatewayException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> BadGatewayException
 ```
 
 Constructs BadGatewayException's fields from required parameters
@@ -1070,7 +1070,7 @@ Constructs BadGatewayException's fields from required parameters
 
 ``` purescript
 newtype BadRequestException
-  = BadRequestException { "Message" :: NullOrUndefined (String) }
+  = BadRequestException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for BadRequestException
@@ -1095,7 +1095,7 @@ Constructs BadRequestException from required parameters
 #### `newBadRequestException'`
 
 ``` purescript
-newBadRequestException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> BadRequestException
+newBadRequestException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> BadRequestException
 ```
 
 Constructs BadRequestException's fields from required parameters
@@ -1104,7 +1104,7 @@ Constructs BadRequestException's fields from required parameters
 
 ``` purescript
 newtype BlackoutSlate
-  = BlackoutSlate { "BlackoutSlateImage" :: NullOrUndefined (InputLocation), "NetworkEndBlackout" :: NullOrUndefined (BlackoutSlateNetworkEndBlackout), "NetworkEndBlackoutImage" :: NullOrUndefined (InputLocation), "NetworkId" :: NullOrUndefined (StringMin34Max34'), "State" :: NullOrUndefined (BlackoutSlateState) }
+  = BlackoutSlate { "BlackoutSlateImage" :: Maybe (InputLocation), "NetworkEndBlackout" :: Maybe (BlackoutSlateNetworkEndBlackout), "NetworkEndBlackoutImage" :: Maybe (InputLocation), "NetworkId" :: Maybe (StringMin34Max34'), "State" :: Maybe (BlackoutSlateState) }
 ```
 
 Placeholder documentation for BlackoutSlate
@@ -1129,7 +1129,7 @@ Constructs BlackoutSlate from required parameters
 #### `newBlackoutSlate'`
 
 ``` purescript
-newBlackoutSlate' :: ({ "BlackoutSlateImage" :: NullOrUndefined (InputLocation), "NetworkEndBlackout" :: NullOrUndefined (BlackoutSlateNetworkEndBlackout), "NetworkEndBlackoutImage" :: NullOrUndefined (InputLocation), "NetworkId" :: NullOrUndefined (StringMin34Max34'), "State" :: NullOrUndefined (BlackoutSlateState) } -> { "BlackoutSlateImage" :: NullOrUndefined (InputLocation), "NetworkEndBlackout" :: NullOrUndefined (BlackoutSlateNetworkEndBlackout), "NetworkEndBlackoutImage" :: NullOrUndefined (InputLocation), "NetworkId" :: NullOrUndefined (StringMin34Max34'), "State" :: NullOrUndefined (BlackoutSlateState) }) -> BlackoutSlate
+newBlackoutSlate' :: ({ "BlackoutSlateImage" :: Maybe (InputLocation), "NetworkEndBlackout" :: Maybe (BlackoutSlateNetworkEndBlackout), "NetworkEndBlackoutImage" :: Maybe (InputLocation), "NetworkId" :: Maybe (StringMin34Max34'), "State" :: Maybe (BlackoutSlateState) } -> { "BlackoutSlateImage" :: Maybe (InputLocation), "NetworkEndBlackout" :: Maybe (BlackoutSlateNetworkEndBlackout), "NetworkEndBlackoutImage" :: Maybe (InputLocation), "NetworkId" :: Maybe (StringMin34Max34'), "State" :: Maybe (BlackoutSlateState) }) -> BlackoutSlate
 ```
 
 Constructs BlackoutSlate's fields from required parameters
@@ -1210,7 +1210,7 @@ Encode BurnInBackgroundColor
 
 ``` purescript
 newtype BurnInDestinationSettings
-  = BurnInDestinationSettings { "Alignment" :: NullOrUndefined (BurnInAlignment), "BackgroundColor" :: NullOrUndefined (BurnInBackgroundColor), "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255'), "Font" :: NullOrUndefined (InputLocation), "FontColor" :: NullOrUndefined (BurnInFontColor), "FontOpacity" :: NullOrUndefined (IntegerMin0Max255'), "FontResolution" :: NullOrUndefined (IntegerMin96Max600'), "FontSize" :: NullOrUndefined (String), "OutlineColor" :: NullOrUndefined (BurnInOutlineColor), "OutlineSize" :: NullOrUndefined (IntegerMin0Max10'), "ShadowColor" :: NullOrUndefined (BurnInShadowColor), "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255'), "ShadowXOffset" :: NullOrUndefined (Int), "ShadowYOffset" :: NullOrUndefined (Int), "TeletextGridControl" :: NullOrUndefined (BurnInTeletextGridControl), "XPosition" :: NullOrUndefined (IntegerMin0'), "YPosition" :: NullOrUndefined (IntegerMin0') }
+  = BurnInDestinationSettings { "Alignment" :: Maybe (BurnInAlignment), "BackgroundColor" :: Maybe (BurnInBackgroundColor), "BackgroundOpacity" :: Maybe (IntegerMin0Max255'), "Font" :: Maybe (InputLocation), "FontColor" :: Maybe (BurnInFontColor), "FontOpacity" :: Maybe (IntegerMin0Max255'), "FontResolution" :: Maybe (IntegerMin96Max600'), "FontSize" :: Maybe (String), "OutlineColor" :: Maybe (BurnInOutlineColor), "OutlineSize" :: Maybe (IntegerMin0Max10'), "ShadowColor" :: Maybe (BurnInShadowColor), "ShadowOpacity" :: Maybe (IntegerMin0Max255'), "ShadowXOffset" :: Maybe (Int), "ShadowYOffset" :: Maybe (Int), "TeletextGridControl" :: Maybe (BurnInTeletextGridControl), "XPosition" :: Maybe (IntegerMin0'), "YPosition" :: Maybe (IntegerMin0') }
 ```
 
 Placeholder documentation for BurnInDestinationSettings
@@ -1235,7 +1235,7 @@ Constructs BurnInDestinationSettings from required parameters
 #### `newBurnInDestinationSettings'`
 
 ``` purescript
-newBurnInDestinationSettings' :: ({ "Alignment" :: NullOrUndefined (BurnInAlignment), "BackgroundColor" :: NullOrUndefined (BurnInBackgroundColor), "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255'), "Font" :: NullOrUndefined (InputLocation), "FontColor" :: NullOrUndefined (BurnInFontColor), "FontOpacity" :: NullOrUndefined (IntegerMin0Max255'), "FontResolution" :: NullOrUndefined (IntegerMin96Max600'), "FontSize" :: NullOrUndefined (String), "OutlineColor" :: NullOrUndefined (BurnInOutlineColor), "OutlineSize" :: NullOrUndefined (IntegerMin0Max10'), "ShadowColor" :: NullOrUndefined (BurnInShadowColor), "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255'), "ShadowXOffset" :: NullOrUndefined (Int), "ShadowYOffset" :: NullOrUndefined (Int), "TeletextGridControl" :: NullOrUndefined (BurnInTeletextGridControl), "XPosition" :: NullOrUndefined (IntegerMin0'), "YPosition" :: NullOrUndefined (IntegerMin0') } -> { "Alignment" :: NullOrUndefined (BurnInAlignment), "BackgroundColor" :: NullOrUndefined (BurnInBackgroundColor), "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255'), "Font" :: NullOrUndefined (InputLocation), "FontColor" :: NullOrUndefined (BurnInFontColor), "FontOpacity" :: NullOrUndefined (IntegerMin0Max255'), "FontResolution" :: NullOrUndefined (IntegerMin96Max600'), "FontSize" :: NullOrUndefined (String), "OutlineColor" :: NullOrUndefined (BurnInOutlineColor), "OutlineSize" :: NullOrUndefined (IntegerMin0Max10'), "ShadowColor" :: NullOrUndefined (BurnInShadowColor), "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255'), "ShadowXOffset" :: NullOrUndefined (Int), "ShadowYOffset" :: NullOrUndefined (Int), "TeletextGridControl" :: NullOrUndefined (BurnInTeletextGridControl), "XPosition" :: NullOrUndefined (IntegerMin0'), "YPosition" :: NullOrUndefined (IntegerMin0') }) -> BurnInDestinationSettings
+newBurnInDestinationSettings' :: ({ "Alignment" :: Maybe (BurnInAlignment), "BackgroundColor" :: Maybe (BurnInBackgroundColor), "BackgroundOpacity" :: Maybe (IntegerMin0Max255'), "Font" :: Maybe (InputLocation), "FontColor" :: Maybe (BurnInFontColor), "FontOpacity" :: Maybe (IntegerMin0Max255'), "FontResolution" :: Maybe (IntegerMin96Max600'), "FontSize" :: Maybe (String), "OutlineColor" :: Maybe (BurnInOutlineColor), "OutlineSize" :: Maybe (IntegerMin0Max10'), "ShadowColor" :: Maybe (BurnInShadowColor), "ShadowOpacity" :: Maybe (IntegerMin0Max255'), "ShadowXOffset" :: Maybe (Int), "ShadowYOffset" :: Maybe (Int), "TeletextGridControl" :: Maybe (BurnInTeletextGridControl), "XPosition" :: Maybe (IntegerMin0'), "YPosition" :: Maybe (IntegerMin0') } -> { "Alignment" :: Maybe (BurnInAlignment), "BackgroundColor" :: Maybe (BurnInBackgroundColor), "BackgroundOpacity" :: Maybe (IntegerMin0Max255'), "Font" :: Maybe (InputLocation), "FontColor" :: Maybe (BurnInFontColor), "FontOpacity" :: Maybe (IntegerMin0Max255'), "FontResolution" :: Maybe (IntegerMin96Max600'), "FontSize" :: Maybe (String), "OutlineColor" :: Maybe (BurnInOutlineColor), "OutlineSize" :: Maybe (IntegerMin0Max10'), "ShadowColor" :: Maybe (BurnInShadowColor), "ShadowOpacity" :: Maybe (IntegerMin0Max255'), "ShadowXOffset" :: Maybe (Int), "ShadowYOffset" :: Maybe (Int), "TeletextGridControl" :: Maybe (BurnInTeletextGridControl), "XPosition" :: Maybe (IntegerMin0'), "YPosition" :: Maybe (IntegerMin0') }) -> BurnInDestinationSettings
 ```
 
 Constructs BurnInDestinationSettings's fields from required parameters
@@ -1316,7 +1316,7 @@ Encode BurnInTeletextGridControl
 
 ``` purescript
 newtype CaptionDescription
-  = CaptionDescription { "CaptionSelectorName" :: String, "DestinationSettings" :: NullOrUndefined (CaptionDestinationSettings), "LanguageCode" :: NullOrUndefined (String), "LanguageDescription" :: NullOrUndefined (String), "Name" :: String }
+  = CaptionDescription { "CaptionSelectorName" :: String, "DestinationSettings" :: Maybe (CaptionDestinationSettings), "LanguageCode" :: Maybe (String), "LanguageDescription" :: Maybe (String), "Name" :: String }
 ```
 
 Output groups for this Live Event. Output groups contain information about where streams should be distributed.
@@ -1341,7 +1341,7 @@ Constructs CaptionDescription from required parameters
 #### `newCaptionDescription'`
 
 ``` purescript
-newCaptionDescription' :: String -> String -> ({ "CaptionSelectorName" :: String, "DestinationSettings" :: NullOrUndefined (CaptionDestinationSettings), "LanguageCode" :: NullOrUndefined (String), "LanguageDescription" :: NullOrUndefined (String), "Name" :: String } -> { "CaptionSelectorName" :: String, "DestinationSettings" :: NullOrUndefined (CaptionDestinationSettings), "LanguageCode" :: NullOrUndefined (String), "LanguageDescription" :: NullOrUndefined (String), "Name" :: String }) -> CaptionDescription
+newCaptionDescription' :: String -> String -> ({ "CaptionSelectorName" :: String, "DestinationSettings" :: Maybe (CaptionDestinationSettings), "LanguageCode" :: Maybe (String), "LanguageDescription" :: Maybe (String), "Name" :: String } -> { "CaptionSelectorName" :: String, "DestinationSettings" :: Maybe (CaptionDestinationSettings), "LanguageCode" :: Maybe (String), "LanguageDescription" :: Maybe (String), "Name" :: String }) -> CaptionDescription
 ```
 
 Constructs CaptionDescription's fields from required parameters
@@ -1350,7 +1350,7 @@ Constructs CaptionDescription's fields from required parameters
 
 ``` purescript
 newtype CaptionDestinationSettings
-  = CaptionDestinationSettings { "AribDestinationSettings" :: NullOrUndefined (AribDestinationSettings), "BurnInDestinationSettings" :: NullOrUndefined (BurnInDestinationSettings), "DvbSubDestinationSettings" :: NullOrUndefined (DvbSubDestinationSettings), "EmbeddedDestinationSettings" :: NullOrUndefined (EmbeddedDestinationSettings), "EmbeddedPlusScte20DestinationSettings" :: NullOrUndefined (EmbeddedPlusScte20DestinationSettings), "Scte20PlusEmbeddedDestinationSettings" :: NullOrUndefined (Scte20PlusEmbeddedDestinationSettings), "Scte27DestinationSettings" :: NullOrUndefined (Scte27DestinationSettings), "SmpteTtDestinationSettings" :: NullOrUndefined (SmpteTtDestinationSettings), "TeletextDestinationSettings" :: NullOrUndefined (TeletextDestinationSettings), "TtmlDestinationSettings" :: NullOrUndefined (TtmlDestinationSettings), "WebvttDestinationSettings" :: NullOrUndefined (WebvttDestinationSettings) }
+  = CaptionDestinationSettings { "AribDestinationSettings" :: Maybe (AribDestinationSettings), "BurnInDestinationSettings" :: Maybe (BurnInDestinationSettings), "DvbSubDestinationSettings" :: Maybe (DvbSubDestinationSettings), "EmbeddedDestinationSettings" :: Maybe (EmbeddedDestinationSettings), "EmbeddedPlusScte20DestinationSettings" :: Maybe (EmbeddedPlusScte20DestinationSettings), "Scte20PlusEmbeddedDestinationSettings" :: Maybe (Scte20PlusEmbeddedDestinationSettings), "Scte27DestinationSettings" :: Maybe (Scte27DestinationSettings), "SmpteTtDestinationSettings" :: Maybe (SmpteTtDestinationSettings), "TeletextDestinationSettings" :: Maybe (TeletextDestinationSettings), "TtmlDestinationSettings" :: Maybe (TtmlDestinationSettings), "WebvttDestinationSettings" :: Maybe (WebvttDestinationSettings) }
 ```
 
 Placeholder documentation for CaptionDestinationSettings
@@ -1375,7 +1375,7 @@ Constructs CaptionDestinationSettings from required parameters
 #### `newCaptionDestinationSettings'`
 
 ``` purescript
-newCaptionDestinationSettings' :: ({ "AribDestinationSettings" :: NullOrUndefined (AribDestinationSettings), "BurnInDestinationSettings" :: NullOrUndefined (BurnInDestinationSettings), "DvbSubDestinationSettings" :: NullOrUndefined (DvbSubDestinationSettings), "EmbeddedDestinationSettings" :: NullOrUndefined (EmbeddedDestinationSettings), "EmbeddedPlusScte20DestinationSettings" :: NullOrUndefined (EmbeddedPlusScte20DestinationSettings), "Scte20PlusEmbeddedDestinationSettings" :: NullOrUndefined (Scte20PlusEmbeddedDestinationSettings), "Scte27DestinationSettings" :: NullOrUndefined (Scte27DestinationSettings), "SmpteTtDestinationSettings" :: NullOrUndefined (SmpteTtDestinationSettings), "TeletextDestinationSettings" :: NullOrUndefined (TeletextDestinationSettings), "TtmlDestinationSettings" :: NullOrUndefined (TtmlDestinationSettings), "WebvttDestinationSettings" :: NullOrUndefined (WebvttDestinationSettings) } -> { "AribDestinationSettings" :: NullOrUndefined (AribDestinationSettings), "BurnInDestinationSettings" :: NullOrUndefined (BurnInDestinationSettings), "DvbSubDestinationSettings" :: NullOrUndefined (DvbSubDestinationSettings), "EmbeddedDestinationSettings" :: NullOrUndefined (EmbeddedDestinationSettings), "EmbeddedPlusScte20DestinationSettings" :: NullOrUndefined (EmbeddedPlusScte20DestinationSettings), "Scte20PlusEmbeddedDestinationSettings" :: NullOrUndefined (Scte20PlusEmbeddedDestinationSettings), "Scte27DestinationSettings" :: NullOrUndefined (Scte27DestinationSettings), "SmpteTtDestinationSettings" :: NullOrUndefined (SmpteTtDestinationSettings), "TeletextDestinationSettings" :: NullOrUndefined (TeletextDestinationSettings), "TtmlDestinationSettings" :: NullOrUndefined (TtmlDestinationSettings), "WebvttDestinationSettings" :: NullOrUndefined (WebvttDestinationSettings) }) -> CaptionDestinationSettings
+newCaptionDestinationSettings' :: ({ "AribDestinationSettings" :: Maybe (AribDestinationSettings), "BurnInDestinationSettings" :: Maybe (BurnInDestinationSettings), "DvbSubDestinationSettings" :: Maybe (DvbSubDestinationSettings), "EmbeddedDestinationSettings" :: Maybe (EmbeddedDestinationSettings), "EmbeddedPlusScte20DestinationSettings" :: Maybe (EmbeddedPlusScte20DestinationSettings), "Scte20PlusEmbeddedDestinationSettings" :: Maybe (Scte20PlusEmbeddedDestinationSettings), "Scte27DestinationSettings" :: Maybe (Scte27DestinationSettings), "SmpteTtDestinationSettings" :: Maybe (SmpteTtDestinationSettings), "TeletextDestinationSettings" :: Maybe (TeletextDestinationSettings), "TtmlDestinationSettings" :: Maybe (TtmlDestinationSettings), "WebvttDestinationSettings" :: Maybe (WebvttDestinationSettings) } -> { "AribDestinationSettings" :: Maybe (AribDestinationSettings), "BurnInDestinationSettings" :: Maybe (BurnInDestinationSettings), "DvbSubDestinationSettings" :: Maybe (DvbSubDestinationSettings), "EmbeddedDestinationSettings" :: Maybe (EmbeddedDestinationSettings), "EmbeddedPlusScte20DestinationSettings" :: Maybe (EmbeddedPlusScte20DestinationSettings), "Scte20PlusEmbeddedDestinationSettings" :: Maybe (Scte20PlusEmbeddedDestinationSettings), "Scte27DestinationSettings" :: Maybe (Scte27DestinationSettings), "SmpteTtDestinationSettings" :: Maybe (SmpteTtDestinationSettings), "TeletextDestinationSettings" :: Maybe (TeletextDestinationSettings), "TtmlDestinationSettings" :: Maybe (TtmlDestinationSettings), "WebvttDestinationSettings" :: Maybe (WebvttDestinationSettings) }) -> CaptionDestinationSettings
 ```
 
 Constructs CaptionDestinationSettings's fields from required parameters
@@ -1418,7 +1418,7 @@ Constructs CaptionLanguageMapping's fields from required parameters
 
 ``` purescript
 newtype CaptionSelector
-  = CaptionSelector { "LanguageCode" :: NullOrUndefined (String), "Name" :: String, "SelectorSettings" :: NullOrUndefined (CaptionSelectorSettings) }
+  = CaptionSelector { "LanguageCode" :: Maybe (String), "Name" :: String, "SelectorSettings" :: Maybe (CaptionSelectorSettings) }
 ```
 
 Output groups for this Live Event. Output groups contain information about where streams should be distributed.
@@ -1443,7 +1443,7 @@ Constructs CaptionSelector from required parameters
 #### `newCaptionSelector'`
 
 ``` purescript
-newCaptionSelector' :: String -> ({ "LanguageCode" :: NullOrUndefined (String), "Name" :: String, "SelectorSettings" :: NullOrUndefined (CaptionSelectorSettings) } -> { "LanguageCode" :: NullOrUndefined (String), "Name" :: String, "SelectorSettings" :: NullOrUndefined (CaptionSelectorSettings) }) -> CaptionSelector
+newCaptionSelector' :: String -> ({ "LanguageCode" :: Maybe (String), "Name" :: String, "SelectorSettings" :: Maybe (CaptionSelectorSettings) } -> { "LanguageCode" :: Maybe (String), "Name" :: String, "SelectorSettings" :: Maybe (CaptionSelectorSettings) }) -> CaptionSelector
 ```
 
 Constructs CaptionSelector's fields from required parameters
@@ -1452,7 +1452,7 @@ Constructs CaptionSelector's fields from required parameters
 
 ``` purescript
 newtype CaptionSelectorSettings
-  = CaptionSelectorSettings { "AribSourceSettings" :: NullOrUndefined (AribSourceSettings), "DvbSubSourceSettings" :: NullOrUndefined (DvbSubSourceSettings), "EmbeddedSourceSettings" :: NullOrUndefined (EmbeddedSourceSettings), "Scte20SourceSettings" :: NullOrUndefined (Scte20SourceSettings), "Scte27SourceSettings" :: NullOrUndefined (Scte27SourceSettings), "TeletextSourceSettings" :: NullOrUndefined (TeletextSourceSettings) }
+  = CaptionSelectorSettings { "AribSourceSettings" :: Maybe (AribSourceSettings), "DvbSubSourceSettings" :: Maybe (DvbSubSourceSettings), "EmbeddedSourceSettings" :: Maybe (EmbeddedSourceSettings), "Scte20SourceSettings" :: Maybe (Scte20SourceSettings), "Scte27SourceSettings" :: Maybe (Scte27SourceSettings), "TeletextSourceSettings" :: Maybe (TeletextSourceSettings) }
 ```
 
 Placeholder documentation for CaptionSelectorSettings
@@ -1477,7 +1477,7 @@ Constructs CaptionSelectorSettings from required parameters
 #### `newCaptionSelectorSettings'`
 
 ``` purescript
-newCaptionSelectorSettings' :: ({ "AribSourceSettings" :: NullOrUndefined (AribSourceSettings), "DvbSubSourceSettings" :: NullOrUndefined (DvbSubSourceSettings), "EmbeddedSourceSettings" :: NullOrUndefined (EmbeddedSourceSettings), "Scte20SourceSettings" :: NullOrUndefined (Scte20SourceSettings), "Scte27SourceSettings" :: NullOrUndefined (Scte27SourceSettings), "TeletextSourceSettings" :: NullOrUndefined (TeletextSourceSettings) } -> { "AribSourceSettings" :: NullOrUndefined (AribSourceSettings), "DvbSubSourceSettings" :: NullOrUndefined (DvbSubSourceSettings), "EmbeddedSourceSettings" :: NullOrUndefined (EmbeddedSourceSettings), "Scte20SourceSettings" :: NullOrUndefined (Scte20SourceSettings), "Scte27SourceSettings" :: NullOrUndefined (Scte27SourceSettings), "TeletextSourceSettings" :: NullOrUndefined (TeletextSourceSettings) }) -> CaptionSelectorSettings
+newCaptionSelectorSettings' :: ({ "AribSourceSettings" :: Maybe (AribSourceSettings), "DvbSubSourceSettings" :: Maybe (DvbSubSourceSettings), "EmbeddedSourceSettings" :: Maybe (EmbeddedSourceSettings), "Scte20SourceSettings" :: Maybe (Scte20SourceSettings), "Scte27SourceSettings" :: Maybe (Scte27SourceSettings), "TeletextSourceSettings" :: Maybe (TeletextSourceSettings) } -> { "AribSourceSettings" :: Maybe (AribSourceSettings), "DvbSubSourceSettings" :: Maybe (DvbSubSourceSettings), "EmbeddedSourceSettings" :: Maybe (EmbeddedSourceSettings), "Scte20SourceSettings" :: Maybe (Scte20SourceSettings), "Scte27SourceSettings" :: Maybe (Scte27SourceSettings), "TeletextSourceSettings" :: Maybe (TeletextSourceSettings) }) -> CaptionSelectorSettings
 ```
 
 Constructs CaptionSelectorSettings's fields from required parameters
@@ -1486,7 +1486,7 @@ Constructs CaptionSelectorSettings's fields from required parameters
 
 ``` purescript
 newtype Channel
-  = Channel { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }
+  = Channel { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }
 ```
 
 Placeholder documentation for Channel
@@ -1511,7 +1511,7 @@ Constructs Channel from required parameters
 #### `newChannel'`
 
 ``` purescript
-newChannel' :: ({ "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) } -> { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }) -> Channel
+newChannel' :: ({ "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) } -> { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }) -> Channel
 ```
 
 Constructs Channel's fields from required parameters
@@ -1520,7 +1520,7 @@ Constructs Channel's fields from required parameters
 
 ``` purescript
 newtype ChannelConfigurationValidationError
-  = ChannelConfigurationValidationError { "Message" :: NullOrUndefined (String), "ValidationErrors" :: NullOrUndefined (ListOfValidationError') }
+  = ChannelConfigurationValidationError { "Message" :: Maybe (String), "ValidationErrors" :: Maybe (ListOfValidationError') }
 ```
 
 Placeholder documentation for ChannelConfigurationValidationError
@@ -1545,7 +1545,7 @@ Constructs ChannelConfigurationValidationError from required parameters
 #### `newChannelConfigurationValidationError'`
 
 ``` purescript
-newChannelConfigurationValidationError' :: ({ "Message" :: NullOrUndefined (String), "ValidationErrors" :: NullOrUndefined (ListOfValidationError') } -> { "Message" :: NullOrUndefined (String), "ValidationErrors" :: NullOrUndefined (ListOfValidationError') }) -> ChannelConfigurationValidationError
+newChannelConfigurationValidationError' :: ({ "Message" :: Maybe (String), "ValidationErrors" :: Maybe (ListOfValidationError') } -> { "Message" :: Maybe (String), "ValidationErrors" :: Maybe (ListOfValidationError') }) -> ChannelConfigurationValidationError
 ```
 
 Constructs ChannelConfigurationValidationError's fields from required parameters
@@ -1554,7 +1554,7 @@ Constructs ChannelConfigurationValidationError's fields from required parameters
 
 ``` purescript
 newtype ChannelEgressEndpoint
-  = ChannelEgressEndpoint { "SourceIp" :: NullOrUndefined (String) }
+  = ChannelEgressEndpoint { "SourceIp" :: Maybe (String) }
 ```
 
 Placeholder documentation for ChannelEgressEndpoint
@@ -1579,7 +1579,7 @@ Constructs ChannelEgressEndpoint from required parameters
 #### `newChannelEgressEndpoint'`
 
 ``` purescript
-newChannelEgressEndpoint' :: ({ "SourceIp" :: NullOrUndefined (String) } -> { "SourceIp" :: NullOrUndefined (String) }) -> ChannelEgressEndpoint
+newChannelEgressEndpoint' :: ({ "SourceIp" :: Maybe (String) } -> { "SourceIp" :: Maybe (String) }) -> ChannelEgressEndpoint
 ```
 
 Constructs ChannelEgressEndpoint's fields from required parameters
@@ -1606,7 +1606,7 @@ Encode ChannelState
 
 ``` purescript
 newtype ChannelSummary
-  = ChannelSummary { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }
+  = ChannelSummary { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }
 ```
 
 Placeholder documentation for ChannelSummary
@@ -1631,7 +1631,7 @@ Constructs ChannelSummary from required parameters
 #### `newChannelSummary'`
 
 ``` purescript
-newChannelSummary' :: ({ "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) } -> { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }) -> ChannelSummary
+newChannelSummary' :: ({ "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) } -> { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }) -> ChannelSummary
 ```
 
 Constructs ChannelSummary's fields from required parameters
@@ -1640,7 +1640,7 @@ Constructs ChannelSummary's fields from required parameters
 
 ``` purescript
 newtype ConflictException
-  = ConflictException { "Message" :: NullOrUndefined (String) }
+  = ConflictException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for ConflictException
@@ -1665,7 +1665,7 @@ Constructs ConflictException from required parameters
 #### `newConflictException'`
 
 ``` purescript
-newConflictException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ConflictException
+newConflictException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ConflictException
 ```
 
 Constructs ConflictException's fields from required parameters
@@ -1674,7 +1674,7 @@ Constructs ConflictException's fields from required parameters
 
 ``` purescript
 newtype CreateChannel
-  = CreateChannel { "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Reserved" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }
+  = CreateChannel { "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Reserved" :: Maybe (String), "RoleArn" :: Maybe (String) }
 ```
 
 Placeholder documentation for CreateChannel
@@ -1699,7 +1699,7 @@ Constructs CreateChannel from required parameters
 #### `newCreateChannel'`
 
 ``` purescript
-newCreateChannel' :: ({ "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Reserved" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) } -> { "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Reserved" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }) -> CreateChannel
+newCreateChannel' :: ({ "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Reserved" :: Maybe (String), "RoleArn" :: Maybe (String) } -> { "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Reserved" :: Maybe (String), "RoleArn" :: Maybe (String) }) -> CreateChannel
 ```
 
 Constructs CreateChannel's fields from required parameters
@@ -1708,7 +1708,7 @@ Constructs CreateChannel's fields from required parameters
 
 ``` purescript
 newtype CreateChannelRequest
-  = CreateChannelRequest { "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Reserved" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }
+  = CreateChannelRequest { "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Reserved" :: Maybe (String), "RoleArn" :: Maybe (String) }
 ```
 
 A request to create a channel
@@ -1733,7 +1733,7 @@ Constructs CreateChannelRequest from required parameters
 #### `newCreateChannelRequest'`
 
 ``` purescript
-newCreateChannelRequest' :: ({ "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Reserved" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) } -> { "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Reserved" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }) -> CreateChannelRequest
+newCreateChannelRequest' :: ({ "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Reserved" :: Maybe (String), "RoleArn" :: Maybe (String) } -> { "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Reserved" :: Maybe (String), "RoleArn" :: Maybe (String) }) -> CreateChannelRequest
 ```
 
 Constructs CreateChannelRequest's fields from required parameters
@@ -1742,7 +1742,7 @@ Constructs CreateChannelRequest's fields from required parameters
 
 ``` purescript
 newtype CreateChannelResponse
-  = CreateChannelResponse { "Channel" :: NullOrUndefined (Channel) }
+  = CreateChannelResponse { "Channel" :: Maybe (Channel) }
 ```
 
 Placeholder documentation for CreateChannelResponse
@@ -1767,7 +1767,7 @@ Constructs CreateChannelResponse from required parameters
 #### `newCreateChannelResponse'`
 
 ``` purescript
-newCreateChannelResponse' :: ({ "Channel" :: NullOrUndefined (Channel) } -> { "Channel" :: NullOrUndefined (Channel) }) -> CreateChannelResponse
+newCreateChannelResponse' :: ({ "Channel" :: Maybe (Channel) } -> { "Channel" :: Maybe (Channel) }) -> CreateChannelResponse
 ```
 
 Constructs CreateChannelResponse's fields from required parameters
@@ -1776,7 +1776,7 @@ Constructs CreateChannelResponse's fields from required parameters
 
 ``` purescript
 newtype CreateChannelResultModel
-  = CreateChannelResultModel { "Channel" :: NullOrUndefined (Channel) }
+  = CreateChannelResultModel { "Channel" :: Maybe (Channel) }
 ```
 
 Placeholder documentation for CreateChannelResultModel
@@ -1801,7 +1801,7 @@ Constructs CreateChannelResultModel from required parameters
 #### `newCreateChannelResultModel'`
 
 ``` purescript
-newCreateChannelResultModel' :: ({ "Channel" :: NullOrUndefined (Channel) } -> { "Channel" :: NullOrUndefined (Channel) }) -> CreateChannelResultModel
+newCreateChannelResultModel' :: ({ "Channel" :: Maybe (Channel) } -> { "Channel" :: Maybe (Channel) }) -> CreateChannelResultModel
 ```
 
 Constructs CreateChannelResultModel's fields from required parameters
@@ -1810,7 +1810,7 @@ Constructs CreateChannelResultModel's fields from required parameters
 
 ``` purescript
 newtype CreateInput
-  = CreateInput { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest'), "InputSecurityGroups" :: NullOrUndefined (ListOf__string'), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Sources" :: NullOrUndefined (ListOfInputSourceRequest'), "Type" :: NullOrUndefined (InputType) }
+  = CreateInput { "Destinations" :: Maybe (ListOfInputDestinationRequest'), "InputSecurityGroups" :: Maybe (ListOf__string'), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Sources" :: Maybe (ListOfInputSourceRequest'), "Type" :: Maybe (InputType) }
 ```
 
 Placeholder documentation for CreateInput
@@ -1835,7 +1835,7 @@ Constructs CreateInput from required parameters
 #### `newCreateInput'`
 
 ``` purescript
-newCreateInput' :: ({ "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest'), "InputSecurityGroups" :: NullOrUndefined (ListOf__string'), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Sources" :: NullOrUndefined (ListOfInputSourceRequest'), "Type" :: NullOrUndefined (InputType) } -> { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest'), "InputSecurityGroups" :: NullOrUndefined (ListOf__string'), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Sources" :: NullOrUndefined (ListOfInputSourceRequest'), "Type" :: NullOrUndefined (InputType) }) -> CreateInput
+newCreateInput' :: ({ "Destinations" :: Maybe (ListOfInputDestinationRequest'), "InputSecurityGroups" :: Maybe (ListOf__string'), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Sources" :: Maybe (ListOfInputSourceRequest'), "Type" :: Maybe (InputType) } -> { "Destinations" :: Maybe (ListOfInputDestinationRequest'), "InputSecurityGroups" :: Maybe (ListOf__string'), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Sources" :: Maybe (ListOfInputSourceRequest'), "Type" :: Maybe (InputType) }) -> CreateInput
 ```
 
 Constructs CreateInput's fields from required parameters
@@ -1844,7 +1844,7 @@ Constructs CreateInput's fields from required parameters
 
 ``` purescript
 newtype CreateInputRequest
-  = CreateInputRequest { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest'), "InputSecurityGroups" :: NullOrUndefined (ListOf__string'), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Sources" :: NullOrUndefined (ListOfInputSourceRequest'), "Type" :: NullOrUndefined (InputType) }
+  = CreateInputRequest { "Destinations" :: Maybe (ListOfInputDestinationRequest'), "InputSecurityGroups" :: Maybe (ListOf__string'), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Sources" :: Maybe (ListOfInputSourceRequest'), "Type" :: Maybe (InputType) }
 ```
 
 The name of the input
@@ -1869,7 +1869,7 @@ Constructs CreateInputRequest from required parameters
 #### `newCreateInputRequest'`
 
 ``` purescript
-newCreateInputRequest' :: ({ "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest'), "InputSecurityGroups" :: NullOrUndefined (ListOf__string'), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Sources" :: NullOrUndefined (ListOfInputSourceRequest'), "Type" :: NullOrUndefined (InputType) } -> { "Destinations" :: NullOrUndefined (ListOfInputDestinationRequest'), "InputSecurityGroups" :: NullOrUndefined (ListOf__string'), "Name" :: NullOrUndefined (String), "RequestId" :: NullOrUndefined (String), "Sources" :: NullOrUndefined (ListOfInputSourceRequest'), "Type" :: NullOrUndefined (InputType) }) -> CreateInputRequest
+newCreateInputRequest' :: ({ "Destinations" :: Maybe (ListOfInputDestinationRequest'), "InputSecurityGroups" :: Maybe (ListOf__string'), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Sources" :: Maybe (ListOfInputSourceRequest'), "Type" :: Maybe (InputType) } -> { "Destinations" :: Maybe (ListOfInputDestinationRequest'), "InputSecurityGroups" :: Maybe (ListOf__string'), "Name" :: Maybe (String), "RequestId" :: Maybe (String), "Sources" :: Maybe (ListOfInputSourceRequest'), "Type" :: Maybe (InputType) }) -> CreateInputRequest
 ```
 
 Constructs CreateInputRequest's fields from required parameters
@@ -1878,7 +1878,7 @@ Constructs CreateInputRequest's fields from required parameters
 
 ``` purescript
 newtype CreateInputResponse
-  = CreateInputResponse { "Input" :: NullOrUndefined (Input) }
+  = CreateInputResponse { "Input" :: Maybe (Input) }
 ```
 
 Placeholder documentation for CreateInputResponse
@@ -1903,7 +1903,7 @@ Constructs CreateInputResponse from required parameters
 #### `newCreateInputResponse'`
 
 ``` purescript
-newCreateInputResponse' :: ({ "Input" :: NullOrUndefined (Input) } -> { "Input" :: NullOrUndefined (Input) }) -> CreateInputResponse
+newCreateInputResponse' :: ({ "Input" :: Maybe (Input) } -> { "Input" :: Maybe (Input) }) -> CreateInputResponse
 ```
 
 Constructs CreateInputResponse's fields from required parameters
@@ -1912,7 +1912,7 @@ Constructs CreateInputResponse's fields from required parameters
 
 ``` purescript
 newtype CreateInputResultModel
-  = CreateInputResultModel { "Input" :: NullOrUndefined (Input) }
+  = CreateInputResultModel { "Input" :: Maybe (Input) }
 ```
 
 Placeholder documentation for CreateInputResultModel
@@ -1937,7 +1937,7 @@ Constructs CreateInputResultModel from required parameters
 #### `newCreateInputResultModel'`
 
 ``` purescript
-newCreateInputResultModel' :: ({ "Input" :: NullOrUndefined (Input) } -> { "Input" :: NullOrUndefined (Input) }) -> CreateInputResultModel
+newCreateInputResultModel' :: ({ "Input" :: Maybe (Input) } -> { "Input" :: Maybe (Input) }) -> CreateInputResultModel
 ```
 
 Constructs CreateInputResultModel's fields from required parameters
@@ -1946,7 +1946,7 @@ Constructs CreateInputResultModel's fields from required parameters
 
 ``` purescript
 newtype CreateInputSecurityGroupRequest
-  = CreateInputSecurityGroupRequest { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') }
+  = CreateInputSecurityGroupRequest { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') }
 ```
 
 The IPv4 CIDRs to whitelist for this Input Security Group
@@ -1971,7 +1971,7 @@ Constructs CreateInputSecurityGroupRequest from required parameters
 #### `newCreateInputSecurityGroupRequest'`
 
 ``` purescript
-newCreateInputSecurityGroupRequest' :: ({ "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') } -> { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') }) -> CreateInputSecurityGroupRequest
+newCreateInputSecurityGroupRequest' :: ({ "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') } -> { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') }) -> CreateInputSecurityGroupRequest
 ```
 
 Constructs CreateInputSecurityGroupRequest's fields from required parameters
@@ -1980,7 +1980,7 @@ Constructs CreateInputSecurityGroupRequest's fields from required parameters
 
 ``` purescript
 newtype CreateInputSecurityGroupResponse
-  = CreateInputSecurityGroupResponse { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) }
+  = CreateInputSecurityGroupResponse { "SecurityGroup" :: Maybe (InputSecurityGroup) }
 ```
 
 Placeholder documentation for CreateInputSecurityGroupResponse
@@ -2005,7 +2005,7 @@ Constructs CreateInputSecurityGroupResponse from required parameters
 #### `newCreateInputSecurityGroupResponse'`
 
 ``` purescript
-newCreateInputSecurityGroupResponse' :: ({ "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) } -> { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) }) -> CreateInputSecurityGroupResponse
+newCreateInputSecurityGroupResponse' :: ({ "SecurityGroup" :: Maybe (InputSecurityGroup) } -> { "SecurityGroup" :: Maybe (InputSecurityGroup) }) -> CreateInputSecurityGroupResponse
 ```
 
 Constructs CreateInputSecurityGroupResponse's fields from required parameters
@@ -2014,7 +2014,7 @@ Constructs CreateInputSecurityGroupResponse's fields from required parameters
 
 ``` purescript
 newtype CreateInputSecurityGroupResultModel
-  = CreateInputSecurityGroupResultModel { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) }
+  = CreateInputSecurityGroupResultModel { "SecurityGroup" :: Maybe (InputSecurityGroup) }
 ```
 
 Placeholder documentation for CreateInputSecurityGroupResultModel
@@ -2039,7 +2039,7 @@ Constructs CreateInputSecurityGroupResultModel from required parameters
 #### `newCreateInputSecurityGroupResultModel'`
 
 ``` purescript
-newCreateInputSecurityGroupResultModel' :: ({ "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) } -> { "SecurityGroup" :: NullOrUndefined (InputSecurityGroup) }) -> CreateInputSecurityGroupResultModel
+newCreateInputSecurityGroupResultModel' :: ({ "SecurityGroup" :: Maybe (InputSecurityGroup) } -> { "SecurityGroup" :: Maybe (InputSecurityGroup) }) -> CreateInputSecurityGroupResultModel
 ```
 
 Constructs CreateInputSecurityGroupResultModel's fields from required parameters
@@ -2082,7 +2082,7 @@ Constructs DeleteChannelRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteChannelResponse
-  = DeleteChannelResponse { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }
+  = DeleteChannelResponse { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }
 ```
 
 Placeholder documentation for DeleteChannelResponse
@@ -2107,7 +2107,7 @@ Constructs DeleteChannelResponse from required parameters
 #### `newDeleteChannelResponse'`
 
 ``` purescript
-newDeleteChannelResponse' :: ({ "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) } -> { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }) -> DeleteChannelResponse
+newDeleteChannelResponse' :: ({ "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) } -> { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }) -> DeleteChannelResponse
 ```
 
 Constructs DeleteChannelResponse's fields from required parameters
@@ -2254,7 +2254,7 @@ Constructs DescribeChannelRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeChannelResponse
-  = DescribeChannelResponse { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }
+  = DescribeChannelResponse { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }
 ```
 
 Placeholder documentation for DescribeChannelResponse
@@ -2279,7 +2279,7 @@ Constructs DescribeChannelResponse from required parameters
 #### `newDescribeChannelResponse'`
 
 ``` purescript
-newDescribeChannelResponse' :: ({ "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) } -> { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }) -> DescribeChannelResponse
+newDescribeChannelResponse' :: ({ "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) } -> { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }) -> DescribeChannelResponse
 ```
 
 Constructs DescribeChannelResponse's fields from required parameters
@@ -2322,7 +2322,7 @@ Constructs DescribeInputRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeInputResponse
-  = DescribeInputResponse { "Arn" :: NullOrUndefined (String), "AttachedChannels" :: NullOrUndefined (ListOf__string'), "Destinations" :: NullOrUndefined (ListOfInputDestination'), "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (ListOf__string'), "Sources" :: NullOrUndefined (ListOfInputSource'), "State" :: NullOrUndefined (InputState), "Type" :: NullOrUndefined (InputType) }
+  = DescribeInputResponse { "Arn" :: Maybe (String), "AttachedChannels" :: Maybe (ListOf__string'), "Destinations" :: Maybe (ListOfInputDestination'), "Id" :: Maybe (String), "Name" :: Maybe (String), "SecurityGroups" :: Maybe (ListOf__string'), "Sources" :: Maybe (ListOfInputSource'), "State" :: Maybe (InputState), "Type" :: Maybe (InputType) }
 ```
 
 Placeholder documentation for DescribeInputResponse
@@ -2347,7 +2347,7 @@ Constructs DescribeInputResponse from required parameters
 #### `newDescribeInputResponse'`
 
 ``` purescript
-newDescribeInputResponse' :: ({ "Arn" :: NullOrUndefined (String), "AttachedChannels" :: NullOrUndefined (ListOf__string'), "Destinations" :: NullOrUndefined (ListOfInputDestination'), "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (ListOf__string'), "Sources" :: NullOrUndefined (ListOfInputSource'), "State" :: NullOrUndefined (InputState), "Type" :: NullOrUndefined (InputType) } -> { "Arn" :: NullOrUndefined (String), "AttachedChannels" :: NullOrUndefined (ListOf__string'), "Destinations" :: NullOrUndefined (ListOfInputDestination'), "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (ListOf__string'), "Sources" :: NullOrUndefined (ListOfInputSource'), "State" :: NullOrUndefined (InputState), "Type" :: NullOrUndefined (InputType) }) -> DescribeInputResponse
+newDescribeInputResponse' :: ({ "Arn" :: Maybe (String), "AttachedChannels" :: Maybe (ListOf__string'), "Destinations" :: Maybe (ListOfInputDestination'), "Id" :: Maybe (String), "Name" :: Maybe (String), "SecurityGroups" :: Maybe (ListOf__string'), "Sources" :: Maybe (ListOfInputSource'), "State" :: Maybe (InputState), "Type" :: Maybe (InputType) } -> { "Arn" :: Maybe (String), "AttachedChannels" :: Maybe (ListOf__string'), "Destinations" :: Maybe (ListOfInputDestination'), "Id" :: Maybe (String), "Name" :: Maybe (String), "SecurityGroups" :: Maybe (ListOf__string'), "Sources" :: Maybe (ListOfInputSource'), "State" :: Maybe (InputState), "Type" :: Maybe (InputType) }) -> DescribeInputResponse
 ```
 
 Constructs DescribeInputResponse's fields from required parameters
@@ -2390,7 +2390,7 @@ Constructs DescribeInputSecurityGroupRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeInputSecurityGroupResponse
-  = DescribeInputSecurityGroupResponse { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') }
+  = DescribeInputSecurityGroupResponse { "Arn" :: Maybe (String), "Id" :: Maybe (String), "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') }
 ```
 
 Placeholder documentation for DescribeInputSecurityGroupResponse
@@ -2415,7 +2415,7 @@ Constructs DescribeInputSecurityGroupResponse from required parameters
 #### `newDescribeInputSecurityGroupResponse'`
 
 ``` purescript
-newDescribeInputSecurityGroupResponse' :: ({ "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') } -> { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') }) -> DescribeInputSecurityGroupResponse
+newDescribeInputSecurityGroupResponse' :: ({ "Arn" :: Maybe (String), "Id" :: Maybe (String), "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') } -> { "Arn" :: Maybe (String), "Id" :: Maybe (String), "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') }) -> DescribeInputSecurityGroupResponse
 ```
 
 Constructs DescribeInputSecurityGroupResponse's fields from required parameters
@@ -2424,7 +2424,7 @@ Constructs DescribeInputSecurityGroupResponse's fields from required parameters
 
 ``` purescript
 newtype DvbNitSettings
-  = DvbNitSettings { "NetworkId" :: IntegerMin0Max65536', "NetworkName" :: StringMin1Max256', "RepInterval" :: NullOrUndefined (IntegerMin25Max10000') }
+  = DvbNitSettings { "NetworkId" :: IntegerMin0Max65536', "NetworkName" :: StringMin1Max256', "RepInterval" :: Maybe (IntegerMin25Max10000') }
 ```
 
 DVB Network Information Table (NIT)
@@ -2449,7 +2449,7 @@ Constructs DvbNitSettings from required parameters
 #### `newDvbNitSettings'`
 
 ``` purescript
-newDvbNitSettings' :: IntegerMin0Max65536' -> StringMin1Max256' -> ({ "NetworkId" :: IntegerMin0Max65536', "NetworkName" :: StringMin1Max256', "RepInterval" :: NullOrUndefined (IntegerMin25Max10000') } -> { "NetworkId" :: IntegerMin0Max65536', "NetworkName" :: StringMin1Max256', "RepInterval" :: NullOrUndefined (IntegerMin25Max10000') }) -> DvbNitSettings
+newDvbNitSettings' :: IntegerMin0Max65536' -> StringMin1Max256' -> ({ "NetworkId" :: IntegerMin0Max65536', "NetworkName" :: StringMin1Max256', "RepInterval" :: Maybe (IntegerMin25Max10000') } -> { "NetworkId" :: IntegerMin0Max65536', "NetworkName" :: StringMin1Max256', "RepInterval" :: Maybe (IntegerMin25Max10000') }) -> DvbNitSettings
 ```
 
 Constructs DvbNitSettings's fields from required parameters
@@ -2476,7 +2476,7 @@ Encode DvbSdtOutputSdt
 
 ``` purescript
 newtype DvbSdtSettings
-  = DvbSdtSettings { "OutputSdt" :: NullOrUndefined (DvbSdtOutputSdt), "RepInterval" :: NullOrUndefined (IntegerMin25Max2000'), "ServiceName" :: NullOrUndefined (StringMin1Max256'), "ServiceProviderName" :: NullOrUndefined (StringMin1Max256') }
+  = DvbSdtSettings { "OutputSdt" :: Maybe (DvbSdtOutputSdt), "RepInterval" :: Maybe (IntegerMin25Max2000'), "ServiceName" :: Maybe (StringMin1Max256'), "ServiceProviderName" :: Maybe (StringMin1Max256') }
 ```
 
 DVB Service Description Table (SDT)
@@ -2501,7 +2501,7 @@ Constructs DvbSdtSettings from required parameters
 #### `newDvbSdtSettings'`
 
 ``` purescript
-newDvbSdtSettings' :: ({ "OutputSdt" :: NullOrUndefined (DvbSdtOutputSdt), "RepInterval" :: NullOrUndefined (IntegerMin25Max2000'), "ServiceName" :: NullOrUndefined (StringMin1Max256'), "ServiceProviderName" :: NullOrUndefined (StringMin1Max256') } -> { "OutputSdt" :: NullOrUndefined (DvbSdtOutputSdt), "RepInterval" :: NullOrUndefined (IntegerMin25Max2000'), "ServiceName" :: NullOrUndefined (StringMin1Max256'), "ServiceProviderName" :: NullOrUndefined (StringMin1Max256') }) -> DvbSdtSettings
+newDvbSdtSettings' :: ({ "OutputSdt" :: Maybe (DvbSdtOutputSdt), "RepInterval" :: Maybe (IntegerMin25Max2000'), "ServiceName" :: Maybe (StringMin1Max256'), "ServiceProviderName" :: Maybe (StringMin1Max256') } -> { "OutputSdt" :: Maybe (DvbSdtOutputSdt), "RepInterval" :: Maybe (IntegerMin25Max2000'), "ServiceName" :: Maybe (StringMin1Max256'), "ServiceProviderName" :: Maybe (StringMin1Max256') }) -> DvbSdtSettings
 ```
 
 Constructs DvbSdtSettings's fields from required parameters
@@ -2582,7 +2582,7 @@ Encode DvbSubDestinationOutlineColor
 
 ``` purescript
 newtype DvbSubDestinationSettings
-  = DvbSubDestinationSettings { "Alignment" :: NullOrUndefined (DvbSubDestinationAlignment), "BackgroundColor" :: NullOrUndefined (DvbSubDestinationBackgroundColor), "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255'), "Font" :: NullOrUndefined (InputLocation), "FontColor" :: NullOrUndefined (DvbSubDestinationFontColor), "FontOpacity" :: NullOrUndefined (IntegerMin0Max255'), "FontResolution" :: NullOrUndefined (IntegerMin96Max600'), "FontSize" :: NullOrUndefined (String), "OutlineColor" :: NullOrUndefined (DvbSubDestinationOutlineColor), "OutlineSize" :: NullOrUndefined (IntegerMin0Max10'), "ShadowColor" :: NullOrUndefined (DvbSubDestinationShadowColor), "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255'), "ShadowXOffset" :: NullOrUndefined (Int), "ShadowYOffset" :: NullOrUndefined (Int), "TeletextGridControl" :: NullOrUndefined (DvbSubDestinationTeletextGridControl), "XPosition" :: NullOrUndefined (IntegerMin0'), "YPosition" :: NullOrUndefined (IntegerMin0') }
+  = DvbSubDestinationSettings { "Alignment" :: Maybe (DvbSubDestinationAlignment), "BackgroundColor" :: Maybe (DvbSubDestinationBackgroundColor), "BackgroundOpacity" :: Maybe (IntegerMin0Max255'), "Font" :: Maybe (InputLocation), "FontColor" :: Maybe (DvbSubDestinationFontColor), "FontOpacity" :: Maybe (IntegerMin0Max255'), "FontResolution" :: Maybe (IntegerMin96Max600'), "FontSize" :: Maybe (String), "OutlineColor" :: Maybe (DvbSubDestinationOutlineColor), "OutlineSize" :: Maybe (IntegerMin0Max10'), "ShadowColor" :: Maybe (DvbSubDestinationShadowColor), "ShadowOpacity" :: Maybe (IntegerMin0Max255'), "ShadowXOffset" :: Maybe (Int), "ShadowYOffset" :: Maybe (Int), "TeletextGridControl" :: Maybe (DvbSubDestinationTeletextGridControl), "XPosition" :: Maybe (IntegerMin0'), "YPosition" :: Maybe (IntegerMin0') }
 ```
 
 Placeholder documentation for DvbSubDestinationSettings
@@ -2607,7 +2607,7 @@ Constructs DvbSubDestinationSettings from required parameters
 #### `newDvbSubDestinationSettings'`
 
 ``` purescript
-newDvbSubDestinationSettings' :: ({ "Alignment" :: NullOrUndefined (DvbSubDestinationAlignment), "BackgroundColor" :: NullOrUndefined (DvbSubDestinationBackgroundColor), "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255'), "Font" :: NullOrUndefined (InputLocation), "FontColor" :: NullOrUndefined (DvbSubDestinationFontColor), "FontOpacity" :: NullOrUndefined (IntegerMin0Max255'), "FontResolution" :: NullOrUndefined (IntegerMin96Max600'), "FontSize" :: NullOrUndefined (String), "OutlineColor" :: NullOrUndefined (DvbSubDestinationOutlineColor), "OutlineSize" :: NullOrUndefined (IntegerMin0Max10'), "ShadowColor" :: NullOrUndefined (DvbSubDestinationShadowColor), "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255'), "ShadowXOffset" :: NullOrUndefined (Int), "ShadowYOffset" :: NullOrUndefined (Int), "TeletextGridControl" :: NullOrUndefined (DvbSubDestinationTeletextGridControl), "XPosition" :: NullOrUndefined (IntegerMin0'), "YPosition" :: NullOrUndefined (IntegerMin0') } -> { "Alignment" :: NullOrUndefined (DvbSubDestinationAlignment), "BackgroundColor" :: NullOrUndefined (DvbSubDestinationBackgroundColor), "BackgroundOpacity" :: NullOrUndefined (IntegerMin0Max255'), "Font" :: NullOrUndefined (InputLocation), "FontColor" :: NullOrUndefined (DvbSubDestinationFontColor), "FontOpacity" :: NullOrUndefined (IntegerMin0Max255'), "FontResolution" :: NullOrUndefined (IntegerMin96Max600'), "FontSize" :: NullOrUndefined (String), "OutlineColor" :: NullOrUndefined (DvbSubDestinationOutlineColor), "OutlineSize" :: NullOrUndefined (IntegerMin0Max10'), "ShadowColor" :: NullOrUndefined (DvbSubDestinationShadowColor), "ShadowOpacity" :: NullOrUndefined (IntegerMin0Max255'), "ShadowXOffset" :: NullOrUndefined (Int), "ShadowYOffset" :: NullOrUndefined (Int), "TeletextGridControl" :: NullOrUndefined (DvbSubDestinationTeletextGridControl), "XPosition" :: NullOrUndefined (IntegerMin0'), "YPosition" :: NullOrUndefined (IntegerMin0') }) -> DvbSubDestinationSettings
+newDvbSubDestinationSettings' :: ({ "Alignment" :: Maybe (DvbSubDestinationAlignment), "BackgroundColor" :: Maybe (DvbSubDestinationBackgroundColor), "BackgroundOpacity" :: Maybe (IntegerMin0Max255'), "Font" :: Maybe (InputLocation), "FontColor" :: Maybe (DvbSubDestinationFontColor), "FontOpacity" :: Maybe (IntegerMin0Max255'), "FontResolution" :: Maybe (IntegerMin96Max600'), "FontSize" :: Maybe (String), "OutlineColor" :: Maybe (DvbSubDestinationOutlineColor), "OutlineSize" :: Maybe (IntegerMin0Max10'), "ShadowColor" :: Maybe (DvbSubDestinationShadowColor), "ShadowOpacity" :: Maybe (IntegerMin0Max255'), "ShadowXOffset" :: Maybe (Int), "ShadowYOffset" :: Maybe (Int), "TeletextGridControl" :: Maybe (DvbSubDestinationTeletextGridControl), "XPosition" :: Maybe (IntegerMin0'), "YPosition" :: Maybe (IntegerMin0') } -> { "Alignment" :: Maybe (DvbSubDestinationAlignment), "BackgroundColor" :: Maybe (DvbSubDestinationBackgroundColor), "BackgroundOpacity" :: Maybe (IntegerMin0Max255'), "Font" :: Maybe (InputLocation), "FontColor" :: Maybe (DvbSubDestinationFontColor), "FontOpacity" :: Maybe (IntegerMin0Max255'), "FontResolution" :: Maybe (IntegerMin96Max600'), "FontSize" :: Maybe (String), "OutlineColor" :: Maybe (DvbSubDestinationOutlineColor), "OutlineSize" :: Maybe (IntegerMin0Max10'), "ShadowColor" :: Maybe (DvbSubDestinationShadowColor), "ShadowOpacity" :: Maybe (IntegerMin0Max255'), "ShadowXOffset" :: Maybe (Int), "ShadowYOffset" :: Maybe (Int), "TeletextGridControl" :: Maybe (DvbSubDestinationTeletextGridControl), "XPosition" :: Maybe (IntegerMin0'), "YPosition" :: Maybe (IntegerMin0') }) -> DvbSubDestinationSettings
 ```
 
 Constructs DvbSubDestinationSettings's fields from required parameters
@@ -2652,7 +2652,7 @@ Encode DvbSubDestinationTeletextGridControl
 
 ``` purescript
 newtype DvbSubSourceSettings
-  = DvbSubSourceSettings { "Pid" :: NullOrUndefined (IntegerMin1') }
+  = DvbSubSourceSettings { "Pid" :: Maybe (IntegerMin1') }
 ```
 
 Placeholder documentation for DvbSubSourceSettings
@@ -2677,7 +2677,7 @@ Constructs DvbSubSourceSettings from required parameters
 #### `newDvbSubSourceSettings'`
 
 ``` purescript
-newDvbSubSourceSettings' :: ({ "Pid" :: NullOrUndefined (IntegerMin1') } -> { "Pid" :: NullOrUndefined (IntegerMin1') }) -> DvbSubSourceSettings
+newDvbSubSourceSettings' :: ({ "Pid" :: Maybe (IntegerMin1') } -> { "Pid" :: Maybe (IntegerMin1') }) -> DvbSubSourceSettings
 ```
 
 Constructs DvbSubSourceSettings's fields from required parameters
@@ -2686,7 +2686,7 @@ Constructs DvbSubSourceSettings's fields from required parameters
 
 ``` purescript
 newtype DvbTdtSettings
-  = DvbTdtSettings { "RepInterval" :: NullOrUndefined (IntegerMin1000Max30000') }
+  = DvbTdtSettings { "RepInterval" :: Maybe (IntegerMin1000Max30000') }
 ```
 
 DVB Time and Date Table (SDT)
@@ -2711,7 +2711,7 @@ Constructs DvbTdtSettings from required parameters
 #### `newDvbTdtSettings'`
 
 ``` purescript
-newDvbTdtSettings' :: ({ "RepInterval" :: NullOrUndefined (IntegerMin1000Max30000') } -> { "RepInterval" :: NullOrUndefined (IntegerMin1000Max30000') }) -> DvbTdtSettings
+newDvbTdtSettings' :: ({ "RepInterval" :: Maybe (IntegerMin1000Max30000') } -> { "RepInterval" :: Maybe (IntegerMin1000Max30000') }) -> DvbTdtSettings
 ```
 
 Constructs DvbTdtSettings's fields from required parameters
@@ -2918,7 +2918,7 @@ Encode Eac3PhaseControl
 
 ``` purescript
 newtype Eac3Settings
-  = Eac3Settings { "AttenuationControl" :: NullOrUndefined (Eac3AttenuationControl), "Bitrate" :: NullOrUndefined (Number), "BitstreamMode" :: NullOrUndefined (Eac3BitstreamMode), "CodingMode" :: NullOrUndefined (Eac3CodingMode), "DcFilter" :: NullOrUndefined (Eac3DcFilter), "Dialnorm" :: NullOrUndefined (IntegerMin1Max31'), "DrcLine" :: NullOrUndefined (Eac3DrcLine), "DrcRf" :: NullOrUndefined (Eac3DrcRf), "LfeControl" :: NullOrUndefined (Eac3LfeControl), "LfeFilter" :: NullOrUndefined (Eac3LfeFilter), "LoRoCenterMixLevel" :: NullOrUndefined (Number), "LoRoSurroundMixLevel" :: NullOrUndefined (Number), "LtRtCenterMixLevel" :: NullOrUndefined (Number), "LtRtSurroundMixLevel" :: NullOrUndefined (Number), "MetadataControl" :: NullOrUndefined (Eac3MetadataControl), "PassthroughControl" :: NullOrUndefined (Eac3PassthroughControl), "PhaseControl" :: NullOrUndefined (Eac3PhaseControl), "StereoDownmix" :: NullOrUndefined (Eac3StereoDownmix), "SurroundExMode" :: NullOrUndefined (Eac3SurroundExMode), "SurroundMode" :: NullOrUndefined (Eac3SurroundMode) }
+  = Eac3Settings { "AttenuationControl" :: Maybe (Eac3AttenuationControl), "Bitrate" :: Maybe (Number), "BitstreamMode" :: Maybe (Eac3BitstreamMode), "CodingMode" :: Maybe (Eac3CodingMode), "DcFilter" :: Maybe (Eac3DcFilter), "Dialnorm" :: Maybe (IntegerMin1Max31'), "DrcLine" :: Maybe (Eac3DrcLine), "DrcRf" :: Maybe (Eac3DrcRf), "LfeControl" :: Maybe (Eac3LfeControl), "LfeFilter" :: Maybe (Eac3LfeFilter), "LoRoCenterMixLevel" :: Maybe (Number), "LoRoSurroundMixLevel" :: Maybe (Number), "LtRtCenterMixLevel" :: Maybe (Number), "LtRtSurroundMixLevel" :: Maybe (Number), "MetadataControl" :: Maybe (Eac3MetadataControl), "PassthroughControl" :: Maybe (Eac3PassthroughControl), "PhaseControl" :: Maybe (Eac3PhaseControl), "StereoDownmix" :: Maybe (Eac3StereoDownmix), "SurroundExMode" :: Maybe (Eac3SurroundExMode), "SurroundMode" :: Maybe (Eac3SurroundMode) }
 ```
 
 Placeholder documentation for Eac3Settings
@@ -2943,7 +2943,7 @@ Constructs Eac3Settings from required parameters
 #### `newEac3Settings'`
 
 ``` purescript
-newEac3Settings' :: ({ "AttenuationControl" :: NullOrUndefined (Eac3AttenuationControl), "Bitrate" :: NullOrUndefined (Number), "BitstreamMode" :: NullOrUndefined (Eac3BitstreamMode), "CodingMode" :: NullOrUndefined (Eac3CodingMode), "DcFilter" :: NullOrUndefined (Eac3DcFilter), "Dialnorm" :: NullOrUndefined (IntegerMin1Max31'), "DrcLine" :: NullOrUndefined (Eac3DrcLine), "DrcRf" :: NullOrUndefined (Eac3DrcRf), "LfeControl" :: NullOrUndefined (Eac3LfeControl), "LfeFilter" :: NullOrUndefined (Eac3LfeFilter), "LoRoCenterMixLevel" :: NullOrUndefined (Number), "LoRoSurroundMixLevel" :: NullOrUndefined (Number), "LtRtCenterMixLevel" :: NullOrUndefined (Number), "LtRtSurroundMixLevel" :: NullOrUndefined (Number), "MetadataControl" :: NullOrUndefined (Eac3MetadataControl), "PassthroughControl" :: NullOrUndefined (Eac3PassthroughControl), "PhaseControl" :: NullOrUndefined (Eac3PhaseControl), "StereoDownmix" :: NullOrUndefined (Eac3StereoDownmix), "SurroundExMode" :: NullOrUndefined (Eac3SurroundExMode), "SurroundMode" :: NullOrUndefined (Eac3SurroundMode) } -> { "AttenuationControl" :: NullOrUndefined (Eac3AttenuationControl), "Bitrate" :: NullOrUndefined (Number), "BitstreamMode" :: NullOrUndefined (Eac3BitstreamMode), "CodingMode" :: NullOrUndefined (Eac3CodingMode), "DcFilter" :: NullOrUndefined (Eac3DcFilter), "Dialnorm" :: NullOrUndefined (IntegerMin1Max31'), "DrcLine" :: NullOrUndefined (Eac3DrcLine), "DrcRf" :: NullOrUndefined (Eac3DrcRf), "LfeControl" :: NullOrUndefined (Eac3LfeControl), "LfeFilter" :: NullOrUndefined (Eac3LfeFilter), "LoRoCenterMixLevel" :: NullOrUndefined (Number), "LoRoSurroundMixLevel" :: NullOrUndefined (Number), "LtRtCenterMixLevel" :: NullOrUndefined (Number), "LtRtSurroundMixLevel" :: NullOrUndefined (Number), "MetadataControl" :: NullOrUndefined (Eac3MetadataControl), "PassthroughControl" :: NullOrUndefined (Eac3PassthroughControl), "PhaseControl" :: NullOrUndefined (Eac3PhaseControl), "StereoDownmix" :: NullOrUndefined (Eac3StereoDownmix), "SurroundExMode" :: NullOrUndefined (Eac3SurroundExMode), "SurroundMode" :: NullOrUndefined (Eac3SurroundMode) }) -> Eac3Settings
+newEac3Settings' :: ({ "AttenuationControl" :: Maybe (Eac3AttenuationControl), "Bitrate" :: Maybe (Number), "BitstreamMode" :: Maybe (Eac3BitstreamMode), "CodingMode" :: Maybe (Eac3CodingMode), "DcFilter" :: Maybe (Eac3DcFilter), "Dialnorm" :: Maybe (IntegerMin1Max31'), "DrcLine" :: Maybe (Eac3DrcLine), "DrcRf" :: Maybe (Eac3DrcRf), "LfeControl" :: Maybe (Eac3LfeControl), "LfeFilter" :: Maybe (Eac3LfeFilter), "LoRoCenterMixLevel" :: Maybe (Number), "LoRoSurroundMixLevel" :: Maybe (Number), "LtRtCenterMixLevel" :: Maybe (Number), "LtRtSurroundMixLevel" :: Maybe (Number), "MetadataControl" :: Maybe (Eac3MetadataControl), "PassthroughControl" :: Maybe (Eac3PassthroughControl), "PhaseControl" :: Maybe (Eac3PhaseControl), "StereoDownmix" :: Maybe (Eac3StereoDownmix), "SurroundExMode" :: Maybe (Eac3SurroundExMode), "SurroundMode" :: Maybe (Eac3SurroundMode) } -> { "AttenuationControl" :: Maybe (Eac3AttenuationControl), "Bitrate" :: Maybe (Number), "BitstreamMode" :: Maybe (Eac3BitstreamMode), "CodingMode" :: Maybe (Eac3CodingMode), "DcFilter" :: Maybe (Eac3DcFilter), "Dialnorm" :: Maybe (IntegerMin1Max31'), "DrcLine" :: Maybe (Eac3DrcLine), "DrcRf" :: Maybe (Eac3DrcRf), "LfeControl" :: Maybe (Eac3LfeControl), "LfeFilter" :: Maybe (Eac3LfeFilter), "LoRoCenterMixLevel" :: Maybe (Number), "LoRoSurroundMixLevel" :: Maybe (Number), "LtRtCenterMixLevel" :: Maybe (Number), "LtRtSurroundMixLevel" :: Maybe (Number), "MetadataControl" :: Maybe (Eac3MetadataControl), "PassthroughControl" :: Maybe (Eac3PassthroughControl), "PhaseControl" :: Maybe (Eac3PhaseControl), "StereoDownmix" :: Maybe (Eac3StereoDownmix), "SurroundExMode" :: Maybe (Eac3SurroundExMode), "SurroundMode" :: Maybe (Eac3SurroundMode) }) -> Eac3Settings
 ```
 
 Constructs Eac3Settings's fields from required parameters
@@ -3078,7 +3078,7 @@ Encode EmbeddedScte20Detection
 
 ``` purescript
 newtype EmbeddedSourceSettings
-  = EmbeddedSourceSettings { "Convert608To708" :: NullOrUndefined (EmbeddedConvert608To708), "Scte20Detection" :: NullOrUndefined (EmbeddedScte20Detection), "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4'), "Source608TrackNumber" :: NullOrUndefined (IntegerMin1Max5') }
+  = EmbeddedSourceSettings { "Convert608To708" :: Maybe (EmbeddedConvert608To708), "Scte20Detection" :: Maybe (EmbeddedScte20Detection), "Source608ChannelNumber" :: Maybe (IntegerMin1Max4'), "Source608TrackNumber" :: Maybe (IntegerMin1Max5') }
 ```
 
 Placeholder documentation for EmbeddedSourceSettings
@@ -3103,7 +3103,7 @@ Constructs EmbeddedSourceSettings from required parameters
 #### `newEmbeddedSourceSettings'`
 
 ``` purescript
-newEmbeddedSourceSettings' :: ({ "Convert608To708" :: NullOrUndefined (EmbeddedConvert608To708), "Scte20Detection" :: NullOrUndefined (EmbeddedScte20Detection), "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4'), "Source608TrackNumber" :: NullOrUndefined (IntegerMin1Max5') } -> { "Convert608To708" :: NullOrUndefined (EmbeddedConvert608To708), "Scte20Detection" :: NullOrUndefined (EmbeddedScte20Detection), "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4'), "Source608TrackNumber" :: NullOrUndefined (IntegerMin1Max5') }) -> EmbeddedSourceSettings
+newEmbeddedSourceSettings' :: ({ "Convert608To708" :: Maybe (EmbeddedConvert608To708), "Scte20Detection" :: Maybe (EmbeddedScte20Detection), "Source608ChannelNumber" :: Maybe (IntegerMin1Max4'), "Source608TrackNumber" :: Maybe (IntegerMin1Max5') } -> { "Convert608To708" :: Maybe (EmbeddedConvert608To708), "Scte20Detection" :: Maybe (EmbeddedScte20Detection), "Source608ChannelNumber" :: Maybe (IntegerMin1Max4'), "Source608TrackNumber" :: Maybe (IntegerMin1Max5') }) -> EmbeddedSourceSettings
 ```
 
 Constructs EmbeddedSourceSettings's fields from required parameters
@@ -3130,7 +3130,7 @@ Encode Empty
 
 ``` purescript
 newtype EncoderSettings
-  = EncoderSettings { "AudioDescriptions" :: ListOfAudioDescription', "AvailBlanking" :: NullOrUndefined (AvailBlanking), "AvailConfiguration" :: NullOrUndefined (AvailConfiguration), "BlackoutSlate" :: NullOrUndefined (BlackoutSlate), "CaptionDescriptions" :: NullOrUndefined (ListOfCaptionDescription'), "GlobalConfiguration" :: NullOrUndefined (GlobalConfiguration), "OutputGroups" :: ListOfOutputGroup', "TimecodeConfig" :: TimecodeConfig, "VideoDescriptions" :: ListOfVideoDescription' }
+  = EncoderSettings { "AudioDescriptions" :: ListOfAudioDescription', "AvailBlanking" :: Maybe (AvailBlanking), "AvailConfiguration" :: Maybe (AvailConfiguration), "BlackoutSlate" :: Maybe (BlackoutSlate), "CaptionDescriptions" :: Maybe (ListOfCaptionDescription'), "GlobalConfiguration" :: Maybe (GlobalConfiguration), "OutputGroups" :: ListOfOutputGroup', "TimecodeConfig" :: TimecodeConfig, "VideoDescriptions" :: ListOfVideoDescription' }
 ```
 
 Placeholder documentation for EncoderSettings
@@ -3155,7 +3155,7 @@ Constructs EncoderSettings from required parameters
 #### `newEncoderSettings'`
 
 ``` purescript
-newEncoderSettings' :: ListOfAudioDescription' -> ListOfOutputGroup' -> TimecodeConfig -> ListOfVideoDescription' -> ({ "AudioDescriptions" :: ListOfAudioDescription', "AvailBlanking" :: NullOrUndefined (AvailBlanking), "AvailConfiguration" :: NullOrUndefined (AvailConfiguration), "BlackoutSlate" :: NullOrUndefined (BlackoutSlate), "CaptionDescriptions" :: NullOrUndefined (ListOfCaptionDescription'), "GlobalConfiguration" :: NullOrUndefined (GlobalConfiguration), "OutputGroups" :: ListOfOutputGroup', "TimecodeConfig" :: TimecodeConfig, "VideoDescriptions" :: ListOfVideoDescription' } -> { "AudioDescriptions" :: ListOfAudioDescription', "AvailBlanking" :: NullOrUndefined (AvailBlanking), "AvailConfiguration" :: NullOrUndefined (AvailConfiguration), "BlackoutSlate" :: NullOrUndefined (BlackoutSlate), "CaptionDescriptions" :: NullOrUndefined (ListOfCaptionDescription'), "GlobalConfiguration" :: NullOrUndefined (GlobalConfiguration), "OutputGroups" :: ListOfOutputGroup', "TimecodeConfig" :: TimecodeConfig, "VideoDescriptions" :: ListOfVideoDescription' }) -> EncoderSettings
+newEncoderSettings' :: ListOfAudioDescription' -> ListOfOutputGroup' -> TimecodeConfig -> ListOfVideoDescription' -> ({ "AudioDescriptions" :: ListOfAudioDescription', "AvailBlanking" :: Maybe (AvailBlanking), "AvailConfiguration" :: Maybe (AvailConfiguration), "BlackoutSlate" :: Maybe (BlackoutSlate), "CaptionDescriptions" :: Maybe (ListOfCaptionDescription'), "GlobalConfiguration" :: Maybe (GlobalConfiguration), "OutputGroups" :: ListOfOutputGroup', "TimecodeConfig" :: TimecodeConfig, "VideoDescriptions" :: ListOfVideoDescription' } -> { "AudioDescriptions" :: ListOfAudioDescription', "AvailBlanking" :: Maybe (AvailBlanking), "AvailConfiguration" :: Maybe (AvailConfiguration), "BlackoutSlate" :: Maybe (BlackoutSlate), "CaptionDescriptions" :: Maybe (ListOfCaptionDescription'), "GlobalConfiguration" :: Maybe (GlobalConfiguration), "OutputGroups" :: ListOfOutputGroup', "TimecodeConfig" :: TimecodeConfig, "VideoDescriptions" :: ListOfVideoDescription' }) -> EncoderSettings
 ```
 
 Constructs EncoderSettings's fields from required parameters
@@ -3182,7 +3182,7 @@ Encode FecOutputIncludeFec
 
 ``` purescript
 newtype FecOutputSettings
-  = FecOutputSettings { "ColumnDepth" :: NullOrUndefined (IntegerMin4Max20'), "IncludeFec" :: NullOrUndefined (FecOutputIncludeFec), "RowLength" :: NullOrUndefined (IntegerMin1Max20') }
+  = FecOutputSettings { "ColumnDepth" :: Maybe (IntegerMin4Max20'), "IncludeFec" :: Maybe (FecOutputIncludeFec), "RowLength" :: Maybe (IntegerMin1Max20') }
 ```
 
 Placeholder documentation for FecOutputSettings
@@ -3207,7 +3207,7 @@ Constructs FecOutputSettings from required parameters
 #### `newFecOutputSettings'`
 
 ``` purescript
-newFecOutputSettings' :: ({ "ColumnDepth" :: NullOrUndefined (IntegerMin4Max20'), "IncludeFec" :: NullOrUndefined (FecOutputIncludeFec), "RowLength" :: NullOrUndefined (IntegerMin1Max20') } -> { "ColumnDepth" :: NullOrUndefined (IntegerMin4Max20'), "IncludeFec" :: NullOrUndefined (FecOutputIncludeFec), "RowLength" :: NullOrUndefined (IntegerMin1Max20') }) -> FecOutputSettings
+newFecOutputSettings' :: ({ "ColumnDepth" :: Maybe (IntegerMin4Max20'), "IncludeFec" :: Maybe (FecOutputIncludeFec), "RowLength" :: Maybe (IntegerMin1Max20') } -> { "ColumnDepth" :: Maybe (IntegerMin4Max20'), "IncludeFec" :: Maybe (FecOutputIncludeFec), "RowLength" :: Maybe (IntegerMin1Max20') }) -> FecOutputSettings
 ```
 
 Constructs FecOutputSettings's fields from required parameters
@@ -3234,7 +3234,7 @@ Encode FixedAfd
 
 ``` purescript
 newtype ForbiddenException
-  = ForbiddenException { "Message" :: NullOrUndefined (String) }
+  = ForbiddenException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for ForbiddenException
@@ -3259,7 +3259,7 @@ Constructs ForbiddenException from required parameters
 #### `newForbiddenException'`
 
 ``` purescript
-newForbiddenException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ForbiddenException
+newForbiddenException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ForbiddenException
 ```
 
 Constructs ForbiddenException's fields from required parameters
@@ -3268,7 +3268,7 @@ Constructs ForbiddenException's fields from required parameters
 
 ``` purescript
 newtype GatewayTimeoutException
-  = GatewayTimeoutException { "Message" :: NullOrUndefined (String) }
+  = GatewayTimeoutException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for GatewayTimeoutException
@@ -3293,7 +3293,7 @@ Constructs GatewayTimeoutException from required parameters
 #### `newGatewayTimeoutException'`
 
 ``` purescript
-newGatewayTimeoutException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> GatewayTimeoutException
+newGatewayTimeoutException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> GatewayTimeoutException
 ```
 
 Constructs GatewayTimeoutException's fields from required parameters
@@ -3302,7 +3302,7 @@ Constructs GatewayTimeoutException's fields from required parameters
 
 ``` purescript
 newtype GlobalConfiguration
-  = GlobalConfiguration { "InitialAudioGain" :: NullOrUndefined (IntegerMinNegative60Max60'), "InputEndAction" :: NullOrUndefined (GlobalConfigurationInputEndAction), "InputLossBehavior" :: NullOrUndefined (InputLossBehavior), "OutputTimingSource" :: NullOrUndefined (GlobalConfigurationOutputTimingSource), "SupportLowFramerateInputs" :: NullOrUndefined (GlobalConfigurationLowFramerateInputs) }
+  = GlobalConfiguration { "InitialAudioGain" :: Maybe (IntegerMinNegative60Max60'), "InputEndAction" :: Maybe (GlobalConfigurationInputEndAction), "InputLossBehavior" :: Maybe (InputLossBehavior), "OutputTimingSource" :: Maybe (GlobalConfigurationOutputTimingSource), "SupportLowFramerateInputs" :: Maybe (GlobalConfigurationLowFramerateInputs) }
 ```
 
 Placeholder documentation for GlobalConfiguration
@@ -3327,7 +3327,7 @@ Constructs GlobalConfiguration from required parameters
 #### `newGlobalConfiguration'`
 
 ``` purescript
-newGlobalConfiguration' :: ({ "InitialAudioGain" :: NullOrUndefined (IntegerMinNegative60Max60'), "InputEndAction" :: NullOrUndefined (GlobalConfigurationInputEndAction), "InputLossBehavior" :: NullOrUndefined (InputLossBehavior), "OutputTimingSource" :: NullOrUndefined (GlobalConfigurationOutputTimingSource), "SupportLowFramerateInputs" :: NullOrUndefined (GlobalConfigurationLowFramerateInputs) } -> { "InitialAudioGain" :: NullOrUndefined (IntegerMinNegative60Max60'), "InputEndAction" :: NullOrUndefined (GlobalConfigurationInputEndAction), "InputLossBehavior" :: NullOrUndefined (InputLossBehavior), "OutputTimingSource" :: NullOrUndefined (GlobalConfigurationOutputTimingSource), "SupportLowFramerateInputs" :: NullOrUndefined (GlobalConfigurationLowFramerateInputs) }) -> GlobalConfiguration
+newGlobalConfiguration' :: ({ "InitialAudioGain" :: Maybe (IntegerMinNegative60Max60'), "InputEndAction" :: Maybe (GlobalConfigurationInputEndAction), "InputLossBehavior" :: Maybe (InputLossBehavior), "OutputTimingSource" :: Maybe (GlobalConfigurationOutputTimingSource), "SupportLowFramerateInputs" :: Maybe (GlobalConfigurationLowFramerateInputs) } -> { "InitialAudioGain" :: Maybe (IntegerMinNegative60Max60'), "InputEndAction" :: Maybe (GlobalConfigurationInputEndAction), "InputLossBehavior" :: Maybe (InputLossBehavior), "OutputTimingSource" :: Maybe (GlobalConfigurationOutputTimingSource), "SupportLowFramerateInputs" :: Maybe (GlobalConfigurationLowFramerateInputs) }) -> GlobalConfiguration
 ```
 
 Constructs GlobalConfiguration's fields from required parameters
@@ -3642,7 +3642,7 @@ Encode H264SceneChangeDetect
 
 ``` purescript
 newtype H264Settings
-  = H264Settings { "AdaptiveQuantization" :: NullOrUndefined (H264AdaptiveQuantization), "AfdSignaling" :: NullOrUndefined (AfdSignaling), "Bitrate" :: NullOrUndefined (IntegerMin1000'), "BufFillPct" :: NullOrUndefined (IntegerMin0Max100'), "BufSize" :: NullOrUndefined (IntegerMin0'), "ColorMetadata" :: NullOrUndefined (H264ColorMetadata), "EntropyEncoding" :: NullOrUndefined (H264EntropyEncoding), "FixedAfd" :: NullOrUndefined (FixedAfd), "FlickerAq" :: NullOrUndefined (H264FlickerAq), "FramerateControl" :: NullOrUndefined (H264FramerateControl), "FramerateDenominator" :: NullOrUndefined (Int), "FramerateNumerator" :: NullOrUndefined (Int), "GopBReference" :: NullOrUndefined (H264GopBReference), "GopClosedCadence" :: NullOrUndefined (IntegerMin0'), "GopNumBFrames" :: NullOrUndefined (IntegerMin0Max7'), "GopSize" :: NullOrUndefined (DoubleMin1'), "GopSizeUnits" :: NullOrUndefined (H264GopSizeUnits), "Level" :: NullOrUndefined (H264Level), "LookAheadRateControl" :: NullOrUndefined (H264LookAheadRateControl), "MaxBitrate" :: NullOrUndefined (IntegerMin1000'), "MinIInterval" :: NullOrUndefined (IntegerMin0Max30'), "NumRefFrames" :: NullOrUndefined (IntegerMin1Max6'), "ParControl" :: NullOrUndefined (H264ParControl), "ParDenominator" :: NullOrUndefined (IntegerMin1'), "ParNumerator" :: NullOrUndefined (Int), "Profile" :: NullOrUndefined (H264Profile), "RateControlMode" :: NullOrUndefined (H264RateControlMode), "ScanType" :: NullOrUndefined (H264ScanType), "SceneChangeDetect" :: NullOrUndefined (H264SceneChangeDetect), "Slices" :: NullOrUndefined (IntegerMin1Max32'), "Softness" :: NullOrUndefined (IntegerMin0Max128'), "SpatialAq" :: NullOrUndefined (H264SpatialAq), "Syntax" :: NullOrUndefined (H264Syntax), "TemporalAq" :: NullOrUndefined (H264TemporalAq), "TimecodeInsertion" :: NullOrUndefined (H264TimecodeInsertionBehavior) }
+  = H264Settings { "AdaptiveQuantization" :: Maybe (H264AdaptiveQuantization), "AfdSignaling" :: Maybe (AfdSignaling), "Bitrate" :: Maybe (IntegerMin1000'), "BufFillPct" :: Maybe (IntegerMin0Max100'), "BufSize" :: Maybe (IntegerMin0'), "ColorMetadata" :: Maybe (H264ColorMetadata), "EntropyEncoding" :: Maybe (H264EntropyEncoding), "FixedAfd" :: Maybe (FixedAfd), "FlickerAq" :: Maybe (H264FlickerAq), "FramerateControl" :: Maybe (H264FramerateControl), "FramerateDenominator" :: Maybe (Int), "FramerateNumerator" :: Maybe (Int), "GopBReference" :: Maybe (H264GopBReference), "GopClosedCadence" :: Maybe (IntegerMin0'), "GopNumBFrames" :: Maybe (IntegerMin0Max7'), "GopSize" :: Maybe (DoubleMin1'), "GopSizeUnits" :: Maybe (H264GopSizeUnits), "Level" :: Maybe (H264Level), "LookAheadRateControl" :: Maybe (H264LookAheadRateControl), "MaxBitrate" :: Maybe (IntegerMin1000'), "MinIInterval" :: Maybe (IntegerMin0Max30'), "NumRefFrames" :: Maybe (IntegerMin1Max6'), "ParControl" :: Maybe (H264ParControl), "ParDenominator" :: Maybe (IntegerMin1'), "ParNumerator" :: Maybe (Int), "Profile" :: Maybe (H264Profile), "RateControlMode" :: Maybe (H264RateControlMode), "ScanType" :: Maybe (H264ScanType), "SceneChangeDetect" :: Maybe (H264SceneChangeDetect), "Slices" :: Maybe (IntegerMin1Max32'), "Softness" :: Maybe (IntegerMin0Max128'), "SpatialAq" :: Maybe (H264SpatialAq), "Syntax" :: Maybe (H264Syntax), "TemporalAq" :: Maybe (H264TemporalAq), "TimecodeInsertion" :: Maybe (H264TimecodeInsertionBehavior) }
 ```
 
 Placeholder documentation for H264Settings
@@ -3667,7 +3667,7 @@ Constructs H264Settings from required parameters
 #### `newH264Settings'`
 
 ``` purescript
-newH264Settings' :: ({ "AdaptiveQuantization" :: NullOrUndefined (H264AdaptiveQuantization), "AfdSignaling" :: NullOrUndefined (AfdSignaling), "Bitrate" :: NullOrUndefined (IntegerMin1000'), "BufFillPct" :: NullOrUndefined (IntegerMin0Max100'), "BufSize" :: NullOrUndefined (IntegerMin0'), "ColorMetadata" :: NullOrUndefined (H264ColorMetadata), "EntropyEncoding" :: NullOrUndefined (H264EntropyEncoding), "FixedAfd" :: NullOrUndefined (FixedAfd), "FlickerAq" :: NullOrUndefined (H264FlickerAq), "FramerateControl" :: NullOrUndefined (H264FramerateControl), "FramerateDenominator" :: NullOrUndefined (Int), "FramerateNumerator" :: NullOrUndefined (Int), "GopBReference" :: NullOrUndefined (H264GopBReference), "GopClosedCadence" :: NullOrUndefined (IntegerMin0'), "GopNumBFrames" :: NullOrUndefined (IntegerMin0Max7'), "GopSize" :: NullOrUndefined (DoubleMin1'), "GopSizeUnits" :: NullOrUndefined (H264GopSizeUnits), "Level" :: NullOrUndefined (H264Level), "LookAheadRateControl" :: NullOrUndefined (H264LookAheadRateControl), "MaxBitrate" :: NullOrUndefined (IntegerMin1000'), "MinIInterval" :: NullOrUndefined (IntegerMin0Max30'), "NumRefFrames" :: NullOrUndefined (IntegerMin1Max6'), "ParControl" :: NullOrUndefined (H264ParControl), "ParDenominator" :: NullOrUndefined (IntegerMin1'), "ParNumerator" :: NullOrUndefined (Int), "Profile" :: NullOrUndefined (H264Profile), "RateControlMode" :: NullOrUndefined (H264RateControlMode), "ScanType" :: NullOrUndefined (H264ScanType), "SceneChangeDetect" :: NullOrUndefined (H264SceneChangeDetect), "Slices" :: NullOrUndefined (IntegerMin1Max32'), "Softness" :: NullOrUndefined (IntegerMin0Max128'), "SpatialAq" :: NullOrUndefined (H264SpatialAq), "Syntax" :: NullOrUndefined (H264Syntax), "TemporalAq" :: NullOrUndefined (H264TemporalAq), "TimecodeInsertion" :: NullOrUndefined (H264TimecodeInsertionBehavior) } -> { "AdaptiveQuantization" :: NullOrUndefined (H264AdaptiveQuantization), "AfdSignaling" :: NullOrUndefined (AfdSignaling), "Bitrate" :: NullOrUndefined (IntegerMin1000'), "BufFillPct" :: NullOrUndefined (IntegerMin0Max100'), "BufSize" :: NullOrUndefined (IntegerMin0'), "ColorMetadata" :: NullOrUndefined (H264ColorMetadata), "EntropyEncoding" :: NullOrUndefined (H264EntropyEncoding), "FixedAfd" :: NullOrUndefined (FixedAfd), "FlickerAq" :: NullOrUndefined (H264FlickerAq), "FramerateControl" :: NullOrUndefined (H264FramerateControl), "FramerateDenominator" :: NullOrUndefined (Int), "FramerateNumerator" :: NullOrUndefined (Int), "GopBReference" :: NullOrUndefined (H264GopBReference), "GopClosedCadence" :: NullOrUndefined (IntegerMin0'), "GopNumBFrames" :: NullOrUndefined (IntegerMin0Max7'), "GopSize" :: NullOrUndefined (DoubleMin1'), "GopSizeUnits" :: NullOrUndefined (H264GopSizeUnits), "Level" :: NullOrUndefined (H264Level), "LookAheadRateControl" :: NullOrUndefined (H264LookAheadRateControl), "MaxBitrate" :: NullOrUndefined (IntegerMin1000'), "MinIInterval" :: NullOrUndefined (IntegerMin0Max30'), "NumRefFrames" :: NullOrUndefined (IntegerMin1Max6'), "ParControl" :: NullOrUndefined (H264ParControl), "ParDenominator" :: NullOrUndefined (IntegerMin1'), "ParNumerator" :: NullOrUndefined (Int), "Profile" :: NullOrUndefined (H264Profile), "RateControlMode" :: NullOrUndefined (H264RateControlMode), "ScanType" :: NullOrUndefined (H264ScanType), "SceneChangeDetect" :: NullOrUndefined (H264SceneChangeDetect), "Slices" :: NullOrUndefined (IntegerMin1Max32'), "Softness" :: NullOrUndefined (IntegerMin0Max128'), "SpatialAq" :: NullOrUndefined (H264SpatialAq), "Syntax" :: NullOrUndefined (H264Syntax), "TemporalAq" :: NullOrUndefined (H264TemporalAq), "TimecodeInsertion" :: NullOrUndefined (H264TimecodeInsertionBehavior) }) -> H264Settings
+newH264Settings' :: ({ "AdaptiveQuantization" :: Maybe (H264AdaptiveQuantization), "AfdSignaling" :: Maybe (AfdSignaling), "Bitrate" :: Maybe (IntegerMin1000'), "BufFillPct" :: Maybe (IntegerMin0Max100'), "BufSize" :: Maybe (IntegerMin0'), "ColorMetadata" :: Maybe (H264ColorMetadata), "EntropyEncoding" :: Maybe (H264EntropyEncoding), "FixedAfd" :: Maybe (FixedAfd), "FlickerAq" :: Maybe (H264FlickerAq), "FramerateControl" :: Maybe (H264FramerateControl), "FramerateDenominator" :: Maybe (Int), "FramerateNumerator" :: Maybe (Int), "GopBReference" :: Maybe (H264GopBReference), "GopClosedCadence" :: Maybe (IntegerMin0'), "GopNumBFrames" :: Maybe (IntegerMin0Max7'), "GopSize" :: Maybe (DoubleMin1'), "GopSizeUnits" :: Maybe (H264GopSizeUnits), "Level" :: Maybe (H264Level), "LookAheadRateControl" :: Maybe (H264LookAheadRateControl), "MaxBitrate" :: Maybe (IntegerMin1000'), "MinIInterval" :: Maybe (IntegerMin0Max30'), "NumRefFrames" :: Maybe (IntegerMin1Max6'), "ParControl" :: Maybe (H264ParControl), "ParDenominator" :: Maybe (IntegerMin1'), "ParNumerator" :: Maybe (Int), "Profile" :: Maybe (H264Profile), "RateControlMode" :: Maybe (H264RateControlMode), "ScanType" :: Maybe (H264ScanType), "SceneChangeDetect" :: Maybe (H264SceneChangeDetect), "Slices" :: Maybe (IntegerMin1Max32'), "Softness" :: Maybe (IntegerMin0Max128'), "SpatialAq" :: Maybe (H264SpatialAq), "Syntax" :: Maybe (H264Syntax), "TemporalAq" :: Maybe (H264TemporalAq), "TimecodeInsertion" :: Maybe (H264TimecodeInsertionBehavior) } -> { "AdaptiveQuantization" :: Maybe (H264AdaptiveQuantization), "AfdSignaling" :: Maybe (AfdSignaling), "Bitrate" :: Maybe (IntegerMin1000'), "BufFillPct" :: Maybe (IntegerMin0Max100'), "BufSize" :: Maybe (IntegerMin0'), "ColorMetadata" :: Maybe (H264ColorMetadata), "EntropyEncoding" :: Maybe (H264EntropyEncoding), "FixedAfd" :: Maybe (FixedAfd), "FlickerAq" :: Maybe (H264FlickerAq), "FramerateControl" :: Maybe (H264FramerateControl), "FramerateDenominator" :: Maybe (Int), "FramerateNumerator" :: Maybe (Int), "GopBReference" :: Maybe (H264GopBReference), "GopClosedCadence" :: Maybe (IntegerMin0'), "GopNumBFrames" :: Maybe (IntegerMin0Max7'), "GopSize" :: Maybe (DoubleMin1'), "GopSizeUnits" :: Maybe (H264GopSizeUnits), "Level" :: Maybe (H264Level), "LookAheadRateControl" :: Maybe (H264LookAheadRateControl), "MaxBitrate" :: Maybe (IntegerMin1000'), "MinIInterval" :: Maybe (IntegerMin0Max30'), "NumRefFrames" :: Maybe (IntegerMin1Max6'), "ParControl" :: Maybe (H264ParControl), "ParDenominator" :: Maybe (IntegerMin1'), "ParNumerator" :: Maybe (Int), "Profile" :: Maybe (H264Profile), "RateControlMode" :: Maybe (H264RateControlMode), "ScanType" :: Maybe (H264ScanType), "SceneChangeDetect" :: Maybe (H264SceneChangeDetect), "Slices" :: Maybe (IntegerMin1Max32'), "Softness" :: Maybe (IntegerMin0Max128'), "SpatialAq" :: Maybe (H264SpatialAq), "Syntax" :: Maybe (H264Syntax), "TemporalAq" :: Maybe (H264TemporalAq), "TimecodeInsertion" :: Maybe (H264TimecodeInsertionBehavior) }) -> H264Settings
 ```
 
 Constructs H264Settings's fields from required parameters
@@ -3784,7 +3784,7 @@ Encode HlsAkamaiHttpTransferMode
 
 ``` purescript
 newtype HlsAkamaiSettings
-  = HlsAkamaiSettings { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "HttpTransferMode" :: NullOrUndefined (HlsAkamaiHttpTransferMode), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15'), "Salt" :: NullOrUndefined (String), "Token" :: NullOrUndefined (String) }
+  = HlsAkamaiSettings { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "HttpTransferMode" :: Maybe (HlsAkamaiHttpTransferMode), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15'), "Salt" :: Maybe (String), "Token" :: Maybe (String) }
 ```
 
 Placeholder documentation for HlsAkamaiSettings
@@ -3809,7 +3809,7 @@ Constructs HlsAkamaiSettings from required parameters
 #### `newHlsAkamaiSettings'`
 
 ``` purescript
-newHlsAkamaiSettings' :: ({ "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "HttpTransferMode" :: NullOrUndefined (HlsAkamaiHttpTransferMode), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15'), "Salt" :: NullOrUndefined (String), "Token" :: NullOrUndefined (String) } -> { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "HttpTransferMode" :: NullOrUndefined (HlsAkamaiHttpTransferMode), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15'), "Salt" :: NullOrUndefined (String), "Token" :: NullOrUndefined (String) }) -> HlsAkamaiSettings
+newHlsAkamaiSettings' :: ({ "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "HttpTransferMode" :: Maybe (HlsAkamaiHttpTransferMode), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15'), "Salt" :: Maybe (String), "Token" :: Maybe (String) } -> { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "HttpTransferMode" :: Maybe (HlsAkamaiHttpTransferMode), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15'), "Salt" :: Maybe (String), "Token" :: Maybe (String) }) -> HlsAkamaiSettings
 ```
 
 Constructs HlsAkamaiSettings's fields from required parameters
@@ -3818,7 +3818,7 @@ Constructs HlsAkamaiSettings's fields from required parameters
 
 ``` purescript
 newtype HlsBasicPutSettings
-  = HlsBasicPutSettings { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') }
+  = HlsBasicPutSettings { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') }
 ```
 
 Placeholder documentation for HlsBasicPutSettings
@@ -3843,7 +3843,7 @@ Constructs HlsBasicPutSettings from required parameters
 #### `newHlsBasicPutSettings'`
 
 ``` purescript
-newHlsBasicPutSettings' :: ({ "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } -> { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') }) -> HlsBasicPutSettings
+newHlsBasicPutSettings' :: ({ "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') } -> { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') }) -> HlsBasicPutSettings
 ```
 
 Constructs HlsBasicPutSettings's fields from required parameters
@@ -3870,7 +3870,7 @@ Encode HlsCaptionLanguageSetting
 
 ``` purescript
 newtype HlsCdnSettings
-  = HlsCdnSettings { "HlsAkamaiSettings" :: NullOrUndefined (HlsAkamaiSettings), "HlsBasicPutSettings" :: NullOrUndefined (HlsBasicPutSettings), "HlsMediaStoreSettings" :: NullOrUndefined (HlsMediaStoreSettings), "HlsWebdavSettings" :: NullOrUndefined (HlsWebdavSettings) }
+  = HlsCdnSettings { "HlsAkamaiSettings" :: Maybe (HlsAkamaiSettings), "HlsBasicPutSettings" :: Maybe (HlsBasicPutSettings), "HlsMediaStoreSettings" :: Maybe (HlsMediaStoreSettings), "HlsWebdavSettings" :: Maybe (HlsWebdavSettings) }
 ```
 
 Placeholder documentation for HlsCdnSettings
@@ -3895,7 +3895,7 @@ Constructs HlsCdnSettings from required parameters
 #### `newHlsCdnSettings'`
 
 ``` purescript
-newHlsCdnSettings' :: ({ "HlsAkamaiSettings" :: NullOrUndefined (HlsAkamaiSettings), "HlsBasicPutSettings" :: NullOrUndefined (HlsBasicPutSettings), "HlsMediaStoreSettings" :: NullOrUndefined (HlsMediaStoreSettings), "HlsWebdavSettings" :: NullOrUndefined (HlsWebdavSettings) } -> { "HlsAkamaiSettings" :: NullOrUndefined (HlsAkamaiSettings), "HlsBasicPutSettings" :: NullOrUndefined (HlsBasicPutSettings), "HlsMediaStoreSettings" :: NullOrUndefined (HlsMediaStoreSettings), "HlsWebdavSettings" :: NullOrUndefined (HlsWebdavSettings) }) -> HlsCdnSettings
+newHlsCdnSettings' :: ({ "HlsAkamaiSettings" :: Maybe (HlsAkamaiSettings), "HlsBasicPutSettings" :: Maybe (HlsBasicPutSettings), "HlsMediaStoreSettings" :: Maybe (HlsMediaStoreSettings), "HlsWebdavSettings" :: Maybe (HlsWebdavSettings) } -> { "HlsAkamaiSettings" :: Maybe (HlsAkamaiSettings), "HlsBasicPutSettings" :: Maybe (HlsBasicPutSettings), "HlsMediaStoreSettings" :: Maybe (HlsMediaStoreSettings), "HlsWebdavSettings" :: Maybe (HlsWebdavSettings) }) -> HlsCdnSettings
 ```
 
 Constructs HlsCdnSettings's fields from required parameters
@@ -3976,7 +3976,7 @@ Encode HlsEncryptionType
 
 ``` purescript
 newtype HlsGroupSettings
-  = HlsGroupSettings { "AdMarkers" :: NullOrUndefined (ListOfHlsAdMarkers'), "BaseUrlContent" :: NullOrUndefined (String), "BaseUrlManifest" :: NullOrUndefined (String), "CaptionLanguageMappings" :: NullOrUndefined (ListOfCaptionLanguageMapping'), "CaptionLanguageSetting" :: NullOrUndefined (HlsCaptionLanguageSetting), "ClientCache" :: NullOrUndefined (HlsClientCache), "CodecSpecification" :: NullOrUndefined (HlsCodecSpecification), "ConstantIv" :: NullOrUndefined (StringMin32Max32'), "Destination" :: OutputLocationRef, "DirectoryStructure" :: NullOrUndefined (HlsDirectoryStructure), "EncryptionType" :: NullOrUndefined (HlsEncryptionType), "HlsCdnSettings" :: NullOrUndefined (HlsCdnSettings), "IndexNSegments" :: NullOrUndefined (IntegerMin3'), "InputLossAction" :: NullOrUndefined (InputLossActionForHlsOut), "IvInManifest" :: NullOrUndefined (HlsIvInManifest), "IvSource" :: NullOrUndefined (HlsIvSource), "KeepSegments" :: NullOrUndefined (IntegerMin1'), "KeyFormat" :: NullOrUndefined (String), "KeyFormatVersions" :: NullOrUndefined (String), "KeyProviderSettings" :: NullOrUndefined (KeyProviderSettings), "ManifestCompression" :: NullOrUndefined (HlsManifestCompression), "ManifestDurationFormat" :: NullOrUndefined (HlsManifestDurationFormat), "MinSegmentLength" :: NullOrUndefined (IntegerMin0'), "Mode" :: NullOrUndefined (HlsMode), "OutputSelection" :: NullOrUndefined (HlsOutputSelection), "ProgramDateTime" :: NullOrUndefined (HlsProgramDateTime), "ProgramDateTimePeriod" :: NullOrUndefined (IntegerMin0Max3600'), "SegmentLength" :: NullOrUndefined (IntegerMin1'), "SegmentationMode" :: NullOrUndefined (HlsSegmentationMode), "SegmentsPerSubdirectory" :: NullOrUndefined (IntegerMin1'), "StreamInfResolution" :: NullOrUndefined (HlsStreamInfResolution), "TimedMetadataId3Frame" :: NullOrUndefined (HlsTimedMetadataId3Frame), "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0'), "TimestampDeltaMilliseconds" :: NullOrUndefined (IntegerMin0'), "TsFileMode" :: NullOrUndefined (HlsTsFileMode) }
+  = HlsGroupSettings { "AdMarkers" :: Maybe (ListOfHlsAdMarkers'), "BaseUrlContent" :: Maybe (String), "BaseUrlManifest" :: Maybe (String), "CaptionLanguageMappings" :: Maybe (ListOfCaptionLanguageMapping'), "CaptionLanguageSetting" :: Maybe (HlsCaptionLanguageSetting), "ClientCache" :: Maybe (HlsClientCache), "CodecSpecification" :: Maybe (HlsCodecSpecification), "ConstantIv" :: Maybe (StringMin32Max32'), "Destination" :: OutputLocationRef, "DirectoryStructure" :: Maybe (HlsDirectoryStructure), "EncryptionType" :: Maybe (HlsEncryptionType), "HlsCdnSettings" :: Maybe (HlsCdnSettings), "IndexNSegments" :: Maybe (IntegerMin3'), "InputLossAction" :: Maybe (InputLossActionForHlsOut), "IvInManifest" :: Maybe (HlsIvInManifest), "IvSource" :: Maybe (HlsIvSource), "KeepSegments" :: Maybe (IntegerMin1'), "KeyFormat" :: Maybe (String), "KeyFormatVersions" :: Maybe (String), "KeyProviderSettings" :: Maybe (KeyProviderSettings), "ManifestCompression" :: Maybe (HlsManifestCompression), "ManifestDurationFormat" :: Maybe (HlsManifestDurationFormat), "MinSegmentLength" :: Maybe (IntegerMin0'), "Mode" :: Maybe (HlsMode), "OutputSelection" :: Maybe (HlsOutputSelection), "ProgramDateTime" :: Maybe (HlsProgramDateTime), "ProgramDateTimePeriod" :: Maybe (IntegerMin0Max3600'), "SegmentLength" :: Maybe (IntegerMin1'), "SegmentationMode" :: Maybe (HlsSegmentationMode), "SegmentsPerSubdirectory" :: Maybe (IntegerMin1'), "StreamInfResolution" :: Maybe (HlsStreamInfResolution), "TimedMetadataId3Frame" :: Maybe (HlsTimedMetadataId3Frame), "TimedMetadataId3Period" :: Maybe (IntegerMin0'), "TimestampDeltaMilliseconds" :: Maybe (IntegerMin0'), "TsFileMode" :: Maybe (HlsTsFileMode) }
 ```
 
 Placeholder documentation for HlsGroupSettings
@@ -4001,7 +4001,7 @@ Constructs HlsGroupSettings from required parameters
 #### `newHlsGroupSettings'`
 
 ``` purescript
-newHlsGroupSettings' :: OutputLocationRef -> ({ "AdMarkers" :: NullOrUndefined (ListOfHlsAdMarkers'), "BaseUrlContent" :: NullOrUndefined (String), "BaseUrlManifest" :: NullOrUndefined (String), "CaptionLanguageMappings" :: NullOrUndefined (ListOfCaptionLanguageMapping'), "CaptionLanguageSetting" :: NullOrUndefined (HlsCaptionLanguageSetting), "ClientCache" :: NullOrUndefined (HlsClientCache), "CodecSpecification" :: NullOrUndefined (HlsCodecSpecification), "ConstantIv" :: NullOrUndefined (StringMin32Max32'), "Destination" :: OutputLocationRef, "DirectoryStructure" :: NullOrUndefined (HlsDirectoryStructure), "EncryptionType" :: NullOrUndefined (HlsEncryptionType), "HlsCdnSettings" :: NullOrUndefined (HlsCdnSettings), "IndexNSegments" :: NullOrUndefined (IntegerMin3'), "InputLossAction" :: NullOrUndefined (InputLossActionForHlsOut), "IvInManifest" :: NullOrUndefined (HlsIvInManifest), "IvSource" :: NullOrUndefined (HlsIvSource), "KeepSegments" :: NullOrUndefined (IntegerMin1'), "KeyFormat" :: NullOrUndefined (String), "KeyFormatVersions" :: NullOrUndefined (String), "KeyProviderSettings" :: NullOrUndefined (KeyProviderSettings), "ManifestCompression" :: NullOrUndefined (HlsManifestCompression), "ManifestDurationFormat" :: NullOrUndefined (HlsManifestDurationFormat), "MinSegmentLength" :: NullOrUndefined (IntegerMin0'), "Mode" :: NullOrUndefined (HlsMode), "OutputSelection" :: NullOrUndefined (HlsOutputSelection), "ProgramDateTime" :: NullOrUndefined (HlsProgramDateTime), "ProgramDateTimePeriod" :: NullOrUndefined (IntegerMin0Max3600'), "SegmentLength" :: NullOrUndefined (IntegerMin1'), "SegmentationMode" :: NullOrUndefined (HlsSegmentationMode), "SegmentsPerSubdirectory" :: NullOrUndefined (IntegerMin1'), "StreamInfResolution" :: NullOrUndefined (HlsStreamInfResolution), "TimedMetadataId3Frame" :: NullOrUndefined (HlsTimedMetadataId3Frame), "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0'), "TimestampDeltaMilliseconds" :: NullOrUndefined (IntegerMin0'), "TsFileMode" :: NullOrUndefined (HlsTsFileMode) } -> { "AdMarkers" :: NullOrUndefined (ListOfHlsAdMarkers'), "BaseUrlContent" :: NullOrUndefined (String), "BaseUrlManifest" :: NullOrUndefined (String), "CaptionLanguageMappings" :: NullOrUndefined (ListOfCaptionLanguageMapping'), "CaptionLanguageSetting" :: NullOrUndefined (HlsCaptionLanguageSetting), "ClientCache" :: NullOrUndefined (HlsClientCache), "CodecSpecification" :: NullOrUndefined (HlsCodecSpecification), "ConstantIv" :: NullOrUndefined (StringMin32Max32'), "Destination" :: OutputLocationRef, "DirectoryStructure" :: NullOrUndefined (HlsDirectoryStructure), "EncryptionType" :: NullOrUndefined (HlsEncryptionType), "HlsCdnSettings" :: NullOrUndefined (HlsCdnSettings), "IndexNSegments" :: NullOrUndefined (IntegerMin3'), "InputLossAction" :: NullOrUndefined (InputLossActionForHlsOut), "IvInManifest" :: NullOrUndefined (HlsIvInManifest), "IvSource" :: NullOrUndefined (HlsIvSource), "KeepSegments" :: NullOrUndefined (IntegerMin1'), "KeyFormat" :: NullOrUndefined (String), "KeyFormatVersions" :: NullOrUndefined (String), "KeyProviderSettings" :: NullOrUndefined (KeyProviderSettings), "ManifestCompression" :: NullOrUndefined (HlsManifestCompression), "ManifestDurationFormat" :: NullOrUndefined (HlsManifestDurationFormat), "MinSegmentLength" :: NullOrUndefined (IntegerMin0'), "Mode" :: NullOrUndefined (HlsMode), "OutputSelection" :: NullOrUndefined (HlsOutputSelection), "ProgramDateTime" :: NullOrUndefined (HlsProgramDateTime), "ProgramDateTimePeriod" :: NullOrUndefined (IntegerMin0Max3600'), "SegmentLength" :: NullOrUndefined (IntegerMin1'), "SegmentationMode" :: NullOrUndefined (HlsSegmentationMode), "SegmentsPerSubdirectory" :: NullOrUndefined (IntegerMin1'), "StreamInfResolution" :: NullOrUndefined (HlsStreamInfResolution), "TimedMetadataId3Frame" :: NullOrUndefined (HlsTimedMetadataId3Frame), "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0'), "TimestampDeltaMilliseconds" :: NullOrUndefined (IntegerMin0'), "TsFileMode" :: NullOrUndefined (HlsTsFileMode) }) -> HlsGroupSettings
+newHlsGroupSettings' :: OutputLocationRef -> ({ "AdMarkers" :: Maybe (ListOfHlsAdMarkers'), "BaseUrlContent" :: Maybe (String), "BaseUrlManifest" :: Maybe (String), "CaptionLanguageMappings" :: Maybe (ListOfCaptionLanguageMapping'), "CaptionLanguageSetting" :: Maybe (HlsCaptionLanguageSetting), "ClientCache" :: Maybe (HlsClientCache), "CodecSpecification" :: Maybe (HlsCodecSpecification), "ConstantIv" :: Maybe (StringMin32Max32'), "Destination" :: OutputLocationRef, "DirectoryStructure" :: Maybe (HlsDirectoryStructure), "EncryptionType" :: Maybe (HlsEncryptionType), "HlsCdnSettings" :: Maybe (HlsCdnSettings), "IndexNSegments" :: Maybe (IntegerMin3'), "InputLossAction" :: Maybe (InputLossActionForHlsOut), "IvInManifest" :: Maybe (HlsIvInManifest), "IvSource" :: Maybe (HlsIvSource), "KeepSegments" :: Maybe (IntegerMin1'), "KeyFormat" :: Maybe (String), "KeyFormatVersions" :: Maybe (String), "KeyProviderSettings" :: Maybe (KeyProviderSettings), "ManifestCompression" :: Maybe (HlsManifestCompression), "ManifestDurationFormat" :: Maybe (HlsManifestDurationFormat), "MinSegmentLength" :: Maybe (IntegerMin0'), "Mode" :: Maybe (HlsMode), "OutputSelection" :: Maybe (HlsOutputSelection), "ProgramDateTime" :: Maybe (HlsProgramDateTime), "ProgramDateTimePeriod" :: Maybe (IntegerMin0Max3600'), "SegmentLength" :: Maybe (IntegerMin1'), "SegmentationMode" :: Maybe (HlsSegmentationMode), "SegmentsPerSubdirectory" :: Maybe (IntegerMin1'), "StreamInfResolution" :: Maybe (HlsStreamInfResolution), "TimedMetadataId3Frame" :: Maybe (HlsTimedMetadataId3Frame), "TimedMetadataId3Period" :: Maybe (IntegerMin0'), "TimestampDeltaMilliseconds" :: Maybe (IntegerMin0'), "TsFileMode" :: Maybe (HlsTsFileMode) } -> { "AdMarkers" :: Maybe (ListOfHlsAdMarkers'), "BaseUrlContent" :: Maybe (String), "BaseUrlManifest" :: Maybe (String), "CaptionLanguageMappings" :: Maybe (ListOfCaptionLanguageMapping'), "CaptionLanguageSetting" :: Maybe (HlsCaptionLanguageSetting), "ClientCache" :: Maybe (HlsClientCache), "CodecSpecification" :: Maybe (HlsCodecSpecification), "ConstantIv" :: Maybe (StringMin32Max32'), "Destination" :: OutputLocationRef, "DirectoryStructure" :: Maybe (HlsDirectoryStructure), "EncryptionType" :: Maybe (HlsEncryptionType), "HlsCdnSettings" :: Maybe (HlsCdnSettings), "IndexNSegments" :: Maybe (IntegerMin3'), "InputLossAction" :: Maybe (InputLossActionForHlsOut), "IvInManifest" :: Maybe (HlsIvInManifest), "IvSource" :: Maybe (HlsIvSource), "KeepSegments" :: Maybe (IntegerMin1'), "KeyFormat" :: Maybe (String), "KeyFormatVersions" :: Maybe (String), "KeyProviderSettings" :: Maybe (KeyProviderSettings), "ManifestCompression" :: Maybe (HlsManifestCompression), "ManifestDurationFormat" :: Maybe (HlsManifestDurationFormat), "MinSegmentLength" :: Maybe (IntegerMin0'), "Mode" :: Maybe (HlsMode), "OutputSelection" :: Maybe (HlsOutputSelection), "ProgramDateTime" :: Maybe (HlsProgramDateTime), "ProgramDateTimePeriod" :: Maybe (IntegerMin0Max3600'), "SegmentLength" :: Maybe (IntegerMin1'), "SegmentationMode" :: Maybe (HlsSegmentationMode), "SegmentsPerSubdirectory" :: Maybe (IntegerMin1'), "StreamInfResolution" :: Maybe (HlsStreamInfResolution), "TimedMetadataId3Frame" :: Maybe (HlsTimedMetadataId3Frame), "TimedMetadataId3Period" :: Maybe (IntegerMin0'), "TimestampDeltaMilliseconds" :: Maybe (IntegerMin0'), "TsFileMode" :: Maybe (HlsTsFileMode) }) -> HlsGroupSettings
 ```
 
 Constructs HlsGroupSettings's fields from required parameters
@@ -4010,7 +4010,7 @@ Constructs HlsGroupSettings's fields from required parameters
 
 ``` purescript
 newtype HlsInputSettings
-  = HlsInputSettings { "Bandwidth" :: NullOrUndefined (IntegerMin0'), "BufferSegments" :: NullOrUndefined (IntegerMin0'), "Retries" :: NullOrUndefined (IntegerMin0'), "RetryInterval" :: NullOrUndefined (IntegerMin0') }
+  = HlsInputSettings { "Bandwidth" :: Maybe (IntegerMin0'), "BufferSegments" :: Maybe (IntegerMin0'), "Retries" :: Maybe (IntegerMin0'), "RetryInterval" :: Maybe (IntegerMin0') }
 ```
 
 Placeholder documentation for HlsInputSettings
@@ -4035,7 +4035,7 @@ Constructs HlsInputSettings from required parameters
 #### `newHlsInputSettings'`
 
 ``` purescript
-newHlsInputSettings' :: ({ "Bandwidth" :: NullOrUndefined (IntegerMin0'), "BufferSegments" :: NullOrUndefined (IntegerMin0'), "Retries" :: NullOrUndefined (IntegerMin0'), "RetryInterval" :: NullOrUndefined (IntegerMin0') } -> { "Bandwidth" :: NullOrUndefined (IntegerMin0'), "BufferSegments" :: NullOrUndefined (IntegerMin0'), "Retries" :: NullOrUndefined (IntegerMin0'), "RetryInterval" :: NullOrUndefined (IntegerMin0') }) -> HlsInputSettings
+newHlsInputSettings' :: ({ "Bandwidth" :: Maybe (IntegerMin0'), "BufferSegments" :: Maybe (IntegerMin0'), "Retries" :: Maybe (IntegerMin0'), "RetryInterval" :: Maybe (IntegerMin0') } -> { "Bandwidth" :: Maybe (IntegerMin0'), "BufferSegments" :: Maybe (IntegerMin0'), "Retries" :: Maybe (IntegerMin0'), "RetryInterval" :: Maybe (IntegerMin0') }) -> HlsInputSettings
 ```
 
 Constructs HlsInputSettings's fields from required parameters
@@ -4116,7 +4116,7 @@ Encode HlsManifestDurationFormat
 
 ``` purescript
 newtype HlsMediaStoreSettings
-  = HlsMediaStoreSettings { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "MediaStoreStorageClass" :: NullOrUndefined (HlsMediaStoreStorageClass), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') }
+  = HlsMediaStoreSettings { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "MediaStoreStorageClass" :: Maybe (HlsMediaStoreStorageClass), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') }
 ```
 
 Placeholder documentation for HlsMediaStoreSettings
@@ -4141,7 +4141,7 @@ Constructs HlsMediaStoreSettings from required parameters
 #### `newHlsMediaStoreSettings'`
 
 ``` purescript
-newHlsMediaStoreSettings' :: ({ "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "MediaStoreStorageClass" :: NullOrUndefined (HlsMediaStoreStorageClass), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } -> { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "MediaStoreStorageClass" :: NullOrUndefined (HlsMediaStoreStorageClass), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') }) -> HlsMediaStoreSettings
+newHlsMediaStoreSettings' :: ({ "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "MediaStoreStorageClass" :: Maybe (HlsMediaStoreStorageClass), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') } -> { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "MediaStoreStorageClass" :: Maybe (HlsMediaStoreStorageClass), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') }) -> HlsMediaStoreSettings
 ```
 
 Constructs HlsMediaStoreSettings's fields from required parameters
@@ -4204,7 +4204,7 @@ Encode HlsOutputSelection
 
 ``` purescript
 newtype HlsOutputSettings
-  = HlsOutputSettings { "HlsSettings" :: HlsSettings, "NameModifier" :: NullOrUndefined (StringMin1'), "SegmentModifier" :: NullOrUndefined (String) }
+  = HlsOutputSettings { "HlsSettings" :: HlsSettings, "NameModifier" :: Maybe (StringMin1'), "SegmentModifier" :: Maybe (String) }
 ```
 
 Placeholder documentation for HlsOutputSettings
@@ -4229,7 +4229,7 @@ Constructs HlsOutputSettings from required parameters
 #### `newHlsOutputSettings'`
 
 ``` purescript
-newHlsOutputSettings' :: HlsSettings -> ({ "HlsSettings" :: HlsSettings, "NameModifier" :: NullOrUndefined (StringMin1'), "SegmentModifier" :: NullOrUndefined (String) } -> { "HlsSettings" :: HlsSettings, "NameModifier" :: NullOrUndefined (StringMin1'), "SegmentModifier" :: NullOrUndefined (String) }) -> HlsOutputSettings
+newHlsOutputSettings' :: HlsSettings -> ({ "HlsSettings" :: HlsSettings, "NameModifier" :: Maybe (StringMin1'), "SegmentModifier" :: Maybe (String) } -> { "HlsSettings" :: HlsSettings, "NameModifier" :: Maybe (StringMin1'), "SegmentModifier" :: Maybe (String) }) -> HlsOutputSettings
 ```
 
 Constructs HlsOutputSettings's fields from required parameters
@@ -4274,7 +4274,7 @@ Encode HlsSegmentationMode
 
 ``` purescript
 newtype HlsSettings
-  = HlsSettings { "AudioOnlyHlsSettings" :: NullOrUndefined (AudioOnlyHlsSettings), "StandardHlsSettings" :: NullOrUndefined (StandardHlsSettings) }
+  = HlsSettings { "AudioOnlyHlsSettings" :: Maybe (AudioOnlyHlsSettings), "StandardHlsSettings" :: Maybe (StandardHlsSettings) }
 ```
 
 Placeholder documentation for HlsSettings
@@ -4299,7 +4299,7 @@ Constructs HlsSettings from required parameters
 #### `newHlsSettings'`
 
 ``` purescript
-newHlsSettings' :: ({ "AudioOnlyHlsSettings" :: NullOrUndefined (AudioOnlyHlsSettings), "StandardHlsSettings" :: NullOrUndefined (StandardHlsSettings) } -> { "AudioOnlyHlsSettings" :: NullOrUndefined (AudioOnlyHlsSettings), "StandardHlsSettings" :: NullOrUndefined (StandardHlsSettings) }) -> HlsSettings
+newHlsSettings' :: ({ "AudioOnlyHlsSettings" :: Maybe (AudioOnlyHlsSettings), "StandardHlsSettings" :: Maybe (StandardHlsSettings) } -> { "AudioOnlyHlsSettings" :: Maybe (AudioOnlyHlsSettings), "StandardHlsSettings" :: Maybe (StandardHlsSettings) }) -> HlsSettings
 ```
 
 Constructs HlsSettings's fields from required parameters
@@ -4380,7 +4380,7 @@ Encode HlsWebdavHttpTransferMode
 
 ``` purescript
 newtype HlsWebdavSettings
-  = HlsWebdavSettings { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "HttpTransferMode" :: NullOrUndefined (HlsWebdavHttpTransferMode), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') }
+  = HlsWebdavSettings { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "HttpTransferMode" :: Maybe (HlsWebdavHttpTransferMode), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') }
 ```
 
 Placeholder documentation for HlsWebdavSettings
@@ -4405,7 +4405,7 @@ Constructs HlsWebdavSettings from required parameters
 #### `newHlsWebdavSettings'`
 
 ``` purescript
-newHlsWebdavSettings' :: ({ "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "HttpTransferMode" :: NullOrUndefined (HlsWebdavHttpTransferMode), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') } -> { "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "FilecacheDuration" :: NullOrUndefined (IntegerMin0Max600'), "HttpTransferMode" :: NullOrUndefined (HlsWebdavHttpTransferMode), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0Max15') }) -> HlsWebdavSettings
+newHlsWebdavSettings' :: ({ "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "HttpTransferMode" :: Maybe (HlsWebdavHttpTransferMode), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') } -> { "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "FilecacheDuration" :: Maybe (IntegerMin0Max600'), "HttpTransferMode" :: Maybe (HlsWebdavHttpTransferMode), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0Max15') }) -> HlsWebdavSettings
 ```
 
 Constructs HlsWebdavSettings's fields from required parameters
@@ -4414,7 +4414,7 @@ Constructs HlsWebdavSettings's fields from required parameters
 
 ``` purescript
 newtype Input
-  = Input { "Arn" :: NullOrUndefined (String), "AttachedChannels" :: NullOrUndefined (ListOf__string'), "Destinations" :: NullOrUndefined (ListOfInputDestination'), "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (ListOf__string'), "Sources" :: NullOrUndefined (ListOfInputSource'), "State" :: NullOrUndefined (InputState), "Type" :: NullOrUndefined (InputType) }
+  = Input { "Arn" :: Maybe (String), "AttachedChannels" :: Maybe (ListOf__string'), "Destinations" :: Maybe (ListOfInputDestination'), "Id" :: Maybe (String), "Name" :: Maybe (String), "SecurityGroups" :: Maybe (ListOf__string'), "Sources" :: Maybe (ListOfInputSource'), "State" :: Maybe (InputState), "Type" :: Maybe (InputType) }
 ```
 
 Placeholder documentation for Input
@@ -4439,7 +4439,7 @@ Constructs Input from required parameters
 #### `newInput'`
 
 ``` purescript
-newInput' :: ({ "Arn" :: NullOrUndefined (String), "AttachedChannels" :: NullOrUndefined (ListOf__string'), "Destinations" :: NullOrUndefined (ListOfInputDestination'), "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (ListOf__string'), "Sources" :: NullOrUndefined (ListOfInputSource'), "State" :: NullOrUndefined (InputState), "Type" :: NullOrUndefined (InputType) } -> { "Arn" :: NullOrUndefined (String), "AttachedChannels" :: NullOrUndefined (ListOf__string'), "Destinations" :: NullOrUndefined (ListOfInputDestination'), "Id" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String), "SecurityGroups" :: NullOrUndefined (ListOf__string'), "Sources" :: NullOrUndefined (ListOfInputSource'), "State" :: NullOrUndefined (InputState), "Type" :: NullOrUndefined (InputType) }) -> Input
+newInput' :: ({ "Arn" :: Maybe (String), "AttachedChannels" :: Maybe (ListOf__string'), "Destinations" :: Maybe (ListOfInputDestination'), "Id" :: Maybe (String), "Name" :: Maybe (String), "SecurityGroups" :: Maybe (ListOf__string'), "Sources" :: Maybe (ListOfInputSource'), "State" :: Maybe (InputState), "Type" :: Maybe (InputType) } -> { "Arn" :: Maybe (String), "AttachedChannels" :: Maybe (ListOf__string'), "Destinations" :: Maybe (ListOfInputDestination'), "Id" :: Maybe (String), "Name" :: Maybe (String), "SecurityGroups" :: Maybe (ListOf__string'), "Sources" :: Maybe (ListOfInputSource'), "State" :: Maybe (InputState), "Type" :: Maybe (InputType) }) -> Input
 ```
 
 Constructs Input's fields from required parameters
@@ -4448,7 +4448,7 @@ Constructs Input's fields from required parameters
 
 ``` purescript
 newtype InputAttachment
-  = InputAttachment { "InputId" :: NullOrUndefined (String), "InputSettings" :: NullOrUndefined (InputSettings) }
+  = InputAttachment { "InputId" :: Maybe (String), "InputSettings" :: Maybe (InputSettings) }
 ```
 
 Placeholder documentation for InputAttachment
@@ -4473,7 +4473,7 @@ Constructs InputAttachment from required parameters
 #### `newInputAttachment'`
 
 ``` purescript
-newInputAttachment' :: ({ "InputId" :: NullOrUndefined (String), "InputSettings" :: NullOrUndefined (InputSettings) } -> { "InputId" :: NullOrUndefined (String), "InputSettings" :: NullOrUndefined (InputSettings) }) -> InputAttachment
+newInputAttachment' :: ({ "InputId" :: Maybe (String), "InputSettings" :: Maybe (InputSettings) } -> { "InputId" :: Maybe (String), "InputSettings" :: Maybe (InputSettings) }) -> InputAttachment
 ```
 
 Constructs InputAttachment's fields from required parameters
@@ -4570,7 +4570,7 @@ Encode InputDenoiseFilter
 
 ``` purescript
 newtype InputDestination
-  = InputDestination { "Ip" :: NullOrUndefined (String), "Port" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String) }
+  = InputDestination { "Ip" :: Maybe (String), "Port" :: Maybe (String), "Url" :: Maybe (String) }
 ```
 
 The settings for a PUSH type input.
@@ -4595,7 +4595,7 @@ Constructs InputDestination from required parameters
 #### `newInputDestination'`
 
 ``` purescript
-newInputDestination' :: ({ "Ip" :: NullOrUndefined (String), "Port" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String) } -> { "Ip" :: NullOrUndefined (String), "Port" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String) }) -> InputDestination
+newInputDestination' :: ({ "Ip" :: Maybe (String), "Port" :: Maybe (String), "Url" :: Maybe (String) } -> { "Ip" :: Maybe (String), "Port" :: Maybe (String), "Url" :: Maybe (String) }) -> InputDestination
 ```
 
 Constructs InputDestination's fields from required parameters
@@ -4604,7 +4604,7 @@ Constructs InputDestination's fields from required parameters
 
 ``` purescript
 newtype InputDestinationRequest
-  = InputDestinationRequest { "StreamName" :: NullOrUndefined (String) }
+  = InputDestinationRequest { "StreamName" :: Maybe (String) }
 ```
 
 Endpoint settings for a PUSH type input.
@@ -4629,7 +4629,7 @@ Constructs InputDestinationRequest from required parameters
 #### `newInputDestinationRequest'`
 
 ``` purescript
-newInputDestinationRequest' :: ({ "StreamName" :: NullOrUndefined (String) } -> { "StreamName" :: NullOrUndefined (String) }) -> InputDestinationRequest
+newInputDestinationRequest' :: ({ "StreamName" :: Maybe (String) } -> { "StreamName" :: Maybe (String) }) -> InputDestinationRequest
 ```
 
 Constructs InputDestinationRequest's fields from required parameters
@@ -4656,7 +4656,7 @@ Encode InputFilter
 
 ``` purescript
 newtype InputLocation
-  = InputLocation { "PasswordParam" :: NullOrUndefined (String), "Uri" :: String, "Username" :: NullOrUndefined (String) }
+  = InputLocation { "PasswordParam" :: Maybe (String), "Uri" :: String, "Username" :: Maybe (String) }
 ```
 
 Placeholder documentation for InputLocation
@@ -4681,7 +4681,7 @@ Constructs InputLocation from required parameters
 #### `newInputLocation'`
 
 ``` purescript
-newInputLocation' :: String -> ({ "PasswordParam" :: NullOrUndefined (String), "Uri" :: String, "Username" :: NullOrUndefined (String) } -> { "PasswordParam" :: NullOrUndefined (String), "Uri" :: String, "Username" :: NullOrUndefined (String) }) -> InputLocation
+newInputLocation' :: String -> ({ "PasswordParam" :: Maybe (String), "Uri" :: String, "Username" :: Maybe (String) } -> { "PasswordParam" :: Maybe (String), "Uri" :: String, "Username" :: Maybe (String) }) -> InputLocation
 ```
 
 Constructs InputLocation's fields from required parameters
@@ -4744,7 +4744,7 @@ Encode InputLossActionForUdpOut
 
 ``` purescript
 newtype InputLossBehavior
-  = InputLossBehavior { "BlackFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000'), "InputLossImageColor" :: NullOrUndefined (StringMin6Max6'), "InputLossImageSlate" :: NullOrUndefined (InputLocation), "InputLossImageType" :: NullOrUndefined (InputLossImageType), "RepeatFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000') }
+  = InputLossBehavior { "BlackFrameMsec" :: Maybe (IntegerMin0Max1000000'), "InputLossImageColor" :: Maybe (StringMin6Max6'), "InputLossImageSlate" :: Maybe (InputLocation), "InputLossImageType" :: Maybe (InputLossImageType), "RepeatFrameMsec" :: Maybe (IntegerMin0Max1000000') }
 ```
 
 Placeholder documentation for InputLossBehavior
@@ -4769,7 +4769,7 @@ Constructs InputLossBehavior from required parameters
 #### `newInputLossBehavior'`
 
 ``` purescript
-newInputLossBehavior' :: ({ "BlackFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000'), "InputLossImageColor" :: NullOrUndefined (StringMin6Max6'), "InputLossImageSlate" :: NullOrUndefined (InputLocation), "InputLossImageType" :: NullOrUndefined (InputLossImageType), "RepeatFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000') } -> { "BlackFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000'), "InputLossImageColor" :: NullOrUndefined (StringMin6Max6'), "InputLossImageSlate" :: NullOrUndefined (InputLocation), "InputLossImageType" :: NullOrUndefined (InputLossImageType), "RepeatFrameMsec" :: NullOrUndefined (IntegerMin0Max1000000') }) -> InputLossBehavior
+newInputLossBehavior' :: ({ "BlackFrameMsec" :: Maybe (IntegerMin0Max1000000'), "InputLossImageColor" :: Maybe (StringMin6Max6'), "InputLossImageSlate" :: Maybe (InputLocation), "InputLossImageType" :: Maybe (InputLossImageType), "RepeatFrameMsec" :: Maybe (IntegerMin0Max1000000') } -> { "BlackFrameMsec" :: Maybe (IntegerMin0Max1000000'), "InputLossImageColor" :: Maybe (StringMin6Max6'), "InputLossImageSlate" :: Maybe (InputLocation), "InputLossImageType" :: Maybe (InputLossImageType), "RepeatFrameMsec" :: Maybe (IntegerMin0Max1000000') }) -> InputLossBehavior
 ```
 
 Constructs InputLossBehavior's fields from required parameters
@@ -4833,7 +4833,7 @@ Encode InputResolution
 
 ``` purescript
 newtype InputSecurityGroup
-  = InputSecurityGroup { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') }
+  = InputSecurityGroup { "Arn" :: Maybe (String), "Id" :: Maybe (String), "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') }
 ```
 
 An Input Security Group
@@ -4858,7 +4858,7 @@ Constructs InputSecurityGroup from required parameters
 #### `newInputSecurityGroup'`
 
 ``` purescript
-newInputSecurityGroup' :: ({ "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') } -> { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRule') }) -> InputSecurityGroup
+newInputSecurityGroup' :: ({ "Arn" :: Maybe (String), "Id" :: Maybe (String), "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') } -> { "Arn" :: Maybe (String), "Id" :: Maybe (String), "WhitelistRules" :: Maybe (ListOfInputWhitelistRule') }) -> InputSecurityGroup
 ```
 
 Constructs InputSecurityGroup's fields from required parameters
@@ -4867,7 +4867,7 @@ Constructs InputSecurityGroup's fields from required parameters
 
 ``` purescript
 newtype InputSecurityGroupWhitelistRequest
-  = InputSecurityGroupWhitelistRequest { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') }
+  = InputSecurityGroupWhitelistRequest { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') }
 ```
 
 Request of IPv4 CIDR addresses to whitelist in a security group.
@@ -4892,7 +4892,7 @@ Constructs InputSecurityGroupWhitelistRequest from required parameters
 #### `newInputSecurityGroupWhitelistRequest'`
 
 ``` purescript
-newInputSecurityGroupWhitelistRequest' :: ({ "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') } -> { "WhitelistRules" :: NullOrUndefined (ListOfInputWhitelistRuleCidr') }) -> InputSecurityGroupWhitelistRequest
+newInputSecurityGroupWhitelistRequest' :: ({ "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') } -> { "WhitelistRules" :: Maybe (ListOfInputWhitelistRuleCidr') }) -> InputSecurityGroupWhitelistRequest
 ```
 
 Constructs InputSecurityGroupWhitelistRequest's fields from required parameters
@@ -4901,7 +4901,7 @@ Constructs InputSecurityGroupWhitelistRequest's fields from required parameters
 
 ``` purescript
 newtype InputSettings
-  = InputSettings { "AudioSelectors" :: NullOrUndefined (ListOfAudioSelector'), "CaptionSelectors" :: NullOrUndefined (ListOfCaptionSelector'), "DeblockFilter" :: NullOrUndefined (InputDeblockFilter), "DenoiseFilter" :: NullOrUndefined (InputDenoiseFilter), "FilterStrength" :: NullOrUndefined (IntegerMin1Max5'), "InputFilter" :: NullOrUndefined (InputFilter), "NetworkInputSettings" :: NullOrUndefined (NetworkInputSettings), "SourceEndBehavior" :: NullOrUndefined (InputSourceEndBehavior), "VideoSelector" :: NullOrUndefined (VideoSelector) }
+  = InputSettings { "AudioSelectors" :: Maybe (ListOfAudioSelector'), "CaptionSelectors" :: Maybe (ListOfCaptionSelector'), "DeblockFilter" :: Maybe (InputDeblockFilter), "DenoiseFilter" :: Maybe (InputDenoiseFilter), "FilterStrength" :: Maybe (IntegerMin1Max5'), "InputFilter" :: Maybe (InputFilter), "NetworkInputSettings" :: Maybe (NetworkInputSettings), "SourceEndBehavior" :: Maybe (InputSourceEndBehavior), "VideoSelector" :: Maybe (VideoSelector) }
 ```
 
 Live Event input parameters. There can be multiple inputs in a single Live Event.
@@ -4926,7 +4926,7 @@ Constructs InputSettings from required parameters
 #### `newInputSettings'`
 
 ``` purescript
-newInputSettings' :: ({ "AudioSelectors" :: NullOrUndefined (ListOfAudioSelector'), "CaptionSelectors" :: NullOrUndefined (ListOfCaptionSelector'), "DeblockFilter" :: NullOrUndefined (InputDeblockFilter), "DenoiseFilter" :: NullOrUndefined (InputDenoiseFilter), "FilterStrength" :: NullOrUndefined (IntegerMin1Max5'), "InputFilter" :: NullOrUndefined (InputFilter), "NetworkInputSettings" :: NullOrUndefined (NetworkInputSettings), "SourceEndBehavior" :: NullOrUndefined (InputSourceEndBehavior), "VideoSelector" :: NullOrUndefined (VideoSelector) } -> { "AudioSelectors" :: NullOrUndefined (ListOfAudioSelector'), "CaptionSelectors" :: NullOrUndefined (ListOfCaptionSelector'), "DeblockFilter" :: NullOrUndefined (InputDeblockFilter), "DenoiseFilter" :: NullOrUndefined (InputDenoiseFilter), "FilterStrength" :: NullOrUndefined (IntegerMin1Max5'), "InputFilter" :: NullOrUndefined (InputFilter), "NetworkInputSettings" :: NullOrUndefined (NetworkInputSettings), "SourceEndBehavior" :: NullOrUndefined (InputSourceEndBehavior), "VideoSelector" :: NullOrUndefined (VideoSelector) }) -> InputSettings
+newInputSettings' :: ({ "AudioSelectors" :: Maybe (ListOfAudioSelector'), "CaptionSelectors" :: Maybe (ListOfCaptionSelector'), "DeblockFilter" :: Maybe (InputDeblockFilter), "DenoiseFilter" :: Maybe (InputDenoiseFilter), "FilterStrength" :: Maybe (IntegerMin1Max5'), "InputFilter" :: Maybe (InputFilter), "NetworkInputSettings" :: Maybe (NetworkInputSettings), "SourceEndBehavior" :: Maybe (InputSourceEndBehavior), "VideoSelector" :: Maybe (VideoSelector) } -> { "AudioSelectors" :: Maybe (ListOfAudioSelector'), "CaptionSelectors" :: Maybe (ListOfCaptionSelector'), "DeblockFilter" :: Maybe (InputDeblockFilter), "DenoiseFilter" :: Maybe (InputDenoiseFilter), "FilterStrength" :: Maybe (IntegerMin1Max5'), "InputFilter" :: Maybe (InputFilter), "NetworkInputSettings" :: Maybe (NetworkInputSettings), "SourceEndBehavior" :: Maybe (InputSourceEndBehavior), "VideoSelector" :: Maybe (VideoSelector) }) -> InputSettings
 ```
 
 Constructs InputSettings's fields from required parameters
@@ -4935,7 +4935,7 @@ Constructs InputSettings's fields from required parameters
 
 ``` purescript
 newtype InputSource
-  = InputSource { "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }
+  = InputSource { "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }
 ```
 
 The settings for a PULL type input.
@@ -4960,7 +4960,7 @@ Constructs InputSource from required parameters
 #### `newInputSource'`
 
 ``` purescript
-newInputSource' :: ({ "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) } -> { "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }) -> InputSource
+newInputSource' :: ({ "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) } -> { "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }) -> InputSource
 ```
 
 Constructs InputSource's fields from required parameters
@@ -4987,7 +4987,7 @@ Encode InputSourceEndBehavior
 
 ``` purescript
 newtype InputSourceRequest
-  = InputSourceRequest { "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }
+  = InputSourceRequest { "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }
 ```
 
 Settings for for a PULL type input.
@@ -5012,7 +5012,7 @@ Constructs InputSourceRequest from required parameters
 #### `newInputSourceRequest'`
 
 ``` purescript
-newInputSourceRequest' :: ({ "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) } -> { "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }) -> InputSourceRequest
+newInputSourceRequest' :: ({ "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) } -> { "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }) -> InputSourceRequest
 ```
 
 Constructs InputSourceRequest's fields from required parameters
@@ -5021,7 +5021,7 @@ Constructs InputSourceRequest's fields from required parameters
 
 ``` purescript
 newtype InputSpecification
-  = InputSpecification { "Codec" :: NullOrUndefined (InputCodec), "MaximumBitrate" :: NullOrUndefined (InputMaximumBitrate), "Resolution" :: NullOrUndefined (InputResolution) }
+  = InputSpecification { "Codec" :: Maybe (InputCodec), "MaximumBitrate" :: Maybe (InputMaximumBitrate), "Resolution" :: Maybe (InputResolution) }
 ```
 
 Placeholder documentation for InputSpecification
@@ -5046,7 +5046,7 @@ Constructs InputSpecification from required parameters
 #### `newInputSpecification'`
 
 ``` purescript
-newInputSpecification' :: ({ "Codec" :: NullOrUndefined (InputCodec), "MaximumBitrate" :: NullOrUndefined (InputMaximumBitrate), "Resolution" :: NullOrUndefined (InputResolution) } -> { "Codec" :: NullOrUndefined (InputCodec), "MaximumBitrate" :: NullOrUndefined (InputMaximumBitrate), "Resolution" :: NullOrUndefined (InputResolution) }) -> InputSpecification
+newInputSpecification' :: ({ "Codec" :: Maybe (InputCodec), "MaximumBitrate" :: Maybe (InputMaximumBitrate), "Resolution" :: Maybe (InputResolution) } -> { "Codec" :: Maybe (InputCodec), "MaximumBitrate" :: Maybe (InputMaximumBitrate), "Resolution" :: Maybe (InputResolution) }) -> InputSpecification
 ```
 
 Constructs InputSpecification's fields from required parameters
@@ -5091,7 +5091,7 @@ Encode InputType
 
 ``` purescript
 newtype InputWhitelistRule
-  = InputWhitelistRule { "Cidr" :: NullOrUndefined (String) }
+  = InputWhitelistRule { "Cidr" :: Maybe (String) }
 ```
 
 Whitelist rule
@@ -5116,7 +5116,7 @@ Constructs InputWhitelistRule from required parameters
 #### `newInputWhitelistRule'`
 
 ``` purescript
-newInputWhitelistRule' :: ({ "Cidr" :: NullOrUndefined (String) } -> { "Cidr" :: NullOrUndefined (String) }) -> InputWhitelistRule
+newInputWhitelistRule' :: ({ "Cidr" :: Maybe (String) } -> { "Cidr" :: Maybe (String) }) -> InputWhitelistRule
 ```
 
 Constructs InputWhitelistRule's fields from required parameters
@@ -5125,7 +5125,7 @@ Constructs InputWhitelistRule's fields from required parameters
 
 ``` purescript
 newtype InputWhitelistRuleCidr
-  = InputWhitelistRuleCidr { "Cidr" :: NullOrUndefined (String) }
+  = InputWhitelistRuleCidr { "Cidr" :: Maybe (String) }
 ```
 
 An IPv4 CIDR to whitelist.
@@ -5150,7 +5150,7 @@ Constructs InputWhitelistRuleCidr from required parameters
 #### `newInputWhitelistRuleCidr'`
 
 ``` purescript
-newInputWhitelistRuleCidr' :: ({ "Cidr" :: NullOrUndefined (String) } -> { "Cidr" :: NullOrUndefined (String) }) -> InputWhitelistRuleCidr
+newInputWhitelistRuleCidr' :: ({ "Cidr" :: Maybe (String) } -> { "Cidr" :: Maybe (String) }) -> InputWhitelistRuleCidr
 ```
 
 Constructs InputWhitelistRuleCidr's fields from required parameters
@@ -5159,7 +5159,7 @@ Constructs InputWhitelistRuleCidr's fields from required parameters
 
 ``` purescript
 newtype InternalServerErrorException
-  = InternalServerErrorException { "Message" :: NullOrUndefined (String) }
+  = InternalServerErrorException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for InternalServerErrorException
@@ -5184,7 +5184,7 @@ Constructs InternalServerErrorException from required parameters
 #### `newInternalServerErrorException'`
 
 ``` purescript
-newInternalServerErrorException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InternalServerErrorException
+newInternalServerErrorException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InternalServerErrorException
 ```
 
 Constructs InternalServerErrorException's fields from required parameters
@@ -5193,7 +5193,7 @@ Constructs InternalServerErrorException's fields from required parameters
 
 ``` purescript
 newtype InternalServiceError
-  = InternalServiceError { "Message" :: NullOrUndefined (String) }
+  = InternalServiceError { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for InternalServiceError
@@ -5218,7 +5218,7 @@ Constructs InternalServiceError from required parameters
 #### `newInternalServiceError'`
 
 ``` purescript
-newInternalServiceError' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InternalServiceError
+newInternalServiceError' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InternalServiceError
 ```
 
 Constructs InternalServiceError's fields from required parameters
@@ -5227,7 +5227,7 @@ Constructs InternalServiceError's fields from required parameters
 
 ``` purescript
 newtype InvalidRequest
-  = InvalidRequest { "Message" :: NullOrUndefined (String) }
+  = InvalidRequest { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for InvalidRequest
@@ -5252,7 +5252,7 @@ Constructs InvalidRequest from required parameters
 #### `newInvalidRequest'`
 
 ``` purescript
-newInvalidRequest' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidRequest
+newInvalidRequest' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidRequest
 ```
 
 Constructs InvalidRequest's fields from required parameters
@@ -5261,7 +5261,7 @@ Constructs InvalidRequest's fields from required parameters
 
 ``` purescript
 newtype KeyProviderSettings
-  = KeyProviderSettings { "StaticKeySettings" :: NullOrUndefined (StaticKeySettings) }
+  = KeyProviderSettings { "StaticKeySettings" :: Maybe (StaticKeySettings) }
 ```
 
 Placeholder documentation for KeyProviderSettings
@@ -5286,7 +5286,7 @@ Constructs KeyProviderSettings from required parameters
 #### `newKeyProviderSettings'`
 
 ``` purescript
-newKeyProviderSettings' :: ({ "StaticKeySettings" :: NullOrUndefined (StaticKeySettings) } -> { "StaticKeySettings" :: NullOrUndefined (StaticKeySettings) }) -> KeyProviderSettings
+newKeyProviderSettings' :: ({ "StaticKeySettings" :: Maybe (StaticKeySettings) } -> { "StaticKeySettings" :: Maybe (StaticKeySettings) }) -> KeyProviderSettings
 ```
 
 Constructs KeyProviderSettings's fields from required parameters
@@ -5295,7 +5295,7 @@ Constructs KeyProviderSettings's fields from required parameters
 
 ``` purescript
 newtype LimitExceeded
-  = LimitExceeded { "Message" :: NullOrUndefined (String) }
+  = LimitExceeded { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for LimitExceeded
@@ -5320,7 +5320,7 @@ Constructs LimitExceeded from required parameters
 #### `newLimitExceeded'`
 
 ``` purescript
-newLimitExceeded' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> LimitExceeded
+newLimitExceeded' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> LimitExceeded
 ```
 
 Constructs LimitExceeded's fields from required parameters
@@ -5329,7 +5329,7 @@ Constructs LimitExceeded's fields from required parameters
 
 ``` purescript
 newtype ListChannelsRequest
-  = ListChannelsRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListChannelsRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListChannelsRequest
@@ -5354,7 +5354,7 @@ Constructs ListChannelsRequest from required parameters
 #### `newListChannelsRequest'`
 
 ``` purescript
-newListChannelsRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListChannelsRequest
+newListChannelsRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListChannelsRequest
 ```
 
 Constructs ListChannelsRequest's fields from required parameters
@@ -5363,7 +5363,7 @@ Constructs ListChannelsRequest's fields from required parameters
 
 ``` purescript
 newtype ListChannelsResponse
-  = ListChannelsResponse { "Channels" :: NullOrUndefined (ListOfChannelSummary'), "NextToken" :: NullOrUndefined (String) }
+  = ListChannelsResponse { "Channels" :: Maybe (ListOfChannelSummary'), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListChannelsResponse
@@ -5388,7 +5388,7 @@ Constructs ListChannelsResponse from required parameters
 #### `newListChannelsResponse'`
 
 ``` purescript
-newListChannelsResponse' :: ({ "Channels" :: NullOrUndefined (ListOfChannelSummary'), "NextToken" :: NullOrUndefined (String) } -> { "Channels" :: NullOrUndefined (ListOfChannelSummary'), "NextToken" :: NullOrUndefined (String) }) -> ListChannelsResponse
+newListChannelsResponse' :: ({ "Channels" :: Maybe (ListOfChannelSummary'), "NextToken" :: Maybe (String) } -> { "Channels" :: Maybe (ListOfChannelSummary'), "NextToken" :: Maybe (String) }) -> ListChannelsResponse
 ```
 
 Constructs ListChannelsResponse's fields from required parameters
@@ -5397,7 +5397,7 @@ Constructs ListChannelsResponse's fields from required parameters
 
 ``` purescript
 newtype ListChannelsResultModel
-  = ListChannelsResultModel { "Channels" :: NullOrUndefined (ListOfChannelSummary'), "NextToken" :: NullOrUndefined (String) }
+  = ListChannelsResultModel { "Channels" :: Maybe (ListOfChannelSummary'), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListChannelsResultModel
@@ -5422,7 +5422,7 @@ Constructs ListChannelsResultModel from required parameters
 #### `newListChannelsResultModel'`
 
 ``` purescript
-newListChannelsResultModel' :: ({ "Channels" :: NullOrUndefined (ListOfChannelSummary'), "NextToken" :: NullOrUndefined (String) } -> { "Channels" :: NullOrUndefined (ListOfChannelSummary'), "NextToken" :: NullOrUndefined (String) }) -> ListChannelsResultModel
+newListChannelsResultModel' :: ({ "Channels" :: Maybe (ListOfChannelSummary'), "NextToken" :: Maybe (String) } -> { "Channels" :: Maybe (ListOfChannelSummary'), "NextToken" :: Maybe (String) }) -> ListChannelsResultModel
 ```
 
 Constructs ListChannelsResultModel's fields from required parameters
@@ -5431,7 +5431,7 @@ Constructs ListChannelsResultModel's fields from required parameters
 
 ``` purescript
 newtype ListInputSecurityGroupsRequest
-  = ListInputSecurityGroupsRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListInputSecurityGroupsRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListInputSecurityGroupsRequest
@@ -5456,7 +5456,7 @@ Constructs ListInputSecurityGroupsRequest from required parameters
 #### `newListInputSecurityGroupsRequest'`
 
 ``` purescript
-newListInputSecurityGroupsRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListInputSecurityGroupsRequest
+newListInputSecurityGroupsRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListInputSecurityGroupsRequest
 ```
 
 Constructs ListInputSecurityGroupsRequest's fields from required parameters
@@ -5465,7 +5465,7 @@ Constructs ListInputSecurityGroupsRequest's fields from required parameters
 
 ``` purescript
 newtype ListInputSecurityGroupsResponse
-  = ListInputSecurityGroupsResponse { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup'), "NextToken" :: NullOrUndefined (String) }
+  = ListInputSecurityGroupsResponse { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup'), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListInputSecurityGroupsResponse
@@ -5490,7 +5490,7 @@ Constructs ListInputSecurityGroupsResponse from required parameters
 #### `newListInputSecurityGroupsResponse'`
 
 ``` purescript
-newListInputSecurityGroupsResponse' :: ({ "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup'), "NextToken" :: NullOrUndefined (String) } -> { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup'), "NextToken" :: NullOrUndefined (String) }) -> ListInputSecurityGroupsResponse
+newListInputSecurityGroupsResponse' :: ({ "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup'), "NextToken" :: Maybe (String) } -> { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup'), "NextToken" :: Maybe (String) }) -> ListInputSecurityGroupsResponse
 ```
 
 Constructs ListInputSecurityGroupsResponse's fields from required parameters
@@ -5499,7 +5499,7 @@ Constructs ListInputSecurityGroupsResponse's fields from required parameters
 
 ``` purescript
 newtype ListInputSecurityGroupsResultModel
-  = ListInputSecurityGroupsResultModel { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup'), "NextToken" :: NullOrUndefined (String) }
+  = ListInputSecurityGroupsResultModel { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup'), "NextToken" :: Maybe (String) }
 ```
 
 Result of input security group list request
@@ -5524,7 +5524,7 @@ Constructs ListInputSecurityGroupsResultModel from required parameters
 #### `newListInputSecurityGroupsResultModel'`
 
 ``` purescript
-newListInputSecurityGroupsResultModel' :: ({ "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup'), "NextToken" :: NullOrUndefined (String) } -> { "InputSecurityGroups" :: NullOrUndefined (ListOfInputSecurityGroup'), "NextToken" :: NullOrUndefined (String) }) -> ListInputSecurityGroupsResultModel
+newListInputSecurityGroupsResultModel' :: ({ "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup'), "NextToken" :: Maybe (String) } -> { "InputSecurityGroups" :: Maybe (ListOfInputSecurityGroup'), "NextToken" :: Maybe (String) }) -> ListInputSecurityGroupsResultModel
 ```
 
 Constructs ListInputSecurityGroupsResultModel's fields from required parameters
@@ -5533,7 +5533,7 @@ Constructs ListInputSecurityGroupsResultModel's fields from required parameters
 
 ``` purescript
 newtype ListInputsRequest
-  = ListInputsRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListInputsRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListInputsRequest
@@ -5558,7 +5558,7 @@ Constructs ListInputsRequest from required parameters
 #### `newListInputsRequest'`
 
 ``` purescript
-newListInputsRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListInputsRequest
+newListInputsRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListInputsRequest
 ```
 
 Constructs ListInputsRequest's fields from required parameters
@@ -5567,7 +5567,7 @@ Constructs ListInputsRequest's fields from required parameters
 
 ``` purescript
 newtype ListInputsResponse
-  = ListInputsResponse { "Inputs" :: NullOrUndefined (ListOfInput'), "NextToken" :: NullOrUndefined (String) }
+  = ListInputsResponse { "Inputs" :: Maybe (ListOfInput'), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListInputsResponse
@@ -5592,7 +5592,7 @@ Constructs ListInputsResponse from required parameters
 #### `newListInputsResponse'`
 
 ``` purescript
-newListInputsResponse' :: ({ "Inputs" :: NullOrUndefined (ListOfInput'), "NextToken" :: NullOrUndefined (String) } -> { "Inputs" :: NullOrUndefined (ListOfInput'), "NextToken" :: NullOrUndefined (String) }) -> ListInputsResponse
+newListInputsResponse' :: ({ "Inputs" :: Maybe (ListOfInput'), "NextToken" :: Maybe (String) } -> { "Inputs" :: Maybe (ListOfInput'), "NextToken" :: Maybe (String) }) -> ListInputsResponse
 ```
 
 Constructs ListInputsResponse's fields from required parameters
@@ -5601,7 +5601,7 @@ Constructs ListInputsResponse's fields from required parameters
 
 ``` purescript
 newtype ListInputsResultModel
-  = ListInputsResultModel { "Inputs" :: NullOrUndefined (ListOfInput'), "NextToken" :: NullOrUndefined (String) }
+  = ListInputsResultModel { "Inputs" :: Maybe (ListOfInput'), "NextToken" :: Maybe (String) }
 ```
 
 Placeholder documentation for ListInputsResultModel
@@ -5626,7 +5626,7 @@ Constructs ListInputsResultModel from required parameters
 #### `newListInputsResultModel'`
 
 ``` purescript
-newListInputsResultModel' :: ({ "Inputs" :: NullOrUndefined (ListOfInput'), "NextToken" :: NullOrUndefined (String) } -> { "Inputs" :: NullOrUndefined (ListOfInput'), "NextToken" :: NullOrUndefined (String) }) -> ListInputsResultModel
+newListInputsResultModel' :: ({ "Inputs" :: Maybe (ListOfInput'), "NextToken" :: Maybe (String) } -> { "Inputs" :: Maybe (ListOfInput'), "NextToken" :: Maybe (String) }) -> ListInputsResultModel
 ```
 
 Constructs ListInputsResultModel's fields from required parameters
@@ -5941,7 +5941,7 @@ Encode M2tsSegmentationStyle
 
 ``` purescript
 newtype M2tsSettings
-  = M2tsSettings { "AbsentInputAudioBehavior" :: NullOrUndefined (M2tsAbsentInputAudioBehavior), "Arib" :: NullOrUndefined (M2tsArib), "AribCaptionsPid" :: NullOrUndefined (String), "AribCaptionsPidControl" :: NullOrUndefined (M2tsAribCaptionsPidControl), "AudioBufferModel" :: NullOrUndefined (M2tsAudioBufferModel), "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0'), "AudioPids" :: NullOrUndefined (String), "AudioStreamType" :: NullOrUndefined (M2tsAudioStreamType), "Bitrate" :: NullOrUndefined (IntegerMin0'), "BufferModel" :: NullOrUndefined (M2tsBufferModel), "CcDescriptor" :: NullOrUndefined (M2tsCcDescriptor), "DvbNitSettings" :: NullOrUndefined (DvbNitSettings), "DvbSdtSettings" :: NullOrUndefined (DvbSdtSettings), "DvbSubPids" :: NullOrUndefined (String), "DvbTdtSettings" :: NullOrUndefined (DvbTdtSettings), "DvbTeletextPid" :: NullOrUndefined (String), "Ebif" :: NullOrUndefined (M2tsEbifControl), "EbpAudioInterval" :: NullOrUndefined (M2tsAudioInterval), "EbpLookaheadMs" :: NullOrUndefined (IntegerMin0Max10000'), "EbpPlacement" :: NullOrUndefined (M2tsEbpPlacement), "EcmPid" :: NullOrUndefined (String), "EsRateInPes" :: NullOrUndefined (M2tsEsRateInPes), "EtvPlatformPid" :: NullOrUndefined (String), "EtvSignalPid" :: NullOrUndefined (String), "FragmentTime" :: NullOrUndefined (DoubleMin0'), "Klv" :: NullOrUndefined (M2tsKlv), "KlvDataPids" :: NullOrUndefined (String), "NullPacketBitrate" :: NullOrUndefined (DoubleMin0'), "PatInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PcrControl" :: NullOrUndefined (M2tsPcrControl), "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500'), "PcrPid" :: NullOrUndefined (String), "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PmtPid" :: NullOrUndefined (String), "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535'), "RateMode" :: NullOrUndefined (M2tsRateMode), "Scte27Pids" :: NullOrUndefined (String), "Scte35Control" :: NullOrUndefined (M2tsScte35Control), "Scte35Pid" :: NullOrUndefined (String), "SegmentationMarkers" :: NullOrUndefined (M2tsSegmentationMarkers), "SegmentationStyle" :: NullOrUndefined (M2tsSegmentationStyle), "SegmentationTime" :: NullOrUndefined (DoubleMin1'), "TimedMetadataBehavior" :: NullOrUndefined (M2tsTimedMetadataBehavior), "TimedMetadataPid" :: NullOrUndefined (String), "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535'), "VideoPid" :: NullOrUndefined (String) }
+  = M2tsSettings { "AbsentInputAudioBehavior" :: Maybe (M2tsAbsentInputAudioBehavior), "Arib" :: Maybe (M2tsArib), "AribCaptionsPid" :: Maybe (String), "AribCaptionsPidControl" :: Maybe (M2tsAribCaptionsPidControl), "AudioBufferModel" :: Maybe (M2tsAudioBufferModel), "AudioFramesPerPes" :: Maybe (IntegerMin0'), "AudioPids" :: Maybe (String), "AudioStreamType" :: Maybe (M2tsAudioStreamType), "Bitrate" :: Maybe (IntegerMin0'), "BufferModel" :: Maybe (M2tsBufferModel), "CcDescriptor" :: Maybe (M2tsCcDescriptor), "DvbNitSettings" :: Maybe (DvbNitSettings), "DvbSdtSettings" :: Maybe (DvbSdtSettings), "DvbSubPids" :: Maybe (String), "DvbTdtSettings" :: Maybe (DvbTdtSettings), "DvbTeletextPid" :: Maybe (String), "Ebif" :: Maybe (M2tsEbifControl), "EbpAudioInterval" :: Maybe (M2tsAudioInterval), "EbpLookaheadMs" :: Maybe (IntegerMin0Max10000'), "EbpPlacement" :: Maybe (M2tsEbpPlacement), "EcmPid" :: Maybe (String), "EsRateInPes" :: Maybe (M2tsEsRateInPes), "EtvPlatformPid" :: Maybe (String), "EtvSignalPid" :: Maybe (String), "FragmentTime" :: Maybe (DoubleMin0'), "Klv" :: Maybe (M2tsKlv), "KlvDataPids" :: Maybe (String), "NullPacketBitrate" :: Maybe (DoubleMin0'), "PatInterval" :: Maybe (IntegerMin0Max1000'), "PcrControl" :: Maybe (M2tsPcrControl), "PcrPeriod" :: Maybe (IntegerMin0Max500'), "PcrPid" :: Maybe (String), "PmtInterval" :: Maybe (IntegerMin0Max1000'), "PmtPid" :: Maybe (String), "ProgramNum" :: Maybe (IntegerMin0Max65535'), "RateMode" :: Maybe (M2tsRateMode), "Scte27Pids" :: Maybe (String), "Scte35Control" :: Maybe (M2tsScte35Control), "Scte35Pid" :: Maybe (String), "SegmentationMarkers" :: Maybe (M2tsSegmentationMarkers), "SegmentationStyle" :: Maybe (M2tsSegmentationStyle), "SegmentationTime" :: Maybe (DoubleMin1'), "TimedMetadataBehavior" :: Maybe (M2tsTimedMetadataBehavior), "TimedMetadataPid" :: Maybe (String), "TransportStreamId" :: Maybe (IntegerMin0Max65535'), "VideoPid" :: Maybe (String) }
 ```
 
 Placeholder documentation for M2tsSettings
@@ -5966,7 +5966,7 @@ Constructs M2tsSettings from required parameters
 #### `newM2tsSettings'`
 
 ``` purescript
-newM2tsSettings' :: ({ "AbsentInputAudioBehavior" :: NullOrUndefined (M2tsAbsentInputAudioBehavior), "Arib" :: NullOrUndefined (M2tsArib), "AribCaptionsPid" :: NullOrUndefined (String), "AribCaptionsPidControl" :: NullOrUndefined (M2tsAribCaptionsPidControl), "AudioBufferModel" :: NullOrUndefined (M2tsAudioBufferModel), "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0'), "AudioPids" :: NullOrUndefined (String), "AudioStreamType" :: NullOrUndefined (M2tsAudioStreamType), "Bitrate" :: NullOrUndefined (IntegerMin0'), "BufferModel" :: NullOrUndefined (M2tsBufferModel), "CcDescriptor" :: NullOrUndefined (M2tsCcDescriptor), "DvbNitSettings" :: NullOrUndefined (DvbNitSettings), "DvbSdtSettings" :: NullOrUndefined (DvbSdtSettings), "DvbSubPids" :: NullOrUndefined (String), "DvbTdtSettings" :: NullOrUndefined (DvbTdtSettings), "DvbTeletextPid" :: NullOrUndefined (String), "Ebif" :: NullOrUndefined (M2tsEbifControl), "EbpAudioInterval" :: NullOrUndefined (M2tsAudioInterval), "EbpLookaheadMs" :: NullOrUndefined (IntegerMin0Max10000'), "EbpPlacement" :: NullOrUndefined (M2tsEbpPlacement), "EcmPid" :: NullOrUndefined (String), "EsRateInPes" :: NullOrUndefined (M2tsEsRateInPes), "EtvPlatformPid" :: NullOrUndefined (String), "EtvSignalPid" :: NullOrUndefined (String), "FragmentTime" :: NullOrUndefined (DoubleMin0'), "Klv" :: NullOrUndefined (M2tsKlv), "KlvDataPids" :: NullOrUndefined (String), "NullPacketBitrate" :: NullOrUndefined (DoubleMin0'), "PatInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PcrControl" :: NullOrUndefined (M2tsPcrControl), "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500'), "PcrPid" :: NullOrUndefined (String), "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PmtPid" :: NullOrUndefined (String), "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535'), "RateMode" :: NullOrUndefined (M2tsRateMode), "Scte27Pids" :: NullOrUndefined (String), "Scte35Control" :: NullOrUndefined (M2tsScte35Control), "Scte35Pid" :: NullOrUndefined (String), "SegmentationMarkers" :: NullOrUndefined (M2tsSegmentationMarkers), "SegmentationStyle" :: NullOrUndefined (M2tsSegmentationStyle), "SegmentationTime" :: NullOrUndefined (DoubleMin1'), "TimedMetadataBehavior" :: NullOrUndefined (M2tsTimedMetadataBehavior), "TimedMetadataPid" :: NullOrUndefined (String), "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535'), "VideoPid" :: NullOrUndefined (String) } -> { "AbsentInputAudioBehavior" :: NullOrUndefined (M2tsAbsentInputAudioBehavior), "Arib" :: NullOrUndefined (M2tsArib), "AribCaptionsPid" :: NullOrUndefined (String), "AribCaptionsPidControl" :: NullOrUndefined (M2tsAribCaptionsPidControl), "AudioBufferModel" :: NullOrUndefined (M2tsAudioBufferModel), "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0'), "AudioPids" :: NullOrUndefined (String), "AudioStreamType" :: NullOrUndefined (M2tsAudioStreamType), "Bitrate" :: NullOrUndefined (IntegerMin0'), "BufferModel" :: NullOrUndefined (M2tsBufferModel), "CcDescriptor" :: NullOrUndefined (M2tsCcDescriptor), "DvbNitSettings" :: NullOrUndefined (DvbNitSettings), "DvbSdtSettings" :: NullOrUndefined (DvbSdtSettings), "DvbSubPids" :: NullOrUndefined (String), "DvbTdtSettings" :: NullOrUndefined (DvbTdtSettings), "DvbTeletextPid" :: NullOrUndefined (String), "Ebif" :: NullOrUndefined (M2tsEbifControl), "EbpAudioInterval" :: NullOrUndefined (M2tsAudioInterval), "EbpLookaheadMs" :: NullOrUndefined (IntegerMin0Max10000'), "EbpPlacement" :: NullOrUndefined (M2tsEbpPlacement), "EcmPid" :: NullOrUndefined (String), "EsRateInPes" :: NullOrUndefined (M2tsEsRateInPes), "EtvPlatformPid" :: NullOrUndefined (String), "EtvSignalPid" :: NullOrUndefined (String), "FragmentTime" :: NullOrUndefined (DoubleMin0'), "Klv" :: NullOrUndefined (M2tsKlv), "KlvDataPids" :: NullOrUndefined (String), "NullPacketBitrate" :: NullOrUndefined (DoubleMin0'), "PatInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PcrControl" :: NullOrUndefined (M2tsPcrControl), "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500'), "PcrPid" :: NullOrUndefined (String), "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PmtPid" :: NullOrUndefined (String), "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535'), "RateMode" :: NullOrUndefined (M2tsRateMode), "Scte27Pids" :: NullOrUndefined (String), "Scte35Control" :: NullOrUndefined (M2tsScte35Control), "Scte35Pid" :: NullOrUndefined (String), "SegmentationMarkers" :: NullOrUndefined (M2tsSegmentationMarkers), "SegmentationStyle" :: NullOrUndefined (M2tsSegmentationStyle), "SegmentationTime" :: NullOrUndefined (DoubleMin1'), "TimedMetadataBehavior" :: NullOrUndefined (M2tsTimedMetadataBehavior), "TimedMetadataPid" :: NullOrUndefined (String), "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535'), "VideoPid" :: NullOrUndefined (String) }) -> M2tsSettings
+newM2tsSettings' :: ({ "AbsentInputAudioBehavior" :: Maybe (M2tsAbsentInputAudioBehavior), "Arib" :: Maybe (M2tsArib), "AribCaptionsPid" :: Maybe (String), "AribCaptionsPidControl" :: Maybe (M2tsAribCaptionsPidControl), "AudioBufferModel" :: Maybe (M2tsAudioBufferModel), "AudioFramesPerPes" :: Maybe (IntegerMin0'), "AudioPids" :: Maybe (String), "AudioStreamType" :: Maybe (M2tsAudioStreamType), "Bitrate" :: Maybe (IntegerMin0'), "BufferModel" :: Maybe (M2tsBufferModel), "CcDescriptor" :: Maybe (M2tsCcDescriptor), "DvbNitSettings" :: Maybe (DvbNitSettings), "DvbSdtSettings" :: Maybe (DvbSdtSettings), "DvbSubPids" :: Maybe (String), "DvbTdtSettings" :: Maybe (DvbTdtSettings), "DvbTeletextPid" :: Maybe (String), "Ebif" :: Maybe (M2tsEbifControl), "EbpAudioInterval" :: Maybe (M2tsAudioInterval), "EbpLookaheadMs" :: Maybe (IntegerMin0Max10000'), "EbpPlacement" :: Maybe (M2tsEbpPlacement), "EcmPid" :: Maybe (String), "EsRateInPes" :: Maybe (M2tsEsRateInPes), "EtvPlatformPid" :: Maybe (String), "EtvSignalPid" :: Maybe (String), "FragmentTime" :: Maybe (DoubleMin0'), "Klv" :: Maybe (M2tsKlv), "KlvDataPids" :: Maybe (String), "NullPacketBitrate" :: Maybe (DoubleMin0'), "PatInterval" :: Maybe (IntegerMin0Max1000'), "PcrControl" :: Maybe (M2tsPcrControl), "PcrPeriod" :: Maybe (IntegerMin0Max500'), "PcrPid" :: Maybe (String), "PmtInterval" :: Maybe (IntegerMin0Max1000'), "PmtPid" :: Maybe (String), "ProgramNum" :: Maybe (IntegerMin0Max65535'), "RateMode" :: Maybe (M2tsRateMode), "Scte27Pids" :: Maybe (String), "Scte35Control" :: Maybe (M2tsScte35Control), "Scte35Pid" :: Maybe (String), "SegmentationMarkers" :: Maybe (M2tsSegmentationMarkers), "SegmentationStyle" :: Maybe (M2tsSegmentationStyle), "SegmentationTime" :: Maybe (DoubleMin1'), "TimedMetadataBehavior" :: Maybe (M2tsTimedMetadataBehavior), "TimedMetadataPid" :: Maybe (String), "TransportStreamId" :: Maybe (IntegerMin0Max65535'), "VideoPid" :: Maybe (String) } -> { "AbsentInputAudioBehavior" :: Maybe (M2tsAbsentInputAudioBehavior), "Arib" :: Maybe (M2tsArib), "AribCaptionsPid" :: Maybe (String), "AribCaptionsPidControl" :: Maybe (M2tsAribCaptionsPidControl), "AudioBufferModel" :: Maybe (M2tsAudioBufferModel), "AudioFramesPerPes" :: Maybe (IntegerMin0'), "AudioPids" :: Maybe (String), "AudioStreamType" :: Maybe (M2tsAudioStreamType), "Bitrate" :: Maybe (IntegerMin0'), "BufferModel" :: Maybe (M2tsBufferModel), "CcDescriptor" :: Maybe (M2tsCcDescriptor), "DvbNitSettings" :: Maybe (DvbNitSettings), "DvbSdtSettings" :: Maybe (DvbSdtSettings), "DvbSubPids" :: Maybe (String), "DvbTdtSettings" :: Maybe (DvbTdtSettings), "DvbTeletextPid" :: Maybe (String), "Ebif" :: Maybe (M2tsEbifControl), "EbpAudioInterval" :: Maybe (M2tsAudioInterval), "EbpLookaheadMs" :: Maybe (IntegerMin0Max10000'), "EbpPlacement" :: Maybe (M2tsEbpPlacement), "EcmPid" :: Maybe (String), "EsRateInPes" :: Maybe (M2tsEsRateInPes), "EtvPlatformPid" :: Maybe (String), "EtvSignalPid" :: Maybe (String), "FragmentTime" :: Maybe (DoubleMin0'), "Klv" :: Maybe (M2tsKlv), "KlvDataPids" :: Maybe (String), "NullPacketBitrate" :: Maybe (DoubleMin0'), "PatInterval" :: Maybe (IntegerMin0Max1000'), "PcrControl" :: Maybe (M2tsPcrControl), "PcrPeriod" :: Maybe (IntegerMin0Max500'), "PcrPid" :: Maybe (String), "PmtInterval" :: Maybe (IntegerMin0Max1000'), "PmtPid" :: Maybe (String), "ProgramNum" :: Maybe (IntegerMin0Max65535'), "RateMode" :: Maybe (M2tsRateMode), "Scte27Pids" :: Maybe (String), "Scte35Control" :: Maybe (M2tsScte35Control), "Scte35Pid" :: Maybe (String), "SegmentationMarkers" :: Maybe (M2tsSegmentationMarkers), "SegmentationStyle" :: Maybe (M2tsSegmentationStyle), "SegmentationTime" :: Maybe (DoubleMin1'), "TimedMetadataBehavior" :: Maybe (M2tsTimedMetadataBehavior), "TimedMetadataPid" :: Maybe (String), "TransportStreamId" :: Maybe (IntegerMin0Max65535'), "VideoPid" :: Maybe (String) }) -> M2tsSettings
 ```
 
 Constructs M2tsSettings's fields from required parameters
@@ -6029,7 +6029,7 @@ Encode M3u8Scte35Behavior
 
 ``` purescript
 newtype M3u8Settings
-  = M3u8Settings { "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0'), "AudioPids" :: NullOrUndefined (String), "EcmPid" :: NullOrUndefined (String), "PatInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PcrControl" :: NullOrUndefined (M3u8PcrControl), "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500'), "PcrPid" :: NullOrUndefined (String), "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PmtPid" :: NullOrUndefined (String), "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535'), "Scte35Behavior" :: NullOrUndefined (M3u8Scte35Behavior), "Scte35Pid" :: NullOrUndefined (String), "TimedMetadataBehavior" :: NullOrUndefined (M3u8TimedMetadataBehavior), "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535'), "VideoPid" :: NullOrUndefined (String) }
+  = M3u8Settings { "AudioFramesPerPes" :: Maybe (IntegerMin0'), "AudioPids" :: Maybe (String), "EcmPid" :: Maybe (String), "PatInterval" :: Maybe (IntegerMin0Max1000'), "PcrControl" :: Maybe (M3u8PcrControl), "PcrPeriod" :: Maybe (IntegerMin0Max500'), "PcrPid" :: Maybe (String), "PmtInterval" :: Maybe (IntegerMin0Max1000'), "PmtPid" :: Maybe (String), "ProgramNum" :: Maybe (IntegerMin0Max65535'), "Scte35Behavior" :: Maybe (M3u8Scte35Behavior), "Scte35Pid" :: Maybe (String), "TimedMetadataBehavior" :: Maybe (M3u8TimedMetadataBehavior), "TransportStreamId" :: Maybe (IntegerMin0Max65535'), "VideoPid" :: Maybe (String) }
 ```
 
 Settings information for the .m3u8 container
@@ -6054,7 +6054,7 @@ Constructs M3u8Settings from required parameters
 #### `newM3u8Settings'`
 
 ``` purescript
-newM3u8Settings' :: ({ "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0'), "AudioPids" :: NullOrUndefined (String), "EcmPid" :: NullOrUndefined (String), "PatInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PcrControl" :: NullOrUndefined (M3u8PcrControl), "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500'), "PcrPid" :: NullOrUndefined (String), "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PmtPid" :: NullOrUndefined (String), "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535'), "Scte35Behavior" :: NullOrUndefined (M3u8Scte35Behavior), "Scte35Pid" :: NullOrUndefined (String), "TimedMetadataBehavior" :: NullOrUndefined (M3u8TimedMetadataBehavior), "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535'), "VideoPid" :: NullOrUndefined (String) } -> { "AudioFramesPerPes" :: NullOrUndefined (IntegerMin0'), "AudioPids" :: NullOrUndefined (String), "EcmPid" :: NullOrUndefined (String), "PatInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PcrControl" :: NullOrUndefined (M3u8PcrControl), "PcrPeriod" :: NullOrUndefined (IntegerMin0Max500'), "PcrPid" :: NullOrUndefined (String), "PmtInterval" :: NullOrUndefined (IntegerMin0Max1000'), "PmtPid" :: NullOrUndefined (String), "ProgramNum" :: NullOrUndefined (IntegerMin0Max65535'), "Scte35Behavior" :: NullOrUndefined (M3u8Scte35Behavior), "Scte35Pid" :: NullOrUndefined (String), "TimedMetadataBehavior" :: NullOrUndefined (M3u8TimedMetadataBehavior), "TransportStreamId" :: NullOrUndefined (IntegerMin0Max65535'), "VideoPid" :: NullOrUndefined (String) }) -> M3u8Settings
+newM3u8Settings' :: ({ "AudioFramesPerPes" :: Maybe (IntegerMin0'), "AudioPids" :: Maybe (String), "EcmPid" :: Maybe (String), "PatInterval" :: Maybe (IntegerMin0Max1000'), "PcrControl" :: Maybe (M3u8PcrControl), "PcrPeriod" :: Maybe (IntegerMin0Max500'), "PcrPid" :: Maybe (String), "PmtInterval" :: Maybe (IntegerMin0Max1000'), "PmtPid" :: Maybe (String), "ProgramNum" :: Maybe (IntegerMin0Max65535'), "Scte35Behavior" :: Maybe (M3u8Scte35Behavior), "Scte35Pid" :: Maybe (String), "TimedMetadataBehavior" :: Maybe (M3u8TimedMetadataBehavior), "TransportStreamId" :: Maybe (IntegerMin0Max65535'), "VideoPid" :: Maybe (String) } -> { "AudioFramesPerPes" :: Maybe (IntegerMin0'), "AudioPids" :: Maybe (String), "EcmPid" :: Maybe (String), "PatInterval" :: Maybe (IntegerMin0Max1000'), "PcrControl" :: Maybe (M3u8PcrControl), "PcrPeriod" :: Maybe (IntegerMin0Max500'), "PcrPid" :: Maybe (String), "PmtInterval" :: Maybe (IntegerMin0Max1000'), "PmtPid" :: Maybe (String), "ProgramNum" :: Maybe (IntegerMin0Max65535'), "Scte35Behavior" :: Maybe (M3u8Scte35Behavior), "Scte35Pid" :: Maybe (String), "TimedMetadataBehavior" :: Maybe (M3u8TimedMetadataBehavior), "TransportStreamId" :: Maybe (IntegerMin0Max65535'), "VideoPid" :: Maybe (String) }) -> M3u8Settings
 ```
 
 Constructs M3u8Settings's fields from required parameters
@@ -6117,7 +6117,7 @@ Encode Mp2CodingMode
 
 ``` purescript
 newtype Mp2Settings
-  = Mp2Settings { "Bitrate" :: NullOrUndefined (Number), "CodingMode" :: NullOrUndefined (Mp2CodingMode), "SampleRate" :: NullOrUndefined (Number) }
+  = Mp2Settings { "Bitrate" :: Maybe (Number), "CodingMode" :: Maybe (Mp2CodingMode), "SampleRate" :: Maybe (Number) }
 ```
 
 Placeholder documentation for Mp2Settings
@@ -6142,7 +6142,7 @@ Constructs Mp2Settings from required parameters
 #### `newMp2Settings'`
 
 ``` purescript
-newMp2Settings' :: ({ "Bitrate" :: NullOrUndefined (Number), "CodingMode" :: NullOrUndefined (Mp2CodingMode), "SampleRate" :: NullOrUndefined (Number) } -> { "Bitrate" :: NullOrUndefined (Number), "CodingMode" :: NullOrUndefined (Mp2CodingMode), "SampleRate" :: NullOrUndefined (Number) }) -> Mp2Settings
+newMp2Settings' :: ({ "Bitrate" :: Maybe (Number), "CodingMode" :: Maybe (Mp2CodingMode), "SampleRate" :: Maybe (Number) } -> { "Bitrate" :: Maybe (Number), "CodingMode" :: Maybe (Mp2CodingMode), "SampleRate" :: Maybe (Number) }) -> Mp2Settings
 ```
 
 Constructs Mp2Settings's fields from required parameters
@@ -6151,7 +6151,7 @@ Constructs Mp2Settings's fields from required parameters
 
 ``` purescript
 newtype MsSmoothGroupSettings
-  = MsSmoothGroupSettings { "AcquisitionPointId" :: NullOrUndefined (String), "AudioOnlyTimecodeControl" :: NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl), "CertificateMode" :: NullOrUndefined (SmoothGroupCertificateMode), "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "Destination" :: OutputLocationRef, "EventId" :: NullOrUndefined (String), "EventIdMode" :: NullOrUndefined (SmoothGroupEventIdMode), "EventStopBehavior" :: NullOrUndefined (SmoothGroupEventStopBehavior), "FilecacheDuration" :: NullOrUndefined (IntegerMin0'), "FragmentLength" :: NullOrUndefined (IntegerMin1'), "InputLossAction" :: NullOrUndefined (InputLossActionForMsSmoothOut), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0'), "SegmentationMode" :: NullOrUndefined (SmoothGroupSegmentationMode), "SendDelayMs" :: NullOrUndefined (IntegerMin0Max10000'), "SparseTrackType" :: NullOrUndefined (SmoothGroupSparseTrackType), "StreamManifestBehavior" :: NullOrUndefined (SmoothGroupStreamManifestBehavior), "TimestampOffset" :: NullOrUndefined (String), "TimestampOffsetMode" :: NullOrUndefined (SmoothGroupTimestampOffsetMode) }
+  = MsSmoothGroupSettings { "AcquisitionPointId" :: Maybe (String), "AudioOnlyTimecodeControl" :: Maybe (SmoothGroupAudioOnlyTimecodeControl), "CertificateMode" :: Maybe (SmoothGroupCertificateMode), "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "Destination" :: OutputLocationRef, "EventId" :: Maybe (String), "EventIdMode" :: Maybe (SmoothGroupEventIdMode), "EventStopBehavior" :: Maybe (SmoothGroupEventStopBehavior), "FilecacheDuration" :: Maybe (IntegerMin0'), "FragmentLength" :: Maybe (IntegerMin1'), "InputLossAction" :: Maybe (InputLossActionForMsSmoothOut), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0'), "SegmentationMode" :: Maybe (SmoothGroupSegmentationMode), "SendDelayMs" :: Maybe (IntegerMin0Max10000'), "SparseTrackType" :: Maybe (SmoothGroupSparseTrackType), "StreamManifestBehavior" :: Maybe (SmoothGroupStreamManifestBehavior), "TimestampOffset" :: Maybe (String), "TimestampOffsetMode" :: Maybe (SmoothGroupTimestampOffsetMode) }
 ```
 
 Placeholder documentation for MsSmoothGroupSettings
@@ -6176,7 +6176,7 @@ Constructs MsSmoothGroupSettings from required parameters
 #### `newMsSmoothGroupSettings'`
 
 ``` purescript
-newMsSmoothGroupSettings' :: OutputLocationRef -> ({ "AcquisitionPointId" :: NullOrUndefined (String), "AudioOnlyTimecodeControl" :: NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl), "CertificateMode" :: NullOrUndefined (SmoothGroupCertificateMode), "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "Destination" :: OutputLocationRef, "EventId" :: NullOrUndefined (String), "EventIdMode" :: NullOrUndefined (SmoothGroupEventIdMode), "EventStopBehavior" :: NullOrUndefined (SmoothGroupEventStopBehavior), "FilecacheDuration" :: NullOrUndefined (IntegerMin0'), "FragmentLength" :: NullOrUndefined (IntegerMin1'), "InputLossAction" :: NullOrUndefined (InputLossActionForMsSmoothOut), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0'), "SegmentationMode" :: NullOrUndefined (SmoothGroupSegmentationMode), "SendDelayMs" :: NullOrUndefined (IntegerMin0Max10000'), "SparseTrackType" :: NullOrUndefined (SmoothGroupSparseTrackType), "StreamManifestBehavior" :: NullOrUndefined (SmoothGroupStreamManifestBehavior), "TimestampOffset" :: NullOrUndefined (String), "TimestampOffsetMode" :: NullOrUndefined (SmoothGroupTimestampOffsetMode) } -> { "AcquisitionPointId" :: NullOrUndefined (String), "AudioOnlyTimecodeControl" :: NullOrUndefined (SmoothGroupAudioOnlyTimecodeControl), "CertificateMode" :: NullOrUndefined (SmoothGroupCertificateMode), "ConnectionRetryInterval" :: NullOrUndefined (IntegerMin0'), "Destination" :: OutputLocationRef, "EventId" :: NullOrUndefined (String), "EventIdMode" :: NullOrUndefined (SmoothGroupEventIdMode), "EventStopBehavior" :: NullOrUndefined (SmoothGroupEventStopBehavior), "FilecacheDuration" :: NullOrUndefined (IntegerMin0'), "FragmentLength" :: NullOrUndefined (IntegerMin1'), "InputLossAction" :: NullOrUndefined (InputLossActionForMsSmoothOut), "NumRetries" :: NullOrUndefined (IntegerMin0'), "RestartDelay" :: NullOrUndefined (IntegerMin0'), "SegmentationMode" :: NullOrUndefined (SmoothGroupSegmentationMode), "SendDelayMs" :: NullOrUndefined (IntegerMin0Max10000'), "SparseTrackType" :: NullOrUndefined (SmoothGroupSparseTrackType), "StreamManifestBehavior" :: NullOrUndefined (SmoothGroupStreamManifestBehavior), "TimestampOffset" :: NullOrUndefined (String), "TimestampOffsetMode" :: NullOrUndefined (SmoothGroupTimestampOffsetMode) }) -> MsSmoothGroupSettings
+newMsSmoothGroupSettings' :: OutputLocationRef -> ({ "AcquisitionPointId" :: Maybe (String), "AudioOnlyTimecodeControl" :: Maybe (SmoothGroupAudioOnlyTimecodeControl), "CertificateMode" :: Maybe (SmoothGroupCertificateMode), "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "Destination" :: OutputLocationRef, "EventId" :: Maybe (String), "EventIdMode" :: Maybe (SmoothGroupEventIdMode), "EventStopBehavior" :: Maybe (SmoothGroupEventStopBehavior), "FilecacheDuration" :: Maybe (IntegerMin0'), "FragmentLength" :: Maybe (IntegerMin1'), "InputLossAction" :: Maybe (InputLossActionForMsSmoothOut), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0'), "SegmentationMode" :: Maybe (SmoothGroupSegmentationMode), "SendDelayMs" :: Maybe (IntegerMin0Max10000'), "SparseTrackType" :: Maybe (SmoothGroupSparseTrackType), "StreamManifestBehavior" :: Maybe (SmoothGroupStreamManifestBehavior), "TimestampOffset" :: Maybe (String), "TimestampOffsetMode" :: Maybe (SmoothGroupTimestampOffsetMode) } -> { "AcquisitionPointId" :: Maybe (String), "AudioOnlyTimecodeControl" :: Maybe (SmoothGroupAudioOnlyTimecodeControl), "CertificateMode" :: Maybe (SmoothGroupCertificateMode), "ConnectionRetryInterval" :: Maybe (IntegerMin0'), "Destination" :: OutputLocationRef, "EventId" :: Maybe (String), "EventIdMode" :: Maybe (SmoothGroupEventIdMode), "EventStopBehavior" :: Maybe (SmoothGroupEventStopBehavior), "FilecacheDuration" :: Maybe (IntegerMin0'), "FragmentLength" :: Maybe (IntegerMin1'), "InputLossAction" :: Maybe (InputLossActionForMsSmoothOut), "NumRetries" :: Maybe (IntegerMin0'), "RestartDelay" :: Maybe (IntegerMin0'), "SegmentationMode" :: Maybe (SmoothGroupSegmentationMode), "SendDelayMs" :: Maybe (IntegerMin0Max10000'), "SparseTrackType" :: Maybe (SmoothGroupSparseTrackType), "StreamManifestBehavior" :: Maybe (SmoothGroupStreamManifestBehavior), "TimestampOffset" :: Maybe (String), "TimestampOffsetMode" :: Maybe (SmoothGroupTimestampOffsetMode) }) -> MsSmoothGroupSettings
 ```
 
 Constructs MsSmoothGroupSettings's fields from required parameters
@@ -6185,7 +6185,7 @@ Constructs MsSmoothGroupSettings's fields from required parameters
 
 ``` purescript
 newtype MsSmoothOutputSettings
-  = MsSmoothOutputSettings { "NameModifier" :: NullOrUndefined (String) }
+  = MsSmoothOutputSettings { "NameModifier" :: Maybe (String) }
 ```
 
 Placeholder documentation for MsSmoothOutputSettings
@@ -6210,7 +6210,7 @@ Constructs MsSmoothOutputSettings from required parameters
 #### `newMsSmoothOutputSettings'`
 
 ``` purescript
-newMsSmoothOutputSettings' :: ({ "NameModifier" :: NullOrUndefined (String) } -> { "NameModifier" :: NullOrUndefined (String) }) -> MsSmoothOutputSettings
+newMsSmoothOutputSettings' :: ({ "NameModifier" :: Maybe (String) } -> { "NameModifier" :: Maybe (String) }) -> MsSmoothOutputSettings
 ```
 
 Constructs MsSmoothOutputSettings's fields from required parameters
@@ -6237,7 +6237,7 @@ Encode NetworkInputServerValidation
 
 ``` purescript
 newtype NetworkInputSettings
-  = NetworkInputSettings { "HlsInputSettings" :: NullOrUndefined (HlsInputSettings), "ServerValidation" :: NullOrUndefined (NetworkInputServerValidation) }
+  = NetworkInputSettings { "HlsInputSettings" :: Maybe (HlsInputSettings), "ServerValidation" :: Maybe (NetworkInputServerValidation) }
 ```
 
 Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection.
@@ -6262,7 +6262,7 @@ Constructs NetworkInputSettings from required parameters
 #### `newNetworkInputSettings'`
 
 ``` purescript
-newNetworkInputSettings' :: ({ "HlsInputSettings" :: NullOrUndefined (HlsInputSettings), "ServerValidation" :: NullOrUndefined (NetworkInputServerValidation) } -> { "HlsInputSettings" :: NullOrUndefined (HlsInputSettings), "ServerValidation" :: NullOrUndefined (NetworkInputServerValidation) }) -> NetworkInputSettings
+newNetworkInputSettings' :: ({ "HlsInputSettings" :: Maybe (HlsInputSettings), "ServerValidation" :: Maybe (NetworkInputServerValidation) } -> { "HlsInputSettings" :: Maybe (HlsInputSettings), "ServerValidation" :: Maybe (NetworkInputServerValidation) }) -> NetworkInputSettings
 ```
 
 Constructs NetworkInputSettings's fields from required parameters
@@ -6271,7 +6271,7 @@ Constructs NetworkInputSettings's fields from required parameters
 
 ``` purescript
 newtype NotFoundException
-  = NotFoundException { "Message" :: NullOrUndefined (String) }
+  = NotFoundException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for NotFoundException
@@ -6296,7 +6296,7 @@ Constructs NotFoundException from required parameters
 #### `newNotFoundException'`
 
 ``` purescript
-newNotFoundException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> NotFoundException
+newNotFoundException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> NotFoundException
 ```
 
 Constructs NotFoundException's fields from required parameters
@@ -6305,7 +6305,7 @@ Constructs NotFoundException's fields from required parameters
 
 ``` purescript
 newtype Output
-  = Output { "AudioDescriptionNames" :: NullOrUndefined (ListOf__string'), "CaptionDescriptionNames" :: NullOrUndefined (ListOf__string'), "OutputName" :: NullOrUndefined (StringMin1Max255'), "OutputSettings" :: OutputSettings, "VideoDescriptionName" :: NullOrUndefined (String) }
+  = Output { "AudioDescriptionNames" :: Maybe (ListOf__string'), "CaptionDescriptionNames" :: Maybe (ListOf__string'), "OutputName" :: Maybe (StringMin1Max255'), "OutputSettings" :: OutputSettings, "VideoDescriptionName" :: Maybe (String) }
 ```
 
 Output settings. There can be multiple outputs within a group.
@@ -6330,7 +6330,7 @@ Constructs Output from required parameters
 #### `newOutput'`
 
 ``` purescript
-newOutput' :: OutputSettings -> ({ "AudioDescriptionNames" :: NullOrUndefined (ListOf__string'), "CaptionDescriptionNames" :: NullOrUndefined (ListOf__string'), "OutputName" :: NullOrUndefined (StringMin1Max255'), "OutputSettings" :: OutputSettings, "VideoDescriptionName" :: NullOrUndefined (String) } -> { "AudioDescriptionNames" :: NullOrUndefined (ListOf__string'), "CaptionDescriptionNames" :: NullOrUndefined (ListOf__string'), "OutputName" :: NullOrUndefined (StringMin1Max255'), "OutputSettings" :: OutputSettings, "VideoDescriptionName" :: NullOrUndefined (String) }) -> Output
+newOutput' :: OutputSettings -> ({ "AudioDescriptionNames" :: Maybe (ListOf__string'), "CaptionDescriptionNames" :: Maybe (ListOf__string'), "OutputName" :: Maybe (StringMin1Max255'), "OutputSettings" :: OutputSettings, "VideoDescriptionName" :: Maybe (String) } -> { "AudioDescriptionNames" :: Maybe (ListOf__string'), "CaptionDescriptionNames" :: Maybe (ListOf__string'), "OutputName" :: Maybe (StringMin1Max255'), "OutputSettings" :: OutputSettings, "VideoDescriptionName" :: Maybe (String) }) -> Output
 ```
 
 Constructs Output's fields from required parameters
@@ -6339,7 +6339,7 @@ Constructs Output's fields from required parameters
 
 ``` purescript
 newtype OutputDestination
-  = OutputDestination { "Id" :: NullOrUndefined (String), "Settings" :: NullOrUndefined (ListOfOutputDestinationSettings') }
+  = OutputDestination { "Id" :: Maybe (String), "Settings" :: Maybe (ListOfOutputDestinationSettings') }
 ```
 
 Placeholder documentation for OutputDestination
@@ -6364,7 +6364,7 @@ Constructs OutputDestination from required parameters
 #### `newOutputDestination'`
 
 ``` purescript
-newOutputDestination' :: ({ "Id" :: NullOrUndefined (String), "Settings" :: NullOrUndefined (ListOfOutputDestinationSettings') } -> { "Id" :: NullOrUndefined (String), "Settings" :: NullOrUndefined (ListOfOutputDestinationSettings') }) -> OutputDestination
+newOutputDestination' :: ({ "Id" :: Maybe (String), "Settings" :: Maybe (ListOfOutputDestinationSettings') } -> { "Id" :: Maybe (String), "Settings" :: Maybe (ListOfOutputDestinationSettings') }) -> OutputDestination
 ```
 
 Constructs OutputDestination's fields from required parameters
@@ -6373,7 +6373,7 @@ Constructs OutputDestination's fields from required parameters
 
 ``` purescript
 newtype OutputDestinationSettings
-  = OutputDestinationSettings { "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }
+  = OutputDestinationSettings { "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }
 ```
 
 Placeholder documentation for OutputDestinationSettings
@@ -6398,7 +6398,7 @@ Constructs OutputDestinationSettings from required parameters
 #### `newOutputDestinationSettings'`
 
 ``` purescript
-newOutputDestinationSettings' :: ({ "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) } -> { "PasswordParam" :: NullOrUndefined (String), "Url" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }) -> OutputDestinationSettings
+newOutputDestinationSettings' :: ({ "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) } -> { "PasswordParam" :: Maybe (String), "Url" :: Maybe (String), "Username" :: Maybe (String) }) -> OutputDestinationSettings
 ```
 
 Constructs OutputDestinationSettings's fields from required parameters
@@ -6407,7 +6407,7 @@ Constructs OutputDestinationSettings's fields from required parameters
 
 ``` purescript
 newtype OutputGroup
-  = OutputGroup { "Name" :: NullOrUndefined (StringMax32'), "OutputGroupSettings" :: OutputGroupSettings, "Outputs" :: ListOfOutput' }
+  = OutputGroup { "Name" :: Maybe (StringMax32'), "OutputGroupSettings" :: OutputGroupSettings, "Outputs" :: ListOfOutput' }
 ```
 
 Output groups for this Live Event. Output groups contain information about where streams should be distributed.
@@ -6432,7 +6432,7 @@ Constructs OutputGroup from required parameters
 #### `newOutputGroup'`
 
 ``` purescript
-newOutputGroup' :: OutputGroupSettings -> ListOfOutput' -> ({ "Name" :: NullOrUndefined (StringMax32'), "OutputGroupSettings" :: OutputGroupSettings, "Outputs" :: ListOfOutput' } -> { "Name" :: NullOrUndefined (StringMax32'), "OutputGroupSettings" :: OutputGroupSettings, "Outputs" :: ListOfOutput' }) -> OutputGroup
+newOutputGroup' :: OutputGroupSettings -> ListOfOutput' -> ({ "Name" :: Maybe (StringMax32'), "OutputGroupSettings" :: OutputGroupSettings, "Outputs" :: ListOfOutput' } -> { "Name" :: Maybe (StringMax32'), "OutputGroupSettings" :: OutputGroupSettings, "Outputs" :: ListOfOutput' }) -> OutputGroup
 ```
 
 Constructs OutputGroup's fields from required parameters
@@ -6441,7 +6441,7 @@ Constructs OutputGroup's fields from required parameters
 
 ``` purescript
 newtype OutputGroupSettings
-  = OutputGroupSettings { "ArchiveGroupSettings" :: NullOrUndefined (ArchiveGroupSettings), "HlsGroupSettings" :: NullOrUndefined (HlsGroupSettings), "MsSmoothGroupSettings" :: NullOrUndefined (MsSmoothGroupSettings), "UdpGroupSettings" :: NullOrUndefined (UdpGroupSettings) }
+  = OutputGroupSettings { "ArchiveGroupSettings" :: Maybe (ArchiveGroupSettings), "HlsGroupSettings" :: Maybe (HlsGroupSettings), "MsSmoothGroupSettings" :: Maybe (MsSmoothGroupSettings), "UdpGroupSettings" :: Maybe (UdpGroupSettings) }
 ```
 
 Placeholder documentation for OutputGroupSettings
@@ -6466,7 +6466,7 @@ Constructs OutputGroupSettings from required parameters
 #### `newOutputGroupSettings'`
 
 ``` purescript
-newOutputGroupSettings' :: ({ "ArchiveGroupSettings" :: NullOrUndefined (ArchiveGroupSettings), "HlsGroupSettings" :: NullOrUndefined (HlsGroupSettings), "MsSmoothGroupSettings" :: NullOrUndefined (MsSmoothGroupSettings), "UdpGroupSettings" :: NullOrUndefined (UdpGroupSettings) } -> { "ArchiveGroupSettings" :: NullOrUndefined (ArchiveGroupSettings), "HlsGroupSettings" :: NullOrUndefined (HlsGroupSettings), "MsSmoothGroupSettings" :: NullOrUndefined (MsSmoothGroupSettings), "UdpGroupSettings" :: NullOrUndefined (UdpGroupSettings) }) -> OutputGroupSettings
+newOutputGroupSettings' :: ({ "ArchiveGroupSettings" :: Maybe (ArchiveGroupSettings), "HlsGroupSettings" :: Maybe (HlsGroupSettings), "MsSmoothGroupSettings" :: Maybe (MsSmoothGroupSettings), "UdpGroupSettings" :: Maybe (UdpGroupSettings) } -> { "ArchiveGroupSettings" :: Maybe (ArchiveGroupSettings), "HlsGroupSettings" :: Maybe (HlsGroupSettings), "MsSmoothGroupSettings" :: Maybe (MsSmoothGroupSettings), "UdpGroupSettings" :: Maybe (UdpGroupSettings) }) -> OutputGroupSettings
 ```
 
 Constructs OutputGroupSettings's fields from required parameters
@@ -6475,7 +6475,7 @@ Constructs OutputGroupSettings's fields from required parameters
 
 ``` purescript
 newtype OutputLocationRef
-  = OutputLocationRef { "DestinationRefId" :: NullOrUndefined (String) }
+  = OutputLocationRef { "DestinationRefId" :: Maybe (String) }
 ```
 
 Reference to an OutputDestination ID defined in the channel
@@ -6500,7 +6500,7 @@ Constructs OutputLocationRef from required parameters
 #### `newOutputLocationRef'`
 
 ``` purescript
-newOutputLocationRef' :: ({ "DestinationRefId" :: NullOrUndefined (String) } -> { "DestinationRefId" :: NullOrUndefined (String) }) -> OutputLocationRef
+newOutputLocationRef' :: ({ "DestinationRefId" :: Maybe (String) } -> { "DestinationRefId" :: Maybe (String) }) -> OutputLocationRef
 ```
 
 Constructs OutputLocationRef's fields from required parameters
@@ -6509,7 +6509,7 @@ Constructs OutputLocationRef's fields from required parameters
 
 ``` purescript
 newtype OutputSettings
-  = OutputSettings { "ArchiveOutputSettings" :: NullOrUndefined (ArchiveOutputSettings), "HlsOutputSettings" :: NullOrUndefined (HlsOutputSettings), "MsSmoothOutputSettings" :: NullOrUndefined (MsSmoothOutputSettings), "UdpOutputSettings" :: NullOrUndefined (UdpOutputSettings) }
+  = OutputSettings { "ArchiveOutputSettings" :: Maybe (ArchiveOutputSettings), "HlsOutputSettings" :: Maybe (HlsOutputSettings), "MsSmoothOutputSettings" :: Maybe (MsSmoothOutputSettings), "UdpOutputSettings" :: Maybe (UdpOutputSettings) }
 ```
 
 Placeholder documentation for OutputSettings
@@ -6534,7 +6534,7 @@ Constructs OutputSettings from required parameters
 #### `newOutputSettings'`
 
 ``` purescript
-newOutputSettings' :: ({ "ArchiveOutputSettings" :: NullOrUndefined (ArchiveOutputSettings), "HlsOutputSettings" :: NullOrUndefined (HlsOutputSettings), "MsSmoothOutputSettings" :: NullOrUndefined (MsSmoothOutputSettings), "UdpOutputSettings" :: NullOrUndefined (UdpOutputSettings) } -> { "ArchiveOutputSettings" :: NullOrUndefined (ArchiveOutputSettings), "HlsOutputSettings" :: NullOrUndefined (HlsOutputSettings), "MsSmoothOutputSettings" :: NullOrUndefined (MsSmoothOutputSettings), "UdpOutputSettings" :: NullOrUndefined (UdpOutputSettings) }) -> OutputSettings
+newOutputSettings' :: ({ "ArchiveOutputSettings" :: Maybe (ArchiveOutputSettings), "HlsOutputSettings" :: Maybe (HlsOutputSettings), "MsSmoothOutputSettings" :: Maybe (MsSmoothOutputSettings), "UdpOutputSettings" :: Maybe (UdpOutputSettings) } -> { "ArchiveOutputSettings" :: Maybe (ArchiveOutputSettings), "HlsOutputSettings" :: Maybe (HlsOutputSettings), "MsSmoothOutputSettings" :: Maybe (MsSmoothOutputSettings), "UdpOutputSettings" :: Maybe (UdpOutputSettings) }) -> OutputSettings
 ```
 
 Constructs OutputSettings's fields from required parameters
@@ -6561,7 +6561,7 @@ Encode PassThroughSettings
 
 ``` purescript
 newtype RemixSettings
-  = RemixSettings { "ChannelMappings" :: ListOfAudioChannelMapping', "ChannelsIn" :: NullOrUndefined (IntegerMin1Max16'), "ChannelsOut" :: NullOrUndefined (IntegerMin1Max8') }
+  = RemixSettings { "ChannelMappings" :: ListOfAudioChannelMapping', "ChannelsIn" :: Maybe (IntegerMin1Max16'), "ChannelsOut" :: Maybe (IntegerMin1Max8') }
 ```
 
 Placeholder documentation for RemixSettings
@@ -6586,7 +6586,7 @@ Constructs RemixSettings from required parameters
 #### `newRemixSettings'`
 
 ``` purescript
-newRemixSettings' :: ListOfAudioChannelMapping' -> ({ "ChannelMappings" :: ListOfAudioChannelMapping', "ChannelsIn" :: NullOrUndefined (IntegerMin1Max16'), "ChannelsOut" :: NullOrUndefined (IntegerMin1Max8') } -> { "ChannelMappings" :: ListOfAudioChannelMapping', "ChannelsIn" :: NullOrUndefined (IntegerMin1Max16'), "ChannelsOut" :: NullOrUndefined (IntegerMin1Max8') }) -> RemixSettings
+newRemixSettings' :: ListOfAudioChannelMapping' -> ({ "ChannelMappings" :: ListOfAudioChannelMapping', "ChannelsIn" :: Maybe (IntegerMin1Max16'), "ChannelsOut" :: Maybe (IntegerMin1Max8') } -> { "ChannelMappings" :: ListOfAudioChannelMapping', "ChannelsIn" :: Maybe (IntegerMin1Max16'), "ChannelsOut" :: Maybe (IntegerMin1Max8') }) -> RemixSettings
 ```
 
 Constructs RemixSettings's fields from required parameters
@@ -6595,7 +6595,7 @@ Constructs RemixSettings's fields from required parameters
 
 ``` purescript
 newtype ResourceConflict
-  = ResourceConflict { "Message" :: NullOrUndefined (String) }
+  = ResourceConflict { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for ResourceConflict
@@ -6620,7 +6620,7 @@ Constructs ResourceConflict from required parameters
 #### `newResourceConflict'`
 
 ``` purescript
-newResourceConflict' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ResourceConflict
+newResourceConflict' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ResourceConflict
 ```
 
 Constructs ResourceConflict's fields from required parameters
@@ -6629,7 +6629,7 @@ Constructs ResourceConflict's fields from required parameters
 
 ``` purescript
 newtype ResourceNotFound
-  = ResourceNotFound { "Message" :: NullOrUndefined (String) }
+  = ResourceNotFound { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for ResourceNotFound
@@ -6654,7 +6654,7 @@ Constructs ResourceNotFound from required parameters
 #### `newResourceNotFound'`
 
 ``` purescript
-newResourceNotFound' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ResourceNotFound
+newResourceNotFound' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ResourceNotFound
 ```
 
 Constructs ResourceNotFound's fields from required parameters
@@ -6699,7 +6699,7 @@ Encode Scte20PlusEmbeddedDestinationSettings
 
 ``` purescript
 newtype Scte20SourceSettings
-  = Scte20SourceSettings { "Convert608To708" :: NullOrUndefined (Scte20Convert608To708), "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4') }
+  = Scte20SourceSettings { "Convert608To708" :: Maybe (Scte20Convert608To708), "Source608ChannelNumber" :: Maybe (IntegerMin1Max4') }
 ```
 
 Placeholder documentation for Scte20SourceSettings
@@ -6724,7 +6724,7 @@ Constructs Scte20SourceSettings from required parameters
 #### `newScte20SourceSettings'`
 
 ``` purescript
-newScte20SourceSettings' :: ({ "Convert608To708" :: NullOrUndefined (Scte20Convert608To708), "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4') } -> { "Convert608To708" :: NullOrUndefined (Scte20Convert608To708), "Source608ChannelNumber" :: NullOrUndefined (IntegerMin1Max4') }) -> Scte20SourceSettings
+newScte20SourceSettings' :: ({ "Convert608To708" :: Maybe (Scte20Convert608To708), "Source608ChannelNumber" :: Maybe (IntegerMin1Max4') } -> { "Convert608To708" :: Maybe (Scte20Convert608To708), "Source608ChannelNumber" :: Maybe (IntegerMin1Max4') }) -> Scte20SourceSettings
 ```
 
 Constructs Scte20SourceSettings's fields from required parameters
@@ -6751,7 +6751,7 @@ Encode Scte27DestinationSettings
 
 ``` purescript
 newtype Scte27SourceSettings
-  = Scte27SourceSettings { "Pid" :: NullOrUndefined (IntegerMin1') }
+  = Scte27SourceSettings { "Pid" :: Maybe (IntegerMin1') }
 ```
 
 Placeholder documentation for Scte27SourceSettings
@@ -6776,7 +6776,7 @@ Constructs Scte27SourceSettings from required parameters
 #### `newScte27SourceSettings'`
 
 ``` purescript
-newScte27SourceSettings' :: ({ "Pid" :: NullOrUndefined (IntegerMin1') } -> { "Pid" :: NullOrUndefined (IntegerMin1') }) -> Scte27SourceSettings
+newScte27SourceSettings' :: ({ "Pid" :: Maybe (IntegerMin1') } -> { "Pid" :: Maybe (IntegerMin1') }) -> Scte27SourceSettings
 ```
 
 Constructs Scte27SourceSettings's fields from required parameters
@@ -6821,7 +6821,7 @@ Encode Scte35AposWebDeliveryAllowedBehavior
 
 ``` purescript
 newtype Scte35SpliceInsert
-  = Scte35SpliceInsert { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) }
+  = Scte35SpliceInsert { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: Maybe (Scte35SpliceInsertNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: Maybe (Scte35SpliceInsertWebDeliveryAllowedBehavior) }
 ```
 
 Placeholder documentation for Scte35SpliceInsert
@@ -6846,7 +6846,7 @@ Constructs Scte35SpliceInsert from required parameters
 #### `newScte35SpliceInsert'`
 
 ``` purescript
-newScte35SpliceInsert' :: ({ "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) } -> { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35SpliceInsertNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35SpliceInsertWebDeliveryAllowedBehavior) }) -> Scte35SpliceInsert
+newScte35SpliceInsert' :: ({ "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: Maybe (Scte35SpliceInsertNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: Maybe (Scte35SpliceInsertWebDeliveryAllowedBehavior) } -> { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: Maybe (Scte35SpliceInsertNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: Maybe (Scte35SpliceInsertWebDeliveryAllowedBehavior) }) -> Scte35SpliceInsert
 ```
 
 Constructs Scte35SpliceInsert's fields from required parameters
@@ -6891,7 +6891,7 @@ Encode Scte35SpliceInsertWebDeliveryAllowedBehavior
 
 ``` purescript
 newtype Scte35TimeSignalApos
-  = Scte35TimeSignalApos { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) }
+  = Scte35TimeSignalApos { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: Maybe (Scte35AposNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: Maybe (Scte35AposWebDeliveryAllowedBehavior) }
 ```
 
 Placeholder documentation for Scte35TimeSignalApos
@@ -6916,7 +6916,7 @@ Constructs Scte35TimeSignalApos from required parameters
 #### `newScte35TimeSignalApos'`
 
 ``` purescript
-newScte35TimeSignalApos' :: ({ "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) } -> { "AdAvailOffset" :: NullOrUndefined (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: NullOrUndefined (Scte35AposNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: NullOrUndefined (Scte35AposWebDeliveryAllowedBehavior) }) -> Scte35TimeSignalApos
+newScte35TimeSignalApos' :: ({ "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: Maybe (Scte35AposNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: Maybe (Scte35AposWebDeliveryAllowedBehavior) } -> { "AdAvailOffset" :: Maybe (IntegerMinNegative1000Max1000'), "NoRegionalBlackoutFlag" :: Maybe (Scte35AposNoRegionalBlackoutBehavior), "WebDeliveryAllowedFlag" :: Maybe (Scte35AposWebDeliveryAllowedBehavior) }) -> Scte35TimeSignalApos
 ```
 
 Constructs Scte35TimeSignalApos's fields from required parameters
@@ -7087,7 +7087,7 @@ Encode SmpteTtDestinationSettings
 
 ``` purescript
 newtype StandardHlsSettings
-  = StandardHlsSettings { "AudioRenditionSets" :: NullOrUndefined (String), "M3u8Settings" :: M3u8Settings }
+  = StandardHlsSettings { "AudioRenditionSets" :: Maybe (String), "M3u8Settings" :: M3u8Settings }
 ```
 
 Placeholder documentation for StandardHlsSettings
@@ -7112,7 +7112,7 @@ Constructs StandardHlsSettings from required parameters
 #### `newStandardHlsSettings'`
 
 ``` purescript
-newStandardHlsSettings' :: M3u8Settings -> ({ "AudioRenditionSets" :: NullOrUndefined (String), "M3u8Settings" :: M3u8Settings } -> { "AudioRenditionSets" :: NullOrUndefined (String), "M3u8Settings" :: M3u8Settings }) -> StandardHlsSettings
+newStandardHlsSettings' :: M3u8Settings -> ({ "AudioRenditionSets" :: Maybe (String), "M3u8Settings" :: M3u8Settings } -> { "AudioRenditionSets" :: Maybe (String), "M3u8Settings" :: M3u8Settings }) -> StandardHlsSettings
 ```
 
 Constructs StandardHlsSettings's fields from required parameters
@@ -7155,7 +7155,7 @@ Constructs StartChannelRequest's fields from required parameters
 
 ``` purescript
 newtype StartChannelResponse
-  = StartChannelResponse { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }
+  = StartChannelResponse { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }
 ```
 
 Placeholder documentation for StartChannelResponse
@@ -7180,7 +7180,7 @@ Constructs StartChannelResponse from required parameters
 #### `newStartChannelResponse'`
 
 ``` purescript
-newStartChannelResponse' :: ({ "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) } -> { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }) -> StartChannelResponse
+newStartChannelResponse' :: ({ "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) } -> { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }) -> StartChannelResponse
 ```
 
 Constructs StartChannelResponse's fields from required parameters
@@ -7189,7 +7189,7 @@ Constructs StartChannelResponse's fields from required parameters
 
 ``` purescript
 newtype StaticKeySettings
-  = StaticKeySettings { "KeyProviderServer" :: NullOrUndefined (InputLocation), "StaticKeyValue" :: StringMin32Max32' }
+  = StaticKeySettings { "KeyProviderServer" :: Maybe (InputLocation), "StaticKeyValue" :: StringMin32Max32' }
 ```
 
 Placeholder documentation for StaticKeySettings
@@ -7214,7 +7214,7 @@ Constructs StaticKeySettings from required parameters
 #### `newStaticKeySettings'`
 
 ``` purescript
-newStaticKeySettings' :: StringMin32Max32' -> ({ "KeyProviderServer" :: NullOrUndefined (InputLocation), "StaticKeyValue" :: StringMin32Max32' } -> { "KeyProviderServer" :: NullOrUndefined (InputLocation), "StaticKeyValue" :: StringMin32Max32' }) -> StaticKeySettings
+newStaticKeySettings' :: StringMin32Max32' -> ({ "KeyProviderServer" :: Maybe (InputLocation), "StaticKeyValue" :: StringMin32Max32' } -> { "KeyProviderServer" :: Maybe (InputLocation), "StaticKeyValue" :: StringMin32Max32' }) -> StaticKeySettings
 ```
 
 Constructs StaticKeySettings's fields from required parameters
@@ -7257,7 +7257,7 @@ Constructs StopChannelRequest's fields from required parameters
 
 ``` purescript
 newtype StopChannelResponse
-  = StopChannelResponse { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }
+  = StopChannelResponse { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }
 ```
 
 Placeholder documentation for StopChannelResponse
@@ -7282,7 +7282,7 @@ Constructs StopChannelResponse from required parameters
 #### `newStopChannelResponse'`
 
 ``` purescript
-newStopChannelResponse' :: ({ "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) } -> { "Arn" :: NullOrUndefined (String), "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EgressEndpoints" :: NullOrUndefined (ListOfChannelEgressEndpoint'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "Id" :: NullOrUndefined (String), "InputAttachments" :: NullOrUndefined (ListOfInputAttachment'), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "PipelinesRunningCount" :: NullOrUndefined (Int), "RoleArn" :: NullOrUndefined (String), "State" :: NullOrUndefined (ChannelState) }) -> StopChannelResponse
+newStopChannelResponse' :: ({ "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) } -> { "Arn" :: Maybe (String), "Destinations" :: Maybe (ListOfOutputDestination'), "EgressEndpoints" :: Maybe (ListOfChannelEgressEndpoint'), "EncoderSettings" :: Maybe (EncoderSettings), "Id" :: Maybe (String), "InputAttachments" :: Maybe (ListOfInputAttachment'), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "PipelinesRunningCount" :: Maybe (Int), "RoleArn" :: Maybe (String), "State" :: Maybe (ChannelState) }) -> StopChannelResponse
 ```
 
 Constructs StopChannelResponse's fields from required parameters
@@ -7309,7 +7309,7 @@ Encode TeletextDestinationSettings
 
 ``` purescript
 newtype TeletextSourceSettings
-  = TeletextSourceSettings { "PageNumber" :: NullOrUndefined (String) }
+  = TeletextSourceSettings { "PageNumber" :: Maybe (String) }
 ```
 
 Placeholder documentation for TeletextSourceSettings
@@ -7334,7 +7334,7 @@ Constructs TeletextSourceSettings from required parameters
 #### `newTeletextSourceSettings'`
 
 ``` purescript
-newTeletextSourceSettings' :: ({ "PageNumber" :: NullOrUndefined (String) } -> { "PageNumber" :: NullOrUndefined (String) }) -> TeletextSourceSettings
+newTeletextSourceSettings' :: ({ "PageNumber" :: Maybe (String) } -> { "PageNumber" :: Maybe (String) }) -> TeletextSourceSettings
 ```
 
 Constructs TeletextSourceSettings's fields from required parameters
@@ -7343,7 +7343,7 @@ Constructs TeletextSourceSettings's fields from required parameters
 
 ``` purescript
 newtype TimecodeConfig
-  = TimecodeConfig { "Source" :: TimecodeConfigSource, "SyncThreshold" :: NullOrUndefined (IntegerMin1Max1000000') }
+  = TimecodeConfig { "Source" :: TimecodeConfigSource, "SyncThreshold" :: Maybe (IntegerMin1Max1000000') }
 ```
 
 Placeholder documentation for TimecodeConfig
@@ -7368,7 +7368,7 @@ Constructs TimecodeConfig from required parameters
 #### `newTimecodeConfig'`
 
 ``` purescript
-newTimecodeConfig' :: TimecodeConfigSource -> ({ "Source" :: TimecodeConfigSource, "SyncThreshold" :: NullOrUndefined (IntegerMin1Max1000000') } -> { "Source" :: TimecodeConfigSource, "SyncThreshold" :: NullOrUndefined (IntegerMin1Max1000000') }) -> TimecodeConfig
+newTimecodeConfig' :: TimecodeConfigSource -> ({ "Source" :: TimecodeConfigSource, "SyncThreshold" :: Maybe (IntegerMin1Max1000000') } -> { "Source" :: TimecodeConfigSource, "SyncThreshold" :: Maybe (IntegerMin1Max1000000') }) -> TimecodeConfig
 ```
 
 Constructs TimecodeConfig's fields from required parameters
@@ -7395,7 +7395,7 @@ Encode TimecodeConfigSource
 
 ``` purescript
 newtype TooManyRequestsException
-  = TooManyRequestsException { "Message" :: NullOrUndefined (String) }
+  = TooManyRequestsException { "Message" :: Maybe (String) }
 ```
 
 Placeholder documentation for TooManyRequestsException
@@ -7420,7 +7420,7 @@ Constructs TooManyRequestsException from required parameters
 #### `newTooManyRequestsException'`
 
 ``` purescript
-newTooManyRequestsException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> TooManyRequestsException
+newTooManyRequestsException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> TooManyRequestsException
 ```
 
 Constructs TooManyRequestsException's fields from required parameters
@@ -7429,7 +7429,7 @@ Constructs TooManyRequestsException's fields from required parameters
 
 ``` purescript
 newtype TtmlDestinationSettings
-  = TtmlDestinationSettings { "StyleControl" :: NullOrUndefined (TtmlDestinationStyleControl) }
+  = TtmlDestinationSettings { "StyleControl" :: Maybe (TtmlDestinationStyleControl) }
 ```
 
 Placeholder documentation for TtmlDestinationSettings
@@ -7454,7 +7454,7 @@ Constructs TtmlDestinationSettings from required parameters
 #### `newTtmlDestinationSettings'`
 
 ``` purescript
-newTtmlDestinationSettings' :: ({ "StyleControl" :: NullOrUndefined (TtmlDestinationStyleControl) } -> { "StyleControl" :: NullOrUndefined (TtmlDestinationStyleControl) }) -> TtmlDestinationSettings
+newTtmlDestinationSettings' :: ({ "StyleControl" :: Maybe (TtmlDestinationStyleControl) } -> { "StyleControl" :: Maybe (TtmlDestinationStyleControl) }) -> TtmlDestinationSettings
 ```
 
 Constructs TtmlDestinationSettings's fields from required parameters
@@ -7481,7 +7481,7 @@ Encode TtmlDestinationStyleControl
 
 ``` purescript
 newtype UdpContainerSettings
-  = UdpContainerSettings { "M2tsSettings" :: NullOrUndefined (M2tsSettings) }
+  = UdpContainerSettings { "M2tsSettings" :: Maybe (M2tsSettings) }
 ```
 
 Placeholder documentation for UdpContainerSettings
@@ -7506,7 +7506,7 @@ Constructs UdpContainerSettings from required parameters
 #### `newUdpContainerSettings'`
 
 ``` purescript
-newUdpContainerSettings' :: ({ "M2tsSettings" :: NullOrUndefined (M2tsSettings) } -> { "M2tsSettings" :: NullOrUndefined (M2tsSettings) }) -> UdpContainerSettings
+newUdpContainerSettings' :: ({ "M2tsSettings" :: Maybe (M2tsSettings) } -> { "M2tsSettings" :: Maybe (M2tsSettings) }) -> UdpContainerSettings
 ```
 
 Constructs UdpContainerSettings's fields from required parameters
@@ -7515,7 +7515,7 @@ Constructs UdpContainerSettings's fields from required parameters
 
 ``` purescript
 newtype UdpGroupSettings
-  = UdpGroupSettings { "InputLossAction" :: NullOrUndefined (InputLossActionForUdpOut), "TimedMetadataId3Frame" :: NullOrUndefined (UdpTimedMetadataId3Frame), "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0') }
+  = UdpGroupSettings { "InputLossAction" :: Maybe (InputLossActionForUdpOut), "TimedMetadataId3Frame" :: Maybe (UdpTimedMetadataId3Frame), "TimedMetadataId3Period" :: Maybe (IntegerMin0') }
 ```
 
 Placeholder documentation for UdpGroupSettings
@@ -7540,7 +7540,7 @@ Constructs UdpGroupSettings from required parameters
 #### `newUdpGroupSettings'`
 
 ``` purescript
-newUdpGroupSettings' :: ({ "InputLossAction" :: NullOrUndefined (InputLossActionForUdpOut), "TimedMetadataId3Frame" :: NullOrUndefined (UdpTimedMetadataId3Frame), "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0') } -> { "InputLossAction" :: NullOrUndefined (InputLossActionForUdpOut), "TimedMetadataId3Frame" :: NullOrUndefined (UdpTimedMetadataId3Frame), "TimedMetadataId3Period" :: NullOrUndefined (IntegerMin0') }) -> UdpGroupSettings
+newUdpGroupSettings' :: ({ "InputLossAction" :: Maybe (InputLossActionForUdpOut), "TimedMetadataId3Frame" :: Maybe (UdpTimedMetadataId3Frame), "TimedMetadataId3Period" :: Maybe (IntegerMin0') } -> { "InputLossAction" :: Maybe (InputLossActionForUdpOut), "TimedMetadataId3Frame" :: Maybe (UdpTimedMetadataId3Frame), "TimedMetadataId3Period" :: Maybe (IntegerMin0') }) -> UdpGroupSettings
 ```
 
 Constructs UdpGroupSettings's fields from required parameters
@@ -7549,7 +7549,7 @@ Constructs UdpGroupSettings's fields from required parameters
 
 ``` purescript
 newtype UdpOutputSettings
-  = UdpOutputSettings { "BufferMsec" :: NullOrUndefined (IntegerMin0Max10000'), "ContainerSettings" :: UdpContainerSettings, "Destination" :: OutputLocationRef, "FecOutputSettings" :: NullOrUndefined (FecOutputSettings) }
+  = UdpOutputSettings { "BufferMsec" :: Maybe (IntegerMin0Max10000'), "ContainerSettings" :: UdpContainerSettings, "Destination" :: OutputLocationRef, "FecOutputSettings" :: Maybe (FecOutputSettings) }
 ```
 
 Placeholder documentation for UdpOutputSettings
@@ -7574,7 +7574,7 @@ Constructs UdpOutputSettings from required parameters
 #### `newUdpOutputSettings'`
 
 ``` purescript
-newUdpOutputSettings' :: UdpContainerSettings -> OutputLocationRef -> ({ "BufferMsec" :: NullOrUndefined (IntegerMin0Max10000'), "ContainerSettings" :: UdpContainerSettings, "Destination" :: OutputLocationRef, "FecOutputSettings" :: NullOrUndefined (FecOutputSettings) } -> { "BufferMsec" :: NullOrUndefined (IntegerMin0Max10000'), "ContainerSettings" :: UdpContainerSettings, "Destination" :: OutputLocationRef, "FecOutputSettings" :: NullOrUndefined (FecOutputSettings) }) -> UdpOutputSettings
+newUdpOutputSettings' :: UdpContainerSettings -> OutputLocationRef -> ({ "BufferMsec" :: Maybe (IntegerMin0Max10000'), "ContainerSettings" :: UdpContainerSettings, "Destination" :: OutputLocationRef, "FecOutputSettings" :: Maybe (FecOutputSettings) } -> { "BufferMsec" :: Maybe (IntegerMin0Max10000'), "ContainerSettings" :: UdpContainerSettings, "Destination" :: OutputLocationRef, "FecOutputSettings" :: Maybe (FecOutputSettings) }) -> UdpOutputSettings
 ```
 
 Constructs UdpOutputSettings's fields from required parameters
@@ -7601,7 +7601,7 @@ Encode UdpTimedMetadataId3Frame
 
 ``` purescript
 newtype UnprocessableEntityException
-  = UnprocessableEntityException { "Message" :: NullOrUndefined (String), "ValidationErrors" :: NullOrUndefined (ListOfValidationError') }
+  = UnprocessableEntityException { "Message" :: Maybe (String), "ValidationErrors" :: Maybe (ListOfValidationError') }
 ```
 
 Placeholder documentation for UnprocessableEntityException
@@ -7626,7 +7626,7 @@ Constructs UnprocessableEntityException from required parameters
 #### `newUnprocessableEntityException'`
 
 ``` purescript
-newUnprocessableEntityException' :: ({ "Message" :: NullOrUndefined (String), "ValidationErrors" :: NullOrUndefined (ListOfValidationError') } -> { "Message" :: NullOrUndefined (String), "ValidationErrors" :: NullOrUndefined (ListOfValidationError') }) -> UnprocessableEntityException
+newUnprocessableEntityException' :: ({ "Message" :: Maybe (String), "ValidationErrors" :: Maybe (ListOfValidationError') } -> { "Message" :: Maybe (String), "ValidationErrors" :: Maybe (ListOfValidationError') }) -> UnprocessableEntityException
 ```
 
 Constructs UnprocessableEntityException's fields from required parameters
@@ -7635,7 +7635,7 @@ Constructs UnprocessableEntityException's fields from required parameters
 
 ``` purescript
 newtype UpdateChannel
-  = UpdateChannel { "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }
+  = UpdateChannel { "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RoleArn" :: Maybe (String) }
 ```
 
 Placeholder documentation for UpdateChannel
@@ -7660,7 +7660,7 @@ Constructs UpdateChannel from required parameters
 #### `newUpdateChannel'`
 
 ``` purescript
-newUpdateChannel' :: ({ "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) } -> { "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }) -> UpdateChannel
+newUpdateChannel' :: ({ "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RoleArn" :: Maybe (String) } -> { "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RoleArn" :: Maybe (String) }) -> UpdateChannel
 ```
 
 Constructs UpdateChannel's fields from required parameters
@@ -7669,7 +7669,7 @@ Constructs UpdateChannel's fields from required parameters
 
 ``` purescript
 newtype UpdateChannelRequest
-  = UpdateChannelRequest { "ChannelId" :: String, "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }
+  = UpdateChannelRequest { "ChannelId" :: String, "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RoleArn" :: Maybe (String) }
 ```
 
 A request to update a channel.
@@ -7694,7 +7694,7 @@ Constructs UpdateChannelRequest from required parameters
 #### `newUpdateChannelRequest'`
 
 ``` purescript
-newUpdateChannelRequest' :: String -> ({ "ChannelId" :: String, "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) } -> { "ChannelId" :: String, "Destinations" :: NullOrUndefined (ListOfOutputDestination'), "EncoderSettings" :: NullOrUndefined (EncoderSettings), "InputSpecification" :: NullOrUndefined (InputSpecification), "Name" :: NullOrUndefined (String), "RoleArn" :: NullOrUndefined (String) }) -> UpdateChannelRequest
+newUpdateChannelRequest' :: String -> ({ "ChannelId" :: String, "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RoleArn" :: Maybe (String) } -> { "ChannelId" :: String, "Destinations" :: Maybe (ListOfOutputDestination'), "EncoderSettings" :: Maybe (EncoderSettings), "InputSpecification" :: Maybe (InputSpecification), "Name" :: Maybe (String), "RoleArn" :: Maybe (String) }) -> UpdateChannelRequest
 ```
 
 Constructs UpdateChannelRequest's fields from required parameters
@@ -7703,7 +7703,7 @@ Constructs UpdateChannelRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateChannelResponse
-  = UpdateChannelResponse { "Channel" :: NullOrUndefined (Channel) }
+  = UpdateChannelResponse { "Channel" :: Maybe (Channel) }
 ```
 
 Placeholder documentation for UpdateChannelResponse
@@ -7728,7 +7728,7 @@ Constructs UpdateChannelResponse from required parameters
 #### `newUpdateChannelResponse'`
 
 ``` purescript
-newUpdateChannelResponse' :: ({ "Channel" :: NullOrUndefined (Channel) } -> { "Channel" :: NullOrUndefined (Channel) }) -> UpdateChannelResponse
+newUpdateChannelResponse' :: ({ "Channel" :: Maybe (Channel) } -> { "Channel" :: Maybe (Channel) }) -> UpdateChannelResponse
 ```
 
 Constructs UpdateChannelResponse's fields from required parameters
@@ -7737,7 +7737,7 @@ Constructs UpdateChannelResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateChannelResultModel
-  = UpdateChannelResultModel { "Channel" :: NullOrUndefined (Channel) }
+  = UpdateChannelResultModel { "Channel" :: Maybe (Channel) }
 ```
 
 The updated channel's description.
@@ -7762,7 +7762,7 @@ Constructs UpdateChannelResultModel from required parameters
 #### `newUpdateChannelResultModel'`
 
 ``` purescript
-newUpdateChannelResultModel' :: ({ "Channel" :: NullOrUndefined (Channel) } -> { "Channel" :: NullOrUndefined (Channel) }) -> UpdateChannelResultModel
+newUpdateChannelResultModel' :: ({ "Channel" :: Maybe (Channel) } -> { "Channel" :: Maybe (Channel) }) -> UpdateChannelResultModel
 ```
 
 Constructs UpdateChannelResultModel's fields from required parameters
@@ -7771,7 +7771,7 @@ Constructs UpdateChannelResultModel's fields from required parameters
 
 ``` purescript
 newtype ValidationError
-  = ValidationError { "ElementPath" :: NullOrUndefined (String), "ErrorMessage" :: NullOrUndefined (String) }
+  = ValidationError { "ElementPath" :: Maybe (String), "ErrorMessage" :: Maybe (String) }
 ```
 
 Placeholder documentation for ValidationError
@@ -7796,7 +7796,7 @@ Constructs ValidationError from required parameters
 #### `newValidationError'`
 
 ``` purescript
-newValidationError' :: ({ "ElementPath" :: NullOrUndefined (String), "ErrorMessage" :: NullOrUndefined (String) } -> { "ElementPath" :: NullOrUndefined (String), "ErrorMessage" :: NullOrUndefined (String) }) -> ValidationError
+newValidationError' :: ({ "ElementPath" :: Maybe (String), "ErrorMessage" :: Maybe (String) } -> { "ElementPath" :: Maybe (String), "ErrorMessage" :: Maybe (String) }) -> ValidationError
 ```
 
 Constructs ValidationError's fields from required parameters
@@ -7805,7 +7805,7 @@ Constructs ValidationError's fields from required parameters
 
 ``` purescript
 newtype VideoCodecSettings
-  = VideoCodecSettings { "H264Settings" :: NullOrUndefined (H264Settings) }
+  = VideoCodecSettings { "H264Settings" :: Maybe (H264Settings) }
 ```
 
 Placeholder documentation for VideoCodecSettings
@@ -7830,7 +7830,7 @@ Constructs VideoCodecSettings from required parameters
 #### `newVideoCodecSettings'`
 
 ``` purescript
-newVideoCodecSettings' :: ({ "H264Settings" :: NullOrUndefined (H264Settings) } -> { "H264Settings" :: NullOrUndefined (H264Settings) }) -> VideoCodecSettings
+newVideoCodecSettings' :: ({ "H264Settings" :: Maybe (H264Settings) } -> { "H264Settings" :: Maybe (H264Settings) }) -> VideoCodecSettings
 ```
 
 Constructs VideoCodecSettings's fields from required parameters
@@ -7839,7 +7839,7 @@ Constructs VideoCodecSettings's fields from required parameters
 
 ``` purescript
 newtype VideoDescription
-  = VideoDescription { "CodecSettings" :: NullOrUndefined (VideoCodecSettings), "Height" :: NullOrUndefined (Int), "Name" :: String, "RespondToAfd" :: NullOrUndefined (VideoDescriptionRespondToAfd), "ScalingBehavior" :: NullOrUndefined (VideoDescriptionScalingBehavior), "Sharpness" :: NullOrUndefined (IntegerMin0Max100'), "Width" :: NullOrUndefined (Int) }
+  = VideoDescription { "CodecSettings" :: Maybe (VideoCodecSettings), "Height" :: Maybe (Int), "Name" :: String, "RespondToAfd" :: Maybe (VideoDescriptionRespondToAfd), "ScalingBehavior" :: Maybe (VideoDescriptionScalingBehavior), "Sharpness" :: Maybe (IntegerMin0Max100'), "Width" :: Maybe (Int) }
 ```
 
 Video settings for this stream.
@@ -7864,7 +7864,7 @@ Constructs VideoDescription from required parameters
 #### `newVideoDescription'`
 
 ``` purescript
-newVideoDescription' :: String -> ({ "CodecSettings" :: NullOrUndefined (VideoCodecSettings), "Height" :: NullOrUndefined (Int), "Name" :: String, "RespondToAfd" :: NullOrUndefined (VideoDescriptionRespondToAfd), "ScalingBehavior" :: NullOrUndefined (VideoDescriptionScalingBehavior), "Sharpness" :: NullOrUndefined (IntegerMin0Max100'), "Width" :: NullOrUndefined (Int) } -> { "CodecSettings" :: NullOrUndefined (VideoCodecSettings), "Height" :: NullOrUndefined (Int), "Name" :: String, "RespondToAfd" :: NullOrUndefined (VideoDescriptionRespondToAfd), "ScalingBehavior" :: NullOrUndefined (VideoDescriptionScalingBehavior), "Sharpness" :: NullOrUndefined (IntegerMin0Max100'), "Width" :: NullOrUndefined (Int) }) -> VideoDescription
+newVideoDescription' :: String -> ({ "CodecSettings" :: Maybe (VideoCodecSettings), "Height" :: Maybe (Int), "Name" :: String, "RespondToAfd" :: Maybe (VideoDescriptionRespondToAfd), "ScalingBehavior" :: Maybe (VideoDescriptionScalingBehavior), "Sharpness" :: Maybe (IntegerMin0Max100'), "Width" :: Maybe (Int) } -> { "CodecSettings" :: Maybe (VideoCodecSettings), "Height" :: Maybe (Int), "Name" :: String, "RespondToAfd" :: Maybe (VideoDescriptionRespondToAfd), "ScalingBehavior" :: Maybe (VideoDescriptionScalingBehavior), "Sharpness" :: Maybe (IntegerMin0Max100'), "Width" :: Maybe (Int) }) -> VideoDescription
 ```
 
 Constructs VideoDescription's fields from required parameters
@@ -7909,7 +7909,7 @@ Encode VideoDescriptionScalingBehavior
 
 ``` purescript
 newtype VideoSelector
-  = VideoSelector { "ColorSpace" :: NullOrUndefined (VideoSelectorColorSpace), "ColorSpaceUsage" :: NullOrUndefined (VideoSelectorColorSpaceUsage), "SelectorSettings" :: NullOrUndefined (VideoSelectorSettings) }
+  = VideoSelector { "ColorSpace" :: Maybe (VideoSelectorColorSpace), "ColorSpaceUsage" :: Maybe (VideoSelectorColorSpaceUsage), "SelectorSettings" :: Maybe (VideoSelectorSettings) }
 ```
 
 Specifies a particular video stream within an input source. An input may have only a single video selector.
@@ -7934,7 +7934,7 @@ Constructs VideoSelector from required parameters
 #### `newVideoSelector'`
 
 ``` purescript
-newVideoSelector' :: ({ "ColorSpace" :: NullOrUndefined (VideoSelectorColorSpace), "ColorSpaceUsage" :: NullOrUndefined (VideoSelectorColorSpaceUsage), "SelectorSettings" :: NullOrUndefined (VideoSelectorSettings) } -> { "ColorSpace" :: NullOrUndefined (VideoSelectorColorSpace), "ColorSpaceUsage" :: NullOrUndefined (VideoSelectorColorSpaceUsage), "SelectorSettings" :: NullOrUndefined (VideoSelectorSettings) }) -> VideoSelector
+newVideoSelector' :: ({ "ColorSpace" :: Maybe (VideoSelectorColorSpace), "ColorSpaceUsage" :: Maybe (VideoSelectorColorSpaceUsage), "SelectorSettings" :: Maybe (VideoSelectorSettings) } -> { "ColorSpace" :: Maybe (VideoSelectorColorSpace), "ColorSpaceUsage" :: Maybe (VideoSelectorColorSpaceUsage), "SelectorSettings" :: Maybe (VideoSelectorSettings) }) -> VideoSelector
 ```
 
 Constructs VideoSelector's fields from required parameters
@@ -7979,7 +7979,7 @@ Encode VideoSelectorColorSpaceUsage
 
 ``` purescript
 newtype VideoSelectorPid
-  = VideoSelectorPid { "Pid" :: NullOrUndefined (IntegerMin0Max8191') }
+  = VideoSelectorPid { "Pid" :: Maybe (IntegerMin0Max8191') }
 ```
 
 Placeholder documentation for VideoSelectorPid
@@ -8004,7 +8004,7 @@ Constructs VideoSelectorPid from required parameters
 #### `newVideoSelectorPid'`
 
 ``` purescript
-newVideoSelectorPid' :: ({ "Pid" :: NullOrUndefined (IntegerMin0Max8191') } -> { "Pid" :: NullOrUndefined (IntegerMin0Max8191') }) -> VideoSelectorPid
+newVideoSelectorPid' :: ({ "Pid" :: Maybe (IntegerMin0Max8191') } -> { "Pid" :: Maybe (IntegerMin0Max8191') }) -> VideoSelectorPid
 ```
 
 Constructs VideoSelectorPid's fields from required parameters
@@ -8013,7 +8013,7 @@ Constructs VideoSelectorPid's fields from required parameters
 
 ``` purescript
 newtype VideoSelectorProgramId
-  = VideoSelectorProgramId { "ProgramId" :: NullOrUndefined (IntegerMin0Max65536') }
+  = VideoSelectorProgramId { "ProgramId" :: Maybe (IntegerMin0Max65536') }
 ```
 
 Placeholder documentation for VideoSelectorProgramId
@@ -8038,7 +8038,7 @@ Constructs VideoSelectorProgramId from required parameters
 #### `newVideoSelectorProgramId'`
 
 ``` purescript
-newVideoSelectorProgramId' :: ({ "ProgramId" :: NullOrUndefined (IntegerMin0Max65536') } -> { "ProgramId" :: NullOrUndefined (IntegerMin0Max65536') }) -> VideoSelectorProgramId
+newVideoSelectorProgramId' :: ({ "ProgramId" :: Maybe (IntegerMin0Max65536') } -> { "ProgramId" :: Maybe (IntegerMin0Max65536') }) -> VideoSelectorProgramId
 ```
 
 Constructs VideoSelectorProgramId's fields from required parameters
@@ -8047,7 +8047,7 @@ Constructs VideoSelectorProgramId's fields from required parameters
 
 ``` purescript
 newtype VideoSelectorSettings
-  = VideoSelectorSettings { "VideoSelectorPid" :: NullOrUndefined (VideoSelectorPid), "VideoSelectorProgramId" :: NullOrUndefined (VideoSelectorProgramId) }
+  = VideoSelectorSettings { "VideoSelectorPid" :: Maybe (VideoSelectorPid), "VideoSelectorProgramId" :: Maybe (VideoSelectorProgramId) }
 ```
 
 Placeholder documentation for VideoSelectorSettings
@@ -8072,7 +8072,7 @@ Constructs VideoSelectorSettings from required parameters
 #### `newVideoSelectorSettings'`
 
 ``` purescript
-newVideoSelectorSettings' :: ({ "VideoSelectorPid" :: NullOrUndefined (VideoSelectorPid), "VideoSelectorProgramId" :: NullOrUndefined (VideoSelectorProgramId) } -> { "VideoSelectorPid" :: NullOrUndefined (VideoSelectorPid), "VideoSelectorProgramId" :: NullOrUndefined (VideoSelectorProgramId) }) -> VideoSelectorSettings
+newVideoSelectorSettings' :: ({ "VideoSelectorPid" :: Maybe (VideoSelectorPid), "VideoSelectorProgramId" :: Maybe (VideoSelectorProgramId) } -> { "VideoSelectorPid" :: Maybe (VideoSelectorPid), "VideoSelectorProgramId" :: Maybe (VideoSelectorProgramId) }) -> VideoSelectorSettings
 ```
 
 Constructs VideoSelectorSettings's fields from required parameters
